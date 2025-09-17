@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ground -->
+  <rect x="0" y="160" width="200" height="40" fill="none" stroke="#000" stroke-width="2"/>
+  
+  <!-- Wind turbine tower -->
+  <rect x="95" y="80" width="10" height="80" fill="none" stroke="#000" stroke-width="3"/>
+  
+  <!-- Wind turbine nacelle -->
+  <rect x="85" y="75" width="30" height="15" fill="none" stroke="#000" stroke-width="3" rx="3"/>
+  
+  <!-- Wind turbine blades -->
+  <g stroke="#000" stroke-width="2" fill="none">
+    <ellipse cx="100" cy="82.5" rx="35" ry="8" transform="rotate(0 100 82.5)"/>
+    <ellipse cx="100" cy="82.5" rx="35" ry="8" transform="rotate(120 100 82.5)"/>
+    <ellipse cx="100" cy="82.5" rx="35" ry="8" transform="rotate(240 100 82.5)"/>
+  </g>
+  
+  <!-- Wind lines -->
+  <g stroke="#000" stroke-width="2" stroke-linecap="round">
+    <path d="M 20 60 Q 40 65 60 60 Q 80 55 100 60"/>
+    <path d="M 20 80 Q 40 85 60 80 Q 80 75 100 80"/>
+    <path d="M 20 100 Q 40 105 60 100 Q 80 95 100 100"/>
+  </g>
+  
+  <!-- Energy symbol -->
+  <g fill="none" stroke="#000" stroke-width="2">
+    <path d="M 85 140 L 95 140 L 95 150 L 105 150 L 105 160 L 95 160 L 95 150 L 85 150 Z"/>
+  </g>
+</svg>

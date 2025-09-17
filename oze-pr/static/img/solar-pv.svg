@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun -->
+  <circle cx="100" cy="60" r="25" fill="none" stroke="#000" stroke-width="3"/>
+  
+  <!-- Sun rays -->
+  <g stroke="#000" stroke-width="2" stroke-linecap="round">
+    <line x1="100" y1="20" x2="100" y2="35"/>
+    <line x1="100" y1="85" x2="100" y2="100"/>
+    <line x1="60" y1="60" x2="70" y2="60"/>
+    <line x1="130" y1="60" x2="140" y2="60"/>
+    <line x1="75" y1="25" x2="82" y2="32"/>
+    <line x1="125" y1="25" x2="118" y2="32"/>
+    <line x1="75" y1="95" x2="82" y2="88"/>
+    <line x1="125" y1="95" x2="118" y2="88"/>
+  </g>
+  
+  <!-- Solar panel -->
+  <rect x="60" y="130" width="80" height="50" fill="none" stroke="#000" stroke-width="3" rx="3"/>
+  
+  <!-- Panel grid -->
+  <g stroke="#000" stroke-width="1">
+    <line x1="80" y1="130" x2="80" y2="180"/>
+    <line x1="100" y1="130" x2="100" y2="180"/>
+    <line x1="120" y1="130" x2="120" y2="180"/>
+    <line x1="60" y1="150" x2="140" y2="150"/>
+  </g>
+  
+  <!-- Energy symbol -->
+  <g fill="none" stroke="#000" stroke-width="2">
+    <path d="M 85 140 L 95 140 L 95 150 L 105 150 L 105 160 L 95 160 L 95 150 L 85 150 Z"/>
+  </g>
+</svg>

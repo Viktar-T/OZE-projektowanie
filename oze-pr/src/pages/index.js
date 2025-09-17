@@ -16,11 +16,14 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className="hero__info">
+          <p><strong>Forma dydaktyczna:</strong> Wykłady (15h) • Laboratoria (10h) • Projekty (20h)</p>
+        </div>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Rozpocznij naukę
           </Link>
         </div>
       </div>
@@ -32,8 +35,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Programy komputerowe w projektowaniu instalacji OZE - wykłady, laboratoria i projekty">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
