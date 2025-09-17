@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Programy komputerowe w projektowaniu instalacji OZE',
+  tagline: 'Kierunek: Odnawialne źródła energii',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'oze', // Usually your GitHub org/user name.
+  projectName: 'projektowanie', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -37,8 +37,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'pl',
+    locales: ['pl'],
   },
 
   presets: [
@@ -81,9 +81,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'OZE – Programy komputerowe',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Logo OZE',
           src: 'img/logo.svg',
         },
         items: [
@@ -91,9 +91,9 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Dokumentacja',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: 'Zadania', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -105,16 +105,16 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Dokumenty',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Wprowadzenie',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Społeczność',
             items: [
               {
                 label: 'Stack Overflow',
@@ -131,10 +131,10 @@ const config = {
             ],
           },
           {
-            title: 'More',
+            title: 'Więcej',
             items: [
               {
-                label: 'Blog',
+                label: 'Zadania',
                 to: '/blog',
               },
               {
@@ -144,7 +144,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} OZE – Programy komputerowe. Zbudowano z Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

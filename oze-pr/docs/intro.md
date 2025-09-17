@@ -2,46 +2,46 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Wprowadzenie
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Poznaj **Docusaurus w mniej niż 5 minut**.
 
-## Getting Started
+## Pierwsze kroki
 
-Get started by **creating a new site**.
+Zacznij od **utworzenia nowej strony**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Albo **wypróbuj Docusaurusa od razu** poprzez **[docusaurus.new](https://docusaurus.new)**.
 
-### What you'll need
+### Wymagania
 
 - [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-## Generate a new site
+## Wygeneruj nową stronę
 
-Generate a new Docusaurus site using the **classic template**.
+Wygeneruj nową stronę Docusaurus, korzystając z **szablonu classic**.
 
-The classic template will automatically be added to your project after you run the command:
+Szablon classic zostanie automatycznie dodany do projektu po uruchomieniu polecenia:
 
 ```bash
 npm init docusaurus@latest my-website classic
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Możesz wpisać to polecenie w Command Prompt, Powershell, Terminalu lub innym zintegrowanym terminalu edytora.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Polecenie zainstaluje także wszystkie niezbędne zależności wymagane do uruchomienia Docusaurusa.
 
-## Start your site
+## Uruchom swoją stronę
 
-Run the development server:
+Uruchom serwer deweloperski:
 
 ```bash
 cd my-website
 npm run start
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+Polecenie `cd` zmienia katalog roboczy. Aby pracować z nowo utworzoną stroną Docusaurus, przejdź do jej katalogu w terminalu.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+Polecenie `npm run start` buduje stronę lokalnie i uruchamia serwer deweloperski pod adresem http://localhost:3000/.
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Otwórz `docs/intro.md` (tę stronę) i edytuj kilka linii: strona **przeładuje się automatycznie** i wyświetli zmiany.

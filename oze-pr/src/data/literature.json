@@ -1,0 +1,61 @@
+{
+  "software": [
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "PV*SOL Basic Manual",
+      "source": "Complete 82-page user manual covering system requirements, registration, project workflow, and technical calculations",
+      "link": "https://www.valentin-software.com/wp-content/uploads/legacy-downloads/handbuecher/en/manual-eng.pdf"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "PV*SOL Advanced Manual",
+      "source": "Comprehensive manual for advanced features and professional system design",
+      "link": "https://www.valentin-software.com/wp-content/uploads/legacy-downloads/handbuecher/en/manual-eng_0.pdf"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "T*SOL Basic Manual",
+      "source": "104-page manual covering solar thermal system design, simulation, and economic analysis",
+      "link": "https://www.valentin-software.com/wp-content/uploads/legacy-downloads/handbuecher/en/tsol50-basic-manual-en.pdf"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "T*SOL Pro 5.5 User Manual",
+      "source": "Advanced manual for professional solar thermal applications",
+      "link": "https://valentin-software.com/wp-content/uploads/legacy-downloads/handbuecher/en/tsol-pro-manual-en.pdf"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "GeoT*SOL Basic Manual",
+      "source": "50-page guide for heat pump system design and geothermal applications",
+      "link": "https://www.valentin-software.com/wp-content/uploads/legacy-downloads/handbuecher/en/geotsolbasic-manual-en.pdf"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "PV*SOL Help Pages",
+      "source": "Comprehensive online documentation with searchable content and step-by-step guides",
+      "link": "https://help.valentin-software.com/pvsol/en/"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "T*SOL Help Pages",
+      "source": "Online documentation system covering software management, system requirements, and troubleshooting",
+      "link": "https://help.valentin-software.com/tsol/en/software-verwaltung/"
+    },
+    {
+      "authors": "Valentin Software",
+      "year": "2024",
+      "title": "GeoT*SOL Help Pages",
+      "source": "Specialized documentation for geothermal and heat pump applications",
+      "link": "https://help.valentin-software.com/geotsol/en/attachments/geothermalbasics/"
+    }
+  ]
+}
+
