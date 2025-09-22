@@ -2,11 +2,12 @@
 sidebar_position: 1
 title: "Wykład 1: Wprowadzenie do projektowania instalacji OZE (1,5 h)"
 ---
-## Cele wykładu
+## Cele wykładuRola oprogramowania w projektowaniu systemów OZE
 
-- Rola oprogramowania w projektowaniu systemów OZE
-- Przegląd technologii odnawialnych źródeł energii
-- Etapy procesu projektowego — od koncepcji do realizacji
+- Zacznę od opisu oprogramowania, rodzaje, licencje.
+- Co to jest program (konsolowy; web, Android, …). z czego składa się: FrontEnd, Logika, Symulacje, DBs. używanie, typy DBs na przykładzie PV*SOL.
+- Etapy procesu projektowego — od koncepcji do realizacji. przykład z ATUM p. 7.1.
+- Zaczynam z PV*SOL. Zbudować projekt szybko żeby zobaczyć w całości
 
 ## Rola oprogramowania w projektowaniu systemów OZE
 
