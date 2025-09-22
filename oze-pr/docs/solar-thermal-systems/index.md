@@ -100,5 +100,5 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Laboratoria i projekty
 
-- [Laboratorium - Systemy solarne termiczne](/docs/laboratoria/solar-thermal-systems)
+- [Laboratorium - Systemy solarne termiczne](/docs/projekty/solar-thermal-systems)
 - [Projekt - Systemy solarne termiczne](/docs/projekty/solar-thermal-systems)

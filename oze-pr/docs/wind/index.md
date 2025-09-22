@@ -76,5 +76,5 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Laboratoria i projekty
 
-- [Laboratorium - Energetyka wiatrowa](/docs/laboratoria/wind)
+- [Laboratorium - Energetyka wiatrowa](/docs/projekty/wind)
 - [Projekt - Energetyka wiatrowa](/docs/projekty/wind)

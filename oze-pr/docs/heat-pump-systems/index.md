@@ -87,5 +87,5 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Laboratoria i projekty
 
-- [Laboratorium - Systemy pomp ciepła](/docs/laboratoria/heat-pump-systems)
+- [Laboratorium - Systemy pomp ciepła](/docs/projekty/heat-pump-systems)
 - [Projekt - Systemy pomp ciepła](/docs/projekty/heat-pump-systems)

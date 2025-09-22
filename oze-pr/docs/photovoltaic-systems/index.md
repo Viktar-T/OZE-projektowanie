@@ -96,5 +96,5 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Laboratoria i projekty
 
-- [Laboratorium - Systemy fotowoltaiczne](/docs/laboratoria/photovoltaic%20systems)
+- [Laboratorium - Systemy fotowoltaiczne](/docs/projekty/photovoltaic%20systems)
 - [Projekt - Systemy fotowoltaiczne](/docs/projekty/photovoltaic%20systems)
