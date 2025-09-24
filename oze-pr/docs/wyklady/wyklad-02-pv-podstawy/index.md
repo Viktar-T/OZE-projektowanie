@@ -2,32 +2,18 @@
 sidebar_position: 2
 title: "Wykład 2: Systemy fotowoltaiczne — podstawy projektowania (1,5 h)"
 ---
-
 import LiteratureList from '@site/src/components/LiteratureList';
 
-## Cele wykładu
+## Plan i materiały
 
-- Charakterystyka technologii fotowoltaicznej
-- Komponenty systemów PV: panele, inwertery, okablowanie, zabezpieczenia
-- Metody wymiarowania instalacji fotowoltaicznych
-- Analiza zasobów słonecznych i ocena potencjału energetycznego
+- [Wprowadzenie do procesu projektowania PV](./01-wprowadzenie-do-projektowania-pv)
+- [Przegląd narzędzi do projektowania systemów PV](./02-przeglad-narzedzi-pv)
+- [PV*SOL: architektura i modelowanie falowników](./03-pvsol-architektura-i-modele)
+- [Sunny Design: środowisko i integracje](./04-sunny-design-srodowisko-i-integracje)
+- [PVsyst, Aurora Solar i PVGIS — krótkie charakterystyki](./05-inne-narzedzia-pvsyst-aurora-pvgis)
+- [PV*SOL — schemat procesu projektowego](./06-proces-pvsol-kroki)
+- [Sunny Design — schemat procesu projektowego](./07-proces-sunny-design-kroki)
+- [Demonstracje operacyjne: PV*SOL i Sunny Design](./08-demonstracje-operacyjne)
+- [Podsumowanie: dobór narzędzia i najlepsze praktyki](./09-podsumowanie)
 
-## Technologia PV
-
-Ogniwa, moduły, łańcuchy, pola modułów; parametry STC/NOCT; krzywe I–V.
-
-## Komponenty systemu
-
-Moduły, falowniki (stringowe, mikro, centralne), zabezpieczenia DC/AC, konstrukcje, monitoring.
-
-## Wymiarowanie
-
-Dobór mocy DC/AC, łączenie w stringi, spadki napięć, przewymiarowanie, zacienienia, współczynniki temperaturowe.
-
-## Zasoby słoneczne
-
-Źródła danych (PVGIS, Meteonorm), korekty kątów, albedo, straty systemowe.
-
-## Materiały i oprogramowanie
-
-<LiteratureList topic="software" title="Podręczniki i przewodniki oprogramowania" />
+<LiteratureList section="wyklad-02" />

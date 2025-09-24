@@ -1,0 +1,259 @@
+7. Przyktad
+
+W rozdziale pokazano przyklady doboru instalacji wspdtpracujacej z sieciq (on-grid) oraz instalacji
+wyspowej (off-grid). Oprécz doboru samych komponentow, nalezy przeprowadzi¢ wizje lokalng na
+miejscu montazu w celu zweryfikowania mozliwosci zamontowania zamierzonej liczby modulow.
+
+7.1. System wspétpracujacy z siecia (on-grid).
+
+W przypadku doboru mikroinstalacji prosumenckiej podstawowym parametrem jest zuzycie
+energii przez dany budynek. Zgodnie z obowigzujacym prawem takie instalacje moga produko-
+wa¢ energie tylko na potrzeby wiasne. Dlatego podczas projektowania systemu nalezy dobrac ja
+tak, aby w skali roku wytworzona przez nia energia byta w catosci skonsumowana przez uzytkow-
+nikow domu. Przy projektowaniu nalezy tez wzig¢ pod uwage wspdiczynniki net-meteringu, czyli
+mozliwogci oddawania energii do sieci (80% dla instalacji do 10 kW, 70% dla instalacji powyzej
+10 kW, ale nie wiekszych niz 50 kW).
+
+Dane dotyczace energii konsumowanej przez inwestora mozna uzyska¢ z rachunku. Taka mozli-
+wos¢ daja rowniez portale internetowe zaktadow energetycznych, gdzie Inwestor po zalogowaniu
+na swoje konto ma wglad do najwazniejszych odczytow. Warto wziaé pod uwage ostatnie 2-3
+lata i przeanalizowaé, czy zuzycie energii bedzie podobne. Jesli nie, to nalezy jak najdoktadniej
+oszacowac planowane zuzycie energii i uwzgledni¢ je w projekcie. Trzeba takze przemyslec, czy
+Ww najblizszym czasie liczba mieszkanicow bedzie taka sana, czy planujemy zakup dodatkowych
+urzadzen elektrycznych lub zamiane systemu gizewczego na pompe ciepta albo rozbudowe firmy.
+
+W przypadku nowo powstatych domow lub braku danych dotyczacych zuzycia energii, mozna
+skorzystaé z analiz lub kalkulatoréw, ktore oszacuja zuzycie w danym obiekcie.
+
+Po okregleniu wartosci zuzycia mozna przejs¢ do wyliczenia mocy instalacji fotowoltaiczne).
+Wtym przykladzie przyjeto zuzycie energii na poziomie 4000 kWh/rok. Uwzgledniono, ze w Polsce
+z 1 kWp mozna uzyskaé okoto 1000 kWh/rok. Nalezy utozy¢ proporce i wyliczyé moc instalacji fo-
+towoltaicznej. Trzeba pamieta¢, ze jesli dach budynku nie jest skierowany na poludnie oraz ma kat
+nachylenia inny niz 30°, nalezy odpowiednio zwiekszy¢ liczbe modutow fotowoltaicznych. W tym
+celu mozna postuzyé sie ponizszym schematem lub wykorzystac jedng z aplikacji internetowych
+(na przyktad wspomniana Global Solar Atlas).
+
+111
+
+Systemy fotowoltaiczne
+
+907
+
+[5S
+
+S 704
+
+=)
+
+me}
+
+fe}
+
+e
+
+=
+
+2}
+
+ae
+
+3 50-
+
+mo)
+
+a
+
+(a
+
+Oo
+
+i
+
+8 304
+10-
+0 _ E
+90 70 50 30 10 -10 -30 -50 -70 -90
+zachod potudnie wschdod
+
+Rys. 84. Wptyw kata nachylenia dachu i azymutu na wydajnos¢ systemu fotowoltaicznego (na podstawie materiatow
+Viessmann)
+
+W omawianym przyktadzie przyjeto dach nachylony pod katem 30°, ale odchylony od potu-
+dnia 0 30° na zachéd. Skutkuje to zmniejszeniem uzyskow do 94% uzyskéw maksymalnych, czyli
+Zz 1 kWp zostanie uzyskanych 940 kWh/rok i taka wartos¢ bedzie uwzgledniona w obliczeniach.
+
+Nastepnie nalezy zalozy¢, ile energii z systemu fotowoltaicznego bedzie zuzywane bezposred-
+nio — najczesciej jest to okolo 30%. Oznacza to, ze 70% energii wyprodukowanej z fotowoltaiki zo-
+stanie oddane do sieci, a zgodnie z obowiazujaca ustawa o OZE, z tych 70% energii bedzie mozna
+odebrac 80% (instalacja do 10 kW). Wynika z tego, ze bedzie koniecznos¢ zwiekszenia instalacji
+O straty, jakie wigzq sie z net-meteringiem. W omawianym przypadku wynosza one 20% z 70%
+oddanej energii, co w skali catej instalacji daje 14%. Dlatego moc instalacji musi zosta¢ zwiekszona
+0 14%, czyli dzielimy przez wspdtczynnik 0,86.
+
+Dla omawianego przypadku zapotrzebowanie na moc instalacji wyniesie:
+
+P = 4000/(940*0,86) = 4,948 kWp
+
+Dzieki tym obliczeniom otrzymuje sie moc instalacji fotowoltaicznej, jaka jest w stanie pokryé
+catkowite zapotrzebowanie na energie elektryczna danego budynku.
+
+Kolejnym krokiem jest obliczenie liczby modutow fotowoltaicznych, ktére wyprodukuja te moc.
+Tutaj potrzebna jest karta katalogowa danego produktu.
+
+Przyktadowa karta zostala przedstawiona na stronie obok.
+Nominalna moc P,,.,. | 330 W
+Napiecie robocze les fe : _ 33,98V
+. Natezenie robocze |... ‘ i 971A
+Napiecie jatowe U.. 40,66 V
+Prad zwarciowy |. 10,20 A
+Sura arial . . . >19,6 %
+Wymiary 7 1685 mm x 1000 mm x 32 sai
+Waga 18,7 kg
+weadainett y — 0.37 %/K
+wspdiczynniki temperaturowe: napiecie B — 0,163 V/K
+prad zwarcia a + 0.04 %/K
+
+Znajac moc pojedynczego modutu, mozna obliczyé, ile sztuk moduléw bedzie potrzebne.
+
+W omawianym przypadku wyniesie to:
+
+n= 4948W/p/330Wp = 14,99, czyli po zaokragleniu przyjmujemy 15 modutéw fotowoltaicznych
+
+o mocy 330 Wp.
+
+Moc instalacji wynika ze wzoru:
+P,=P_-n=330Wp- 15 =4950 Wp =4,95 kWp, gdzie:
+
+py mpo
+P.,,— maksymalna moc instalacji (w warunkach STC),
+Pag maksymalna moc pojedynczego modutu (w warunkach STC),
+n-—liczba wszystkich modutow w instalacji.
+
+Kolejnym krokiem jest dobranie falownika. Zwraca sie przy tym uwage na moc znamionowgq
+
+oraz moc maksymaina. Ze wzgledu na to, ze moc modulow fotowoltaicznych podawana jest w wa-
+
+runkach STC, ktore praktycznie nigdy nie sq uzyskiwane w rzeczywistosci, dobierajac moc falowni-
+
+ka do mocy generatora, mozna ja zmniejszy¢. Najczesciej przyjmuje sie moc falownika w zakresie
+85-100% mocy moduléw fotowoltaicznych. Wartos¢ te nalezy zweryfikowa¢ z karta katalogowq
+falownika.
+
+Zatem w omawianym przypadku szukamy falownika o parametrach:
+
+Py => 0d 85% - P.,,do 100% - P,, => od 85% - 4950 W do 100%: 4950 W => od 4207 W do 4950 W,
+gdzie:
+
+P.,~ zakres mocy falownika,
+
+P,,- moc instalacji.
+
+113
+Systemy fotowoltaiczne
+
+Nalezy wybra¢ falownik o nastepujacych parametrach:
+
+Parametry techniczne
+
+Dane wejsciowe po stronie DC
+
+Maksymalny prad wejsciowy [A] 16,0
+Minimalne napiecie wejsciowe [V] 150
+Maksymalne napiecie wejsciowe [V] 1000
+Zakres napiecia MPPT [V] : 150-800
+Liczba trackerow 2
+
+Liczba przytaczy pradu statego DC 242
+
+Dane wyjsciowe po stronie AC
+
+Moc znamionowa AC [W] 4500
+Prad wyjsciowy AC [A] 65
+Czestotliwos¢ [Hz] 50/60
+Wspolczynnik znieksztalcen [%] <3
+
+Dane ogdine
+
+Wymiary: wysokos¢ x szerokos¢ x glebokos¢ [mm] | 645 x 431 x 204
+
+Masa [kg] 19,90
+
+Maksymalna sprawnos¢ [%] 98
+
+Kolejnym krokiem jest sprawdzenie, czy moduty fotowoltaiczne potaczone w szereg beda
+wspdldzialaty z dobranym falownikiem pod wzgledem parametrow pradowo-napieciowych.
+
+W tym celu nalezy sprawdzi¢, czy parametry podlaczonych modutow fotowoltaicznych odpo-
+wiadaja parametrom falownika, opisanym jako MPPT (Maximum Power Point Tracker). Jesli zosta-
+ng prawidlowo dobrane, instalacja bedzie produkowala maksymalna ilos¢ energii. W omawianym
+przypadku ten zakres, odczytany z karty katalogowej, wynosi 150-800V. W zwiazku z tym, ze napie-
+cie i prad modutu zmieniaja sie wraz z temperatura, nalezy zweryfikowa¢, jak zachowa sie instalacja
+w skrajnych warunkach pogodowych, czyli zima przy temperaturze ogniwa —25°C oraz latem przy
+75°C. Zima napiecie wzrasta, dlatego nalezy tutaj uwzgledni¢ zardwno napiecie ukladu otwartego
+—czy nie przekroczy 1000 V podczas uruchamiania sie systemu, a takze napiecie MPP — ze wzgledu
+
+114
+na prace systemu. Natomiast dla okresu letniego nalezy sprawdzi¢, czy napiecie MPP szeregu mo-
+duldw nie spadnie ponizej napiecia MPPT falownika.
+
+Uwaga! Ze wzgledu na to, ze w obliczeniach wystepuje roznica temperatur, nie ma znaczenia
+czy wartosci beda podane w stopniach Celsjusza czy w Kelwinach.
+
+Zima (-25°C na ogniwie PV)
+
+Useooe = 1 (Ug + AT: b) = 15 - (40,66 + (-50°C) - (-0,163 a = 732,15V , gdzie:
+Use oe ~ Napiecie obwodu otwartego faricucha modulow dla -25°C,
+
+n - liczba wszystkich modutéw w instalacji,
+
+U.. — napiecie obwodu otwartego dla STC,
+
+AT - réznica temperatury wzgledem STC (25°C),czyli -25°C-25°C =-50°C,
+B — wspdlezynnik temperaturowy dia napiecia.
+
+U ace Meat AT- b) = 15 - (33,98 + (-50°C) - (-0,163 K ) = 631,95 V, gdzie:
+Ujonose ~ Napiecie MPP faricucha modutow dla -25°C,
+Unioo — Napiecie MPP modutu dla STC,
+
+AT - réznica temperatury wzgledem STC (25°C),czyli -25°C-25°C =-50°C,
+TU — wspdtezynnik temperaturowy napiecia.
+
+Lato (75°C na ogniwie PV)
+
+Union y rete = (Upypp + AT» b) = 15 - (33,98 + (45°C) - (-0,163 = = 387,45 V, gdzie:
+Uniop psec 7 Napiecie MPP taricucha modutow dla 75°C,
+
+Unyp — Napiecie MPP modutu dla STC,
+
+AT — réznica temperatury wzgledem STC (25°C), czyli 75°C-25°C =50°C,
+
+B — wspdiczynnik temperaturowy dla napiecia.
+
+W omawianym przykladzie:
+
+Unease = 732,15 V < 1000 V,
+Uniep- 25° = 631,95 V miesci sig w zakresie MPPT 150-800 V,
+Uspp zee = 387,45 miesci sie w zakresie MPPT 150-800 V.
+
+Uwaga! Jesli okaze sie, ze napiecia sq za wysokie, nalezy wowczas rozdzieli¢ instalowane modu-
+ty na dwa tanicuchy. Natomiast jesli napiecia sq za mate, nalezy dodac kolejny modut fotowoltaiczny
+do tanicucha.
+
+Trzeba rowniez skontrolowaé, czy natezenie pradu modutow fotowoltaicznych nie przekracza
+mozliwosci falownika. W tym celu wystarczy poréwna¢ prad zwarciowy tylko jednego modutu —
+sq one taczone szeregowo.
+
+| > lg:
+
+DCmax
+
+16A>10,20A
+Systemy fotowoltaiczne
+
+Aby projekt by! najwyzszej jakosci, nalezy takze pamieta¢ o wybraniu przewoddw o wia-
+Sciwych przekrojach (rozdziat 2.3.5. Przewody i ziqcza elektryczne), zapewnieniu odpowiedniej
+ochrony odgromowej (rozdziat 2.4. Ochrona odgromowa) oraz dobraniu zabezpieczen o@hdziat
+2.3.3. Zabezpieczenia).
+
+Dobierajac elementy instalacji w ten sposdb mamy pewnos¢, ze instalacja bedzie pracowata
+prawidtowo w skrajnych warunkach pogodowych przez caty rok.
