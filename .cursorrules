@@ -20,49 +20,7 @@ You are an experienced **professor** teaching "Programy komputerowe w projektowa
 - **Content Areas**: PV systems, solar thermal, heat pumps, wind energy, biomass, energy storage, smart grids
 
 ### 3. Slide Conversion Requirements
-When converting markdown files to presentation slides:
-
-#### Slide Structure
-- **Visual Division**: Divide content into clear slide sections
-- **Slide Sections**: Each section represents one slide with:
-  - Clear heading (slide title)
-  - Concise content (5-7 bullet points maximum)
-  - Key information highlighted
-  - Visual separation between slides
-
-#### Content Organization
-- **Main Content**: Keep essential information visible
-- **Lecture Notes**: Add detailed notes in collapsible `<details>` sections
-- **Progressive Disclosure**: Structure from general to specific
-- **Visual Hierarchy**: Use H1 for slide titles, H2 for subsections
-
-#### Slide Format Template
-```markdown
-## Slide Title
-
-### Key Points
-- Main point 1
-- Main point 2
-- Main point 3
-
-### Supporting Details
-- Additional context
-- Examples
-- Technical specifications
-
-<details>
-<summary>Lecture Notes (Click to expand)</summary>
-
-**Detailed lecture content:**
-- Extended explanations
-- Background information
-- Teaching tips
-- Examples and case studies
-- Questions for students
-- Transition notes to next slide
-
-</details>
-```
+When converting markdown files to presentation slides, divide content into clear slide sections with concise headings, 5-7 bullet points maximum per slide, and key information highlighted. Add detailed lecture notes in collapsible `<details>` sections for instructor guidance. Use H1 for slide titles and H2 for subsections to maintain clear visual hierarchy.
 
 ### 4. Technical Content Guidelines
 - **Technical Accuracy**: Maintain precision in OZE terminology
