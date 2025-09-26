@@ -19,13 +19,47 @@ import {
 <Slide title="🔧 Klasyfikacja narzędzi programowych OZE" type="info">
 
 <KeyPoints title="🎯 Trzy główne kategorie narzędzi">
-- 🏗️ **CAD** - Computer-Aided Design
-- ⚙️ **CAE** - Computer-Aided Engineering
-- 💻 **Oprogramowanie specjalistyczne**
+
+```mermaid
+graph TD
+    A[Narzędzia OZE] --> B[CAD]
+    A --> C[CAE]
+    A --> D[Specjalistyczne]
+    
+    B --> E[Geometria]
+    B --> F[Dokumentacja]
+    B --> G[Wizualizacja]
+    
+    C --> H[Obliczenia]
+    C --> I[Symulacje]
+    C --> J[Analizy]
+    
+    D --> K[PV*SOL]
+    D --> L[PVsyst]
+    D --> M[SAM]
+    D --> N[WindPRO]
+```
+
 </KeyPoints>
 
 <InstructorNotes>
 **Narzędzia wykorzystywane w projektowaniu instalacji OZE można podzielić na trzy główne kategorie.**
+
+**🎯 Dlaczego klasyfikacja jest ważna?**
+- **Orientacja w rynku**: Na rynku dostępnych jest setki narzędzi OZE - klasyfikacja pomaga w nawigacji
+- **Dobór narzędzi**: Każda kategoria ma swoje specyficzne zastosowania i ograniczenia
+- **Planowanie kariery**: Znajomość kategorii pomaga w wyborze specjalizacji zawodowej
+
+**📊 Kryteria klasyfikacji:**
+- **Cel zastosowania**: Co chcemy osiągnąć (geometria, obliczenia, symulacja)
+- **Poziom złożoności**: Od prostych narzędzi do zaawansowanych platform
+- **Specjalizacja branżowa**: Uniwersalne vs. dedykowane dla OZE
+- **Koszty i dostępność**: Od darmowych narzędzi open-source po drogie platformy komercyjne
+
+**🔧 Praktyczne podejście:**
+- Każda kategoria będzie omówiona z przykładami konkretnych narzędzi
+- Pokażemy, kiedy używać której kategorii
+- Zwrócimy uwagę na pułapki i ograniczenia
 </InstructorNotes>
 
 </Slide>
@@ -35,25 +69,94 @@ import {
 <Slide title="🏗️ Narzędzia CAD (Computer-Aided Design)" type="tip">
 
 <KeyPoints title="🎨 Zastosowania w OZE">
-- 📐 **Modelowanie geometryczne** instalacji
-- 🔧 **Projektowanie konstrukcji** nośnych
-- 👁️ **Wizualizacja projektów**
-- 📋 **Dokumentacja techniczna**
+
+```mermaid
+graph LR
+    A[🏗️ CAD] --> B[📐 Modelowanie]
+    A --> C[🔧 Konstrukcje]
+    A --> D[👁️ Wizualizacja]
+    A --> E[📋 Dokumentacja]
+    
+    B --> F[Układy paneli]
+    B --> G[Trasy kablowe]
+    B --> H[Lokalizacje]
+    
+    C --> I[Konstrukcje nośne]
+    C --> J[Fundamenty]
+    C --> K[Wsporniki]
+    
+    D --> L[3D modele]
+    D --> M[Renderowanie]
+    D --> N[Prezentacje]
+    
+    E --> O[Rysunki techniczne]
+    E --> P[Specyfikacje]
+    E --> Q[Standardy]
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
 </KeyPoints>
 
 <SupportingDetails title="💻 Przykłady narzędzi">
-- 🎯 **AutoCAD** – układy paneli, trasy kablowe, lokalizacje turbin
-- 🔧 **SolidWorks, CATIA** – konstrukcje nośne
-- 🎨 **SketchUp** – wizualizacja projektów
+
+```mermaid
+graph TD
+    A[💻 Narzędzia CAD] --> B[🎯 AutoCAD]
+    A --> C[🔧 SolidWorks]
+    A --> D[🔧 CATIA]
+    A --> E[🎨 SketchUp]
+    
+    B --> F[Układy paneli]
+    B --> G[Trasy kablowe]
+    B --> H[Lokalizacje turbin]
+    
+    C --> I[Konstrukcje nośne]
+    C --> J[Analizy wytrzymałości]
+    
+    D --> K[Konstrukcje nośne]
+    D --> L[Zaawansowane modele]
+    
+    E --> M[Wizualizacja projektów]
+    E --> N[Prezentacje 3D]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
 </SupportingDetails>
 
 <InstructorNotes>
 **Narzędzia CAD (Computer-Aided Design)**
 
-- Modelowanie geometryczne instalacji (np. AutoCAD – układy paneli, trasy kablowe, lokalizacje turbin)
-- Projektowanie konstrukcji nośnych (SolidWorks, CATIA)
-- Wizualizacja projektów (SketchUp)
-- Zalety: precyzja geometryczna, dokumentacja techniczna zgodna ze standardami
+**🎨 Główne zastosowania w OZE:**
+- **Modelowanie geometryczne instalacji**: AutoCAD – układy paneli, trasy kablowe, lokalizacje turbin
+- **Projektowanie konstrukcji nośnych**: SolidWorks, CATIA – konstrukcje wsporcze, fundamenty
+- **Wizualizacja projektów**: SketchUp – prezentacje dla inwestorów, analizy zacienień
+
+**✅ Kluczowe zalety:**
+- **Precyzja geometryczna**: Dokładne wymiary i tolerancje
+- **Dokumentacja techniczna**: Zgodność ze standardami branżowymi
+- **Wizualizacja 3D**: Łatwiejsze zrozumienie projektu przez zespół
+- **Integracja**: Możliwość eksportu do innych narzędzi
+
+**⚠️ Ograniczenia:**
+- **Brak obliczeń**: CAD nie wykonuje analiz energetycznych czy ekonomicznych
+- **Koszty**: Licencje komercyjne mogą być drogie
+- **Krzywa uczenia**: Wymagają czasu na opanowanie
+
+**💡 Praktyczne wskazówki:**
+- Używaj CAD na początku procesu projektowego
+- Eksportuj modele do narzędzi specjalistycznych
+- Zwróć uwagę na skalę i jednostki
+- Pamiętaj o standardach rysunkowych
 </InstructorNotes>
 
 </Slide>
@@ -63,27 +166,105 @@ import {
 <Slide title="⚙️ Narzędzia CAE (Computer-Aided Engineering)" type="note">
 
 <KeyPoints title="🧮 Zaawansowane obliczenia">
-- 💪 **Analizy wytrzymałościowe** i CFD
-- 🎛️ **Modelowanie sterowania** i sieci
-- 🔗 **Sprzężone zjawiska** fizyczne
-- ⚡ **Modelowanie układów** elektrycznych
+
+```mermaid
+graph TD
+    A[⚙️ CAE] --> B[💪 Analizy wytrzymałościowe]
+    A --> C[🎛️ Modelowanie sterowania]
+    A --> D[🔗 Sprzężone zjawiska]
+    A --> E[⚡ Układy elektryczne]
+    
+    B --> F[CFD]
+    B --> G[Analizy termiczne]
+    B --> H[Analizy strukturalne]
+    
+    C --> I[Sterowanie MPPT]
+    C --> J[Analiza sieci]
+    C --> K[Algorytmy sterowania]
+    
+    D --> L[Zjawiska fizyczne]
+    D --> M[Interakcje]
+    D --> N[Symulacje]
+    
+    E --> O[Układy elektryczne]
+    E --> P[Falowniki]
+    E --> Q[Sieci energetyczne]
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
 </KeyPoints>
 
 <SupportingDetails title="🔧 Przykłady narzędzi">
-- 🎯 **ANSYS** – analizy wytrzymałościowe, CFD, termiczne
-- 📊 **MATLAB/Simulink** – sterowanie, sieci, MPPT
-- 🔬 **COMSOL Multiphysics** – zjawiska fizyczne
-- ⚡ **Simscape Electrical** – układy elektryczne
+
+```mermaid
+graph LR
+    A[🔧 Narzędzia CAE] --> B[🎯 ANSYS]
+    A --> C[📊 MATLAB/Simulink]
+    A --> D[🔬 COMSOL]
+    A --> E[⚡ Simscape]
+    
+    B --> F[Analizy wytrzymałościowe]
+    B --> G[CFD]
+    B --> H[Analizy termiczne]
+    
+    C --> I[Sterowanie]
+    C --> J[Sieci]
+    C --> K[MPPT]
+    
+    D --> L[Zjawiska fizyczne]
+    D --> M[Multiphysics]
+    D --> N[Symulacje]
+    
+    E --> O[Układy elektryczne]
+    E --> P[Modelowanie]
+    E --> Q[Analizy]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+```
+
 </SupportingDetails>
 
 <InstructorNotes>
 **Narzędzia CAE (Computer-Aided Engineering)**
 
-- ANSYS: analizy wytrzymałościowe, CFD dla turbin, analizy termiczne
-- MATLAB/Simulink: modelowanie sterowania, analiza sieci, algorytmy MPPT
-- COMSOL Multiphysics: sprzężone zjawiska fizyczne (np. ogniwa PV)
-- Simscape Electrical: modelowanie układów elektrycznych
-- Cechy: zaawansowane możliwości obliczeniowe oparte na metodach numerycznych
+**🧮 Główne zastosowania w OZE:**
+- **ANSYS**: analizy wytrzymałościowe, CFD dla turbin, analizy termiczne
+- **MATLAB/Simulink**: modelowanie sterowania, analiza sieci, algorytmy MPPT
+- **COMSOL Multiphysics**: sprzężone zjawiska fizyczne (np. ogniwa PV)
+- **Simscape Electrical**: modelowanie układów elektrycznych
+
+**⚡ Kluczowe cechy:**
+- **Zaawansowane obliczenia**: Metody numeryczne, elementy skończone, CFD
+- **Modelowanie fizyczne**: Rzeczywiste zjawiska fizyczne w systemach OZE
+- **Walidacja projektów**: Sprawdzenie poprawności rozwiązań technicznych
+- **Optymalizacja**: Znajdowanie najlepszych parametrów systemu
+
+**🎯 Kiedy używać CAE:**
+- **Analizy wytrzymałościowe**: Konstrukcje nośne, fundamenty turbin
+- **Modelowanie przepływów**: CFD dla turbin wiatrowych, chłodzenie paneli
+- **Analizy termiczne**: Rozkład temperatur w modułach PV
+- **Modelowanie sterowania**: Algorytmy MPPT, systemy zarządzania energią
+
+**⚠️ Wyzwania:**
+- **Złożoność**: Wymagają głębokiej wiedzy technicznej
+- **Czas obliczeń**: Symulacje mogą trwać godziny lub dni
+- **Koszty**: Licencje są bardzo drogie
+- **Walidacja**: Wyniki wymagają weryfikacji z danymi rzeczywistymi
+
+**💡 Praktyczne wskazówki:**
+- Używaj CAE dla krytycznych analiz technicznych
+- Zawsze waliduj wyniki z danymi eksperymentalnymi
+- Rozpocznij od prostych modeli, stopniowo zwiększaj złożoność
+- Pamiętaj o ograniczeniach modeli matematycznych
 </InstructorNotes>
 
 </Slide>
@@ -112,19 +293,41 @@ import {
 <InstructorNotes>
 **Oprogramowanie specjalistyczne**
 
-#### Systemy fotowoltaiczne
-- PV*SOL: kompleksowe projektowanie i symulacje, bogata baza komponentów
-- PVsyst: modelowanie strat i wpływu zacienienia
-- Helioscope: analiza zacienień 3D w chmurze
+**☀️ Systemy fotowoltaiczne:**
+- **PV*SOL**: kompleksowe projektowanie i symulacje, bogata baza komponentów
+  - *Zalety*: Intuicyjny interfejs, bogata baza danych, integracja z CAD
+  - *Zastosowania*: Projekty dachowe i gruntowe, analizy ekonomiczne
+- **PVsyst**: modelowanie strat i wpływu zacienienia
+  - *Zalety*: Precyzyjne modele fizyczne, walidacja z danymi rzeczywistymi
+  - *Zastosowania*: Duże farmy PV, analizy zacienień
+- **Helioscope**: analiza zacienień 3D w chmurze
+  - *Zalety*: Dostęp przez przeglądarkę, szybkie prototypowanie
+  - *Zastosowania*: Wstępne analizy, prezentacje dla klientów
 
-#### Energia wiatrowa
-- WindPRO: projektowanie farm wiatrowych
-- WAsP: atlas i modelowanie zasobów wiatrowych
+**💨 Energia wiatrowa:**
+- **WindPRO**: projektowanie farm wiatrowych
+  - *Zalety*: Kompleksowe narzędzie, integracja z mapami
+  - *Zastosowania*: Farmy wiatrowe, analizy wietrzności
+- **WAsP**: atlas i modelowanie zasobów wiatrowych
+  - *Zalety*: Precyzyjne modele wiatru, walidacja z pomiarami
+  - *Zastosowania*: Ocena zasobów wiatrowych, mikro-lokalizacja
 
-#### Systemy hybrydowe
-- HOMER: optymalizacja systemów z wieloma źródłami
-- SAM (NREL): analiza techno-ekonomiczna
-- RETScreen: analiza projektów z modułem ryzyka
+**🔄 Systemy hybrydowe:**
+- **HOMER**: optymalizacja systemów z wieloma źródłami
+  - *Zalety*: Optymalizacja techno-ekonomiczna, analiza wrażliwości
+  - *Zastosowania*: Systemy off-grid, mikrosieci
+- **SAM (NREL)**: analiza techno-ekonomiczna
+  - *Zalety*: Darmowe, otwarte źródło, ciągły rozwój
+  - *Zastosowania*: Analizy finansowe, porównania technologii
+- **RETScreen**: analiza projektów z modułem ryzyka
+  - *Zalety*: Standardowe podejście, walidacja bankowa
+  - *Zastosowania*: Studia wykonalności, analizy ryzyka
+
+**💡 Kluczowe zalety oprogramowania specjalistycznego:**
+- **Dedykowane funkcje**: Zaprojektowane specjalnie dla OZE
+- **Bogate bazy danych**: Komponenty, warunki klimatyczne, ceny
+- **Integracja**: Łączenie różnych etapów projektowania
+- **Walidacja**: Sprawdzone modele i algorytmy
 </InstructorNotes>
 
 </Slide>
@@ -144,11 +347,36 @@ import {
 <InstructorNotes>
 **Jak wybierać narzędzie? Kryteria decyzyjne**
 
-- cel analizy: geometria/dokumentacja vs. zjawiska fizyczne vs. symulacja systemu i ekonomia,
-- wymagany poziom dokładności i dostępność danych wejściowych,
-- zgodność ze standardami branżowymi i oczekiwaniami inwestora,
-- dostępność bibliotek komponentów i modeli strat,
-- czas obliczeń i możliwość walidacji wyniku (np. z danymi SCADA).
+**🎯 Cel analizy - najważniejsze kryterium:**
+- **Geometria/dokumentacja** → CAD (AutoCAD, SolidWorks)
+- **Zjawiska fizyczne** → CAE (ANSYS, COMSOL)
+- **Symulacja systemu i ekonomia** → Oprogramowanie specjalistyczne (PV*SOL, SAM)
+
+**📊 Poziom dokładności vs. dostępność danych:**
+- **Wysoka dokładność** wymaga dobrych danych wejściowych (pomiary, certyfikaty)
+- **Szybkie prototypowanie** może używać danych przybliżonych
+- **Analiza wrażliwości** pokazuje wpływ niepewności danych
+
+**✅ Zgodność ze standardami:**
+- **Standardy branżowe**: IEC, EN, normy krajowe
+- **Oczekiwania inwestora**: Format raportów, wskaźniki finansowe
+- **Wymagania bankowe**: Walidacja projektów, analizy ryzyka
+
+**📚 Dostępność bibliotek:**
+- **Komponenty**: Moduły PV, falowniki, turbiny wiatrowe
+- **Modele strat**: Zacienienia, temperatury, degradacja
+- **Dane klimatyczne**: TMY, pomiary lokalne, prognozy
+
+**⏱️ Czas obliczeń vs. walidacja:**
+- **Szybkie obliczenia**: Prototypowanie, wstępne analizy
+- **Długie symulacje**: Precyzyjne analizy, optymalizacja
+- **Walidacja**: Porównanie z danymi SCADA, pomiarami rzeczywistymi
+
+**💡 Praktyczne wskazówki:**
+- **Zacznij od prostych narzędzi**, stopniowo zwiększaj złożoność
+- **Sprawdź dostępność danych** przed wyborem narzędzia
+- **Uwzględnij koszty licencji** w budżecie projektu
+- **Zawsze waliduj wyniki** z danymi rzeczywistymi
 </InstructorNotes>
 
 </Slide>

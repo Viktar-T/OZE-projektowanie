@@ -17,15 +17,52 @@ import {
 <Slide title="🎓 Wprowadzenie do tematyki" type="info">
 
 <KeyPoints title="🌱 Witamy na wykładzie!">
-- 🎯 **Kurs**: "Programy komputerowe w projektowaniu instalacji OZE"
-- 🎯 **Cel**: Nowoczesne narzędzia informatyczne w projektowaniu OZE
-- 📈 **Zakres**: Od koncepcji po eksploatację
+
+```mermaid
+graph TD
+    A["🎓 Kurs OZE"] --> B["🎯 Cel"]
+    A --> C["📈 Zakres"]
+    
+    B --> D["Nowoczesne narzędzia<br/>informatyczne"]
+    C --> E["Koncepcja"]
+    C --> F["Projektowanie"]
+    C --> G["Eksploatacja"]
+    
+    D --> H["CAD/CAE"]
+    D --> I["Specjalistyczne"]
+    D --> J["IoT/AI"]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+    style G fill:#e0f2f1
+```
+
 </KeyPoints>
 
 <InstructorNotes>
 **Szanowni Państwo, witam na pierwszym wykładzie kursu „Programy komputerowe w projektowaniu instalacji OZE". Ten cykl zajęć pokaże, jak nowoczesne narzędzia informatyczne wspierają każdy etap projektowania – od koncepcji po eksploatację.**
 
+**🎯 Kontekst wykładu:**
+- Jesteśmy w erze cyfryzacji energetyki, gdzie tradycyjne metody projektowania są zastępowane przez zaawansowane narzędzia komputerowe
+- Projektant OZE musi dziś być nie tylko inżynierem, ale także specjalistą od narzędzi IT
+- Współczesne projekty OZE wymagają integracji wielu systemów: od modelowania geometrycznego po analizy ekonomiczne
+
+**🔧 Kluczowe wyzwania:**
+- **Złożoność techniczna**: Nowoczesne instalacje OZE to systemy wielodyscyplinarne wymagające znajomości elektrotechniki, mechaniki, meteorologii i ekonomii
+- **Dynamika rynku**: Szybki rozwój technologii wymaga ciągłego aktualizowania wiedzy o nowych narzędziach
+- **Wymagania prawne**: Coraz bardziej restrykcyjne normy i standardy wymagają precyzyjnych analiz i dokumentacji
+
+**📚 Struktura wykładu:**
 W dzisiejszych czasach projektowanie instalacji OZE wymaga znajomości wielu klas narzędzi: systemów CAD i CAE, specjalistycznych środowisk branżowych (PV, wiatr, hybrydy), a także elementów architektury aplikacji: frontendu, backendu, baz danych i infrastruktury chmurowej/edge. W kolejnych sekcjach wprowadzimy te pojęcia i pokażemy ich praktyczne zastosowanie.
+
+**💡 Praktyczne podejście:**
+- Każde narzędzie omówimy w kontekście rzeczywistych projektów
+- Pokażemy przykłady z branży i studia przypadków
+- Zwrócimy uwagę na pułapki i dobre praktyki
 </InstructorNotes>
 
 </Slide>
@@ -35,19 +72,52 @@ W dzisiejszych czasach projektowanie instalacji OZE wymaga znajomości wielu kla
 <Slide title="🎯 Efekty uczenia się" type="tip">
 
 <KeyPoints title="📚 Po wykładzie student potrafi:">
-- ✅ **Wyjaśnić różnice** między klasami narzędzi: CAD, CAE i oprogramowaniem specjalistycznym
-- 🔧 **Wskazać warstwy** architektury aplikacji (interfejs, logika, dane, infrastruktura)
-- 🎯 **Rozpoznać etap** procesu projektowego dla danego narzędzia
-- 📊 **Ocenić wymagania**: modelowanie geometryczne vs symulacja numeryczna vs analiza techno-ekonomiczna
+
+```mermaid
+mindmap
+  root((🎓 Efekty uczenia się))
+    ✅ Klasyfikacja narzędzi
+      CAD
+      CAE
+      Specjalistyczne
+    🔧 Architektura aplikacji
+      Frontend
+      Backend
+      Bazy danych
+      Infrastruktura
+    🎯 Proces projektowy
+      Koncepcja
+      Projektowanie
+      Symulacja
+      Optymalizacja
+    📊 Ocena wymagań
+      Geometria
+      Symulacja
+      Analiza ekonomiczna
+```
+
 </KeyPoints>
 
 <InstructorNotes>
 **Efekty uczenia się (po wykładzie student potrafi):**
 
-- wyjaśnić różnice między klasami narzędzi: CAD, CAE i oprogramowaniem specjalistycznym,
-- wskazać, które warstwy architektury aplikacji odpowiadają za interfejs, logikę, dane i infrastrukturę,
-- rozpoznać, na którym etapie procesu projektowego użyć danego narzędzia,
-- ocenić, czy dany problem wymaga modelowania geometrycznego, symulacji numerycznej, czy analizy techno‑ekonomicznej.
+**🎯 Kluczowe kompetencje techniczne:**
+- **Klasyfikacja narzędzi**: Student będzie potrafił wyjaśnić różnice między klasami narzędzi: CAD (geometria, dokumentacja), CAE (obliczenia, symulacje) i oprogramowaniem specjalistycznym (branżowe, zintegrowane)
+- **Architektura systemów**: Będzie umiał wskazać, które warstwy architektury aplikacji odpowiadają za interfejs (frontend), logikę biznesową (backend), dane (bazy danych) i infrastrukturę (chmura, edge computing)
+
+**🔧 Umiejętności praktyczne:**
+- **Dobór narzędzi**: Rozpozna, na którym etapie procesu projektowego użyć danego narzędzia (koncepcja → projekt → symulacja → optymalizacja → eksploatacja)
+- **Analiza wymagań**: Oceni, czy dany problem wymaga modelowania geometrycznego, symulacji numerycznej, czy analizy techno-ekonomicznej
+
+**💡 Kontekst zawodowy:**
+- Te umiejętności są kluczowe dla przyszłych projektantów OZE, którzy będą pracować w firmach projektowych, instalacyjnych i konsultingowych
+- Znajomość narzędzi IT w OZE to obecnie standard w branży, a nie opcjonalna umiejętność
+- Absolwenci z tą wiedzą będą bardziej konkurencyjni na rynku pracy
+
+**📊 Metody weryfikacji:**
+- Pytania kontrolne po każdej sekcji
+- Praktyczne zadania z doborem narzędzi
+- Analiza studiów przypadków z branży
 </InstructorNotes>
 
 </Slide>
@@ -57,15 +127,57 @@ W dzisiejszych czasach projektowanie instalacji OZE wymaga znajomości wielu kla
 <Slide title="⚡ Dlaczego to ważne?" type="note">
 
 <SupportingDetails title="🌐 Środowisko wielodyscyplinarne">
-- 🔧 **Projektant OZE** pracuje w złożonym środowisku
-- 🎯 **Dobór właściwego narzędzia** = klucz do sukcesu
-- 📈 **Korzyści**: skrócenie czasu, ograniczenie błędów, wiarygodne wyniki
+
+```mermaid
+graph LR
+    A[🔧 Projektant OZE] --> B[🎯 Dobór narzędzi]
+    B --> C[📈 Korzyści]
+    
+    A --> D[Elektrotechnika]
+    A --> E[Mechanika]
+    A --> F[Meteorologia]
+    A --> G[Ekonomia]
+    A --> H[Informatyka]
+    
+    C --> I[⏱️ Skrócenie czasu]
+    C --> J[❌ Ograniczenie błędów]
+    C --> K[✅ Wiarygodne wyniki]
+    
+    style A fill:#e3f2fd
+    style B fill:#f3e5f5
+    style C fill:#e8f5e8
+    style D fill:#fff3e0
+    style E fill:#fce4ec
+    style F fill:#f1f8e9
+    style G fill:#e0f2f1
+    style H fill:#fff8e1
+```
+
 </SupportingDetails>
 
 <InstructorNotes>
 **Dlaczego to ważne?**
 
-Projektant OZE pracuje w środowisku wielodyscyplinarnym. Dobór właściwego narzędzia skraca czas projektu, ogranicza ryzyko błędów i pozwala uzyskać wiarygodne wyniki (energetyczne, ekonomiczne i techniczne). Ten wykład porządkuje mapę narzędzi i pokazuje, jak myśleć o ich roli w procesie.
+**🌐 Środowisko wielodyscyplinarne:**
+Projektant OZE pracuje w środowisku wielodyscyplinarnym, gdzie musi łączyć wiedzę z:
+- **Elektrotechniki** (układy elektryczne, falowniki, sieci)
+- **Mechaniki** (konstrukcje nośne, wytrzymałość materiałów)
+- **Meteorologii** (zasoby wiatrowe, słoneczne, warunki klimatyczne)
+- **Ekonomii** (analizy finansowe, LCOE, ROI)
+- **Informatyki** (narzędzia IT, bazy danych, wizualizacja)
+
+**⚡ Korzyści z właściwego doboru narzędzi:**
+- **Czas projektu**: Skrócenie czasu projektowania z miesięcy do tygodni
+- **Jakość wyników**: Ograniczenie ryzyka błędów projektowych i kosztownych poprawek
+- **Wiarygodność**: Uzyskanie wiarygodnych wyników (energetyczne, ekonomiczne i techniczne)
+- **Konkurencyjność**: Szybsze i tańsze projekty = przewaga na rynku
+
+**🎯 Praktyczne przykłady:**
+- **Błędny dobór narzędzia CAD** → nieprawidłowe wymiary → problemy montażowe → dodatkowe koszty
+- **Nieodpowiednia symulacja** → zawyżone prognozy produkcji → rozczarowanie inwestora
+- **Brak analizy ekonomicznej** → nieoptymalne rozwiązania → niższa rentowność
+
+**📚 Ten wykład porządkuje mapę narzędzi i pokazuje, jak myśleć o ich roli w procesie projektowym.**
 </InstructorNotes>
 
 </Slide>
