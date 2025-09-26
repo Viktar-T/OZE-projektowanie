@@ -28,3 +28,74 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Fix for card title truncation - allow full titles to display */
+.markdown h2 {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Generated index cards - prevent title truncation */
+.generated-index-page .card h2 {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-overflow: unset;
+  overflow: visible;
+  display: block;
+  height: auto;
+  min-height: auto;
+}
+
+/* Card container adjustments */
+.generated-index-page .card {
+  min-height: auto;
+  height: auto;
+}
+
+/* Ensure card titles are fully visible */
+.generated-index-page .card .card__header h2 {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-overflow: unset;
+  overflow: visible;
+  display: block;
+  height: auto;
+  min-height: auto;
+  line-height: 1.3;
+}
+
+/* Additional rules for card title display */
+.card h2,
+.card__header h2,
+.generated-index-page .card h2 {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  text-overflow: unset !important;
+  overflow: visible !important;
+  display: block !important;
+  height: auto !important;
+  min-height: auto !important;
+  line-height: 1.3 !important;
+  max-height: none !important;
+}
+
+/* Card container to accommodate longer titles */
+.card,
+.generated-index-page .card {
+  min-height: auto !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.card__header,
+.generated-index-page .card .card__header {
+  flex-shrink: 0 !important;
+  min-height: auto !important;
+  height: auto !important;
+}
