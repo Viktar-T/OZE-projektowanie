@@ -1,0 +1,232 @@
+---
+title: "Architektura aplikacji w systemach OZE"
+---
+
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
+
+<SlideContainer>
+
+<Slide title="🏗️ Architektura aplikacji w systemach OZE" type="info">
+
+<KeyPoints title="🎯 Wielowarstwowa architektura">
+- 📈 **Skalowalność** - dostosowanie do rosnących potrzeb
+- 🔒 **Bezpieczeństwo** - ochrona danych i systemów
+- ⚡ **Efektywność** - optymalne wykorzystanie zasobów
+</KeyPoints>
+
+<InstructorNotes>
+**Współczesne aplikacje OZE opierają się na wielowarstwowej architekturze zapewniającej skalowalność, bezpieczeństwo i efektywność.**
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🖥️ Warstwa prezentacji (Front-end)" type="tip">
+
+<KeyPoints title="💻 Typy aplikacji">
+- 🌐 **Aplikacje webowe** (React, Angular, Vue.js)
+- 📱 **Aplikacje mobilne** (iOS/Android, React Native, Flutter)
+- 🖥️ **Aplikacje desktopowe** (Qt, WPF)
+</KeyPoints>
+
+<SupportingDetails title="🎨 Kluczowe cechy">
+- 📊 **Intuicyjne dashboardy** (yield, PR, dostępność)
+- ⚡ **Wizualizacja danych** w czasie rzeczywistym
+- 🚨 **Alerty i raporty**
+- 📱 **Responsywność**
+</SupportingDetails>
+
+<InstructorNotes>
+**Warstwa prezentacji (Front-end)**
+
+- Aplikacje webowe (React, Angular, Vue.js)
+- Aplikacje mobilne (iOS/Android, React Native, Flutter)
+- Aplikacje desktopowe (Qt, WPF)
+- Cechy: intuicyjne dashboardy (yield, PR, dostępność), wizualizacja danych w czasie rzeczywistym, alerty/raporty, responsywność
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔗 Warstwa middleware/API Gateway" type="note">
+
+<KeyPoints title="⚙️ Funkcjonalności">
+- 🌐 **API RESTful** - standardowa komunikacja
+- 🔐 **Uwierzytelnianie i autoryzacja** (JWT, OAuth 2.0)
+- ⚖️ **Load balancing** - rozkład obciążenia
+- 🚦 **Rate limiting** - ograniczenie przepustowości
+- 💾 **Cache** - buforowanie danych
+</KeyPoints>
+
+<InstructorNotes>
+**Warstwa middleware/API Gateway**
+
+- API RESTful
+- Uwierzytelnianie i autoryzacja (JWT, OAuth 2.0)
+- Load balancing, rate limiting, cache
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="⚙️ Warstwa usług (Back-end)" type="tip">
+
+<KeyPoints title="🧮 Silniki symulacyjne">
+- 📊 **Modele matematyczne**
+- 📈 **Prognozy produkcji**
+- 🎯 **Optymalizacja systemów**
+</KeyPoints>
+
+<SupportingDetails title="🔄 Przetwarzanie danych">
+- 🔄 **ETL** - Extract, Transform, Load
+- ⚡ **Strumieniowanie** - przetwarzanie w czasie rzeczywistym
+- 🤖 **Detekcja anomalii ML** - uczenie maszynowe
+</SupportingDetails>
+
+<InfoBox title="💻 Języki programowania">
+- 🐍 **Python** (NumPy, Pandas, SciPy; Django/Flask)
+- 📊 **MATLAB/Simulink**
+- 🔧 **Julia, C++**
+</InfoBox>
+
+<InstructorNotes>
+**Warstwa usług (Back-end)**
+
+- Silniki symulacyjne: modele matematyczne, prognozy produkcji, optymalizacja
+- Przetwarzanie danych: ETL, strumieniowanie, detekcja anomalii ML
+- Języki: Python (NumPy, Pandas, SciPy; Django/Flask), MATLAB/Simulink, Julia, C++
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🗄️ Warstwa baz danych" type="info">
+
+<KeyPoints title="📊 Typy baz danych">
+- ⏰ **Bazy czasowe**: InfluxDB, TimescaleDB, Prometheus
+- 🔗 **Bazy relacyjne**: PostgreSQL, MySQL
+- 📄 **Bazy dokumentowe**: MongoDB, Elasticsearch
+</KeyPoints>
+
+<SupportingDetails title="🌱 Zastosowania w OZE">
+- 📊 **Dane pomiarowe** (SCADA)
+- 📈 **Dane historyczne**
+- 🔍 **Wyszukiwanie i analiza**
+</SupportingDetails>
+
+<InstructorNotes>
+**Warstwa baz danych**
+
+- Bazy czasowe: InfluxDB, TimescaleDB, Prometheus
+- Bazy relacyjne: PostgreSQL, MySQL
+- Bazy dokumentowe i wyszukiwarki: MongoDB, Elasticsearch
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="☁️ Warstwa infrastruktury" type="note">
+
+<KeyPoints title="🌐 Chmura i konteneryzacja">
+- ☁️ **Chmura**: AWS/Azure/GCP
+- 🐳 **Orkiestracja**: Kubernetes, Docker
+- 🔧 **Edge computing**: przetwarzanie lokalne
+</KeyPoints>
+
+<SupportingDetails title="🌐 IoT i akwizycja danych">
+- 📡 **Protokoły**: Modbus, DNP3, IEC 61850
+- 🖥️ **SCADA** - systemy nadzoru
+- 📊 **Smart sensors** - inteligentne czujniki
+</SupportingDetails>
+
+<InstructorNotes>
+**Warstwa infrastruktury**
+
+- Chmura: AWS/Azure/GCP
+- Orkiestracja/konteneryzacja: Kubernetes, Docker
+- Edge computing: przetwarzanie lokalne, redukcja opóźnień, praca offline
+- IoT i akwizycja: Modbus, DNP3, IEC 61850; SCADA; smart sensors
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="📊 Przepływ danych - od czujnika do wykresu" type="tip">
+
+<KeyPoints title="🔄 Przykład praktyczny">
+1. 📡 **Czujnik irradiancji** → gateway edge (filtracja medianowa, uśrednianie minutowe)
+2. 🌊 **Strumień do brokera** (Kafka/MQTT) → walidacja, wzbogacanie metadanymi
+3. 🔄 **ETL do bazy czasowej** (InfluxDB/TimescaleDB) + archiwizacja w obiekcie (S3)
+4. 🔗 **Backend wystawia API** (agregacje, KPI PR/yield) → Frontend wizualizuje
+</KeyPoints>
+
+<InstructorNotes>
+**Przepływ danych – od czujnika do wykresu (przykład)**
+
+1) Czujnik irradiancji → gateway edge (filtracja medianowa, uśrednianie minutowe).
+2) Strumień do brokera (Kafka/MQTT) → walidacja, wzbogacanie metadanymi.
+3) ETL do bazy czasowej (InfluxDB/TimescaleDB) + archiwizacja w obiekcie (S3).
+4) Backend wystawia API (agregacje, KPI PR/yield) → Frontend wizualizuje.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="✅ Dobre praktyki architektoniczne" type="success">
+
+<KeyPoints title="🎯 Kluczowe zasady">
+- 🔧 **Separacja odpowiedzialności** i kontrakty API (OpenAPI)
+- 🔄 **Idempotentne przetwarzanie** strumieni (obsługa duplikatów/lagów)
+- 📊 **Strategia braków danych** (imputacja vs. oznaczanie luk)
+- 📈 **Monitoring i alerty** (Prometheus + Grafana), SLO dla opóźnień i dostępności
+</KeyPoints>
+
+<InstructorNotes>
+**Dobre praktyki architektoniczne (na projektach OZE)**
+
+- separacja odpowiedzialności i kontrakty API (OpenAPI),
+- idempotentne przetwarzanie strumieni (obsługa duplikatów/lagów),
+- strategia braków danych (imputacja vs. oznaczanie luk),
+- monitoring i alerty (Prometheus + Grafana), SLO dla opóźnień i dostępności.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="❓ Pytania kontrolne" type="warning">
+
+<KeyPoints title="🧠 Sprawdź swoją wiedzę">
+1. **🔍 Dlaczego bazy czasowe są lepsze do danych pomiarowych niż klasyczny MySQL?**
+2. **💰 Jak ograniczyć koszty transferu chmurowego dla zdalnej farmy PV?**
+3. **📊 Co musi wiedzieć frontend, aby poprawnie prezentować niepewność danych?**
+</KeyPoints>
+
+<InstructorNotes>
+**Pytania kontrolne**
+
+1) Dlaczego bazy czasowe są lepsze do danych pomiarowych niż klasyczny MySQL?
+2) Jak ograniczyć koszty transferu chmurowego dla zdalnej farmy PV?
+3) Co musi wiedzieć frontend, aby poprawnie prezentować niepewność danych?
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
