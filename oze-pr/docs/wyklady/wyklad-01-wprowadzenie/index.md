@@ -1,8 +1,7 @@
 ---
 sidebar_position: 1
-title: "Klasyfikacja narzędzi programowych OZE (2h)"
+title: "Wykład:1 Klasyfikacja narzędzi programowych OZE (2h)"
 ---
-
 ## Spis treści
 
 - [Wprowadzenie do tematyki](./01-wprowadzenie-do-tematyki.mdx)
@@ -17,4 +16,3 @@ title: "Klasyfikacja narzędzi programowych OZE (2h)"
 - Zrozumienie klasyfikacji narzędzi OZE (CAD vs CAE vs software specjalistyczny)
 - Poznanie architektury aplikacji w systemach OZE
 - Zrozumienie roli i typów programów w energetyce odnawialnej
-
