@@ -83,7 +83,8 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Powiązane wykłady
 
-- [Wykład 6: Systemy hybrydowe i magazynowanie energii](/docs/wyklady/wyklad-06-hybrydy-magazyny)
+- [Wykład 4: Pompy ciepła](/docs/wyklady/wyklad-04-pompy-ciepła)
+- [Wykład 8: Magazynowanie](/docs/wyklady/wyklad-08-magazynowanie)
 
 ## Laboratoria i projekty
 

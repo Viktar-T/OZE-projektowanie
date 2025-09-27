@@ -71,8 +71,7 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Powiązane wykłady
 
-- [Wykład 4: Systemy wiatrowe — projektowanie i modelowanie](/docs/wyklady/wyklad-04-wiatr-projektowanie)
-- [Wykład 5: Oprogramowanie do projektowania farm wiatrowych](/docs/wyklady/wyklad-05-oprogramowanie-wiatr)
+- [Wykład 5: Wiatr](/docs/wyklady/wyklad-05-wiatr)
 
 ## Laboratoria i projekty
 
