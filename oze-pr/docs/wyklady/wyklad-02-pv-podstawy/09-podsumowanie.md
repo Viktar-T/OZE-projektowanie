@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: "Podsumowanie: dobór narzędzia i najlepsze praktyki"
+id: podsumowanie-pv
 ---
 
 ## Kluczowe zagadnienia
