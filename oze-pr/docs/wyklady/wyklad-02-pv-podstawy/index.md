@@ -14,7 +14,7 @@ import LiteratureList from '@site/src/components/LiteratureList';
 - [PV*SOL — schemat procesu projektowego](./06-proces-pvsol-kroki)
 - [Sunny Design — schemat procesu projektowego](./07-proces-sunny-design-kroki)
 - [Demonstracje operacyjne: PV*SOL i Sunny Design](./08-demonstracje-operacyjne)
-- [Podsumowanie: dobór narzędzia i najlepsze praktyki](./09-podsumowanie)
+- [Podsumowanie: dobór narzędzia i najlepsze praktyki](./09-podsumowanie.md)
 
 ## Cele wykładu
 
