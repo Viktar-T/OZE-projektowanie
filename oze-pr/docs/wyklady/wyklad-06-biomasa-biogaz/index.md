@@ -5,7 +5,13 @@ title: "Wykład 6: Biomasa i biogaz (2h)"
 
 ## Spis treści
 
-*Treść wykładu będzie dostępna wkrótce.*
+- [Wprowadzenie do instalacji biomasy i biogazu](./01-wprowadzenie-biomasa-biogaz.md)
+- [Proces modelowania/projektowania instalacji biomasy i biogazu](./02-proces-modelowania.md)
+- [Porównanie programów: SIMBA#, BioWin, GPS-X/WEST, RETScreen, HOMER Pro](./03-porownanie-programow.md)
+- [SIMBA# lub BioWin - opis i znaczenie dla projektanta](./04-simba-biowin-znaczenie.md)
+- [Proces modelowania/projektowania w wybranym programie](./05-proces-wybrany-program.md)
+- [Demonstracja na żywo: uruchomienie programu](./06-demonstracja-program.md)
+- [Podsumowanie](./07-podsumowanie.md)
 
 ## Cele wykładu
 

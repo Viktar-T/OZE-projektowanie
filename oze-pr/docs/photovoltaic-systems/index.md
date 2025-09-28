@@ -92,6 +92,7 @@ import LiteratureList from '@site/src/components/LiteratureList';
 ## Powiązane wykłady
 
 - [Wykład 2: Systemy fotowoltaiczne — podstawy projektowania](/docs/wyklady/wyklad-02-pv-podstawy)
+- [Wykład 3: Solar termiczny — modelowanie i oprogramowanie](/docs/wyklady/wyklad-03-solar-termiczny)
 
 ## Laboratoria i projekty
 

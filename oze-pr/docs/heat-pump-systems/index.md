@@ -83,8 +83,7 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Powiązane wykłady
 
-- [Wykład 4: Pompy ciepła](/docs/wyklady/wyklad-04-pompy-ciepła)
-- [Wykład 8: Magazynowanie](/docs/wyklady/wyklad-08-magazynowanie)
+- [Wykład 4: Pompy ciepła — narzędzia projektowe](/docs/wyklady/wyklad-04-pompy-ciep%C5%82a)
 
 ## Laboratoria i projekty
 

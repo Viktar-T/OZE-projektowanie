@@ -6,14 +6,14 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Plan i materiały
 
-- [Wprowadzenie do procesu projektowania PV](./01-wprowadzenie-do-projektowania-pv)
-- [Przegląd narzędzi do projektowania systemów PV](./02-przeglad-narzedzi-pv)
-- [PV*SOL: architektura i modelowanie falowników](./03-pvsol-architektura-i-modele)
-- [Sunny Design: środowisko i integracje](./04-sunny-design-srodowisko-i-integracje)
-- [PVsyst, Aurora Solar i PVGIS — krótkie charakterystyki](./05-inne-narzedzia-pvsyst-aurora-pvgis)
-- [PV*SOL — schemat procesu projektowego](./06-proces-pvsol-kroki)
-- [Sunny Design — schemat procesu projektowego](./07-proces-sunny-design-kroki)
-- [Demonstracje operacyjne: PV*SOL i Sunny Design](./08-demonstracje-operacyjne)
+- [Wprowadzenie do procesu projektowania PV](./01-wprowadzenie-do-projektowania-pv.md)
+- [Przegląd narzędzi do projektowania systemów PV](./02-przeglad-narzedzi-pv.md)
+- [PV*SOL: architektura i modelowanie falowników](./03-pvsol-architektura-i-modele.md)
+- [Sunny Design: środowisko i integracje](./04-sunny-design-srodowisko-i-integracje.md)
+- [PVsyst, Aurora Solar i PVGIS — krótkie charakterystyki](./05-inne-narzedzia-pvsyst-aurora-pvgis.md)
+- [PV*SOL — schemat procesu projektowego](./06-proces-pvsol-kroki.md)
+- [Sunny Design — schemat procesu projektowego](./07-proces-sunny-design-kroki.md)
+- [Demonstracje operacyjne: PV*SOL i Sunny Design](./08-demonstracje-operacyjne.md)
 - [Podsumowanie: dobór narzędzia i najlepsze praktyki](./09-podsumowanie.md)
 
 ## Cele wykładu

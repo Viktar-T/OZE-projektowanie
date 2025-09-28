@@ -71,7 +71,7 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Powiązane wykłady
 
-- [Wykład 5: Wiatr](/docs/wyklady/wyklad-05-wiatr)
+- [Wykład 5: Wiatr (4h)](/docs/wyklady/wyklad-05-wiatr)
 
 ## Laboratoria i projekty
 
