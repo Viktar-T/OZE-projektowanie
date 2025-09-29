@@ -1,4 +1,4 @@
-# 7. Przykład doboru instalacji fotowoltaicznej
+# Przykład doboru instalacji fotowoltaicznej (on-grid)
 
 :::info Cel prezentacji
 Pokazanie przykładu doboru instalacji współpracującej z siecią (on-grid) oraz instalacji wyspowej (off-grid). Oprócz doboru samych komponentów, należy przeprowadzić wizję lokalną na miejscu montażu w celu zweryfikowania możliwości zamontowania zamierzonej liczby modułów.
@@ -6,7 +6,7 @@ Pokazanie przykładu doboru instalacji współpracującej z siecią (on-grid) or
 
 ---
 
-## 7.1. System współpracujący z siecią (on-grid)
+## System współpracujący z siecią (on-grid)
 
 ### Podstawowe założenia projektowe
 
@@ -15,6 +15,7 @@ Pokazanie przykładu doboru instalacji współpracującej z siecią (on-grid) or
 **Ograniczenia prawne:** Instalacje mogą produkować energię tylko na potrzeby własne
 
 **Współczynniki net-meteringu:**
+
 - 80% dla instalacji do 10 kW
 - 70% dla instalacji powyżej 10 kW (max 50 kW)
 
@@ -34,10 +35,12 @@ W przypadku nowo powstałych domów lub braku danych dotyczących zużycia energ
 ### Obliczenie mocy instalacji
 
 **Założenia dla przykładu:**
+
 - Zużycie energii: **4000 kWh/rok**
 - Uzysk z 1 kWp w Polsce: **~1000 kWh/rok**
 
 **Wzór podstawowy:**
+
 ```
 P = zużycie_energii / (uzysk_roczny × współczynnik_korekcyjny)
 ```
@@ -55,9 +58,10 @@ Po określeniu wartości zużycia można przejść do wyliczenia mocy instalacji
 
 ![Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego](../../../static/img/w-1/w-1-5.1.png)
 
-*Rys. 5.1. Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego (na podstawie materiałów Viessmann)*
+*Rys. 1. Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego (na podstawie materiałów Viessmann)*
 
 **W przykładzie:**
+
 - Dach nachylony pod kątem **30°**
 - Odchylony od południa o **30° na zachód**
 - Skutek: zmniejszenie uzysków do **94%** uzysków maksymalnych
@@ -68,15 +72,18 @@ Po określeniu wartości zużycia można przejść do wyliczenia mocy instalacji
 ### Uwzględnienie strat net-meteringu
 
 **Założenia:**
+
 - Energia zużywana bezpośrednio: **30%**
 - Energia oddawana do sieci: **70%**
 - Współczynnik odbioru: **80%** (instalacja do 10 kW)
 
 **Obliczenie strat:**
+
 - Straty: 20% z 70% = **14%**
 - Współczynnik korekcyjny: **0,86**
 
 **Wzór końcowy:**
+
 ```
 P = 4000/(940×0,86) = 4,948 kWp
 ```
@@ -98,18 +105,19 @@ Dzięki tym obliczeniom otrzymuje się moc instalacji fotowoltaicznej, jaka jest
 
 ### Karta katalogowa modułu fotowoltaicznego
 
-| Parametr | Wartość |
-|----------|---------|
-| **Nominalna moc P<sub>max</sub>** | 330 W |
-| **Napięcie robocze U<sub>mp</sub>** | 33,98 V |
-| **Natężenie robocze I<sub>mp</sub>** | 9,71 A |
-| **Napięcie jałowe U<sub>oc</sub>** | 40,66 V |
-| **Prąd zwarciowy I<sub>sc</sub>** | 10,20 A |
-| **Sprawność** | 19,6% |
-| **Wymiary** | 1685 mm × 1000 mm × 32 mm |
-| **Waga** | 18,7 kg |
+| Parametr                                             | Wartość                   |
+| ---------------------------------------------------- | --------------------------- |
+| **Nominalna moc P`<sub>`max`</sub>`**      | 330 W                       |
+| **Napięcie robocze U`<sub>`mp`</sub>`**   | 33,98 V                     |
+| **Natężenie robocze I`<sub>`mp`</sub>`** | 9,71 A                      |
+| **Napięcie jałowe U`<sub>`oc`</sub>`**   | 40,66 V                     |
+| **Prąd zwarciowy I`<sub>`sc`</sub>`**     | 10,20 A                     |
+| **Sprawność**                                | 19,6%                       |
+| **Wymiary**                                    | 1685 mm × 1000 mm × 32 mm |
+| **Waga**                                       | 18,7 kg                     |
 
 **Współczynniki temperaturowe:**
+
 - Moc: -0,37%/K
 - Napięcie: -0,163 V/K
 - Prąd zwarcia: +0,04%/K
@@ -117,18 +125,21 @@ Dzięki tym obliczeniom otrzymuje się moc instalacji fotowoltaicznej, jaka jest
 ### Obliczenie liczby modułów
 
 **Liczba modułów:**
+
 ```
 n = 4948 Wp / 330 Wp = 14,99 → 15 modułów
 ```
 
 **Moc instalacji:**
+
 ```
 P_inst = P_mod × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp
 ```
 
 **Gdzie:**
-- **P<sub>inst</sub>** — maksymalna moc instalacji (w warunkach STC)
-- **P<sub>mod</sub>** — maksymalna moc pojedynczego modułu (w warunkach STC)
+
+- **P`<sub>`inst`</sub>`** — maksymalna moc instalacji (w warunkach STC)
+- **P`<sub>`mod`</sub>`** — maksymalna moc pojedynczego modułu (w warunkach STC)
 - **n** — liczba wszystkich modułów w instalacji
 
 <details>
@@ -142,7 +153,7 @@ W omawianym przypadku wyniesie to:
 
 Moc instalacji wynika ze wzoru:
 
-**P<sub>inst</sub> = P<sub>mod</sub> × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp**
+**P`<sub>`inst`</sub>` = P`<sub>`mod`</sub>` × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp**
 
 </details>
 
@@ -155,6 +166,7 @@ Moc instalacji wynika ze wzoru:
 **Zakres mocy falownika:** 85-100% mocy modułów fotowoltaicznych
 
 **Wzór:**
+
 ```
 P_inv = od 85% × P_inst do 100% × P_inst
 P_inv = od 4207 W do 4950 W
@@ -167,14 +179,14 @@ Kolejnym krokiem jest dobranie falownika. Zwraca się przy tym uwagę na moc zna
 
 Zatem w omawianym przypadku szukamy falownika o parametrach:
 
-**P<sub>inv</sub> = od 85% × P<sub>inst</sub> do 100% × P<sub>inst</sub>**
+**P`<sub>`inv`</sub>` = od 85% × P`<sub>`inst`</sub>` do 100% × P`<sub>`inst`</sub>`**
 
-**P<sub>inv</sub> = od 85% × 4950 W do 100% × 4950 W = od 4207 W do 4950 W**
+**P`<sub>`inv`</sub>` = od 85% × 4950 W do 100% × 4950 W = od 4207 W do 4950 W**
 
 gdzie:
 
-- **P<sub>inv</sub>** — zakres mocy falownika
-- **P<sub>inst</sub>** — moc instalacji
+- **P`<sub>`inv`</sub>`** — zakres mocy falownika
+- **P`<sub>`inst`</sub>`** — moc instalacji
 
 </details>
 
@@ -182,37 +194,38 @@ gdzie:
 
 #### Dane wejściowe po stronie DC
 
-| Parametr | Wartość |
-|----------|---------|
-| Maksymalny prąd wejściowy [A] | 16,0 |
-| Minimalne napięcie wejściowe [V] | 150 |
-| Maksymalne napięcie wejściowe [V] | 1000 |
-| Zakres napięcia MPPT [V] | 150-800 |
-| Liczba trackerów | 2 |
-| Liczba przylączy prądu stałego DC | 2 |
+| Parametr                             | Wartość |
+| ------------------------------------ | --------- |
+| Maksymalny prąd wejściowy [A]      | 16,0      |
+| Minimalne napięcie wejściowe [V]   | 150       |
+| Maksymalne napięcie wejściowe [V]  | 1000      |
+| Zakres napięcia MPPT [V]            | 150-800   |
+| Liczba trackerów                    | 2         |
+| Liczba przylączy prądu stałego DC | 2         |
 
 #### Dane wyjściowe po stronie AC
 
-| Parametr | Wartość |
-|----------|---------|
-| Moc znamionowa AC [W] | 4500 |
-| Prąd wyjściowy AC [A] | 6,5 |
-| Częstotliwość [Hz] | 50/60 |
-| Współczynnik zniekształceń [%] | &lt;3 |
+| Parametr                           | Wartość |
+| ---------------------------------- | --------- |
+| Moc znamionowa AC [W]              | 4500      |
+| Prąd wyjściowy AC [A]            | 6,5       |
+| Częstotliwość [Hz]              | 50/60     |
+| Współczynnik zniekształceń [%] | &lt;3     |
 
 #### Dane ogólne
 
-| Parametr | Wartość |
-|----------|---------|
+| Parametr                                                 | Wartość         |
+| -------------------------------------------------------- | ----------------- |
 | Wymiary: wysokość × szerokość × głębokość [mm] | 645 × 431 × 204 |
-| Masa [kg] | 19,90 |
-| Maksymalna sprawność [%] | 98 |
+| Masa [kg]                                                | 19,90             |
+| Maksymalna sprawność [%]                               | 98                |
 
 ---
 
 ## Weryfikacja parametrów elektrycznych
 
 ### Cel weryfikacji
+
 Sprawdzenie kompatybilności modułów fotowoltaicznych z falownikiem pod względem parametrów prądowo-napięciowych.
 
 **Zakres MPPT falownika:** 150-800 V
@@ -231,11 +244,13 @@ W tym celu należy sprawdzić, czy parametry podłączonych modułów fotowoltai
 ### Obliczenia dla warunków zimowych (-25°C)
 
 **Napięcie obwodu otwartego:**
+
 ```
 U_oc = n × (U_oc + ΔT × β) = 15 × (40,66 + (-50°C) × (-0,163 V/K)) = 732,15 V
 ```
 
 **Napięcie MPP:**
+
 ```
 U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 631,95 V
 ```
@@ -243,22 +258,22 @@ U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 63
 <details>
 <summary>Szczegółowe obliczenia dla warunków zimowych</summary>
 
-**U<sub>oc</sub> = n × (U<sub>oc</sub> + ΔT × β) = 15 × (40,66 + (-50°C) × (-0,163 V/K)) = 732,15 V**
+**U`<sub>`oc`</sub>` = n × (U`<sub>`oc`</sub>` + ΔT × β) = 15 × (40,66 + (-50°C) × (-0,163 V/K)) = 732,15 V**
 
 gdzie:
 
-- **U<sub>oc</sub>** — Napięcie obwodu otwartego łańcucha modułów dla -25°C
+- **U`<sub>`oc`</sub>`** — Napięcie obwodu otwartego łańcucha modułów dla -25°C
 - **n** — liczba wszystkich modułów w instalacji
-- **U<sub>oc</sub>** — napięcie obwodu otwartego dla STC
+- **U`<sub>`oc`</sub>`** — napięcie obwodu otwartego dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli -25°C - 25°C = -50°C
 - **β** — współczynnik temperaturowy dla napięcia
 
-**U<sub>mpp</sub> = n × (U<sub>mpp</sub> + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 631,95 V**
+**U`<sub>`mpp`</sub>` = n × (U`<sub>`mpp`</sub>` + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 631,95 V**
 
 gdzie:
 
-- **U<sub>mpp</sub>** — Napięcie MPP łańcucha modułów dla -25°C
-- **U<sub>mpp</sub>** — Napięcie MPP modułu dla STC
+- **U`<sub>`mpp`</sub>`** — Napięcie MPP łańcucha modułów dla -25°C
+- **U`<sub>`mpp`</sub>`** — Napięcie MPP modułu dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli -25°C - 25°C = -50°C
 - **β** — współczynnik temperaturowy napięcia
 
@@ -267,6 +282,7 @@ gdzie:
 ### Obliczenia dla warunków letnich (75°C)
 
 **Napięcie MPP:**
+
 ```
 U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387,45 V
 ```
@@ -274,12 +290,12 @@ U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387
 <details>
 <summary>Szczegółowe obliczenia dla warunków letnich</summary>
 
-**U<sub>mpp</sub> = n × (U<sub>mpp</sub> + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387,45 V**
+**U`<sub>`mpp`</sub>` = n × (U`<sub>`mpp`</sub>` + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387,45 V**
 
 gdzie:
 
-- **U<sub>mpp</sub>** — Napięcie MPP łańcucha modułów dla 75°C
-- **U<sub>mpp</sub>** — Napięcie MPP modułu dla STC
+- **U`<sub>`mpp`</sub>`** — Napięcie MPP łańcucha modułów dla 75°C
+- **U`<sub>`mpp`</sub>`** — Napięcie MPP modułu dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli 75°C - 25°C = 50°C
 - **β** — współczynnik temperaturowy dla napięcia
 
@@ -287,13 +303,14 @@ gdzie:
 
 ### Weryfikacja wyników
 
-✅ **U<sub>oc</sub> = 732,15 V < 1000 V**  
-✅ **U<sub>mpp</sub>(-25°C) = 631,95 V** mieści się w zakresie MPPT 150-800 V  
-✅ **U<sub>mpp</sub>(75°C) = 387,45 V** mieści się w zakresie MPPT 150-800 V  
+✅ **U`<sub>`oc`</sub>` = 732,15 V < 1000 V**
+✅ **U`<sub>`mpp`</sub>`(-25°C) = 631,95 V** mieści się w zakresie MPPT 150-800 V
+✅ **U`<sub>`mpp`</sub>`(75°C) = 387,45 V** mieści się w zakresie MPPT 150-800 V
 
 ### Weryfikacja prądu
 
 **Porównanie prądów:**
+
 ```
 I_DCmax > I_sc
 16 A > 10,20 A ✓
@@ -306,7 +323,7 @@ I_DCmax > I_sc
 
 Trzeba również skontrolować, czy natężenie prądu modułów fotowoltaicznych nie przekracza możliwości falownika. W tym celu wystarczy porównać prąd zwarciowy tylko jednego modułu — są one łączone szeregowo.
 
-**I<sub>DCmax</sub> > I<sub>sc</sub>**
+**I`<sub>`DCmax`</sub>` > I`<sub>`sc`</sub>`**
 
 **16 A > 10,20 A** ✓
 
@@ -329,6 +346,7 @@ Aby projekt był najwyższej jakości, należy także pamiętać o:
 Dobierając elementy instalacji w ten sposób mamy pewność, że instalacja będzie pracowała prawidłowo w skrajnych warunkach pogodowych przez cały rok.
 
 **Parametry końcowe instalacji:**
+
 - Moc: **4,95 kWp**
 - Liczba modułów: **15 szt.**
 - Moc pojedynczego modułu: **330 Wp**

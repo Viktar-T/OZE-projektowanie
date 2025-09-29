@@ -9,7 +9,9 @@ title: "Wykład:1 Klasyfikacja narzędzi programowych OZE (2h)"
 - [Architektura aplikacji: front-end/back-end, silniki symulacyjne, bazy danych](./03-architektura-aplikacji.mdx)
 - [Rola i typy programów w energetyce odnawialnej](./04-rola-i-typy-programow.mdx)
 - [Trendy i przyszłość](./06-trendy-i-przyszlosc.mdx)
-- [Podsumowanie pierwszego wykładu](./07-podsumowanie.mdx)
+- [Podsumowanie](./07-podsumowanie.mdx)
+- [Przykład doboru instalacji fotowoltaicznej (on-grid)](./08-przykład-z-ATUM-p.-7.1.md)
+- [PV*SOL premium. Szybki start](./09-PV-SOL-premium-quick.md)
 
 ## Cele wykładu
 
