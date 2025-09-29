@@ -6,4 +6,15 @@
 * [X] oze-pr\docs\wyklady\wyklad-01-wprowadzenie. where it possible add **Infographics instead of text** – replace lists with diagrams, timelines, or flowcharts.
 * [ ] add to _promts\slides-conversion.md such information "**Infographics instead of text** – replace lists with diagrams, timelines, or flowcharts."
 * [X] is it good idea to use css for charts, diagrams, ... insted of mermaid?
-* [ ] delete "Pytania kontrolne"
+* [X] delete "Pytania kontrolne"
+* [ ] convert all md to mdx in
+  oze-pr\docs\wyklady\wyklad-06-biomasa-biogaz
+  oze-pr\docs\wyklady\wyklad-05-wiatr
+  oze-pr\docs\wyklady\wyklad-04-pompy-ciepła
+  oze-pr\docs\wyklady\wyklad-03-solar-termiczny
+  oze-pr\docs\wyklady\wyklad-02-pv-podstawy
+* [ ] read content form **@wyklad_2_pv_systemy.md** :
+
+1. update **@index.md**  accordint to "Plan i materiały".
+2. update **@01-wprowadzenie-do-projektowania-pv.mdx**  according to "Wprowadzenie do procesu projektowania PV (perspektywa „software-first”)".
+3. update **@02-przeglad-narzedzi-pv.mdx** accordint to Przegląd narzędzi do projektowania systemów PV.
