@@ -1,17 +1,116 @@
 ---
 sidebar_position: 4
-title: "GeoT*SOL – znaczenie programu dla projektanta"
+title: "GeoTSOL – znaczenie programu dla projektanta"
 ---
 
-## Funkcje kluczowe
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Modelowanie wymiany ciepła z gruntem w oparciu o TRT i dane geologiczne.
-- Analiza COP/SCOP, zużycia energii elektrycznej i emisji CO₂.
-- Raporty ekonomiczne (CAPEX, OPEX, okres zwrotu, NPV, IRR).
+<SlideContainer>
 
-## Atuty dydaktyczne
+<Slide title="🎯 Rola GeoTSOL w cyklu projektowym" type="info">
 
-- Intuicyjny interfejs pozwala studentom skupić się na interpretacji wyników.
-- Uczy, jak decyzje dotyczące geometrii sond wpływają na wydajność.
-- Wspiera przygotowanie dokumentacji do programów wsparcia (Czyste Powietrze).
+<KeyPoints title="Etapy wykorzystania">
+
+- Etap koncepcji: 2–4 warianty (AW vs grunt; mono vs bivalentny; 35/30 vs 55/45°C)
+- Etap ofertowy: raport z wykresami SCOP/SPF, energią, udziałem grzałki, kosztami
+- Etap przedwykonawczy: lista komponentów, akcesoria, przepływy/przekroje
+- Etap powykonawczy: KPI (SPF, zużycie), plan monitoringu
+
+</KeyPoints>
+
+<InstructorNotes>
+GeoTSOL wspiera pełen cykl: od koncepcji po dokumenty dla odbioru i monitoring KPI.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🧰 Co daje GeoTSOL w praktyce biura" type="tip">
+
+<KeyPoints title="Mocne strony">
+
+- Neutralność producentowa; biblioteki klimatyczne i komponentów
+- Wariantowanie i kopie projektów; baza wiedzy i szablony
+- Raporty zrozumiałe dla klienta i wykonawcy
+- Prosta ekonomia: LCC, LCOH, testy cen i taryf
+
+</KeyPoints>
+
+<InstructorNotes>
+Biblioteki i wariantowanie przyspieszają iteracje i ułatwiają obronę rekomendacji przed inwestorem.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="warning" />
+
+<Slide title="❓ Typowe pytania, na które GeoTSOL odpowiada dobrze" type="info">
+
+<KeyPoints title="Przykłady pytań projektowych">
+
+- Jaka moc PC jest wymagana przy danych T_zasilania i obciążeniu budynku?
+- Jaki SCOP/SPF i roczne zużycie energii elektrycznej?
+- Różnice kosztów między PC powietrzną a gruntową (LCC/LCOH)?
+- Ile odwiertów/metry dla BHE przy danych parametrach gruntu?
+- Jaki jest udział grzałki i jego konsekwencje ekonomiczne?
+- Jak zmieniają się wyniki dla różnych ustawień krzywej grzewczej?
+
+</KeyPoints>
+
+<InstructorNotes>
+Użyj listy jako checklisty rozmowy z inwestorem. Dla krytycznych inwestycji uzupełnij o weryfikację w EED (BHE) i w narzędziu producenta (zgodność BOM).
+</InstructorNotes>
+
+</Slide>
+
+<Slide title="⚠️ Ograniczenia i obejścia" type="warning">
+
+<KeyPoints title="Na co uważać">
+
+- Dynamika budynku uproszczona → dla niestandardów użyj TRNSYS/EnergyPlus
+- Geologia wymaga weryfikacji → EED/GLD i test TRT dla inwestycji strategicznych
+- Brak modelu konkretnej jednostki → „urządzenie użytkownika” z danych katalogowych
+- Integracja PV ograniczona → pełne profile w Polysun/EnergyPlus
+
+</KeyPoints>
+
+<InstructorNotes>
+Znajomość ograniczeń pozwala dobrać właściwe narzędzie uzupełniające i zachować wiarygodność wyników.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="✅ Dobre praktyki (checklista)" type="success">
+
+<KeyPoints title="Sprawdzone zasady">
+
+1. Zapisuj warianty A/B (AW vs grunt) i 55/45 vs 35/30°C
+2. Analiza wrażliwości: ±10% obciążenia, ±5 K zasilania, różne taryfy
+3. Waliduj dane klimatyczne i źródła
+4. Notuj założenia (CWU, ładunki szczytowe) i uzasadnienia
+5. Oznacz wariant docelowy, archiwizuj odrzucone z powodem
+
+</KeyPoints>
+
+<InstructorNotes>
+Checklisty i standaryzacja zwiększają jakość procesu i redukują ryzyko roszczeń.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
 

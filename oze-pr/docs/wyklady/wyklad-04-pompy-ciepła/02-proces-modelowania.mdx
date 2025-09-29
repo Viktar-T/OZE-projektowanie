@@ -1,28 +1,165 @@
 ---
 sidebar_position: 2
-title: "Proces modelowania/projektowania systemów z pompami ciepła"
+title: "Proces modelowania/projektowania systemów z pompami ciepła (workflow)"
 ---
 
-## Etap 1: Analiza budynku
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Audyt energetyczny, profil zapotrzebowania na ciepło i c.w.u.
-- Ocena systemu dystrybucji (podłogówka, grzejniki, klimakonwektory).
-- Weryfikacja możliwości modernizacji izolacji i stolarki.
+<SlideContainer>
 
-## Etap 2: Źródło dolne
+<Slide title="🗺️ Zasada ogólna procesu" type="info">
 
-- Dla pomp gruntowych: badania TRT, dobór długości sond, analiza geologiczna.
-- Dla pomp powietrznych: analiza warunków klimatycznych, hałasu i rozmieszczenia jednostek.
-- Dla układów woda–woda: dostępność, jakość i temperatura wody.
+<KeyPoints title="Od celu do raportu">
 
-## Etap 3: Symulacja
+- Zdefiniuj cel i KPI (SPF/SCOP, koszty, emisje, hałas)
+- Dane wejściowe: klimat, profil, parametry PC i hydrauliki
+- Konfiguracja systemu i źródeł
+- Symulacja, sanity‑check, warianty i ekonomia
+- Raport i kontrola jakości
 
-- GeoT*SOL, Polysun, EnergyPlus – modele dynamiczne temperatury i COP.
-- Scenariusze monoenergetyczne i biwalentne, integracja z PV.
-- Analiza wskaźników SPF systemu, zużycie energii elektrycznej, emisji.
+</KeyPoints>
 
-## Dokumentacja
+<InstructorNotes>
+Proces: cel → dane → konfiguracja → symulacja → wyniki → raport. Każdy krok jest checkpointem jakości i decyzji.
+</InstructorNotes>
 
-- Schematy hydrauliczne i elektryczne, zestawienia komponentów.
-- Analiza ekonomiczna i scenariusze wsparcia finansowego.
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🧩 Kroki 1–4: cel, meteo, straty, topologia" type="tip">
+
+<KeyPoints title="Start projektu">
+
+1. Cel i kryteria akceptacji (SPF/SCOP, koszty, emisje, hałas)
+2. Dane klimatyczne: EPW/TRY/Meteonorm; wilgotność dla AW
+3. Straty ciepła i profil obciążeń (EN 12831 + profil godzinowy + CWU)
+4. Wybór topologii (AW/BHE/woda; mono/bivalentny)
+
+</KeyPoints>
+
+<SupportingDetails title="Narzędzia">
+
+- RETScreen (KPI), Meteonorm/EPW, Audytor OZC, IDA ICE/EnergyPlus/TRNSYS
+- GeoTSOL (scenariusze), Polysun (schematy), kalkulatory producentów
+
+</SupportingDetails>
+
+<InstructorNotes>
+Wybór topologii i definiowanie danych wejściowych determinuje resztę procesu. Dbaj o kompatybilność danych (jednostki, rozdzielczości).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🛠️ Kroki 5–8: model PC, źródło, hydraulika, sterowanie" type="info">
+
+<KeyPoints title="Konfiguracja układu">
+
+5. Model PC: dobór z biblioteki (mapy P/COP), modulacja, defrost
+6. Dolne źródło: AW – krzywa wentylatora, akustyka; BHE – g‑functions; woda – wydajność/temperatura
+7. Hydraulika i magazyny: bufor, zasobnik, zawory, straty postojowe
+8. Sterowanie: krzywa grzewcza, priorytet CWU, T_biv, histerezy, antylegionella
+
+</KeyPoints>
+
+<SupportingDetails title="QC – kontrola jakości">
+
+- Bilans objętości i stabilność przepływów
+- Zakres modulacji i granice pracy PC
+- Zgodność sterowania z profilem odbioru
+
+</SupportingDetails>
+
+<InstructorNotes>
+Unikaj taktowania pomp/sprężarki, pilnuj realistycznych przepływów i ΔT. W modelach AW uwzględniaj defrost i akustykę.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="📈 Kroki 9–12: warianty, symulacja, wyniki, ekonomia" type="info">
+
+<KeyPoints title="Finalizacja modeli">
+
+9. Warianty A/B (mono vs bivalentny; T_zasil 35/45/55°C; długość sond)
+10. Symulacja sezonowa (krok godzinowy); rejestr: moc, COP, energia, cykling
+11. Wyniki: SPF_sys, pokrycie, zużycie, minimalne temperatury, udział grzałki
+12. Ekonomia: LCC, LCOH, taryfy, analiza wrażliwości (±20%)
+
+</KeyPoints>
+
+<InstructorNotes>
+Wariantuj po jednym parametrze; porównuj tabelarycznie i graficznie. Dokumentuj decyzje i uzasadnienia.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="✅ QC i raportowanie" type="success">
+
+<KeyPoints title="Kontrola jakości i dokumenty">
+
+- QC: spójność danych, brak ostrzeżeń krytycznych, sanity uzysku specyficznego
+- Raport: techniczny + skrócony; schemat hydrauliczny; wyniki godzinowe (CSV)
+- Załącz: założenia, warianty, niepewności, checklisty odbiorowe
+
+</KeyPoints>
+
+<SuccessBox title="📋 Checklista QC">
+
+- [ ] Dane meteo i profil zweryfikowane
+- [ ] Zakresy pracy PC i sterowanie zgodne z założeniami
+- [ ] Brak stagnacji i nieprawidłowych temperatur
+- [ ] Ekonomia policzona + wrażliwość ±20%
+- [ ] Raport kompletny (załączniki + warianty)
+
+</SuccessBox>
+
+<InstructorNotes>
+Standaryzacja raportów i checklist przyspiesza peer‑review i akceptację klienta.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🧪 Mini‑studium przypadku (skrót)" type="tip">
+
+<KeyPoints title="Założenia i wnioski">
+
+- Budynek 12 kW @ −20°C, T_zasil 35/30°C, CWU 4 osoby
+- Wariant A: PC powietrzna 12 kW, mono + grzałka → SCOP ≈ 3.0; ~4.5 MWh/rok
+- Wariant B: PC gruntowa 10 kW, BHE 3×100 m → SCOP ≈ 4.2; ~3.2 MWh/rok
+- Ekonomia (15 lat): A tańsza przy niskiej cenie energii; B lepsza przy wyższych cenach/priorytecie akustyki
+
+</KeyPoints>
+
+<InfoBox title="Wniosek dydaktyczny">
+
+- Decyzja zależy od kosztów energii, warunków lokalnych i priorytetów (hałas, stabilność zimą)
+
+</InfoBox>
+
+<InstructorNotes>
+Użyj tego mini‑case do omówienia kompromisów: CAPEX vs OPEX, SCOP vs koszty, wpływ T_zasilania i wyboru źródła. Zachęć do policzenia LCC/LCOH i analizy wrażliwości (±10% obciążenia, taryfy).
+</InstructorNotes>
+
+</Slide>
+
 

@@ -1,24 +1,178 @@
 ---
 sidebar_position: 1
-title: "Wprowadzenie do systemów z pompami ciepła"
+title: "Wprowadzenie do systemów z pompami ciepła (software-first)"
 ---
 
-## Rola pomp ciepła w transformacji energetycznej
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Redukcja zużycia paliw kopalnych, integracja z instalacjami PV i magazynami.
-- Spełnienie wymagań WT 2021 oraz programów wsparcia (Czyste Powietrze, Mój Prąd).
-- Znaczenie w budynkach zeroemisyjnych i modernizacji istniejących obiektów.
+<SlideContainer>
 
-## Typy pomp ciepła
+<Slide title="🎓 Cel wykładu i perspektywa narzędziowa" type="info">
 
-- Powietrze–woda (split, monoblok) – popularne w modernizacjach.
-- Gruntowe – sondy pionowe, kolektory poziome, systemy wodne.
-- Woda–woda – wykorzystanie studni i wód powierzchniowych.
-- Hybrydowe – integracja z kotłami gazowymi, kolektorami słonecznymi.
+<KeyPoints title="🎯 Czego się uczymy">
 
-## Kluczowe parametry
+- Jak odwzorować warunki pracy źródła i odbioru ciepła
+- Jak realistycznie policzyć SCOP/SPF, zużycie energii i koszty
+- Jak przygotować komplet dokumentów projektowych i warianty
 
-- COP, SCOP, SPF – wskaźniki sprawności sezonowej.
-- Dobór temperatury zasilania i wpływ na efektywność.
-- Znaczenie jakości montażu, izolacji i bilansu energetycznego budynku.
+</KeyPoints>
+
+<SupportingDetails title="💡 Perspektywa software-first">
+
+- Skupiamy się na narzędziach projektowych (GeoTSOL, Polysun, TRNSYS, kalkulatory producentów)
+- Łączymy modele energetyczne, hydrauliczne i ekonomiczne
+- Utrzymujemy dyscyplinę: dane → konfiguracja → symulacja → raport
+
+</SupportingDetails>
+
+<InstructorNotes>
+Wykład koncentruje się na roli oprogramowania w doborze i analizie systemów z PC: od danych wejściowych, przez konfigurację, po interpretację wyników i dokumentację.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🏗️ Architektura typowego układu z PC" type="tip">
+
+<KeyPoints title="Co musimy zamodelować">
+
+- Jednostka PC: sprężarka (on/off, inwerter), mapy P–Q–T, COP(T_src,T_sink,PLR)
+- Dolne źródło: powietrze, grunt (BHE/poziomy), woda (studnie/powierzchniowa)
+- Odbiorniki: podłogówka, klimakonwektory, CWU (profil dobowy)
+- Hydraulika i magazynowanie: bufor, zasobnik, pompy, zawory
+- Sterowanie: krzywa grzewcza, T_biv, histerezy, antylegionella
+
+</KeyPoints>
+
+<SupportingDetails title="🔎 Wniosek narzędziowy">
+
+- Narzędzie musi umożliwiać parametryzację elementów i symulację w kroku ≤ godzinowym
+- Konieczna obsługa częściowego obciążenia, odszraniania (defrost) i cyklingu
+
+</SupportingDetails>
+
+<InstructorNotes>
+Kluczowe jest wierne odzwierciedlenie zależności COP od temperatur źródła i odbioru oraz obciążenia częściowego. Modele hydrauliczne wpływają na cykling i SPF.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📐 Wskaźniki i definicje (dla modeli)" type="info">
+
+<KeyPoints title="Metryki, które raportujemy">
+
+- COP(T_src,T_sink,PLR), SCOP/SPF (H2/H3, DHW)
+- P_design, T_design – dla pokrycia mocy
+- T_biv – punkt biwalentny; logika wsparcia szczytowego
+- Bin-hour vs. EPW/TRY – rozdzielczość danych klimatycznych
+
+</KeyPoints>
+
+<InstructorNotes>
+Rozróżniaj SPF systemu i samej PC. W projektach edukacyjnych stosuj porównywalne metryki i te same źródła meteo.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🧰 Kategorie oprogramowania (do czego służą)" type="tip">
+
+<KeyPoints title="Dobór narzędzia do celu">
+
+- Specjalistyczne HP: GeoTSOL, Polysun, RETScreen (feasibility)
+- Symulatory ogólne: TRNSYS, EnergyPlus/DesignBuilder, IDA ICE
+- Dolne źródło: EED/GLD/LoopLink (g-functions, odwierty)
+- Kalkulatory producentów: NIBE Dim, Aquarea Designer, Ecodan, Altherma
+
+</KeyPoints>
+
+<InfoBox title="📌 Dobór narzędzia">
+
+- Koncepcja: GeoTSOL, kalkulatory producentów
+- Wykonawczy/złożony: Polysun/TRNSYS/EnergyPlus + EED dla gruntowych
+
+</InfoBox>
+
+<InstructorNotes>
+Dobieraj narzędzie do etapu i poziomu szczegółowości. Integruj wyniki: GeoTSOL (koncepcja) → EED (grunt) → Polysun/TRNSYS (dynamika).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="warning" />
+
+<Slide title="🧾 Dane wejściowe – minimalny zestaw" type="warning">
+
+<KeyPoints title="Bez tego model będzie błędny">
+
+- Klimat: EPW/TRY/Meteonorm; wilgotność (defrost dla AW)
+- Zapotrzebowanie: EN 12831 + profil godzinowy; CWU profil dobowy
+- Parametry PC: mapy P/COP vs T_zasil/T_powrot i T_źródła; modulacja, defrost
+- Dolne źródło: geologia (λ, c_p, wilgotność), ograniczenia lokalne
+- Hydraulika i magazyny: pojemności, straty, zawory; krzywa grzewcza
+- Ekonomia: taryfy, CAPEX/OPEX, horyzont LCC
+
+</KeyPoints>
+
+<InstructorNotes>
+Preferuj profile godzinowe lub co najmniej bin-hour. Dane producentów weryfikuj z niezależnymi źródłami.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="danger" />
+
+<Slide title="⚠️ Typowe błędy modelowe i kontrola" type="warning">
+
+<KeyPoints title="Diagnoza → Remedium">
+
+- Uśrednianie COP bez PLR/defrost → użyj profili godzinowych
+- Brak g-functions dla BHE → użyj EED/GLD
+- Brak sprzężenia hydrauliki → użyj Polysun/TRNSYS
+- Zła krzywa grzewcza/prior. CWU → cykling, spadek SPF
+- Pomijanie akustyki AW → ryzyko niespełnienia wymagań
+- Brak profilowania cen → błędny LCOH/NPV
+
+</KeyPoints>
+
+<InstructorNotes>
+Dodaj sanity-check: liczba cykli, udział grzałki, temperatury minimalne, uzysk specyficzny i zgodność z mapami pracy.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="📦 Artefakty projektowe (deliverables)" type="success">
+
+<KeyPoints title="Co oddajemy klientowi">
+
+- Raport techniczny (założenia, wyniki, warianty, ryzyka)
+- Schematy/szkice hydrauliczne, listy komponentów
+- Wyniki godzinowe (CSV), wykresy; analiza ekonomiczna
+
+</KeyPoints>
+
+<InstructorNotes>
+Standaryzuj raport: metryki energetyczne i ekonomiczne, założenia, warianty i rekomendacje.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
 

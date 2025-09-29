@@ -1,23 +1,183 @@
 ---
 sidebar_position: 6
-title: "Demonstracja na żywo: GeoT*SOL"
+title: "Demonstracja na żywo: GeoTSOL"
 ---
 
-## Scenariusz laboratoryjny
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Budynek jednorodzinny 150 m², ogrzewanie podłogowe + zasobnik 300 l.
-- Źródło dolne: sondy pionowe 2 × 100 m, grunt gliniasty 2,1 W/(m·K).
-- Pompa ciepła: 10 kW, sprężarka inwerterowa.
+<SlideContainer>
 
-## Plan pokazowy
+<Slide title="🏠 Scenariusz laboratoryjny" type="info">
 
-1. Parametryzacja projektu w kreatorze GeoT*SOL (profil zapotrzebowania, klimat).
-2. Wprowadzenie wyników testu TRT i konfiguracja układu bufora.
-3. Uruchomienie symulacji rocznej, analiza wykresów energii i temperatur.
-4. Ocena wskaźników ekonomicznych i środowiskowych (SCOP, NPV, redukcja CO₂).
+<KeyPoints title="📋 Parametry projektu">
 
-## Zadania dla studentów
+- Budynek jednorodzinny 150 m², ogrzewanie podłogowe + zasobnik 300 l
+- Źródło dolne: sondy pionowe 2 × 100 m, grunt gliniasty 2,1 W/(m·K)
+- Pompa ciepła: 10 kW, sprężarka inwerterowa
 
-- Porównać wariant z krótszymi sondami (2 × 80 m) i ocenić wpływ na SCOP.
-- Przygotować notatkę projektową z rekomendacjami eksploatacyjnymi.
+</KeyPoints>
+
+<SupportingDetails title="🎯 Cel demonstracji">
+
+- Pokazanie pełnego procesu projektowego w GeoTSOL
+- Analiza wskaźników energetycznych i ekonomicznych
+- Praktyczne zastosowanie teorii w rzeczywistym projekcie
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Przygotowanie do demonstracji:**
+- Upewnij się, że GeoTSOL jest zainstalowany i gotowy do użycia
+- Przygotuj dane klimatyczne dla lokalizacji projektu
+- Sprawdź dostępność biblioteki komponentów
+- Przygotuj przykładowe wyniki testu TRT
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="📊 Plan pokazowy - kroki 1-2" type="tip">
+
+<KeyPoints title="🔧 Konfiguracja projektu">
+
+1. **Parametryzacja w kreatorze GeoTSOL**
+   - Profil zapotrzebowania na ciepło
+   - Dane klimatyczne lokalizacji
+   - Parametry budynku i odbiorników
+
+2. **Konfiguracja układu**
+   - Wprowadzenie wyników testu TRT
+   - Konfiguracja układu bufora
+   - Ustawienia sterowania
+
+</KeyPoints>
+
+<InfoBox title="💡 Kluczowe elementy">
+
+- Weryfikacja danych wejściowych
+- Sprawdzenie kompatybilności komponentów
+- Ustawienie parametrów symulacji
+
+</InfoBox>
+
+<InstructorNotes>
+**Wskazówki dydaktyczne:**
+- Podkreśl znaczenie dokładnych danych wejściowych
+- Pokaż jak weryfikować poprawność konfiguracji
+- Wyjaśnij wpływ poszczególnych parametrów na wyniki
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📈 Plan pokazowy - kroki 3-4" type="info">
+
+<KeyPoints title="🧪 Analiza i ocena">
+
+3. **Symulacja i analiza**
+   - Uruchomienie symulacji rocznej
+   - Analiza wykresów energii i temperatur
+   - Sprawdzenie ostrzeżeń i błędów
+
+4. **Ocena wskaźników**
+   - SCOP, SPF, zużycie energii
+   - NPV, LCC, LCOH
+   - Redukcja emisji CO₂
+
+</KeyPoints>
+
+<SupportingDetails title="📊 Kluczowe wykresy">
+
+- Profil temperatur źródła i odbioru
+- Rozkład energii w czasie
+- Cykling i efektywność systemu
+- Analiza ekonomiczna
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Interpretacja wyników:**
+- Wyjaśnij znaczenie poszczególnych wskaźników
+- Pokaż jak identyfikować problemy w systemie
+- Przedstaw metody optymalizacji
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🎓 Zadania dla studentów" type="success">
+
+<KeyPoints title="📝 Ćwiczenia praktyczne">
+
+- **Wariant 1**: Porównaj z krótszymi sondami (2 × 80 m)
+- **Wariant 2**: Ocen wpływ na SCOP i koszty
+- **Wariant 3**: Przygotuj notatkę projektową z rekomendacjami
+
+</KeyPoints>
+
+<SuccessBox title="✅ Oczekiwane rezultaty">
+
+- Analiza porównawcza wariantów
+- Rekomendacje eksploatacyjne
+- Dokumentacja projektowa
+- Zrozumienie procesu decyzyjnego
+
+</SuccessBox>
+
+<InstructorNotes>
+**Ocena studentów:**
+- Sprawdź poprawność analizy porównawczej
+- Oceń jakość rekomendacji
+- Zweryfikuj zrozumienie procesu projektowego
+- Sprawdź umiejętność interpretacji wyników
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="🔍 Punkty kontrolne demonstracji" type="warning">
+
+<KeyPoints title="⚠️ Co sprawdzić">
+
+- Poprawność danych wejściowych
+- Brak ostrzeżeń krytycznych w symulacji
+- Realistyczne wartości wskaźników
+- Spójność wyników ekonomicznych
+
+</KeyPoints>
+
+<WarningBox title="🚨 Częste błędy">
+
+- Nieprawidłowe dane klimatyczne
+- Błędna konfiguracja sterowania
+- Nieodpowiednie parametry źródła dolnego
+- Pominięcie analizy wrażliwości
+
+</WarningBox>
+
+<InstructorNotes>
+**Kontrola jakości:**
+- Weryfikuj każdy krok konfiguracji
+- Sprawdzaj ostrzeżenia systemu
+- Porównuj wyniki z wartościami referencyjnymi
+- Dokumentuj wszystkie założenia
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
 

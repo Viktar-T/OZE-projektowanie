@@ -3,16 +3,98 @@ sidebar_position: 3
 title: "Porównanie narzędzi: GeoTSOL i alternatywy producentów"
 ---
 
-| Narzędzie | Zastosowanie | Mocne strony | Uwagi |
-| --- | --- | --- | --- |
-| **GeoT*SOL** | Gruntowe pompy ciepła, sondy pionowe/poziome | Modelowanie TRT, baza urządzeń, raporty ekonomiczne | Skoncentrowane na układach gruntowych |
-| **Polysun** | Hybrydy (PC + solary + PV) | Edytor schematów, analiza multi-source | Wymaga szkoleń, modułowa licencja |
-| **Narzędzia producentów** (Daikin, NIBE, Panasonic) | Dobór komponentów, kosztorysy | Aktualne bazy sprzętu, wsparcie serwisowe | Ograniczone do oferty producenta |
-| **EnergyPlus / DesignBuilder** | Symulacje budynków z pompami ciepła | Modele dynamiczne, integracja HVAC | Duża złożoność modeli |
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-## Kryteria wyboru
+<SlideContainer>
 
-- Rodzaj źródła dolnego i zakres projektu.
-- Wymogi dokumentacyjne (np. programy dotacyjne, portale OSD).
-- Potrzeba integracji z innymi systemami (solary, magazyny, BMS).
+<Slide title="📊 Krajobraz narzędzi do projektowania PC" type="info">
+
+<SupportingDetails title="Grupy narzędzi (skrót)">
+
+| Grupa narzędzi | Przykłady | Typ modelu | Zastosowanie | Szczegółowość |
+|---|---|---|---|---|
+| Specjalistyczne – niezależne | GeoTSOL, Polysun, EED | Godzinowe/roczne | Koncepcja, dobór źródła, LCOH | Średni–wysoki |
+| Narzędzia producentów | Aquarea Designer, NIBE DIM, Ecodan, Vaillant, Daikin | Sezonowe/godzinowe | Preselekcja jednostki, BOM | Średni |
+| CAE/BIM & symulatory | TRNSYS, EnergyPlus/DesignBuilder, IDA ICE | Dynamiczne | Analizy zaawansowane | Wysoki |
+| Towarzyszące | RETScreen, HOMER, QGIS | Uproszczone | Opłacalność, scenariusze, geodata | Niski–średni |
+
+</SupportingDetails>
+
+<InstructorNotes>
+Dobór narzędzia zależy od etapu i celu. GeoTSOL/producent – szybki koncept; TRNSYS/EnergyPlus – badania i dynamika; EED – geologia.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="⚖️ GeoTSOL kontra narzędzia producentów" type="tip">
+
+<KeyPoints title="Spojrzenie procesowe">
+
+- GeoTSOL: biblioteki klimatu, multi‑vendor, modele źródeł (powietrze/grunt/woda), warianty, raporty, LCC
+- Ograniczenia: brak pełnego BIM, uproszczenia dynamiki vs TRNSYS
+- Producenci: dokładne mapy konkretnych modeli, obowiązkowe akcesoria, BOM
+- Ograniczenia: brak neutralności, ograniczona ekonomia/profil godzinowy
+
+</KeyPoints>
+
+<InstructorNotes>
+GeoTSOL używamy do neutralnych porównań i wariantów; narzędzia producentów do zgodności BOM i dokumentacji systemowej.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="📋 Porównanie funkcjonalne (wybrane kryteria)" type="info">
+
+<SupportingDetails title="Tabela (rozszerzona)">
+
+| Kryterium | GeoTSOL | Aquarea/NIBE DIM | Polysun | EED |
+|---|---|---|---|---|
+| Model obliczeń | Godzinowy/roczny | Sezonowy/częściowo godzinowy | Godzinowy/roczny | Wielosezonowa analiza BHE |
+| Zakres źródeł | AW/Grunt/Woda | Zależny od producenta | Szeroki (hybrydy) | Tylko grunt (BHE) |
+| Wariantowanie | Tak | Ograniczone | Tak | Warianty pola odwiertów |
+| Raporty | Neutralne | Producent‑specyficzne | Neutralne | Techniczne BHE |
+| Ekonomia | LCC, LCOH | Rzadziej | LCC, taryfy | Brak |
+| Złożoność | Średnia | Niska–średnia | Średnia | Średnia–wysoka |
+
+</SupportingDetails>
+
+<InstructorNotes>
+Tabela skrócona; w notatkach pełne rozwinięcie kryteriów i konsekwencji wyboru narzędzia.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="tip" />
+
+<Slide title="🧭 Matryca decyzyjna (dla ćwiczeń)" type="tip">
+
+<KeyPoints title="Szybkie reguły">
+
+1. Szybki dobór urządzenia i schematu → narzędzie producenta
+2. Porównanie wariantów źródła/strategii → GeoTSOL / Polysun
+3. Wymiarowanie pola odwiertów → EED (po wstępnym GeoTSOL)
+4. Dynamika/zaawansowane sterowanie → TRNSYS/EnergyPlus
+
+</KeyPoints>
+
+<InstructorNotes>
+Dobieraj ścieżkę narzędziową do celu: dokument dla inwestora vs badanie/eksperyment.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
 

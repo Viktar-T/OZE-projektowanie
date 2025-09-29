@@ -3,15 +3,206 @@ sidebar_position: 7
 title: "Podsumowanie"
 ---
 
-## Najważniejsze wnioski
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- GeoT*SOL stanowi standard branżowy do gruntowych pomp ciepła i powinien być
-  uzupełniany analizami producentów oraz audytami energetycznymi.
-- Wysoka efektywność zależy od optymalizacji źródła dolnego i temperatury zasilania.
-- Integracja z PV, kolektorami solarnymi i magazynami ciepła zwiększa autokonsumpcję.
+<SlideContainer>
 
-## Zadania końcowe
+<Slide title="🎯 Najważniejsze wnioski" type="info">
 
-- Przygotować projekt pomp ciepła dla budynku wielorodzinnego, porównując sondy pionowe i kolektor poziomy.
-- Opracować plan monitoringu i serwisu dla zapewnienia trwałości instalacji.
+<KeyPoints title="📊 Kluczowe ustalenia">
+
+- **GeoTSOL** stanowi standard branżowy do gruntowych pomp ciepła
+- Powinien być uzupełniany analizami producentów i audytami energetycznymi
+- Wysoka efektywność zależy od optymalizacji źródła dolnego i temperatury zasilania
+- Integracja z PV, kolektorami solarnymi i magazynami ciepła zwiększa autokonsumpcję
+
+</KeyPoints>
+
+<SupportingDetails title="🔍 Główne obszary wiedzy">
+
+- Proces modelowania systemów z pompami ciepła
+- Porównanie narzędzi projektowych i ich zastosowań
+- Praktyczne wykorzystanie GeoTSOL w projektowaniu
+- Kontrola jakości i raportowanie wyników
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Podsumowanie wykładu:**
+- Podkreśl znaczenie odpowiedniego doboru narzędzi do etapu projektu
+- Zwróć uwagę na konieczność weryfikacji wyników i analizy wrażliwości
+- Wyjaśnij rolę oprogramowania w procesie projektowym systemów OZE
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🛠️ Narzędzia i procesy" type="tip">
+
+<KeyPoints title="💻 Zdobyte umiejętności">
+
+- **Dobór narzędzi**: GeoTSOL vs narzędzia producentów vs symulatory zaawansowane
+- **Proces projektowy**: od danych wejściowych do raportów końcowych
+- **Kontrola jakości**: sanity-check, weryfikacja wyników, analiza wrażliwości
+- **Raportowanie**: dokumentacja techniczna i ekonomiczna
+
+</KeyPoints>
+
+<InfoBox title="📋 Checklista kompetencji">
+
+- [ ] Umiejętność doboru odpowiedniego narzędzia do celu projektu
+- [ ] Znajomość procesu modelowania w GeoTSOL
+- [ ] Umiejętność interpretacji wyników symulacji
+- [ ] Zdolność przygotowania dokumentacji projektowej
+
+</InfoBox>
+
+<InstructorNotes>
+**Weryfikacja umiejętności:**
+- Sprawdź czy studenci rozumieją różnice między narzędziami
+- Oceń umiejętność interpretacji wyników symulacji
+- Zweryfikuj znajomość procesu projektowego
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📈 Wskaźniki i metryki" type="info">
+
+<KeyPoints title="📊 Kluczowe wskaźniki">
+
+- **Energetyczne**: COP, SCOP, SPF, zużycie energii elektrycznej
+- **Ekonomiczne**: LCC, LCOH, NPV, analiza wrażliwości
+- **Środowiskowe**: redukcja emisji CO₂, efektywność systemu
+- **Techniczne**: temperatury minimalne, cykling, udział grzałki
+
+</KeyPoints>
+
+<SupportingDetails title="🎯 Cele projektowe">
+
+- Maksymalizacja efektywności energetycznej
+- Minimalizacja kosztów cyklu życia
+- Zapewnienie niezawodności systemu
+- Spełnienie wymagań środowiskowych
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Interpretacja wskaźników:**
+- Wyjaśnij znaczenie poszczególnych metryk
+- Pokaż jak analizować wyniki w kontekście celów projektu
+- Przedstaw metody optymalizacji systemu
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="🎓 Zadania końcowe" type="success">
+
+<KeyPoints title="📝 Projekty do realizacji">
+
+- **Projekt 1**: Przygotować projekt pomp ciepła dla budynku wielorodzinnego
+- **Porównanie**: sondy pionowe vs kolektor poziomy
+- **Projekt 2**: Opracować plan monitoringu i serwisu
+- **Cel**: zapewnienie trwałości i efektywności instalacji
+
+</KeyPoints>
+
+<SuccessBox title="✅ Oczekiwane rezultaty">
+
+- Kompletna dokumentacja projektowa
+- Analiza porównawcza wariantów
+- Plan eksploatacji i serwisu
+- Rekomendacje optymalizacyjne
+
+</SuccessBox>
+
+<InstructorNotes>
+**Kryteria oceny:**
+- Poprawność techniczna rozwiązań
+- Jakość analizy porównawczej
+- Kompletność dokumentacji
+- Praktyczność rekomendacji
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="warning" />
+
+<Slide title="⚠️ Typowe wyzwania" type="warning">
+
+<KeyPoints title="🚨 Częste problemy">
+
+- Nieprawidłowe dane wejściowe (klimat, obciążenia)
+- Błędna konfiguracja sterowania i hydrauliki
+- Pominięcie analizy wrażliwości i wariantów
+- Nieodpowiedni dobór narzędzi do etapu projektu
+
+</KeyPoints>
+
+<WarningBox title="💡 Wskazówki">
+
+- Zawsze weryfikuj dane wejściowe
+- Testuj różne warianty konfiguracji
+- Dokumentuj wszystkie założenia
+- Korzystaj z odpowiednich narzędzi do celu
+
+</WarningBox>
+
+<InstructorNotes>
+**Prewencja błędów:**
+- Podkreśl znaczenie weryfikacji danych
+- Pokaż jak identyfikować potencjalne problemy
+- Przedstaw metody kontroli jakości
+- Wyjaśnij konsekwencje błędów projektowych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🔮 Perspektywy rozwoju" type="info">
+
+<KeyPoints title="🚀 Trendy w branży">
+
+- Integracja z systemami inteligentnymi (smart grids)
+- Rozwój narzędzi BIM i modelowania 3D
+- Automatyzacja procesów projektowych
+- Wzrost znaczenia analizy big data
+
+</KeyPoints>
+
+<SupportingDetails title="📚 Dalsze kształcenie">
+
+- Zaawansowane symulatory (TRNSYS, EnergyPlus)
+- Narzędzia BIM i integracja z CAD
+- Analiza danych i machine learning
+- Certyfikacje branżowe
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Rozwój zawodowy:**
+- Zachęć do ciągłego doskonalenia umiejętności
+- Wskaż kierunki rozwoju w branży OZE
+- Przedstaw możliwości certyfikacji
+- Podkreśl znaczenie praktyki i doświadczenia
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
 

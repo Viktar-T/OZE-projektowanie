@@ -1,18 +1,101 @@
 ---
 sidebar_position: 5
-title: "Proces modelowania/projektowania w GeoT*SOL"
+title: "Proces modelowania/projektowania w GeoTSOL (workflow krok‑po‑kroku)"
 ---
 
-## Etapy pracy
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-1. **Definicja projektu** – lokalizacja, klimat, profil zapotrzebowania.
-2. **Źródło dolne** – wybór sond/kolektorów, wprowadzenie danych TRT.
-3. **Dobór pompy** – katalog urządzeń, sprawdzenie mocy i temperatur pracy.
-4. **Konfiguracja układu** – bufor, obiegi mieszane, integracja c.w.u.
-5. **Symulacja i analiza** – wykresy temperatur, energii, SCOP, raport ekonomiczny.
+<SlideContainer>
 
-## Wskazówki praktyczne
+<Slide title="🛫 0. Pre‑flight: dane wejściowe" type="info">
 
-- Porównywać kilka wariantów źródeł dolnych dla oceny kosztów i efektywności.
-- Sprawdzać temperatury gruntu w perspektywie wieloletniej (cooling penalty).
+<KeyPoints title="Co przygotować">
+
+- Obciążenie cieplne (EN 12831), profile godzinowe, CWU
+- Dane klimatyczne lokalne (stacja, T_design, wilgotność)
+- Ograniczenia lokalne (odwierty/hałas), założenia ekonomiczne
+
+</KeyPoints>
+
+<InstructorNotes>
+Uporządkowane wejścia skracają iteracje i upraszczają weryfikację wyników.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🧭 1–3. Start projektu i definicje" type="tip">
+
+<KeyPoints title="Kroki początkowe">
+
+1. Nowy projekt → nazwa, lokalizacja, klimat
+2. Budynek i odbiorniki → obciążenia, T_zasil, udział CWU
+3. Typ PC i tryb pracy → AW/Grunt/Woda; mono/bivalentny; T_biv
+
+</KeyPoints>
+
+<InstructorNotes>
+Ustal od razu zakres temperatur, zasady priorytetów CWU i ewentualny bufor.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔧 4–6. Dobór jednostki, źródło i hydraulika" type="info">
+
+<KeyPoints title="Konfiguracja układu">
+
+4. Dobór jednostki (biblioteka) → moc, mapy pracy, COP/SCOP, modulacja
+5. Dolne źródło: AW – defrost/akustyka; BHE – długość/liczba/spacing, min. temperatury; kolektor poziomy – powierzchnia, głębokość, układ (meander/spirala), parametry gruntu
+6. Hydraulika i zasobniki → bufor, przepływy, zawory, sterowanie
+
+</KeyPoints>
+
+<InstructorNotes>
+Jeśli brak modelu w bibliotece – zdefiniuj urządzenie użytkownika z kart katalogowych.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🧪 7–9. Symulacja, warianty i raport" type="info">
+
+<KeyPoints title="Analiza i komunikacja">
+
+7. Ustawienia symulacji (≥ 1 rok; dla BHE – wieloletnio), rejestry i ostrzeżenia
+8. Warianty: 3–5 (moc, T_zasil, długości BHE); porównania tabelaryczne i wykresy
+9. Raporty: techniczny + skrócony; eksport CSV/PNG; ekonomia (LCC, LCOH)
+
+</KeyPoints>
+
+<SuccessBox title="📋 Checklisty">
+
+- [ ] Wariant docelowy oznaczony i opisany „dlaczego”
+- [ ] Dane meteo zgodne, profile zweryfikowane
+- [ ] Min. temperatury i liczba cykli akceptowalne
+- [ ] Ekonomia i wrażliwość policzone
+
+</SuccessBox>
+
+<InstructorNotes>
+Standaryzuj raporty i checklisty – ułatwia to akceptację i archiwizację.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
 

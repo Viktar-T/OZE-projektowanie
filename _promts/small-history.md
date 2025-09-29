@@ -18,5 +18,5 @@
 1. update **@01-wprowadzenie-do-projektowania-pv.mdx**  according to "Wprowadzenie do procesu projektowania PV (perspektywa „software-first”)".
 2. update **@02-przeglad-narzedzi-pv.mdx** accordint to Przegląd narzędzi do projektowania systemów PV.
 
-* [ ] update **@04-sunny-design-info-kroki.mdx**   according to the content in **@SunnyDesign.md**  
-* [ ] on the bases of
+* [X] update **@04-sunny-design-info-kroki.mdx**   according to the content in **@SunnyDesign.md**
+* [ ] on the bases of content from _promts\W5-wind update files in oze-pr\docs\wyklady\wyklad-05-wiatr. all updated files should looks as described in **@slides-conversion.md**
