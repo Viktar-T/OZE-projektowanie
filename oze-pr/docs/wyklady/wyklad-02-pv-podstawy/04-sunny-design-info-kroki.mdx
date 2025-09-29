@@ -1,0 +1,394 @@
+---
+sidebar_position: 4
+title: "Sunny Design: środowisko, workflow i integracje"
+---
+
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
+
+<SlideContainer>
+
+<Slide title="🏗️ Sunny Design — architektura narzędzia" type="info">
+
+<KeyPoints title="🔧 Warstwy architektury">
+
+**🌐 Interfejs webowy:**
+- Kreatory projektów (dach płaski/skośny/grunt)
+- Proste modelowanie powierzchni
+- Układy montażowe i orientacje
+
+**📚 Biblioteka komponentów:**
+- Moduły PV, falowniki (szczególnie SMA)
+- Akcesoria i reguły doboru łańcuchów
+- Weryfikatory zakresów napięć/prądów
+
+**⚡ Silnik wymiarowania DC/AC:**
+- Kontrola napięć (Voc, Vmpp, Vstart/Vstop)
+- Prądów i bilansu MPPT
+- Wyliczanie DC/AC ratio i obciążenia inwerterów
+
+</KeyPoints>
+
+<InstructorNotes>
+**Sunny Design — architektura narzędzia**
+
+**🔧 Warstwy architektury:**
+Sunny Design to zintegrowane środowisko webowe zbudowane w architekturze warstwowej:
+
+**🌐 Interfejs webowy:**
+- **Kreatory projektów** - uproszczone procesy dla różnych typów instalacji (dach płaski/skośny/grunt)
+- **Modelowanie powierzchni** - podstawowe narzędzia do definiowania obszarów montażu
+- **Układy montażowe** - predefiniowane konfiguracje dla różnych typów dachów
+
+**📚 Biblioteka komponentów:**
+- **Moduły PV** - rozbudowana baza z parametrami technicznymi
+- **Falowniki SMA** - szczególnie bogata oferta z automatycznym doborem
+- **Akcesoria** - systemy montażowe, okablowanie, zabezpieczenia
+- **Reguły doboru** - automatyczne sprawdzanie kompatybilności
+- **Weryfikatory** - kontrola zakresów napięć i prądów
+
+**⚡ Silnik wymiarowania DC/AC:**
+- **Kontrola napięć** - Voc (napięcie obwodu otwartego), Vmpp (napięcie mocy maksymalnej)
+- **Parametry startowe** - Vstart/Vstop dla falowników
+- **Bilans MPPT** - optymalizacja wykorzystania trackerów
+- **DC/AC ratio** - kontrola stosunku mocy DC do AC
+- **Obciążenie inwerterów** - analiza wykorzystania mocy
+
+**💡 Kluczowe zalety architektury:**
+- **Prostota użycia** - intuicyjny interfejs webowy
+- **Automatyzacja** - inteligentny dobór komponentów
+- **Integracja SMA** - optymalizacja dla ekosystemu SMA
+- **Szybkość** - przyspieszone procesy projektowe
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🌍 Warstwa środowiskowa i raportowanie" type="info">
+
+<KeyPoints title="📊 Dane i analizy">
+
+**🌤️ Warstwa środowiskowa:**
+- Dane nasłonecznienia/temperatury dla lokalizacji
+- Uproszczone modele strat (kable, soiling, orientacja)
+- Profile klimatyczne dla różnych regionów
+
+**📋 Raportowanie i warianty:**
+- Generowanie raportów PDF z podsumowaniem wyników
+- Konfiguracja łańcuchów i lista komponentów
+- Szybkie kopiowanie wariantów projektowych
+
+</KeyPoints>
+
+<InstructorNotes>
+**Warstwa środowiskowa i raportowanie**
+
+**🌤️ Warstwa środowiskowa:**
+- **Dane klimatyczne** - wbudowane profile nasłonecznienia i temperatury dla różnych lokalizacji
+- **Modele strat** - uproszczone, ale praktyczne modele uwzględniające:
+  - **Kable** - straty w okablowaniu DC/AC
+  - **Soiling** - zanieczyszczenie modułów
+  - **Orientacja** - wpływy kąta nachylenia i azymutu
+- **Profile regionalne** - dostosowane do warunków klimatycznych Polski
+
+**📋 Raportowanie i warianty:**
+- **Raporty PDF** - profesjonalne dokumenty z wynikami analiz
+- **Konfiguracja łańcuchów** - szczegółowe schematy połączeń
+- **Lista komponentów** - kompletny BOM (Bill of Materials)
+- **Warianty** - łatwe porównanie różnych rozwiązań
+
+**💡 Praktyczne zastosowania:**
+- **Presales** - szybkie wyceny dla klientów
+- **Dokumentacja** - materiały dla instalatorów
+- **Optymalizacja** - porównanie różnych konfiguracji
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🔗 Integracje i ekosystem SMA" type="tip">
+
+<KeyPoints title="🤝 Współpraca z SMA">
+
+**⚡ Naturalna integracja:**
+- Logika doboru z rodziną falowników SMA
+- Wejścia MPPT, zakresy napięć, ograniczenia prądowe
+- Automatyczne propozycje urządzeń SMA
+
+**📤 Eksport i materiały:**
+- Generowanie materiałów dla klienta
+- Eksport podstawowych danych projektu
+- Integracja z SMA Data Manager
+
+</KeyPoints>
+
+<InstructorNotes>
+**Integracje i ekosystem SMA**
+
+**🤝 Współpraca z SMA:**
+Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
+
+**⚡ Naturalna integracja:**
+- **Logika doboru** - algorytmy dostosowane do charakterystyk falowników SMA
+- **Wejścia MPPT** - optymalizacja wykorzystania trackerów
+- **Zakresy napięć** - automatyczna kontrola parametrów technicznych
+- **Ograniczenia prądowe** - bezpieczne konfiguracje łańcuchów
+- **Automatyczne propozycje** - inteligentny dobór urządzeń SMA
+
+**📤 Eksport i materiały:**
+- **Materiały dla klienta** - profesjonalne raporty i prezentacje
+- **Dane projektu** - eksport konfiguracji do innych systemów
+- **SMA Data Manager** - bezpośrednia integracja z systemami monitoringu
+
+**💡 Korzyści integracji:**
+- **Szybszy workflow** - mniej ręcznych operacji
+- **Mniejsza liczba błędów** - automatyczna walidacja
+- **Lepsze wsparcie** - dostęp do aktualizacji i nowych funkcji
+- **Kompatybilność** - gwarancja współpracy komponentów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="⚙️ Możliwości i ograniczenia" type="note">
+
+<SupportingDetails title="📊 Tabela porównawcza">
+
+| Obszar | Co potrafi Sunny Design | Uwaga dla projektanta |
+|--------|-------------------------|----------------------|
+| **Dobór łańcuchów** | Automatyczne i ręczne, walidacja zakresów napięć/prądów | Sprawdź Tmin/Tmax i różne konfiguracje MPPT |
+| **Model 3D** | Uproszczony (bez pełnej siatki zacienienia 3D) | Dla złożonych cieni rozważ PV*SOL premium |
+| **Meteodane** | Wbudowane profile irradiancji i temperatur | Weryfikuj z PVGIS dla sanity-check |
+| **Raporty** | Czytelne PDF-y ofertowo-techniczne | Dobrze na presales/koncepty |
+| **Ekosystem** | Spójność z falownikami SMA | Najszybszy workflow przy SMA |
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Możliwości i ograniczenia Sunny Design**
+
+**📊 Tabela porównawcza:**
+
+**🔧 Dobór łańcuchów:**
+- **Możliwości:** Automatyczne i ręczne konfiguracje, walidacja zakresów
+- **Uwaga:** Zawsze sprawdź temperatury minimalne/maksymalne (Tmin/Tmax) i różne konfiguracje MPPT
+- **Praktyka:** Testuj różne scenariusze sezonowe
+
+**🏗️ Model 3D:**
+- **Możliwości:** Podstawowe modelowanie 3D, orientacja modułów
+- **Ograniczenia:** Brak pełnej siatki zacienienia 3D
+- **Rekomendacja:** Dla złożonych cieni rozważ PV*SOL premium
+
+**🌤️ Meteodane:**
+- **Możliwości:** Wbudowane profile irradiancji i temperatur
+- **Uwaga:** Weryfikuj z PVGIS dla sanity-check
+- **Praktyka:** Porównuj wyniki z różnymi źródłami danych
+
+**📋 Raporty:**
+- **Możliwości:** Czytelne PDF-y ofertowo-techniczne
+- **Zastosowanie:** Dobrze na presales/koncepty
+- **Ograniczenia:** Mniej szczegółowe niż profesjonalne narzędzia
+
+**🤝 Ekosystem:**
+- **Mocne strony:** Spójność z falownikami SMA
+- **Zastosowanie:** Najszybszy workflow przy SMA
+- **Ograniczenia:** Mniej elastyczny przy innych markach
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🔄 Proces budowy projektu (10 kroków)" type="info">
+
+<KeyPoints title="📋 Krok po kroku">
+
+**1-3. Podstawy projektu:**
+1. **Utwórz projekt** - lokalizacja, typ dachu, kierunek i kąt
+2. **Zdefiniuj powierzchnie** - marginesy, strefy niedostępne, korytarze
+3. **Wybierz moduły PV** - moc, wymiary, siatka ułożenia
+
+**4-6. Konfiguracja elektryczna:**
+4. **Dobierz falownik(i)** - moc AC, MPPT, zakresy napięć, DC/AC ratio
+5. **Automatyczny dobór łańcuchów** - pozwól narzędziu rozmieścić stringi
+6. **Ręczna korekta** - wyrównaj długości i warunki MPPT
+
+</KeyPoints>
+
+<InstructorNotes>
+**Proces budowy projektu (10 kroków)**
+
+**📋 Krok po kroku:**
+
+**1-3. Podstawy projektu:**
+1. **Utwórz projekt** - wybierz lokalizację, typ dachu (płaski/skośny) lub grunt, ustaw kierunek i kąt
+2. **Zdefiniuj powierzchnie** - marginesy od krawędzi, strefy niedostępne, korytarze serwisowe
+3. **Wybierz moduły PV** - moc, wymiary; w razie potrzeby dopasuj siatkę ułożenia (pitch/tilt na dachu płaskim)
+
+**4-6. Konfiguracja elektryczna:**
+4. **Dobierz falownik(i)** - moc AC, liczba MPPT, zakresy napięć; rozważ docelowe **DC/AC ratio**
+5. **Automatyczny dobór łańcuchów** - pozwól narzędziu rozmieścić stringi; przejrzyj propozycję
+6. **Ręczna korekta stringów** - wyrównaj długości i warunki pracy między wejściami MPPT
+
+**💡 Kluczowe zasady:**
+- **Automatyzacja** - wykorzystaj inteligentne funkcje narzędzia
+- **Weryfikacja** - zawsze sprawdź propozycje systemu
+- **Optymalizacja** - dostosuj do specyfiki projektu
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📊 Analiza i warianty (kroki 7-10)" type="info">
+
+<KeyPoints title="🔍 Dalsze kroki">
+
+**7-8. Parametry i analiza:**
+7. **Ustaw straty podstawowe** - soiling, spadki napięć, orientacja
+8. **Analiza wyników** - produkcja roczna, PR, obciążenie, DC/AC ratio
+
+**9-10. Warianty i dokumentacja:**
+9. **Warianty A/B** - porównaj różne konfiguracje falowników
+10. **Raport** - wygeneruj PDF, sprawdź czytelność i kompletność
+
+</KeyPoints>
+
+<InstructorNotes>
+**Analiza i warianty (kroki 7-10)**
+
+**🔍 Dalsze kroki:**
+
+**7-8. Parametry i analiza:**
+7. **Ustaw straty podstawowe** - soiling, spadki napięć, orientacja; zanotuj przyjęte wartości
+8. **Analiza wyników** - produkcja roczna, PR (jeśli podane), obciążenie inwerterów, DC/AC ratio, ostrzeżenia walidatora
+
+**9-10. Warianty i dokumentacja:**
+9. **Warianty A/B** - np. jeden duży falownik vs dwa mniejsze; porównaj uzysk i wskaźniki
+10. **Raport** - wygeneruj PDF; sprawdź czytelność i kompletność (konfiguracja łańcuchów, komponenty, wyniki)
+
+**💡 Praktyczne wskazówki:**
+- **Dokumentuj założenia** - zapisuj przyjęte wartości strat
+- **Porównuj warianty** - testuj różne konfiguracje
+- **Weryfikuj wyniki** - sprawdź ostrzeżenia systemu
+- **Przygotuj dokumentację** - zadbaj o czytelność raportów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="✅ Checklista QA i typowe błędy" type="tip">
+
+<KeyPoints title="🔍 Kontrola jakości">
+
+**✅ Checklista QA:**
+- Lokalizacja i kąt/azymut zgodne z założeniami?
+- Zakresy napięć/prądów dla każdego MPPT w porządku?
+- DC/AC ratio uzasadnione?
+- Założenia strat zapisane i spójne?
+- Raport zawiera konfigurację łańcuchów?
+
+**❌ Typowe błędy:**
+- Przekroczenie napięcia zimą → zmniejsz moduły w stringu
+- Nierówny bilans MPPT → przełóż stringi między wejściami
+- Za wysoki clipping → obniż DC/AC lub podnieś moc AC
+
+</KeyPoints>
+
+<InstructorNotes>
+**Checklista QA i typowe błędy**
+
+**🔍 Kontrola jakości:**
+
+**✅ Checklista QA (wersja „lekka"):**
+- **Lokalizacja** - kąt/azymut zgodne z założeniami?
+- **Zakresy napięć/prądów** - dla każdego MPPT w porządku (zimą i latem)?
+- **DC/AC ratio** - uzasadnione i optymalne?
+- **Założenia strat** - soiling, spadki zapisane i spójne między wariantami?
+- **Raport** - zawiera konfigurację łańcuchów i listę głównych komponentów?
+
+**❌ Typowe błędy i szybkie remedia:**
+- **Przekroczenie napięcia zimą** → zmniejsz moduły w stringu lub zmień falownik
+- **Nierówny bilans MPPT** → przełóż stringi między wejściami, by wyrównać obciążenia
+- **Za wysoki clipping** → obniż DC/AC lub podnieś moc AC falownika
+- **Zbyt optymistyczne straty** → zwiększ soiling/spadki do wartości konserwatywnych
+
+**💡 Praktyczne wskazówki:**
+- **Testuj skrajne warunki** - zima/lato, różne temperatury
+- **Weryfikuj ostrzeżenia** - system podpowiada problemy
+- **Dokumentuj decyzje** - zapisuj uzasadnienia wyborów
+- **Porównuj z innymi narzędziami** - sanity-check wyników
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🎯 Mini-case: Warianty SMA" type="info">
+
+<KeyPoints title="📊 Studium przypadku">
+
+**🏗️ Wejście:**
+- Dach płaski ~80 kWp
+- Moduł 400 W
+
+**⚡ Zadanie:**
+- **Wariant A** — 2× falownik ~40 kW
+- **Wariant B** — 3× ~27 kW
+- Porównaj obciążenie MPPT, rozkład stringów i DC/AC
+
+**🎯 Cel:**
+Wybierz wariant lepszy pod kątem serwisu i strat
+
+</KeyPoints>
+
+<InstructorNotes>
+**Mini-case: Warianty SMA**
+
+**📊 Studium przypadku:**
+
+**🏗️ Wejście:**
+- **Dach płaski** ~80 kWp
+- **Moduł** 400 W
+- **Lokalizacja** - do wyboru (np. Warszawa)
+
+**⚡ Zadanie:**
+- **Wariant A** — 2× falownik ~40 kW
+- **Wariant B** — 3× ~27 kW
+- **Porównaj:**
+  - Obciążenie MPPT
+  - Rozkład stringów
+  - DC/AC ratio
+  - Straty systemowe
+
+**🎯 Cel:**
+Wybierz wariant lepszy pod kątem:
+- **Serwisu** - łatwość obsługi i napraw
+- **Strat** - efektywność energetyczna
+- **Kosztów** - analiza ekonomiczna
+
+**💡 Analiza:**
+- **Wariant A** - mniej falowników, prostsza obsługa
+- **Wariant B** - lepsze wykorzystanie MPPT, mniejsze straty
+- **Decyzja** - zależy od priorytetów (serwis vs efektywność)
+
+**🔧 Praktyczne zastosowanie:**
+- **Duże instalacje** - optymalizacja konfiguracji
+- **Konserwacja** - planowanie serwisu
+- **Efektywność** - maksymalizacja produkcji
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>

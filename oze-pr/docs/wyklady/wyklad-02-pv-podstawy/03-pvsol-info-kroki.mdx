@@ -1,0 +1,386 @@
+---
+title: "PV*SOL: architektura, porównanie i proces budowy projektu"
+---
+
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
+
+<SlideContainer>
+
+<Slide title="🏗️ Architektura PV*SOL" type="info">
+
+<KeyPoints title="⚙️ Warstwy systemu PV*SOL">
+
+**🔧 Architektura narzędzia (6 warstw):**
+- **Interfejs 2D/3D** - definicja geometrii dachów, przeszkód, stref bezpieczeństwa
+- **Biblioteki komponentów** - moduły, falowniki, magazyny energii, optymalizatory
+- **Silnik irradiancji** - siatka czasowo-przestrzenna, horyzont, zacienienie
+- **Silnik elektryczny** - obliczenia napięć/prądów, bilans MPPT, straty kablowe
+- **Symulacja energetyczna** - PR, produkcja, rozkład strat
+- **Raportowanie i BOM** - PDF z założeniami, wynikami, schematami
+
+</KeyPoints>
+
+<InstructorNotes>
+**Architektura PV*SOL - Szczegółowe warstwy systemu**
+
+**🏗️ Architektura narzędzia (warstwy):**
+
+**1. Interfejs 2D/3D:**
+- Definicja geometrii dachów i terenu, przeszkód, stref bezpieczeństwa
+- Układ poziomy lub pionowy, rzędy na dachu płaskim, balasty
+- Import planów DXF/DWG, ortofotomapy
+
+**2. Biblioteki komponentów:**
+- Moduły, falowniki (MPPT, zakresy napięć i prądów)
+- Magazyny energii, optymalizatory, systemy montażowe
+- Dziesiątki tysięcy modułów i falowników, tysiące systemów baterii
+- Dane aktualizowane przez producentów
+
+**3. Silnik irradiancji i zacienienia:**
+- Siatka czasowo-przestrzenna, horyzont terenowy, wzajemne zacienianie
+- Korekty kąta padania, model temperatury ogniw
+- Uwzględnia typ instalacji (wolnostojąca, BIPV, montaż dachowy), prędkość wiatru i wymianę ciepła
+
+**4. Silnik elektryczny:**
+- Obliczenia napięcia i prądu stringów, bilans MPPT
+- Straty kablowe (DC/AC), krzywe sprawności falowników
+- Sterowanie mocą czynną i bierną, clipping
+
+**5. Warstwa symulacji energetycznej:**
+- PR (Performance Ratio), produkcja specyficzna
+- Rozkład strat (soiling, mismatch, zacienienie, temperatura, okablowanie, konwersja AC)
+
+**6. Raportowanie i BOM:**
+- PDF z założeniami, wynikami, wykresami, schematami
+- Pełne zestawienie materiałów
+
+**💡 Efekt:** Realistyczne odwzorowanie pracy systemu PV w zmiennych warunkach, które stanowi podstawę wiarygodnych analiz energetycznych i ekonomicznych.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="⚖️ PV*SOL vs PV*SOL premium" type="info">
+
+<KeyPoints title="🔍 Porównanie funkcjonalne">
+
+| Obszar | PV*SOL | PV*SOL premium |
+|--------|--------|----------------|
+| **Model 3D** | Podstawowe 3D/2D | Zaawansowane 3D z siatką zacienienia |
+| **Wariantowanie** | Podstawowe | Rozszerzone warianty, porównywanie |
+| **Biblioteki** | Standardowe | Poszerzone bazy, częstsze aktualizacje |
+| **Raporty** | Standard | Rozszerzone (więcej wykresów, detali) |
+| **Integracje** | Ograniczone | Szersze formaty importu/eksportu |
+
+</KeyPoints>
+
+<InstructorNotes>
+**PV*SOL vs PV*SOL premium — porównanie funkcjonalne**
+
+**📊 Szczegółowe porównanie:**
+
+**Model 3D i zacienienie:**
+- **PV*SOL**: Podstawowe 3D/2D
+- **PV*SOL premium**: Zaawansowane 3D z siatką zacienienia, horyzontem i dokładnym cieniowaniem obiektów
+
+**Wariantowanie:**
+- **PV*SOL**: Podstawowe
+- **PV*SOL premium**: Rozszerzone warianty, wygodne porównywanie i kopiowanie projektów
+
+**Biblioteki:**
+- **PV*SOL**: Standardowe
+- **PV*SOL premium**: Poszerzone bazy oraz częstsze aktualizacje
+
+**Raporty i BOM:**
+- **PV*SOL**: Standard
+- **PV*SOL premium**: Rozszerzone raporty (więcej wykresów, detali elektrycznych) oraz pełniejszy BOM
+
+**Integracje i eksport:**
+- **PV*SOL**: Ograniczone
+- **PV*SOL premium**: Szersze formaty importu i eksportu, lepsza praca na warstwach
+
+**Użycie dydaktyczne:**
+- **PV*SOL**: Wystarczające
+- **PV*SOL premium**: Preferowane do zadań wymagających dokładnej analizy cieni i napięć
+
+**💡 Uwaga praktyczna:** Na zajęciach preferujemy edycję premium, gdy kluczowe są cienie, bilans MPPT, szczegółowe raporty i przygotowanie do audytu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🔬 Modele obliczeniowe" type="tip">
+
+<KeyPoints title="⚠️ Na co uważać w modelach">
+
+**🌡️ Model temperatury ogniw:**
+- Model NOCT lub prosty model termiczny powierzchni
+- Krytyczny dla napięć i sprawności
+- Poprawnie ustaw temperaturę minimalną i maksymalną
+
+**⚡ Model falownika:**
+- Zakres napięcia MPP, napięcia startu i wyłączenia
+- Krzywe sprawności przy częściowym obciążeniu
+- Limity prądowe wejść i MPPT
+
+**🌫️ Zacienienie:**
+- Gęstość siatki i krok czasowy silnie wpływają na dokładność
+- Przy przeszkodach stosuj siatkę średnią lub wysoką
+
+**🔋 Magazyny energii:**
+- Sprawność cyklu, strategia ładowania i rozładowania
+- Ograniczenia mocy (jeśli stosowane)
+
+</KeyPoints>
+
+<InstructorNotes>
+**Modele obliczeniowe — na co uważać**
+
+**🌡️ Model temperatury ogniw:**
+- Uwzględnia typ instalacji (wolnostojąca, BIPV, montaż dachowy), prędkość wiatru i wymianę ciepła przez promieniowanie oraz konwekcję
+- Równanie bilansu cieplnego rozwiązywane jest numerycznie; krok czasowy dostosowywany do warunków (dla skrajnych przypadków może być krótszy niż godzinowy)
+- Model NOCT lub prosty model termiczny powierzchni — krytyczny dla napięć i sprawności
+- **Uwaga**: Poprawnie ustaw temperaturę minimalną i maksymalną
+
+**⚡ Model falownika:**
+- Względna charakterystyka sprawności η_rel(P_DC) oraz szczegółowe krzywe pracy
+- MPPT: weryfikacja, czy napięcie MPP stringu mieści się w zakresie trackera w każdym kroku
+- Uwzględnienie poboru w trybie standby/nocnym oraz progu mocy startu
+- Zakres napięcia MPP, napięcia startu i wyłączenia, maksymalne napięcie DC
+- Krzywe sprawności przy częściowym obciążeniu; limity prądowe wejść i MPPT
+
+**🌫️ Zacienienie:**
+- Gęstość siatki i krok czasowy silnie wpływają na dokładność strat
+- Przy przeszkodach stosuj siatkę średnią lub wysoką
+- Siatka czasowo-przestrzenna, horyzont terenowy, wzajemne zacienianie
+
+**🔋 Magazyny energii:**
+- Sprawność cyklu, strategia ładowania i rozładowania
+- Ograniczenia mocy (jeśli stosowane)
+- Dziesiątki tysięcy modułów i falowników, tysiące systemów baterii oraz urządzenia towarzyszące (optymalizatory, EV)
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📋 Proces budowy projektu (12 kroków)" type="note">
+
+<KeyPoints title="🔄 Scalony proces w PV*SOL">
+
+**📝 Krok po kroku:**
+1. **Utwórz projekt** - lokalizacja, meteodane, temperatury
+2. **Zbuduj geometrię** - dachy, kąty, azymut, strefy
+3. **Zamodeluj przeszkody** - kominy, attyki, drzewa, siatka
+4. **Wybierz moduł** - moc, wymiary, współczynniki
+5. **Rozmieść pola** - odstępy, korytarze, odległości
+6. **Dobierz falownik** - moc AC, MPPT, DC/AC ratio
+7. **Zaprojektuj stringi** - liczba modułów, napięcia, prądy
+8. **Okablowanie** - długości, przekroje, spadki napięć
+9. **Straty dodatkowe** - soiling, mismatch, założenia
+10. **Uruchom symulację** - PR, produkcja, clipping
+11. **Iteruj warianty** - porównaj co najmniej dwa
+12. **Raport i BOM** - PDF, założenia, schematy
+
+</KeyPoints>
+
+<InstructorNotes>
+**Scalony proces budowy projektu w PV*SOL lub PV*SOL premium (12 kroków)**
+
+**📋 Szczegółowy proces:**
+
+**1. Utwórz projekt i ustaw lokalizację:**
+- Wybierz meteodane (rok reprezentatywny), strefę czasową
+- Ustaw temperatury minimalne i maksymalne
+
+**2. Zbuduj geometrię 2D/3D:**
+- Dachy, kąty, azymut, strefy od krawędzi
+- Zaimportuj plan lub plik DXF, jeśli jest dostępny
+
+**3. Zamodeluj przeszkody i horyzont:**
+- Kominy, attyki, drzewa
+- Ustaw siatkę zacienienia adekwatną do złożoności sceny
+
+**4. Wybierz moduł:**
+- Moc, wymiary, współczynniki temperaturowe
+- Potwierdź parametry z kartą katalogową producenta
+
+**5. Rozmieść pola modułów:**
+- Zachowaj odstępy i korytarze
+- Sprawdź odległości przeciw-zacieniowe na dachu płaskim
+
+**6. Dobierz falownik:**
+- Moc AC, liczba MPPT
+- Wstępnie określ docelowe DC/AC ratio (często 1.1–1.3, w zależności od klimatu i orientacji)
+
+**7. Zaprojektuj stringi:**
+- Liczba modułów w łańcuchu
+- Sprawdź, czy napięcie łańcucha zimą nie przekracza maksymalnego napięcia DC falownika
+- Czy napięcie pracy mieści się w zakresie MPPT w całym zakresie temperatur
+- Czy prądy wejściowe i bilans MPPT są poprawne
+
+**8. Okablowanie i spadki napięć:**
+- Długości i przekroje DC oraz AC
+- Utrzymuj spadki w granicach zaleceń (typowo poniżej 1–2% DC i 1–3% AC)
+
+**9. Ustal straty dodatkowe:**
+- Soiling (sezonowość), mismatch, kąt padania, zabrudzenia
+- Udokumentuj wszystkie założenia w projekcie
+
+**10. Uruchom symulację:**
+- Oceń PR, produkcję specyficzną, krzywą mocy (clipping)
+- Przeanalizuj wkład poszczególnych strat
+
+**11. Iteruj warianty:**
+- Porównaj co najmniej dwa warianty — inny falownik, inne DC/AC, inne rozmieszczenie
+- Porównaj wskaźniki i wykresy
+
+**12. Raport i BOM:**
+- Wygeneruj PDF
+- Dołącz założenia, schematy, listę materiałów
+- Przygotuj krótkie wnioski i ewentualne ograniczenia
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="✅ Checklista jakości (QA)" type="tip">
+
+<KeyPoints title="🔍 Zintegrowana kontrola jakości">
+
+**🌡️ Meteo i temperatury:**
+- Lokalizacja poprawna, temperatury zgodne z danymi klimatycznymi
+
+**📐 Geometria:**
+- Odległości od krawędzi i przeszkód zachowane
+- Korytarze serwisowe przewidziane
+
+**🌫️ Zacienienie:**
+- Gęstość siatki adekwatna
+- Uwzględniono horyzont i sezonowość
+
+**⚡ Elektryka:**
+- Napięcie jałowe łańcucha zimą poniżej maksimum DC
+- Napięcie pracy mieści się w zakresie MPPT
+- Prądy wejściowe nieprzekroczone
+
+**📊 DC/AC i straty:**
+- DC/AC dobrane i uzasadnione
+- Analiza clippingu wykonana
+- Spadki napięć w normie
+- Założenia soiling i mismatch udokumentowane
+
+</KeyPoints>
+
+<InstructorNotes>
+**Zintegrowana checklista jakości (QA)**
+
+**🔍 Kompletna kontrola jakości:**
+
+**🌡️ Meteo i temperatury:**
+- Lokalizacja poprawna, temperatury minimalne zgodne z danymi klimatycznymi
+- Sprawdź czy dane meteorologiczne są odpowiednie dla lokalizacji
+
+**📐 Geometria:**
+- Odległości od krawędzi i przeszkód zachowane, korytarze serwisowe przewidziane
+- Zweryfikuj czy model geometryczny jest kompletny
+- Sprawdź czy wszystkie wymiary są prawidłowe
+
+**🌫️ Zacienienie:**
+- Gęstość siatki adekwatna, uwzględniono horyzont i sezonowość
+- Upewnij się, że siatka zacienienia jest odpowiednia do złożoności sceny
+- Sprawdź czy wszystkie przeszkody są uwzględnione
+
+**⚡ Elektryka:**
+- Napięcie jałowe łańcucha zimą poniżej maksimum DC; napięcie pracy mieści się w zakresie MPPT; prądy wejściowe nieprzekroczone
+- Upewnij się, że napięcia stringów mieszczą się w zakresie MPPT falownika
+- Sprawdź czy prądy wejściowe nie przekraczają limitów
+
+**📊 DC/AC i straty:**
+- DC/AC dobrane i uzasadnione; analiza clippingu wykonana
+- Spadki napięć w normie; założenia soiling i mismatch udokumentowane
+- Raport: pełny i spójny (założenia, wykresy, BOM, schemat), jednolite jednostki i legendy
+
+**💡 Praktyczne wskazówki:**
+- Zawsze dokumentuj założenia - ułatwia to audyt i iteracje
+- Porównuj wyniki z PVGIS jako sanity-check
+- Pracuj wariantowo - analizuj różne opcje konfiguracji
+- Na koniec przejdź checklistę walidacyjną (napięcia, prądy, zacienienia, PR)
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🚨 Najczęstsze błędy i remedia" type="warning">
+
+<KeyPoints title="⚠️ Szybkie rozwiązania problemów">
+
+**⚡ Problemy elektryczne:**
+- **Zbyt wysokie napięcie zimą** → zmniejsz liczbę modułów w stringu
+- **Poza zakresem MPPT latem** → zwiększ liczbę modułów w stringu
+- **Nadmierny clipping** → obniż DC/AC ratio lub wybierz większy falownik
+- **Asymetria MPPT** → przeorganizuj stringi według nasłonecznienia
+
+**🔌 Problemy z okablowaniem:**
+- **Duże spadki napięć** → zwiększ przekroje kabli lub skróć trasy
+
+**💡 Mini-case do ćwiczeń:**
+- Dach 35°, azymut -20°, moduł 400W, cel 10-12 kWp
+- Zaprojektuj dwa warianty DC/AC (1.15 vs 1.30)
+- Porównaj PR i udział clippingu
+
+</KeyPoints>
+
+<InstructorNotes>
+**Najczęstsze błędy i szybkie remedia**
+
+**⚡ Problemy elektryczne:**
+
+**Zbyt wysokie napięcie łańcucha zimą:**
+- **Problem**: Napięcie jałowe stringu przekracza maksymalne napięcie DC falownika
+- **Rozwiązanie**: Zmniejsz liczbę modułów w stringu lub wybierz falownik o wyższym dopuszczalnym napięciu DC
+- **Sprawdź**: Voc(Tmin) × N < Vmax,DC falownika
+
+**Poza zakresem MPPT latem:**
+- **Problem**: Napięcie pracy stringu nie mieści się w zakresie MPPT w wysokich temperaturach
+- **Rozwiązanie**: Zwiększ liczbę modułów w stringu lub zmień model falownika
+- **Sprawdź**: Vmpp(Tmax) × N w zakresie MPPT
+
+**Nadmierny clipping:**
+- **Problem**: Falownik ogranicza moc systemu zbyt często
+- **Rozwiązanie**: Obniż DC/AC ratio albo wybierz falownik o większej mocy AC
+- **Sprawdź**: Analiza krzywej mocy chwilowej
+
+**Asymetria MPPT:**
+- **Problem**: Stringi na różnych MPPT mają różne warunki nasłonecznienia
+- **Rozwiązanie**: Przeorganizuj stringi, aby odpowiadały obszarom o podobnym nasłonecznieniu
+- **Sprawdź**: Bilans irradiancji między stringami
+
+**🔌 Problemy z okablowaniem:**
+
+**Duże spadki napięć:**
+- **Problem**: Spadki napięć przekraczają zalecane wartości (1-2% DC, 1-3% AC)
+- **Rozwiązanie**: Zwiększ przekroje kabli lub skróć trasy przewodów
+- **Sprawdź**: Obliczenia spadków napięć dla najdłuższych tras
+
+**💡 Mini-case do ćwiczeń:**
+- **Wejście**: Dach 35 stopni, azymut minus 20 stopni, moduł 400 W, cel 10–12 kWp
+- **Zadanie**: Zaprojektuj dwa warianty różniące się DC/AC (1.15 vs 1.30), porównaj PR i udział clippingu; wybierz wariant z lepszym bilansem strat
+- **Oczekiwane rezultaty**: Zrozumienie wpływu DC/AC ratio na wydajność systemu
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
