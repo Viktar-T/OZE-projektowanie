@@ -1,19 +1,232 @@
 ---
 sidebar_position: 5
-title: "Proces modelowania/projektowania w T*SOL"
+title: "Proces modelowania w T*SOL (krok po kroku + checklisty)"
 ---
 
-## Krok po kroku
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-1. **Kreator projektu** – wybór typu obiektu, lokalizacji i danych klimatycznych.
-2. **Profil zapotrzebowania** – import profili godzinowych lub generowanie scenariuszy.
-3. **Konfiguracja kolektorów** – układ hydrauliczny, przepływy, dobór armatury.
-4. **Zbiornik i sieć cieplna** – ustawienie strat, priorytetów ładowania, sterowania pompą.
-5. **Symulacja i raport** – analiza wykresów, sezonowych wskaźników wydajności.
+<SlideContainer>
 
-## Wskazówki praktyczne
+<Slide title="🧭 0. Przygotowanie projektu" type="info">
 
-- Sprawdzać temperatury stagnacji i dobierać roztwór glikolu zgodnie z normą.
-- Korzystać z funkcji porównania wariantów (od kilku do kilkunastu scenariuszy).
-- Dokumentować założenia wejściowe dla potrzeb audytu/raportu.
+<KeyPoints title="📁 Konwencje i struktura">
+
+- 📝 **Nazwy**: `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`
+- 📂 **Foldery**: `input/` (meteo, profile), `output/` (raporty), `variants/`
+
+</KeyPoints>
+
+<SupportingDetails title="💡 Korzyści organizacji">
+
+- ⏰ **Skrócony czas** porównania wariantów
+- 📋 **Łatwiejsza akceptacja** przez klienta
+- 🔍 **Szybsza identyfikacja** plików
+- 📊 **Lepsza dokumentacja** projektowa
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Przygotowanie projektu:**
+
+**📝 Konwencje nazewnictwa:**
+- **Format**: `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`
+- **Przykład**: `ST_Hotel_DHW_202412_V1A`
+- **Korzyści**: Łatwa identyfikacja, porządek w plikach
+
+**📂 Struktura folderów:**
+- **`input/`** - dane wejściowe (meteo, profile, parametry)
+- **`output/`** - raporty, wykresy, dokumentacja
+- **`variants/`** - kopie projektów, warianty rozwiązań
+
+**💡 Praktyczne wskazówki:**
+Porządek plików i wersji skraca czas porównania wariantów i akceptacji przez klienta.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🔧 Kroki 1–4: typ, lokalizacja, profil, kolektory" type="tip">
+
+<KeyPoints title="🚀 Start w T*SOL">
+
+- 🎯 **Nowy projekt** → typ zastosowania (c.w.u./basen/c.o./kombinowane)
+- 🌤️ **Lokalizacja i meteo** (TMY/Meteonorm, korekty ±5% dla mikroklimatów)
+- 📊 **Profil zapotrzebowania**: CSV `timestamp; demand_lph; T_set_C`
+- ☀️ **Wstępny dobór kolektorów**: kąt/azymut/odstępy, przeszkody
+
+</KeyPoints>
+
+<SupportingDetails title="🔍 Kontrola jakości">
+
+- 📊 **Weryfikacja sum** rocznych i szczytów godzinowych
+- 🌞 **Sprawdź samocieniowanie** zimą
+- 📋 **Test profili** - sanity-check danych wejściowych
+- 🧭 **Orientacja** - optymalizacja kątów i azymutów
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Kroki 1–4: Start w T*SOL:**
+
+**🎯 Krok 1 - Nowy projekt:**
+- Wybierz typ zastosowania (c.w.u./basen/c.o./kombinowane)
+- Uzupełnij metryki celu (np. f_sol, LCOH) – trzyma to dyscyplinę
+- Wybierz szablon odpowiedni dla zastosowania
+
+**🌤️ Krok 2 - Lokalizacja i meteo:**
+- Wybierz miejscowość, sprawdź TMY/Meteonorm
+- Jeśli to projekt w dolinie/na wzgórzu – rozważ ±5% korekty irradiancji
+- Test wrażliwości dla specyficznych mikroklimatów
+
+**📊 Krok 3 - Profil zapotrzebowania:**
+- Przygotuj plik: `timestamp; demand_lph; T_set_C`
+- Zweryfikuj sumy roczne i szczyty godzinowe (podgląd wykresu w narzędziu)
+- Dla obiektów z cyrkulacją – uwzględnij harmonogram pracy pompy cyrkulacyjnej
+
+**☀️ Krok 4 - Wstępny dobór kolektorów:**
+- Wybierz model z biblioteki; ustaw azymut/kąt/odstępy rzędów
+- Dodaj przeszkody (kominy, attyki) i sprawdź cień sezonowy
+- **Pro tip:** dachu płaskie – tilt 25–35°, odległość między rzędami ≥ 1,5–2× wysokość modułu
+
+**💡 Praktyczne wskazówki:**
+Zweryfikuj sumy roczne i szczyty godzinowe; sprawdź samocieniowanie zimą.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🛠️ Kroki 5–8: schemat, zasobnik, sterowanie, instalacja" type="info">
+
+<KeyPoints title="🔧 Konfiguracja układu">
+
+- 🔄 **Schemat**: pompy, wymienniki, zawory, czujniki; drain‑back – spadki/odpowietrzenie
+- 🏺 **Zasobnik**: pojemność startowa (np. 50 l/m²), warstwowość, czujniki
+- ⚙️ **Źródło szczytowe**: priorytety, antylegionella (1×/tydz. do 60–70 °C)
+- 📉 **Instalacja rurowa**: długości/średnice/izolacje; oddzielnie cyrkulacja (harmonogram)
+
+</KeyPoints>
+
+<SupportingDetails title="✅ Kontrola jakości">
+
+- 🔄 **Bilans objętości** - zamknięcie obiegu
+- ⚙️ **Brak taktowania pomp** - stabilne sterowanie
+- 📊 **Parametry realistyczne** dla profilu
+- 📍 **Lokalizacja czujników** - prawidłowe umiejscowienie
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Kroki 5–8: Konfiguracja układu:**
+
+**🔄 Krok 5 - Schemat hydrauliczny:**
+- Wybierz szablon i doprecyzuj: pompy, wymienniki, zawory, czujniki
+- Dla drain‑back – sprawdź spadki i odpowietrzenie (zgodność z praktyką montażową)
+- **QA**: Zamknięcie bilansu objętości, prawidłowe czujniki, zawory bezpieczeństwa
+
+**🏺 Krok 6 - Zasobnik i magazynowanie:**
+- Dobierz pojemność startową (np. 50 l/m² dla c.w.u.) i sprawdź wpływ ±20%
+- Zdefiniuj warstwowość i położenie czujników (ładowanie górnej/środkowej strefy)
+- **Wskazówka**: Dla basenów często wystarcza wymiennik bez dużego magazynu
+
+**⚙️ Krok 7 - Źródło szczytowe i sterowanie:**
+- Zdefiniuj źródło (kocioł/HP/elektryka), priorytety i harmonogramy
+- Antylegionella: 1×/tydz. do 60–70 °C – obserwuj wpływ na f_sol i OPEX
+- **QA**: Brak taktowania (zbyt małe ΔT), sprawdź liczbę cykli/dobę
+
+**📉 Krok 8 - Instalacja rurowa i straty:**
+- Wprowadź **realne** długości i średnice; izolacje wg projektu; odcinki w strefach nieogrzewanych
+- Osobno zdefiniuj cyrkulację c.w.u. (harmonogram!)
+- **Pułapka**: Nieuwzględniona cyrkulacja potrafi „zjeść" uzysk
+
+**💡 Praktyczne wskazówki:**
+Kontrola: bilans objętości, brak taktowania pomp, parametry sterowania realistyczne dla profilu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📈 Kroki 9–12: parametry, symulacja, warianty, raport" type="info">
+
+<KeyPoints title="Finalizacja i dokumenty">
+
+- Parametry: ΔT, zabezpieczenia, zamarzanie/przegrzew
+- Symulacja pełnoroczna; ostrzeżenia: stagnacja, temperatury maks., taktowanie
+- Warianty (3–5): powierzchnia, magazyn, typ kolektora, ΔT/izolacje
+- Raporty: techniczny + skrócony; aneks wejść i wariantów
+
+</KeyPoints>
+
+<InstructorNotes>
+Wariantuj po jednym parametrze. Wyniki porównuj tabelarycznie i wykresami.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🔍 Checklisty operacyjne" type="tip">
+
+<KeyPoints title="Po wejściach i po symulacji">
+
+- Po konfiguracji wejść: profil CSV zgodny; brak samocieniowania; sensowna pojemność; brak skrajnych temp.
+- Po symulacji: brak ostrzeżeń krytycznych; uzysk specyficzny i f_sol w spodziewanym zakresie; ekonomia i wrażliwość ±20%
+
+</KeyPoints>
+
+<InstructorNotes>
+Checklisty ułatwiają peer‑review i akceptację klienta.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🧯 Typowe problemy i szybkie naprawy" type="warning">
+
+<KeyPoints title="Diagnoza → Remedium">
+
+- Za wysokie temperatury latem → większy magazyn/heat‑dump, korekta ΔT
+- Niski f_sol → straty cyrkulacji, izolacje, harmonogram odbioru
+- Taktowanie pomp → zwiększ histerezę, popraw czujniki
+
+</KeyPoints>
+
+<InstructorNotes>
+Zapisuj decyzje i ich wpływ na metryki (uzysk, f_sol, LCOH).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📘 Zadanie dla studentów + Speedrun" type="info">
+
+<KeyPoints title="Praktyka">
+
+- Zadanie: akademik 200 osób (Gdańsk) – 3 warianty; raport: uzysk, f_sol, straty, LCOH, SPBT, wrażliwość ±20%, wnioski ≤200 słów
+- Speedrun 20 min: Szablon c.w.u. → Meteo → Profil → Kolektory → Zasobnik → Straty → ΔT → Symulacja → porównanie 2 wariantów → mini‑raport
+
+</KeyPoints>
+
+<InstructorNotes>
+Zadanie uczy równowagi między jakością a czasem. Speedrun buduje biegłość narzędziową.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
+
 

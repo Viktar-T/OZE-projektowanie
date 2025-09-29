@@ -1,29 +1,279 @@
 ---
 sidebar_position: 2
-title: "Proces modelowania/projektowania systemów solarnych termicznych"
+title: "Proces modelowania/projektowania ST (workflow)"
 ---
 
-## Etapy przygotowawcze
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Audyt energetyczny budynku lub analiza danych licznikowych.
-- Zebranie danych meteorologicznych (TMY, Meteonorm, PVGIS).
-- Określenie ograniczeń konstrukcyjnych i montażowych.
+<SlideContainer>
 
-## Modelowanie systemu
+<Slide title="🗺️ Mapa procesu – przegląd" type="info">
 
-- Konfiguracja kolektorów (szeregowo/równolegle) i dobór średnic rur.
-- Obliczenie przepływów i strat hydraulicznych zgodnie z EN 12976.
-- Integracja zbiorników buforowych i układów mieszających.
+<KeyPoints title="🔄 Wejścia → Symulacja → Wyniki → Raport">
 
-## Symulacje i optymalizacja
+- 🎯 **Zdefiniuj cel** i metryki (f_sol, LCOH, SPBT)
+- 🌤️ **Dane meteo** i lokalizacja (TMY/Meteonorm)
+- 📊 **Profil zapotrzebowania** (CSV)
+- 🔧 **Konfiguracja**: kolektory, schemat hydrauliczny, zasobnik
+- ⚙️ **Straty, sterowanie, zacienienie**
+- 🚀 **Symulacja, sanity‑check, warianty, ekonomia**
 
-- Symulacje godzinowe w T*SOL/Polysun z uwzględnieniem strat postojowych.
-- Analiza wrażliwości (liczba kolektorów, orientacja, nachylenie).
-- Ocena wskaźników (solar fraction, oszczędność energii i emisji).
+</KeyPoints>
 
-## Dokumentacja
+<SupportingDetails title="💡 Kluczowe zasady">
 
-- Raport techniczny z wynikami symulacji, schematy ideowe.
-- Zestawienie materiałowe i kosztowe (CAPEX/OPEX, dotacje).
-- Rekomendacje eksploatacyjne i plan monitoringu.
+- 📋 **Punkty kontrolne** - każdy krok jako checkpoint jakości
+- 📝 **Dokumentacja** - założenia i decyzje w raporcie
+- 🔄 **Iteracyjność** - powrót do poprzednich kroków
+- ✅ **Walidacja** - sprawdzenie wyników na każdym etapie
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Mapa procesu – przegląd:**
+
+**🎯 Definicja celu:**
+- Określenie metryk sukcesu (f_sol, LCOH, SPBT)
+- Identyfikacja ograniczeń projektowych
+- Wybór narzędzia symulacyjnego
+
+**🌤️ Dane wejściowe:**
+- Lokalizacja i dane meteorologiczne
+- Profil zapotrzebowania (import CSV)
+- Parametry komponentów z bibliotek
+
+**🔧 Konfiguracja systemu:**
+- Dobór kolektorów i ich rozmieszczenie
+- Schemat hydrauliczny (szablony)
+- Konfiguracja zasobnika i sterowania
+
+**⚙️ Parametryzacja:**
+- Straty instalacyjne (rurociągi, izolacje)
+- Logika sterowania (ΔT, priorytety)
+- Modelowanie zacienienia
+
+**🚀 Symulacja i analiza:**
+- Uruchomienie symulacji rocznej
+- Sanity-check wyników
+- Wariantowanie i optymalizacja
+- Analiza ekonomiczna
+
+**💡 Praktyczne wskazówki:**
+Traktuj każdy krok jako punkt kontrolny jakości. Dokumentuj założenia i decyzje – to część finalnego raportu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🧩 Kroki 1–4: Cel, meteo, profil, kolektory" type="tip">
+
+<KeyPoints title="🚀 Start projektu">
+
+1. 🎯 **Cel projektu** i kryteria sukcesu (mierzalne)
+2. 🌤️ **Dane klimatyczne** i lokalizacja (plik meteo)
+3. 📊 **Profil zapotrzebowania** (CSV: timestamp; demand_lph)
+4. ☀️ **Wstępny dobór kolektorów** (A/B/C: płaskie/próżniowe/CPC)
+
+</KeyPoints>
+
+<SupportingDetails title="🔍 Kontrola jakości">
+
+- 📊 **Metryki policzalne** w narzędziu
+- 📈 **Sanity profilu** (suma roczna, szczyty P95/P99)
+- 🧭 **Kąty/azymuty** i samocieniowanie wstępnie ocenione
+- 📋 **Weryfikacja danych** wejściowych
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Kroki 1–4: Start projektu:**
+
+**🎯 Krok 1 - Cel projektu i kryteria sukcesu:**
+- Definicja metryk sukcesu (f_sol ≥ 50%, LCOH ≤ X PLN/kWh)
+- Identyfikacja ograniczeń budżetowych i technicznych
+- Wybór narzędzia symulacyjnego
+- **QA**: Czy metryki są mierzalne i policzalne w narzędziu?
+
+**🌤️ Krok 2 - Dane klimatyczne i lokalizacja:**
+- Wybór punktu meteo (TMY/Meteonorm)
+- Wysokość n.p.m., korekty lokalne
+- **Wskazówka**: W przypadku specyficznych mikroklimatów – użyj korekty globalnej irradiancji ±5–10% i sprawdź wrażliwość
+
+**📊 Krok 3 - Profil zapotrzebowania:**
+- Dobowo‑godziny, sezonowość, dni robocze/weekendy, temp. zadana
+- **Szablon CSV (zalecany)**: `timestamp; demand_lph; T_set_C; is_weekend`
+- **QA**: Zgodność sum rocznych z audytem/założeniami; test szczytów (P95/P99)
+
+**☀️ Krok 4 - Wstępny dobór kolektorów:**
+- Typ, powierzchnia dostępna, azymut/tilt, przeszkody
+- **Pułapka**: Zbyt strome kąty na dachach płaskich → samocieniowanie
+- **Wyjście**: Warianty: A (płaskie), B (próżniowe), C (CPC)
+
+**💡 Praktyczne wskazówki:**
+QA: metryki policzalne w narzędziu; sanity profilu (suma roczna, szczyty P95/P99); kąty/azymuty i samocieniowanie wstępnie ocenione.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🛠️ Kroki 5–8: Schemat, magazyn, źródło, straty" type="info">
+
+<KeyPoints title="🔧 Konfiguracja układu">
+
+5. 🔄 **Schemat hydrauliczny** (szablony: glikol, drain‑back, kombinowane)
+6. 🏺 **Magazyn energii** (40–70 l/m² dla c.w.u. – korekty po profilach)
+7. ⚙️ **Źródło szczytowe** i sterowanie (ΔT, antylegionella)
+8. 📉 **Straty instalacyjne** (długości, średnice, izolacje, strefy)
+
+</KeyPoints>
+
+<SupportingDetails title="✅ Kontrola jakości">
+
+- 🔄 **Bilans objętości** - zamknięcie obiegu
+- 📍 **Lokalizacja czujników** - prawidłowe umiejscowienie
+- ⚙️ **Brak taktowania pomp** - stabilne sterowanie
+- 📊 **Realistyczne straty** cyrkulacji
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Kroki 5–8: Konfiguracja układu:**
+
+**🔄 Krok 5 - Schemat hydrauliczny:**
+- Wybierz z szablonów programu: glikol + wymiennik, drain‑back, dwie wężownice, schematy kombinowane
+- **QA**: Zamknięcie bilansu objętości, prawidłowe czujniki, zawory bezpieczeństwa
+
+**🏺 Krok 6 - Magazyn energii (zasobnik):**
+- **Reguła startowa**: 40–70 l/m² kolektora (dla c.w.u.), koryguj po profilach
+- **Wyjście**: Model zasobnika (objętość, straty, warstwowość)
+- **Wskazówka**: Dla basenów często wystarcza wymiennik bez dużego magazynu
+
+**⚙️ Krok 7 - Źródło szczytowe i sterowanie:**
+- Zdefiniuj priorytet solaru, harmonogramy antylegionella, progi ΔT start/stop pomp
+- **QA**: Brak taktowania (zbyt małe ΔT), sprawdź liczbę cykli/dobę
+
+**📉 Krok 8 - Straty instalacyjne:**
+- **Wejście**: Długości i średnice rur, izolacje, strefy nieogrzewane
+- **Wyjście**: Straty liniowe [W/K], straty cyrkulacji [kWh/rok]
+- **Pułapka**: Nieuwzględniona cyrkulacja potrafi „zjeść" uzysk
+
+**💡 Praktyczne wskazówki:**
+Kontrola: bilans objętości, lokalizacja czujników, brak taktowania pomp, realistyczne straty cyrkulacji.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🌤️ Kroki 9–12: Zacienienie, symulacja, warianty, ekonomia" type="info">
+
+<KeyPoints title="🚀 Finalizacja modeli">
+
+9. 🌳 **Zacienienie** i ograniczenia montażowe (sezonowość)
+10. 🧪 **Symulacja** i sanity‑check (ostrzeżenia, uzysk specyficzny)
+11. 🔄 **Wariantowanie** i optymalizacja (A/B testy)
+12. 💰 **Ekonomia** i ryzyko (LCOH, SPBT/NPV, wrażliwość ±20%)
+
+</KeyPoints>
+
+<SupportingDetails title="📊 Analiza wyników">
+
+- 📈 **Porównanie wariantów** - różnice w metrykach
+- 🎯 **Rekomendacje** - wybór optymalnego rozwiązania
+- 📋 **Dokumentacja** - zapisanie decyzji i uzasadnień
+- 🔍 **Weryfikacja** - sanity-check wyników
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Kroki 9–12: Finalizacja modeli:**
+
+**🌳 Krok 9 - Zacienienie i ograniczenia montażowe:**
+- Modeluj kominy/attyki i odstępy rzędów; oceniaj cień sezonowo
+- **QA**: Czy nie ma cienia własnego przy niskim słońcu zimą?
+
+**🧪 Krok 10 - Symulacja i sanity‑check:**
+- **Ustawienia**: Krok godzinowy, pełen rok; ostrzeżenia: stagnacja, przekroczenia temperatur, kawitacja
+- **Sanity**: Porównaj uzysk specyficzny [kWh/m²·rok] z literaturą/benchmarkiem dla PL (orientacyjnie 250–450 dla c.w.u.)
+
+**🔄 Krok 11 - Wariantowanie i optymalizacja:**
+- Zmiany *po jednym parametrze* (A/B testy): powierzchnia, pojemność, ΔT, izolacje, typ kolektora
+- **Narzędzia**: Kopiowanie wariantów, porównania tabelaryczne i wykresy radarowe
+
+**💰 Krok 12 - Ekonomia i ryzyko:**
+- **Wejście**: CAPEX (kolektory, montaż, orurowanie, automatyka), OPEX (serwis glikolu, pompy, przeglądy)
+- **Wyjście**: LCOH, SPBT/NPV, analiza wrażliwości (±20% na cenie energii i uzysku)
+- **Ryzyka**: Ceny energii, degradacja sprawności, przerwy w pracy
+
+**💡 Praktyczne wskazówki:**
+Zapisz wariant bazowy i zmieniaj pojedyncze parametry. Raportuj różnice i rekomendacje wariantu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="✅ QC checklist i harmonogram warsztatowy" type="success">
+
+<KeyPoints title="🎯 Kontrola jakości i organizacja">
+
+- ✅ **QC**: meteo zgodne, profil zweryfikowany, straty policzone, brak stagnacji
+- ⏰ **Harmonogram 2h**: setup → konfiguracja → straty/cienie → symulacja → warianty → raport
+- 📊 **Rubryka oceny**: wejścia (20), hydraulika/sterowanie (20), wyniki/AB (25), ekonomia (20), raport (15)
+
+</KeyPoints>
+
+<SuccessBox title="📋 Checklista QC">
+
+- [ ] Dane meteo zgodne z lokalizacją
+- [ ] Profil zapotrzebowania – suma roczna i szczyty zweryfikowane
+- [ ] Straty cyrkulacji policzone i realistyczne
+- [ ] Brak ostrzeżeń o stagnacji w wariancie finalnym
+- [ ] Raport zawiera założenia i warianty
+
+</SuccessBox>
+
+<InstructorNotes>
+**QC checklist i harmonogram warsztatowy:**
+
+**✅ Kontrola jakości (QC) – lista do odhaczenia:**
+- [ ] Dane meteo zgodne z lokalizacją
+- [ ] Profil zapotrzebowania – suma roczna i szczyty zweryfikowane
+- [ ] Straty cyrkulacji policzone i realistyczne
+- [ ] Brak ostrzeżeń o stagnacji w wariancie finalnym
+- [ ] Raport zawiera założenia i warianty
+
+**⏰ Harmonogram warsztatowy (2h):**
+1. **0:00–0:15** – ustawienie projektu, meteo, profil
+2. **0:15–0:40** – dobór kolektorów, schemat, zasobnik
+3. **0:40–1:10** – straty, sterowanie, cienie
+4. **1:10–1:30** – symulacja i sanity‑check
+5. **1:30–2:00** – 3 warianty + raport skrócony
+
+**📊 Rubryka oceny mini‑projektu (0–100 pkt):**
+- Poprawność danych wejściowych (20)
+- Konfiguracja hydrauliczna i sterowanie (20)
+- Analiza wyników i wariantowanie (25)
+- Ekonomia i ryzyko (20)
+- Jakość raportu i wniosków (15)
+
+**💡 Praktyczne wskazówki:**
+Checklisty zapewniają powtarzalność jakości. Harmonogram uczy dyscypliny projektowej.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
 

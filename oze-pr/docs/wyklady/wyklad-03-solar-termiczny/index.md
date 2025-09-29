@@ -5,11 +5,11 @@ title: "Wykład 3: Solar termiczny (2h)"
 
 ## Spis treści
 
-- [Wprowadzenie do systemów solarnych termicznych](./01-wprowadzenie-do-solar-termiczny.md)
-- [Proces modelowania/projektowania systemów solarnych termicznych](./02-proces-modelowania.md)
-- [Porównanie dostępnych programów](./03-porownanie-programow.md)
+- [Wprowadzenie do systemów solarnych termicznych](./01-wprowadzenie-do-solar-termiczny.mdx)
+- [Proces modelowania/projektowania systemów solarnych termicznych](./02-proces-modelowania.mdx)
+- [Porównanie dostępnych programów](./03-porownanie-programow.mdx)
 - [T*SOL - znaczenie programu dla projektanta](./04-tsol-znaczenie.md)
-- [Proces modelowania/projektowania w T*SOL](./05-proces-tsol.md)
+- [Proces modelowania/projektowania w T*SOL](./05-proces-tsol.mdx)
 - [Demonstracja na żywo: T*SOL](./06-demonstracja-tsol.md)
 - [Podsumowanie](./07-podsumowanie.md)
 

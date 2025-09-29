@@ -1,18 +1,297 @@
 ---
 sidebar_position: 3
-title: "Porównanie dostępnych programów"
+title: "Porównanie programów ST (funkcje, ograniczenia, licencje)"
 ---
 
-| Program | Zastosowanie | Główne zalety | Ograniczenia |
-| --- | --- | --- | --- |
-| **T*SOL** | Projektowanie instalacji solarnych termicznych | Modele dynamiczne, biblioteka kolektorów, raporty ekonomiczne | Licencja komercyjna |
-| **Polysun** | Hybrydowe systemy cieplne (solary + pompy ciepła + PV) | Elastyczny edytor schematów, analiza wielonośnikowa | Wymaga konfiguracji modułów |
-| **TRNSYS** | Zaawansowane symulacje komponentowe | Moduły Type, możliwość rozszerzeń, integracja z CFD | Wysoka złożoność, długi czas przygotowania modelu |
-| **RETScreen Expert** | Analiza ekonomiczna i środowiskowa | Baza danych klimatycznych, wskaźniki NPV/IRR, LCOH | Uproszczony model termiczny |
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-## Kryteria wyboru
+<SlideContainer>
 
-- Skala i złożoność projektu (lokalny system vs sieć ciepłownicza).
-- Wymagany poziom szczegółowości i integracja z innymi nośnikami energii.
-- Dostępność licencji akademickich i wsparcia technicznego.
+<Slide title="📊 Tabela porównawcza (skrót)" type="info">
+
+<SupportingDetails title="🔧 Programy – skrót funkcji">
+
+| Program | Poziom | Biblioteki | Hydraulika | 3D/Zacienienie | Meteo | Ekonomia |
+|---|---|---|---|---|---|---|
+| **T*SOL** | Wysoki | Szerokie | Szablony | 2D/3D | Meteonorm/TMY | Tak |
+| **Polysun** | Bardzo wysoki | Bardzo szerokie | Edytor schematów | 3D | Meteonorm | Rozbudowana |
+| **TRNSYS (+TESS)** | Bardzo wysoki | Biblioteki typów | Dowolna (sam) | Zewnętrzne | Różne | Własne |
+| **RETScreen** | Niski–średni | Ogólne | — | — | Globalne | Silna |
+| **SAM (NREL)** | Średni | Ograniczone | Szablony | — | TMY | Tak |
+| **HOMER Pro** | Systemowy | Ogólne | — | — | Globalne | Bardzo silna |
+
+</SupportingDetails>
+
+<InfoBox title="💡 Kluczowe różnice">
+
+- 🎯 **T*SOL** - dedykowany ST, szybkie iteracje, profesjonalne raporty
+- 🔧 **Polysun** - elastyczne schematy, integracje hybrydowe, modułowość
+- 🔬 **TRNSYS** - pełna swoboda, badania naukowe, walidacja wymagana
+- 🚀 **RETScreen/SAM** - szybkie feasibility, ograniczona hydraulika
+- 🌐 **HOMER** - mikrosieci, optymalizacja systemowa
+
+</InfoBox>
+
+<InstructorNotes>
+**Tabela porównawcza (skrót):**
+
+**🎯 T*SOL (Valentin):**
+- **Poziom**: Wysoki (dedykowany ST)
+- **Biblioteki**: Szerokie (kolektory, zasobniki, pompy)
+- **Hydraulika**: Kilkadziesiąt szablonów + edycja
+- **3D/Zacienienie**: 2D/3D, odstępy rzędów
+- **Meteo**: Meteonorm/TMY
+- **Ekonomia**: Tak (LCOH, SPBT)
+- **Licencja**: Komercyjna / szybka krzywa nauki
+
+**🔧 Polysun:**
+- **Poziom**: Bardzo wysoki, modułowy (ST+PV+HP)
+- **Biblioteki**: Bardzo szerokie
+- **Hydraulika**: Edytor schematów element po elemencie
+- **3D/Zacienienie**: 3D cieniowanie
+- **Meteo**: Meteonorm
+- **Ekonomia**: Rozbudowana
+- **Licencja**: Komercyjna / średnia krzywa nauki
+
+**🔬 TRNSYS (+TESS):**
+- **Poziom**: Bardzo wysoki (czasowy)
+- **Biblioteki**: Biblioteki typów
+- **Hydraulika**: Dowolna (modelujesz sam)
+- **3D/Zacienienie**: Zewnętrzne narzędzia
+- **Meteo**: Różne
+- **Ekonomia**: Własne moduły
+- **Licencja**: Komerc./akadem. / stroma krzywa nauki
+
+**🚀 RETScreen Expert:**
+- **Poziom**: Niski–średni (feasibility)
+- **Biblioteki**: Ogólne
+- **Hydraulika**: Brak szczegółowej
+- **3D/Zacienienie**: —
+- **Meteo**: Globalne bazy
+- **Ekonomia**: Silna
+- **Licencja**: Subskrypcja / niska krzywa nauki
+
+**💡 Praktyczne wskazówki:**
+Pełna tabela w notatkach prowadzącego (z licencjami i krzywą nauki). W praktyce biurowej: T*SOL – szybkość i raporty; Polysun – elastyczność; TRNSYS – badania; RETScreen/SAM – feasibility; HOMER – mikrosieci.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="➕/➖ Zalety i wady w praktyce" type="tip">
+
+<KeyPoints title="🎯 Wnioski dla projektanta">
+
+- 🎯 **T*SOL**: + szybka iteracja, czytelne raporty; − mniej elastyczny dla nietypowych sterowań
+- 🔧 **Polysun**: + elastyczne schematy; − większa złożoność i czas konfiguracji
+- 🔬 **TRNSYS**: + dowolność; − stromy próg wejścia, konieczna walidacja
+- 🚀 **RETScreen/SAM**: + szybkie feasibility; − brak detali hydrauliki
+- 🌐 **HOMER**: + optymalizacja systemowa; − uproszczenia części cieplnej
+
+</KeyPoints>
+
+<SupportingDetails title="💡 Praktyczne zastosowania">
+
+- 📊 **Raport inwestorski** → T*SOL/Polysun
+- 🔬 **Badania naukowe** → TRNSYS
+- 🚀 **Projekt koncepcyjny** → RETScreen/SAM
+- 🌐 **Mikrosieci** → HOMER
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Zalety i wady w praktyce biurowej:**
+
+**🎯 T*SOL:**
+- **Zalety**: Szybkość iteracji, czytelne raporty, dedykacja do ST
+- **Wady**: Mniej elastyczny przy niestandardowych sterowaniach
+- **Zastosowanie**: Projekty komercyjne, raporty dla inwestorów
+
+**🔧 Polysun:**
+- **Zalety**: Elastyczne schematy, integracje hybrydowe, modułowość
+- **Wady**: Dłuższa konfiguracja, wyższa złożoność
+- **Zastosowanie**: Układy hybrydowe, zaawansowane projekty
+
+**🔬 TRNSYS:**
+- **Zalety**: Dowolność modelu, badania naukowe, pełna kontrola
+- **Wady**: Stromy próg wejścia, potrzeba walidacji
+- **Zastosowanie**: Badania naukowe, niestandardowe rozwiązania
+
+**🚀 RETScreen/SAM:**
+- **Zalety**: Wstępna opłacalność, szybkie analizy
+- **Wady**: Brak detali hydraulicznych
+- **Zastosowanie**: Analizy feasibility, projekty koncepcyjne
+
+**🌐 HOMER:**
+- **Zalety**: Optymalizacja systemowa (mikrosieci)
+- **Wady**: Uproszczenia ST
+- **Zastosowanie**: Mikrosieci, systemy hybrydowe
+
+**💡 Praktyczne wskazówki:**
+Dobór narzędzia zależy od celu: raport inwestorski vs. badania naukowe vs. projekt koncepcyjny.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔗 Integracja i wymiana danych" type="info">
+
+<KeyPoints title="📤 CAD/BIM i raportowanie">
+
+- 📄 **Eksport**: PDF/Word, CSV/Excel, wykresy do PNG/SVG
+- 🏗️ **BIM/IFC**: głównie przez Polysun/TRNSYS (pośrednio)
+- 📊 **Import profili**: CSV (godzinowe/dzienne)
+
+</KeyPoints>
+
+<SupportingDetails title="🔄 Workflow integracji">
+
+- 📋 **Eksport raportów** do PDF/Word, tabele do CSV/Excel
+- 🖼️ **Zdjęcia/wykresy** do PNG/SVG
+- 🏗️ **Projekty BIM**: import geometrii i ekspozycji z IFC
+- 🔧 **Narzędzia pośrednie**: Polysun/TRNSYS dla integracji BIM
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Integracja z CAD/BIM i wymiana danych:**
+
+**📤 Eksport i raportowanie:**
+- Eksport raportów do **PDF/Word**, tabele do **CSV/Excel**
+- Zdjęcia/wykresy do **PNG/SVG**
+- Standaryzowane formaty dla różnych odbiorców
+
+**🏗️ Integracja BIM:**
+- W projektach BIM: import geometrii i ekspozycji z IFC
+- Zwykle przez narzędzia pośrednie (Polysun/TRNSYS)
+- Zachowanie spójności metadanych i jednostek
+
+**📊 Import danych:**
+- Profile zapotrzebowania: CSV (godzinowe/dzienne)
+- Dane meteorologiczne: TMY, Meteonorm
+- Parametry komponentów: biblioteki producentów
+
+**💡 Praktyczne wskazówki:**
+W projektach BIM integracja bywa pośrednia; ważne by zachować spójność metadanych i jednostek.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🧭 Drzewo decyzyjne wyboru narzędzia" type="note">
+
+<KeyPoints title="🎯 Szybkie reguły">
+
+1. 🔧 **Szczegółowa hydraulika** i raporty? → T*SOL
+2. 🔄 **Układ hybrydowy/nietypowy**? → Polysun/TRNSYS
+3. 🚀 **Tylko opłacalność**? → RETScreen/SAM
+4. 🌐 **Mikrosieć** (PV+genset+storage+ST)? → HOMER (z zastrzeżeniami do ST)
+
+</KeyPoints>
+
+<SupportingDetails title="🤔 Dodatkowe czynniki">
+
+- 👥 **Kompetencje zespołu** - poziom zaawansowania
+- 💰 **Budżet projektu** - koszty licencji
+- ⏰ **Czas realizacji** - harmonogram projektu
+- 📋 **Wymagania klienta** - standardy raportowania
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Drzewo decyzyjne wyboru narzędzia:**
+
+**🔧 Szczegółowa hydraulika i raporty?**
+- **Tak** → T*SOL (dedykowany ST, szybkie iteracje)
+- **Nie** → Przejdź do następnego pytania
+
+**🔄 Układ hybrydowy/nietypowy?**
+- **Tak** → Polysun/TRNSYS (elastyczność, modułowość)
+- **Nie** → Przejdź do następnego pytania
+
+**🚀 Tylko opłacalność?**
+- **Tak** → RETScreen/SAM (szybkie feasibility)
+- **Nie** → Przejdź do następnego pytania
+
+**🌐 Mikrosieć (PV+genset+storage+ST)?**
+- **Tak** → HOMER (z zastrzeżeniami do ST)
+- **Nie** → Powrót do wcześniejszych opcji
+
+**🤔 Dodatkowe czynniki:**
+- **Kompetencje zespołu** - poziom zaawansowania użytkowników
+- **Budżet projektu** - koszty licencji i szkoleń
+- **Czas realizacji** - harmonogram projektu
+- **Wymagania klienta** - standardy raportowania i dokumentacji
+
+**💡 Praktyczne wskazówki:**
+Uwzględnij kompetencje zespołu oraz wymagania klienta/instytucji finansującej.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="📑 Co porównywać w raportach" type="success">
+
+<KeyPoints title="📊 Wskaźniki i wykresy">
+
+- ⚡ **Uzysk** [kWh/rok], f_sol, straty składowe
+- 💰 **Ekonomia**: LCOH, SPBT/NPV, wrażliwość ±20%
+- 📈 **Wykresy miesięczne** uzysku i pokrycia
+
+</KeyPoints>
+
+<SuccessBox title="✅ Standardowa sekcja raportu">
+
+- 📊 **Metryki energetyczne** - uzysk, f_sol, straty
+- 💰 **Metryki ekonomiczne** - LCOH, SPBT, NPV
+- 📋 **Założenia** - dane wejściowe, parametry
+- 🔄 **Warianty** - porównanie rozwiązań
+- 📝 **Wnioski** - rekomendacje i rekomendacje
+
+</SuccessBox>
+
+<InstructorNotes>
+**Co porównywać w raportach:**
+
+**⚡ Metryki energetyczne:**
+- Uzysk [kWh/rok] - całkowita produkcja ciepła
+- f_sol [%] - pokrycie solarne
+- Straty składowe - zasobnik, rurociągi, cyrkulacja, postój
+
+**💰 Metryki ekonomiczne:**
+- LCOH - koszt jednostkowy ciepła
+- SPBT/NPV - okres zwrotu i wartość bieżąca
+- Wrażliwość ±20% - analiza ryzyk
+
+**📈 Wykresy i wizualizacje:**
+- Wykresy miesięczne uzysku i pokrycia
+- Profile temperaturowe
+- Bilans energetyczny
+
+**✅ Przykładowe wyjścia raportowe:**
+- Uzysk [kWh/rok], f_sol, straty (zasobnik, rury, cyrkulacja), czas pracy pomp
+- LCOH, SPBT/NPV, wrażliwość ±20% na ceny energii i uzysk
+- Wykresy miesięczne uzysku i pokrycia
+
+**💡 Praktyczne wskazówki:**
+Standaryzuj sekcję raportu: metryki energ./ekonomiczne + założenia + warianty + wnioski.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
 

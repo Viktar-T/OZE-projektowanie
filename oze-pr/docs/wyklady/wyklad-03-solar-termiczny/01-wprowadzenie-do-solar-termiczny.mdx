@@ -3,24 +3,430 @@ sidebar_position: 1
 title: "Wprowadzenie do systemów solarnych termicznych"
 ---
 
-## Kontekst energetyczny
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-Instalacje solarne termiczne należą do najstarszych technologii OZE i nadal
-pełnią istotną rolę w pokrywaniu zapotrzebowania na ciepło niskotemperaturowe.
-W warunkach polskich wykorzystywane są głównie w budynkach wielorodzinnych,
-obiektach użyteczności publicznej oraz w przemyśle spożywczym.
+<SlideContainer>
 
-## Kluczowe komponenty
+<Slide title="🎓 Wprowadzenie (perspektywa software-first)" type="info">
 
-- Kolektory płaskie i próżniowo-rurowe z selektywnymi absorberami.
-- Zbiorniki buforowe z wężownicami lub modułami warstwowymi.
-- Układy hydrauliczne z automatyką pogodową i zabezpieczeniami stagnacji.
-- Systemy monitoringu (BMS, IoT) ułatwiające analizę eksploatacji.
+<KeyPoints title="🎯 Cel wykładu/sekcji">
 
-## Uwarunkowania projektowe
+- 🧠 **Zrozumienie** jak programy modelują układy ST
+- 🔍 **Identyfikacja** danych krytycznych dla wiarygodnych wyników
+- 📊 **Umiejętność** czytania raportów: energetyka i ekonomia
 
-- Analiza profilu zapotrzebowania na ciepło (profil dobowy i sezonowość).
-- Ocena dostępnej powierzchni, ryzyka zacienienia i nośności konstrukcji.
-- Integracja z pompami ciepła, kotłami gazowymi lub siecią ciepłowniczą.
-- Uwzględnienie wymogów WT 2021 i wytycznych programów wsparcia.
+</KeyPoints>
+
+<SupportingDetails title="💡 Kontekst wykładu">
+
+- 🎯 Mentalny model systemów ST widzianych oczami oprogramowania
+- 📈 Nacisk na dane wejściowe, metryki raportowane i ograniczenia modeli
+- 🔧 Praktyczne podejście do projektowania z wykorzystaniem narzędzi IT
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu:**
+
+**🎯 Cel wykładu:**
+Ułożenie mentalnego modelu systemów solarnych termicznych widzianych oczami oprogramowania. Kładziemy nacisk na dane wejściowe, metryki raportowane i ograniczenia modeli.
+
+**📚 Kontekst edukacyjny:**
+- Jesteśmy w erze cyfryzacji energetyki, gdzie tradycyjne metody projektowania są zastępowane przez zaawansowane narzędzia komputerowe
+- Projektant OZE musi dziś być nie tylko inżynierem, ale także specjalistą od narzędzi IT
+- Współczesne projekty OZE wymagają integracji wielu systemów: od modelowania geometrycznego po analizy ekonomiczne
+
+**🔧 Kluczowe wyzwania:**
+- **Złożoność techniczna**: Nowoczesne instalacje ST to systemy wielodyscyplinarne wymagające znajomości termodynamiki, hydrauliki, meteorologii i ekonomii
+- **Dynamika rynku**: Szybki rozwój technologii wymaga ciągłego aktualizowania wiedzy o nowych narzędziach
+- **Wymagania prawne**: Coraz bardziej restrykcyjne normy i standardy wymagają precyzyjnych analiz i dokumentacji
+
+**💡 Praktyczne podejście:**
+- Każde narzędzie specjalistyczne omówimy w kontekście rzeczywistych projektów
+- Pokażemy przykłady z branży i studia przypadków
+- Połączymy teorię z praktyką projektową
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🏗️ Krajobraz zastosowań a wymagania modelu" type="tip">
+
+<KeyPoints title="🌱 Główne klasy zastosowań">
+
+- 🏠 **c.w.u. w budynkach** — profil dobowy, cyrkulacja, antylegionella
+- 🏊 **Baseny** — sezonowość, niskie temperatury, straty parowania
+- 🔥 **Wspomaganie c.o.** — niższe temp. zasilania, większe magazyny
+- 🏭 **Procesy przemysłowe** — stałomocowe odbiory, własne wymienniki
+
+</KeyPoints>
+
+<SupportingDetails title="🔧 Wymagania modelu">
+
+- 📊 **Rozdzielczość profili** - różna dla różnych zastosowań
+- 🛠️ **Poziom detalu hydrauliki** - od prostych do złożonych układów
+- ⚙️ **Strategia sterowania** - od podstawowej do zaawansowanej
+- 🎯 **Wybór narzędzia** - determinowany przez zastosowanie
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Krajobraz zastosowań a wymagania modelu:**
+
+**🏠 c.w.u. w budynkach mieszkalnych/usługowych:**
+- Nacisk na profil dobowy, cyrkulację i higienę (antylegionella)
+- Marginesy mocy szczytowej
+- Wymagania: szczegółowe profile czasowe, modelowanie cyrkulacji
+
+**🏊 Baseny:**
+- Duże wahania sezonowe, niskie temperatury zasilania
+- Istotna jest moc chwilowa i straty parowania
+- Wymagania: modelowanie sezonowości, straty ciepła
+
+**🔥 Wspomaganie c.o.:**
+- Praca w niższych temp. zasilania (podłogówka)
+- Większe magazyny, sterowanie priorytetami
+- Wymagania: modelowanie magazynów, sterowanie hybrydowe
+
+**🏭 Procesy przemysłowe:**
+- Specyficzne harmonogramy, odbiory stałomocowe
+- Często własne wymienniki i reżimy temp.
+- Wymagania: zaawansowane modele, niestandardowe komponenty
+
+**💡 Praktyczne wskazówki:**
+Każde zastosowanie stawia inne wymagania na rozdzielczość profili, poziom detalu hydrauliki oraz strategię sterowania. W praktyce to zastosowanie determinuje wybór narzędzia i metodykę symulacji.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🧠 Jak program widzi system ST" type="info">
+
+<KeyPoints title="🔧 Model obliczeniowy (skrócona mapa)">
+
+- ☀️ **Źródło**: kolektor (η₀, a₁, a₂), ograniczenia temperatur
+- 🏺 **Magazyn**: zasobnik (warstwowość, straty, wężownice)
+- 🔄 **Hydraulika**: obiegi, pompy, zawory, wymienniki, cyrkulacja
+- ⚙️ **Sterowanie**: histerezy ΔT, priorytety, antylegionella
+- 🌤️ **Klimat**: TMY/Meteonorm, krok godzinowy/podgodzinowy
+- 💰 **Ekonomia**: CAPEX/OPEX, LCOH, SPBT, NPV
+
+</KeyPoints>
+
+<SupportingDetails title="📊 Parametry kluczowe">
+
+- 📋 **ISO 9806 / Solar Keymark** - parametry kolektorów
+- 🏺 **Modele zbiorników** - straty postojowe i warstwowość
+- ⚙️ **Progi start/stop** - kluczowe w sterowaniu
+- 📅 **Harmonogramy higieniczne** - antylegionella
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Jak program widzi system ST:**
+
+**☀️ Źródło (kolektory):**
+- Parametry z certyfikacji: η₀ (sprawność optyczna), a₁, a₂ (współczynniki strat)
+- Ograniczenia temperatur (stagnacja, zamarzanie)
+- Najczęściej wykorzystywane parametry pochodzą z ISO 9806 / Solar Keymark
+
+**🏺 Magazyn (zasobniki):**
+- Warstwowość - modelowanie stratyfikacji temperaturowej
+- Straty postojowe - izolacja i wymiana z otoczeniem
+- Wężownice - wymienniki ciepła wewnętrzne
+
+**🔄 Hydraulika:**
+- Obiegi solarne (glikol/drain-back)
+- Pompy, zawory, wymienniki
+- Cyrkulacja c.w.u., straty liniowe
+
+**⚙️ Sterowanie:**
+- Histerezy ΔT - progi start/stop pomp
+- Priorytety źródeł - logika sterowania
+- Harmonogramy antylegionella - wymogi higieniczne
+
+**🌤️ Klimat:**
+- Typowe lata meteorologiczne (TMY/Meteonorm)
+- Rozdzielczość godzinowa lub podgodzinowa
+- Korekty lokalne dla mikroklimatów
+
+**💰 Ekonomia:**
+- CAPEX/OPEX - koszty inwestycyjne i eksploatacyjne
+- LCOH - koszt jednostkowy ciepła
+- SPBT - prosty okres zwrotu
+- NPV - wartość bieżąca netto
+
+**💡 Kluczowe zasady:**
+Najczęściej wykorzystywane parametry kolektorów pochodzą z ISO 9806 / Solar Keymark. Modele zbiorników uwzględniają straty postojowe i (czasem) warstwowość. W sterowaniu kluczowe są progi start/stop oraz harmonogramy higieniczne.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🧾 Dane wejściowe – jakość ponad wszystko" type="warning">
+
+<KeyPoints title="📋 Co wprowadzić i skąd">
+
+- 📍 **Lokalizacja i meteo**: najbliższa stacja vs. korekta lokalna
+- 📊 **Profil zużycia**: dobowy/sezonowy, preferowany import CSV
+- 🔧 **Parametry komponentów**: biblioteki producentów (Solar Keymark)
+- 🏗️ **Ograniczenia budowalne**: kąt, azymut, strefy zakazu, przeszkody
+
+</KeyPoints>
+
+<WarningBox title="⚠️ Najczęstsze błędy">
+
+- 📊 **Błędy w profilach** - najczęstsze źródło przeszacowań
+- 🔄 **Straty liniowe** - często niedoszacowane
+- 📋 **Zalecany CSV**: `timestamp; demand_lph` lub `kWh`
+- 📝 **Metadane**: T_set_C, weekend/weekday
+
+</WarningBox>
+
+<InstructorNotes>
+**Dane wejściowe – jakość ponad wszystko:**
+
+**📍 Lokalizacja i dane meteo:**
+- Wybór najbliższej stacji vs. korekta lokalna (miejskie wyspy ciepła, mgły)
+- Wysokość n.p.m., ekspozycja, mikroklimat
+- Korekty ±5-10% dla specyficznych lokalizacji
+
+**📊 Profil zapotrzebowania:**
+- Dobowy i sezonowy - preferowane importy CSV
+- Kolumny: `datetime; demand_lph` lub `kWh`
+- Metadane: temperatura zadana, dni robocze/weekendy
+- Weryfikacja: suma roczna, szczyty P95/P99
+
+**🔧 Parametry komponentów:**
+- Nie "z głowy" - korzystaj z bibliotek producentów
+- Solar Keymark/ISO 9806 - parametry z certyfikacji
+- Realne długości i izolacje - nie szacunki
+
+**🏗️ Ograniczenia budowlane:**
+- Kąt, azymut, strefy zakazu, przeszkody zacieniające
+- Dostępność montażowa, korytarze serwisowe
+- Wymagania estetyczne, normy budowlane
+
+**⚠️ Najczęstsze błędy:**
+Błędy w profilach i stratach liniowych to najczęstsze źródła przeszacowań. Zalecany CSV: `timestamp; demand_lph` lub `kWh` oraz metadane (T_set_C, weekend/weekday).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📊 Metryki i wskaźniki raportowe" type="success">
+
+<KeyPoints title="📈 Co czytać w raportach">
+
+- ⚡ **Uzysk roczny** [kWh/rok], sprawność sezonowa kolektora [%]
+- 🎯 **Pokrycie solarne f_sol** [%] dla odbiorów
+- 🌱 **Oszczędność energii** i redukcja CO₂
+- 📉 **Straty**: zasobnik, rurociągi, cyrkulacja, postój
+- 💰 **Ekonomia**: LCOH, SPBT/DPBT, NPV, IRR (jeśli dostępne)
+
+</KeyPoints>
+
+<SupportingDetails title="🔍 Interpretacja wyników">
+
+- 📊 **Uzysk specyficzny** [kWh/m²·rok] vs. benchmarki lokalne
+- 📈 **Analiza wrażliwości** ±10–20% na ceny energii i uzysku
+- 📋 **Porównanie wariantów** - różnice w metrykach
+- 🎯 **Wnioski i rekomendacje** - wybór optymalnego wariantu
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Metryki i wskaźniki raportowe:**
+
+**⚡ Metryki energetyczne:**
+- Uzysk roczny [kWh/rok] - całkowita produkcja ciepła
+- Sprawność sezonowa kolektora [%] - efektywność konwersji
+- Pokrycie solarne f_sol [%] - udział energii solarnej w całkowitym zapotrzebowaniu
+
+**🌱 Metryki środowiskowe:**
+- Oszczędność energii końcowej/pierwotnej [kWh/rok]
+- Redukcja CO₂ [t/rok] - emisje uniknięte
+- Wskaźniki LCA (Life Cycle Assessment)
+
+**📉 Straty systemowe:**
+- Straty zasobnika - izolacja, wymiana z otoczeniem
+- Straty rurociągów - izolacja, długości, średnice
+- Straty cyrkulacji - harmonogramy pracy pomp
+- Straty postojowe - czas bez odbioru
+
+**💰 Metryki ekonomiczne:**
+- LCOH (Levelized Cost of Heat) - koszt jednostkowy ciepła
+- SPBT/DPBT - prosty/dyskontowany okres zwrotu
+- NPV (Net Present Value) - wartość bieżąca netto
+- IRR (Internal Rate of Return) - wewnętrzna stopa zwrotu
+
+**🔍 Interpretacja wyników:**
+Zawsze porównuj uzysk specyficzny [kWh/m²·rok] do lokalnych benchmarków. Ekonomię interpretuj z analizą wrażliwości (±10–20% na cenach energii i uzysku).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🧰 Poziomy szczegółowości modeli i standardy" type="tip">
+
+<KeyPoints title="🔧 Dobór narzędzia i zgodność">
+
+- 🚀 **Uproszczone feasibility**: RETScreen/SAM (mało hydrauliki)
+- 🎯 **Dedykowane ST**: T*SOL/Polysun (szablony, biblioteki)
+- 🔬 **Symulacje ogólne**: TRNSYS (pełna swoboda, walidacja!)
+- 📋 **Standardy**: ISO 9806 / EN 12975, Solar Keymark
+- 🧼 **Higiena**: antylegionella — 60–70 °C w interwałach
+
+</KeyPoints>
+
+<SupportingDetails title="🎓 Wybór narzędzia">
+
+- 🚀 **RETScreen/SAM** - szybkie analizy opłacalności
+- 🎯 **T*SOL/Polysun** - produktywność biurowa, wiarygodne raporty
+- 🔬 **TRNSYS** - badania naukowe, pełna kontrola
+- 📊 **Walidacja** - konieczna dla niestandardowych rozwiązań
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Poziomy szczegółowości modeli i standardy:**
+
+**🚀 Uproszczone feasibility (RETScreen/SAM):**
+- Szybkie porównania opłacalności
+- Ograniczona hydraulika - podstawowe modele
+- Globalne bazy danych meteorologicznych
+- Silne narzędzia ekonomiczne
+
+**🎯 Dedykowane ST (T*SOL/Polysun):**
+- Szablony schematów hydraulicznych
+- Dokładne profile zapotrzebowania
+- Rozbudowane biblioteki komponentów
+- Produktywność biurowa i wiarygodne raporty
+
+**🔬 Symulacje ogólne (TRNSYS):**
+- Pełna swoboda modelowania
+- Większy nakład modelowania
+- Potrzeba walidacji wyników
+- Zastosowanie w badaniach naukowych
+
+**📋 Standardy i certyfikacja:**
+- ISO 9806 / EN 12975 - metody badań kolektorów
+- Solar Keymark - certyfikacja kolektorów
+- Parametry η₀, a₁, a₂ z certyfikacji
+- Wymogi higieniczne - antylegionella
+
+**💡 Praktyczne wskazówki:**
+TRNSYS daje największą kontrolę, ale wymaga walidacji i kompetencji. T*SOL/Polysun zapewniają produktywność biurową i wiarygodne raporty dla klienta.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="warning" />
+
+<Slide title="⚠️ Typowe ryzyka i jak je kontrolować" type="warning">
+
+<KeyPoints title="🔍 Checklisty redukcji ryzyk">
+
+- 🔥 **Przewymiarowanie** → stagnacja, degradacja glikolu (analiza letnia, heat‑dump)
+- 📉 **Zaniżone straty cyrkulacji** → przeszacowanie efektu (realne długości/izolacje)
+- 📊 **Nieadekwatny profil** → błędny dobór objętości (dane licznikowe)
+
+</KeyPoints>
+
+<WarningBox title="🧪 Testy skrajnych warunków">
+
+- 🌞 **Lato/zima** - różne warunki eksploatacji
+- 📊 **P95/P99** - szczyty profilu odbioru
+- 🔍 **Sanity‑check** - uzysk specyficzny i straty postojowe
+- 📈 **Benchmarki** - porównanie z literaturą
+
+</WarningBox>
+
+<InstructorNotes>
+**Typowe ryzyka i jak je kontrolować:**
+
+**🔥 Przewymiarowanie systemu:**
+- **Ryzyko**: stagnacja latem, degradacja glikolu, przegrzewy
+- **Kontrola**: analiza letnia, strategia "heat dump", większy magazyn
+- **Wskazówki**: test różnych konfiguracji, harmonogramy odbioru
+
+**📉 Zaniżone straty cyrkulacji:**
+- **Ryzyko**: przeszacowanie efektu, błędne prognozy
+- **Kontrola**: wpisuj realne długości/izolacje, wykorzystuj harmonogramy pracy pomp
+- **Wskazówki**: modelowanie cyrkulacji jako osobnego obiegu
+
+**📊 Nieadekwatny profil zapotrzebowania:**
+- **Ryzyko**: błędny dobór objętości magazynu
+- **Kontrola**: korzystaj z danych licznikowych lub wiarygodnych bibliotek
+- **Wskazówki**: weryfikacja sum rocznych, testy szczytów
+
+**🧪 Testy skrajnych warunków:**
+Dodaj test skrajnych warunków: lato/zimą, P95/P99 profilu odbioru, sanity‑check uzysku specyficznego i strat postojowych.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="📦 Artefakty projektowe (deliverables)" type="success">
+
+<KeyPoints title="📋 Co otrzymuje klient">
+
+- 📊 **Raport techniczny**: założenia, wyniki, warianty, ryzyka
+- 📋 **Listy komponentów**, rysunki/schematy
+- 💰 **Kalkulacja ekonomiczna**, aneks danych wejściowych
+
+</KeyPoints>
+
+<SuccessBox title="✅ Kompletny pakiet">
+
+- 📈 **Metryki**: uzysk, f_sol, straty składowe, LCOH, SPBT
+- 📋 **Założenia**: dane wejściowe, parametry, ograniczenia
+- 🔄 **Warianty**: porównanie rozwiązań, rekomendacje
+- 📝 **Wnioski**: krótkie podsumowanie i rekomendacje wariantu
+
+</SuccessBox>
+
+<InstructorNotes>
+**Artefakty projektowe (deliverables):**
+
+**📊 Raport techniczny:**
+- Założenia projektowe - dane wejściowe, parametry, ograniczenia
+- Wyniki symulacji - metryki energetyczne i ekonomiczne
+- Warianty rozwiązań - porównanie różnych konfiguracji
+- Analiza ryzyk - identyfikacja zagrożeń i sposobów ich minimalizacji
+
+**📋 Dokumentacja techniczna:**
+- Listy komponentów - BOM (Bill of Materials)
+- Rysunki i schematy - dokumentacja wykonawcza
+- Specyfikacje techniczne - parametry komponentów
+
+**💰 Analiza ekonomiczna:**
+- Kalkulacja kosztów - CAPEX i OPEX
+- Metryki finansowe - LCOH, SPBT, NPV
+- Analiza wrażliwości - wpływ zmian parametrów
+- Aneks danych wejściowych - założenia i źródła
+
+**✅ Kompletny pakiet:**
+Raport powinien zawierać: uzysk, f_sol, straty składowe, LCOH, SPBT oraz krótkie wnioski i rekomendacje wariantu.
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
 

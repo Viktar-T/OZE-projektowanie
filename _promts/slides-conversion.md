@@ -1,17 +1,20 @@
 # Slide Conversion Prompt - MDX Approach
 
 ## Goal
+
 Convert markdown files into MDX slide presentations for OZE course lectures using React components and custom CSS.
 
 ## Core Requirements
 
 ### 1. File Format: MDX
+
 - Use MDX files with React component imports
 - Import from `@site/src/components/SlideComponents`
 - Leverage custom CSS for professional styling
 - Maintain Docusaurus compatibility
 
 ### 2. Slide Structure Template
+
 ```jsx
 ---
 title: "Slide Title"
@@ -60,6 +63,7 @@ import {
 ```
 
 ### 3. Available Components
+
 - **`SlideContainer`** - Main container for all slides
 - **`Slide`** - Individual slide cards with types (info, tip, warning, danger, success)
 - **`KeyPoints`** - Highlighted key information (yellow background)
@@ -71,6 +75,7 @@ import {
 - **`VisualSeparator`** - Visual separators between slides
 
 ### 4. Slide Types
+
 - **`type="info"`** - Blue theme for informational content
 - **`type="tip"`** - Green theme for tips and best practices
 - **`type="warning"`** - Yellow theme for warnings
@@ -78,12 +83,14 @@ import {
 - **`type="success"`** - Green theme for achievements
 
 ### 5. Visual Separators
+
 - **`<VisualSeparator type="default" />`** - Standard slide transitions
 - **`<VisualSeparator type="data" />`** - Data-focused content
 - **`<VisualSeparator type="technical" />`** - Technical content
 - **`<VisualSeparator type="energy" />`** - Energy-related content
 
 ### 6. Content Guidelines
+
 - **Single focus** per slide with visual emphasis
 - **Concise content** with visual indicators
 - **Progressive disclosure** from general to specific
@@ -93,6 +100,7 @@ import {
 - **Maximum 5-7 bullet points** per slide
 
 ### 7. Visual Enhancements
+
 - **Emojis & Icons**: 🎯 goals, 📊 data, 🔧 tools, ⚡ energy, 🌱 renewable, 💻 tech, 📈 trends, 🎓 education
 - **Color-coded components** with CSS styling
 - **Gradients**: Subtle backgrounds with high contrast
@@ -102,7 +110,8 @@ import {
 
 ## Implementation Strategy
 
-### 1. File Structure
+### 1. File Structure (example only)
+
 ```
 docs/wyklady/wyklad-01-wprowadzenie/
 ├── 01-wprowadzenie-do-tematyki.mdx     ← MDX slide presentation
@@ -116,6 +125,7 @@ docs/wyklady/wyklad-01-wprowadzenie/
 ```
 
 ### 2. CSS Styling
+
 - **Custom CSS** in `src/css/custom.css`
 - **Responsive design** with mobile breakpoints
 - **Dark mode support** with appropriate color schemes
@@ -123,6 +133,7 @@ docs/wyklady/wyklad-01-wprowadzenie/
 - **Hover effects** and smooth transitions
 
 ### 3. Component Usage
+
 - **Import components** at the top of each MDX file
 - **Use appropriate slide types** for different content
 - **Include instructor notes** for teaching guidance
@@ -130,6 +141,7 @@ docs/wyklady/wyklad-01-wprowadzenie/
 - **Maintain consistent structure** across all files
 
 ## Quality Checklist
+
 - [ ] MDX files with proper React component imports
 - [ ] Card-based design with CSS styling
 - [ ] Colored components for information hierarchy
@@ -142,7 +154,9 @@ docs/wyklady/wyklad-01-wprowadzenie/
 - [ ] Consistent styling across all slides
 
 ## Expected Outcome
+
 Transform each markdown file into MDX slide presentations featuring:
+
 - **React components** for interactive slide elements
 - **Custom CSS styling** for professional appearance
 - **Responsive design** for all devices
@@ -153,6 +167,7 @@ Transform each markdown file into MDX slide presentations featuring:
 - **Educational focus** with technical accuracy
 
 ## Benefits of MDX Approach
+
 - ✅ **Full control** over styling and layout
 - ✅ **Reusable components** for consistent design
 - ✅ **Professional appearance** with educational focus
