@@ -3,14 +3,143 @@ sidebar_position: 7
 title: "TOPFARM – opis i znaczenie dla projektanta"
 ---
 
-## Funkcjonalności
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Optymalizacja rozstawu turbin z wykorzystaniem algorytmów ewolucyjnych.
-- Uwzględnianie kosztów infrastruktury, ograniczeń środowiskowych i sieciowych.
-- Analiza strat wake i generowanie map AEP.
+<SlideContainer>
 
-## Znaczenie dydaktyczne
+<Slide title="🎯 TOPFARM - otwarty ekosystem optymalizacji" type="info">
 
-- Pozwala zrozumieć kompromis między produkcją energii a kosztami.
-- Umożliwia pracę na danych GIS i raportach środowiskowych.
+<KeyPoints title="🔧 Czym jest TOPFARM?">
+- 🐍 **Python ekosystem** - otwarty do optymalizacji farm wiatrowych
+- ⚡ **Model AEP** - przepływ wiatru i modele wake
+- 💰 **Model kosztów** - LCOE/NPV z kosztami infrastruktury
+- 🎯 **Optymalizatory** - gradientowe i heurystyczne z restartami
+</KeyPoints>
+
+<SupportingDetails title="🛠️ Funkcjonalności">
+- 🎯 **Optymalizacja układu** - pozycje, wysokości, średnice turbin
+- 💰 **Koszty infrastruktury** - kable, drogi, GPZ, ograniczenia
+- 🌊 **Silniki wake** - PyWake/FLORIS, krzywe P(v)/Ct(v) jako wejścia
+- 📊 **Analiza AEP** - straty wake, mapy produkcji, wskaźniki
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Architektura TOPFARM i moduły: site/turbines, wake, objective (AEP/LCOE), constraints, optimizer, post‑processing.
+- Integracje: PyWake/FLORIS jako silniki wake; biblioteki GIS do ograniczeń; wymogi wejścia P(v)/Ct(v).
+- Zastosowania: greenfield, micro‑siting, repowering, dobór typu turbiny; onshore vs offshore (batymetria, porty, kable).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🎓 Znaczenie dydaktyczne TOPFARM" type="tip">
+
+<KeyPoints title="🌉 Kompromisy projektowe">
+- ⚡ **AEP vs koszty** - optymalizacja produkcji energii
+- 🔊 **Ograniczenia** - hałas, odległości, środowisko
+- 🗺️ **Dane GIS** - mapy ograniczeń, teoria wake w praktyce
+- 🌊 **Ct(v) wpływ** - straty w farmie, optymalny rozstaw
+</KeyPoints>
+
+<SupportingDetails title="🔧 Przypadki użycia">
+- 🎯 **Optymalizacja layoutu** - strefy, hałas, zestaw turbin
+- 📊 **Analiza wrażliwości** - modele wake, wysokości hubów
+- 💰 **Minimalizacja LCOE** - próg AEP_net, zgodność środowiskowa
+</SupportingDetails>
+
+<SupportingDetails title="⚠️ Ograniczenia (świadome użycie)">
+- 📊 **Jakość danych** - wiatr, teren, Ct(v), matryca strat
+- 🏦 **Nie bankowalne** - weryfikacja w WindPRO/OpenWind
+- 🔧 **Dyscyplina** - QA danych i dokumentacja
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Kompromisy: AEP vs LCOE vs ograniczenia; wpływ wysokości hubu i rozstawu na straty wake i koszty.
+- Wrażliwość: TI, shear, model wake; jak raportować efekty wrażliwości i niepewność.
+- Antywzorce: brak spójności danych wejściowych, twarde progi (skoki w funkcji celu) bez miękkich kar.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🛠️ Porównanie z innymi narzędziami" type="success">
+
+<KeyPoints title="📊 Tabela porównawcza">
+- 🐍 **TOPFARM** - Python, optymalizacja, wymienne modele wake
+- 🖥️ **WindPRO/OpenWind** - GUI, raporty, compliance
+- 🔧 **QBlade** - aero turbiny, BEM, łopata
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Specjalizacje">
+- 🎯 **Elastyczność** - bardzo wysoka vs wysoka w modułach
+- 📊 **Raporty** - programowalne vs gotowe szablony
+- 🔧 **Interfejs** - skrypty vs GUI vs aero
+- 🌊 **Modele wake** - wymienne vs zależne od pakietu
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Szczegółowe porównanie możliwości każdego narzędzia
+- 📚 Przykłady zastosowań w różnych etapach projektu
+- 💡 Wskazówki dotyczące wyboru narzędzia
+- 📖 Studia przypadków: udane i nieudane wybory
+- ❓ Pytania dla studentów: kiedy użyć którego narzędzia?
+- 🔄 Przejście do architektury logicznej
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🏗️ Architektura logiczna TOPFARM" type="warning">
+
+<KeyPoints title="📊 7 głównych komponentów">
+- 📥 **Dane wejściowe** - róża wiatru, TI, shear, orografia, krzywe mocy/Ct
+- 🏗️ **Site & Turbines** - lokalizacja i modele turbin
+- 🌊 **Model wake** - wybór i parametry (szybkość vs dokładność)
+- 🎯 **Funkcja celu** - AEP/LCOE/NPV
+</KeyPoints>
+
+<SupportingDetails title="🔧 Pozostałe komponenty">
+- 🚫 **Ograniczenia** - odstępy (≥4-8D), hałas, cień, środowisko
+- ⚙️ **Optymalizator** - algorytm, starty, tolerancje
+- 📊 **Post-processing** - mapy produkcji, rozkład strat, CF, raporty
+</SupportingDetails>
+
+<SupportingDetails title="🎯 Kluczowe pojęcia">
+- ⚡ **AEP, CF** - straty wake, efficiency farmy
+- 🌊 **Ct(v), TI, shear** - stabilność atmosfery
+- 🚫 **Ograniczenia** - twarde/miękkie, funkcje kar
+- 🔄 **Park turbin** - jednorodny vs mieszany
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu:**
+- 📝 Szczegółowe omówienie każdego komponentu
+- 📚 Przykłady konfiguracji i ustawień
+- 💡 Najczęstsze błędy w konfiguracji
+- 📖 Przykłady interpretacji wyników
+- ❓ Pytania dla studentów: jak skonfigurować TOPFARM?
+- 🔄 Przejście do procesu modelowania
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

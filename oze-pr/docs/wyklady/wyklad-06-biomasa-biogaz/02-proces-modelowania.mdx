@@ -3,23 +3,108 @@ sidebar_position: 2
 title: "Proces modelowania/projektowania instalacji biomasy i biogazu"
 ---
 
-## Etap 1: Charakterystyka substratów
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-- Analiza składu chemicznego, suchej masy, stosunku C/N.
-- Ocena dostępności i logistyki dostaw.
+<SlideContainer>
 
-## Etap 2: Modelowanie procesów biologicznych
+<Slide title="🗺️ Roadmapa projektowa (10 kroków)" type="info">
 
-- Wykorzystanie modeli ADM1 w SIMBA#/BioWin.
-- Kalibracja na podstawie testów BMP i danych eksploatacyjnych.
+<KeyPoints title="🎯 Etapy 1-5: Definicja i przygotowanie">
+- 🎯 **1. Definicja celu**: energia elektryczna vs. biometan; integracja z ciepłem odbiorcy
+- 📊 **2. Zebranie danych**: substraty (TS/VS/COD, BMP), sezonowość, ceny; profile odbiorów
+- 🔧 **3. Wybór narzędzi**: proces (SIMBA#/BioWin/GPS‑X/WEST) + ekonomia/energetyka (RETScreen/HOMER Pro)
+- ⚗️ **4. Wybór modelu procesowego**: ADM1/wariant; zakres dynamiki (ustalony/dynamiczny)
+- 🏗️ **5. Budowa schematu**: przyjęcie, mieszanie, podgrzew, reaktor(y), magazyn gazu, CHP/uzdatnianie, poferment
+</KeyPoints>
 
-## Etap 3: Projekt technologiczny
+<SupportingDetails title="⚙️ Etapy 6-10: Parametryzacja i optymalizacja">
+- 🔧 **6. Parametryzacja**: temperatura, HRT, OLR, recyrkulacje, krzywe CHP
+- 🎯 **7. Kalibracja**: porównanie z danymi lab/pilot, regulacja frakcji i stałych kinetycznych w granicach literatury
+- 📈 **8. Analiza scenariuszy**: miks substratów, mezofil/termofil, odzysk ciepła, CHP vs. upgrading, bufor gazu
+- 🚀 **9. Optymalizacja**: dobór mocy CHP, objętości reaktorów, wielkości zbiornika gazu – iteracyjnie z HOMER/RETScreen
+- ✅ **10. Walidacja i raport**: sanity‑check bilansów, wykresy, wnioski, niepewności i ryzyka
+</SupportingDetails>
 
-- Dobór typów reaktorów (CSTR, plug-flow), czasu retencji, mieszania.
-- Integracja z układem kogeneracyjnym (CHP) i systemem magazynowania gazu.
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔄 Wytłumacz różnice pomiędzy scenariuszami a optymalizacją
+- 💡 Podkreśl iteracyjny charakter pracy: model procesu → profil energii → optymalizacja miksu → analiza finansowa
+- 📊 Pokaż przykłady iteracji między narzędziami
+- ⚠️ Uwaga na czasochłonność procesu kalibracji
+</InstructorNotes>
 
-## Etap 4: Analiza ekonomiczna i środowiskowa
+</Slide>
 
-- CAPEX/OPEX, taryfy FIT/FIP, przychody z nawozów.
-- Ocena emisji, pofermentu i zagospodarowania ciepła.
+<VisualSeparator type="technical" />
+
+<Slide title="📋 Checklista danych minimalnych" type="tip">
+
+<KeyPoints title="🧪 Charakterystyka substratów">
+- 📊 **TS/VS i COD** dla każdego substratu; gęstość; temperatura dopływu
+- ⏱️ **Docelowy HRT** [dni]; zakres OLR [kgCOD/m³·d]
+- 💨 **Skład biogazu** docelowy/wymagany przez urządzenia
+- ⚡ **Krzywe sprawności** CHP/uzdatniania; ceny nośników energii
+</KeyPoints>
+
+<SupportingDetails title="🔍 Dodatkowe wymagania">
+- 📈 **Profile czasowe**: dostępność substratów, zapotrzebowanie na energię
+- 🌡️ **Warunki środowiskowe**: temperatura otoczenia, dostępność ciepła odpadowego
+- 💰 **Parametry ekonomiczne**: taryfy, koszty O&M, certyfikaty
+- 📋 **Ograniczenia regulacyjne**: emisje, zagospodarowanie pofermentu
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Pokaż przykłady źródeł danych dla każdego parametru
+- 🔍 Omów metody weryfikacji jakości danych
+- ⚠️ Uwaga na kompletność i spójność danych
+- 💡 Wyjaśnij konsekwencje braku kluczowych danych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="✅ Dobre praktyki modelowe" type="success">
+
+<KeyPoints title="🔧 Podstawowe zasady">
+- 📏 **Normalizacja jednostek** (kg/d, m³/d, Nm³/h) - spójność w całym modelu
+- 🎯 **Start od steady‑state**, potem dynamika (dobowe/tygodniowe scenariusze)
+- 📊 **Analizy wrażliwości**: ±10–20% na kluczowych parametrach (hydroliza, k_la, aktywność metanogenów)
+- 📝 **Dokumentowanie zmian** parametrów i uzasadnień (laboratorium/literatura)
+</KeyPoints>
+
+<SupportingDetails title="⚠️ Uwagi techniczne">
+- 🔢 **Stabilność numeryczna**: dobór kroków czasowych w dynamice
+- ✅ **Sanity‑check**: bilans COD i energii na każdym etapie
+- 🔄 **Iteracyjne podejście**: małe zmiany parametrów, weryfikacja wyników
+- 📊 **Walidacja**: porównanie z danymi eksploatacyjnymi
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔢 Uwaga na stabilność numeryczną i dobór kroków czasowych w dynamice
+- ✅ Pokaż przykład sanity‑check: bilans COD i energii
+- 📊 Omów metody walidacji modelu
+- ⚠️ Wyjaśnij konsekwencje błędów w modelowaniu
+- 💡 Pokaż przykłady typowych błędów i sposobów ich unikania
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

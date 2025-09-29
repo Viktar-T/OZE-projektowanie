@@ -3,15 +3,164 @@ sidebar_position: 8
 title: "Proces modelowania/projektowania w TOPFARM"
 ---
 
-## Przebieg pracy
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-1. Import danych wiatrowych i ograniczeń (mapy, strefy, hałas).
-2. Definicja parametrów turbin i kosztów infrastruktury.
-3. Uruchomienie optymalizatora (genetyczny/gradientowy).
-4. Analiza wyników: layout, AEP, koszty, wskaźniki ekonomiczne.
+<SlideContainer>
 
-## Wskazówki
+<Slide title="🔄 Workflow optymalizacji farmy" type="info">
 
-- Iterować proces – od layoutu bazowego do optymalizacji szczegółowej.
-- Walidować wyniki w WindPRO/OpenWind pod kątem zgodności z EIA.
+<KeyPoints title="📊 Przegląd procesu">
+- 🌬️ **Wejścia meteo/GIS** - dane wiatrowe, teren, ograniczenia
+- 🌊 **Modele wake/kosztów** - silniki przepływowe, LCOE
+- 🎯 **Layout optymalny** - minimalny LCOE lub maksymalny AEP_net
+- 📊 **Walidacja** - alternatywne modele, zgodność z EIA
+</KeyPoints>
+
+<SupportingDetails title="🔧 4 główne kroki">
+- 📥 **Krok 0** - Dane wejściowe i założenia
+- 🌊 **Krok 1** - Modelowanie zasobów i strat
+- 🎯 **Krok 2** - Problem optymalizacji
+- ⚙️ **Krok 3** - Algorytmy i przebieg
+- ✅ **Krok 4** - Walidacja i raportowanie
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Przegląd procesu: mapowanie wejść (wiatr/GIS), silników wake, funkcji celu i ograniczeń; schemat „coarse→fine”.
+- BHP danych: SRID/CRS zgodny, jednostki, spójność gęstości i wysokości między krzywą mocy a klimatem wiatru.
+- Walidacja: alternatywny silnik wake, sanity‑check map AEP/wake, raportowanie wrażliwości.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📥 Krok 0-1: Dane wejściowe i zasoby" type="tip">
+
+<KeyPoints title="📊 Krok 0 - Dane wejściowe">
+- 🌬️ **Klimat wiatrowy** - róża wiatru, rozkłady prędkości, TI, shear
+- 🔧 **Krzywe turbiny** - power_curve.csv, thrust_curve.csv z QBlade
+- 🗺️ **GIS/ograniczenia** - strefy wyłączeń, odległości, Natura 2000
+- 💰 **Koszty** - modele kabli, dróg, GPZ; CAPEX/OPEX
+</KeyPoints>
+
+<SupportingDetails title="🌊 Krok 1 - Modelowanie zasobów">
+- 🎯 **Silnik wake** - PyWake/FLORIS, kalibracja na Ct(v) i TI
+- 📊 **Matryca strat** - wake, dostępność, icing, curtailment
+- ⚡ **AEP_net** - obliczenia z uwzględnieniem wszystkich strat
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Dane wejściowe: róża sektorowa, klasy prędkości, TI, shear; poligony i bufory (topologia, kolejność wierzchołków).
+- Krzywe turbiny: spójna wersja (nazwa/firmware), brak ekstrapolacji poza zakres; Ct(v) do kalibracji wake.
+- Modele wake: dobór do skali problemu; parametryzacja superpozycji i rozmycia; wpływ na AEP_net.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🎯 Krok 2-3: Optymalizacja i algorytmy" type="success">
+
+<KeyPoints title="🎯 Krok 2 - Problem optymalizacji">
+- 🔧 **Zmiennie decyzyjne** - pozycje turbin, wysokości hubów, średnice
+- 🎯 **Funkcja celu** - maksymalizacja AEP_net lub minimalizacja LCOE
+- 🚫 **Ograniczenia** - hałas, odległości, strefy, kable, spadki
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Krok 3 - Algorytmy i przebieg">
+- 🔄 **Strategia** - ewolucyjne (globalne) vs gradientowe (lokalne)
+- 🎯 **Start** - layout bazowy, iteracje, restart
+- 🛑 **Kryteria stopu** - brak poprawy, limit czasu, stabilność
+</SupportingDetails>
+
+<SupportingDetails title="✅ Krok 4 - Walidacja">
+- 🔍 **Alternatywny silnik** - WindPRO/OpenWind (jeśli dostępne)
+- 📊 **Raport** - layout, mapy AEP/wake, długości kabli
+- 📈 **Wskaźniki** - ekonomiczne, wrażliwość na TI/wiatr
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Problem optymalizacji: zmienne decyzyjne, cel (AEP/LCOE), ograniczenia (hałas/odległości/kable/teren); miękkie kary vs twarde progi.
+- Algorytmy: ewolucyjne (globalne) vs gradientowe (lokalne), hybrydy; restart i multi‑start.
+- Kryteria stopu i diagnostyka zbieżności; jak unikać optimum lokalnych.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="✅ Dobre praktyki i typowe błędy" type="warning">
+
+<KeyPoints title="✅ Dobre praktyki">
+- 🔄 **Iteracje** - coarse → fine, mniejsza liczba turbin
+- 🔍 **Walidacja** - zgodność z EIA, lokalne regulacje
+- 📝 **Dokumentacja** - założenia, źródła danych, replikowalność
+- 🌊 **Wrażliwość** - model wake, TI, wysokości hubów
+</KeyPoints>
+
+<SupportingDetails title="❌ Typowe błędy">
+- 🚫 **Brak zgodności** - jednostki/warunki między krzywą mocy a klimatem
+- 🎯 **Zbyt agresywne** - ograniczenia → mały obszar przeszukiwania
+- 📊 **Pomijanie niepewności** - nadmierna pewność co do AEP_net/LCOE
+- 🔧 **Brak weryfikacji** - niepewne wyniki
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Dobre praktyki: przebieg coarse→fine; warianty wysokości; analiza wrażliwości TI/model wake.
+- Błędy: brak zgodności jednostek, zbyt agresywne ograniczenia (mały obszar), brak niepewności.
+- Raport: zawartość i weryfikowalność (layout, mapy, kable, AEP/wake, CF, LCOE, wrażliwość).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🐍 Minimalny przykład Python" type="danger">
+
+<KeyPoints title="📊 Szkic przepływu">
+- 📥 **Dane** - sektory, prędkości, prawdopodobieństwa
+- 🏗️ **Turbina** - model SimpleWTG z krzywymi mocy/Ct
+- 🌊 **Wake** - funkcja strat (placeholder)
+- 🎯 **Optymalizacja** - funkcja celu AEP, ograniczenia
+</KeyPoints>
+
+<SupportingDetails title="🔧 Implementacja">
+- 📊 **Funkcja celu** - maksymalizacja AEP z uwzględnieniem strat
+- 🚫 **Ograniczenia** - minimalny odstęp ≥4D
+- 🔄 **Algorytm** - heurystyczny z perturbacjami
+- 📈 **Wyniki** - AEP* dla optymalnego layoutu
+</SupportingDetails>
+
+<SupportingDetails title="⚠️ Uwaga praktyczna">
+- 🔧 **Komponenty TOPFARM** - site, wake, objective, constraints, optimizer
+- 🗺️ **Integracja GIS** - biblioteki terenowe i ograniczenia
+- 📊 **Weryfikacja** - porównanie z alternatywnymi modelami
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Minimalny przykład: które komponenty TOPFARM zastąpią placeholdery; gdzie dodać GIS; jak raportować wyniki.
+- Rozszerzenia: LCOE zależne od długości kabli/nachylenia; miękkie kary hałasu/cienia; strategia cluster & refine.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

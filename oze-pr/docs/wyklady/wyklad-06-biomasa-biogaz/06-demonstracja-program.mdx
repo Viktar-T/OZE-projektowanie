@@ -3,19 +3,161 @@ sidebar_position: 6
 title: "Demonstracja na żywo: uruchomienie programu"
 ---
 
-## Scenariusz
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-- Model biogazowni rolniczej w SIMBA# z trzema substratami.
-- Analiza wpływu zmiany udziału kiszonki na produkcję biogazu.
+<SlideContainer>
 
-## Plan zajęć
+<Slide title="🎬 Scenariusz demonstracji" type="info">
 
-1. Wczytanie projektu, omówienie struktury modelu.
-2. Modyfikacja składu substratów, ponowne uruchomienie symulacji.
-3. Analiza wyników (produkcja biogazu, VFA, pH).
-4. Eksport danych do CSV i przygotowanie wykresów.
+<KeyPoints title="🏭 Model biogazowni rolniczej">
+- 🔬 **SIMBA#** z trzema substratami
+- 📊 **Analiza wpływu** zmiany udziału kiszonki na produkcję biogazu
+- 🎯 **Cel**: Pokazanie pełnego cyklu modelowania
+</KeyPoints>
 
-## Zadania
+<SupportingDetails title="📋 Struktura demonstracji">
+- 🏗️ **Budowa modelu**: od podstaw do gotowego schematu
+- ⚙️ **Parametryzacja**: ustawienia procesowe i techniczne
+- 🔄 **Symulacja**: steady-state i dynamika
+- 📊 **Analiza wyników**: wykresy i tabele
+</SupportingDetails>
 
-- Przetestować scenariusz spadku temperatury o 5°C i ocenić wpływ na wydajność.
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🎯 Przygotuj wcześniej gotowy model do demonstracji
+- 💻 Sprawdź dostępność licencji i stabilność oprogramowania
+- 📊 Przygotuj przykładowe dane substratów
+- 🔧 Zaplanuj backup w przypadku problemów technicznych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📋 Plan zajęć" type="tip">
+
+<KeyPoints title="🎯 Etapy demonstracji">
+- 📁 **1. Wczytanie projektu** - omówienie struktury modelu
+- 🔧 **2. Modyfikacja składu** substratów, ponowne uruchomienie symulacji
+- 📊 **3. Analiza wyników** (produkcja biogazu, VFA, pH)
+- 📈 **4. Eksport danych** do CSV i przygotowanie wykresów
+</KeyPoints>
+
+<SupportingDetails title="⏱️ Czas trwania">
+- 🕐 **Etap 1**: 15 min - wprowadzenie i struktura
+- 🕑 **Etap 2**: 20 min - modyfikacje i symulacja
+- 🕒 **Etap 3**: 15 min - analiza wyników
+- 🕓 **Etap 4**: 10 min - eksport i wykresy
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Przygotuj szczegółowy scenariusz z konkretnymi wartościami
+- 🔧 Pokaż różne opcje parametryzacji
+- 📊 Wyjaśnij interpretację wyników
+- 💡 Zachęć studentów do zadawania pytań
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🎯 Zadania praktyczne" type="success">
+
+<KeyPoints title="🌡️ Scenariusz temperaturowy">
+- 📉 **Spadek temperatury o 5°C** - ocena wpływu na wydajność
+- 📊 **Analiza stabilności** procesu w zmienionych warunkach
+- ⚖️ **Bilans energetyczny** - zapotrzebowanie na ciepło
+</KeyPoints>
+
+<SupportingDetails title="🔍 Dodatkowe zadania">
+- 🧪 **Miks substratów** - testowanie różnych proporcji
+- ⏱️ **Czas retencji** - optymalizacja HRT
+- 💨 **Bufor gazu** - analiza pojemności magazynu
+- ⚡ **CHP** - dobór mocy i strategii pracy
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🌡️ Pokaż wpływ temperatury na kinetykę procesu
+- 📊 Wyjaśnij metody analizy wrażliwości
+- 💡 Omów strategie kompensacji zmian temperatury
+- ⚠️ Uwaga na stabilność numeryczną w dynamice
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="📊 Analiza wyników" type="info">
+
+<KeyPoints title="📈 Kluczowe wskaźniki">
+- 💨 **Produkcja biogazu** [Nm³/h] - strumień i skład
+- ⚖️ **Stabilność procesu** - pH, VFA, zasadowość
+- ⚡ **Bilans energetyczny** - zapotrzebowanie i produkcja ciepła
+- 💰 **Parametry ekonomiczne** - koszty i przychody
+</KeyPoints>
+
+<SupportingDetails title="📊 Metody wizualizacji">
+- 📈 **Wykresy czasowe** - profile produkcji i parametrów
+- 📊 **Tabele podsumowujące** - bilanse masy i energii
+- 🎯 **Dashboardy** - kluczowe KPI w czasie rzeczywistym
+- 📋 **Raporty** - eksport do PDF/Excel
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📊 Pokaż przykłady wykresów i ich interpretację
+- 💡 Wyjaśnij znaczenie różnych wskaźników
+- 🎯 Omów metody prezentacji wyników dla różnych grup odbiorców
+- ⚠️ Uwaga na czytelność i profesjonalizm raportów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="🔄 Integracja z narzędziami" type="tip">
+
+<KeyPoints title="🔗 Eksport danych">
+- 📁 **CSV/XLSX** - profile produkcji biogazu i energii
+- ⚡ **HOMER Pro** - optymalizacja miksu energetycznego
+- 💰 **RETScreen** - analiza ekonomiczna projektu
+- 📊 **JSON** - dane strukturalne dla dalszej analizy
+</KeyPoints>
+
+<SupportingDetails title="🎯 Workflow integracji">
+- 🔄 **Iteracyjny proces** - wyniki z jednego narzędzia → dane wejściowe do następnego
+- 📊 **Walidacja spójności** - sprawdzenie zgodności między narzędziami
+- 🎯 **Optymalizacja** - doskonalenie parametrów w oparciu o wyniki ekonomiczne
+- 📝 **Dokumentacja** - śledzenie zmian i uzasadnień
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔄 Pokaż konkretny przykład przepływu danych
+- 💡 Wyjaśnij zalety integracji narzędzi
+- ⚠️ Omów typowe problemy w integracji
+- 📊 Pokaż przykłady iteracji optymalizacyjnych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

@@ -3,15 +3,184 @@ sidebar_position: 5
 title: "Proces modelowania/projektowania w wybranym programie"
 ---
 
-## Przykład: SIMBA# – biogazownia rolnicza 1 MW
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-1. **Import danych** – substraty (gnojowica, kiszonka), wyniki testów BMP.
-2. **Konfiguracja reaktorów** – CSTR, temperatura mezofilowa, czas retencji.
-3. **Symulacja** – analiza produkcji biogazu, stabilności procesu.
-4. **Moduł CHP** – dobór silnika, odzysk ciepła, bilans energii.
-5. **Analiza wyników** – produkcja energii, emisje, poferment.
+<SlideContainer>
 
-## Integracja z narzędziami ekonomicznymi
+<Slide title="🚀 Przewodnik krok‑po‑kroku" type="info">
 
-- Eksport danych do RETScreen/HOMER Pro i ocena scenariuszy finansowych.
+<InfoBox title="📋 Przykład w BioWin">
+Poniżej szczegółowy przewodnik krok‑po‑kroku. Przykład w BioWin (analogicznie w SIMBA#; różnią się nazwy bloków i GUI).
+</InfoBox>
+
+<KeyPoints title="🎯 Etapy 0-2: Przygotowanie i definicja">
+- ⚙️ **Krok 0**: Ustaw jednostki (kg/d, m³/d, °C, Nm³/h) i strefę czasową. Zapisz szablon projektu
+- 🧪 **Krok 1**: Wprowadź TS, VS, COD, frakcje CHO/PRO/LIP, C:N:P, siarka, NH₄⁺; BMP do weryfikacji
+- 🏗️ **Krok 2**: Zbiorniki przyjęcia, wymiennik/podgrzew, reaktor(y), magazyn gazu, pochodnia, CHP/upgrading, linia pofermentu
+</KeyPoints>
+
+<SupportingDetails title="🔧 Kontrola spójności">
+- ✅ **VS ≈ biodegradowalne + obojętne**; gęstość i sucha masa
+- 🔄 **Recyrkulacje**, dozowanie buforów/kwasów (stabilizacja pH)
+- 📊 **Monitorowanie**: pH, VFA (octowy, propionowy), zasadowość, NH₃/NH₄⁺, H₂S
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Wyjaśnij znaczenie spójności danych wejściowych
+- 🔧 Pokaż przykłady błędów w definicji substratów
+- 💡 Omów wpływ parametrów na stabilność procesu
+- ⚠️ Uwaga na jednostki i ich konwersje
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="⚙️ Parametry procesowe i CHP" type="tip">
+
+<KeyPoints title="🌡️ Parametry procesowe">
+- 🌡️ **Temperatura**: 35–38°C mezofil lub 50–55°C termofil
+- ⏱️ **HRT** [dni], **OLR** [kgCOD/m³·d]
+- 📊 **Monitorowanie**: pH, VFA, zasadowość, NH₃/NH₄⁺, H₂S
+</KeyPoints>
+
+<SupportingDetails title="⚡ CHP / Upgrading">
+- 🔌 **CHP**: krzywe η_e, η_th vs. obciążenie, limity start/stop, zapotrzebowanie ciepła procesu
+- 💨 **Upgrading**: technologia (PSA/membrany), straty CH₄, zużycie energii, docelowe Wobbe/kaloryczność i ciśnienie
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🌡️ Wyjaśnij wpływ temperatury na kinetykę procesu
+- ⚡ Omów różnice między mezofilnym a termofilnym procesem
+- 🔧 Pokaż przykłady krzywych sprawności CHP
+- 💡 Wyjaśnij znaczenie buforowania gazu
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🔄 Inicjalizacja i obliczenia" type="success">
+
+<KeyPoints title="⚖️ Steady‑state">
+- ✅ **Sprawdź bilanse** masy/energii, pH 6.8–7.6, niskie VFA
+- 🔄 **Dynamika**: wahania dobowo‑tygodniowe ładunku i temperatury
+- 💨 **Bufor gazu** i moc CHP - sprawdź stabilność
+</KeyPoints>
+
+<SupportingDetails title="🎯 Kalibracja">
+- 🔬 **Użyj danych lab/pilot** (VFA, CH₄, pH, przepływ biogazu)
+- ⚙️ **Modyfikuj tylko uzasadnione parametry** w akceptowalnych zakresach
+- 📊 **Walidacja**: porównanie z danymi eksploatacyjnymi
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔬 Pokaż przykłady danych kalibracyjnych
+- ⚙️ Wyjaśnij, które parametry można modyfikować
+- 📊 Omów metody walidacji modelu
+- ⚠️ Uwaga na overfitting i fizyczny sens parametrów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="📈 Scenariusze i optymalizacja" type="info">
+
+<KeyPoints title="🎯 Analiza scenariuszy">
+- 🧪 **Miks substratów**, mezofil vs. termofil, wielkość zbiornika gazu
+- ⚡ **CHP vs. upgrading**, odzysk ciepła
+- 📊 **Eksport profilu** mocy/biogazu do HOMER Pro (profil godzinowy)
+</KeyPoints>
+
+<SupportingDetails title="💰 Integracja ekonomiczna">
+- 🎯 **Dobór magazynów** i strategii w HOMER Pro
+- 📈 **Podsumowania roczne** do RETScreen → NPV/IRR
+- 📊 **Wrażliwość** na ceny energii/substratów
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔄 Zademonstruj przepływ: import CSV → uruchomienie steady‑state → scenariusz dynamiki → eksport do HOMER/RETScreen
+- 💡 Pokaż przykłady iteracji optymalizacyjnych
+- 📊 Omów znaczenie analizy wrażliwości
+- ⚠️ Uwaga na czasochłonność procesu optymalizacji
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="✅ Walidacja i raport" type="success">
+
+<KeyPoints title="🔍 Kontrola jakości">
+- ⚖️ **Sprawdź OLR**, wskaźnik VFA/alkaliczność, zgodność zagospodarowania pofermentu
+- 📊 **Wygeneruj wykresy**, tabele, podsumowania
+- 💾 **Zapisz plik** i archiwum CSV wyników
+</KeyPoints>
+
+<SupportingDetails title="⚠️ Typowe pułapki i jak ich uniknąć">
+- 🧪 **Niespójne dane substratów** → waliduj TS/VS/COD; użyj BMP do sanity‑check
+- ⏱️ **Zbyt krótki HRT** → niestabilność, wzrost VFA; zwiększ HRT/obniż OLR
+- 🔥 **Niedoszacowane ciepło** → problemy zimą; zweryfikuj bilans cieplny i izolację
+- 💨 **Brak bufora gazu** → częste start/stop CHP; dobierz magazyn i sterowanie
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔍 Pokaż przykłady sanity-check
+- ⚠️ Wyjaśnij konsekwencje typowych błędów
+- 💡 Omów metody weryfikacji wyników
+- 📊 Pokaż przykłady raportów końcowych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🎯 Mini‑case (na zajęcia)" type="tip">
+
+<KeyPoints title="📊 Dane wejściowe">
+- 🐄 **Gnojowica**: TS 8%, VS 80% TS, COD 120 kg/d
+- 🌽 **Kiszonka**: TS 33%, VS 95% TS, COD 220 kg/d
+- 🎯 **Cel**: 250 kWe CHP, mezofil, odzysk ciepła
+</KeyPoints>
+
+<SupportingDetails title="📋 Zadania">
+- 📏 **1. Skaluj HRT** - dobierz objętość reaktora
+- 💨 **2. Dobierz zbiornik gazu** dla profilu dobowego
+- 💰 **3. Porównaj CHP vs. upgrading** pod kątem NPV (RETScreen)
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🎯 Pokaż krok po kroku rozwiązanie mini-case
+- 💡 Wyjaśnij metody doboru parametrów
+- 📊 Omów analizę ekonomiczną
+- 🔄 Pokaż iteracje między narzędziami
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

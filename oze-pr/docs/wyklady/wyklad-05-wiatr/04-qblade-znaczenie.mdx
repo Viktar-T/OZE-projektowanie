@@ -3,14 +3,132 @@ sidebar_position: 4
 title: "QBlade – opis i znaczenie dla projektanta"
 ---
 
-## Dlaczego QBlade?
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Umożliwia projektowanie łopat turbin i analizę aerodynamiczną metodą BEM.
-- Obsługuje symulacje niestacjonarne (dynamic stall, yawed inflow).
-- Integruje się z OpenFAST do analizy całych turbin.
+<SlideContainer>
 
-## Korzyści dydaktyczne
+<Slide title="🔧 QBlade – oprogramowanie projektowe" type="info">
 
-- Pozwala studentom zrozumieć wpływ geometrii na krzywą mocy i obciążenia.
-- Wizualizuje zjawiska wake, turbulencję i straty aerodynamiczne.
+<KeyPoints title="🎯 Dlaczego QBlade?">
+- 🌪️ **HAWT projektowanie** - wirniki/turbiny wiatrowe z polars profili
+- 🔧 **BEM rozwiązania** - ustalone i nieustalone, podstawy aeroelastyki
+- 📊 **Krzywe mocy** - Cp(λ), Ct(λ), P(v) z eksportem do narzędzi farmowych
+- 🌊 **Symulacje nieustalone** - porywy, yaw misalignment, dynamic stall
+</KeyPoints>
 
+<SupportingDetails title="🔗 Integracje">
+- 🚀 **OpenFAST** - rozszerzone analizy aeroelastyczne
+- 📤 **Eksport danych** - krzywe mocy i ciągu do TOPFARM/WindPRO/OpenWind
+- 🎯 **Ocena obciążeń** - jakościowa ocena reakcji sterowania
+- 📈 **Wiarygodne wyniki** - krzywe Cp, Ct, P gotowe do dalszego użycia
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Architektura i moduły QBlade:
+  - Airfoils/Polars → Blade Design → Rotor/Turbine → BEM Solvers → Unsteady/Loads → Export/Report.
+  - Modele: Prandtl tip/root, high‑thrust, yaw/skewed wake, dynamic stall; ustawienia zbieżności.
+- Co jest wynikiem i do czego służy:
+  - Krzywe Cp(λ), Ct(λ), P(v); CSV do farmy; rozkłady sił i wstępne obciążenia.
+  - Jak dobra jakość polars wpływa na stabilność BEM i wiarygodność krzywych mocy.
+- Pytania naprowadzające: kiedy QBlade wystarcza, a kiedy potrzebny jest OpenFAST/zaawansowana aeroelastyka?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🎓 Korzyści dydaktyczne QBlade" type="tip">
+
+<KeyPoints title="🌉 Most między teorią a praktyką">
+- ⚡ **Szybkie iteracje** - chord/twist → natychmiastowy wpływ na Cp, Ct, P(v)
+- 🎯 **Świadome sterowanie** - testowanie TSR/pitch/torque w Region II/III
+- 📊 **Wrażliwość** - ocena wpływu jakości polars (Re, szorstkość) na AEP
+- 🔄 **Eksport** - krzywa mocy/ciągu jako wejście do narzędzi farmowych
+</KeyPoints>
+
+<SupportingDetails title="📈 Przygotowanie do praktyki">
+- 🎯 **P50/P90** - przygotowanie do rozmów o niepewności
+- 📊 **Analiza wrażliwości** - zmiany polars, chropowatości, tolerancje
+- 🔧 **Wstępna ocena** - rozkłady sił, moment u nasady, trendy nieustalone
+- 🎓 **Edukacja** - zrozumienie wpływu mikro-decyzji na makro-parametry
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Most teoria↔praktyka:
+  - Iteracje twist/chord przy stałym λ_design i wpływ na Cp_max/Ct.
+  - Strategia sterowania TSR/pitch — efekt na Region II/III i hałas.
+- Wrażliwość/niepewność:
+  - Wielo‑Re polary, szorstkość krawędzi, icing; wpływ na AEP.
+  - Dokumentuj gęstość powietrza; pokaż typowe rozjazdy AEP przy złej gęstości.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🛠️ Typowe przypadki użycia" type="success">
+
+<KeyPoints title="🎯 Główne zastosowania">
+- 🔧 **Dobór profili** - twist/chord pod TSR_design i klasę wiatru
+- ⚙️ **Kalibracja sterowania** - TSR/pitch dla płaskiej mocy nominalnej
+- 📊 **Analiza wrażliwości** - zmiany polars, chropowatości, tolerancje
+- 🔍 **Ocena obciążeń** - rozkłady sił, moment u nasady, trendy
+</KeyPoints>
+
+<SupportingDetails title="⚠️ Ograniczenia (świadome użycie)">
+- 🏦 **Nie bankowalne** - wyniki służą do projektowania i R&D
+- 🌊 **Ograniczone farmowe** - wake, mikrositing wymagają dedykowanych narzędzi
+- 🏗️ **Model strukturalny** - poglądowy; pełne MES/aeroelastyka w innych pakietach
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Przypadki użycia i ograniczenia:
+  - Dobór profili i rozkładu twist/chord pod TSR i klasę wiatru; praktyczne reguły przejścia root→mid→tip.
+  - Kalibracja sterowania: M∝ω² vs pitch; jak „wygładzić” moc znamionową.
+  - Ograniczenia: brak bankowalności, ograniczone możliwości farmowe; kiedy przejść do narzędzi farmowych.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="❓ Pytanie kontrolne" type="warning">
+
+<KeyPoints title="🎯 Zadanie do przemyślenia">
+- 🔄 **Zmiana TSR_design** - z 7 do 9 dla tej samej średnicy
+- 📊 **Wpływ na rozkłady** - chord/twist oraz Cp_max
+- 💭 **Odpowiedź jakościowa** - zrozumienie wpływu parametrów
+</KeyPoints>
+
+<SupportingDetails title="📊 Wskazówki do odpowiedzi">
+- 📈 **Wykresy Cp–λ** - pokazanie wpływu zmian TSR
+- 📊 **Wykresy P(v)** - obserwacja wpływu na krzywą mocy
+- 🔧 **Jakość polars** - wielo‑Re, szorstkość, korekcje Prandtl tip/root
+- 📤 **Artefakty eksportu** - power_curve.csv, thrust_curve.csv, parametry
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Dyskusja kontrolna:
+  - Jak zwiększenie TSR_design zwykle zmniejsza chord przy tip i zmienia rozkład twist — wpływ na Cp_max i Ct.
+  - Jak zapewnić porównywalność wariantów (ta sama gęstość, te same ustawienia solvera, jednolite biny prędkości).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>

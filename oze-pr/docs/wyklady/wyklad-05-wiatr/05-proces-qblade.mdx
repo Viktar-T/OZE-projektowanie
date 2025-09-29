@@ -3,15 +3,161 @@ sidebar_position: 5
 title: "Proces modelowania/projektowania w QBlade"
 ---
 
-## Procedura
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-1. Import profili aerodynamicznych (XFoil/NREL) i definicja łopaty.
-2. Analiza BEM – charakterystyka mocy, momentu, obciążeń.
-3. Symulacje niestacjonarne – gusty IEC, manewry start/stop.
-4. Eksport krzywych mocy do TOPFARM/WindPRO.
+<SlideContainer>
 
-## Wskazówki
+<Slide title="📋 Checklista QBlade - krok po kroku" type="info">
 
-- Monitorować zbieżność obliczeń (liczba pierścieni, kryteria convergence).
-- Aktualizować dane turbulencji zgodnie z klasą IEC.
+<KeyPoints title="🎯 Przegląd procesu">
+- 📊 **Krok 0** - Założenia projektowe (moc, TSR_design, sterowanie)
+- 🔧 **Krok 1** - Polary profili (Airfoils → Polars)
+- 🌀 **Krok 2** - Geometria łopaty (Blade Design)
+- ⚙️ **Krok 3** - Złożenie wirnika/turbiny (Rotor/Turbine)
+</KeyPoints>
+
+<SupportingDetails title="📈 Kontynuacja procesu">
+- 🔬 **Krok 4** - Symulacje ustalone (BEM Solvers)
+- 🌊 **Krok 5** - Symulacje nieustalone i obciążenia
+- 📤 **Krok 6** - Eksport wyników (CSV, wykresy)
+- 🌉 **Krok 7** - Od turbiny do farmy (AEP, wake)
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Mapowanie procesu na UI QBlade (widoki, gdzie klikamy, co zapisujemy): Airfoils/Polars → Blade Design → Rotor/Turbine → BEM → Unsteady → Export.
+- Ustawienia solvera i zbieżność: tolerancje indukcji, siatka promieniowa/azymutalna, modele Prandtl/high‑thrust/yaw.
+- Eksport i metadane: gęstość, wektor prędkości dla P(v), parametry turbiny, opis wersji (nazewnictwo plików CSV).
+- Checklisty „done‑done” po każdym kroku; najczęstsze pułapki i jak je wykrywać wcześnie.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔧 Krok 0-2: Założenia, polary, geometria" type="tip">
+
+<KeyPoints title="📊 Krok 0 - Założenia projektowe">
+- 🎯 **Cel mocy** - średnica/obrys, TSR_design, typ sterowania
+- 🌬️ **Dane wiatrowe** - Weibull, gęstość, ograniczenia hałasu/V_tip
+- 📏 **Klasa wiatru** - zakres Re, warunki eksploatacji
+</KeyPoints>
+
+<SupportingDetails title="🔬 Krok 1 - Polary profili">
+- 🎯 **Wybór profili** - root/mid/tip o rosnącej smukłości
+- 📊 **Generacja polars** - kilka Re, poziomy szorstkości, zakres α
+- ✨ **Wygładzanie** - płynność Cl/Cd/Cm, monotoniczność
+</SupportingDetails>
+
+<SupportingDetails title="🌀 Krok 2 - Geometria łopaty">
+- 📐 **Chord(r) i twist(r)** - przypisanie profili, taper, root
+- 🔄 **Iteracje** - λ_design, solidity σ, Cl w obszarze L/D
+- 🎯 **Optymalizacja** - utrzymanie wysokiego L/D w sekcji środkowej
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Krok 0: przykładowe założenia projektu (D, B, TSR_design, klasa IEC, hałas, V_tip).
+- Krok 1: sanity‑check polars (zakres α, wielo‑Re, gładkość, brak „zębów”); L/D jako szybki test jakości.
+- Krok 2: reguły rozkładu profili i twist/chord; utrzymanie Cl w sweet‑spocie L/D; ograniczenia konstrukcyjne (EI/GJ, root clearance).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="⚙️ Krok 3-4: Turbina i symulacje BEM" type="success">
+
+<KeyPoints title="🔧 Krok 3 - Złożenie turbiny">
+- 🏗️ **Skład** - hub/maszt/generator, cut-in/rated/cut-out
+- ⚙️ **Region II** - TSR-tracking lub M ∝ ω²
+- 🎯 **Region III** - pitch-to-feather, moc znamionowa
+- 🚫 **Limity** - RPM, V_tip, zabezpieczenia
+</KeyPoints>
+
+<SupportingDetails title="🔬 Krok 4 - Symulacje BEM">
+- 📊 **Krzywe** - Cp(λ), Ct(λ), P(λ), P(v) (3-25 m/s)
+- 🌊 **Modele** - Prandtl tip/root, korekta indukcji, skewed wake
+- ✅ **Weryfikacja** - zbieżność siatki, ustawienia solvera
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Krok 3: sterowanie TSR/pitch; kształtowanie Regionu II/III; unikanie oscylacji mocy (generator/inwerter vs aerodynamika).
+- Krok 4: interpretacja Cp(λ)/Ct(λ)/P(v); diagnostyka zbyt wysokiego Ct; kiedy modyfikować twist/chord vs sterowanie.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🌊 Krok 5-7: Nieustalone, eksport, farma" type="warning">
+
+<KeyPoints title="🌊 Krok 5 - Symulacje nieustalone">
+- 🌪️ **Scenariusze** - porywy, yaw misalignment, cień wieży
+- 🔬 **Analiza** - momenty, kąty natarcia, dynamic stall
+- 📊 **Ocena** - amplitudy obciążeń, stabilność sterowania
+</KeyPoints>
+
+<SupportingDetails title="📤 Krok 6 - Eksport wyników">
+- 📊 **CSV** - power_curve.csv, thrust_curve.csv z jednostkami
+- 📈 **Metadane** - gęstość, R, B, λ_design, ustawienia solvera
+- 📊 **Wykresy** - Cp-λ, P(v) dla dokumentacji
+</SupportingDetails>
+
+<SupportingDetails title="🌉 Krok 7 - Od turbiny do farmy">
+- ⚡ **AEP** - binning prędkości + czas ekspozycji
+- 🌊 **Wake** - parametryzacja modeli wake przez Ct(v)
+- 📊 **Straty** - dostępność, elektryczne, icing, curtailment
+- 🎯 **Niepewność** - AEP_net, P50/P90
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Krok 5: scenariusze gust/yaw/tower‑shadow; aktywacja dynamic stall i jego wpływ na amplitudy momentu.
+- Krok 6–7: wymogi eksportu (jednostki, gęstość); mapowanie na AEP i Ct(v)→wake; szkic niepewności P50/P90.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="✅ Dobre praktyki i typowe błędy" type="danger">
+
+<KeyPoints title="✅ Dobre praktyki">
+- 📊 **Polary** - kilka Re, margines α, gładkie przebiegi
+- 📈 **Porównania** - warianty twist/chord na wykresach Cp-λ, Ct-λ
+- 🔧 **Struktura** - odstęp częstotliwości od 1P/3P
+- 📝 **Dokumentacja** - wersjonowanie, gęstość powietrza
+</KeyPoints>
+
+<SupportingDetails title="❌ Typowe błędy">
+- 🚫 **Idealne polary** → przeszacowany AEP
+- 🔧 **Brak korekcji** → zawyżony Ct, błędne obciążenia
+- ⚙️ **Płytka pitch** → wahania mocy w Regionie III
+- 📊 **Brak weryfikacji** → niepewne wyniki
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Dobre praktyki: wielo‑Re polary, margines α, porównania wariantów na wykresach, kontrola częstotliwości własnych (jeśli struktura).
+- Typowe błędy: idealne polary, brak korekcji strat końcowych, zbyt „płytka” krzywa pitch, brak metadanych eksportu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

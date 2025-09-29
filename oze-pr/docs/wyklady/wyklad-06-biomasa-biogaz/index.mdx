@@ -3,19 +3,55 @@ sidebar_position: 6
 title: "Wykład 6: Biomasa i biogaz (2h)"
 ---
 
-## Spis treści
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox
+} from '@site/src/components/SlideComponents';
 
-- [Wprowadzenie do instalacji biomasy i biogazu](./01-wprowadzenie-biomasa-biogaz.md)
-- [Proces modelowania/projektowania instalacji biomasy i biogazu](./02-proces-modelowania.md)
-- [Porównanie programów: SIMBA#, BioWin, GPS-X/WEST, RETScreen, HOMER Pro](./03-porownanie-programow.md)
-- [SIMBA# lub BioWin - opis i znaczenie dla projektanta](./04-simba-biowin-znaczenie.md)
-- [Proces modelowania/projektowania w wybranym programie](./05-proces-wybrany-program.md)
-- [Demonstracja na żywo: uruchomienie programu](./06-demonstracja-program.md)
-- [Podsumowanie](./07-podsumowanie.md)
+<SlideContainer>
 
-## Cele wykładu
+<Slide title="🎯 Wykład 6: Biomasa i biogaz" type="info">
 
-- Poznanie procesu modelowania/projektowania instalacji biomasy i biogazu
-- Porównanie programów (SIMBA#, BioWin, GPS-X/WEST, RETScreen, HOMER Pro)
-- Szczegółowy fokus na SIMBA# lub BioWin - opis i znaczenie dla projektanta
-- Demonstracja na żywo: uruchomienie programu i budowa przykładowego projektu
+<KeyPoints title="📋 Spis treści">
+- 🌱 **Wprowadzenie do instalacji biomasy i biogazu**
+- 🔧 **Proces modelowania/projektowania instalacji**
+- 📊 **Porównanie programów: SIMBA#, BioWin, GPS-X/WEST, RETScreen, HOMER Pro**
+- ⚙️ **SIMBA# lub BioWin - opis i znaczenie dla projektanta**
+- 🚀 **Proces modelowania w wybranym programie**
+- 🎬 **Demonstracja na żywo: uruchomienie programu**
+- 📝 **Podsumowanie**
+</KeyPoints>
+
+<SupportingDetails title="🎓 Cele dydaktyczne">
+- 🔍 **Rozróżnić typy instalacji bioenergetycznych** i wskazać jakie narzędzia programowe wspierają ich projektowanie
+- 🏗️ **Zbudować i uruchomić model procesowy** fermentacji beztlenowej (ADM1) w wybranym środowisku (SIMBA#, BioWin, GPS‑X/WEST)
+- 🔗 **Połączyć model procesowy** z analizą techno‑ekonomiczną i energetyczną (RETScreen, HOMER Pro)
+- 📋 **Przygotować dane wejściowe** (charakterystyka substratów) i wykonać kalibrację modelu
+- 🏛️ **Zaprojektować prostą architekturę cyfrową** projektu: przepływ danych → symulacja → optymalizacja → raportowanie
+</SupportingDetails>
+
+<InfoBox title="⏱️ Czas trwania: 2h">
+Kurs: **Programy komputerowe w projektowaniu instalacji OZE** (semestr 5)  
+Tryb: wykład + pokaz narzędzi (demo), studium przypadku
+</InfoBox>
+
+<InstructorNotes>
+**Przygotowanie do wykładu:**
+- 📝 Sprawdź dostępność licencji do SIMBA#/BioWin dla studentów
+- 💻 Przygotuj przykładowe pliki CSV z danymi substratów
+- 📊 Przygotuj krzywe sprawności CHP do importu
+- 🎯 Zaplanuj mini-case study z gnojowicą i kiszonką kukurydzy
+- 📋 Przygotuj checklistę kontroli jakości modelu
+- 🔄 Zaplanuj integrację z RETScreen/HOMER Pro
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>

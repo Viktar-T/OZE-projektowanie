@@ -3,15 +3,104 @@ sidebar_position: 3
 title: "Porównanie programów: SIMBA#, BioWin, GPS-X/WEST, RETScreen, HOMER Pro"
 ---
 
-| Narzędzie | Zakres | Atuty | Ograniczenia |
-| --- | --- | --- | --- |
-| **SIMBA#** | Biogazownie rolnicze/przemysłowe | Zaawansowany solver ADM1, elastyczne modele | Licencja komercyjna |
-| **BioWin** | Oczyszczalnie ścieków, biogazownie komunalne | Przyjazny interfejs, biblioteka substratów | Mniej funkcji ekonomicznych |
-| **GPS-X / WEST** | Modelowanie procesów ściekowych | Symulacje w czasie rzeczywistym, integracja SCADA | Wysokie koszty licencji |
-| **RETScreen Expert** | Analiza ekonomiczna | Baza danych klimatycznych, scenariusze finansowe | Uproszczony model procesów |
-| **HOMER Pro** | Mikrosieci i hybrydy | Optymalizacja pracy CHP, magazynów | Wymaga danych z narzędzi procesowych |
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-## Rekomendacje
+<SlideContainer>
 
-- Łączenie narzędzi procesowych (SIMBA#/BioWin) z finansowymi (RETScreen/HOMER).
+<Slide title="🔧 Przegląd narzędzi" type="info">
+
+<KeyPoints title="⚗️ Narzędzia procesowe (CAE)">
+- 🔬 **SIMBA#**: Elastyczne flowsheety, integracja sterowania, narzędzia kalibracji
+- 🚀 **BioWin**: Przyjazny interfejs, gotowe jednostki (digestery, CHP), raporty
+- 🎯 **GPS‑X**: Duża konfigurowalność, identyfikacja parametrów
+- 🌊 **WEST**: Modułowość, integracje hydrodynamiczne
+</KeyPoints>
+
+<SupportingDetails title="💰 Narzędzia ekonomiczne i optymalizacyjne">
+- 📊 **RETScreen**: Szybkie LCOE/NPV, biblioteki kosztów, scenariusze
+- ⚡ **HOMER Pro**: Profilowanie obciążeń, dispatch, magazyny, optymalizacja miksu
+- 🔗 **Integracja**: Eksport CSV/XLSX, API/skrypty, SCADA (OPC UA)
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📊 Pokaż porównawczą tabelę z mocnymi stronami i ograniczeniami każdego narzędzia
+- 💡 Omów typowe zastosowania dla różnych etapów projektu
+- 🔧 Wyjaśnij różnice w podejściu do modelowania (flowsheety vs. gotowe jednostki)
+- ⚠️ Uwaga na koszty licencji i dostępność dla studentów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🎯 Kryteria wyboru" type="tip">
+
+<KeyPoints title="📊 Poziom szczegółowości">
+- 🔬 **Dynamika procesu** (VFA, pH) → SIMBA#/BioWin/GPS‑X/WEST
+- 💰 **Makro‑ekonomia** → RETScreen
+- ⚡ **Miks/sterowanie energią** → HOMER Pro
+</KeyPoints>
+
+<SupportingDetails title="🔗 Integracje i koszty">
+- 📁 **Integracje**: eksport CSV/XLSX, API/skrypty, SCADA (OPC UA) – ważne w projektach badawczych
+- 💰 **Licencje i koszty**: uczelniane vs. komercyjne; moduły dodatkowe (CHP, upgrading, odory)
+- 📚 **Krzywa nauki**: szybki start – BioWin; pełna kontrola i sterowanie – SIMBA#/WEST/GPS‑X
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🎯 Pokaż przykłady sytuacji, kiedy zmieniasz narzędzie (np. potrzeba sterowania → SIMBA#, szybki raport → BioWin)
+- 💡 Omów wpływ budżetu projektu na wybór narzędzi
+- 🔧 Wyjaśnij znaczenie integracji między narzędziami
+- 📊 Pokaż przykłady workflow dla różnych typów projektów
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🔄 Workflow między narzędziami" type="success">
+
+<KeyPoints title="📈 Sekwencja pracy">
+- ⚗️ **1. Model procesu** (SIMBA#/BioWin) → budowa schematu, parametryzacja
+- 📊 **2. Profil produkcji** gazu/energii (CSV) → eksport wyników
+- ⚡ **3. Optymalizacja miksu** i magazynowania (HOMER Pro) → strategia energetyczna
+- 💰 **4. TEA/finanse** (RETScreen) → analiza ekonomiczna
+- 📝 **5. Raport** → podsumowanie i rekomendacje
+</KeyPoints>
+
+<SupportingDetails title="🔗 Kluczowe interfejsy">
+- 📁 **Formaty wymiany**: CSV, XLSX, JSON
+- 🔄 **Iteracje**: Wyniki z jednego narzędzia → dane wejściowe do następnego
+- 📊 **Walidacja**: Sprawdzenie spójności między narzędziami
+- 🎯 **Optymalizacja**: Iteracyjne doskonalenie parametrów
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔄 Pokaż konkretny przykład przepływu danych między narzędziami
+- 💡 Omów typowe problemy w integracji narzędzi
+- ⚠️ Uwaga na formaty danych i ich kompatybilność
+- 📊 Pokaż przykłady iteracji optymalizacyjnych
+- 🎯 Wyjaśnij rolę każdego narzędzia w procesie projektowym
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

@@ -3,21 +3,93 @@ sidebar_position: 1
 title: "Wprowadzenie do projektowania farm wiatrowych"
 ---
 
-## Kontekst energetyczny
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Energetyka wiatrowa jest kluczowa dla realizacji celów klimatycznych UE.
-- W Polsce po liberalizacji ustawy odległościowej obserwujemy wzrost inwestycji.
-- Projekt wymaga uwzględnienia aspektów technicznych, środowiskowych i społecznych.
+<SlideContainer>
 
-## Komponenty farmy
+<Slide title="🌬️ Wprowadzenie do projektowania farm wiatrowych" type="info">
 
-- Turbiny (wirnik, gondola, wieża) z układami sterowania pitch/yaw.
-- Infrastruktura przyłączeniowa (kable, stacja GPZ, system SCADA).
-- Fundamenty, drogi serwisowe, systemy monitoringu stanu (CMS).
+<KeyPoints title="📋 Kontekst energetyczny">
+- 🌍 **Energetyka wiatrowa** - kluczowa dla celów klimatycznych UE
+- 🇵🇱 **Wzrost inwestycji** po liberalizacji ustawy odległościowej w Polsce
+- ⚖️ **Projekt wymaga** uwzględnienia aspektów technicznych, środowiskowych i społecznych
+</KeyPoints>
 
-## Kryteria lokalizacyjne
+<SupportingDetails title="🔧 Komponenty farmy">
+- 🌀 **Turbiny**: wirnik, gondola, wieża z układami sterowania pitch/yaw
+- 🔌 **Infrastruktura**: kable, stacja GPZ, system SCADA
+- 🏗️ **Fundamenty**: drogi serwisowe, systemy monitoringu stanu (CMS)
+</SupportingDetails>
 
-- Zasoby wiatrowe (pomiar masztowy, LiDAR, dane mesoskalowe).
-- Ograniczenia środowiskowe (hałas, migotanie cienia, obszary Natura 2000).
-- Warunki sieciowe i możliwość przyłączenia (zgodność z NC RfG).
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Kontekst i polityka:
+  - Rola OZE w miksie UE; znaczenie wiatru dla celów klimatycznych i bezpieczeństwa energetycznego.
+  - Polska: skutki liberalizacji zasady odległościowej (wpływ na pipeline projektów, akceptacja społeczna, procedury OOŚ).
+  - Bankowalność: na wczesnym etapie nie „obiecujemy” AEP — mówimy o potencjale i niepewności (ramy P50/P90 przedstawimy później).
+- Merytoryka lokalizacji (pre‑feasibility):
+  - Dane wiatrowe: mast/LiDAR, okres pomiaru, korekcja do 10–20 lat; kiedy dane mesoskalowe/atlasowe są akceptowalne.
+  - Uwarunkowania: hałas, migotanie, Natura 2000, korytarze przelotowe; sieć (przyłącza, GPZ), dostęp logistyczny.
+  - Teren i własność: poligony, bufory, zgodność z planami zagospodarowania, ryzyka społeczne.
+- Komponenty i interfejsy techniczne:
+  - Turbina (wirnik, gondola, wieża), sterowanie pitch/yaw, ograniczenia V_tip i akustyka.
+  - Infrastruktura: kable, drogi, place montażowe, stacja GPZ, SCADA; wpływ na CAPEX/OPEX i LCOE.
+- Most do narzędzi:
+  - QBlade jako „silnik aerodynamiczny” do krzywych P(v)/Ct(v) — pokażemy w W5.1.
+  - TOPFARM i narzędzia planistyczne do layoutu i LCOE — w W5.2; jak artefakty z QBlade stają się wejściem.
+- Dyskusja i pytania:
+  - Jakie kompromisy dominują w onshore vs offshore? Co decyduje o „go/no‑go” lokalizacji?
+  - Jak ograniczenia hałasu i odległości kształtują rozstaw D i wysokości hubów?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🎯 Kryteria lokalizacyjne farm wiatrowych" type="tip">
+
+<KeyPoints title="📊 Zasoby wiatrowe">
+- 📏 **Pomiar masztowy** - podstawowe źródło danych
+- 🛰️ **LiDAR** - zaawansowane pomiary 3D
+- 🌐 **Dane mesoskalowe** - modele numeryczne
+</KeyPoints>
+
+<SupportingDetails title="🌱 Ograniczenia środowiskowe">
+- 🔊 **Hałas** - normy akustyczne dla mieszkańców
+- 🌑 **Migotanie cienia** - wpływ na okoliczne budynki
+- 🦅 **Obszary Natura 2000** - ochrona przyrody
+- ⚡ **Warunki sieciowe** - możliwość przyłączenia (NC RfG)
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Zasoby i pomiary:
+  - Mast vs LiDAR/SoDAR: zalety/ograniczenia, wysokości referencyjne, niepewność pomiarowa; korekta do wysokości hubu (shear, TI).
+  - Dane mesoskalowe: kiedy używać, jak łączyć z pomiarami (merging, MCP) na etapie pre‑FEED.
+- Ograniczenia i compliance:
+  - Hałas: progi, modelowanie, wpływ V_tip i sterowania pitch.
+  - Migotanie cienia: geometryczne oszacowania vs narzędzia dedykowane.
+  - Natura 2000 i trasy migracji: znaczenie danych sezonowych i konsultacji.
+- Sieć i ekonomia:
+  - Przyłączenie: wymagania operatorów, zgodność z NC RfG, moce zwarciowe.
+  - Wpływ ograniczeń na LCOE; jak wczesne decyzje terenowe determinują koszty kabli i dróg.
+- Pytania naprowadzające:
+  - Które ryzyka lokalizacyjne są najtrudniejsze do złagodzenia i dlaczego?
+  - Jak dobrać wstępny rozstaw (4–8D) w zależności od róży wiatru i TI?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

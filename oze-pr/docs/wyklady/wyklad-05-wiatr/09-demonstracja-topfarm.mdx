@@ -3,19 +3,168 @@ sidebar_position: 9
 title: "Demonstracja na żywo: TOPFARM"
 ---
 
-## Scenariusz
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Lokalizacja: farma 12 × 5 MW na terenie równinnym.
-- Cel: minimalizacja kosztu energii (LCOE) przy zachowaniu ograniczeń hałasu.
+<SlideContainer>
 
-## Plan zajęć
+<Slide title="🎬 Scenariusz demonstracji TOPFARM" type="info">
 
-1. Import danych wiatrowych i GIS.
-2. Utworzenie layoutu początkowego i definiowanie ograniczeń.
-3. Uruchomienie optymalizatora, analiza wyników AEP i kosztów.
-4. Przygotowanie map i raportu dla inwestora.
+<KeyPoints title="📊 Parametry demonstracji">
+- 🏗️ **Lokalizacja** - farma 12 × 5 MW na terenie równinnym (onshore)
+- 🎯 **Cel** - minimalizacja LCOE przy ograniczeniach hałasu i odległości
+- 📥 **Wejścia** - róża wiatru, power_curve.csv, thrust_curve.csv, mapa GIS
+</KeyPoints>
 
-## Zadania
+<SupportingDetails title="🎯 Plan zajęć">
+- 📥 **Import danych** - wiatrowych i GIS
+- 🏗️ **Layout początkowy** - definiowanie ograniczeń
+- ⚙️ **Optymalizator** - wybór modelu wake, analiza AEP_net i kosztów
+- 📊 **Raport** - mapy, AEP, straty, LCOE, ograniczenia
+</SupportingDetails>
 
-- Zmodyfikować kryterium optymalizacji i ocenić wpływ na layout.
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Setup i dane: róża sektorowa, TI, shear, mapy ograniczeń; krzywe mocy/Ct ze spójnymi metadanymi.
+- Wybór modelu wake i parametrów; kiedy użyć szybkiego modelu vs dokładniejszego; wpływ na czas obliczeń.
+- Interpretacja wyników: AEP_net, mapa wake, długości kabli; wątki do dyskusji z inwestorem.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📋 Checklista demo - krok po kroku" type="tip">
+
+<KeyPoints title="🔧 Krok 1-2: Konfiguracja">
+- 📊 **Krzywe turbiny** - wczytaj i zdefiniuj ograniczenia (hałas, strefy, odległości)
+- 🌊 **Model wake** - skonfiguruj parametry (TI, Ct(v))
+- 🎯 **Layout startowy** - zbuduj i uruchom optymalizację (evo/gradient)
+</KeyPoints>
+
+<SupportingDetails title="📊 Krok 3-4: Analiza i raportowanie">
+- 📈 **Metryki** - zapisz wyniki optymalizacji
+- 🔄 **Warianty** - porównaj różne konfiguracje
+- 🗺️ **Mapy** - AEP/wake i długości kabli
+- 📊 **Raport** - przygotuj dla inwestora
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Checklista: import, ograniczenia, model wake, optymalizator; zapisywanie metryk i wariantów.
+- Porównywanie wariantów: wpływ wysokości hubu, kryterium celu (AEP vs LCOE), model wake.
+- Raport: mapy AEP/wake, długości kabli, koszty; przygotowanie slajdu dla inwestora.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🎯 Zadania dla studentów" type="success">
+
+<KeyPoints title="🔧 Zadanie 1: Kryterium optymalizacji">
+- 🎯 **Modyfikacja** - zmień kryterium optymalizacji
+- 📊 **Ocena** - wpływ na layout i wyniki
+- 📈 **Analiza** - porównanie różnych strategii
+</KeyPoints>
+
+<SupportingDetails title="🌊 Zadanie 2: Warianty wysokości">
+- 🏗️ **Huby** - przetestuj warianty wysokości
+- 🌹 **Róża wiatru** - wzdłuż dominującej róży wiatru
+- 📊 **Straty wake** - analiza wpływu na AEP
+</SupportingDetails>
+
+<SupportingDetails title="🔬 Zadanie 3: Wrażliwość">
+- 🌊 **Model wake** - Gaussian vs Jensen
+- 📊 **TI** - sprawdź wrażliwość na turbulencję
+- 📈 **Wyniki** - porównaj różne konfiguracje
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Zad. 1: jak przeformułować funkcję celu i co się zmienia w layoutach.
+- Zad. 2: kiedy wyższe huby pomagają (róża dominująca, shear) vs koszty i ograniczenia.
+- Zad. 3: projekt wrażliwości — zakresy TI, wybór modeli, sposób raportu.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🔄 Mini‑ćwiczenia (5–10 min)" type="warning">
+
+<KeyPoints title="🔬 Ćwiczenie 1: Kalibracja modelu wake">
+- 📊 **TI** - jak zmienia się AEP przy ±10% TI?
+- 🌊 **Model** - porównaj różne konfiguracje
+- 📈 **Wyniki** - analiza wpływu na optymalizację
+</KeyPoints>
+
+<SupportingDetails title="📏 Ćwiczenie 2: Odstępy">
+- 🔢 **4D vs 6D** - wpływ na AEP i liczbę turbin
+- 📊 **Analiza** - kompromis między gęstością a stratami
+- 🎯 **Optymalizacja** - znajdź najlepszy rozstaw
+</SupportingDetails>
+
+<SupportingDetails title="💰 Ćwiczenie 3: AEP vs LCOE">
+- 📊 **Przypadek** - wyższy AEP ma gorsze LCOE
+- 🔧 **Przyczyna** - droższe kable/serwis
+- 🎯 **Analiza** - kiedy LCOE jest lepszą metryką?
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Ćw. 1: jak kalibrować TI; obserwowane skutki na AEP i optimum rozstawu.
+- Ćw. 2: 4D vs 6D — metryki oceny kompromisu (AEP, wake losses, kable).
+- Ćw. 3: kiedy wyższy AEP przegrywa z LCOE — przykłady i uzasadnienia.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📚 Zadanie domowe / Projekt" type="danger">
+
+<KeyPoints title="🎯 Temat projektu">
+- 🏗️ **Layout** - optymalizacja 10–20 turbin dla lokalizacji onshore
+- 🔄 **Warianty** - (A) maks. AEP, (B) min. LCOE z karą hałasu
+- 📊 **Oddanie** - notebook + raport PDF (max 6 stron)
+</KeyPoints>
+
+<SupportingDetails title="📋 Kryteria oceny (rubryka)">
+- 📊 **Dane wejściowe** - poprawność i dokumentacja (20%)
+- 🎯 **Cel/ograniczenia** - poprawność definicji (20%)
+- ⚙️ **Optymalizacja** - metodyka, wielo‑start, ustawienia (25%)
+- 📈 **Wyniki** - analiza i wrażliwość (20%)
+- 📝 **Raport** - klarowność i wnioski (15%)
+</SupportingDetails>
+
+<SupportingDetails title="❓ FAQ">
+- 🎯 **AEP vs LCOE** - kiedy użyć której metryki?
+- 🌊 **Model wake** - jak wybrać odpowiedni?
+- 🔄 **Punkty startowe** - ile potrzeba dla stabilności?
+- 🔧 **Typy turbin** - czy mieszać w farmie?
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Kryteria oceny: co oznacza „poprawność danych wejściowych”, jakie metryki i wykresy akceptujemy.
+- Red flags: brak metadanych, niespójne jednostki, mylenie AEP_gross z AEP_net.
+- FAQ: ile punktów startowych; kiedy mieszać typy turbin; jak dobrać model wake do skali.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

@@ -3,15 +3,114 @@ sidebar_position: 3
 title: "Porównanie narzędzi: QBlade, TOPFARM, WindPRO, OpenWind"
 ---
 
-| Narzędzie | Zakres | Atuty | Uwagi |
-| --- | --- | --- | --- |
-| **QBlade** | Projekt łopat, analiza aerodynamiczna | Open-source, integracja z XFoil/FAST | Brak modułu ekonomicznego |
-| **TOPFARM** | Optymalizacja layoutu | Algorytmy ewolucyjne, koszty infrastruktury | Wymaga danych z WAsP/WindPRO |
-| **WindPRO** | Kompleksowe projektowanie | Moduły zasobów, hałasu, migotania, raporty | Licencja modułowa |
-| **OpenWind** | Layout i analiza wake | Szybkie wariantowanie, integracja GIS | Mniej funkcji raportowych |
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-## Rekomendacje dydaktyczne
+<SlideContainer>
 
-- Łączyć QBlade (wirnik) z TOPFARM/WindPRO (layout, raporty).
-- Uczyć dokumentowania założeń pomiarowych i środowiskowych.
+<Slide title="🛠️ Pozycjonowanie narzędzi w łańcuchu projektowym" type="info">
+
+<KeyPoints title="📊 Porównanie narzędzi">
+- 🔧 **QBlade**: profil → łopata → wirnik, BEM, polary, sterowanie
+- 🎯 **TOPFARM**: optymalizacja farmy, układ, wysokości, modele wake
+- 📊 **WindPRO**: planowanie, due‑diligence, AEP, hałas, środowisko
+- 🌐 **OpenWind**: layout i energia, modele wake, analizy strat
+</KeyPoints>
+
+<SupportingDetails title="🔄 Przepływ danych">
+- 📤 **QBlade → CSV** - krzywe mocy i ciągu jako wejście
+- 🎯 **TOPFARM** - optymalizacja rozmieszczenia z modelami wake
+- 📊 **WindPRO/OpenWind** - analizy bankowalne i raporty
+- 🔗 **Integracja** - QBlade dostarcza wejść do narzędzi farmowych
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Pozycjonowanie narzędzi:
+  - QBlade: profil→łopata→wirnik, Cp/Ct/P, sterowanie; artefakty do CSV.
+  - TOPFARM: optymalizacja układu (pozycje/wysokości/średnice), współpraca z PyWake/FLORIS; cele AEP/LCOE.
+  - WindPRO/OpenWind: bankowalność, EIA/hałas/cień, integracje z pomiarami i modelami meso.
+- Przepływ danych i integracje:
+  - QBlade → `power_curve.csv`/`thrust_curve.csv` → TOPFARM/OpenWind; wymogi metadanych (gęstość, R, B, λ_design).
+  - Spójność jednostek i założeń między narzędziami (wysokości, TI, shear).
+- Kryteria wyboru narzędzi:
+  - Etap projektu, wymagana wiarygodność (R&D vs due‑diligence), dostępność danych i licencji.
+  - Koszty/korzyści i krzywa uczenia; kiedy hybryda (TOPFARM + WindPRO) ma sens.
+- Mini‑case:
+  - Farma 20×6 MW: które narzędzie na etap koncepcyjny vs bankowalny i dlaczego.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔬 Główne domeny fizyczne i modele" type="tip">
+
+<KeyPoints title="🧪 Modele fizyczne">
+- 🌪️ **QBlade**: BEM, przeciągnięcie dynamiczne, yaw/skewed wake, polary
+- 🎯 **TOPFARM**: meta‑framework optymalizacji z silnikami wake
+- 📊 **WindPRO**: moduły zasobów/hałasu/cienia/AEP, raporty due‑diligence
+- 🌐 **OpenWind**: projekt layoutu, modele wake, kontrola ograniczeń
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Specjalizacje narzędzi">
+- 🔧 **QBlade**: generacja polars, BEM, wstępna aeroelastyka
+- 🎯 **TOPFARM**: PyWake/FLORIS, optymalizacja układu i wysokości
+- 📊 **WindPRO**: integracje z danymi pomiarowymi, modele mezoskalowe
+- 🌐 **OpenWind**: strefy wyłączeń, odległości, hałas, modele wake
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Modele i fizyka:
+  - QBlade: BEM, dynamic stall, Prandtl tip/root, high‑thrust, yaw/skewed wake.
+  - TOPFARM: meta‑framework, zewnętrzne silniki wake; konsekwencje wyboru modelu (Gaussian/Jensen/Larsen) dla AEP.
+  - WindPRO/OpenWind: moduły i ich zastosowanie (AEP/hałas/cień); kalibracja na pomiarach.
+- Szybkość vs dokładność: kiedy używać modeli szybkich vs dokładniejszych; strategia „coarse→fine”.
+- Pytania: jak wybór modelu wpływa na optimum layoutu i LCOE?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🎯 Kryteria doboru narzędzia" type="warning">
+
+<KeyPoints title="📋 Kryteria wyboru">
+- 🎯 **Etap projektu**: koncepcja łopaty → QBlade; farma → OpenWind/WindPRO
+- 🏦 **Poziom zaufania**: edukacyjny vs. due‑diligence
+- 📊 **Dane wejściowe**: polary, pomiary meteo, mapy terenu, klasy IEC
+- 💰 **Czas i licencje**: koszt vs. open‑source, krzywa uczenia
+</KeyPoints>
+
+<SupportingDetails title="🔄 Mini‑ćwiczenie (5 min)">
+- 🏗️ **Scenariusz**: farma 20 × 6 MW, teren płaski, róża wiatru SE–NW
+- 🎯 **Zadanie**: wskaż zestaw narzędzi na etap koncepcyjny i bankowalny
+- 📝 **Uzasadnienie**: w 3 zdaniach wyjaśnij wybór narzędzi
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Decyzje praktyczne:
+  - Koncepcja łopaty/wirnika → QBlade; mikrositing/układ → TOPFARM; due‑diligence/raporty → WindPRO/OpenWind.
+  - Wymagana wiarygodność wyniku vs koszt/czas; ścieżki mieszane i eksport/import.
+- Antywzorce i ryzyka:
+  - Użycie wyników QBlade jako „bankowalnych”, brak metadanych, niespójne założenia (TI/density).
+- Ćwiczenie prowadzone: wybór narzędzi dla farmy 20×6 MW, teren płaski, róża SE–NW; krótkie uzasadnienia.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

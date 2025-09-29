@@ -3,19 +3,145 @@ sidebar_position: 6
 title: "Demonstracja na żywo: QBlade"
 ---
 
-## Scenariusz zajęć
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Turbina referencyjna: 2 MW, średnica 100 m.
-- Zakres prędkości wiatru: 6–12 m/s.
+<SlideContainer>
 
-## Plan demonstracji
+<Slide title="🎬 Scenariusz demonstracji QBlade" type="info">
 
-1. Projekt łopaty i analiza charakterystyki mocy.
-2. Symulacja BEM dla kilku prędkości, interpretacja wyników.
-3. Analiza gustu IEC i wpływu na obciążenia.
-4. Eksport krzywych do TOPFARM.
+<KeyPoints title="📊 Parametry demonstracji">
+- 🌀 **Turbina referencyjna** - 2 MW, średnica 100 m (onshore)
+- 🌬️ **Zakres wiatru** - 6-12 m/s do demonstracji
+- 🌡️ **Gęstość powietrza** - 1.225 kg/m³ (zanotować w eksporcie)
+</KeyPoints>
 
-## Zadania dla studentów
+<SupportingDetails title="🎯 Plan demonstracji">
+- 🔧 **Projekt łopaty** - analiza charakterystyki mocy
+- 📊 **Symulacja BEM** - Cp-λ, P-V, Ct-λ, interpretacja wyników
+- 🌪️ **Gust IEC** - Unsteady/Loads, dynamic stall on/off
+- 📤 **Eksport** - power_curve.csv, thrust_curve.csv do TOPFARM/WindPRO
+</SupportingDetails>
 
-- Zaprojektować wariant z modyfikacją profilu i porównać wyniki.
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Setup i higiena danych:
+  - Import profili (*.dat), definicja Re i zakresu α; sanity‑check polars (gładkość, brak „zębów”).
+  - Dokumentacja: gęstość powietrza, R, B, λ_design, wektor prędkości dla P(v).
+- Prowadzenie demo:
+  - Blade Design: przypisanie profili, chord/twist; krótkie iteracje pokazujące wpływ na Cp/Ct.
+  - BEM: wygeneruj Cp(λ)/Ct(λ)/P(v); pokaż wpływ korekcji Prandtl i high‑thrust.
+  - Unsteady/Loads: scenariusz gust IEC; obserwuj moment u nasady, kąt natarcia; włącz/wyłącz dynamic stall.
+- Eksport i next steps:
+  - Zapis power_curve.csv, thrust_curve.csv; notuj jednostki i metadane; przygotuj wejścia do TOPFARM.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📋 Checklista demo - krok po kroku" type="tip">
+
+<KeyPoints title="🔧 Krok 1-2: Polary i geometria">
+- 📊 **Airfoils** - import profili (*.dat), generacja polars dla kilku Re
+- 📝 **Zapis metadanych** - nazwy profili, parametry Re
+- 🌀 **Blade Design** - B, R, chord(r), twist(r), przypisanie profili
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Krok 3-4: Turbina i BEM">
+- 🏗️ **Rotor/Turbine** - złożenie, cut-in/rated/cut-out, limity RPM/V_tip
+- 📊 **BEM Solvers** - generacja Cp(λ), Ct(λ), P(v), zapis wykresów
+- ✅ **Weryfikacja** - sprawdzenie zbieżności i jakości wyników
+</SupportingDetails>
+
+<SupportingDetails title="🌊 Krok 5-6: Nieustalone i eksport">
+- 🌪️ **Unsteady/Loads** - gust IEC, obserwacja momentów i kątów natarcia
+- 📤 **Export/Report** - power_curve.csv, thrust_curve.csv z metadanymi
+- 📊 **Dokumentacja** - gęstość, parametry turbiny, ustawienia solvera
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Krok 1–2: checklisty UI i metadanych; jak szybko sprawdzać Re/α i przypisanie profili.
+- Krok 3–4: strategie cut‑in/rated/cut‑out, kontrola V_tip; interpretacja Cp‑λ i P‑V pod kątem sterowania.
+- Krok 5–6: diagnostyka nieustalonych (oscylacje, overshooty); kompletność eksportu i spójność jednostek.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🎯 Zadania dla studentów" type="success">
+
+<KeyPoints title="🔧 Zadanie 1: Modyfikacja profilu">
+- 🌀 **Wariant** - zaprojektować z modyfikacją profilu
+- 📊 **Porównanie** - wyniki z oryginalnym projektem
+- 📈 **Analiza** - wpływ na Cp, Ct, P(v), obciążenia
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Zadanie 2: Krzywa pitch">
+- 🎯 **Cel** - krzywa pitch dla Regionu III
+- 📊 **Minimalizacja** - wahania mocy (12-20 m/s)
+- 🔧 **Optymalizacja** - stabilność sterowania
+</SupportingDetails>
+
+<SupportingDetails title="📝 Zadanie 3: Dokumentacja">
+- 📊 **Gęstość powietrza** - udokumentować w raporcie
+- ⚙️ **Ustawienia solvera** - parametry i tolerancje
+- 📈 **Metadane** - kompletne informacje o projekcie
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Zadanie 1: na co patrzeć przy modyfikacji profilu (L/D, Cl_max, zachowanie przy α wysokich); jak oceniać wpływ na Cp/Ct/P.
+- Zadanie 2: jak projektować krzywą pitch — stabilność mocy vs obciążenia; unikanie „polowania”.
+- Zadanie 3: wzór na opis metadanych i kontrolną listę jednostek w eksporcie.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="👨‍🏫 Notatki dla prowadzącego" type="warning">
+
+<KeyPoints title="⚠️ Kluczowe punkty uwagi">
+- 📊 **Jakość polars** - wpływ na stabilność BEM
+- 🔧 **Korekcje** - porównanie z/bez Prandtl tip/root
+- ⚙️ **Region II** - znaczenie λ ≈ λ_design
+</KeyPoints>
+
+<SupportingDetails title="📚 Wskazówki dydaktyczne">
+- 🎯 **Demonstracja** - pokazać wpływ każdego parametru
+- 📊 **Weryfikacja** - sprawdzić zbieżność i jakość wyników
+- 💡 **Interpretacja** - wyjaśnić znaczenie każdej krzywej
+- 🔄 **Iteracje** - pokazać proces optymalizacji
+</SupportingDetails>
+
+<SupportingDetails title="❓ Pytania kontrolne">
+- 🎯 **TSR** - jak zmiana wpływa na geometrię?
+- 📊 **Polars** - dlaczego jakość jest ważna?
+- ⚙️ **Sterowanie** - jak wybrać strategię?
+- 📈 **Eksport** - co jest potrzebne do farmy?
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Najczęstsze błędy: brak korekcji Prandtl, pomijanie gęstości w eksporcie, zbyt krótki wektor prędkości P(v).
+- Prowadzenie: pokazuj małe iteracje i ich efekt; upewnij się, że wnioski łączą się z wejściami do TOPFARM.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 

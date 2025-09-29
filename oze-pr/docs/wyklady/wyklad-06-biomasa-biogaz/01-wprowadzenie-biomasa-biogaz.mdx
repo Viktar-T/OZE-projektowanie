@@ -3,20 +3,155 @@ sidebar_position: 1
 title: "Wprowadzenie do instalacji biomasy i biogazu"
 ---
 
-## Znaczenie biomasy i biogazu
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-- Źródła dyspozycyjne wspierające stabilność systemu elektroenergetycznego.
-- Zagospodarowanie odpadów rolniczych, komunalnych i przemysłowych.
-- Element gospodarki o obiegu zamkniętym i redukcji emisji metanu.
+<SlideContainer>
 
-## Typy instalacji
+<Slide title="🌱 Kontekst projektowy" type="info">
 
-- Biogazownie rolnicze, komunalne, przemysłowe.
-- Instalacje CHP oparte na silnikach gazowych lub turbinach.
-- Kotłownie na biomasę (pelety, zrębki) w systemach ciepłowniczych.
+<KeyPoints title="🏗️ Trzy główne bloki systemu">
+- 📥 **Zasilanie** (substraty) - gnojowica, kiszonka, odpady organiczne
+- ⚙️ **Konwersja** (AD/spalanie/zgazowanie, CHP/uzdatnianie) - procesy biologiczne i energetyczne
+- 📤 **Wykorzystanie** (energia, ciepło, biometan, poferment) - produkty końcowe
+</KeyPoints>
 
-## Ramy regulacyjne
+<SupportingDetails title="🎯 Rola narzędzi programowych">
+- 🔍 **Wsparcie decyzji inżynierskich** dot. wykonalności, stabilności i opłacalności
+- 🔗 **Integracja z systemem** ciepłowniczym i elektroenergetycznym zwiększa rentowność
+- 🌍 **Ujęcie GHG**: redukcja emisji metanu i efekt gospodarki o obiegu zamkniętym
+- 📋 **Środowisko regulacyjne**: RED III, IED/BAT wpływa na wymagania projektowe
+</SupportingDetails>
 
-- Dyrektywa RED III, krajowe programy wsparcia (FEnIKS, NFOŚiGW).
-- Wymogi dotyczące emisji (IED, BAT). 
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Wyeksponuj, że projektant myśli strumieniami masy/energii oraz o interfejsach zewnętrznych (sieć elektroenergetyczna, ciepłownictwo, gospodarka nawozowa)
+- 💡 Podkreśl rolę oprogramowania w szybkim testowaniu wariantów
+- 🔄 Pokaż przykłady integracji z systemami zewnętrznymi
+- 📊 Omów wpływ regulacji na projektowanie instalacji
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🔬 Co modelujemy i po co" type="tip">
+
+<KeyPoints title="⚗️ Fermentacja beztlenowa (AD)">
+- 📊 **Bilanse masy/energii** - kontrola przepływów i konwersji
+- 🧪 **Frakcje substratów** CHO/PRO/LIP - węglowodany, białka, lipidy
+- ⛽ **Produkcja biogazu** CH₄/CO₂ - główne produkty fermentacji
+- ⚖️ **Stabilność procesu** - pH, zasadowość, VFA/alkaliczność, inhibitory (NH₃, H₂S)
+</KeyPoints>
+
+<SupportingDetails title="🏭 Linie technologiczne">
+- 💨 **Linia gazowa**: magazyn/bufor, pochodnia, CHP (krzywe częściowego obciążenia), upgrading (PSA/membrany)
+- 🧽 **Linia pofermentu**: separacja, higienizacja, odwadnianie, odzysk N/P/K
+- 🔥 **Biomasa stała**: kotły rusztowe/płynne złoże, ORC, hybrydy biomasa‑PV‑pompy ciepła
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📚 Odnieś się do modelu ADM1 i sygnałów ostrzegawczych procesu (wzrost VFA, spadek zasadowości)
+- 🔧 Pokaż zależności pomiędzy linią gazową a pracą CHP/upgradingu
+- 📈 Omów wpływ parametrów procesowych na stabilność
+- ⚠️ Wyjaśnij konsekwencje przekroczenia progów ostrzegawczych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📋 Dane wejściowe (formaty i źródła)" type="info">
+
+<KeyPoints title="🧪 Charakterystyka substratów">
+- 📊 **Podstawowe parametry**: TS/VS, COD (ChZT), frakcje biodegradowalne/obojętne
+- ⚗️ **Skład chemiczny**: C:N:P:S, NH₄⁺, siarka, metale ciężkie
+- 🔬 **BMP** (Biochemical Methane Potential) - opcjonalnie do weryfikacji
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Parametry techniczne">
+- 🔌 **Krzywe pracy CHP**: moc_e, moc_th, η_e, η_th vs. obciążenie; limity start/stop
+- 💰 **Ceny/taryfy**: energia kupno/sprzedaż, koszty O&M, media (woda, ciepło), certyfikaty
+- 🌡️ **Warunki graniczne**: T otoczenia, dostępność ciepła odpadowego, ograniczenia środowiskowe
+- 📁 **Format**: CSV/XLSX do importu w SIMBA#/BioWin/GPS‑X; w RETScreen/HOMER agregaty roczne/godzinowe
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 📝 Wyjaśnij spójność TS/VS/COD oraz wykorzystanie BMP do sanity‑check frakcji
+- 💻 Omów przygotowanie plików CSV zgodnych z importem narzędzi
+- 🔍 Pokaż przykłady źródeł danych (laboratoria, literatura, pomiary)
+- ⚠️ Uwaga na jakość i kompletność danych wejściowych
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🏛️ Architektura aplikacji w projektach bio" type="tip">
+
+<KeyPoints title="🔧 Warstwy systemu">
+- ⚗️ **Warstwa procesowa (CAE)**: silniki modeli ADM1, integratory ODE/DAE, flowsheety
+- ⚡ **Warstwa energetyczno‑ekonomiczna**: HOMER Pro (miks i magazyny), RETScreen (LCOE/NPV)
+- 📊 **Warstwa danych**: arkusze (XLSX/CSV), OPC UA (laboratoria/SCADA), eksport JSON/Excel
+</KeyPoints>
+
+<SupportingDetails title="🔗 Integracja i raportowanie">
+- 🔄 **Integracja**: FMU/FMI (jeśli dostępne) lub wymiana plikowa
+- 📈 **Raportowanie**: wykresy, KPI, raporty dla interesariuszy
+- 🎯 **Przepływ danych**: pomiary → import → symulacja → eksport profili → optymalizacja → TEA → raport
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔄 Pokaż przykładowy przepływ danych: pomiary → import → symulacja → eksport profili → optymalizacja → TEA → raport
+- 💡 Omów zalety i ograniczenia różnych formatów wymiany danych
+- 🎯 Wyjaśnij rolę każdej warstwy w procesie projektowym
+- 📊 Pokaż przykłady raportów dla różnych grup interesariuszy
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+<Slide title="📊 Typowe wyjścia (dla decydentów)" type="success">
+
+<KeyPoints title="⚡ Parametry energetyczne">
+- 💨 **Strumień biogazu** [Nm³/h], udział CH₄ [%], produkcja energii [MWh/rok]
+- 🔥 **Zapotrzebowanie ciepła** i bilans cieplny fermentacji [kW]
+- ⚖️ **Stabilność**: pH, VFA, NH₃, HRT/SRT
+</KeyPoints>
+
+<SupportingDetails title="💰 Analiza ekonomiczna">
+- 💵 **Ekonomia**: CAPEX/OPEX, LCOE/LCOH, NPV/IRR
+- 📈 **Analiza wrażliwości**: ceny substratów i energii, ryzyka procesu
+- 📊 **Komunikatywne wykresy**: profil mocy CHP, przepływy gotówki
+</SupportingDetails>
+
+<InstructorNotes>
+**Szczegółowa zawartość wykładu:**
+- 📊 Zwróć uwagę, które wykresy i tabele są najbardziej komunikatywne dla inwestora (np. profil mocy CHP, przepływy gotówki)
+- 💡 Omów różne perspektywy oceny projektu (techniczna, ekonomiczna, środowiskowa)
+- 🎯 Pokaż przykłady dashboardów dla różnych grup decydentów
+- ⚠️ Wyjaśnij znaczenie analizy wrażliwości i zarządzania ryzykiem
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

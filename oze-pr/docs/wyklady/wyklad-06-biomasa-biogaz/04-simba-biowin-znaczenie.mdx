@@ -3,14 +3,103 @@ sidebar_position: 4
 title: "SIMBA# lub BioWin – opis i znaczenie dla projektanta"
 ---
 
-## Dlaczego SIMBA#/BioWin?
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator,
+  InfoBox,
+  WarningBox
+} from '@site/src/components/SlideComponents';
 
-- Implementują model ADM1 pozwalający przewidywać produkcję biogazu.
-- Umożliwiają kalibrację na podstawie danych laboratoryjnych i eksploatacyjnych.
-- Wspierają analizę stabilności procesów (pH, VFA, zasadowość).
+<SlideContainer>
 
-## Zastosowania dydaktyczne
+<Slide title="🔬 SIMBA# – dlaczego warto znać" type="info">
 
-- Uczą interpretacji parametrów procesowych i identyfikacji ryzyk.
-- Wspierają przygotowanie raportów dla URE, KOBIZE i programów dotacyjnych.
+<KeyPoints title="🏗️ Architektura i możliwości">
+- 🎨 **Edytor schematów**: Elastyczne flowsheety, solver ODE/DAE, biblioteka ADM1 z rozszerzeniami
+- 🎛️ **Sterowanie**: Dodawanie regulatorów PID i logiki, testowanie strategii (np. kontrola T, dozowanie buforu)
+- 🎯 **Kalibracja**: Kreatory dopasowania do danych pomiarowych; scenariusze dynamiczne
+- 📊 **Raportowanie**: Wykresy, eksport CSV, szablony raportów
+</KeyPoints>
+
+<SupportingDetails title="🔧 Zastosowania w projektowaniu">
+- 📏 **Sizing reaktora** (HRT), mieszanie/podgrzew, bufor gazu
+- ⚖️ **Stabilność procesu** (VFA/alkaliczność), łączenie z CHP/upgrading
+- 🔄 **Integracja sterowania**: Testowanie strategii operacyjnych
+- 📈 **Analiza dynamiczna**: Scenariusze czasowe, optymalizacja parametrów
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🎨 Pokaż krótki klip/animację z edycji flowsheetu w SIMBA#
+- 🔧 Wyjaśnij zalety elastycznego podejścia do modelowania
+- 💡 Omów możliwości integracji z systemami sterowania
+- ⚠️ Uwaga na krzywą nauki i wymagania licencyjne
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🚀 BioWin – kiedy jest najlepszy" type="tip">
+
+<KeyPoints title="⚡ Szybki start">
+- 🏗️ **Biblioteka gotowych jednostek**: digestery, odsiarczanie, CHP, separacja
+- 🖥️ **Przyjazne GUI**: okna właściwości, szybkie obliczenia stanu ustalonego i dynamiki
+- 📊 **Raporty i bridge do ekonomii**: podsumowania energii/masy łatwe do przeniesienia do RETScreen
+</KeyPoints>
+
+<SupportingDetails title="🎯 Typowe zastosowania">
+- 📋 **Studia wykonalności**: Szybka ocena opłacalności projektu
+- 🏢 **Konsulting komunalny/rolniczy**: Profesjonalne raporty dla klientów
+- 🎓 **Edukacja**: Łatwe wprowadzenie w modelowanie procesów
+- 📈 **Analiza scenariuszy**: Porównanie różnych wariantów technologicznych
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🚀 Pokaż tworzenie raportu w BioWin
+- 💡 Wyjaśnij zalety gotowych jednostek dla początkujących
+- 📊 Omów integrację z narzędziami ekonomicznymi
+- 🎯 Pokaż przykłady zastosowań w różnych sektorach
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="⚖️ SIMBA# vs. BioWin – podsumowanie wyboru" type="success">
+
+<KeyPoints title="🎯 Kryteria wyboru">
+- 🔧 **Elastyczność i sterowanie** → SIMBA#
+- 🚀 **Szybkość wdrożenia i raportowania** → BioWin
+- 🎓 **Na kursie**: poznaj oba, projekt zaliczeniowy możesz zrealizować w jednym
+</KeyPoints>
+
+<SupportingDetails title="💡 Rekomendacje">
+- 🔬 **Projekty badawcze**: SIMBA# dla pełnej kontroli i integracji sterowania
+- 📊 **Konsulting i edukacja**: BioWin dla szybkich analiz i raportów
+- 🔄 **Projekty hybrydowe**: Kombinacja obu narzędzi w zależności od etapu
+- 💰 **Budżet**: BioWin tańszy, SIMBA# wymaga większych nakładów
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu:**
+- 🔧 Zaznacz różnice w nazewnictwie bloków i parametryzacji
+- 💡 Pokaż przykłady projektów, gdzie wybór narzędzia ma kluczowe znaczenie
+- 🎯 Omów strategię nauki obu narzędzi
+- ⚠️ Uwaga na kompatybilność danych między narzędziami
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+</SlideContainer>
 

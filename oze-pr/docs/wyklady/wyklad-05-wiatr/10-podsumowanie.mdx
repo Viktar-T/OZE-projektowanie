@@ -3,15 +3,114 @@ sidebar_position: 10
 title: "Podsumowanie: dobór narzędzia"
 ---
 
-## Wnioski
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Projektowanie farm wiatrowych wymaga łączenia narzędzi aerodynamicznych,
-  optymalizacyjnych i środowiskowych.
-- QBlade dostarcza wiedzy o wirniku, TOPFARM optymalizuje layout, WindPRO/OpenWind
-  zapewniają raporty i zgodność z regulacjami.
+<SlideContainer>
 
-## Zadanie końcowe
+<Slide title="🎯 Wnioski z wykładu" type="info">
 
-- Przygotować raport porównawczy dwóch wariantów farmy, z analizą AEP, kosztów
-  i oddziaływania środowiskowego.
+<KeyPoints title="🔄 Projektowanie farm wiatrowych">
+- 🔧 **Narzędzia aerodynamiczne** - QBlade dla aerodynamiki wirnika
+- 🎯 **Optymalizacyjne** - TOPFARM dla layoutu i parametrów
+- 🌱 **Środowiskowe** - WindPRO/OpenWind dla raportów bankowalnych
+- 🔗 **Integracja** - łączenie narzędzi w spójny łańcuch projektowy
+</KeyPoints>
+
+<SupportingDetails title="🛠️ Rola każdego narzędzia">
+- 🔧 **QBlade** - krzywe mocy/ciągu, wgląd w aerodynamikę wirnika
+- 🎯 **TOPFARM** - optymalizacja layoutu, modele wake/kosztów
+- 📊 **WindPRO/OpenWind** - dane meteo/GIS, raporty bankowalne
+- 🌊 **Ct(v)** - wykorzystanie w analizach wake
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Rola narzędzi: QBlade (aero/krzywe), TOPFARM (układ/LCOE), WindPRO/OpenWind (raporty/EIA).
+- Integracje: przepływ CSV, metadane (gęstość, R, B, λ_design), spójność jednostek i wysokości.
+- Błędy decyzyjne: używanie wyników QBlade jako bankowalnych, brak niepewności i strat w raportach.
+- Pytania: gdzie jest największe ryzyko błędu w łańcuchu? Jak je mitigować?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="📚 Zadanie końcowe" type="success">
+
+<KeyPoints title="🎯 Temat zadania">
+- 🏗️ **Raport porównawczy** - dwa warianty farmy (12 × 5 MW vs 10 × 6 MW)
+- 📊 **Analiza** - AEP_gross/net, LCOE, oddziaływanie środowiskowe
+- 🔗 **Ścieżka danych** - QBlade → CSV → TOPFARM/WindPRO/OpenWind
+</KeyPoints>
+
+<SupportingDetails title="📋 Wymagania szczegółowe">
+- 📊 **Macierz strat** - dostępność, elektryczne, icing, curtailment
+- 🎯 **Niepewność** - założenia P50/P90
+- 📝 **Dokumentacja** - spójność założeń, kompletność raportu
+- 🔧 **Narzędzia** - uzasadnienie wyboru w każdym etapie
+</SupportingDetails>
+
+<SupportingDetails title="🔍 Kryteria oceny">
+- 📊 **Spójność założeń** - gęstość, wysokości piasty, klasy IEC
+- 📈 **Kompletność raportu** - AEP, straty, niepewność
+- 🎯 **Wykorzystanie Ct(v)** - poprawne w analizach wake
+- 🔧 **Uzasadnienie** - wybór narzędzi w poszczególnych etapach
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Wymagania raportu: AEP_gross/net, macierz strat, LCOE, niepewność P50/P90, mapy AEP/wake, kable.
+- Ścieżka danych: QBlade → CSV → TOPFARM/WindPRO/OpenWind; kontrola spójności między etapami.
+- Kryteria oceny: spójność założeń (gęstość, wysokości, TI), kompletność i jakość wniosków.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🎓 Podsumowanie wykładu" type="warning">
+
+<KeyPoints title="✅ Kluczowe osiągnięcia">
+- 🔧 **QBlade** - aerodynamika wirnika, krzywe mocy/ciągu
+- 🎯 **TOPFARM** - optymalizacja farmy, modele wake/kosztów
+- 📊 **WindPRO/OpenWind** - raporty bankowalne, dane meteo/GIS
+- 🔗 **Integracja** - spójny łańcuch projektowy
+</KeyPoints>
+
+<SupportingDetails title="🌊 Wpływ na praktykę">
+- 📊 **Ct(v)** - wykorzystanie w analizach wake
+- 🎯 **Kompromisy** - AEP vs koszty vs ograniczenia
+- 🔧 **Narzędzia** - właściwy dobór do etapu projektu
+- 📝 **Dokumentacja** - spójność założeń i replikowalność
+</SupportingDetails>
+
+<SupportingDetails title="🚀 Dalszy rozwój">
+- 🔧 **Rozszerzenia** - nowe modele wake, algorytmy optymalizacji
+- 📊 **Integracje** - lepsze połączenia między narzędziami
+- 🌱 **Środowisko** - uwzględnianie nowych ograniczeń
+- 💰 **Ekonomia** - dokładniejsze modele kosztów
+</SupportingDetails>
+
+<InstructorNotes>
+**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
+**Szczegółowa zawartość wykładu (prowadzący):**
+- Najważniejsze wnioski: integracja narzędzi i dokumentowanie metadanych decydują o jakości decyzji.
+- Dalsza praca: rozszerzenia modeli wake/algorytmów, lepsze integracje, dokładniejsze koszty; śledzenie wersji.
+- Q&A: co było najbardziej zaskakujące? jakie dane są najtrudniejsze do zdobycia i dlaczego?
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
 
