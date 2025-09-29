@@ -306,51 +306,169 @@ CFD (Computational Fluid Dynamics) to metoda numeryczna do analizy przepływów 
 
 </Slide>
 
+
 <VisualSeparator type="default" />
 
-<Slide title="🎯 Kryteria wyboru narzędzia" type="warning">
+<Slide title="🎯 Kryteria wyboru narzędzi" type="warning">
 
-<KeyPoints title="⚖️ Kluczowe czynniki decyzyjne">
-- 🎯 **Cel analizy**: geometria/dokumentacja vs. zjawiska fizyczne vs. symulacja systemu
-- 📊 **Poziom dokładności** i dostępność danych wejściowych
-- ✅ **Zgodność ze standardami** branżowymi
-- 📚 **Biblioteki komponentów** i modele strat
-- ⏱️ **Czas obliczeń** i możliwość walidacji
+<KeyPoints title="⚖️ Proces decyzyjny - przepływ wyboru narzędzi">
+
+```mermaid
+flowchart TD
+    A[🎯 Cel analizy] --> B{Typ projektu}
+    B -->|Geometria| C[📐 CAD Tools]
+    B -->|Obliczenia| D[⚡ CAE Tools]
+    B -->|Branżowe| E[🔧 Specialized]
+    
+    C --> F[📊 Poziom dokładności]
+    D --> F
+    E --> F
+    
+    F --> G{Wymagania}
+    G -->|Wysokie| H[💎 Premium Software]
+    G -->|Średnie| I[⚖️ Standard Software]
+    G -->|Podstawowe| J[🆓 Open Source]
+    
+    H --> K[✅ Zgodność ze standardami]
+    I --> K
+    J --> K
+    
+    K --> L[📚 Biblioteki komponentów]
+    L --> M[⏱️ Czas obliczeń]
+    M --> N[🎯 Finalny wybór]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style F fill:#e8f5e8
+    style G fill:#fff3e0
+    style K fill:#fce4ec
+    style N fill:#f1f8e9
+```
+
 </KeyPoints>
 
 <InstructorNotes>
-**Jak wybierać narzędzie? Kryteria decyzyjne**
+**Kryteria wyboru narzędzi OZE - szczegółowy przewodnik decyzyjny**
 
-**🎯 Cel analizy - najważniejsze kryterium:**
-- **Geometria/dokumentacja** → CAD (AutoCAD, SolidWorks)
-- **Zjawiska fizyczne** → CAE (ANSYS, COMSOL)
-- **Symulacja systemu i ekonomia** → Oprogramowanie specjalistyczne (PV*SOL, SAM)
+**🎯 Cel analizy - pierwszy krok w procesie decyzyjnym:**
 
-**📊 Poziom dokładności vs. dostępność danych:**
-- **Wysoka dokładność** wymaga dobrych danych wejściowych (pomiary, certyfikaty)
-- **Szybkie prototypowanie** może używać danych przybliżonych
-- **Analiza wrażliwości** pokazuje wpływ niepewności danych
+**Geometria i dokumentacja (CAD):**
+- **Zastosowania**: Projektowanie layoutów instalacji PV, rysunki techniczne, dokumentacja projektowa
+- **Narzędzia**: AutoCAD, SolidWorks, SketchUp, Revit
+- **Kryteria wyboru**: Funkcje 2D/3D, biblioteki symboli OZE, integracja z systemami BIM
+- **Przykłady**: Projektowanie rozmieszczenia modułów PV, schematy połączeń elektrycznych
 
-**✅ Zgodność ze standardami:**
-- **Standardy branżowe**: IEC, EN, normy krajowe
-- **Oczekiwania inwestora**: Format raportów, wskaźniki finansowe
-- **Wymagania bankowe**: Walidacja projektów, analizy ryzyka
+**Zjawiska fizyczne (CAE):**
+- **Zastosowania**: Analiza strukturalna, termiczna, aerodynamiczna, elektromagnetyczna
+- **Narzędzia**: ANSYS, COMSOL, Abaqus, OpenFOAM
+- **Kryteria wyboru**: Typy analiz, dokładność solverów, możliwości meshingu
+- **Przykłady**: Analiza obciążeń wiatrowych na turbinach, rozkład temperatur w modułach PV
 
-**📚 Dostępność bibliotek:**
-- **Komponenty**: Moduły PV, falowniki, turbiny wiatrowe
-- **Modele strat**: Zacienienia, temperatury, degradacja
-- **Dane klimatyczne**: TMY, pomiary lokalne, prognozy
+**Symulacja systemów (Specialized):**
+- **Zastosowania**: Symulacja produkcji energii, analiza ekonomiczna, optymalizacja systemów
+- **Narzędzia**: PV*SOL, PVsyst, SAM, HOMER, RETScreen
+- **Kryteria wyboru**: Modele komponentów, bazy danych klimatycznych, algorytmy obliczeniowe
+- **Przykłady**: Prognoza produkcji energii, analiza LCOE, optymalizacja rozmiaru systemu
 
-**⏱️ Czas obliczeń vs. walidacja:**
-- **Szybkie obliczenia**: Prototypowanie, wstępne analizy
-- **Długie symulacje**: Precyzyjne analizy, optymalizacja
-- **Walidacja**: Porównanie z danymi SCADA, pomiarami rzeczywistymi
+**📊 Poziom dokładności - balans między wymaganiami a możliwościami:**
 
-**💡 Praktyczne wskazówki:**
-- **Zacznij od prostych narzędzi**, stopniowo zwiększaj złożoność
-- **Sprawdź dostępność danych** przed wyborem narzędzia
-- **Uwzględnij koszty licencji** w budżecie projektu
-- **Zawsze waliduj wyniki** z danymi rzeczywistymi
+**Wysokie wymagania (Premium Software):**
+- **Charakterystyka**: Dokładność >95%, zaawansowane modele, pełna walidacja
+- **Narzędzia**: PVsyst Professional, ANSYS Fluent, COMSOL Multiphysics
+- **Koszty**: 10,000-50,000 EUR/rok
+- **Zastosowania**: Projekty komercyjne, badania naukowe, certyfikacje
+
+**Średnie wymagania (Standard Software):**
+- **Charakterystyka**: Dokładność 85-95%, standardowe modele, podstawowa walidacja
+- **Narzędzia**: PV*SOL Premium, SAM, WindPRO
+- **Koszty**: 1,000-5,000 EUR/rok
+- **Zastosowania**: Projekty średniej skali, konsulting, edukacja
+
+**Podstawowe wymagania (Open Source):**
+- **Charakterystyka**: Dokładność 70-85%, uproszczone modele, ograniczona walidacja
+- **Narzędzia**: PVLib, OpenWind, RETScreen
+- **Koszty**: Darmowe
+- **Zastosowania**: Prototypy, studia wykonalności, edukacja
+
+**✅ Zgodność ze standardami - wymagania prawne i branżowe:**
+
+**Standardy branżowe:**
+- **IEC 61724**: Monitoring systemów PV - wymagania dotyczące zbierania i analizy danych
+- **IEC 61850**: Komunikacja w systemach elektroenergetycznych - protokoły i formaty danych
+- **IEC 61400**: Turbiny wiatrowe - wymagania projektowe i testowe
+- **ISO 14001**: Systemy zarządzania środowiskowego
+
+**Wymagania prawne:**
+- **Dyrektywa RED II**: Wymagania dotyczące certyfikacji instalacji OZE
+- **Rozporządzenia krajowe**: Wymagania techniczne dla instalacji PV/wiatrowych
+- **Certyfikaty**: Wymagania dotyczące certyfikacji komponentów i systemów
+
+**Certyfikacja systemów:**
+- **TÜV**: Certyfikacja bezpieczeństwa i jakości
+- **UL**: Certyfikacja bezpieczeństwa elektrycznego
+- **CE**: Zgodność z wymaganiami UE
+
+**📚 Biblioteki komponentów - dostępność modeli i danych:**
+
+**Dostępność modeli:**
+- **Moduły PV**: Katalogi producentów (Jinko, Trina, Canadian Solar)
+- **Falowniki**: Charakterystyki sprawności, zakresy MPPT
+- **Turbiny wiatrowe**: Krzywe mocy, charakterystyki aerodynamiczne
+- **Systemy magazynowania**: Modele baterii, charakterystyki ładowania
+
+**Komponenty OZE:**
+- **Biblioteki standardowe**: Podstawowe komponenty z parametrami typowymi
+- **Biblioteki producentów**: Szczegółowe modele konkretnych produktów
+- **Biblioteki custom**: Własne modele opracowane przez użytkowników
+
+**Dane klimatyczne:**
+- **Źródła globalne**: NASA, ECMWF, NOAA
+- **Źródła regionalne**: IMGW, DWD, MeteoSwiss
+- **Formaty danych**: TMY, EPW, CSV, NetCDF
+- **Jakość danych**: Rozdzielczość czasowa, przestrzenna, dokładność
+
+**⏱️ Czas obliczeń - balans między wydajnością a dokładnością:**
+
+**Wydajność systemu:**
+- **Hardware requirements**: CPU, RAM, GPU, storage
+- **Parallel processing**: Wykorzystanie wielu rdzeni procesora
+- **Cloud computing**: Przetwarzanie w chmurze (AWS, Azure, Google Cloud)
+- **Edge computing**: Przetwarzanie na urządzeniach brzegowych
+
+**Dokładność wyników:**
+- **Convergence criteria**: Kryteria zbieżności algorytmów
+- **Mesh quality**: Jakość siatki obliczeniowej
+- **Time step**: Krok czasowy w symulacjach dynamicznych
+- **Validation**: Porównanie z danymi eksperymentalnymi
+
+**Koszty licencji:**
+- **Perpetual licenses**: Jednorazowa opłata za dożywotnią licencję
+- **Subscription models**: Opłaty roczne/miesięczne
+- **Concurrent users**: Licencje na określoną liczbę użytkowników
+- **Feature tiers**: Różne poziomy funkcjonalności
+
+**💡 Praktyczne wskazówki dla studentów:**
+
+**Proces decyzyjny - krok po kroku:**
+1. **Zdefiniuj cel**: Jaki problem chcesz rozwiązać?
+2. **Oceń wymagania**: Jaka dokładność jest potrzebna?
+3. **Sprawdź standardy**: Jakie wymagania prawne/branżowe?
+4. **Przeanalizuj dane**: Jakie dane wejściowe są dostępne?
+5. **Oszacuj koszty**: Jaki budżet masz do dyspozycji?
+6. **Przetestuj narzędzia**: Wersje próbne, demo, tutoriale
+
+**Walidacja wyboru:**
+- **Benchmarking**: Porównanie z innymi narzędziami
+- **Case studies**: Analiza podobnych projektów
+- **Expert opinions**: Konsultacje z ekspertami branżowymi
+- **Training**: Szkolenia i certyfikacje
+
+**📚 Polecane źródła do dalszego studiowania:**
+- **NREL SAM**: Dokumentacja i tutoriale
+- **IEC Standards**: Oficjalne standardy branżowe
+- **Software documentation**: Przewodniki użytkownika
+- **Professional forums**: Społeczności użytkowników
+- **Conferences**: Konferencje branżowe (IEEE, IEA)
 </InstructorNotes>
 
 </Slide>

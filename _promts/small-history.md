@@ -6,3 +6,4 @@
 * [X] oze-pr\docs\wyklady\wyklad-01-wprowadzenie. where it possible add **Infographics instead of text** – replace lists with diagrams, timelines, or flowcharts.
 * [ ] add to _promts\slides-conversion.md such information "**Infographics instead of text** – replace lists with diagrams, timelines, or flowcharts."
 * [X] is it good idea to use css for charts, diagrams, ... insted of mermaid?
+* [ ] delete "Pytania kontrolne"

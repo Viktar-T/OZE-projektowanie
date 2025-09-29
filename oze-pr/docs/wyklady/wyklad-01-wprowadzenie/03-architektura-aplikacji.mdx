@@ -16,6 +16,217 @@ import {
 
 <SlideContainer>
 
+<Slide title="🏗️ Przegląd architektury systemów OZE" type="info">
+
+<KeyPoints title="📊 Wielowarstwowa architektura systemów OZE">
+
+<div className="row">
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>🖥️ Warstwa prezentacji (Front-end)</h3>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>🌐 Aplikacje webowe:</strong> React, Angular, Vue.js</li>
+          <li><strong>📱 Aplikacje mobilne:</strong> iOS/Android, React Native</li>
+          <li><strong>🖥️ Aplikacje desktopowe:</strong> Qt, WPF, Electron</li>
+          <li><strong>📊 Dashboardy:</strong> Yield, PR, KPI, wizualizacja</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>🔗 Warstwa middleware/API Gateway</h3>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>🌐 API RESTful:</strong> HTTP/HTTPS, JSON</li>
+          <li><strong>🔐 Uwierzytelnianie:</strong> JWT, OAuth 2.0</li>
+          <li><strong>⚖️ Load Balancing:</strong> Skalowanie, HA</li>
+          <li><strong>💾 Cache:</strong> Redis, CDN</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="row">
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>⚙️ Warstwa usług (Back-end)</h3>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>🧮 Silniki symulacyjne:</strong> Modele matematyczne</li>
+          <li><strong>🔄 ETL:</strong> Apache Airflow, przetwarzanie</li>
+          <li><strong>🤖 Machine Learning:</strong> Anomalie, prognozy</li>
+          <li><strong>🎯 Optymalizacja:</strong> Algorytmy genetyczne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--6 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>🗄️ Warstwa baz danych</h3>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>⏰ Bazy czasowe:</strong> InfluxDB, TimescaleDB</li>
+          <li><strong>🔗 Bazy relacyjne:</strong> PostgreSQL, MySQL</li>
+          <li><strong>📄 Bazy dokumentowe:</strong> MongoDB, Elasticsearch</li>
+          <li><strong>📊 Analiza:</strong> Wyszukiwanie, agregacje</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="row">
+  <div className="col col--12 margin-bottom--lg">
+    <div className="card">
+      <div className="card__header">
+        <h3>☁️ Warstwa infrastruktury</h3>
+      </div>
+      <div className="card__body">
+        <div className="row">
+          <div className="col col--6">
+            <ul>
+              <li><strong>☁️ Chmura:</strong> AWS, Azure, GCP</li>
+              <li><strong>🐳 Kubernetes:</strong> Docker, orkiestracja</li>
+            </ul>
+          </div>
+          <div className="col col--6">
+            <ul>
+              <li><strong>🔧 Edge Computing:</strong> Przetwarzanie lokalne</li>
+              <li><strong>📡 IoT & SCADA:</strong> Modbus, DNP3, IEC 61850</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</KeyPoints>
+
+```mermaid
+graph TB
+    %% Warstwa prezentacji
+    subgraph "🖥️ Warstwa prezentacji (Front-end)"
+        UI1["🌐 Aplikacje webowe<br/>React, Angular, Vue.js"]
+        UI2["📱 Aplikacje mobilne<br/>iOS/Android, React Native"]
+        UI3["🖥️ Aplikacje desktopowe<br/>Qt, WPF, Electron"]
+        DASH["📊 Dashboardy<br/>Yield, PR, KPI"]
+    end
+
+    %% Warstwa middleware
+    subgraph "🔗 Warstwa middleware/API Gateway"
+        API["🌐 API RESTful<br/>HTTP/HTTPS, JSON"]
+        AUTH["🔐 Uwierzytelnianie<br/>JWT, OAuth 2.0"]
+        LB["⚖️ Load Balancing<br/>Skalowanie, HA"]
+        CACHE["💾 Cache<br/>Redis, CDN"]
+    end
+
+    %% Warstwa usług
+    subgraph "⚙️ Warstwa usług (Back-end)"
+        SIM["🧮 Silniki symulacyjne<br/>Modele matematyczne"]
+        ETL["🔄 ETL<br/>Apache Airflow"]
+        ML["🤖 Machine Learning<br/>Anomalie, prognozy"]
+        OPT["🎯 Optymalizacja<br/>Algorytmy genetyczne"]
+    end
+
+    %% Warstwa baz danych
+    subgraph "🗄️ Warstwa baz danych"
+        TSDB["⏰ Bazy czasowe<br/>InfluxDB, TimescaleDB"]
+        RDB["🔗 Bazy relacyjne<br/>PostgreSQL, MySQL"]
+        DOC["📄 Bazy dokumentowe<br/>MongoDB, Elasticsearch"]
+    end
+
+    %% Warstwa infrastruktury
+    subgraph "☁️ Warstwa infrastruktury"
+        CLOUD["☁️ Chmura<br/>AWS, Azure, GCP"]
+        K8S["🐳 Kubernetes<br/>Docker, orkiestracja"]
+        EDGE["🔧 Edge Computing<br/>Przetwarzanie lokalne"]
+        IOT["📡 IoT & SCADA<br/>Modbus, DNP3, IEC 61850"]
+    end
+
+    %% Przepływ danych
+    IOT -->|"📊 Dane z czujników"| EDGE
+    EDGE -->|"🌊 Strumienie danych"| CLOUD
+    CLOUD -->|"💾 Przechowywanie"| TSDB
+    TSDB -->|"📈 Agregacje"| RDB
+    RDB -->|"🔍 Wyszukiwanie"| DOC
+    
+    DOC -->|"📊 Zapytania"| ETL
+    ETL -->|"🔄 Przetwarzanie"| SIM
+    SIM -->|"🤖 Analizy ML"| ML
+    ML -->|"🎯 Optymalizacja"| OPT
+    
+    OPT -->|"📡 API calls"| API
+    API -->|"🔐 Autoryzacja"| AUTH
+    AUTH -->|"⚖️ Load balancing"| LB
+    LB -->|"💾 Cache"| CACHE
+    
+    CACHE -->|"📊 Dashboardy"| DASH
+    CACHE -->|"🌐 Web apps"| UI1
+    CACHE -->|"📱 Mobile apps"| UI2
+    CACHE -->|"🖥️ Desktop apps"| UI3
+
+    %% Styling
+    classDef frontend fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef middleware fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef backend fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef database fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef infrastructure fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+
+    class UI1,UI2,UI3,DASH frontend
+    class API,AUTH,LB,CACHE middleware
+    class SIM,ETL,ML,OPT backend
+    class TSDB,RDB,DOC database
+    class CLOUD,K8S,EDGE,IOT infrastructure
+```
+
+<InstructorNotes>
+**Przegląd architektury systemów OZE**
+
+**🏗️ Cel tego slajdu:**
+Ten slajd przedstawia kompleksowy przegląd wielowarstwowej architektury systemów OZE, pokazując jak wszystkie warstwy współpracują ze sobą.
+
+**📊 Struktura warstw:**
+- **Warstwa prezentacji**: Interfejsy użytkownika, dashboardy, aplikacje
+- **Warstwa middleware**: API, uwierzytelnianie, integracja
+- **Warstwa usług**: Logika biznesowa, symulacje, optymalizacja
+- **Warstwa baz danych**: Przechowywanie, analiza, wyszukiwanie
+- **Warstwa infrastruktury**: Chmura, IoT, monitoring
+
+**🔄 Przepływ danych:**
+Dane przepływają od warstwy infrastruktury (czujniki, IoT) przez warstwy baz danych i usług, aż do warstwy prezentacji (dashboardy, raporty).
+
+**💡 Kluczowe zalety takiej architektury:**
+- **Skalowalność**: Każda warstwa może być skalowana niezależnie
+- **Elastyczność**: Łatwe dodawanie nowych funkcji
+- **Bezpieczeństwo**: Kontrola dostępu na każdym poziomie
+- **Wydajność**: Optymalizacja każdej warstwy osobno
+- **Łatwość utrzymania**: Separacja odpowiedzialności
+
+**🎯 Praktyczne zastosowania:**
+- **Monitoring farm PV**: Od czujników do dashboardów
+- **Optymalizacja produkcji**: Od danych do algorytmów
+- **Handel energią**: Od transakcji do raportów
+- **Utrzymanie predykcyjne**: Od danych do prognoz
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
 <Slide title="🏗️ Architektura aplikacji w systemach OZE" type="info">
 
 <KeyPoints title="🎯 Wielowarstwowa architektura">
@@ -71,46 +282,124 @@ import {
 
 <Slide title="🖥️ Warstwa prezentacji (Front-end)" type="tip">
 
+<InfoBox title="🎯 Cel">
+Zapewnienie intuicyjnego dostępu do danych OZE poprzez różne typy aplikacji (web, mobile, desktop) z możliwością wizualizacji w czasie rzeczywistym i responsywnym interfejsem.
+</InfoBox>
+
 <KeyPoints title="💻 Typy aplikacji">
 
-**🌐 Aplikacje webowe:**
-- React, Angular, Vue.js
-- Dostęp z każdego miejsca
-- Łatwe aktualizacje
-
-**📱 Aplikacje mobilne:**
-- iOS/Android, React Native, Flutter
-- Dostępność w terenie
-- Powiadomienia push
-
-**🖥️ Aplikacje desktopowe:**
-- Qt, WPF, Electron
-- Wysoka wydajność
-- Dostęp offline
+<div className="row">
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🌐 Aplikacje webowe</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Technologie:</strong> React, Angular, Vue.js</li>
+          <li><strong>Dostępność:</strong> Z każdego miejsca</li>
+          <li><strong>Aktualizacje:</strong> Łatwe i automatyczne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>📱 Aplikacje mobilne</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Platformy:</strong> iOS/Android, React Native, Flutter</li>
+          <li><strong>Dostępność:</strong> W terenie</li>
+          <li><strong>Funkcje:</strong> Powiadomienia push</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🖥️ Aplikacje desktopowe</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Technologie:</strong> Qt, WPF, Electron</li>
+          <li><strong>Wydajność:</strong> Wysoka</li>
+          <li><strong>Dostęp:</strong> Offline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 </KeyPoints>
 
 <SupportingDetails title="🎨 Kluczowe cechy">
 
-**📊 Dashboardy:**
-- Yield, PR, dostępność
-- KPI w czasie rzeczywistym
-- Monitoring wydajności
-
-**⚡ Wizualizacja:**
-- Dane w czasie rzeczywistym
-- Wykresy i trendy
-- Mapy instalacji
-
-**🚨 Alerty:**
-- Powiadomienia o problemach
-- Raporty okresowe
-- Monitoring KPI
-
-**📱 Responsywność:**
-- Mobile, tablet, desktop
-- Dostosowanie do urządzeń
-- Intuicyjne interfejsy
+<div className="row">
+  <div className="col col--3 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>📊 Dashboardy</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Metryki:</strong> Yield, PR, dostępność</li>
+          <li><strong>KPI:</strong> W czasie rzeczywistym</li>
+          <li><strong>Monitoring:</strong> Wydajności</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--3 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>⚡ Wizualizacja</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Dane:</strong> W czasie rzeczywistym</li>
+          <li><strong>Wykresy:</strong> I trendy</li>
+          <li><strong>Mapy:</strong> Instalacji</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--3 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🚨 Alerty</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Powiadomienia:</strong> O problemach</li>
+          <li><strong>Raporty:</strong> Okresowe</li>
+          <li><strong>Monitoring:</strong> KPI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--3 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>📱 Responsywność</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Urządzenia:</strong> Mobile, tablet, desktop</li>
+          <li><strong>Dostosowanie:</strong> Do urządzeń</li>
+          <li><strong>Interfejsy:</strong> Intuicyjne</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 </SupportingDetails>
 
@@ -153,32 +442,90 @@ import {
 
 <Slide title="🔗 Warstwa middleware/API Gateway" type="note">
 
+<InfoBox title="🎯 Cel">
+Zapewnienie bezpiecznej komunikacji między warstwami, uwierzytelnianie użytkowników, optymalizacja wydajności poprzez cache i load balancing, oraz kontrola dostępu do systemów OZE.
+</InfoBox>
+
 <KeyPoints title="⚙️ Funkcjonalności">
 
-**🌐 API RESTful:**
-- HTTP/HTTPS, JSON
-- OpenAPI dokumentacja
-- Standardowa komunikacja
+<div className="row">
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🌐 API RESTful</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Protokoły:</strong> HTTP/HTTPS, JSON</li>
+          <li><strong>Dokumentacja:</strong> OpenAPI</li>
+          <li><strong>Komunikacja:</strong> Standardowa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🔐 Uwierzytelnianie</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Tokeny:</strong> JWT, OAuth 2.0</li>
+          <li><strong>Kontrola:</strong> RBAC dostępu</li>
+          <li><strong>Bezpieczeństwo:</strong> MFA wieloczynnikowe</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--4 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>⚖️ Load Balancing</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Rozkład:</strong> Obciążenia</li>
+          <li><strong>Skalowanie:</strong> Automatyczne</li>
+          <li><strong>Dostępność:</strong> Wysoka</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-**🔐 Uwierzytelnianie:**
-- JWT, OAuth 2.0
-- RBAC - kontrola dostępu
-- MFA - wieloczynnikowe
-
-**⚖️ Load Balancing:**
-- Rozkład obciążenia
-- Skalowanie automatyczne
-- Wysoka dostępność
-
-**🚦 Rate Limiting:**
-- Ograniczenia przepustowości
-- Fair usage policy
-- Ochrona przed nadużyciami
-
-**💾 Cache:**
-- Redis, Memcached
-- CDN - dystrybucja treści
-- Przyspieszenie odpowiedzi
+<div className="row">
+  <div className="col col--6 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>🚦 Rate Limiting</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Ograniczenia:</strong> Przepustowości</li>
+          <li><strong>Polityka:</strong> Fair usage</li>
+          <li><strong>Ochrona:</strong> Przed nadużyciami</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div className="col col--6 margin-bottom--md">
+    <div className="card">
+      <div className="card__header">
+        <h4>💾 Cache</h4>
+      </div>
+      <div className="card__body">
+        <ul>
+          <li><strong>Technologie:</strong> Redis, Memcached</li>
+          <li><strong>CDN:</strong> Dystrybucja treści</li>
+          <li><strong>Efekt:</strong> Przyspieszenie odpowiedzi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 </KeyPoints>
 
@@ -221,6 +568,10 @@ import {
 <VisualSeparator type="technical" />
 
 <Slide title="⚙️ Warstwa usług (Back-end)" type="tip">
+
+<InfoBox title="🎯 Cel">
+Wykonywanie zaawansowanych obliczeń, symulacji i analiz danych OZE, implementacja algorytmów optymalizacji, oraz przetwarzanie danych w czasie rzeczywistym dla systemów energetycznych.
+</InfoBox>
 
 <KeyPoints title="🧮 Silniki symulacyjne">
 - 📊 **Modele matematyczne**
@@ -288,6 +639,10 @@ import {
 
 <Slide title="🗄️ Warstwa baz danych" type="info">
 
+<InfoBox title="🎯 Cel">
+Efektywne przechowywanie, indeksowanie i szybki dostęp do danych czasowych z systemów OZE, zapewnienie integralności danych oraz optymalizacja zapytań dla analiz i raportowania.
+</InfoBox>
+
 <KeyPoints title="📊 Typy baz danych">
 - ⏰ **Bazy czasowe**: InfluxDB, TimescaleDB, Prometheus
 - 🔗 **Bazy relacyjne**: PostgreSQL, MySQL
@@ -348,6 +703,10 @@ import {
 <VisualSeparator type="technical" />
 
 <Slide title="☁️ Warstwa infrastruktury" type="note">
+
+<InfoBox title="🎯 Cel">
+Zapewnienie skalowalnego, bezpiecznego i niezawodnego środowiska wykonawczego dla aplikacji OZE, integracja z systemami IoT/SCADA oraz optymalizacja kosztów i wydajności.
+</InfoBox>
 
 <KeyPoints title="🌐 Chmura i konteneryzacja">
 - ☁️ **Chmura**: AWS/Azure/GCP
@@ -512,47 +871,5 @@ import {
 
 </Slide>
 
-<VisualSeparator type="default" />
-
-<Slide title="❓ Pytania kontrolne" type="warning">
-
-<KeyPoints title="🧠 Sprawdź swoją wiedzę">
-1. **🔍 Dlaczego bazy czasowe są lepsze do danych pomiarowych niż klasyczny MySQL?**
-2. **💰 Jak ograniczyć koszty transferu chmurowego dla zdalnej farmy PV?**
-3. **📊 Co musi wiedzieć frontend, aby poprawnie prezentować niepewność danych?**
-</KeyPoints>
-
-<InstructorNotes>
-**Pytania kontrolne**
-
-**1) Dlaczego bazy czasowe są lepsze do danych pomiarowych niż klasyczny MySQL?**
-- **Optymalizacja dla szeregów czasowych**: Automatyczna kompresja, indeksy czasowe
-- **Wydajność zapytań**: Szybkie agregacje, funkcje czasowe
-- **Retencja danych**: Automatyczne usuwanie starych danych
-- **Skalowalność**: Obsługa milionów punktów pomiarowych
-- **Funkcje analityczne**: Trendy, anomalie, prognozy
-
-**2) Jak ograniczyć koszty transferu chmurowego dla zdalnej farmy PV?**
-- **Edge computing**: Przetwarzanie lokalne, filtracja danych
-- **Kompresja**: Algorytmy kompresji, deduplikacja
-- **Agregacja**: Uśrednianie, sumowanie, redukcja objętości
-- **Batch processing**: Przesyłanie danych w partiach
-- **Local storage**: Cache lokalny, synchronizacja okresowa
-
-**3) Co musi wiedzieć frontend, aby poprawnie prezentować niepewność danych?**
-- **Metadane jakości**: Flagi jakości, niepewność pomiarów
-- **Statystyki**: Odchylenia standardowe, przedziały ufności
-- **Wizualizacja**: Paski błędów, cienie niepewności
-- **Interaktywność**: Tooltips z informacjami o jakości
-- **Fallback**: Obsługa braków danych, wartości domyślne
-
-**💡 Dodatkowe pytania do rozważenia:**
-- Jak zaprojektować architekturę dla systemu OZE o mocy 100 MW?
-- Jakie są kluczowe metryki do monitorowania w systemach OZE?
-- Jak zapewnić bezpieczeństwo danych w systemach OZE?
-- Jakie są najlepsze praktyki dla CI/CD w projektach OZE?
-</InstructorNotes>
-
-</Slide>
 
 </SlideContainer>

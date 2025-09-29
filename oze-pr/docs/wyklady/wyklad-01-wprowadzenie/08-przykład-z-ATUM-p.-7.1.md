@@ -107,11 +107,11 @@ Dzięki tym obliczeniom otrzymuje się moc instalacji fotowoltaicznej, jaka jest
 
 | Parametr                                             | Wartość                   |
 | ---------------------------------------------------- | --------------------------- |
-| **Nominalna moc P`<sub>`max`</sub>`**      | 330 W                       |
-| **Napięcie robocze U`<sub>`mp`</sub>`**   | 33,98 V                     |
-| **Natężenie robocze I`<sub>`mp`</sub>`** | 9,71 A                      |
-| **Napięcie jałowe U`<sub>`oc`</sub>`**   | 40,66 V                     |
-| **Prąd zwarciowy I`<sub>`sc`</sub>`**     | 10,20 A                     |
+| **Nominalna moc P<sub>max</sub>**      | 330 W                       |
+| **Napięcie robocze U<sub>mp</sub>**   | 33,98 V                     |
+| **Natężenie robocze I<sub>mp</sub>** | 9,71 A                      |
+| **Napięcie jałowe U<sub>oc</sub>**   | 40,66 V                     |
+| **Prąd zwarciowy I<sub>sc</sub>**     | 10,20 A                     |
 | **Sprawność**                                | 19,6%                       |
 | **Wymiary**                                    | 1685 mm × 1000 mm × 32 mm |
 | **Waga**                                       | 18,7 kg                     |
@@ -138,8 +138,8 @@ P_inst = P_mod × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp
 
 **Gdzie:**
 
-- **P`<sub>`inst`</sub>`** — maksymalna moc instalacji (w warunkach STC)
-- **P`<sub>`mod`</sub>`** — maksymalna moc pojedynczego modułu (w warunkach STC)
+- **P<sub>inst</sub>** — maksymalna moc instalacji (w warunkach STC)
+- **P<sub>mod</sub>** — maksymalna moc pojedynczego modułu (w warunkach STC)
 - **n** — liczba wszystkich modułów w instalacji
 
 <details>
@@ -153,7 +153,7 @@ W omawianym przypadku wyniesie to:
 
 Moc instalacji wynika ze wzoru:
 
-**P`<sub>`inst`</sub>` = P`<sub>`mod`</sub>` × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp**
+**P<sub>inst</sub> = P<sub>mod</sub> × n = 330 Wp × 15 = 4950 Wp = 4,95 kWp**
 
 </details>
 
@@ -179,14 +179,14 @@ Kolejnym krokiem jest dobranie falownika. Zwraca się przy tym uwagę na moc zna
 
 Zatem w omawianym przypadku szukamy falownika o parametrach:
 
-**P`<sub>`inv`</sub>` = od 85% × P`<sub>`inst`</sub>` do 100% × P`<sub>`inst`</sub>`**
+**P<sub>inv</sub> = od 85% × P<sub>inst</sub> do 100% × P<sub>inst</sub>**
 
-**P`<sub>`inv`</sub>` = od 85% × 4950 W do 100% × 4950 W = od 4207 W do 4950 W**
+**P<sub>inv</sub> = od 85% × 4950 W do 100% × 4950 W = od 4207 W do 4950 W**
 
 gdzie:
 
-- **P`<sub>`inv`</sub>`** — zakres mocy falownika
-- **P`<sub>`inst`</sub>`** — moc instalacji
+- **P<sub>inv</sub>** — zakres mocy falownika
+- **P<sub>inst</sub>** — moc instalacji
 
 </details>
 
@@ -258,22 +258,22 @@ U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 63
 <details>
 <summary>Szczegółowe obliczenia dla warunków zimowych</summary>
 
-**U`<sub>`oc`</sub>` = n × (U`<sub>`oc`</sub>` + ΔT × β) = 15 × (40,66 + (-50°C) × (-0,163 V/K)) = 732,15 V**
+**U<sub>oc</sub> = n × (U<sub>oc</sub> + ΔT × β) = 15 × (40,66 + (-50°C) × (-0,163 V/K)) = 732,15 V**
 
 gdzie:
 
-- **U`<sub>`oc`</sub>`** — Napięcie obwodu otwartego łańcucha modułów dla -25°C
+- **U<sub>oc</sub>** — Napięcie obwodu otwartego łańcucha modułów dla -25°C
 - **n** — liczba wszystkich modułów w instalacji
-- **U`<sub>`oc`</sub>`** — napięcie obwodu otwartego dla STC
+- **U<sub>oc</sub>** — napięcie obwodu otwartego dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli -25°C - 25°C = -50°C
 - **β** — współczynnik temperaturowy dla napięcia
 
-**U`<sub>`mpp`</sub>` = n × (U`<sub>`mpp`</sub>` + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 631,95 V**
+**U<sub>mpp</sub> = n × (U<sub>mpp</sub> + ΔT × β) = 15 × (33,98 + (-50°C) × (-0,163 V/K)) = 631,95 V**
 
 gdzie:
 
-- **U`<sub>`mpp`</sub>`** — Napięcie MPP łańcucha modułów dla -25°C
-- **U`<sub>`mpp`</sub>`** — Napięcie MPP modułu dla STC
+- **U<sub>mpp</sub>** — Napięcie MPP łańcucha modułów dla -25°C
+- **U<sub>mpp</sub>** — Napięcie MPP modułu dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli -25°C - 25°C = -50°C
 - **β** — współczynnik temperaturowy napięcia
 
@@ -290,12 +290,12 @@ U_mpp = n × (U_mpp + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387
 <details>
 <summary>Szczegółowe obliczenia dla warunków letnich</summary>
 
-**U`<sub>`mpp`</sub>` = n × (U`<sub>`mpp`</sub>` + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387,45 V**
+**U<sub>mpp</sub> = n × (U<sub>mpp</sub> + ΔT × β) = 15 × (33,98 + (50°C) × (-0,163 V/K)) = 387,45 V**
 
 gdzie:
 
-- **U`<sub>`mpp`</sub>`** — Napięcie MPP łańcucha modułów dla 75°C
-- **U`<sub>`mpp`</sub>`** — Napięcie MPP modułu dla STC
+- **U<sub>mpp</sub>** — Napięcie MPP łańcucha modułów dla 75°C
+- **U<sub>mpp</sub>** — Napięcie MPP modułu dla STC
 - **ΔT** — różnica temperatury względem STC (25°C), czyli 75°C - 25°C = 50°C
 - **β** — współczynnik temperaturowy dla napięcia
 
@@ -303,9 +303,9 @@ gdzie:
 
 ### Weryfikacja wyników
 
-✅ **U`<sub>`oc`</sub>` = 732,15 V < 1000 V**
-✅ **U`<sub>`mpp`</sub>`(-25°C) = 631,95 V** mieści się w zakresie MPPT 150-800 V
-✅ **U`<sub>`mpp`</sub>`(75°C) = 387,45 V** mieści się w zakresie MPPT 150-800 V
+✅ **U<sub>oc</sub> = 732,15 V < 1000 V**
+✅ **U<sub>mpp</sub>(-25°C) = 631,95 V** mieści się w zakresie MPPT 150-800 V
+✅ **U<sub>mpp</sub>(75°C) = 387,45 V** mieści się w zakresie MPPT 150-800 V
 
 ### Weryfikacja prądu
 
@@ -323,7 +323,7 @@ I_DCmax > I_sc
 
 Trzeba również skontrolować, czy natężenie prądu modułów fotowoltaicznych nie przekracza możliwości falownika. W tym celu wystarczy porównać prąd zwarciowy tylko jednego modułu — są one łączone szeregowo.
 
-**I`<sub>`DCmax`</sub>` > I`<sub>`sc`</sub>`**
+**I<sub>DCmax</sub> > I<sub>sc</sub>**
 
 **16 A > 10,20 A** ✓
 
