@@ -10,7 +10,7 @@ title: "Wykład 3: Solar termiczny (2h)"
 - [Porównanie dostępnych programów](./03-porownanie-programow.mdx)
 - [T*SOL - znaczenie programu dla projektanta](./04-tsol-znaczenie.md)
 - [Proces modelowania/projektowania w T*SOL](./05-proces-tsol.mdx)
-- [Demonstracja na żywo: T*SOL](./06-demonstracja-tsol.md)
+- [Demonstracja na żywo: T*SOL](./06-demonstracja-tsol.mdx)
 - [Podsumowanie](./07-podsumowanie.md)
 
 ## Cele wykładu
