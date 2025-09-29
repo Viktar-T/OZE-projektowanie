@@ -5,63 +5,27 @@ title: Energetyka wiatrowa
 
 # Energetyka wiatrowa
 
-## Przegląd technologii
+## Najważniejsze informacje
 
-Energetyka wiatrowa wykorzystuje energię kinetyczną wiatru do wytwarzania energii elektrycznej za pomocą turbin wiatrowych.
+- W Polsce średnia prędkość wiatru 4–6 m/s na wysokości 100 m
+- Turbiny 3–6 MW: średnica wirnika 120–160 m, wysokość 140–180 m
+- Odległości między turbinami: 5–7 średnic wirnika (w kierunku dominującego wiatru)
+- LCOE w Polsce: 200–300 PLN/MWh (2024)
 
-## Podstawy energetyki wiatrowej
+## Minimalny workflow projektowy
 
-### Charakterystyka zasobów wiatrowych
-- **Róża wiatrów** - rozkład kierunków i prędkości
-- **Rozkłady prędkości** - Weibulla, Rayleigh
-- **Wysokość odniesienia** - ekstrapolacja do wysokości wirnika
-- **Szorstkość terenu** - wpływ na profil prędkości
+1. Analiza zasobów wiatrowych (pomiary, modelowanie WAsP/WindPRO)
+2. Ocena ograniczeń (środowiskowe, sieciowe, dostępność)
+3. Optymalizacja rozmieszczenia turbin (wake effects, LCOE)
+4. Projekt sieci i infrastruktury
+5. Analiza ekonomiczna i środowiskowa
 
-### Turbiny wiatrowe
-- **Typy turbin** - poziome i pionowe osie
-- **Parametry techniczne** - moc, średnica, wysokość
-- **Krzywe mocy** - charakterystyki mocy vs prędkość wiatru
-- **Systemy kontroli** - regulacja mocy, orientacja
+## Oprogramowanie
 
-## Projektowanie farm wiatrowych
-
-### Analiza zasobów wiatrowych
-- **Modelowanie warunków wiatrowych** - WAsP, WindPRO
-- **Ocena potencjału energetycznego** - produkcja energii
-- **Analiza niepewności** - błędy pomiarów, modelowania
-- **Korekty wysokości** - ekstrapolacja do wysokości wirnika
-
-### Optymalizacja rozmieszczenia
-- **Odległości między turbinami** - unikanie wake effects
-- **Wpływ wake effects** - straty aerodynamiczne
-- **Ograniczenia środowiskowe** - hałas, migotanie cieni
-- **Ograniczenia techniczne** - dostępność, sieć elektroenergetyczna
-
-### Analiza ekonomiczna
-- **Koszty inwestycyjne** - turbiny, fundamenty, sieć
-- **Koszty eksploatacyjne** - serwis, ubezpieczenia
-- **Wskaźniki rentowności** - LCOE, NPV, IRR
-- **Analiza ryzyka** - wrażliwość na zmiany parametrów
-
-## Oprogramowanie projektowe
-
-### WindPRO
-- Kompleksowe narzędzie do projektowania farm wiatrowych
-- Modelowanie zasobów wiatrowych
-- Optymalizacja rozmieszczenia turbin
-- Analiza środowiskowa
-
-### OpenWind
-- Open-source narzędzie do projektowania
-- Modelowanie wake effects
-- Optymalizacja układu farmy
-- Analiza ekonomiczna
-
-### QBlade
-- Narzędzie do analizy aerodynamiki
-- Projektowanie łopat turbin
-- Symulacje CFD
-- Analiza wydajności
+- WindPRO — kompleksowe projektowanie farm, zasoby, rozmieszczenie
+- OpenWind — open-source, optymalizacja układu farmy
+- QBlade — aerodynamika łopat, CFD
+- WAsP — modelowanie zasobów wiatrowych
 
 ## Materiały i literatura
 

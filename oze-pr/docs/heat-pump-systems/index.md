@@ -5,75 +5,26 @@ title: Systemy pomp ciepła
 
 # Systemy pomp ciepła
 
-## Przegląd technologii
+## Najważniejsze informacje
 
-Pompy ciepła wykorzystują energię geotermalną (ciepło gruntu, wody, powietrza) do ogrzewania i chłodzenia budynków.
+- COP 3–5 (gruntowe) / 2.5–4 (powietrzne) w warunkach polskich
+- Gruntowe: sondy pionowe 50–150 m, poziome 1.5–2 m głębokości
+- Powietrzne: split/monoblok, spadek COP przy niskich temperaturach
+- Wymagane: TRT dla gruntowych, analiza hydrogeologiczna
 
-## Podstawy technologii pomp ciepła
+## Minimalny workflow projektowy
 
-### Zasada działania
-- **Cykl termodynamiczny** - parowanie, sprężanie, skraplanie, rozprężanie
-- **Współczynnik wydajności COP** - stosunek mocy grzewczej do mocy elektrycznej
-- **Źródła dolne** - grunt, woda, powietrze
-- **Źródła górne** - ogrzewanie, chłodzenie, c.w.u.
+1. Bilans cieplny budynku i zapotrzebowanie na c.w.u.
+2. Wybór źródła dolnego i typu pompy ciepła
+3. Wymiarowanie kolektorów gruntowych/wodnych lub dobór powietrznej
+4. Projekt układu hydraulicznego (temperatury zasilania, bufor)
+5. Symulacja sezonowa i analiza ekonomiczna
 
-### Typy pomp ciepła
-- **Gruntowe** - poziome i pionowe kolektory
-- **Wodne** - studnie, zbiorniki wodne
-- **Powietrzne** - split, monoblok
-- **Hybrydowe** - kombinacja źródeł
+## Oprogramowanie
 
-## Projektowanie systemów gruntowych
-
-### Analiza zasobów geotermalnych
-- **Charakterystyka gruntu** - przewodność cieplna, pojemność
-- **Temperatura gruntu** - zmiany sezonowe, głębokość
-- **Analiza hydrogeologiczna** - przepływ wód gruntowych
-- **Testy reakcji termicznej (TRT)** - pomiar parametrów gruntu
-
-### Dobór i rozmieszczenie kolektorów
-- **Kolektory poziome** - płytkie, spiralne
-- **Kolektory pionowe** - sondy, pętle
-- **Odległości między kolektorami** - unikanie interferencji
-- **Głębokość i długość sond** - optymalizacja parametrów
-
-### Projektowanie układu hydraulicznego
-- **Dobór pompy ciepła** - moc, temperatura zasilania
-- **Projektowanie układu grzewczego** - ogrzewanie podłogowe, grzejniki
-- **Systemy buforowe** - zbiorniki akumulacyjne
-- **Automatyka i sterowanie** - regulatory, czujniki
-
-## Oprogramowanie projektowe
-
-### GeoT*SOL
-- Projektowanie systemów gruntowych pomp ciepła
-- Analiza zasobów geotermalnych
-- Symulacja pracy systemu
-- Analiza ekonomiczna
-
-### Funkcjonalności
-- Modelowanie wymiany ciepła z gruntem
-- Optymalizacja parametrów systemu
-- Analiza długoterminowa
-- Dokumentacja projektowa
-
-## Analiza ekonomiczna
-
-### Koszty inwestycyjne
-- **Kolektory gruntowe** - roboty ziemne, sondy
-- **Pompa ciepła** - urządzenie, instalacja
-- **Układ hydrauliczny** - przewody, armaturę
-- **Systemy pomocnicze** - automatyka, monitoring
-
-### Koszty eksploatacyjne
-- **Energia elektryczna** - zużycie prądu
-- **Konserwacja i serwis** - przeglądy, naprawy
-- **Monitoring systemu** - oprogramowanie, czujniki
-
-### Wskaźniki rentowności
-- **Okres zwrotu** - czas zwrotu inwestycji
-- **NPV, IRR** - analiza finansowa
-- **Porównanie z konwencjonalnymi** - kotły gazowe, olejowe
+- GeoT*SOL — projektowanie gruntowych pomp ciepła, TRT, symulacja
+- EED — analiza ekonomiczna i porównania
+- Polysun — symulacja hybrydowych systemów grzewczych
 
 ## Materiały i literatura
 
