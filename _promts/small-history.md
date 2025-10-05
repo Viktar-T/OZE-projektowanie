@@ -22,7 +22,9 @@
 * [X] on the bases of content from _promts\W5-wind update files in oze-pr\docs\wyklady\wyklad-05-wiatr. all updated files should looks as described in **@slides-conversion.md**
 * [X] on the bases of content from _promts\W6-biogaz update files in oze-pr\docs\wyklady\wyklad-06-biomasa-biogaz. all updated files should looks as described in **@slides-conversion.md**
 * [X] add relevant highe quality information. make two times longer.
-* [ ] deeply analyse whole project and update oze-pr\docs\heat-pump-systems
+* [X] deeply analyse whole project and update oze-pr\docs\heat-pump-systems
   oze-pr\docs\photovoltaic-systems
   oze-pr\docs\solar-thermal-systems
   oze-pr\docs\wind. add only. these file should be short and contain only imprortent information.
+* [ ] I see in browser: "**P `<sub>`max `</sub>`**". Fix oze-pr\docs\wyklady\wyklad-01-wprowadzenie\08-przykład-z-ATUM-p.-7.1.md
+* [ ]

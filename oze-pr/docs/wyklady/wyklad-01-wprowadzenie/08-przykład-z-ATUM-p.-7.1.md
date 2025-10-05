@@ -50,6 +50,10 @@ P = zużycie_energii / (uzysk_roczny × współczynnik_korekcyjny)
 
 Po określeniu wartości zużycia można przejść do wyliczenia mocy instalacji fotowoltaicznej. W tym przykładzie przyjęto zużycie energii na poziomie 4000 kWh/rok. Uwzględniono, że w Polsce z 1 kWp można uzyskać około 1000 kWh/rok. Należy ułożyć proporcje i wyliczyć moc instalacji fotowoltaicznej. Trzeba pamiętać, że jeśli dach budynku nie jest skierowany na południe oraz ma kąt nachylenia inny niż 30°, należy odpowiednio zwiększyć liczbę modułów fotowoltaicznych. W tym celu można posłużyć się poniższym schematem lub wykorzystać jedną z aplikacji internetowych (na przykład wspomniana Global Solar Atlas).
 
+- zużycie_energii = 4000 kWh/rok
+- uzysk_roczny - niewidamomo,
+- współczynnik_korekcyjny - niewidamomo.
+
 </details>
 
 ---
@@ -105,16 +109,16 @@ Dzięki tym obliczeniom otrzymuje się moc instalacji fotowoltaicznej, jaka jest
 
 ### Karta katalogowa modułu fotowoltaicznego
 
-| Parametr                                             | Wartość                   |
-| ---------------------------------------------------- | --------------------------- |
+| Parametr                                               | Wartość                   |
+| ------------------------------------------------------ | --------------------------- |
 | **Nominalna moc P<sub>max</sub>**      | 330 W                       |
 | **Napięcie robocze U<sub>mp</sub>**   | 33,98 V                     |
 | **Natężenie robocze I<sub>mp</sub>** | 9,71 A                      |
 | **Napięcie jałowe U<sub>oc</sub>**   | 40,66 V                     |
 | **Prąd zwarciowy I<sub>sc</sub>**     | 10,20 A                     |
-| **Sprawność**                                | 19,6%                       |
-| **Wymiary**                                    | 1685 mm × 1000 mm × 32 mm |
-| **Waga**                                       | 18,7 kg                     |
+| **Sprawność**                                  | 19,6%                       |
+| **Wymiary**                                      | 1685 mm × 1000 mm × 32 mm |
+| **Waga**                                         | 18,7 kg                     |
 
 **Współczynniki temperaturowe:**
 
@@ -207,7 +211,7 @@ gdzie:
 
 | Parametr                           | Wartość |
 | ---------------------------------- | --------- |
-| Moc znamionowa AC [W]              | 4500      |
+| **Moc znamionowa AC [W]**         | **4500** |
 | Prąd wyjściowy AC [A]            | 6,5       |
 | Częstotliwość [Hz]              | 50/60     |
 | Współczynnik zniekształceń [%] | &lt;3     |
@@ -235,7 +239,7 @@ Sprawdzenie kompatybilności modułów fotowoltaicznych z falownikiem pod wzglę
 
 Kolejnym krokiem jest sprawdzenie, czy moduły fotowoltaiczne połączone w szereg będą współdziałały z dobranym falownikiem pod względem parametrów prądowo-napięciowych.
 
-W tym celu należy sprawdzić, czy parametry podłączonych modułów fotowoltaicznych odpowiadają parametrom falownika, opisanym jako MPPT (Maximum Power Point Tracker). Jeśli zostaną prawidłowo dobrane, instalacja będzie produkowała maksymalną ilość energii. W omawianym przypadku ten zakres, odczytany z karty katalogowej, wynosi 150-800V. W związku z tym, że napięcie i prąd modułu zmieniają się wraz z temperaturą, należy zweryfikować, jak zachowa się instalacja w skrajnych warunkach pogodowych, czyli zimą przy temperaturze ogniwa -25°C oraz latem przy 75°C. Zimą napięcie wzrasta, dlatego należy tutaj uwzględnić zarówno napięcie układu otwartego — czy nie przekroczy 1000 V podczas uruchamiania się systemu, a także napięcie MPP — ze względu na pracę systemu. Natomiast dla okresu letniego należy sprawdzić, czy napięcie MPP szeregu modułów nie spadnie poniżej napięcia MPPT falownika.
+W tym celu należy sprawdzić, czy parametry podłączonych modułów fotowoltaicznych odpowiadają parametrom falownika, opisanym jako MPPT (Maximum Power Point Tracker). Jeśli zostaną prawidłowo dobrane, instalacja będzie produkowała maksymalną ilość energii. W omawianym przypadku ten zakres, odczytany z karty katalogowej, wynosi 150-800V. W związku z tym, że napięcie i prąd modułu zmieniają się wraz z temperaturą, należy zweryfikować, jak zachowa się instalacja w **skrajnych warunkach pogodowych**, czyli zimą przy temperaturze ogniwa -25°C oraz latem przy 75°C. Zimą napięcie wzrasta, dlatego należy tutaj uwzględnić zarówno napięcie układu otwartego — czy nie przekroczy 1000 V podczas uruchamiania się systemu, a także napięcie MPP — ze względu na pracę systemu. Natomiast dla okresu letniego należy sprawdzić, czy napięcie MPP szeregu modułów nie spadnie poniżej napięcia MPPT falownika.
 
 > **Uwaga!** Ze względu na to, że w obliczeniach występuje różnica temperatur, nie ma znaczenia czy wartości będą podane w stopniach Celsjusza czy w Kelwinach.
 
@@ -304,7 +308,9 @@ gdzie:
 ### Weryfikacja wyników
 
 ✅ **U<sub>oc</sub> = 732,15 V < 1000 V**
+
 ✅ **U<sub>mpp</sub>(-25°C) = 631,95 V** mieści się w zakresie MPPT 150-800 V
+
 ✅ **U<sub>mpp</sub>(75°C) = 387,45 V** mieści się w zakresie MPPT 150-800 V
 
 ### Weryfikacja prądu
