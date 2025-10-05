@@ -260,16 +260,6 @@ Ten samouczek jest przeznaczony dla początkujących. Pokaże Ci podstawowe krok
 
 ### Dodatkowe zasoby
 
-4. **Valentin Software** (2024). *PV*SOL premium - Tutorial Videos*. Oficjalne filmy instruktażowe na kanale YouTube Valentin Software.
+4. **Valentin Software** (2024). *PV*SOL premium - Tutorial Videos*. Oficjalne filmy instruktażowe na kanale YouTube Valentin Software. Dostępny: https://www.youtube.com/@valentinsoftware/playlists
 5. **Valentin Software** (2024). *MeteoSyn Climate Data Module*. Dokumentacja modułu danych klimatycznych dla precyzyjnych symulacji. Dostępny: https://help.valentin-software.com/pvsol/en/calculation/solar-radiation/
 
-### Literatura techniczna
-
-6. **IEC 61724** (2017). *Photovoltaic system performance monitoring - Guidelines for measurement, data exchange and analysis*. Międzynarodowy standard dotyczący monitorowania wydajności systemów fotowoltaicznych.
-7. **EN 50530** (2010). *Overall efficiency of grid connected photovoltaic inverters*. Europejska norma dotycząca sprawności falowników fotowoltaicznych.
-8. **DGS** (2018). *Planning and Installing Photovoltaic Systems: A Guide for Installers, Architects and Engineers*. Deutsche Gesellschaft für Sonnenenergie.
-
-### Strony internetowe i narzędzia
-
-9. **Global Solar Atlas** - Narzędzie do oceny potencjału energii słonecznej na całym świecie: https://globalsolaratlas.info/
-10. **PVGIS** - Europejskie narzędzie do oceny wydajności systemów fotowoltaicznych: https://re.jrc.ec.europa.eu/pvg_tools/en/
