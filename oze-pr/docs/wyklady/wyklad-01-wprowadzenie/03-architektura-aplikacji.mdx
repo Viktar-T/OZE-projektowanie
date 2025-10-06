@@ -116,111 +116,17 @@ import {
 
 </KeyPoints>
 
-```mermaid
-graph TB
-    %% Warstwa prezentacji
-    subgraph "🖥️ Warstwa prezentacji (Front-end)"
-        UI1["🌐 Aplikacje webowe<br/>React, Angular, Vue.js"]
-        UI2["📱 Aplikacje mobilne<br/>iOS/Android, React Native"]
-        UI3["🖥️ Aplikacje desktopowe<br/>Qt, WPF, Electron"]
-        DASH["📊 Dashboardy<br/>Yield, PR, KPI"]
-    end
-
-    %% Warstwa middleware
-    subgraph "🔗 Warstwa middleware/API Gateway"
-        API["🌐 API RESTful<br/>HTTP/HTTPS, JSON"]
-        AUTH["🔐 Uwierzytelnianie<br/>JWT, OAuth 2.0"]
-        LB["⚖️ Load Balancing<br/>Skalowanie, HA"]
-        CACHE["💾 Cache<br/>Redis, CDN"]
-    end
-
-    %% Warstwa usług
-    subgraph "⚙️ Warstwa usług (Back-end)"
-        SIM["🧮 Silniki symulacyjne<br/>Modele matematyczne"]
-        ETL["🔄 ETL<br/>Apache Airflow"]
-        ML["🤖 Machine Learning<br/>Anomalie, prognozy"]
-        OPT["🎯 Optymalizacja<br/>Algorytmy genetyczne"]
-    end
-
-    %% Warstwa baz danych
-    subgraph "🗄️ Warstwa baz danych"
-        TSDB["⏰ Bazy czasowe<br/>InfluxDB, TimescaleDB"]
-        RDB["🔗 Bazy relacyjne<br/>PostgreSQL, MySQL"]
-        DOC["📄 Bazy dokumentowe<br/>MongoDB, Elasticsearch"]
-    end
-
-    %% Warstwa infrastruktury
-    subgraph "☁️ Warstwa infrastruktury"
-        CLOUD["☁️ Chmura<br/>AWS, Azure, GCP"]
-        K8S["🐳 Kubernetes<br/>Docker, orkiestracja"]
-        EDGE["🔧 Edge Computing<br/>Przetwarzanie lokalne"]
-        IOT["📡 IoT & SCADA<br/>Modbus, DNP3, IEC 61850"]
-    end
-
-    %% Przepływ danych
-    IOT -->|"📊 Dane z czujników"| EDGE
-    EDGE -->|"🌊 Strumienie danych"| CLOUD
-    CLOUD -->|"💾 Przechowywanie"| TSDB
-    TSDB -->|"📈 Agregacje"| RDB
-    RDB -->|"🔍 Wyszukiwanie"| DOC
-    
-    DOC -->|"📊 Zapytania"| ETL
-    ETL -->|"🔄 Przetwarzanie"| SIM
-    SIM -->|"🤖 Analizy ML"| ML
-    ML -->|"🎯 Optymalizacja"| OPT
-    
-    OPT -->|"📡 API calls"| API
-    API -->|"🔐 Autoryzacja"| AUTH
-    AUTH -->|"⚖️ Load balancing"| LB
-    LB -->|"💾 Cache"| CACHE
-    
-    CACHE -->|"📊 Dashboardy"| DASH
-    CACHE -->|"🌐 Web apps"| UI1
-    CACHE -->|"📱 Mobile apps"| UI2
-    CACHE -->|"🖥️ Desktop apps"| UI3
-
-    %% Styling
-    classDef frontend fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef middleware fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef backend fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    classDef database fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef infrastructure fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-
-    class UI1,UI2,UI3,DASH frontend
-    class API,AUTH,LB,CACHE middleware
-    class SIM,ETL,ML,OPT backend
-    class TSDB,RDB,DOC database
-    class CLOUD,K8S,EDGE,IOT infrastructure
-```
 
 <InstructorNotes>
-**Przegląd architektury systemów OZE**
+Wielowarstwowa architektura systemów OZE zapewnia skalowalne, bezpieczne i elastyczne rozwiązania dla kompleksowych projektów energetycznych.
 
-**🏗️ Cel tego slajdu:**
-Ten slajd przedstawia kompleksowy przegląd wielowarstwowej architektury systemów OZE, pokazując jak wszystkie warstwy współpracują ze sobą.
+**Struktura warstw** obejmuje prezentację (interfejsy, dashboardy), middleware (API, uwierzytelnianie), usługi (logika biznesowa, symulacje), bazy danych (przechowywanie, analiza) i infrastrukturę (chmura, IoT, monitoring).
 
-**📊 Struktura warstw:**
-- **Warstwa prezentacji**: Interfejsy użytkownika, dashboardy, aplikacje
-- **Warstwa middleware**: API, uwierzytelnianie, integracja
-- **Warstwa usług**: Logika biznesowa, symulacje, optymalizacja
-- **Warstwa baz danych**: Przechowywanie, analiza, wyszukiwanie
-- **Warstwa infrastruktury**: Chmura, IoT, monitoring
+**Przepływ danych** przebiega od warstwy infrastruktury przez bazy danych i usługi aż do warstwy prezentacji, umożliwiając kompleksowe przetwarzanie informacji z czujników do raportów.
 
-**🔄 Przepływ danych:**
-Dane przepływają od warstwy infrastruktury (czujniki, IoT) przez warstwy baz danych i usług, aż do warstwy prezentacji (dashboardy, raporty).
+**Kluczowe zalety** to skalowalność (niezależne skalowanie warstw), elastyczność (łatwe dodawanie funkcji), bezpieczeństwo (kontrola dostępu na każdym poziomie) i wydajność (optymalizacja każdej warstwy osobno).
 
-**💡 Kluczowe zalety takiej architektury:**
-- **Skalowalność**: Każda warstwa może być skalowana niezależnie
-- **Elastyczność**: Łatwe dodawanie nowych funkcji
-- **Bezpieczeństwo**: Kontrola dostępu na każdym poziomie
-- **Wydajność**: Optymalizacja każdej warstwy osobno
-- **Łatwość utrzymania**: Separacja odpowiedzialności
-
-**🎯 Praktyczne zastosowania:**
-- **Monitoring farm PV**: Od czujników do dashboardów
-- **Optymalizacja produkcji**: Od danych do algorytmów
-- **Handel energią**: Od transakcji do raportów
-- **Utrzymanie predykcyjne**: Od danych do prognoz
+**Praktyczne zastosowania** obejmują monitoring farm PV, optymalizację produkcji, handel energią i utrzymanie predykcyjne.
 </InstructorNotes>
 
 </Slide>
@@ -351,36 +257,15 @@ Zapewnienie intuicyjnego dostępu do danych OZE poprzez różne typy aplikacji (
 </SupportingDetails>
 
 <InstructorNotes>
-**Warstwa prezentacji (Front-end)**
+Warstwa prezentacji zapewnia intuicyjny dostęp do danych OZE poprzez różne typy aplikacji z możliwością wizualizacji w czasie rzeczywistym.
 
-**💻 Typy aplikacji w OZE:**
-- **Aplikacje webowe**: React, Angular, Vue.js
-  - *Zalety*: Dostęp z każdego miejsca, łatwe aktualizacje, skalowalność
-  - *Zastosowania*: Dashboardy operatorów, raporty dla inwestorów
-- **Aplikacje mobilne**: iOS/Android, React Native, Flutter
-  - *Zalety*: Dostępność w terenie, powiadomienia push, geolokalizacja
-  - *Zastosowania*: Monitoring instalacji, inspekcje techniczne
-- **Aplikacje desktopowe**: Qt, WPF
-  - *Zalety*: Wysoka wydajność, dostęp offline, integracja z systemami lokalnymi
-  - *Zastosowania*: Narzędzia projektowe, analizy offline
+**Aplikacje webowe** (React, Angular, Vue.js) oferują dostęp z każdego miejsca i łatwe aktualizacje, **aplikacje mobilne** (iOS/Android, React Native) zapewniają dostępność w terenie i powiadomienia push, a **aplikacje desktopowe** (Qt, WPF) oferują wysoką wydajność i dostęp offline.
 
-**🎨 Kluczowe cechy interfejsów OZE:**
-- **Intuicyjne dashboardy**: Yield, PR, dostępność, KPI
-- **Wizualizacja danych**: Wykresy czasowe, mapy cieplne, diagramy Sankey
-- **Alerty i raporty**: Automatyczne powiadomienia, raporty okresowe
-- **Responsywność**: Dostosowanie do różnych urządzeń (desktop, tablet, mobile)
+**Kluczowe cechy interfejsów OZE** to intuicyjne dashboardy (Yield, PR, KPI), wizualizacja danych (wykresy czasowe, mapy cieplne), alerty i raporty oraz responsywność na różnych urządzeniach.
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Wyświetlanie trendów produkcji, zużycia, wydajności
-- **Geolokalizacja**: Mapy instalacji, analizy zacienień, routing
-- **Integracja z IoT**: Dane z czujników, sterowanie urządzeniami
-- **Bezpieczeństwo**: Uwierzytelnianie, szyfrowanie, audyty dostępu
+**Specjalne wymagania OZE** obejmują dane czasowe (trendy produkcji), geolokalizację (mapy instalacji), integrację z IoT (dane z czujników) i bezpieczeństwo (uwierzytelnianie, szyfrowanie).
 
-**💡 Praktyczne wskazówki:**
-- **UX/UI**: Interfejs musi być intuicyjny dla operatorów bez wykształcenia IT
-- **Performance**: Optymalizacja dla dużych ilości danych czasowych
-- **Offline**: Możliwość pracy bez połączenia internetowego
-- **Accessibility**: Dostępność dla osób z niepełnosprawnościami
+**Interfejs musi być intuicyjny** dla operatorów bez wykształcenia IT, zoptymalizowany dla dużych ilości danych czasowych i dostępny offline.
 </InstructorNotes>
 
 </Slide>
@@ -477,37 +362,17 @@ Zapewnienie bezpiecznej komunikacji między warstwami, uwierzytelnianie użytkow
 </KeyPoints>
 
 <InstructorNotes>
-**Warstwa middleware/API Gateway**
+Warstwa middleware zapewnia bezpieczną komunikację między warstwami, uwierzytelnianie użytkowników i optymalizację wydajności poprzez cache i load balancing.
 
-**🌐 API RESTful w systemach OZE:**
-- **Standardowa komunikacja**: HTTP/HTTPS, JSON, OpenAPI
-- **Integracja systemów**: SCADA, ERP, CRM, IoT
-- **Wersjonowanie API**: Backward compatibility, deprecation policies
-- **Dokumentacja**: Swagger/OpenAPI, przykłady użycia
+**API RESTful** oferuje standardową komunikację (HTTP/HTTPS, JSON, OpenAPI), integrację z systemami SCADA/ERP/IoT, wersjonowanie API i kompletną dokumentację.
 
-**🔐 Uwierzytelnianie i autoryzacja:**
-- **JWT (JSON Web Tokens)**: Stateless authentication, skalowalność
-- **OAuth 2.0**: Delegacja uprawnień, integracja z zewnętrznymi systemami
-- **RBAC (Role-Based Access Control)**: Różne poziomy dostępu (operator, inżynier, manager)
-- **MFA (Multi-Factor Authentication)**: Dodatkowe zabezpieczenia dla krytycznych systemów
+**Uwierzytelnianie** wykorzystuje JWT dla stateless authentication, OAuth 2.0 dla delegacji uprawnień, RBAC dla różnych poziomów dostępu (operator, inżynier, manager) i MFA dla dodatkowych zabezpieczeń.
 
-**⚖️ Load balancing i optymalizacja:**
-- **Load balancing**: Rozkład obciążenia między serwerami
-- **Rate limiting**: Ochrona przed nadużyciami, fair usage
-- **Cache**: Redis, Memcached - przyspieszenie odpowiedzi
-- **CDN**: Globalna dystrybucja treści statycznych
+**Load balancing i optymalizacja** obejmują rozkład obciążenia między serwerami, rate limiting, cache (Redis, Memcached) i CDN dla globalnej dystrybucji treści.
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla strumieni danych z czujników
-- **Geolokalizacja**: Routing do najbliższych serwerów
-- **Compliance**: Zgodność z normami branżowymi (IEC 61850, Modbus)
-- **Monitoring**: Szybkie wykrywanie problemów, alerty
+**Specjalne wymagania OZE** to optymalizacja dla strumieni danych z czujników, geolokalizacja, zgodność z normami branżowymi (IEC 61850, Modbus) i szybkie wykrywanie problemów.
 
-**💡 Praktyczne wskazówki:**
-- **API Design**: RESTful principles, intuitive endpoints
-- **Security**: HTTPS everywhere, input validation, SQL injection protection
-- **Performance**: Caching strategies, database optimization
-- **Monitoring**: Logging, metrics, alerting, health checks
+**API Design** musi być RESTful, bezpieczny (HTTPS, walidacja), wydajny (cache, optymalizacja bazy danych) i monitorowany (logi, metryki, alerty).
 </InstructorNotes>
 
 </Slide>
@@ -539,45 +404,17 @@ Wykonywanie zaawansowanych obliczeń, symulacji i analiz danych OZE, implementac
 </InfoBox>
 
 <InstructorNotes>
-**Warstwa usług (Back-end)**
+Warstwa usług wykonuje zaawansowane obliczenia, symulacje i analizy danych OZE, implementując algorytmy optymalizacji i przetwarzanie danych w czasie rzeczywistym.
 
-**🧮 Silniki symulacyjne w OZE:**
-- **Modele matematyczne**: Równania różniczkowe, modele fizyczne
-- **Prognozy produkcji**: Machine learning, modele statystyczne, ensemble methods
-- **Optymalizacja**: Algorytmy genetyczne, PSO, programowanie liniowe
-- **Walidacja**: Porównanie z danymi rzeczywistymi, backtesting
+**Silniki symulacyjne** wykorzystują modele matematyczne (równania różniczkowe, modele fizyczne), prognozy produkcji (machine learning, modele statystyczne), algorytmy optymalizacji (genetyczne, PSO) i walidację z danymi rzeczywistymi.
 
-**🔄 Przetwarzanie danych:**
-- **ETL (Extract, Transform, Load)**: Apache Airflow, Luigi, Prefect
-- **Strumieniowanie**: Apache Kafka, Apache Pulsar, AWS Kinesis
-- **Detekcja anomalii ML**: Isolation Forest, LSTM, Autoencoders
-- **Real-time processing**: Apache Storm, Apache Flink, Spark Streaming
+**Przetwarzanie danych** obejmuje ETL (Apache Airflow, Luigi), strumieniowanie (Apache Kafka, AWS Kinesis), detekcję anomalii ML (Isolation Forest, LSTM) i real-time processing (Apache Storm, Spark Streaming).
 
-**💻 Języki programowania:**
-- **Python**: NumPy, Pandas, SciPy, Django/Flask, FastAPI
-  - *Zalety*: Bogate biblioteki ML, łatwość prototypowania
-  - *Zastosowania*: Analizy danych, modele ML, API
-- **MATLAB/Simulink**: Toolboxy energetyczne, modelowanie systemów
-  - *Zalety*: Gotowe modele, wizualizacja, integracja z hardware
-  - *Zastosowania*: Symulacje systemów, prototypowanie algorytmów
-- **Julia**: Wysoka wydajność, łatwość programowania
-  - *Zalety*: Szybkość C++, składnia Python
-  - *Zastosowania*: Obliczenia numeryczne, optymalizacja
-- **C++**: Maksymalna wydajność, integracja z hardware
-  - *Zalety*: Kontrola nad pamięcią, szybkość wykonania
-  - *Zastosowania*: Systemy czasu rzeczywistego, embedded
+**Języki programowania**: **Python** (NumPy, Pandas, bogate biblioteki ML), **MATLAB/Simulink** (gotowe modele, wizualizacja), **Julia** (wysoka wydajność, składnia Python), **C++** (maksymalna wydajność, systemy czasu rzeczywistego).
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla szeregów czasowych
-- **Geolokalizacja**: Przetwarzanie danych przestrzennych
-- **IoT**: Integracja z protokołami przemysłowymi
-- **Compliance**: Zgodność z normami branżowymi
+**Specjalne wymagania OZE** to optymalizacja dla szeregów czasowych, przetwarzanie danych przestrzennych, integracja z protokołami przemysłowymi i zgodność z normami branżowymi.
 
-**💡 Praktyczne wskazówki:**
-- **Microservices**: Podział na niezależne usługi
-- **Containerization**: Docker, Kubernetes
-- **Monitoring**: Prometheus, Grafana, ELK Stack
-- **Testing**: Unit tests, integration tests, load testing
+**Microservices**, containerization (Docker, Kubernetes), monitoring (Prometheus, Grafana) i comprehensive testing zapewniają skalowalność i niezawodność systemów.
 </InstructorNotes>
 
 </Slide>
@@ -603,46 +440,17 @@ Efektywne przechowywanie, indeksowanie i szybki dostęp do danych czasowych z sy
 </SupportingDetails>
 
 <InstructorNotes>
-**Warstwa baz danych**
+Warstwa baz danych zapewnia efektywne przechowywanie, indeksowanie i szybki dostęp do danych czasowych z systemów OZE, zapewniając integralność danych i optymalizację zapytań.
 
-**⏰ Bazy czasowe - kluczowe dla OZE:**
-- **InfluxDB**: Optymalizacja dla danych czasowych, automatyczna kompresja
-  - *Zalety*: Wysoka wydajność, łatwe agregacje, retencja danych
-  - *Zastosowania*: Dane z czujników, pomiary SCADA, KPI
-- **TimescaleDB**: PostgreSQL + rozszerzenia czasowe
-  - *Zalety*: SQL, ACID, skalowalność, integracja z ekosystemem PostgreSQL
-  - *Zastosowania*: Złożone zapytania, analizy biznesowe
-- **Prometheus**: Monitoring, alerting, time series
-  - *Zalety*: Pull model, service discovery, alerting rules
-  - *Zastosowania*: Monitoring systemów, metryki aplikacji
+**Bazy czasowe** są kluczowe dla OZE: **InfluxDB** oferuje optymalizację dla danych czasowych i automatyczną kompresję, **TimescaleDB** łączy PostgreSQL z rozszerzeniami czasowymi, a **Prometheus** specjalizuje się w monitoringu i alerting.
 
-**🔗 Bazy relacyjne:**
-- **PostgreSQL**: Open source, rozszerzenia, JSON support
-  - *Zalety*: ACID, transakcje, zaawansowane indeksy
-  - *Zastosowania*: Dane strukturalne, użytkownicy, konfiguracje
-- **MySQL**: Popularność, łatwość użycia, performance
-  - *Zalety*: Szerokie wsparcie, optymalizacja, replikacja
-  - *Zastosowania*: Aplikacje webowe, CMS, logi
+**Bazy relacyjne**: **PostgreSQL** zapewnia ACID, transakcje i zaawansowane indeksy, **MySQL** oferuje szerokie wsparcie i łatwość użycia dla aplikacji webowych.
 
-**📄 Bazy dokumentowe i wyszukiwarki:**
-- **MongoDB**: Dokumenty JSON, skalowalność, elastyczność
-  - *Zalety*: Schemaless, agregacje, geospatial queries
-  - *Zastosowania*: Dane nieustrukturyzowane, konfiguracje, logi
-- **Elasticsearch**: Wyszukiwanie pełnotekstowe, analizy, agregacje
-  - *Zalety*: Real-time search, analizy, wizualizacje
-  - *Zastosowania*: Logi, metryki, wyszukiwanie, analizy
+**Bazy dokumentowe**: **MongoDB** zapewnia schemaless, agregacje i geospatial queries, **Elasticsearch** oferuje wyszukiwanie pełnotekstowe, analizy i wizualizacje.
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla szeregów czasowych
-- **Geolokalizacja**: Indeksy przestrzenne, geospatial queries
-- **IoT**: Integracja z protokołami przemysłowymi
-- **Compliance**: Audyty, backup, recovery
+**Specjalne wymagania OZE** to optymalizacja dla szeregów czasowych, geolokalizacja (indeksy przestrzenne), integracja z protokołami przemysłowymi i compliance (audyty, backup, recovery).
 
-**💡 Praktyczne wskazówki:**
-- **Hybrid approach**: Różne bazy dla różnych typów danych
-- **Data modeling**: Optymalizacja schematów dla zapytań
-- **Indexing**: Indeksy dla wydajności zapytań
-- **Backup**: Strategie backupu i recovery
+**Hybrid approach** wykorzystuje różne bazy dla różnych typów danych, z optymalizacją schematów, indeksami dla wydajności i strategiami backupu.
 </InstructorNotes>
 
 </Slide>
@@ -668,102 +476,23 @@ Zapewnienie skalowalnego, bezpiecznego i niezawodnego środowiska wykonawczego d
 </SupportingDetails>
 
 <InstructorNotes>
-**Warstwa infrastruktury**
+Warstwa infrastruktury zapewnia skalowalne, bezpieczne i niezawodne środowisko wykonawcze dla aplikacji OZE, integrując systemy IoT/SCADA i optymalizując koszty i wydajność.
 
-**☁️ Chmura obliczeniowa:**
-- **AWS**: EC2, S3, Lambda, IoT Core, Greengrass
-  - *Zalety*: Szeroka gama usług, globalna infrastruktura, pay-as-you-go
-  - *Zastosowania*: Skalowalne aplikacje, IoT, machine learning
-- **Azure**: Virtual Machines, Blob Storage, Functions, IoT Hub
-  - *Zalety*: Integracja z Microsoft ecosystem, enterprise features
-  - *Zastosowania*: Aplikacje korporacyjne, hybrid cloud
-- **GCP**: Compute Engine, Cloud Storage, Cloud Functions, IoT Core
-  - *Zalety*: Machine learning, data analytics, globalna sieć
-  - *Zastosowania*: AI/ML, big data, globalne aplikacje
+**Chmura obliczeniowa**: **AWS** oferuje szeroką gamę usług (EC2, S3, Lambda, IoT Core), **Azure** zapewnia integrację z Microsoft ecosystem, a **GCP** specjalizuje się w machine learning i data analytics.
 
-**🐳 Orkiestracja i konteneryzacja:**
-- **Kubernetes**: Orkiestracja kontenerów, skalowanie, load balancing
-  - *Zalety*: Automatyzacja, wysoką dostępność, portability
-  - *Zastosowania*: Microservices, CI/CD, hybrid cloud
-- **Docker**: Konteneryzacja aplikacji, izolacja, portability
-  - *Zalety*: Konsystencja środowisk, łatwość deploymentu
-  - *Zastosowania*: Development, testing, production
+**Orkiestracja**: **Kubernetes** zapewnia orkiestrację kontenerów, skalowanie i load balancing, **Docker** oferuje konteneryzację aplikacji i izolację środowisk.
 
-**🔧 Edge computing:**
-- **Przetwarzanie lokalne**: Redukcja opóźnień, praca offline
-- **Edge gateways**: Przetwarzanie na brzegu sieci, filtracja danych
-- **Fog computing**: Warstwa między edge a chmurą
-- **5G**: Szybka komunikacja, niskie opóźnienia
+**Edge computing** obejmuje przetwarzanie lokalne (redukcja opóźnień), edge gateways (filtracja danych), fog computing (warstwa między edge a chmurą) i 5G (szybka komunikacja).
 
-**📡 IoT i akwizycja danych:**
-- **Protokoły przemysłowe**: Modbus, DNP3, IEC 61850
-- **SCADA**: Systemy nadzoru i kontroli
-- **Smart sensors**: Inteligentne czujniki z przetwarzaniem
-- **LoRaWAN**: Sieci IoT o niskim poborze mocy
+**IoT i akwizycja danych** wykorzystuje protokoły przemysłowe (Modbus, DNP3, IEC 61850), systemy SCADA, smart sensors i sieci LoRaWAN o niskim poborze mocy.
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla szeregów czasowych
-- **Geolokalizacja**: Edge computing w lokalizacjach zdalnych
-- **Compliance**: Zgodność z normami branżowymi
-- **Security**: Cyberbezpieczeństwo, szyfrowanie
+**Specjalne wymagania OZE** to optymalizacja dla szeregów czasowych, geolokalizacja (edge computing w lokalizacjach zdalnych), zgodność z normami branżowymi i cyberbezpieczeństwo.
 
-**💡 Praktyczne wskazówki:**
-- **Hybrid approach**: Kombinacja chmury i edge computing
-- **Monitoring**: Szybkie wykrywanie problemów, alerty
-- **Security**: Szyfrowanie, uwierzytelnianie, audyty
-- **Cost optimization**: Optymalizacja kosztów chmury
+**Hybrid approach** łączy chmurę z edge computing, zapewniając monitoring, bezpieczeństwo i optymalizację kosztów.
 </InstructorNotes>
 
 </Slide>
 
-<VisualSeparator type="data" />
-
-<Slide title="📊 Przepływ danych - od czujnika do wykresu" type="tip">
-
-<KeyPoints title="🔄 Przykład praktyczny">
-1. 📡 **Czujnik irradiancji** → gateway edge (filtracja medianowa, uśrednianie minutowe)
-2. 🌊 **Strumień do brokera** (Kafka/MQTT) → walidacja, wzbogacanie metadanymi
-3. 🔄 **ETL do bazy czasowej** (InfluxDB/TimescaleDB) + archiwizacja w obiekcie (S3)
-4. 🔗 **Backend wystawia API** (agregacje, KPI PR/yield) → Frontend wizualizuje
-</KeyPoints>
-
-<InstructorNotes>
-**Przepływ danych – od czujnika do wykresu (przykład)**
-
-**📡 Etap 1: Akwizycja danych**
-- **Czujnik irradiancji** → gateway edge (filtracja medianowa, uśrednianie minutowe)
-- **Filtracja**: Usuwanie wartości odstających, uśrednianie
-- **Agregacja**: Redukcja objętości danych, zachowanie informacji
-
-**🌊 Etap 2: Transport i walidacja**
-- **Strumień do brokera** (Kafka/MQTT) → walidacja, wzbogacanie metadanymi
-- **Walidacja**: Sprawdzenie zakresów, spójności czasowej
-- **Wzbogacanie**: Dodanie metadanych (lokalizacja, typ czujnika, kalibracja)
-
-**💾 Etap 3: Przechowywanie i archiwizacja**
-- **ETL do bazy czasowej** (InfluxDB/TimescaleDB) + archiwizacja w obiekcie (S3)
-- **Baza czasowa**: Szybki dostęp do danych, agregacje
-- **Archiwizacja**: Długoterminowe przechowywanie, compliance
-
-**🖥️ Etap 4: Przetwarzanie i wizualizacja**
-- **Backend wystawia API** (agregacje, KPI PR/yield) → Frontend wizualizuje
-- **Agregacje**: KPI, statystyki, trendy
-- **Wizualizacja**: Dashboardy, wykresy, alerty
-
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla szeregów czasowych
-- **Geolokalizacja**: Routing do najbliższych serwerów
-- **Compliance**: Audyty, backup, recovery
-- **Security**: Szyfrowanie, uwierzytelnianie
-
-**💡 Praktyczne wskazówki:**
-- **Data quality**: Walidacja, oczyszczanie, imputacja
-- **Performance**: Optymalizacja zapytań, indeksy, cache
-- **Monitoring**: Szybkie wykrywanie problemów, alerty
-- **Cost optimization**: Optymalizacja kosztów chmury
-</InstructorNotes>
-
-</Slide>
 
 <VisualSeparator type="default" />
 
@@ -777,43 +506,17 @@ Zapewnienie skalowalnego, bezpiecznego i niezawodnego środowiska wykonawczego d
 </KeyPoints>
 
 <InstructorNotes>
-**Dobre praktyki architektoniczne (na projektach OZE)**
+Dobre praktyki architektoniczne zapewniają niezawodność, skalowalność i bezpieczeństwo systemów OZE poprzez przemyślane podejście do projektowania i implementacji.
 
-**🔧 Separacja odpowiedzialności:**
-- **Kontrakty API** (OpenAPI): Dokumentacja, wersjonowanie, walidacja
-- **Microservices**: Niezależne usługi, skalowanie, deployment
-- **Domain boundaries**: Podział według domen biznesowych
-- **Data ownership**: Jasne granice danych między usługami
+**Separacja odpowiedzialności** obejmuje kontrakty API (OpenAPI), microservices z niezależnymi usługami, podział według domen biznesowych i jasne granice danych między usługami.
 
-**🔄 Idempotentne przetwarzanie:**
-- **Obsługa duplikatów**: Idempotentne operacje, deduplikacja
-- **Lag handling**: Obsługa opóźnień w strumieniach danych
-- **Retry mechanisms**: Automatyczne ponowne próby, circuit breakers
-- **Event sourcing**: Pełna historia zdarzeń, replay
+**Idempotentne przetwarzanie** zapewnia obsługę duplikatów, lag handling w strumieniach danych, automatyczne ponowne próby z circuit breakers i event sourcing dla pełnej historii zdarzeń.
 
-**📊 Strategia braków danych:**
-- **Imputacja**: Uzupełnianie brakujących wartości (interpolacja, ML)
-- **Oznaczanie luk**: Explicit handling, flagi jakości danych
-- **Data quality**: Walidacja, oczyszczanie, monitoring
-- **Fallback strategies**: Alternatywne źródła danych
+**Strategia braków danych** wykorzystuje imputację (interpolacja, ML), oznaczanie luk z flagami jakości danych, walidację i oczyszczanie oraz fallback strategies z alternatywnymi źródłami.
 
-**📈 Monitoring i alerty:**
-- **Prometheus + Grafana**: Metryki, dashboardy, alerty
-- **SLO (Service Level Objectives)**: Opóźnienia, dostępność, throughput
-- **Logging**: Strukturalne logi, correlation IDs, tracing
-- **Health checks**: Liveness, readiness, dependency checks
+**Monitoring i alerty** opierają się na Prometheus + Grafana dla metryk i dashboardów, SLO dla opóźnień i dostępności, strukturalnych logach z correlation IDs oraz health checks.
 
-**🔧 Specjalne wymagania OZE:**
-- **Dane czasowe**: Optymalizacja dla szeregów czasowych
-- **Geolokalizacja**: Routing do najbliższych serwerów
-- **Compliance**: Audyty, backup, recovery
-- **Security**: Szyfrowanie, uwierzytelnianie
-
-**💡 Praktyczne wskazówki:**
-- **Design for failure**: Graceful degradation, circuit breakers
-- **Performance**: Optymalizacja zapytań, indeksy, cache
-- **Security**: Defense in depth, zero trust, encryption
-- **Cost optimization**: Right-sizing, auto-scaling, spot instances
+**Design for failure**, optymalizacja wydajności, defense in depth security i optymalizacja kosztów zapewniają niezawodność systemów OZE.
 </InstructorNotes>
 
 </Slide>
