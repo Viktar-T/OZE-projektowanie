@@ -27,4 +27,5 @@
   oze-pr\docs\solar-thermal-systems
   oze-pr\docs\wind. add only. these file should be short and contain only imprortent information.
 * [ ] I see in browser: "**P `<sub>`max `</sub>`**". Fix oze-pr\docs\wyklady\wyklad-01-wprowadzenie\08-przykład-z-ATUM-p.-7.1.md
-* [ ]
+* [ ] implemen **@InstractorNotes-v2.md** for **@03-pvsol-info-kroki.mdx**
+* [ ] implemen **@InstractorNotes-v2.md** for **@03-pvsol-info-kroki.mdx**

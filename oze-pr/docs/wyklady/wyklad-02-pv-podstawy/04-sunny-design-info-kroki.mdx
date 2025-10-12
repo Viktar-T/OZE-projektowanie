@@ -37,35 +37,19 @@ import {
 </KeyPoints>
 
 <InstructorNotes>
-**Sunny Design — architektura narzędzia**
+Przyjrzyjmy się architekturze Sunny Design. To zintegrowane środowisko webowe zbudowane w **architekturze warstwowej** – podobnie jak PV*SOL, ale prostsze i bardziej ukierunkowane na szybki workflow.
 
-**🔧 Warstwy architektury:**
-Sunny Design to zintegrowane środowisko webowe zbudowane w architekturze warstwowej:
+Pierwsza warstwa to **interfejs webowy**. Kreatory projektów prowadzą nas przez proces krok po kroku – dach płaski, skośny, instalacja gruntowa. Każdy typ ma swój uproszczony proces. Modelowanie powierzchni jest podstawowe, ale wystarczające do większości projektów. **Układy montażowe są predefiniowane** – wybierasz typ dachu, narzędzie podpowiada standardowe konfiguracje. To przyspiesza pracę, ale ogranicza elastyczność w nietypowych przypadkach.
 
-**🌐 Interfejs webowy:**
-- **Kreatory projektów** - uproszczone procesy dla różnych typów instalacji (dach płaski/skośny/grunt)
-- **Modelowanie powierzchni** - podstawowe narzędzia do definiowania obszarów montażu
-- **Układy montażowe** - predefiniowane konfiguracje dla różnych typów dachów
+Druga warstwa to **biblioteka komponentów**. Rozbudowana baza modułów PV z pełnymi parametrami technicznymi. Falowniki SMA to mocna strona – szczególnie bogata oferta z automatycznym doborem. System zna wszystkie modele, zakresy napięć, limity prądowe. Oprócz tego mamy akcesoria – systemy montażowe, okablowanie, zabezpieczenia. **Reguły doboru działają w tle** – system automatycznie sprawdza kompatybilność między komponentami. Weryfikatory kontrolują zakresy napięć i prądów, ostrzegają przed błędami.
 
-**📚 Biblioteka komponentów:**
-- **Moduły PV** - rozbudowana baza z parametrami technicznymi
-- **Falowniki SMA** - szczególnie bogata oferta z automatycznym doborem
-- **Akcesoria** - systemy montażowe, okablowanie, zabezpieczenia
-- **Reguły doboru** - automatyczne sprawdzanie kompatybilności
-- **Weryfikatory** - kontrola zakresów napięć i prądów
+Trzecia warstwa to **silnik wymiarowania DC/AC**. Tu dzieje się magia doboru stringów. Kontrola napięć – Voc (napięcie obwodu otwartego) zimą, Vmpp (napięcie mocy maksymalnej) przy różnych temperaturach. Parametry startowe Vstart i Vstop dla falowników – kiedy falownik uruchamia się rano, kiedy wyłącza wieczorem. **Bilans MPPT** optymalizuje wykorzystanie trackerów – równomierne rozłożenie mocy między wejściami. DC/AC ratio kontroluje stosunek mocy DC do AC – kluczowy parametr dla wydajności systemu. Analiza obciążenia inwerterów pokazuje, jak intensywnie wykorzystujemy falownik.
 
-**⚡ Silnik wymiarowania DC/AC:**
-- **Kontrola napięć** - Voc (napięcie obwodu otwartego), Vmpp (napięcie mocy maksymalnej)
-- **Parametry startowe** - Vstart/Vstop dla falowników
-- **Bilans MPPT** - optymalizacja wykorzystania trackerów
-- **DC/AC ratio** - kontrola stosunku mocy DC do AC
-- **Obciążenie inwerterów** - analiza wykorzystania mocy
+Kluczowe zalety tej architektury? **Prostota użycia** – intuicyjny interfejs, nie potrzebujesz tygodnia szkoleń. **Automatyzacja** – inteligentny dobór komponentów oszczędza czas. **Integracja z ekosystemem SMA** – optymalizacja pod ich sprzęt. **Szybkość** – od pustego projektu do raportu w godzinę, może dwie. To narzędzie do szybkich wycen i presales, nie do głębokich analiz naukowych.
+</InstructorNotes>
 
-**💡 Kluczowe zalety architektury:**
-- **Prostota użycia** - intuicyjny interfejs webowy
-- **Automatyzacja** - inteligentny dobór komponentów
-- **Integracja SMA** - optymalizacja dla ekosystemu SMA
-- **Szybkość** - przyspieszone procesy projektowe
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Sunny Design to zintegrowane środowisko webowe w **architekturze trójwarstwowej**. Pierwsza warstwa to **interfejs webowy** z kreatorami prowadzącymi przez proces projektowania różnych typów instalacji. Druga to **biblioteki komponentów** z rozbudowaną bazą modułów, szczególnie bogatą ofertą falowników SMA z automatycznym doborem i weryfikatorami zakresów. Trzecia warstwa to **silnik wymiarowania DC/AC** kontrolujący napięcia, bilans MPPT i obciążenie inwerterów. Kluczowe zalety? **Prostota, automatyzacja, integracja SMA i szybkość** – od pustego projektu do raportu w godzinę lub dwie. To narzędzie do szybkich wycen i presales.
 </InstructorNotes>
 
 </Slide>
@@ -89,26 +73,17 @@ Sunny Design to zintegrowane środowisko webowe zbudowane w architekturze warstw
 </KeyPoints>
 
 <InstructorNotes>
-**Warstwa środowiskowa i raportowanie**
+Następna warstwa to **środowisko i raportowanie**. Tu Sunny Design pokazuje swoją praktyczną stronę.
 
-**🌤️ Warstwa środowiskowa:**
-- **Dane klimatyczne** - wbudowane profile nasłonecznienia i temperatury dla różnych lokalizacji
-- **Modele strat** - uproszczone, ale praktyczne modele uwzględniające:
-  - **Kable** - straty w okablowaniu DC/AC
-  - **Soiling** - zanieczyszczenie modułów
-  - **Orientacja** - wpływy kąta nachylenia i azymutu
-- **Profile regionalne** - dostosowane do warunków klimatycznych Polski
+**Warstwa środowiskowa** ma wbudowane profile nasłonecznienia i temperatury dla różnych lokalizacji na świecie. System automatycznie pobiera dane dla wybranego miejsca. Modele strat są uproszczone, ale praktyczne i wystarczające do większości projektów. **Straty kablowe** DC i AC – długość przewodów i przekroje. **Soiling**, czyli zanieczyszczenie modułów – kurz, pył, osady. To sezonowy parametr, latem więcej niż zimą. **Orientacja** – wpływ kąta nachylenia i azymutu na produkcję. Profile regionalne są dostosowane do warunków klimatycznych – w Polsce inne wartości niż w Hiszpanii czy Niemczech.
 
-**📋 Raportowanie i warianty:**
-- **Raporty PDF** - profesjonalne dokumenty z wynikami analiz
-- **Konfiguracja łańcuchów** - szczegółowe schematy połączeń
-- **Lista komponentów** - kompletny BOM (Bill of Materials)
-- **Warianty** - łatwe porównanie różnych rozwiązań
+**Raportowanie i warianty** to mocna strona narzędzia. Raporty PDF są profesjonalne i czytelne – świetne do pokazania klientowi. Nie są tak szczegółowe jak z PV*SOL, ale zawierają wszystko, co potrzebne do wyceny. **Konfiguracja łańcuchów** to szczegółowe schematy połączeń – instalator dostaje jasną instrukcję, jak połączyć stringi. Lista komponentów to kompletny BOM (Bill of Materials, czyli zestawienie materiałów) – gotowy do zamówienia. **Warianty** są bardzo łatwe do tworzenia i porównania – kliknij, skopiuj, zmień falownik, porównaj. W pięć minut masz dwa warianty obok siebie.
 
-**💡 Praktyczne zastosowania:**
-- **Presales** - szybkie wyceny dla klientów
-- **Dokumentacja** - materiały dla instalatorów
-- **Optymalizacja** - porównanie różnych konfiguracji
+Praktyczne zastosowania? **Presales** to pierwsze – szybkie wyceny dla klientów. Spotykasz się z klientem, robisz projekt na miejscu, wychodzisz z gotową ofertą. **Dokumentacja** dla instalatorów – materiały są czytelne i kompletne. **Optymalizacja** – porównujesz różne konfiguracje, szukasz najlepszego balansu między kosztem a wydajnością. To narzędzie do pracy komercyjnej, nie do analizy naukowej.
+</InstructorNotes>
+
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Warstwa środowiskowa i raportowanie pokazują praktyczną stronę narzędzia. **Dane klimatyczne** są wbudowane z automatycznym pobieraniem dla lokalizacji. **Modele strat** uwzględniają kable, soiling i orientację – uproszczone ale wystarczające. Profile regionalne dostosowane do warunków lokalnych. **Raporty PDF** są profesjonalne i czytelne, idealne dla klienta. Konfiguracja łańcuchów daje jasne instrukcje dla instalatora. **BOM** jest gotowy do zamówienia. Warianty tworzy się w kilka minut. Praktyczne zastosowania? **Presales, dokumentacja i optymalizacja** – narzędzie komercyjne, nie naukowe.
 </InstructorNotes>
 
 </Slide>
@@ -132,28 +107,17 @@ Sunny Design to zintegrowane środowisko webowe zbudowane w architekturze warstw
 </KeyPoints>
 
 <InstructorNotes>
-**Integracje i ekosystem SMA**
+Teraz kluczowy aspekt – **integracje i ekosystem SMA**. To serce Sunny Design, powód, dla którego narzędzie jest tak popularne w instalacjach z komponentami SMA.
 
-**🤝 Współpraca z SMA:**
-Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
+Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA od podstaw. **Naturalna integracja** oznacza, że algorytmy doboru są dostosowane do charakterystyk falowników SMA. System zna każdy model, każdą wersję firmware, każdą specyfikę techniczną. **Wejścia MPPT** są optymalizowane automatycznie – narzędzie rozdziela stringi tak, żeby maksymalnie wykorzystać trackery. Zakresy napięć są kontrolowane w locie – system ostrzega, jeśli coś może wyjść poza specyfikację. **Ograniczenia prądowe** to bezpieczne konfiguracje łańcuchów – nie przekroczysz limitów, bo system tego nie pozwoli. Automatyczne propozycje to inteligentny dobór – masz 80 kWp, system podpowiada trzy najlepsze opcje falowników SMA.
 
-**⚡ Naturalna integracja:**
-- **Logika doboru** - algorytmy dostosowane do charakterystyk falowników SMA
-- **Wejścia MPPT** - optymalizacja wykorzystania trackerów
-- **Zakresy napięć** - automatyczna kontrola parametrów technicznych
-- **Ograniczenia prądowe** - bezpieczne konfiguracje łańcuchów
-- **Automatyczne propozycje** - inteligentny dobór urządzeń SMA
+**Eksport i materiały** to kolejna silna strona. Materiały dla klienta są profesjonalne – raporty i prezentacje gotowe do druku lub wysłania mailem. Eksport danych projektu do innych systemów – jeśli firma używa wewnętrznego CRM czy ERP (Enterprise Resource Planning, system planowania zasobów przedsiębiorstwa), dane można wyeksportować. **SMA Data Manager** to bezpośrednia integracja z systemami monitoringu – projekt z Sunny Design można przesłać do systemu nadzoru instalacji. Oszczędza to godziny ręcznego przepisywania danych.
 
-**📤 Eksport i materiały:**
-- **Materiały dla klienta** - profesjonalne raporty i prezentacje
-- **Dane projektu** - eksport konfiguracji do innych systemów
-- **SMA Data Manager** - bezpośrednia integracja z systemami monitoringu
+Korzyści integracji? **Szybszy workflow** to pierwsza – mniej ręcznych operacji, więcej automatyzacji. **Mniejsza liczba błędów** dzięki automatycznej walidacji – system sprawdza setki parametrów w tle. **Lepsze wsparcie** – masz dostęp do aktualizacji i nowych funkcji, jak tylko SMA wypuszcza nowe produkty. **Gwarancja kompatybilności** – jeśli Sunny Design podpowiada konfigurację, to ona zadziała. To ogromna wartość, szczególnie dla firm instalacyjnych, które nie chcą ryzyka niekompatybilnych komponentów.
+</InstructorNotes>
 
-**💡 Korzyści integracji:**
-- **Szybszy workflow** - mniej ręcznych operacji
-- **Mniejsza liczba błędów** - automatyczna walidacja
-- **Lepsze wsparcie** - dostęp do aktualizacji i nowych funkcji
-- **Kompatybilność** - gwarancja współpracy komponentów
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Integracja z ekosystemem SMA to serce Sunny Design. **Naturalna integracja** oznacza algorytmy dostosowane do falowników SMA – system zna każdy model i specyfikację. **Wejścia MPPT** są optymalizowane automatycznie, zakresy napięć kontrolowane w locie. Automatyczne propozycje podpowiadają najlepsze opcje dla danej mocy. **Eksport i materiały** – profesjonalne raporty dla klienta, integracja z SMA Data Manager eliminuje ręczne przepisywanie. Korzyści? **Szybszy workflow, mniejsza liczba błędów, lepsze wsparcie i gwarancja kompatybilności**. Jeśli narzędzie podpowiada konfigurację, ona zadziała – ogromna wartość dla firm instalacyjnych.
 </InstructorNotes>
 
 </Slide>
@@ -175,34 +139,21 @@ Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
 </SupportingDetails>
 
 <InstructorNotes>
-**Możliwości i ograniczenia Sunny Design**
+Przyjrzyjmy się teraz możliwościom i ograniczeniom Sunny Design. To ważne, żeby wiedzieć, kiedy narzędzie się sprawdzi, a kiedy warto sięgnąć po coś innego.
 
-**📊 Tabela porównawcza:**
+Zacznijmy od **doboru łańcuchów**. Możliwości są spore – automatyczne i ręczne konfiguracje, walidacja zakresów napięć i prądów. System ostrzega przed błędami, podpowiada optymalne konfiguracje. **Uwaga praktyczna**: zawsze sprawdź temperatury minimalne i maksymalne dla lokalizacji. Testuj różne konfiguracje MPPT – czasem trzy stringi na jednym MPPT to lepsze rozwiązanie niż dwa na jednym i jeden na drugim. Praktyka? Testuj różne scenariusze sezonowe – jak system zachowa się zimą przy minus 20, jak latem przy plus 40.
 
-**🔧 Dobór łańcuchów:**
-- **Możliwości:** Automatyczne i ręczne konfiguracje, walidacja zakresów
-- **Uwaga:** Zawsze sprawdź temperatury minimalne/maksymalne (Tmin/Tmax) i różne konfiguracje MPPT
-- **Praktyka:** Testuj różne scenariusze sezonowe
+Kolejny obszar to **model 3D**. Możliwości są podstawowe – można modelować orientację modułów, podstawową geometrię dachu. Ograniczenie? **Brak pełnej siatki zacienienia 3D** jak w PV*SOL premium. Dla prostych dachów bez przeszkód wystarczy. Dla złożonych cieni z kominami, antenami, drzewami – rozważ PV*SOL premium. Różnica w dokładności może wynosić kilka procent produkcji.
 
-**🏗️ Model 3D:**
-- **Możliwości:** Podstawowe modelowanie 3D, orientacja modułów
-- **Ograniczenia:** Brak pełnej siatki zacienienia 3D
-- **Rekomendacja:** Dla złożonych cieni rozważ PV*SOL premium
+**Meteodane** są wbudowane – profile irradiancji i temperatur dla lokalizacji na całym świecie. To wygodne, ale warto weryfikować. **Porównaj wyniki z PVGIS** jako sanity-check. Jeśli różnica jest większa niż 10%, szukaj przyczyny. Praktyka? Porównuj wyniki z różnymi źródłami danych – meteodane mogą się różnić między bazami.
 
-**🌤️ Meteodane:**
-- **Możliwości:** Wbudowane profile irradiancji i temperatur
-- **Uwaga:** Weryfikuj z PVGIS dla sanity-check
-- **Praktyka:** Porównuj wyniki z różnymi źródłami danych
+**Raporty** są czytelne i profesjonalne – PDF-y ofertowo-techniczne, gotowe do pokazania klientowi. Zastosowanie? Świetne na presales i koncepty wstępne. Ograniczenie? Mniej szczegółowe niż profesjonalne narzędzia – nie dostaniesz analizy godzinowej czy szczegółowych wykresów strat. Do wyceny wystarcza, do audytu bankowego może być za mało.
 
-**📋 Raporty:**
-- **Możliwości:** Czytelne PDF-y ofertowo-techniczne
-- **Zastosowanie:** Dobrze na presales/koncepty
-- **Ograniczenia:** Mniej szczegółowe niż profesjonalne narzędzia
+Na koniec **ekosystem SMA**. Mocna strona to spójność z falownikami SMA – najszybszy workflow, pełna automatyzacja, gwarancja kompatybilności. **Najlepszy wybór przy projektach z SMA**. Ograniczenie? Mniej elastyczny przy innych markach falowników. Można użyć, ale traci część automatyzacji i optymalizacji. W praktyce – jeśli projekt opiera się na SMA, Sunny Design to naturalna pierwsza opcja.
+</InstructorNotes>
 
-**🤝 Ekosystem:**
-- **Mocne strony:** Spójność z falownikami SMA
-- **Zastosowanie:** Najszybszy workflow przy SMA
-- **Ograniczenia:** Mniej elastyczny przy innych markach
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Możliwości i ograniczenia określają, kiedy narzędzie się sprawdzi. **Dobór łańcuchów** – automatyczny i ręczny z walidacją, ale testuj temperatury ekstremalne i różne konfiguracje MPPT. **Model 3D** jest podstawowy bez pełnej siatki zacienienia – dla złożonych cieni rozważ PV*SOL premium. **Meteodane** wbudowane, ale weryfikuj z PVGIS. **Raporty** świetne na presales, mniej szczegółowe niż profesjonalne narzędzia. **Ekosystem SMA** to mocna strona – najszybszy workflow przy komponentach SMA, ale mniej elastyczny przy innych markach. Kluczem jest **rozumienie, kiedy narzędzie się sprawdzi** – projekty SMA, szybkie wyceny, presales.
 </InstructorNotes>
 
 </Slide>
@@ -226,24 +177,25 @@ Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
 </KeyPoints>
 
 <InstructorNotes>
-**Proces budowy projektu (10 kroków)**
+Przejdźmy teraz przez proces budowy projektu w Sunny Design. To **10 kroków**, które prowadzą od pustego ekranu do gotowego raportu. W praktyce jest to szybszy proces niż w PV*SOL – automatyzacja robi dużą część pracy.
 
-**📋 Krok po kroku:**
+**Kroki 1-3 to podstawy projektu**. Pierwszy krok – utwórz projekt. Wybierz lokalizację z mapy lub wpisz współrzędne. Typ dachu – płaski, skośny, czy instalacja gruntowa. Ustaw kierunek i kąt nachylenia. **System automatycznie pobiera dane meteorologiczne** dla lokalizacji.
 
-**1-3. Podstawy projektu:**
-1. **Utwórz projekt** - wybierz lokalizację, typ dachu (płaski/skośny) lub grunt, ustaw kierunek i kąt
-2. **Zdefiniuj powierzchnie** - marginesy od krawędzi, strefy niedostępne, korytarze serwisowe
-3. **Wybierz moduły PV** - moc, wymiary; w razie potrzeby dopasuj siatkę ułożenia (pitch/tilt na dachu płaskim)
+Drugi krok to definicja powierzchni. Marginesy od krawędzi dachu – bezpieczeństwo i normy. Strefy niedostępne – kominy, okna połaciowe, wywietrzniki. Korytarze serwisowe – dostęp dla konserwacji. **System podpowiada standardowe odstępy** według norm lokalnych.
 
-**4-6. Konfiguracja elektryczna:**
-4. **Dobierz falownik(i)** - moc AC, liczba MPPT, zakresy napięć; rozważ docelowe **DC/AC ratio**
-5. **Automatyczny dobór łańcuchów** - pozwól narzędziu rozmieścić stringi; przejrzyj propozycję
-6. **Ręczna korekta stringów** - wyrównaj długości i warunki pracy między wejściami MPPT
+Trzeci krok to wybór modułów PV. Moc, wymiary fizyczne, parametry elektryczne. W razie potrzeby dopasuj siatkę ułożenia – pitch (odstęp między rzędami) i tilt (kąt nachylenia) na dachu płaskim. System pokazuje, ile modułów się zmieści, jaka będzie moc całkowita.
 
-**💡 Kluczowe zasady:**
-- **Automatyzacja** - wykorzystaj inteligentne funkcje narzędzia
-- **Weryfikacja** - zawsze sprawdź propozycje systemu
-- **Optymalizacja** - dostosuj do specyfiki projektu
+**Kroki 4-6 to konfiguracja elektryczna**. Czwarty krok – dobierz falownik lub falowniki. Moc AC, liczba trackerów MPPT, zakresy napięć. Rozważ docelowe **DC/AC ratio** – często 1.1 do 1.3. System podpowiada kilka opcji z bazy SMA, możesz też wybrać ręcznie.
+
+Piąty krok to automatyczny dobór łańcuchów. To magia Sunny Design – pozwól narzędziu rozmieścić stringi. **System optymalizuje konfigurację** pod kątem napięć, prądów, balansu MPPT. Przejrzyj propozycję, sprawdź, czy ma sens. Czasem algorytm robi nietypowe wybory, warto zrozumieć dlaczego.
+
+Szósty krok to ręczna korekta stringów. Wyrównaj długości między wejściami – stringi o podobnej długości pracują stabilniej. Dopasuj warunki pracy między wejściami MPPT – unikaj sytuacji, gdzie jeden MPPT ma pełne słońce, drugi cień.
+
+Kluczowe zasady? **Automatyzacja** – wykorzystuj inteligentne funkcje narzędzia, to oszczędza czas. **Weryfikacja** – zawsze sprawdź propozycje systemu, nie ufaj ślepo. **Optymalizacja** – dostosuj do specyfiki projektu, każda instalacja jest trochę inna.
+</InstructorNotes>
+
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Proces budowy to **10 kroków szybszych niż w PV*SOL** dzięki automatyzacji. Kroki 1-3: lokalizacja z automatycznymi meteodanymi, definicja powierzchni z marginesa i korytarzami, wybór modułów z siatką ułożenia. Kroki 4-6: dobór falownika z DC/AC ratio 1.1-1.3, **automatyczny dobór łańcuchów** przez system, ręczna korekta wyrównująca długości i bilans MPPT. **Automatyzacja oszczędza czas**, weryfikacja chroni przed błędami, optymalizacja dostosowuje do specyfiki. System podpowiada standardowe konfiguracje, ale każda instalacja jest trochę inna. Kluczem jest **wykorzystanie automatyzacji przy zachowaniu kontroli**.
 </InstructorNotes>
 
 </Slide>
@@ -265,23 +217,21 @@ Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
 </KeyPoints>
 
 <InstructorNotes>
-**Analiza i warianty (kroki 7-10)**
+Kontynuujmy proces – **kroki 7-10 to analiza i warianty**. Tu następuje synteza całego projektu i przygotowanie dokumentacji.
 
-**🔍 Dalsze kroki:**
+**Kroki 7-8 to parametry i analiza**. Siódmy krok – ustaw straty podstawowe. Soiling, czyli zanieczyszczenie modułów – w Polsce typowo 2-5% rocznie, zależnie od lokalizacji. Spadki napięć w okablowaniu DC i AC – system oblicza automatycznie na podstawie długości tras. Orientacja i kąt – wpływ na produkcję. **Zanotuj przyjęte wartości** – to ważne przy późniejszych pytaniach klienta.
 
-**7-8. Parametry i analiza:**
-7. **Ustaw straty podstawowe** - soiling, spadki napięć, orientacja; zanotuj przyjęte wartości
-8. **Analiza wyników** - produkcja roczna, PR (jeśli podane), obciążenie inwerterów, DC/AC ratio, ostrzeżenia walidatora
+Ósmy krok to analiza wyników. Produkcja roczna w kWh – ile energii system wyprodukuje. PR (Performance Ratio, wskaźnik wydajności) jeśli podany – typowo 75-85% dla dobrych instalacji. **Obciążenie inwerterów** – czy falowniki są dobrze wykorzystane, czy mamy rezerwy. DC/AC ratio – faktyczny stosunek mocy. Ostrzeżenia walidatora – system podświetla potencjalne problemy, nie ignoruj ich.
 
-**9-10. Warianty i dokumentacja:**
-9. **Warianty A/B** - np. jeden duży falownik vs dwa mniejsze; porównaj uzysk i wskaźniki
-10. **Raport** - wygeneruj PDF; sprawdź czytelność i kompletność (konfiguracja łańcuchów, komponenty, wyniki)
+**Kroki 9-10 to warianty i dokumentacja**. Dziewiąty krok – stwórz warianty A i B. Przykład? Jeden duży falownik 80 kW versus dwa mniejsze po 40 kW. **Porównaj uzysk i wskaźniki** – która konfiguracja daje lepszą wydajność, która jest tańsza, która łatwiejsza w serwisie. Czasem różnice są minimalne, wtedy decyduje cena lub dostępność.
 
-**💡 Praktyczne wskazówki:**
-- **Dokumentuj założenia** - zapisuj przyjęte wartości strat
-- **Porównuj warianty** - testuj różne konfiguracje
-- **Weryfikuj wyniki** - sprawdź ostrzeżenia systemu
-- **Przygotuj dokumentację** - zadbaj o czytelność raportów
+Dziesiąty krok to raport. Wygeneruj PDF z wynikami, schematami, listą komponentów. **Sprawdź czytelność i kompletność** – czy konfiguracja łańcuchów jest jasna, czy lista komponentów jest kompletna, czy wyniki są dobrze zaprezentowane. To dokument, który idzie do klienta lub instalatora, musi być profesjonalny.
+
+Praktyczne wskazówki? **Dokumentuj założenia** – każdą wartość strat, każdą decyzję projektową. Klient zapyta "dlaczego?", musisz mieć odpowiedź. **Porównuj warianty** – testuj różne konfiguracje, szukaj optymalnego rozwiązania. **Weryfikuj wyniki** – sprawdź ostrzeżenia systemu, porównaj z PVGIS. **Przygotuj dokumentację** – zadbaj o czytelność, profesjonalizm, kompletność. Dobry raport sprzedaje projekt.
+</InstructorNotes>
+
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Kroki 7-10 to synteza projektu i dokumentacja. Krok 7: **ustaw straty podstawowe** – soiling typowo 2-5%, spadki napięć automatyczne, zanotuj wartości. Krok 8: **analiza wyników** – produkcja roczna, PR typowo 75-85%, obciążenie inwerterów, DC/AC ratio, ostrzeżenia walidatora. Krok 9: **warianty A/B** – porównaj konfiguracje typu jeden duży vs dwa mniejsze falowniki, sprawdź wydajność i koszty. Krok 10: **raport PDF** – sprawdź czytelność i kompletność. **Dokumentuj założenia, porównuj warianty, weryfikuj wyniki, przygotuj dokumentację**. Dobry raport sprzedaje projekt.
 </InstructorNotes>
 
 </Slide>
@@ -307,28 +257,31 @@ Sunny Design jest zoptymalizowany do pracy z ekosystemem SMA:
 </KeyPoints>
 
 <InstructorNotes>
-**Checklista QA i typowe błędy**
+Teraz **checklista QA i typowe błędy**. To praktyczna wiedza, która oszczędza godziny debugowania i pomaga uniknąć problemów w terenie.
 
-**🔍 Kontrola jakości:**
+Zacznijmy od **checklisty jakości**. Wersja "lekka" dla Sunny Design – szybsza niż dla PV*SOL, bo narzędzie robi część walidacji automatycznie. Pierwszy punkt – **lokalizacja**. Kąt nachylenia i azymut zgodne z założeniami? Sprawdź dwukrotnie, łatwo o pomyłkę przy przepisywaniu.
 
-**✅ Checklista QA (wersja „lekka"):**
-- **Lokalizacja** - kąt/azymut zgodne z założeniami?
-- **Zakresy napięć/prądów** - dla każdego MPPT w porządku (zimą i latem)?
-- **DC/AC ratio** - uzasadnione i optymalne?
-- **Założenia strat** - soiling, spadki zapisane i spójne między wariantami?
-- **Raport** - zawiera konfigurację łańcuchów i listę głównych komponentów?
+Drugi punkt – **zakresy napięć i prądów**. Dla każdego MPPT w porządku zimą i latem? System ostrzega przed przekroczeniem, ale warto sprawdzić ręcznie. Zimą przy minus 20 stopniach, latem przy plus 40. **To punkty ekstremalne**, które determinują poprawność konfiguracji.
 
-**❌ Typowe błędy i szybkie remedia:**
-- **Przekroczenie napięcia zimą** → zmniejsz moduły w stringu lub zmień falownik
-- **Nierówny bilans MPPT** → przełóż stringi między wejściami, by wyrównać obciążenia
-- **Za wysoki clipping** → obniż DC/AC lub podnieś moc AC falownika
-- **Zbyt optymistyczne straty** → zwiększ soiling/spadki do wartości konserwatywnych
+Trzeci punkt – **DC/AC ratio**. Uzasadnione i optymalne? Typowo 1.1 do 1.3, ale zależy od lokalizacji i orientacji. Wyższe ratio daje więcej energii, ale ryzyko clippingu. Niższe ratio to mniejsze clipping, ale gorsza wykorzystanie powierzchni. **Wybór zależy od priorytetów projektu**.
 
-**💡 Praktyczne wskazówki:**
-- **Testuj skrajne warunki** - zima/lato, różne temperatury
-- **Weryfikuj ostrzeżenia** - system podpowiada problemy
-- **Dokumentuj decyzje** - zapisuj uzasadnienia wyborów
-- **Porównuj z innymi narzędziami** - sanity-check wyników
+Czwarty punkt – **założenia strat**. Soiling, spadki napięć zapisane i spójne między wariantami? Jeśli porównujesz warianty, założenia muszą być identyczne. Inaczej porównujesz jabłka z gruszkami.
+
+Piąty punkt – **raport**. Zawiera konfigurację łańcuchów i listę głównych komponentów? Instalator musi wiedzieć, jak połączyć system. Lista komponentów musi być kompletna do zamówienia.
+
+Przejdźmy do **typowych błędów i remedium**. Pierwszy problem – **przekroczenie napięcia zimą**. Napięcie jałowe Voc zimą przekracza maksimum DC falownika. Rozwiązanie? Zmniejsz moduły w stringu lub zmień falownik na taki z wyższym maksymalnym napięciem.
+
+Drugi problem – **nierówny bilans MPPT**. Stringi na różnych wejściach mają różne obciążenia. Jeden MPPT pracuje na 90%, drugi na 50%. Rozwiązanie? **Przełóż stringi między wejściami**, wyrównaj obciążenia. System podpowiada optymalny rozkład, ale czasem trzeba ręcznie dopracować.
+
+Trzeci problem – **za wysoki clipping**. Falownik ogranicza moc zbyt często, tracimy energię. Rozwiązanie? Obniż DC/AC ratio przez zmniejszenie mocy DC lub podnieś moc AC przez wybór większego falownika.
+
+Czwarty problem – **zbyt optymistyczne straty**. Soiling 1%, spadki 0.5% – to mało prawdopodobne w praktyce. Rozwiązanie? Zwiększ do wartości konserwatywnych – soiling 3-5%, spadki 1-2%. **Lepiej niedoszacować produkcję niż rozczarować inwestora**.
+
+Praktyczne wskazówki? **Testuj skrajne warunki** – minus 20 zimą, plus 40 latem. **Weryfikuj ostrzeżenia** – system podpowiada problemy, nie ignoruj ich. **Dokumentuj decyzje** – zapisuj uzasadnienia każdego wyboru. **Porównaj z innymi narzędziami** – sanity-check z PVGIS, jeśli różnica jest duża, szukaj przyczyny. Systematyczna kontrola jakości to fundament profesjonalnej pracy.
+</InstructorNotes>
+
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Checklista QA – wersja lekka dla Sunny Design. **Lokalizacja** – kąt i azymut zgodne, sprawdź dwukrotnie. **Zakresy napięć i prądów** – dla każdego MPPT zimą i latem w porządku, to punkty ekstremalne. **DC/AC ratio** uzasadnione, typowo 1.1-1.3 zależnie od projektu. **Założenia strat** spójne między wariantami, inaczej porównujesz jabłka z gruszkami. **Raport** zawiera konfigurację i BOM kompletny do zamówienia. Typowe błędy? **Przekroczenie napięcia zimą, nierówny bilans MPPT, za wysoki clipping, zbyt optymistyczne straty**. Testuj skrajne warunki, weryfikuj ostrzeżenia, dokumentuj decyzje. **Systematyczna kontrola jakości** to fundament profesjonalizmu.
 </InstructorNotes>
 
 </Slide>
@@ -354,39 +307,23 @@ Wybierz wariant lepszy pod kątem serwisu i strat
 </KeyPoints>
 
 <InstructorNotes>
-**Mini-case: Warianty SMA**
+Na koniec **mini-case do praktycznego ćwiczenia** – warianty z falownikami SMA. To typowy scenariusz, z którym spotkasz się w pracy projektowej.
 
-**📊 Studium przypadku:**
+**Wejście**: mamy dach płaski około 80 kWp. Moduł 400 W – typowa moc dla współczesnych paneli. Lokalizacja do wyboru, powiedzmy Warszawa dla konkretności. Standardowy projekt komercyjny na budynku magazynowym czy hali produkcyjnej.
 
-**🏗️ Wejście:**
-- **Dach płaski** ~80 kWp
-- **Moduł** 400 W
-- **Lokalizacja** - do wyboru (np. Warszawa)
+**Zadanie**: zaprojektuj dwa warianty. **Wariant A** to dwa falowniki po około 40 kW każdy. **Wariant B** to trzy falowniki po około 27 kW. Na pierwszy rzut oka podobne, ale diabeł tkwi w szczegółach. Porównaj **obciążenie MPPT** – jak równomiernie wykorzystujemy trackery. **Rozkład stringów** – jak dzielimy moduły między falowniki. **DC/AC ratio** – faktyczny stosunek mocy, wpływ na clipping. **Straty systemowe** – gdzie tracimy energię.
 
-**⚡ Zadanie:**
-- **Wariant A** — 2× falownik ~40 kW
-- **Wariant B** — 3× ~27 kW
-- **Porównaj:**
-  - Obciążenie MPPT
-  - Rozkład stringów
-  - DC/AC ratio
-  - Straty systemowe
+**Cel ćwiczenia**: wybierz wariant lepszy pod kątem kilku kryteriów. **Serwis** – łatwość obsługi i napraw. Dwa falowniki to prostsza konfiguracja, mniej punktów awarii. Ale jeśli jeden padnie, tracisz 50% mocy. Trzy falowniki to więcej komponentów, ale awaria jednego to tylko 33% straty mocy. **Straty i efektywność energetyczna** – który wariant wyprodukuje więcej? Tu liczy się wykorzystanie MPPT, clipping, sprawność przy częściowym obciążeniu. **Koszty** – analiza ekonomiczna. Trzy mniejsze falowniki mogą być droższe niż dwa duże, ale różnica w produkcji może to zrekompensować.
 
-**🎯 Cel:**
-Wybierz wariant lepszy pod kątem:
-- **Serwisu** - łatwość obsługi i napraw
-- **Strat** - efektywność energetyczna
-- **Kosztów** - analiza ekonomiczna
+**Analiza** pokazuje typowy trade-off. **Wariant A** ma mniej falowników, prostszą obsługę, niższy koszt początkowy. Mniej kabli, mniej punktów połączeń, łatwiejsza konserwacja. **Wariant B** ma lepsze wykorzystanie MPPT – więcej trackerów daje większą elastyczność w rozkładzie stringów. Potencjalnie mniejsze straty przez mismatch. Większa odporność na awarię – jeden falownik to tylko jedna trzecia mocy.
 
-**💡 Analiza:**
-- **Wariant A** - mniej falowników, prostsza obsługa
-- **Wariant B** - lepsze wykorzystanie MPPT, mniejsze straty
-- **Decyzja** - zależy od priorytetów (serwis vs efektywność)
+**Decyzja** zależy od priorytetów projektu. Jeśli klient priorytetyzuje niski koszt i prostotę – wariant A. Jeśli liczy się maksymalna produkcja i odporność na awarie – wariant B. **W praktyce często robi się oba warianty** i przedstawia klientowi z analizą kosztów i korzyści.
 
-**🔧 Praktyczne zastosowanie:**
-- **Duże instalacje** - optymalizacja konfiguracji
-- **Konserwacja** - planowanie serwisu
-- **Efektywność** - maksymalizacja produkcji
+Praktyczne zastosowanie? **Duże instalacje** wymagają takiej optymalizacji konfiguracji. **Planowanie konserwacji** – klient musi wiedzieć, co się stanie przy awarii. **Maksymalizacja produkcji** – czasem różnica kilku procent w ciągu 20 lat to dziesiątki tysięcy złotych. To klasyczne ćwiczenie projektowe, które pokazuje, że nie ma jednego prostego rozwiązania – jest świadoma analiza trade-offów i wybór według priorytetów.
+</InstructorNotes>
+
+<InstructorNotes title="Wykładowca: Krótkie notatki (Kliknij aby rozwinąć)">
+Mini-case do praktycznego ćwiczenia z typowym scenariuszem. Wejście: dach płaski 80 kWp, moduł 400W, Warszawa. Zadanie: **Wariant A** to 2× falownik ~40kW, **Wariant B** to 3× ~27kW. Porównaj obciążenie MPPT, rozkład stringów, DC/AC ratio i straty. Cel? **Serwis** – dwa falowniki prostsze, ale awaria to 50% straty; trzy to więcej komponentów, ale awaria tylko 33%. **Efektywność** – więcej MPPT daje elastyczność i mniejsze straty mismatch. **Koszty** – różnica może być zrekompensowana produkcją. W praktyce często robi się oba warianty dla klienta. To klasyczny trade-off pokazujący, że **nie ma prostego rozwiązania, jest świadoma analiza priorytetów**.
 </InstructorNotes>
 
 </Slide>

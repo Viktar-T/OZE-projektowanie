@@ -23,6 +23,7 @@ import {
 - **Dobór komponentów** - moduły, falowniki, systemy montażowe
 - **Analiza zacienienia** - wpływ przeszkód na wydajność
 - **Ocena opłacalności** - analizy ekonomiczne i techniczne
+-----
 
 **📊 Wymagania obliczeniowe:**
 - Symulacje roczne z rozdzielczością co najmniej godzinową
@@ -33,18 +34,12 @@ import {
 </KeyPoints>
 
 <InstructorNotes>
-**Wprowadzenie do procesu projektowania PV**
+**Zaczniemy od zobrazowania, czym w praktyce jest proces projektowania PV.** To nie pojedyncze obliczenie, lecz spójny ciąg decyzji inżynierskich, który łączy modelowanie energetyczne, dobór komponentów, analizę zacienienia i ocenę opłacalności. 
 
-**🎯 Kontekst wykładu:**
-Projektowanie systemów fotowoltaicznych to złożony proces inżynierski, który łączy modelowanie energetyczne, dobór komponentów, analizę zacienienia oraz ocenę opłacalności. W praktyce oznacza to symulacje godzinowe (lub z mniejszym krokiem czasowym), walidację parametrów pracy oraz optymalizację konfiguracji tak, aby spełnić wymagania techniczne i ekonomiczne inwestora.
+W *typowym podejściu* realizujemy symulacje roczne z krokiem co najmniej godzinnym i weryfikujemy wyniki wobec danych referencyjnych.
+Najpierw ustawiamy dane lokalizacyjne i warunki pracy. Kluczowe są modele temperatury modułów oraz krzywe I‑V, (czyli zależność prądu od napięcia modułu lub łańcucha w różnych warunkach). Falownik pracuje ze śledzeniem MPPT (Maximum Power Point Tracking) — **MPPT to algorytm utrzymujący punkt mocy maksymalnej** mimo zmian irradiancji i temperatury. Uwagę zwracamy także na straty: przewody, złącza, elementy pomocnicze oraz zjawiska takie jak soiling i mismatch.
 
-**🔧 Kluczowe elementy procesu:**
-- **Zakres typów instalacji**: od małych systemów dachowych do dużych elektrowni słonecznych
-- **Kluczowe czynniki**: nasłonecznienie lokalizacji, orientacja i kąt nachylenia modułów, wpływ zacienienia bliskiego i dalekiego, parametry elektryczne komponentów, warunki termiczne
-- **Wymagania obliczeniowe**: symulacje roczne z rozdzielczością co najmniej godzinową, modele temperatury modułów, realistyczne krzywe I‑V, sprawności falowników i ich MPPT, straty na przewodach i elementach pomocniczych
-
-**🎯 Cel wykładu:**
-Przegląd najważniejszych narzędzi programowych do projektowania PV oraz ustrukturyzowanie procesu modelowania w dwóch popularnych środowiskach: PV*SOL i Sunny Design.
+**Projektowanie PV to świadome łączenie modeli i danych w celu uzyskania wiarygodnych prognoz produkcji.** Teraz przejdziemy do mapy ośmiu kroków procesu, która porządkuje całość działań.
 </InstructorNotes>
 
 </Slide>
@@ -56,122 +51,35 @@ Przegląd najważniejszych narzędzi programowych do projektowania PV oraz ustru
 <KeyPoints title="📋 Od briefu do raportu">
 
 **🔄 Proces projektowy (8 kroków):**
-1. **Brief i kontekst** - dane wejściowe, cele, ograniczenia
-2. **Geometria i ograniczenia** - wymiary, orientacja, strefy bezpieczeństwa
-3. **Zacienienie** - model 3D, horyzont, analiza przeszkód
-4. **Dobór komponentów** - moduły, falowniki, systemy montażowe
-5. **Projekt elektryczny** - stringi, napięcia, DC/AC
-6. **Symulacja energetyczna** - modelowanie, walidacja wyników
-7. **Raportowanie i BOM** - dokumentacja, zestawienia materiałów
-8. **Walidacja i zgodność** - wymagania prawne, standardy
+
+**🎯 Faza planowania:**
+1. **📋 Brief i kontekst** → zbierz dane, zdefiniuj cele i ograniczenia
+2. **📐 Geometria** → zmierz powierzchnie, wyznacz orientację i strefy
+3. **🌥️ Zacienienie** → zbuduj model 3D, przeanalizuj przeszkody
+
+**⚡ Faza techniczna:**
+
+4. **🔧 Dobór komponentów** → wybierz moduły, falowniki i konstrukcje
+5. **⚡ Projekt elektryczny** → zaprojektuj stringi, sprawdź napięcia i DC/AC
+6. **📊 Symulacja** → modeluj produkcję energii i waliduj wyniki
+
+**📄 Faza finalizacji:**
+
+7. **📝 Raportowanie** → przygotuj dokumentację i zestawienie BOM
+8. **✅ Walidacja** → sprawdź zgodność z prawem i standardami
 
 </KeyPoints>
 
 <InstructorNotes>
-**Mapa procesu projektowego**
+**Spójrzmy na mapę ośmiu kroków — od briefu do raportu i walidacji.** Ta sekwencja porządkuje działania i redukuje ryzyko pominięć. Zaczynamy od briefu: cele, ograniczenia, profil zużycia w przypadku on‑grid i wstępny zakres mocy. Na tym etapie często pojawia się ROI (Return on Investment) jako kryterium biznesowe oraz decyzja, czy uwzględniamy EMS (Energy Management System) lub magazyn energii.
 
-**🔄 Proces projektowy (od briefu do raportu):**
-Brief → Geometria/warunki → Zacienienie → Dobór komponentów → Projekt elektryczny → Symulacja → Raport/BOM → Walidacja.
+**ROI (Return on Investment)** – to wskaźnik opłacalności inwestycji, który pokazuje, po jakim czasie zwrócą się poniesione koszty.
 
-**📋 Szczegółowe kroki:**
+**EMS (Energy Management System)** – to system zarządzania energią, który monitoruje i optymalizuje zużycie, produkcję oraz magazynowanie energii.
 
-**Krok 1. Brief i kontekst**
-- Dane wejściowe: profil zużycia (jeśli on-grid), ograniczenia mocy przyłączeniowej, budżet, cele (max autokonsumpcja / max produkcja / ROI), wymagania OSD/zakładu energetycznego
-- Decyzje: target mocy [kWp], typ systemu (on-grid/off-grid/hybryda), czy magazyn energii/EMS
-- Artefakty: karta projektu (1 strona), lista założeń, folder danych
-- Pułapki: nieaktualne dane o przyłączu, brak profilu zużycia, zbyt optymistyczne założenia degradacji i soilingu
+Następnie geometria i ograniczenia: wymiary, azymut, nachylenie, strefy bezpieczeństwa, nośność konstrukcji. Potem zacienienie — model 3D i horyzont terenowy, które pozwalają ocenić spadki irradiancji i niejednorodność między polami modułów. Kolejny krok to dobór komponentów: moduły, falowniki (z liczbą MPPT i odpowiednimi zakresami napięć), system montażowy i osprzęt.
 
-**Krok 2. Geometria i ograniczenia**
-- Co potrzebne: wymiary dachu/terenu (inwentaryzacja, DXF/DWG, ortofotomapa), azymut, kąt nachylenia, strefy bezpieczeństwa (krawędzie, okna, kominy), dopuszczalne obciążenia konstrukcji
-- W narzędziach: model 2D/3D powierzchni, układy montażowe (poziomy/pionowy), korytarze serwisowe
-- Wyjścia: maksymalna liczba modułów, warianty ułożenia, rezerwy
-- Pułapki: nieuwzględnione dylatacje/świetliki, za małe marginesy od krawędzi, brak analizy nośności
-
-**Krok 3. Zacienienie (model 3D + horyzont)**
-- Cel: określić spadek irradiancji i niejednorodność między stringami
-- Techniki: siatka zacienień (czasowa i przestrzenna), obiekty własne/obce (kominy, drzewa, attyki); horyzont terenowy; scenariusze sezonowe
-- Weryfikacja: wykres udziału zacienienia procent miesięcznie; różnice między polami modułów
-- Pułapki: zbyt gruba siatka (niedoszacowanie cieni liniowych), ignorowanie wzajemnego zacieniania w układach na dachu płaskim
-
-**Krok 4. Dobór komponentów**
-- Moduły: moc, wymiary, współczynniki temperaturowe, liczba busbarów, gwarancja; kompatybilność mechaniczna z systemem montażowym
-- Falowniki: moc AC, liczba MPPT, zakresy napięć (Vmpp, Voc max), prądy wejściowe, krzywe sprawności przy obciążeniu częściowym, możliwości sterowania P/Q
-- Dodatki: optymalizatory, magazyn energii, zabezpieczenia DC/AC, monitoring
-- Pułapki: mieszanie modułów o różnych parametrach w jednym stringu, niedoszacowanie prądu wejściowego MPPT
-
-**Krok 5. Projekt elektryczny (stringi, napięcia, DC/AC)**
-- Napięcie łańcucha zimą: Vstring(Tmin) = N · Voc(Tmin) — sprawdź Vmax,DC falownika
-- Zakres MPP: Vmpp(T) musi mieścić się w przedziale MPPT w całym zakresie temperatur pracy
-- DC/AC ratio: dobierz tak, by ograniczyć clipping przy jednoczesnym wypełnieniu falownika w typowych warunkach (często 1.1–1.3, ale zależnie od klimatu i orientacji)
-- Bilans MPPT: stringi równoległe o zbliżonej irradiancji i temperaturze
-- Pułapki: nieuwzględnienie temperaturowej zmienności napięć, zbyt duże spadki napięć na długich odcinkach DC/AC, asymetria obciążeń MPPT
-
-**Krok 6. Symulacja energetyczna**
-- Wejścia: meteodane (TMY/rok referencyjny), model zacienienia, krzywe sprawności, straty: soiling, mismatch, kable, inwerter, temperatura, degradacja
-- Wyniki kluczowe: uzysk roczny [kWh], PR (Performance Ratio), produkcja specyficzna [kWh/kWp], krzywa mocy chwilowej (analiza clippingu), rozkład strat
-- Kontrola jakości: sanity-check vs PVGIS/benchmark lokalny; analiza wrażliwości (np. ±10% soiling, ±2°C temperatura ogniw)
-- Pułapki: korzystanie z meteodanych nieadekwatnych do lokalizacji, bez kalibracji strat
-
-**Krok 7. Raportowanie i BOM**
-- Zawartość raportu: założenia, model 3D, zestawienie komponentów, schematy jednokreskowe, parametry elektryczne stringów, wyniki symulacji, analiza strat, wykresy, wnioski i ograniczenia
-- BOM: ilości i kody katalogowe, długości kabli, złączki, zabezpieczenia, system montażowy
-- Pułapki: brak jednoznacznych założeń (temperatury, soiling), niekompletne zestawienie materiałów
-
-**Krok 8. Walidacja i zgodność**
-- Zakres: wymagania OSD (praca z ograniczeniem eksportu, cos phi), wytyczne ppoż. i BHP, kompatybilność elektromagnetyczna, dokumentacja powykonawcza
-- Checklisty: granice napięć/prądów, spadki napięć, selektywność zabezpieczeń, uziemienie/połączenia wyrównawcze, wymagany zakres pracy falownika
-</InstructorNotes>
-
-</Slide>
-
-<VisualSeparator type="default" />
-
-<Slide title="✅ Checklisty ekspresowe" type="tip">
-
-<KeyPoints title="🔍 Kontrola jakości projektu">
-
-**📋 Przed symulacją:**
-- Lokalizacja/meteo ustawione?
-- Model 3D i cienie policzone?
-- Zakresy MPPT OK?
-
-**📊 Po symulacji:**
-- PR w oczekiwanym zakresie?
-- Clipping akceptowalny?
-- Dominujące straty zidentyfikowane?
-
-**📄 Przed raportem:**
-- BOM kompletny?
-- Założenia jawnie opisane?
-- Wariant A/B porównany?
-
-</KeyPoints>
-
-<InstructorNotes>
-**Checklisty ekspresowe (do wykorzystania na zajęciach)**
-
-**🔍 Kontrola jakości projektu:**
-
-**📋 Przed symulacją:**
-- Lokalizacja/meteo ustawione? - Sprawdź czy dane meteorologiczne są odpowiednie dla lokalizacji
-- Model 3D i cienie policzone? - Zweryfikuj czy model geometryczny jest kompletny
-- Zakresy MPPT OK? - Upewnij się, że napięcia stringów mieszczą się w zakresie MPPT falownika
-
-**📊 Po symulacji:**
-- PR w oczekiwanym zakresie? - Performance Ratio powinien być w zakresie 75-85% dla większości instalacji
-- Clipping akceptowalny? - Sprawdź czy ograniczenie mocy przez falownik nie jest nadmierne
-- Dominujące straty zidentyfikowane? - Przeanalizuj rozkład strat i zidentyfikuj główne przyczyny
-
-**📄 Przed raportem:**
-- BOM kompletny? - Sprawdź czy wszystkie komponenty są uwzględnione w zestawieniu
-- Założenia jawnie opisane? - Upewnij się, że wszystkie założenia są jasno opisane
-- Wariant A/B porównany? - Jeśli analizujesz warianty, upewnij się, że są porównywalne
-
-**💡 Praktyczne wskazówki:**
-- Zawsze dokumentuj założenia - ułatwia to audyt i iteracje
-- Porównuj wyniki z PVGIS jako sanity-check
-- Pracuj wariantowo - analizuj różne opcje konfiguracji
-- Na koniec przejdź checklistę walidacyjną (napięcia, prądy, zacienienia, PR)
+W projekcie elektrycznym definiujemy stringi i sprawdzamy napięcia względem zakresów pracy falownika; bilansujemy wejścia MPPT. Symulacja energetyczna korzysta z meteodanych TMY (Typical Meteorological Year), modeli strat i krzywych sprawności. Raport kończymy BOM (Bill of Materials) oraz wnioskami. Walidacja obejmuje wymagania OSD (Operator Systemu Dystrybucyjnego), bezpieczeństwo ppoż. i BHP. **Osiem kroków tworzy spójną ścieżkę od założeń do weryfikowalnych wyników** — za moment uprościmy ją do krótkich checklist.
 </InstructorNotes>
 
 </Slide>

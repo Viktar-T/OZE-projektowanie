@@ -23,7 +23,7 @@ import {
 - **Aplikacje chmurowe** - Aurora Solar, Sunny Design
 - **Kalkulatory** - PVGIS, narzędzia online
 - **Platformy integracyjne** - ekosystemy producentów
-
+---
 **🎯 Kryteria doboru:**
 - Skala projektu (mikroinstalacja vs farma)
 - Poziom szczegółowości (szacunkowy vs precyzyjny)
@@ -33,26 +33,22 @@ import {
 </KeyPoints>
 
 <InstructorNotes>
-**Przegląd narzędzi do projektowania systemów PV**
+Zacznijmy od ogólnego kontekstu. W praktyce projektowej nie ma jednego uniwersalnego narzędzia, które rozwiąże wszystkie problemy. **Projektanci PV korzystają z kilku klas oprogramowania**, od w pełni profesjonalnych środowisk symulacyjnych po lekkie aplikacje chmurowe i kalkulatory. Każde z nich ma swoje miejsce w przepływie pracy.
 
-**💻 Kontekst:**
-W praktyce projektanci PV korzystają z kilku klas narzędzi: od w pełni profesjonalnych środowisk symulacyjnych po lekkie aplikacje chmurowe i kalkulatory. Poniżej syntetyczny przegląd z wyróżnieniem kluczowych zastosowań.
+Pierwsza kategoria to **środowiska symulacyjne** – zaawansowane narzędzia desktop typu PV*SOL czy PVsyst. Oferują pełne modelowanie 3D, analizę zacienienia, szczegółowe symulacje godzinowe. To narzędzia do głębokiej analizy technicznej.
 
-**🔧 Klasy narzędzi:**
-- **Środowiska symulacyjne** - zaawansowane narzędzia desktop z pełnym modelowaniem 3D, analizą zacienienia, szczegółowymi symulacjami
-- **Aplikacje chmurowe** - narzędzia webowe z automatyzacją, współpracą zespołową, integracjami
-- **Kalkulatory** - proste narzędzia do szybkich szacunków i sanity-check
-- **Platformy integracyjne** - ekosystemy producentów sprzętu z dedykowanymi narzędziami
+Druga grupa to **aplikacje chmurowe** – narzędzia webowe jak Aurora Solar czy webowa wersja Sunny Design. **Kluczowa różnica**: automatyzacja, współpraca zespołowa, integracje z systemami CRM. Świetne do presales i pracy zdalnej.
 
-**🎯 Kryteria doboru narzędzia:**
-- **Skala projektu**: mikroinstalacja (6-10 kWp), komercyjna (50-200 kWp), farma (>1 MWp)
-- **Poziom szczegółowości**: szacunkowy (PVGIS), precyzyjny (PV*SOL, PVsyst)
-- **Integracja sprzętowa**: uniwersalne (PV*SOL, PVsyst) vs dedykowane (Sunny Design dla SMA)
-- **Tryb pracy**: desktop (offline) vs chmura (współpraca, presales)
+Trzecia kategoria to **kalkulatory** – proste narzędzia do szybkich szacunków. PVGIS to typowy przykład. Używamy ich do **sanity-check**, czyli weryfikacji, czy wyniki z zaawansowanych narzędzi mają sens.
 
-**💡 Praktyczne podejście:**
-Dobór narzędzia zależy od skali projektu, wymaganego poziomu szczegółowości i integracji sprzętowych. W praktyce zespoły łączą PV*SOL/PVsyst (modelowanie) z narzędziami typu PVGIS (dane) i platformami chmurowymi (collaboration, dokumentacja).
+Czwarta grupa to **platformy integracyjne** – ekosystemy producentów sprzętu z dedykowanymi narzędziami. Przykład? Sunny Design dla komponentów SMA. **Optymalizacja pod konkretną markę**, ale czasem ograniczona elastyczność.
+
+**Jak to wszystko dobierać?** --
+**Skala projektu** to pierwszy czynnik. Mikroinstalacja 6-10 kWp to zupełnie inny świat niż farma megawatowa. Kolejny aspekt to **poziom szczegółowości** – czy potrzebujesz szacunkowej liczby, czy precyzyjnej symulacji godzinowej. **Integracja sprzętowa** też ma znaczenie – niektóre narzędzia są uniwersalne, inne dedykowane pod konkretnego producenta. No i wreszcie **tryb pracy** – desktop daje pełną kontrolę offline, chmura umożliwia współpracę i presales.
+
+W praktyce zespoły łączą kilka narzędzi. Typowy workflow? PV*SOL lub PVsyst do modelowania, PVGIS do weryfikacji danych meteorologicznych, platformy chmurowe do dokumentacji i współpracy z klientem. **Nie ma jednego idealnego narzędzia** – jest świadomy dobór i łączenie ich mocnych stron.
 </InstructorNotes>
+
 
 </Slide>
 
@@ -74,61 +70,28 @@ Dobór narzędzia zależy od skali projektu, wymaganego poziomu szczegółowośc
 </KeyPoints>
 
 <InstructorNotes>
-**Tabela porównawcza narzędzi - Szczegółowe informacje**
+Przejdźmy teraz przez szczegółową charakterystykę narzędzi. Zaczynamy od **PV*SOL w wersji podstawowej**. To narzędzie desktop, które sprawdzi się w podstawowym projektowaniu – kalkulacje ekonomiczne, raporty, zestawienia BOM (Bill of Materials, czyli lista materiałów). Mocna strona? Prostota obsługi i **baza ponad 26 tysięcy modułów**. Ograniczenia? Brak wizualizacji 3D i uproszczone modelowanie cieni. Odpowiednie dla małych firm instalacyjnych i standardowych projektów mieszkaniowych, gdzie nie potrzebujemy zaawansowanej analizy przestrzennej.
 
-**📊 Kompletna charakterystyka narzędzi:**
+**PV*SOL premium** to już inna liga. Zaawansowana wizualizacja 3D, modelowanie cieni, **systemy baterii od wersji 2024**, profile obciążenia zgodne z normą VDI 4655, dane klimatyczne z lat 2001-2020. Idealne dla profesjonalnych biur projektowych i projektów komercyjnych z bateriami. Ważna uwaga praktyczna: narzędzie ma walidatory, które ostrzegą przed błędami, ale **projektant definiuje klimat pracy** – trzeba uważać na temperatury min/max. Wadą jest wysoki koszt licencji i krzywa uczenia.
 
-**PV*SOL (Desktop) - Podstawowa wersja**
-- **Główne zastosowania**: Podstawowe projektowanie PV, kalkulacje ekonomiczne, raporty
-- **Mocne strony**: Prostota obsługi, raporty BOM, kalkulacje ekonomiczne, baza 26000+ modułów
-- **Ograniczenia**: Brak wizualizacji 3D, ograniczone modelowanie cieni, mniej zaawansowane funkcje
-- **Cennik**: Komercyjna (podstawowa)
-- **Najlepsze dla**: Małe firmy instalacyjne, podstawowe projektowanie mieszkaniowe
-- **Uwaga praktyczna**: Odpowiedni dla standardowych projektów bez zaawansowanych wymagań 3D
+**Sunny Design** to narzędzie producenta SMA – dostępne jako aplikacja webowa i desktop. **SMA Solar Technology AG** to jeden z największych i najbardziej znanych na świecie producentów sprzętu dla fotowoltaiki, z siedzibą w Niemczech (Kassel). Firma istnieje od lat 80. i specjalizuje się w falownikach PV, systemach zarządzania energią oraz rozwiązaniach hybrydowych (PV + magazyn energii).
 
-**PV*SOL premium (Desktop) - Wersja zaawansowana**
-- **Główne zastosowania**: Projektowanie mieszkaniowe/komercyjne z wizualizacją 3D, modelowanie baterii, pompy ciepła
-- **Mocne strony**: Zaawansowana wizualizacja 3D, modelowanie cieni, systemy baterii (2024), profile obciążenia VDI 4655, dane klimatyczne 2001-2020
-- **Ograniczenia**: Wysoki koszt licencji, wymaga szkoleń, ograniczona integracja z innymi systemami
-- **Cennik**: Komercyjna (premium)
-- **Najlepsze dla**: Profesjonalne biura projektowe, instalatorzy premium, projekty komercyjne z bateriami
-- **Uwaga praktyczna**: Dbaj o poprawne temperatury min/max — walidatory ostrzegą, ale projektant definiuje klimat pracy
+Sunny Design jest darmowy w wersji podstawowej, świetny do szybkiego doboru komponentów SMA, systemów hybrydowych i off-grid. **Automatyzacja i śledzenie harmonicznych** to mocne punkty. 
 
-**Sunny Design (Web/Desktop) - Narzędzie SMA**
-- **Główne zastosowania**: Szybki dobór komponentów SMA, systemy hybrydowe, off-grid
-- **Mocne strony**: Darmowy, prostota użycia, dobra integracja z SMA, automatyzacja, śledzenie harmonicznych
-- **Ograniczenia**: Preferencja komponentów SMA, ograniczone 3D, wymaga rejestracji dla zaawansowanych funkcji
-- **Cennik**: Darmowa (podstawowa), Pro wymaga autoryzacji
-- **Najlepsze dla**: Systemy z komponentami SMA, szybkie wyceny, systemy hybrydowe
+Co oznacza automatyzacja w Sunny Design? Program samodzielnie wykonuje część decyzji projektowych, które w innych narzędziach trzeba ustawiać ręcznie. **Dobór falowników i stringów** – program analizuje parametry modułów (napięcia, prądy, MPPT) i sam proponuje optymalną konfigurację. **Bilansowanie mocy i faz** – automatycznie równoważy obciążenia między fazami w systemach trójfazowych. **Dobór zabezpieczeń i przekrojów kabli** – w oparciu o prądy i długości przewodów. **Symulacje profilu zużycia energii** – program generuje typowy profil odbiorcy (np. dom, biuro, farma) i dopasowuje system PV oraz magazyn energii. Dzięki temu projektant może w kilka minut uzyskać kompletny układ z podstawową analizą energetyczną i ekonomiczną.
 
-**PVsyst (Desktop) - Narzędzie naukowe**
-- **Główne zastosowania**: Analiza naukowa/badawcza, farmy PV, systemy stand-alone, pompy
-- **Mocne strony**: Dokładne symulacje godzinowe, rozbudowane bazy danych, analiza strat, modele meteorologiczne
-- **Ograniczenia**: Stroma krzywa nauki, brak przyjaznego interfejsu, ograniczona automatyzacja
-- **Cennik**: Komercyjna (~600 CHF/rok)
-- **Najlepsze dla**: Inżynierowie, naukowcy, bankowalne analizy, farmy słoneczne
+Ograniczenie? Preferencja komponentów SMA – narzędzie będzie sugerowało produkty tej marki. Dla zaawansowanych funkcji potrzebna rejestracja i autoryzacja Pro.
 
-**Aurora Solar (Web/Cloud) - Platforma chmurowa**
-- **Główne zastosowania**: Projektowanie komercyjne/mieszkaniowe w chmurze, automatyzacja sprzedaży
-- **Mocne strony**: Automatyzacja projektowania AI, fotogrametria LIDAR, propozycje sprzedażowe, integracje CRM
-- **Ograniczenia**: Wysoki koszt subskrypcji ($159-259/miesiąc/użytkownik), zależność od połączenia internetowego
-- **Cennik**: Subskrypcja $159-259/miesiąc/użytkownik
-- **Najlepsze dla**: Duże firmy instalacyjne, automatyzacja sprzedaży, zespoły remote
+**PVsyst** to narzędzie naukowe. Dokładne symulacje godzinowe, rozbudowane bazy danych, szczegółowa analiza strat, zaawansowane modele meteorologiczne. **Inżynierowie i naukowcy** to główna grupa użytkowników. Świetne do analiz bankowalnych i farm słonecznych. Problem? Stroma krzywa nauki i mało przyjazny interfejs. Kosztuje około 600 franków szwajcarskich rocznie, ale w środowisku profesjonalnym to standard.
 
-**PVGIS (Web) - Narzędzie darmowe**
-- **Główne zastosowania**: Szybka ocena potencjału PV, analiza zasobów słonecznych
-- **Mocne strony**: Całkowicie darmowy, globalne pokrycie, wiarygodne dane meteorologiczne, symulacje tracking
-- **Ograniczenia**: Brak pełnego projektowania elektrycznego, tylko estymacje, brak doboru komponentów
-- **Cennik**: Całkowicie darmowa
-- **Najlepsze dla**: Wstępne analizy, edukacja, szybka ocena lokalizacji
+**Aurora Solar** to platforma chmurowa z USA. **Automatyzacja projektowania AI, fotogrametria LIDAR**, propozycje sprzedażowe, integracje z systemami CRM. Idealna dla dużych firm instalacyjnych z rozproszonymi zespołami. Wadą jest wysoki koszt subskrypcji – od 159 do 259 dolarów miesięcznie na użytkownika. Plus zależność od połączenia internetowego.
 
-**💡 Praktyczne wskazówki doboru:**
-- **Dla początkujących**: PV*SOL podstawowy lub Sunny Design
-- **Dla profesjonalistów**: PV*SOL premium lub PVsyst
-- **Dla zespołów**: Aurora Solar (chmura) lub PV*SOL premium (desktop)
-- **Dla wstępnych analiz**: PVGIS + jeden z głównych narzędzi
-- **Dla systemów SMA**: Sunny Design jako główne narzędzie
+**PVGIS** to całkowicie darmowe narzędzie webowe od Joint Research Centre Komisji Europejskiej. Globalne pokrycie, wiarygodne dane meteorologiczne, symulacje systemów tracking. **Świetny punkt wyjścia** do wstępnych analiz i sanity-check. Ograniczenie? Brak pełnego projektowania elektrycznego, tylko estymacje produkcji. Nie ma doboru komponentów – to wyłącznie narzędzie do oceny potencjału lokalizacji.
+
+Jak to wszystko połączyć w praktyce? **Dla początkujących** polecam PV*SOL podstawowy lub Sunny Design – niski próg wejścia, szybkie efekty. **Dla profesjonalistów** to PV*SOL premium lub PVsyst – pełna kontrola i szczegółowość. **Dla zespołów** warto rozważyć Aurora Solar w chmurze albo PV*SOL premium z wewnętrznym workflow. **Dla wstępnych analiz** zawsze PVGIS plus jedno z głównych narzędzi. A jeśli projekt opiera się na komponentach SMA? Sunny Design jako główne narzędzie.
 </InstructorNotes>
+
+
 
 </Slide>
 
@@ -157,34 +120,19 @@ Dobór narzędzia zależy od skali projektu, wymaganego poziomu szczegółowośc
 </KeyPoints>
 
 <InstructorNotes>
-**Kryteria doboru narzędzia (checklista decyzyjna)**
+Teraz checklista decyzyjna – jak konkretnie wybierać narzędzie do projektu. Zacznijmy od **wymaganej głębi modelowania**. Pytanie brzmi: czy potrzebne jest 3D i dokładna siatka zacienień? Jeśli mamy dachy skośne z kominami, antenami, oknami połaciowymi – odpowiedź brzmi tak. Podobnie dla dachów płaskich z zacienieniem wzajemnym między rzędami modułów. **Różnica w wynikach** między modelowaniem szacunkowym a precyzyjnym może wynosić 5-15%, a to przekłada się na rentowność inwestycji.
 
-**🔍 Wymagana głębia modelowania:**
-- Czy potrzebne jest 3D i dokładna siatka zacienień? - Dla dachów skośnych z przeszkodami, dachów płaskich z zacienieniem wzajemnym
-- Jakie są wymagania dotyczące precyzji symulacji? - Różnica między szacunkowym a precyzyjnym modelowaniem może wynosić 5-15% w wynikach
+Drugi aspekt to **ekosystem sprzętowy**. Czy inwestor preferuje konkretną markę falowników? Jeśli tak, to Sunny Design będzie zoptymalizowany pod SMA, podobnie jak Aurora ma swoje preferencje. Niektóre narzędzia mają ograniczone bazy komponentów – warto to sprawdzić przed wyborem. **Kompatybilność** to kluczowa kwestia w projektowaniu.
 
-**⚙️ Ekosystem sprzętowy:**
-- Czy inwestor preferuje konkretną markę falowników (np. SMA)? - Sunny Design jest zoptymalizowane pod SMA
-- Jakie są wymagania dotyczące kompatybilności? - Niektóre narzędzia mają ograniczone bazy komponentów
+Trzeci element to **tryb pracy zespołu**. Desktop daje pełną kontrolę i działa offline – idealny do precyzyjnych analiz w biurze. Chmura umożliwia współpracę rozproszoną, presales, automatyczne aktualizacje baz danych. Aurora Solar oferuje mocną automatyzację i integracje z systemami CRM, PV*SOL stawia na precyzję i szczegółowość modelowania. To wybór między **współpracą a kontrolą**.
 
-**👥 Tryb pracy zespołu:**
-- Desktop (offline) vs chmura (współpraca, presales) - Desktop dla precyzyjnych analiz, chmura dla współpracy
-- Czy potrzebna jest automatyzacja i integracje? - Aurora Solar oferuje automatyzację, PV*SOL - precyzję
+Czwarty czynnik to **wymogi raportowe**. Czy potrzebujesz raportu technicznego z pełnym zestawieniem BOM, czy materiałów ofertowych z wizualizacjami dla klienta? PV*SOL generuje szczegółowe raporty techniczne, Aurora świetnie radzi sobie z materiałami sprzedażowymi. Różne narzędzia produkują różne formaty – warto to zweryfikować z wymaganiami projektu.
 
-**📊 Wymogi raportowe:**
-- Raport techniczny/BOM vs materiały ofertowe - PV*SOL dla technicznych, Aurora dla sprzedażowych
-- Jakie są standardy dokumentacji? - Różne narzędzia generują różne formaty raportów
+Piąty punkt to **budżet i licencje**. Jednorazowa licencja czy subskrypcja? PV*SOL i PVsyst działają na modelu jednorazowego zakupu z okresowymi aktualizacjami, Aurora to subskrypcja miesięczna na użytkownika. Dla studentów i uczelni dostępne są **wersje edukacyjne** – warto z tego korzystać podczas nauki.
 
-**💰 Budżet/licencje:**
-- Jednorazowa licencja vs subskrypcja - PV*SOL/PVsyst (jednorazowa), Aurora (subskrypcja)
-- Wersje edukacyjne - Dostępne dla studentów i instytucji edukacyjnych
-
-**📏 Skala projektu:**
-- Mikroinstalacja, C&I, farma — różne narzędzia sprawdzą się lepiej w różnych skalach
-- Dom jednorodzinny 6–10 kWp: PV*SOL premium (dokładne cienie, BOM) lub Sunny Design (warianty SMA)
-- Budynek komercyjny 50–200 kWp: PV*SOL premium (szczegół) + Sunny Design (warianty), opcjonalnie PVGIS do sanity-check
-- Farma PV >1 MWp: PVsyst do analiz energetycznych + narzędzia CAD/GIS do planowania terenu
+Szósty i ostatni czynnik to **skala projektu**. Mikroinstalacja, projekt komercyjno-przemysłowy (C&I, czyli Commercial & Industrial), czy farma? Każda skala wymaga innego podejścia. Dom jednorodzinny 6-10 kWp? PV*SOL premium dla dokładnych cieni i BOM, albo Sunny Design dla wariantów SMA. Budynek komercyjny 50-200 kWp? PV*SOL premium plus Sunny Design do wariantów, opcjonalnie PVGIS do weryfikacji. Farma powyżej 1 MWp? PVsyst do analiz energetycznych plus narzędzia CAD i GIS do planowania terenu. **Różne narzędzia, różne skale**.
 </InstructorNotes>
+
 
 </Slide>
 
@@ -208,25 +156,23 @@ Dobór narzędzia zależy od skali projektu, wymaganego poziomu szczegółowośc
 </KeyPoints>
 
 <InstructorNotes>
-**Najlepsze praktyki (praktyka)**
+Na koniec praktyczne wskazówki operacyjne. Pierwsza zasada: **zawsze weryfikuj bibliotekę komponentów** z kartą katalogową producenta. Szczególnie napięcia i współczynniki temperaturowe – to tam najczęściej pojawiają się rozbieżności między bazą narzędzia a rzeczywistością. Producenci aktualizują specyfikacje, a bazy danych narzędzi mogą pozostać w tyle.
 
-**✅ Wskazówki operacyjne:**
-- Zawsze weryfikuj bibliotekę komponentów z kartą katalogową producenta (szczególnie napięcia i współczynniki temperaturowe)
-- Przy porównywaniu narzędzi kieruj się spójnością wyników (różnice do kilku procent) i powtarzalnością — nie pojedynczym runem
-- Dokumentuj różnice w założeniach (meteodane, straty) — to one najczęściej tłumaczą rozbieżności wyników
+Druga kwestia to **porównywanie narzędzi**. Kieruj się spójnością wyników i powtarzalnością, nie pojedynczym uruchomieniem. Różnice do kilku procent to norma – różne modele meteorologiczne, różne algorytmy strat. Kluczowe jest, żeby wyniki były stabilne i powtarzalne. Jeśli jedno narzędzie pokazuje 10 MWh, a drugie 15 MWh – to czerwona flaga.
 
-**🎯 Typowe scenariusze i rekomendacje:**
-- **Dom jednorodzinny 6–10 kWp**: PV*SOL premium (dokładne cienie, BOM) lub Sunny Design (warianty SMA)
-- **Budynek komercyjny 50–200 kWp**: PV*SOL premium (szczegół) + Sunny Design (warianty), opcjonalnie PVGIS do sanity-check
-- **Farma PV >1 MWp**: PVsyst do analiz energetycznych + narzędzia CAD/GIS do planowania terenu
+Trzecia sprawa to **dokumentowanie założeń**. Meteodane, straty systemowe, współczynniki degradacji – to one najczęściej tłumaczą rozbieżności wyników między narzędziami. Zapisuj je w raporcie. Klient pyta "dlaczego u was wyszło inaczej?" – dokumentacja założeń to twoja ochrona.
 
-**💡 Praktyczne przykłady:**
-- **Błędny dobór narzędzia** → nieprawidłowe wymiary → problemy montażowe → dodatkowe koszty
-- **Nieodpowiednia symulacja** → zawyżone prognozy produkcji → rozczarowanie inwestora
-- **Brak analizy ekonomicznej** → nieoptymalne rozwiązania → niższa rentowność
+Przejdźmy do typowych scenariuszy. **Dom jednorodzinny 6-10 kWp**? PV*SOL premium dla dokładnych cieni i zestawienia BOM, albo Sunny Design jeśli stawiamy na komponenty SMA. Szybko, dokładnie, profesjonalnie.
 
-**📚 Ten wykład porządkuje mapę narzędzi i pokazuje, jak myśleć o ich roli w procesie projektowym.**
+**Budynek komercyjny 50-200 kWp**? To już większa liga. PV*SOL premium dla szczegółowego modelowania, Sunny Design do wariantów z różnymi falownikami, opcjonalnie PVGIS do sanity-check. Łączymy narzędzia, bo projekt tego wymaga.
+
+**Farma powyżej 1 MWp**? Tu wchodzimy w profesjonalne analizy bankowe. PVsyst do szczegółowych symulacji energetycznych, narzędzia CAD i GIS do planowania terenu, optymalizacji rozstawienia, analiz zacienienia. To już zespoły specjalistów i wielomiesięczna praca.
+
+Jakie są konsekwencje błędów? **Błędny dobór narzędzia** prowadzi do nieprawidłowych wymiarów, a to problemy montażowe i dodatkowe koszty w terenie. **Nieodpowiednia symulacja** kończy się zawyżonymi prognozami produkcji – inwestor liczy na 100%, dostaje 85%, jest rozczarowany. **Brak analizy ekonomicznej**? Nieoptymalne rozwiązania i niższa rentowność. Wszystko to można uniknąć właściwym doborem narzędzi i solidną pracą projektową.
+
+Ten wykład porządkuje mapę narzędzi i pokazuje, **jak myśleć o ich roli w procesie projektowym**. Nie ma jednego idealnego narzędzia – jest świadomy wybór i łączenie mocnych stron różnych rozwiązań. To klucz do profesjonalnej pracy w projektowaniu systemów PV.
 </InstructorNotes>
+
 
 </Slide>
 
