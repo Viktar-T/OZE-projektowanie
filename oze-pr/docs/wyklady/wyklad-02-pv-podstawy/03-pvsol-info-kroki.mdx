@@ -91,27 +91,41 @@ W **użyciu dydaktycznym** podstawowa wersja jest wystarczająca dla większośc
 
 <Slide title="🔬 Modele obliczeniowe" type="tip">
 
-<KeyPoints title="⚠️ Na co uważać w modelach">
+<div className="feature-grid" style={{gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem'}}>
+  <div className="feature-card">
+    <h4>🌡️ Model temperatury ogniw</h4>
+    <ul>
+      <li>Model NOCT lub prosty model termiczny powierzchni</li>
+      <li>Krytyczny dla napięć i sprawności</li>
+      <li>Poprawnie ustaw temperaturę minimalną i maksymalną</li>
+    </ul>
+  </div>
 
-**🌡️ Model temperatury ogniw:**
-- Model NOCT lub prosty model termiczny powierzchni
-- Krytyczny dla napięć i sprawności
-- Poprawnie ustaw temperaturę minimalną i maksymalną
+  <div className="feature-card">
+    <h4>⚡ Model falownika</h4>
+    <ul>
+      <li>Zakres napięcia MPP, napięcia startu i wyłączenia</li>
+      <li>Krzywe sprawności przy częściowym obciążeniu</li>
+      <li>Limity prądowe wejść i MPPT</li>
+    </ul>
+  </div>
 
-**⚡ Model falownika:**
-- Zakres napięcia MPP, napięcia startu i wyłączenia
-- Krzywe sprawności przy częściowym obciążeniu
-- Limity prądowe wejść i MPPT
+  <div className="feature-card">
+    <h4>🌫️ Zacienienie</h4>
+    <ul>
+      <li>Gęstość siatki i krok czasowy silnie wpływają na dokładność</li>
+      <li>Przy przeszkodach stosuj siatkę średnią lub wysoką</li>
+    </ul>
+  </div>
 
-**🌫️ Zacienienie:**
-- Gęstość siatki i krok czasowy silnie wpływają na dokładność
-- Przy przeszkodach stosuj siatkę średnią lub wysoką
-
-**🔋 Magazyny energii:**
-- Sprawność cyklu, strategia ładowania i rozładowania
-- Ograniczenia mocy (jeśli stosowane)
-
-</KeyPoints>
+  <div className="feature-card">
+    <h4>🔋 Magazyny energii</h4>
+    <ul>
+      <li>Sprawność cyklu, strategia ładowania i rozładowania</li>
+      <li>Ograniczenia mocy (jeśli stosowane)</li>
+    </ul>
+  </div>
+</div>
 
 <InstructorNotes>
 Teraz kluczowa kwestia – modele obliczeniowe i na co szczególnie uważać podczas projektowania. To miejsca, gdzie najczęściej popełnia się błędy.
