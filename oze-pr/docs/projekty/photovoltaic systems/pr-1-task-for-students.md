@@ -6,7 +6,7 @@ title: Zadanie 1 - Wprowadzenie do PV*SOL premium
 
 ## 🎯 Cel zadania
 
-Zapoznanie się z interfejsem i podstawowymi funkcjami oprogramowania **PV*SOL premium** poprzez wykonanie prostego projektu instalacji fotowoltaicznej. Zadanie stanowi przygotowanie do realizacji głównego projektu semestralnego.
+Zapoznanie się z interfejsem i podstawowymi funkcjami oprogramowania **PV*SOL premium** poprzez wykonanie prostego projektu instalacji fotowoltaicznej.
 
 **Czas realizacji:** 4 godziny (2 zajęcia)
 
@@ -45,7 +45,7 @@ Zaprojektuj prosty system fotowoltaiczny on-grid dla domu jednorodzinnego o nast
 
 ![1760347800288](image/pr-1-task-for-students/1760347800288.png)
 
-- **Typ dachu:** Dach dwuspadowy. Proszę znalieżć podobny w Szczenienie lub okolicę.
+- **Typ dachu:** Dach dwuspadowy. Proszę znalieżć na mapie podobny w Szczenienie lub okolicę.
 - **Wymiary dachu:** 10 m × 8 m (jedna połać).
 - **Nachylenie:** 35°
 - **Azymut:** 180° (orientacja południowa)
@@ -529,7 +529,7 @@ Przejdź do sekcji **[Perspektywa zawodowa - Projektant PV](./pv-professional-pe
 
 **Powodzenia! ☀️⚡**
 
-*To zadanie stanowi pierwszy krok w opanowaniu profesjonalnych narzędzi do projektowania systemów fotowoltaicznych. Poświęć czas na dokładne wykonanie - umiejętności zdobyte tutaj będą fundamentem dla Twojej pracy nad projektem głównym.*
+*To zadanie stanowi pierwszy krok w opanowaniu profesjonalnych narzędzi do projektowania systemów fotowoltaicznych. Poświęć czas na dokładne wykonanie - umiejętności zdobyte tutaj będą fundamentem dla Twojej przyszłej pracy jako projektant instalacji PV.*
 
 **Termin oddania:** [Do uzupełnienia przez prowadzącego]
 
