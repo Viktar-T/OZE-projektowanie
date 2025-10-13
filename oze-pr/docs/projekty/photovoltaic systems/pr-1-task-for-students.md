@@ -328,8 +328,6 @@ Po zakończeniu zadania przygotuj następujące pliki:
 - Format: natywny format PV*SOL
 - Upewnij się, że plik można otworzyć bez błędów
 
-
-
 ### 2. Krótkie sprawozdanie (1-2 strony, format PDF)
 
 **Nazwa:** `Nazwisko_PV_Szczecin_Zadanie1_Sprawozdanie.pdf`
@@ -364,8 +362,6 @@ Tabela z kluczowymi wynikami:
 | Roczna produkcja AC    | ___       | kWh/rok     |
 | Produkcja specyficzna  | ___       | kWh/kWp/rok |
 | Performance Ratio (PR) | ___       | %           |
-| Own Power Consumption  | ___       | %           |
-| Solar Fraction         | ___       | %           |
 | Okres zwrotu           | ___       | lata        |
 
 #### 3. Wnioski i spostrzeżenia (0.5-1 strona)
@@ -399,12 +395,12 @@ Krótka refleksja (3-5 zdań na temat):
 
 Zadanie oceniane jest w skali 0-10 punktów (zaliczenie: minimum 6 punktów)
 
-| Kryterium                         | Punkty  | Opis                                                                                                                  |
-| --------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Kompletność projektu**  | 0-3 pkt | Czy projekt zawiera wszystkie wymagane elementy (geometria, przeszkody, moduły, falownik, stringi, okablowanie)?     |
-| **Poprawność techniczna** | 0-3 pkt | Czy konfiguracja elektryczna jest poprawna (napięcia, prądy, DC/AC ratio)? Czy PR > 75%?                            |
-| **Jakość dokumentacji**   | 0-2 pkt | Czy raport i sprawozdanie są kompletne, czytelne i profesjonalne?                                                    |
-| **Osiągnięcie celu**      | 0-2 pkt | Czy Solar Fraction > 70%? Czy projekt jest zoptymalizowany?                                                           |
+| Kryterium                         | Punkty  | Opis                                                                                                              |
+| --------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| **Kompletność projektu**  | 0-3 pkt | Czy projekt zawiera wszystkie wymagane elementy (geometria, przeszkody, moduły, falownik, stringi, okablowanie)? |
+| **Poprawność techniczna** | 0-3 pkt | Czy konfiguracja elektryczna jest poprawna (napięcia, prądy, DC/AC ratio)? Czy PR > 75%?                        |
+| **Jakość dokumentacji**   | 0-2 pkt | Czy raport i sprawozdanie są kompletne, czytelne i profesjonalne?                                                |
+| **Osiągnięcie celu**      | 0-2 pkt | Czy Solar Fraction > 70%? Czy projekt jest zoptymalizowany?                                                       |
 
 ### Szczegóły punktacji
 
@@ -470,13 +466,15 @@ A: Możesz lekko zwiększyć wymiary dachu (np. 12 m × 8 m) lub użyć modułó
 
 **Q: Czy muszę dodawać wszystkie przeszkody (komin, okno, drzewa)?**
 A: Tak, to obowiązkowe wymagania zadania. Komin, okno połaciowe i minimum 2 drzewa muszą być zamodelowane. Celem jest nauczenie się:
+
 - Modelowania różnych typów przeszkód w PV*SOL
 - Analizy wpływu zacienienia na produkcję energii
 - Optymalizacji rozmieszczenia modułów z uwzględnieniem przeszkód
-Drzewa powinny powodować widoczne (ale akceptowalne) zacienienie - to pokazuje, jak system radzi sobie w realnych warunkach.
+  Drzewa powinny powodować widoczne (ale akceptowalne) zacienienie - to pokazuje, jak system radzi sobie w realnych warunkach.
 
 **Q: Jak dodać drzewa w PV*SOL?**
 A: W module 3D Design:
+
 1. Kliknij przycisk "Add Tree" lub "Obstacle" w górnym menu
 2. Wybierz typ drzewa z biblioteki (liściaste lub iglaste)
 3. Ustaw wysokość: 8-15 m
@@ -486,6 +484,7 @@ A: W module 3D Design:
 
 **Q: Jak dodać okno połaciowe (okno dachowe)?**
 A: W module 3D Design:
+
 1. Kliknij na dach, żeby go aktywować
 2. Użyj narzędzia "Window" lub "3D Box"
 3. Umieść okno na połaci dachu (np. wymiary 1.2 m × 0.8 m)
