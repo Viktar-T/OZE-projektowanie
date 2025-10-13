@@ -29,7 +29,25 @@ Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdzi
 
 ---
 
-### 2. [Perspektywa zawodowa - Projektant PV](./pv-professional-perspective.md)
+### 2. [Zadanie 2 - Sunny Design Web](./pr-2-task-sunny-design.md)
+
+**Zadanie z narzędziem webowym** do szybkiego projektowania instalacji PV z wykorzystaniem platformy SMA.
+
+**Co znajdziesz:**
+- Przewodnik po platformie Sunny Design Web (darmowe narzędzie online)
+- Projekt instalacji 40-50 kWp dla budynku użyteczności publicznej
+- Konfiguracja dachu płaskiego z systemami montażowymi
+- Automatyczny dobór stringów i falowników SMA
+- Analizę ekonomiczną i porównanie z PV*SOL premium
+- Wskazówki dotyczące DC/AC ratio i optymalizacji
+
+**Czas realizacji:** 3 godziny (1.5 zajęcia)
+
+**Wymagania:** Darmowe konto na platformie Sunny Design Web
+
+---
+
+### 3. [Perspektywa zawodowa - Projektant PV](./pv-professional-perspective.md)
 
 **Przewodnik zawodowy** pokazujący, jak wygląda prawdziwa praca projektanta instalacji fotowoltaicznych.
 
@@ -54,22 +72,30 @@ Zalecana kolejność pracy z materiałami:
 
 ```mermaid
 graph LR
-    A[Zadanie 1<br/>Wprowadzenie] --> B[Perspektywa<br/>zawodowa]
+    A[Zadanie 1<br/>PV*SOL premium] --> B[Zadanie 2<br/>Sunny Design Web]
+    B --> C[Perspektywa<br/>zawodowa]
     
     style A fill:#e1f5ff
-    style B fill:#fff4e1
+    style B fill:#e8f5e9
+    style C fill:#fff4e1
 ```
 
-1. **Rozpocznij od Zadania 1** - naucz się obsługi PV*SOL premium
-2. **Przeczytaj Perspektywę zawodową** - zrozum pracę projektanta PV
+1. **Rozpocznij od Zadania 1** - naucz się obsługi PV*SOL premium (dach skośny, szczegółowa analiza)
+2. **Wykonaj Zadanie 2** - poznaj Sunny Design Web (dach płaski, szybkie projektowanie)
+3. **Przeczytaj Perspektywę zawodową** - zrozum pracę projektanta PV w praktyce
 
 ---
 
 ## 🔗 Dodatkowe zasoby
 
+### Oprogramowanie do projektowania PV
 - **PV*SOL Help:** [https://help.valentin-software.com/pvsol/en/](https://help.valentin-software.com/pvsol/en/)
+- **Sunny Design Web (SMA):** [https://www.sunnydesignweb.com](https://www.sunnydesignweb.com)
 - **Valentin Software YouTube:** [https://www.youtube.com/@valentinsoftware](https://www.youtube.com/@valentinsoftware)
+
+### Dane klimatyczne i narzędzia online
 - **PVGIS (dane klimatyczne):** [https://re.jrc.ec.europa.eu/pvg_tools/en/](https://re.jrc.ec.europa.eu/pvg_tools/en/)
+- **SMA Solar Academy:** [https://www.sma-sunny.com](https://www.sma-sunny.com)
 
 ---
 
