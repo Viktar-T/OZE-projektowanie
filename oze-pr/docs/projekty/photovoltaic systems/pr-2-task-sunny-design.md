@@ -222,9 +222,9 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
 - [ ] **Weryfikacja automatycznej konfiguracji:**
 
   - [ ] Sprawdź liczbę modułów w stringu: powinna być ~12-16 modułów (dla modułów 450 Wp)
-  - [ ] Voc max (zimą, -15°C): <1000 V ✅
+  - [ ] Voc max (zimą, -15°C): < 1000 V ✅
   - [ ] Vmpp (latem, +35°C): 270-800 V (zakres MPPT) ✅
-  - [ ] Prąd stringów: <33 A (limit MPPT) ✅
+  - [ ] Prąd stringów: < 33 A (limit MPPT) ✅
   - [ ] DC/AC ratio: 1.15-1.25 ✅
 
 :::warning Kontrola napięć
