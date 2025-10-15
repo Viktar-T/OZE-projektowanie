@@ -46,7 +46,7 @@ Zaprojektuj prosty system fotowoltaiczny on-grid dla domu jednorodzinnego o nast
 ![1760347800288](image/pr-1-task-for-students/1760347800288.png)
 
 - **Typ dachu:** Dach dwuspadowy. Proszę znalieżć na mapie podobny w Szczenienie lub okolicę.
-- **Konstrukcja budynku:** Dom składa się z dwóch części, każda o wymiarach fundamentu 10 m × 8 m
+- **Konstrukcja budynku:** Dom składa się z dwóch części, każda o wymiarach fundamentu 10 m × 8 m.
 - **Wymiary każdej części:** 10 m × 8 m (fundament)
 - **Nachylenie:** 35°
 - **Azymut:** 180° (orientacja południowa)
