@@ -43,46 +43,15 @@ import {
 </InfoBox>
 
 <InstructorNotes>
-**Tabela porównawcza (skrót):**
+**Porównanie programów** to kluczowy element wyboru narzędzia. **T*SOL** to dedykowany program do systemów ST z wysokim poziomem szczegółowości. **Ma szerokie biblioteki** kolektorów, zasobników i pomp oraz kilkadziesiąt szablonów hydraulicznych z możliwością edycji. **Oferuje modelowanie 2D i 3D** z cieniowaniem i odstępami między rzędami. **Dane meteorologiczne** pochodzą z Meteonorm i TMY, **ekonomia** obejmuje koszt jednostkowy ciepła LCOH i prosty okres zwrotu SPBT.
 
-**🎯 T*SOL (Valentin):**
-- **Poziom**: Wysoki (dedykowany ST)
-- **Biblioteki**: Szerokie (kolektory, zasobniki, pompy)
-- **Hydraulika**: Kilkadziesiąt szablonów + edycja
-- **3D/Zacienienie**: 2D/3D, odstępy rzędów
-- **Meteo**: Meteonorm/TMY
-- **Ekonomia**: Tak (LCOH, SPBT)
-- **Licencja**: Komercyjna / szybka krzywa nauki
+**Polysun** to bardzo zaawansowany program modułowy, który obsługuje systemy ST, PV i pompy ciepła. **Ma bardzo szerokie biblioteki** komponentów i elastyczny edytor schematów element po elemencie. **3D cieniowanie** jest bardzo dokładne, dane meteo pochodzą z Meteonorm. **Rozbudowana ekonomia** pozwala na szczegółowe analizy finansowe.
 
-**🔧 Polysun:**
-- **Poziom**: Bardzo wysoki, modułowy (ST+PV+HP)
-- **Biblioteki**: Bardzo szerokie
-- **Hydraulika**: Edytor schematów element po elemencie
-- **3D/Zacienienie**: 3D cieniowanie
-- **Meteo**: Meteonorm
-- **Ekonomia**: Rozbudowana
-- **Licencja**: Komercyjna / średnia krzywa nauki
+**TRNSYS** to najpotężniejsze narzędzie z bardzo wysokim poziomem szczegółowości czasowej. **Biblioteki typów** pozwalają na modelowanie dowolnych układów hydraulicznych, które sami projektujemy. **Cieniowanie** wymaga zewnętrznych narzędzi, dane meteo mogą pochodzić z różnych źródeł. **Ekonomia** opiera się na własnych modułach. **Stroma krzywa nauki** ale pełna swoboda modelowania.
 
-**🔬 TRNSYS (+TESS):**
-- **Poziom**: Bardzo wysoki (czasowy)
-- **Biblioteki**: Biblioteki typów
-- **Hydraulika**: Dowolna (modelujesz sam)
-- **3D/Zacienienie**: Zewnętrzne narzędzia
-- **Meteo**: Różne
-- **Ekonomia**: Własne moduły
-- **Licencja**: Komerc./akadem. / stroma krzywa nauki
+**RETScreen Expert** to narzędzie feasibility z niskim do średniego poziomu szczegółowości. **Ma ogólne biblioteki** i brak szczegółowej hydrauliki, ale **silne narzędzia ekonomiczne**. **Globalne bazy meteo** i niska krzywa nauki czynią go idealnym do wstępnych analiz opłacalności.
 
-**🚀 RETScreen Expert:**
-- **Poziom**: Niski–średni (feasibility)
-- **Biblioteki**: Ogólne
-- **Hydraulika**: Brak szczegółowej
-- **3D/Zacienienie**: —
-- **Meteo**: Globalne bazy
-- **Ekonomia**: Silna
-- **Licencja**: Subskrypcja / niska krzywa nauki
-
-**💡 Praktyczne wskazówki:**
-Pełna tabela w notatkach prowadzącego (z licencjami i krzywą nauki). W praktyce biurowej: T*SOL – szybkość i raporty; Polysun – elastyczność; TRNSYS – badania; RETScreen/SAM – feasibility; HOMER – mikrosieci.
+**W praktyce biurowej** wybieramy T*SOL dla szybkości i raportów, Polysun dla elastyczności, TRNSYS dla badań naukowych, RETScreen i SAM dla feasibility, a HOMER dla analiz mikrosieci.
 </InstructorNotes>
 
 </Slide>
@@ -111,35 +80,17 @@ Pełna tabela w notatkach prowadzącego (z licencjami i krzywą nauki). W prakty
 </SupportingDetails>
 
 <InstructorNotes>
-**Zalety i wady w praktyce biurowej:**
+**Praktyczne zalety i wady** każdego programu determinują wybór narzędzia. **T*SOL** ma niepodważalne zalety w szybkości iteracji, czytelnych raportach i dedykacji do systemów ST. **Jednak mniej sprawdza się** przy niestandardowych sterowaniach. **Idealny jest** do projektów komercyjnych i raportów dla inwestorów.
 
-**🎯 T*SOL:**
-- **Zalety**: Szybkość iteracji, czytelne raporty, dedykacja do ST
-- **Wady**: Mniej elastyczny przy niestandardowych sterowaniach
-- **Zastosowanie**: Projekty komercyjne, raporty dla inwestorów
+**Polysun** oferuje elastyczne schematy, integracje hybrydowe i modułowość. **Wadą jest** dłuższy czas konfiguracji i wyższa złożoność. **Najlepiej sprawdza się** w układach hybrydowych i zaawansowanych projektach wymagających dużej elastyczności.
 
-**🔧 Polysun:**
-- **Zalety**: Elastyczne schematy, integracje hybrydowe, modułowość
-- **Wady**: Dłuższa konfiguracja, wyższa złożoność
-- **Zastosowanie**: Układy hybrydowe, zaawansowane projekty
+**TRNSYS** daje pełną dowolność modelowania i jest standardem w badaniach naukowych. **Minusem** jest stromy próg wejścia i konieczność walidacji wyników. **Zastosowanie** to głównie badania naukowe i niestandardowe rozwiązania techniczne.
 
-**🔬 TRNSYS:**
-- **Zalety**: Dowolność modelu, badania naukowe, pełna kontrola
-- **Wady**: Stromy próg wejścia, potrzeba walidacji
-- **Zastosowanie**: Badania naukowe, niestandardowe rozwiązania
+**RETScreen i SAM** są znakomite do wstępnych analiz opłacalności i szybkich feasibility studies. **Ograniczeniem** jest brak szczegółów hydraulicznych. **Sprawdzają się** w projektach koncepcyjnych i wstępnych ocenach inwestycyjnych.
 
-**🚀 RETScreen/SAM:**
-- **Zalety**: Wstępna opłacalność, szybkie analizy
-- **Wady**: Brak detali hydraulicznych
-- **Zastosowanie**: Analizy feasibility, projekty koncepcyjne
+**HOMER** to lider w optymalizacji systemowej mikrosieci, ale **mimo zalet** ma znaczące uproszczenia w modelowaniu ST. **Zastosowanie** to głównie mikrosieci i systemy hybrydowe z wieloma źródłami energii.
 
-**🌐 HOMER:**
-- **Zalety**: Optymalizacja systemowa (mikrosieci)
-- **Wady**: Uproszczenia ST
-- **Zastosowanie**: Mikrosieci, systemy hybrydowe
-
-**💡 Praktyczne wskazówki:**
-Dobór narzędzia zależy od celu: raport inwestorski vs. badania naukowe vs. projekt koncepcyjny.
+**Kluczowa zasada** - dobór narzędzia zależy od celu projektu: raport inwestorski, badania naukowe czy projekt koncepcyjny.
 </InstructorNotes>
 
 </Slide>
@@ -166,25 +117,13 @@ Dobór narzędzia zależy od celu: raport inwestorski vs. badania naukowe vs. pr
 </SupportingDetails>
 
 <InstructorNotes>
-**Integracja z CAD/BIM i wymiana danych:**
+**Integracja z systemami CAD/BIM** to coraz ważniejszy aspekt w nowoczesnym projektowaniu. **Eksport i raportowanie** to podstawa - raporty eksportujemy do PDF i Word, tabele do CSV i Excel, a wykresy i zdjęcia do PNG i SVG. **Standaryzowane formaty** umożliwiają efektywną komunikację z różnymi odbiorcami projektu.
 
-**📤 Eksport i raportowanie:**
-- Eksport raportów do **PDF/Word**, tabele do **CSV/Excel**
-- Zdjęcia/wykresy do **PNG/SVG**
-- Standaryzowane formaty dla różnych odbiorców
+**W projektach BIM** mamy możliwość importu geometrii i ekspozycji bezpośrednio z plików IFC. **Najczęściej** realizujemy to przez narzędzia pośrednie jak Polysun czy TRNSYS. **Kluczowe** jest zachowanie spójności metadanych i jednostek między systemami.
 
-**🏗️ Integracja BIM:**
-- W projektach BIM: import geometrii i ekspozycji z IFC
-- Zwykle przez narzędzia pośrednie (Polysun/TRNSYS)
-- Zachowanie spójności metadanych i jednostek
+**Import danych** obejmuje profile zapotrzebowania w formacie CSV z rozdzielczością godzinową lub dzienną, dane meteorologiczne z TMY i Meteonorm, oraz parametry komponentów z bibliotek producentów. **Spójność formatów** ma ogromne znaczenie dla efektywności pracy.
 
-**📊 Import danych:**
-- Profile zapotrzebowania: CSV (godzinowe/dzienne)
-- Dane meteorologiczne: TMY, Meteonorm
-- Parametry komponentów: biblioteki producentów
-
-**💡 Praktyczne wskazówki:**
-W projektach BIM integracja bywa pośrednia; ważne by zachować spójność metadanych i jednostek.
+**W praktyce** integracja z BIM bywa pośrednia, ale **najważniejsze** to zachowanie spójności metadanych i jednostek między wszystkimi systemami projektowymi.
 </InstructorNotes>
 
 </Slide>
@@ -212,32 +151,17 @@ W projektach BIM integracja bywa pośrednia; ważne by zachować spójność met
 </SupportingDetails>
 
 <InstructorNotes>
-**Drzewo decyzyjne wyboru narzędzia:**
+**Drzewo decyzyjne** to systematyczne podejście do wyboru narzędzia projektowego. **Pierwsze pytanie** - czy potrzebujemy szczegółowej hydrauliki i profesjonalnych raportów? **Jeśli tak**, to T*SOL jest najlepszym wyborem - dedykowany do ST z szybkimi iteracjami.
 
-**🔧 Szczegółowa hydraulika i raporty?**
-- **Tak** → T*SOL (dedykowany ST, szybkie iteracje)
-- **Nie** → Przejdź do następnego pytania
+**Następne pytanie** dotyczy układów hybrydowych i nietypowych rozwiązań. **Jeśli projekt** wymaga elastyczności i modułowości, wybieramy Polysun lub TRNSYS w zależności od stopnia złożoności.
 
-**🔄 Układ hybrydowy/nietypowy?**
-- **Tak** → Polysun/TRNSYS (elastyczność, modułowość)
-- **Nie** → Przejdź do następnego pytania
+**Jeśli celem** jest tylko ocena opłacalności, RETScreen i SAM oferują szybkie narzędzia feasibility. **Idealne** do wstępnych analiz inwestycyjnych.
 
-**🚀 Tylko opłacalność?**
-- **Tak** → RETScreen/SAM (szybkie feasibility)
-- **Nie** → Przejdź do następnego pytania
+**Dla mikrosieci** z fotowoltaiką, generatorami, magazynami i systemami ST, HOMER jest najlepszym rozwiązaniem, choć z zastrzeżeniami do modelowania części cieplnej.
 
-**🌐 Mikrosieć (PV+genset+storage+ST)?**
-- **Tak** → HOMER (z zastrzeżeniami do ST)
-- **Nie** → Powrót do wcześniejszych opcji
+**Dodatkowe czynniki** to kompetencje zespołu projektowego, budżet na licencje i szkolenia, czas realizacji projektu oraz wymagania klienta dotyczące standardów raportowania. **Te aspekty** często determinują finalny wybór narzędzia.
 
-**🤔 Dodatkowe czynniki:**
-- **Kompetencje zespołu** - poziom zaawansowania użytkowników
-- **Budżet projektu** - koszty licencji i szkoleń
-- **Czas realizacji** - harmonogram projektu
-- **Wymagania klienta** - standardy raportowania i dokumentacji
-
-**💡 Praktyczne wskazówki:**
-Uwzględnij kompetencje zespołu oraz wymagania klienta/instytucji finansującej.
+**Praktyczna wskazówka** - zawsze uwzględniaj kompetencje zespołu oraz specyficzne wymagania klienta czy instytucji finansującej projekt.
 </InstructorNotes>
 
 </Slide>
@@ -265,30 +189,15 @@ Uwzględnij kompetencje zespołu oraz wymagania klienta/instytucji finansującej
 </SuccessBox>
 
 <InstructorNotes>
-**Co porównywać w raportach:**
+**Raporty** muszą zawierać kluczowe metryki energetyczne i ekonomiczne. **Metryki energetyczne** to przede wszystkim uzysk roczny w kWh, który pokazuje całkowitą produkcję ciepła, pokrycie solarne f_sol w procentach oraz szczegółowe straty składowe - zasobnika, rurociągów, cyrkulacji i postoju systemu.
 
-**⚡ Metryki energetyczne:**
-- Uzysk [kWh/rok] - całkowita produkcja ciepła
-- f_sol [%] - pokrycie solarne
-- Straty składowe - zasobnik, rurociągi, cyrkulacja, postój
+**Metryki ekonomiczne** obejmują koszt jednostkowy ciepła LCOH, prosty okres zwrotu SPBT i wartość bieżącą netto NPV. **Analiza wrażliwości** na zmiany o ±20% pozwala ocenić ryzyka inwestycyjne związane ze zmianami cen energii i przewidywanym uzyskiem.
 
-**💰 Metryki ekonomiczne:**
-- LCOH - koszt jednostkowy ciepła
-- SPBT/NPV - okres zwrotu i wartość bieżąca
-- Wrażliwość ±20% - analiza ryzyk
+**Wizualizacje** to kluczowy element raportu - wykresy miesięczne pokazujące uzysk i pokrycie solarne, profile temperaturowe oraz bilans energetyczny systemu. **Te elementy** pomagają klientowi zrozumieć działanie systemu w czasie.
 
-**📈 Wykresy i wizualizacje:**
-- Wykresy miesięczne uzysku i pokrycia
-- Profile temperaturowe
-- Bilans energetyczny
+**Standardowe wyjścia raportowe** powinny zawierać uzysk roczny, pokrycie solarne, straty z podziałem na komponenty, czas pracy pomp, wszystkie metryki ekonomiczne razem z analizą wrażliwości oraz wykresy miesięczne.
 
-**✅ Przykładowe wyjścia raportowe:**
-- Uzysk [kWh/rok], f_sol, straty (zasobnik, rury, cyrkulacja), czas pracy pomp
-- LCOH, SPBT/NPV, wrażliwość ±20% na ceny energii i uzysk
-- Wykresy miesięczne uzysku i pokrycia
-
-**💡 Praktyczne wskazówki:**
-Standaryzuj sekcję raportu: metryki energ./ekonomiczne + założenia + warianty + wnioski.
+**Praktyczna wskazówka** - standaryzuj sekcję raportu zawsze w tej samej kolejności: metryki energetyczne, metryki ekonomiczne, założenia projektowe, warianty rozwiązań oraz wnioski i rekomendacje.
 </InstructorNotes>
 
 </Slide>

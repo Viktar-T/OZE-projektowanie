@@ -36,20 +36,11 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Przygotowanie projektu:**
+**Przygotowanie projektu** to fundament efektywnej pracy z T*SOL. **Konwencje nazewnictwa** są kluczowe - używamy formatu `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`, na przykład `ST_Hotel_DHW_202412_V1A`. **To pozwala** na łatwą identyfikację projektów i utrzymanie porządku w plikach.
 
-**📝 Konwencje nazewnictwa:**
-- **Format**: `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`
-- **Przykład**: `ST_Hotel_DHW_202412_V1A`
-- **Korzyści**: Łatwa identyfikacja, porządek w plikach
+**Struktura folderów** powinna być zawsze spójna. **Folder `input/`** zawiera wszystkie dane wejściowe - meteo, profile zapotrzebowania i parametry komponentów. **Folder `output/`** to miejsce na raporty, wykresy i dokumentację projektową. **Folder `variants/`** służy do przechowywania kopii projektów i różnych wariantów rozwiązań.
 
-**📂 Struktura folderów:**
-- **`input/`** - dane wejściowe (meteo, profile, parametry)
-- **`output/`** - raporty, wykresy, dokumentacja
-- **`variants/`** - kopie projektów, warianty rozwiązań
-
-**💡 Praktyczne wskazówki:**
-Porządek plików i wersji skraca czas porównania wariantów i akceptacji przez klienta.
+**Porządek** w nazewnictwie i strukturze plików **znacznie skraca** czas porównania wariantów i ułatwia akceptację projektów przez klientów. **To inwestycja** w efektywność długoterminową.
 </InstructorNotes>
 
 </Slide>
@@ -62,7 +53,7 @@ Porządek plików i wersji skraca czas porównania wariantów i akceptacji przez
 
 - 🎯 **Nowy projekt** → typ zastosowania (c.w.u./basen/c.o./kombinowane)
 - 🌤️ **Lokalizacja i meteo** (TMY/Meteonorm, korekty ±5% dla mikroklimatów)
-- 📊 **Profil zapotrzebowania**: CSV `timestamp; demand_lph; T_set_C`
+- 📊 **Profil zapotrzebowania**: CSV timestamp; demand_lph; T_set_C
 - ☀️ **Wstępny dobór kolektorów**: kąt/azymut/odstępy, przeszkody
 
 </KeyPoints>
@@ -77,30 +68,15 @@ Porządek plików i wersji skraca czas porównania wariantów i akceptacji przez
 </SupportingDetails>
 
 <InstructorNotes>
-**Kroki 1–4: Start w T*SOL:**
+**Pierwsze kroki** w T*SOL to podstawa całego projektu. **Tworzenie nowego projektu** zaczynamy od wyboru typu zastosowania - czy to c.w.u., basen, centralne ogrzewanie czy kombinowany system. **Ważne** jest uzupełnienie metryk celu już na początku, takich jak pokrycie solarne f_sol czy koszt jednostkowy ciepła LCOH - to trzyma nas w dyscyplinie i pomaga w ocenie postępów.
 
-**🎯 Krok 1 - Nowy projekt:**
-- Wybierz typ zastosowania (c.w.u./basen/c.o./kombinowane)
-- Uzupełnij metryki celu (np. f_sol, LCOH) – trzyma to dyscyplinę
-- Wybierz szablon odpowiedni dla zastosowania
+**Lokalizacja i dane meteorologiczne** są fundamentem obliczeń. **Wybieramy miejscowość** i sprawdzamy dostępność danych TMY lub Meteonorm. **Dla projektów** w dolinach czy na wzgórzach rozważamy korekty irradiancji o ±5% i testujemy wrażliwość dla specyficznych mikroklimatów.
 
-**🌤️ Krok 2 - Lokalizacja i meteo:**
-- Wybierz miejscowość, sprawdź TMY/Meteonorm
-- Jeśli to projekt w dolinie/na wzgórzu – rozważ ±5% korekty irradiancji
-- Test wrażliwości dla specyficznych mikroklimatów
+**Profil zapotrzebowania** to kluczowy element - przygotowujemy plik CSV w formacie timestamp; demand_lph; T_set_C. **Weryfikujemy** sumy roczne i szczyty godzinowe, najlepiej poprzez podgląd wykresu w narzędziu. **Dla obiektów** z cyrkulacją uwzględniamy harmonogram pracy pompy cyrkulacyjnej.
 
-**📊 Krok 3 - Profil zapotrzebowania:**
-- Przygotuj plik: `timestamp; demand_lph; T_set_C`
-- Zweryfikuj sumy roczne i szczyty godzinowe (podgląd wykresu w narzędziu)
-- Dla obiektów z cyrkulacją – uwzględnij harmonogram pracy pompy cyrkulacyjnej
+**Wstępny dobór kolektorów** obejmuje wybór modelu z biblioteki, ustawienie azymutu, kąta nachylenia i odstępów między rzędami. **Dodajemy przeszkody** jak kominy i attyki, sprawdzamy cień sezonowy. **Pro tip** dla dachów płaskich - kąt nachylenia 25-35°, odległość między rzędami co najmniej 1,5-2 razy wysokość modułu.
 
-**☀️ Krok 4 - Wstępny dobór kolektorów:**
-- Wybierz model z biblioteki; ustaw azymut/kąt/odstępy rzędów
-- Dodaj przeszkody (kominy, attyki) i sprawdź cień sezonowy
-- **Pro tip:** dachu płaskie – tilt 25–35°, odległość między rzędami ≥ 1,5–2× wysokość modułu
-
-**💡 Praktyczne wskazówki:**
-Zweryfikuj sumy roczne i szczyty godzinowe; sprawdź samocieniowanie zimą.
+**Kluczowe** to weryfikacja sum rocznych i szczytów godzinowych oraz sprawdzenie samocieniowania zimą.
 </InstructorNotes>
 
 </Slide>
@@ -128,30 +104,13 @@ Zweryfikuj sumy roczne i szczyty godzinowe; sprawdź samocieniowanie zimą.
 </SupportingDetails>
 
 <InstructorNotes>
-**Kroki 5–8: Konfiguracja układu:**
+**Konfiguracja układu** to etap precyzyjnego definiowania elementów systemu. **Schemat hydrauliczny** zaczynamy od wyboru szablonu, a następnie doprecyzowujemy wszystkie elementy - pompy, wymienniki, zawory i czujniki. **Dla systemów drain-back** szczególnie ważne jest sprawdzenie spadków i odpowietrzenia zgodnie z praktyką montażową. **Kontrolujemy** zamknięcie bilansu objętości, prawidłowe umiejscowienie czujników i zaworów bezpieczeństwa.
 
-**🔄 Krok 5 - Schemat hydrauliczny:**
-- Wybierz szablon i doprecyzuj: pompy, wymienniki, zawory, czujniki
-- Dla drain‑back – sprawdź spadki i odpowietrzenie (zgodność z praktyką montażową)
-- **QA**: Zamknięcie bilansu objętości, prawidłowe czujniki, zawory bezpieczeństwa
+**Zasobnik i magazynowanie** wymaga odpowiedniego doboru pojemności startowej, na przykład 50 litrów na metr kwadratowy dla c.w.u., i sprawdzenia wpływu wahań ±20%. **Definiujemy warstwowość** wody w zbiorniku i położenie czujników - czy ładowanie odbywa się w górnej czy środkowej strefie. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
 
-**🏺 Krok 6 - Zasobnik i magazynowanie:**
-- Dobierz pojemność startową (np. 50 l/m² dla c.w.u.) i sprawdź wpływ ±20%
-- Zdefiniuj warstwowość i położenie czujników (ładowanie górnej/środkowej strefy)
-- **Wskazówka**: Dla basenów często wystarcza wymiennik bez dużego magazynu
+**Źródło szczytowe i sterowanie** to definicja systemu wspomagającego - kocioł, pompa ciepła czy elektryka, priorytetów i harmonogramów. **Antylegionella** wymaga raz w tygodniu podgrzania do 60-70°C, ale obserwujemy wpływ tego na pokrycie solarne f_sol i koszty eksploatacyjne OPEX. **Kontrolujemy** brak taktowania przez zbyt małe różnice ΔT i sprawdzamy liczbę cykli pracy na dobę.
 
-**⚙️ Krok 7 - Źródło szczytowe i sterowanie:**
-- Zdefiniuj źródło (kocioł/HP/elektryka), priorytety i harmonogramy
-- Antylegionella: 1×/tydz. do 60–70 °C – obserwuj wpływ na f_sol i OPEX
-- **QA**: Brak taktowania (zbyt małe ΔT), sprawdź liczbę cykli/dobę
-
-**📉 Krok 8 - Instalacja rurowa i straty:**
-- Wprowadź **realne** długości i średnice; izolacje wg projektu; odcinki w strefach nieogrzewanych
-- Osobno zdefiniuj cyrkulację c.w.u. (harmonogram!)
-- **Pułapka**: Nieuwzględniona cyrkulacja potrafi „zjeść" uzysk
-
-**💡 Praktyczne wskazówki:**
-Kontrola: bilans objętości, brak taktowania pomp, parametry sterowania realistyczne dla profilu.
+**Instalacja rurowa** wymaga wprowadzenia realnych długości i średnic, parametrów izolacji zgodnych z projektem oraz uwzględnienia odcinków w strefach nieogrzewanych. **Osobno definiujemy cyrkulację** c.w.u. z odpowiednim harmonogramem. **Pułapka** - nieuwzględniona cyrkulacja może znacząco obniżyć uzysk systemu.
 </InstructorNotes>
 
 </Slide>
@@ -170,7 +129,9 @@ Kontrola: bilans objętości, brak taktowania pomp, parametry sterowania realist
 </KeyPoints>
 
 <InstructorNotes>
-Wariantuj po jednym parametrze. Wyniki porównuj tabelarycznie i wykresami.
+**Finalizacja projektu** to etap doprecyzowania parametrów systemu. **Definiujemy** progi ΔT, zabezpieczenia przeciw zamarzaniu i przegrzewom. **Symulacja pełnoroczna** wymaga sprawdzenia ostrzeżeń o stagnacji, maksymalnych temperaturach i taktowaniu pomp. **Wariantowanie** to przygotowanie 3-5 wariantów różniących się pojemnością magazynu, typem kolektora, parametrami ΔT i izolacjami. **Raporty** to dokumentacja techniczna i skrócona wraz z aneksem danych wejściowych i wariantów.
+
+**Kluczowa zasada** - wariantuj po jednym parametrze, wyniki porównuj tabelarycznie i wykresami.
 </InstructorNotes>
 
 </Slide>
@@ -187,7 +148,9 @@ Wariantuj po jednym parametrze. Wyniki porównuj tabelarycznie i wykresami.
 </KeyPoints>
 
 <InstructorNotes>
-Checklisty ułatwiają peer‑review i akceptację klienta.
+**Checklisty operacyjne** to systematyczna kontrola jakości projektu. **Po konfiguracji wejść** sprawdzamy czy profil CSV jest zgodny z rzeczywistością, nie ma samocieniowania, pojemność magazynu jest sensowna i nie występują skrajne temperatury. **Po symulacji** kontrolujemy brak ostrzeżeń krytycznych, czy uzysk specyficzny i pokrycie solarne f_sol mieszczą się w spodziewanym zakresie, oraz czy ekonomia i analiza wrażliwości ±20% są poprawne.
+
+**Checklisty ułatwiają** peer-review projektów i akceptację przez klientów, zapewniając profesjonalną jakość dokumentacji.
 </InstructorNotes>
 
 </Slide>
@@ -205,7 +168,9 @@ Checklisty ułatwiają peer‑review i akceptację klienta.
 </KeyPoints>
 
 <InstructorNotes>
-Zapisuj decyzje i ich wpływ na metryki (uzysk, f_sol, LCOH).
+**Typowe problemy** w projektach ST mają standardowe rozwiązania. **Za wysokie temperatury latem** rozwiązujemy zwiększając magazyn, wprowadzając strategię "heat-dump" lub korygując progi ΔT. **Niski pokrycie solarne f_sol** często wynika ze strat cyrkulacji, nieodpowiednich izolacji lub błędnego harmonogramu odbioru. **Taktowanie pomp** eliminujemy zwiększając histerezę i poprawiając lokalizację czujników.
+
+**Kluczowa zasada** - zawsze zapisuj decyzje i ich wpływ na kluczowe metryki jak uzysk, pokrycie solarne f_sol i koszt jednostkowy ciepła LCOH.
 </InstructorNotes>
 
 </Slide>
@@ -222,7 +187,9 @@ Zapisuj decyzje i ich wpływ na metryki (uzysk, f_sol, LCOH).
 </KeyPoints>
 
 <InstructorNotes>
-Zadanie uczy równowagi między jakością a czasem. Speedrun buduje biegłość narzędziową.
+**Zadanie praktyczne** dla studentów to projekt akademika na 200 osób w Gdańsku z trzema wariantami rozwiązania. **Raport** musi zawierać uzysk roczny, pokrycie solarne f_sol, straty składowe, koszt jednostkowy ciepła LCOH, prosty okres zwrotu SPBT, analizę wrażliwości ±20% i wnioski ograniczone do 200 słów. **To uczy** równowagi między jakością analizy a dostępnym czasem.
+
+**Speedrun w 20 minut** to ćwiczenie biegłości narzędziowej - szablon c.w.u., wybór meteo, profil, kolektory, zasobnik, straty, parametry ΔT, symulacja, porównanie dwóch wariantów i przygotowanie mini-raportu. **Speedrun buduje** automatyzację i biegłość w posługiwaniu się narzędziami T*SOL.
 </InstructorNotes>
 
 </Slide>

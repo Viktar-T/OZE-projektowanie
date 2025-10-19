@@ -6,6 +6,7 @@ Rewrite only the `InstructorNotes` for each slide for the file or directory.
 
 * Output in **Polish** (natural academic, B2–C1).
 * Spoken, lecturer-ready, clear, engaging.
+* Ready to read by the lecturer.
 
 **Output Rules**
 
