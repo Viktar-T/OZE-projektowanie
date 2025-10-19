@@ -68,11 +68,11 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Pierwsze kroki** w T*SOL to podstawa całego projektu. **Tworzenie nowego projektu** zaczynamy od wyboru typu zastosowania - czy to c.w.u., basen, centralne ogrzewanie czy kombinowany system. **Ważne** jest uzupełnienie metryk celu już na początku, takich jak pokrycie solarne f_sol czy koszt jednostkowy ciepła LCOH - to trzyma nas w dyscyplinie i pomaga w ocenie postępów.
+**Pierwsze kroki** w T*SOL to podstawa całego projektu. **Tworzenie nowego projektu** zaczynamy od wyboru typu zastosowania - czy to c.w.u. (ciepłej wody użytkowej), basen, centralne ogrzewanie czy kombinowany system. **Ważne** jest uzupełnienie metryk celu już na początku, takich jak pokrycie solarne f_sol czy koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) - to trzyma nas w dyscyplinie i pomaga w ocenie postępów.
 
-**Lokalizacja i dane meteorologiczne** są fundamentem obliczeń. **Wybieramy miejscowość** i sprawdzamy dostępność danych TMY lub Meteonorm. **Dla projektów** w dolinach czy na wzgórzach rozważamy korekty irradiancji o ±5% i testujemy wrażliwość dla specyficznych mikroklimatów.
+**Lokalizacja i dane meteorologiczne** są fundamentem obliczeń. **Wybieramy miejscowość** i sprawdzamy dostępność danych TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm. **Dla projektów** w dolinach czy na wzgórzach rozważamy korekty irradiancji o ±5% i testujemy wrażliwość dla specyficznych mikroklimatów.
 
-**Profil zapotrzebowania** to kluczowy element - przygotowujemy plik CSV w formacie timestamp; demand_lph; T_set_C. **Weryfikujemy** sumy roczne i szczyty godzinowe, najlepiej poprzez podgląd wykresu w narzędziu. **Dla obiektów** z cyrkulacją uwzględniamy harmonogram pracy pompy cyrkulacyjnej.
+**Profil zapotrzebowania** to kluczowy element - przygotowujemy plik CSV (Comma Separated Values - wartości oddzielone przecinkami) w formacie timestamp; demand_lph; T_set_C. **Weryfikujemy** sumy roczne i szczyty godzinowe, najlepiej poprzez podgląd wykresu w narzędziu. **Dla obiektów** z cyrkulacją uwzględniamy harmonogram pracy pompy cyrkulacyjnej.
 
 **Wstępny dobór kolektorów** obejmuje wybór modelu z biblioteki, ustawienie azymutu, kąta nachylenia i odstępów między rzędami. **Dodajemy przeszkody** jak kominy i attyki, sprawdzamy cień sezonowy. **Pro tip** dla dachów płaskich - kąt nachylenia 25-35°, odległość między rzędami co najmniej 1,5-2 razy wysokość modułu.
 
@@ -106,11 +106,11 @@ import {
 <InstructorNotes>
 **Konfiguracja układu** to etap precyzyjnego definiowania elementów systemu. **Schemat hydrauliczny** zaczynamy od wyboru szablonu, a następnie doprecyzowujemy wszystkie elementy - pompy, wymienniki, zawory i czujniki. **Dla systemów drain-back** szczególnie ważne jest sprawdzenie spadków i odpowietrzenia zgodnie z praktyką montażową. **Kontrolujemy** zamknięcie bilansu objętości, prawidłowe umiejscowienie czujników i zaworów bezpieczeństwa.
 
-**Zasobnik i magazynowanie** wymaga odpowiedniego doboru pojemności startowej, na przykład 50 litrów na metr kwadratowy dla c.w.u., i sprawdzenia wpływu wahań ±20%. **Definiujemy warstwowość** wody w zbiorniku i położenie czujników - czy ładowanie odbywa się w górnej czy środkowej strefie. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
+**Zasobnik i magazynowanie** wymaga odpowiedniego doboru pojemności startowej, na przykład 50 litrów na metr kwadratowy dla c.w.u. (ciepłej wody użytkowej), i sprawdzenia wpływu wahań ±20%. **Definiujemy warstwowość** wody w zbiorniku i położenie czujników - czy ładowanie odbywa się w górnej czy środkowej strefie. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
 
-**Źródło szczytowe i sterowanie** to definicja systemu wspomagającego - kocioł, pompa ciepła czy elektryka, priorytetów i harmonogramów. **Antylegionella** wymaga raz w tygodniu podgrzania do 60-70°C, ale obserwujemy wpływ tego na pokrycie solarne f_sol i koszty eksploatacyjne OPEX. **Kontrolujemy** brak taktowania przez zbyt małe różnice ΔT i sprawdzamy liczbę cykli pracy na dobę.
+**Źródło szczytowe i sterowanie** to definicja systemu wspomagającego - kocioł, pompa ciepła czy elektryka, priorytetów i harmonogramów. **Antylegionella** wymaga raz w tygodniu podgrzania do 60-70°C, ale obserwujemy wpływ tego na pokrycie solarne f_sol i koszty eksploatacyjne OPEX (Operational Expenditure - koszty eksploatacyjne). **Kontrolujemy** brak taktowania przez zbyt małe różnice ΔT i sprawdzamy liczbę cykli pracy na dobę.
 
-**Instalacja rurowa** wymaga wprowadzenia realnych długości i średnic, parametrów izolacji zgodnych z projektem oraz uwzględnienia odcinków w strefach nieogrzewanych. **Osobno definiujemy cyrkulację** c.w.u. z odpowiednim harmonogramem. **Pułapka** - nieuwzględniona cyrkulacja może znacząco obniżyć uzysk systemu.
+**Instalacja rurowa** wymaga wprowadzenia realnych długości i średnic, parametrów izolacji zgodnych z projektem oraz uwzględnienia odcinków w strefach nieogrzewanych. **Osobno definiujemy cyrkulację** c.w.u. (ciepłej wody użytkowej) z odpowiednim harmonogramem. **Pułapka** - nieuwzględniona cyrkulacja może znacząco obniżyć uzysk systemu.
 </InstructorNotes>
 
 </Slide>
@@ -148,7 +148,7 @@ import {
 </KeyPoints>
 
 <InstructorNotes>
-**Checklisty operacyjne** to systematyczna kontrola jakości projektu. **Po konfiguracji wejść** sprawdzamy czy profil CSV jest zgodny z rzeczywistością, nie ma samocieniowania, pojemność magazynu jest sensowna i nie występują skrajne temperatury. **Po symulacji** kontrolujemy brak ostrzeżeń krytycznych, czy uzysk specyficzny i pokrycie solarne f_sol mieszczą się w spodziewanym zakresie, oraz czy ekonomia i analiza wrażliwości ±20% są poprawne.
+**Checklisty operacyjne** to systematyczna kontrola jakości projektu. **Po konfiguracji wejść** sprawdzamy czy profil CSV (Comma Separated Values - wartości oddzielone przecinkami) jest zgodny z rzeczywistością, nie ma samocieniowania, pojemność magazynu jest sensowna i nie występują skrajne temperatury. **Po symulacji** kontrolujemy brak ostrzeżeń krytycznych, czy uzysk specyficzny i pokrycie solarne f_sol mieszczą się w spodziewanym zakresie, oraz czy ekonomia i analiza wrażliwości ±20% są poprawne.
 
 **Checklisty ułatwiają** peer-review projektów i akceptację przez klientów, zapewniając profesjonalną jakość dokumentacji.
 </InstructorNotes>
@@ -187,9 +187,9 @@ import {
 </KeyPoints>
 
 <InstructorNotes>
-**Zadanie praktyczne** dla studentów to projekt akademika na 200 osób w Gdańsku z trzema wariantami rozwiązania. **Raport** musi zawierać uzysk roczny, pokrycie solarne f_sol, straty składowe, koszt jednostkowy ciepła LCOH, prosty okres zwrotu SPBT, analizę wrażliwości ±20% i wnioski ograniczone do 200 słów. **To uczy** równowagi między jakością analizy a dostępnym czasem.
+**Zadanie praktyczne** dla studentów to projekt akademika na 200 osób w Gdańsku z trzema wariantami rozwiązania. **Raport** musi zawierać uzysk roczny, pokrycie solarne f_sol, straty składowe, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu), analizę wrażliwości ±20% i wnioski ograniczone do 200 słów. **To uczy** równowagi między jakością analizy a dostępnym czasem.
 
-**Speedrun w 20 minut** to ćwiczenie biegłości narzędziowej - szablon c.w.u., wybór meteo, profil, kolektory, zasobnik, straty, parametry ΔT, symulacja, porównanie dwóch wariantów i przygotowanie mini-raportu. **Speedrun buduje** automatyzację i biegłość w posługiwaniu się narzędziami T*SOL.
+**Speedrun w 20 minut** to ćwiczenie biegłości narzędziowej - szablon c.w.u. (ciepłej wody użytkowej), wybór meteo, profil, kolektory, zasobnik, straty, parametry ΔT, symulacja, porównanie dwóch wariantów i przygotowanie mini-raportu. **Speedrun buduje** automatyzację i biegłość w posługiwaniu się narzędziami T*SOL.
 </InstructorNotes>
 
 </Slide>

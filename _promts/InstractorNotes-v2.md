@@ -18,8 +18,8 @@ Rewrite only the `InstructorNotes` for each slide for the file or directory.
 **Derive From Slide**
 
 * Use visible slide content/context and existing `InstructorNotes`.
-* Add short descriptions for abbreviations except the abbreviations from the list.
-  * List of the abbreviations that shouldnot be described: DC/AC,
+* Add short descriptions for abbreviations.
+* Add short descriptions for new concepts.
 
 **Checks**
 

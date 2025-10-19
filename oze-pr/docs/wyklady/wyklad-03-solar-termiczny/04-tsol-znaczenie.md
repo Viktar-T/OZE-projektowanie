@@ -40,7 +40,7 @@ import {
 **Dlaczego T*SOL?**
 
 **🎯 Dedykacja do systemów solarnych termicznych:**
-- Specjalistyczne narzędzie stworzone wyłącznie dla ST
+- Specjalistyczne narzędzie stworzone wyłącznie dla ST (Solar Thermal - systemy solarne termiczne)
 - Kompletne biblioteki komponentów z parametrami z certyfikacji
 - Gotowe schematy hydrauliczne dla różnych zastosowań
 - Optymalizacja pod kątem projektów komercyjnych
@@ -103,7 +103,7 @@ Dlaczego T*SOL? To specjalistyczne narzędzie dla ST z kompletnością bibliotek
 
 **🌤️ Meteo i profile:**
 - Meteonorm - globalne bazy danych meteorologicznych
-- Import CSV - własne profile zapotrzebowania
+- Import CSV (Comma Separated Values - wartości oddzielone przecinkami) - własne profile zapotrzebowania
 - Rozdzielczość godzinowa/dzienna
 
 **🌳 Zacienienie i układ pól:**
@@ -114,7 +114,7 @@ Dlaczego T*SOL? To specjalistyczne narzędzie dla ST z kompletnością bibliotek
 **💰 Ekonomia:**
 - Koszty inwestycyjne i eksploatacyjne
 - Ceny energii, inflacja
-- LCOH, SPBT - metryki finansowe
+- LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), SPBT (Simple Payback Time - prosty okres zwrotu) - metryki finansowe
 - Porównania wariantowe
 
 **📊 Raportowanie:**
@@ -168,11 +168,11 @@ Moduły i funkcje pokrywają pełny cykl projektowy: dane wejściowe → konfigu
 **📊 Profil z danych rzeczywistych:**
 - Import z liczników, gdy możliwe
 - Weryfikacja sum rocznych
-- Test szczytów P95/P99
+- Test szczytów P95 (95 percentyl)/P99 (99 percentyl)
 
 **🔍 Sanity‑check uzysku:**
 - Porównaj kWh/m²·rok z benchmarkami
-- Dla Polski: 250-450 kWh/m²·rok (c.w.u.)
+- Dla Polski: 250-450 kWh/m²·rok (c.w.u. - ciepła woda użytkowa)
 - Sprawdź spójność z literaturą
 
 **🌞 Walidacja letnia:**
@@ -317,7 +317,7 @@ Traktuj ostrzeżenia jako element QC. Zapisuj decyzje i skutki w wariantach A/B.
 <InstructorNotes>
 **Mini‑case (przykład biurowy):**
 
-**🏨 Hotel – 80 pokoi, c.w.u.:**
+**🏨 Hotel – 80 pokoi, c.w.u. (ciepła woda użytkowa):**
 - **Lokalizacja**: Do wyboru (np. Warszawa, Kraków)
 - **Kolektory**: 60 m² płaskich kolektorów
 - **Magazyn**: 2×1000 l zasobniki
@@ -326,8 +326,8 @@ Traktuj ostrzeżenia jako element QC. Zapisuj decyzje i skutki w wariantach A/B.
 **📊 Wyniki symulacji:**
 - **f_sol**: 45–55% (zależnie od sezonu)
 - **Uzysk**: 18–24 MWh/rok
-- **SPBT**: 6–9 lat (zależnie od ceny energii)
-- **LCOH**: 0.15-0.25 PLN/kWh
+- **SPBT (Simple Payback Time - prosty okres zwrotu)**: 6–9 lat (zależnie od ceny energii)
+- **LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła)**: 0.15-0.25 PLN/kWh
 
 **⚠️ Ryzyko stagnacji:**
 - **Problem**: Stagnacja latem przy obłożeniu &lt;30%
@@ -338,10 +338,10 @@ Traktuj ostrzeżenia jako element QC. Zapisuj decyzje i skutki w wariantach A/B.
 - **Heat‑dump do basenu** - wykorzystanie nadwyżek letnich
 - **Tryb basenowy** - alternatywne odbiory ciepła
 - **Optymalizacja sterowania** - harmonogramy sezonowe
-- **Analiza ekonomiczna** - wpływ na SPBT i OPEX
+- **Analiza ekonomiczna** - wpływ na SPBT (Simple Payback Time - prosty okres zwrotu) i OPEX (Operational Expenditure - koszty eksploatacyjne)
 
 **💡 Praktyczne wskazówki:**
-Case ilustruje kompromis: komfort/higiena vs. efektywność i OPEX.
+Case ilustruje kompromis: komfort/higiena vs. efektywność i OPEX (Operational Expenditure - koszty eksploatacyjne).
 </InstructorNotes>
 
 </Slide>
@@ -372,13 +372,13 @@ Case ilustruje kompromis: komfort/higiena vs. efektywność i OPEX.
 
 **🌤️ Ile danych meteo potrzebuję?**
 - **Odpowiedź**: Pełny rok godzinowy; dla mikroklimatów korekty ±5-10%
-- **Źródła**: TMY, Meteonorm, lokalne stacje
+- **Źródła**: TMY (Typical Meteorological Year - typowy rok meteorologiczny), Meteonorm, lokalne stacje
 - **Weryfikacja**: Porównaj z innymi źródłami
 
 **🔥 Czy mogę modelować pompę ciepła jako źródło szczytowe?**
 - **Odpowiedź**: Tak, jako źródło wspomagające
 - **Uwagi**: Sprawdź kompatybilność z wersją T*SOL
-- **Parametry**: Moc, COP, zakresy temperatur
+- **Parametry**: Moc, COP (Coefficient of Performance - współczynnik wydajności), zakresy temperatur
 
 **📊 Jak raportować do finansującego?**
 - **Wyniki bazowe** - metryki energetyczne i ekonomiczne

@@ -40,9 +40,9 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Proces modelowania systemów ST** to **systematyczne podejście** od definicji celu aż po finalny raport. **Zaczynamy od celu** - określamy metryki sukcesu jak pokrycie solarne f_sol, koszt jednostkowy ciepła LCOH i prosty okres zwrotu SPBT. **Identyfikujemy ograniczenia** projektowe i wybieramy odpowiednie narzędzie symulacyjne.
+**Proces modelowania systemów ST (Solar Thermal - systemy solarne termiczne)** to **systematyczne podejście** od definicji celu aż po finalny raport. **Zaczynamy od celu** - określamy metryki sukcesu jak pokrycie solarne f_sol, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu). **Identyfikujemy ograniczenia** projektowe i wybieramy odpowiednie narzędzie symulacyjne.
 
-**Dane wejściowe** to klucz - **lokalizacja i dane meteorologiczne**, profil zapotrzebowania najlepiej importowany z CSV, oraz parametry komponentów z bibliotek producentów. **Bez dobrych danych wejściowych** nie ma mowy o wiarygodnych wynikach.
+**Dane wejściowe** to klucz - **lokalizacja i dane meteorologiczne**, profil zapotrzebowania najlepiej importowany z CSV (Comma Separated Values - wartości oddzielone przecinkami), oraz parametry komponentów z bibliotek producentów. **Bez dobrych danych wejściowych** nie ma mowy o wiarygodnych wynikach.
 
 **Konfiguracja systemu** obejmuje dobór kolektorów i ich rozmieszczenie, wybór schematu hydraulicznego z dostępnych szablonów oraz konfigurację zasobnika i logiki sterowania. **To etap** gdzie projekt nabiera konkretnego kształtu.
 
@@ -76,11 +76,11 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Rozpoczynamy projekt** od solidnych fundamentów. **Krok pierwszy** to definicja celu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol powyżej 50% czy koszt jednostkowy ciepła LCOH poniżej określonej kwoty. **Identyfikujemy ograniczenia** budżetowe i techniczne, a następnie wybieramy narzędzie symulacyjne. **Kluczowe pytanie** - czy nasze metryki są mierzalne i policzalne w wybranym programie?
+**Rozpoczynamy projekt** od solidnych fundamentów. **Krok pierwszy** to definicja celu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol powyżej 50% czy koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) poniżej określonej kwoty. **Identyfikujemy ograniczenia** budżetowe i techniczne, a następnie wybieramy narzędzie symulacyjne. **Kluczowe pytanie** - czy nasze metryki są mierzalne i policzalne w wybranym programie?
 
-**Dane klimatyczne** to podstawa wszystkich obliczeń. **Wybieramy punkt meteorologiczny** TMY lub Meteonorm, uwzględniamy wysokość n.p.m. i stosujemy korekty lokalne. **W przypadku specyficznych mikroklimatów** używamy korekty globalnej irradiancji od ±5% do ±10% i sprawdzamy wrażliwość wyników.
+**Dane klimatyczne** to podstawa wszystkich obliczeń. **Wybieramy punkt meteorologiczny** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm, uwzględniamy wysokość n.p.m. i stosujemy korekty lokalne. **W przypadku specyficznych mikroklimatów** używamy korekty globalnej irradiancji od ±5% do ±10% i sprawdzamy wrażliwość wyników.
 
-**Profil zapotrzebowania** musi być rzetelny - uwzględniamy rozkład dobowo-godzinowy, sezonowość, rozróżnienie dni roboczych i weekendów oraz temperatury zadane. **Zalecany format CSV** to `timestamp; demand_lph; T_set_C; is_weekend`. **Weryfikujemy** zgodność sum rocznych z audytem i testujemy szczyty P95/P99.
+**Profil zapotrzebowania** musi być rzetelny - uwzględniamy rozkład dobowo-godzinowy, sezonowość, rozróżnienie dni roboczych i weekendów oraz temperatury zadane. **Zalecany format CSV (Comma Separated Values - wartości oddzielone przecinkami)** to `timestamp; demand_lph; T_set_C; is_weekend`. **Weryfikujemy** zgodność sum rocznych z audytem i testujemy szczyty P95 (95 percentyl)/P99 (99 percentyl).
 
 **Wstępny dobór kolektorów** uwzględnia typ, dostępną powierzchnię, azymut i kąt nachylenia, oraz istniejące przeszkody. **Uwaga na pułapkę** - zbyt strome kąty na dachach płaskich prowadzą do samocieniowania. **Przygotowujemy warianty**: płaskie, próżniowe i CPC.
 </InstructorNotes>
@@ -112,7 +112,7 @@ import {
 <InstructorNotes>
 **Teraz przechodzimy** do konfiguracji układu hydraulicznego. **Krok piąty** to wybór schematu hydraulicznego z dostępnych szablonów - glikol z wymiennikiem, drain-back, dwie wężownice lub schematy kombinowane. **Kontrolujemy** zamknięcie bilansu objętości, prawidłowe umiejscowienie czujników i zaworów bezpieczeństwa.
 
-**Magazyn energii** to kluczowy element systemu. **Reguła startowa** to od 40 do 70 litrów na metr kwadratowy kolektora dla c.w.u., ale korygujemy to po analizie profili zapotrzebowania. **Modelujemy zasobnik** z odpowiednią objętością, stratami i warstwowością. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
+**Magazyn energii** to kluczowy element systemu. **Reguła startowa** to od 40 do 70 litrów na metr kwadratowy kolektora dla c.w.u. (ciepłej wody użytkowej), ale korygujemy to po analizie profili zapotrzebowania. **Modelujemy zasobnik** z odpowiednią objętością, stratami i warstwowością. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
 
 **Żródło szczytowe i sterowanie** wymagają definicji priorytetu solaru, harmonogramów antylegionella i progów ΔT dla startu i stopu pomp. **Kontrolujemy** brak taktowania przez zbyt małe różnice temperatury i sprawdzamy liczbę cykli pracy na dobę.
 
@@ -146,11 +146,11 @@ import {
 <InstructorNotes>
 **Finalizacja modeli** to etap sprawdzania i optymalizacji. **Zacienienie** modelujemy uwzględniając kominy, attyki i odstępy między rzędami kolektorów, oceniamy cień sezonowo. **Kluczowe pytanie** - czy nie ma cienia własnego przy niskim słońcu zimą?
 
-**Symulacja** wymaga odpowiednich ustawień - krok godzinowy, pełny rok, ostrzeżenia o stagnacji, przekroczeniach temperatur i kawitacji. **Sanity-check** to porównanie uzysku specyficznego w kWh na metr kwadratowy rocznie z literaturą i benchmarkami dla Polski - orientacyjnie od 250 do 450 dla c.w.u.
+**Symulacja** wymaga odpowiednich ustawień - krok godzinowy, pełny rok, ostrzeżenia o stagnacji, przekroczeniach temperatur i kawitacji. **Sanity-check** to porównanie uzysku specyficznego w kWh na metr kwadratowy rocznie z literaturą i benchmarkami dla Polski - orientacyjnie od 250 do 450 dla c.w.u. (ciepłej wody użytkowej).
 
 **Wariantowanie** to zmiany po jednym parametrze - powierzchnia, pojemność, progi ΔT, izolacje, typ kolektora. **Używamy narzędzi** do kopiowania wariantów, porównań tabelarycznych i wykresów radarowych.
 
-**Analiza ekonomiczna** obejmuje koszty CAPEX - kolektory, montaż, orurowanie i automatykę oraz OPEX - serwis glikolu, pompy i przeglądy. **Wyniki** to koszt jednostkowy ciepła LCOH, prosty okres zwrotu SPBT, wartość bieżąca netto NPV i analiza wrażliwości na zmiany cen energii i uzysku o ±20%. **Analizujemy ryzyka** związane z cenami energii, degradacją sprawności i przerwami w pracy.
+**Analiza ekonomiczna** obejmuje koszty CAPEX (Capital Expenditure - nakłady inwestycyjne) - kolektory, montaż, orurowanie i automatykę oraz OPEX (Operational Expenditure - koszty eksploatacyjne) - serwis glikolu, pompy i przeglądy. **Wyniki** to koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu), wartość bieżąca netto NPV (Net Present Value - wartość bieżąca netto) i analiza wrażliwości na zmiany cen energii i uzysku o ±20%. **Analizujemy ryzyka** związane z cenami energii, degradacją sprawności i przerwami w pracy.
 
 **Praktyczna wskazówka** - zapisuj wariant bazowy i zmieniaj pojedyncze parametry, raportuj różnice i rekomendacje dla każdego wariantu.
 </InstructorNotes>
@@ -180,7 +180,7 @@ import {
 </SuccessBox>
 
 <InstructorNotes>
-**Kontrola jakości** wymaga systematycznego podejścia. **Lista QC** to nasz bezpiecznik - sprawdzamy czy dane meteo są zgodne z lokalizacją, profil zapotrzebowania ma zweryfikowaną sumę roczną i szczyty, straty cyrkulacji są policzone i realistyczne, brak ostrzeżeń o stagnacji w wariancie finalnym oraz czy raport zawiera założenia i warianty.
+**Kontrola jakości** wymaga systematycznego podejścia. **Lista QC (Quality Control - kontrola jakości)** to nasz bezpiecznik - sprawdzamy czy dane meteo są zgodne z lokalizacją, profil zapotrzebowania ma zweryfikowaną sumę roczną i szczyty, straty cyrkulacji są policzone i realistyczne, brak ostrzeżeń o stagnacji w wariancie finalnym oraz czy raport zawiera założenia i warianty.
 
 **Harmonogram warsztatowy** na dwie godziny wymaga dyscypliny czasowej. **Pierwsze piętnaście minut** to ustawienie projektu, meteo i profilu. **Następne dwadzieścia pięć minut** to dobór kolektorów, schematu i zasobnika. **Pół godziny** poświęcamy na straty, sterowanie i cienie. **Dwadzieścia minut** na symulację i sanity-check. **Ostatnie pół godziny** to przygotowanie trzech wariantów i skróconego raportu.
 
