@@ -23,35 +23,37 @@ import {
 
 | Program | Poziom | Biblioteki | Hydraulika | 3D/Zacienienie | Meteo | Ekonomia |
 |---|---|---|---|---|---|---|
-| **T*SOL** | Wysoki | Szerokie | Szablony | 2D/3D | Meteonorm/TMY | Tak |
-| **Polysun** | Bardzo wysoki | Bardzo szerokie | Edytor schematów | 3D | Meteonorm | Rozbudowana |
-| **TRNSYS (+TESS)** | Bardzo wysoki | Biblioteki typów | Dowolna (sam) | Zewnętrzne | Różne | Własne |
-| **RETScreen** | Niski–średni | Ogólne | — | — | Globalne | Silna |
-| **SAM (NREL)** | Średni | Ograniczone | Szablony | — | TMY | Tak |
-| **HOMER Pro** | Systemowy | Ogólne | — | — | Globalne | Bardzo silna |
+| **[T*SOL](https://valentin-software.com/en/products/tsol)** | Wysoki | Szerokie | Szablony | 2D/3D | Meteonorm/TMY | Tak |
+| **[Polysun](https://www.velasolaris.com/en/)** | Bardzo wysoki | Bardzo szerokie | Edytor schematów | 3D | Meteonorm | Rozbudowana |
+| **[TRNSYS](https://www.trnsys.com) ([TESS](https://www.trnsys.com/tess-libraries/))** | Bardzo wysoki | Biblioteki typów | Dowolna (sam) | Zewnętrzne | Różne | Własne |
+| **[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen)** | Niski–średni | Ogólne | — | — | Globalne | Silna |
+| **[SAM (NREL)](https://sam.nrel.gov)** | Średni | Ograniczone | Szablony | — | TMY | Tak |
+| **[HOMER Pro](https://www.homerenergy.com/products/pro/index.html)** | Systemowy | Ogólne | — | — | Globalne | Bardzo silna |
 
 </SupportingDetails>
 
 <InfoBox title="💡 Kluczowe różnice">
 
-- 🎯 **T*SOL** - dedykowany ST, szybkie iteracje, profesjonalne raporty
-- 🔧 **Polysun** - elastyczne schematy, integracje hybrydowe, modułowość
-- 🔬 **TRNSYS** - pełna swoboda, badania naukowe, walidacja wymagana
-- 🚀 **RETScreen/SAM** - szybkie feasibility, ograniczona hydraulika
-- 🌐 **HOMER** - mikrosieci, optymalizacja systemowa
+- 🎯 **[T*SOL](https://valentin-software.com/en/products/tsol)** - dedykowany ST, szybkie iteracje, profesjonalne raporty
+- 🔧 **[Polysun](https://www.velasolaris.com/en/)** - elastyczne schematy, integracje hybrydowe, modułowość
+- 🔬 **[TRNSYS](https://www.trnsys.com) ([alternatywnie](https://trnsys.org))** - pełna swoboda, badania naukowe, walidacja wymagana
+- 🚀 **[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen)/[SAM](https://sam.nrel.gov)** - szybkie feasibility (analizę wykonalności lub analizę opłacalności projektu), ograniczona hydraulika
+- 🌐 **[HOMER Pro](https://www.homerenergy.com/products/pro/index.html)** - mikrosieci, optymalizacja systemowa
 
 </InfoBox>
 
 <InstructorNotes>
-**Porównanie programów** to kluczowy element wyboru narzędzia. **T*SOL** to dedykowany program do systemów ST (Solar Thermal - systemy solarne termiczne) z wysokim poziomem szczegółowości. **Ma szerokie biblioteki** kolektorów, zasobników i pomp oraz kilkadziesiąt szablonów hydraulicznych z możliwością edycji. **Oferuje modelowanie 2D i 3D** z cieniowaniem i odstępami między rzędami. **Dane meteorologiczne** pochodzą z Meteonorm i TMY (Typical Meteorological Year - typowy rok meteorologiczny), **ekonomia** obejmuje koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu).
+**Porównanie programów** to kluczowy element wyboru narzędzia. **[T*SOL](https://valentin-software.com/en/products/tsol) (opracowanie Valentin Software)** to dedykowany program do systemów ST (Solar Thermal - systemy solarne termiczne) z wysokim poziomem szczegółowości. **Ma szerokie biblioteki** kolektorów, zasobników i pomp oraz kilkadziesiąt szablonów hydraulicznych z możliwością edycji. **Oferuje modelowanie 2D i 3D** z cieniowaniem i odstępami między rzędami. **Dane meteorologiczne** pochodzą z Meteonorm i TMY (Typical Meteorological Year - typowy rok meteorologiczny), **ekonomia** obejmuje koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu).
 
-**Polysun** to bardzo zaawansowany program modułowy, który obsługuje systemy ST (Solar Thermal - systemy solarne termiczne), PV (Photovoltaic - fotowoltaika) i pompy ciepła. **Ma bardzo szerokie biblioteki** komponentów i elastyczny edytor schematów element po elemencie. **3D cieniowanie** jest bardzo dokładne, dane meteo pochodzą z Meteonorm. **Rozbudowana ekonomia** pozwala na szczegółowe analizy finansowe.
+**[Polysun](https://www.velasolaris.com/en/) (Vela Solaris)** to bardzo zaawansowany program modułowy, który obsługuje systemy ST (Solar Thermal - systemy solarne termiczne), PV (Photovoltaic - fotowoltaika) i pompy ciepła. **Ma bardzo szerokie biblioteki** komponentów i elastyczny edytor schematów element po elemencie. **3D cieniowanie** jest bardzo dokładne, dane meteo pochodzą z Meteonorm. **Rozbudowana ekonomia** pozwala na szczegółowe analizy finansowe.
 
-**TRNSYS** to najpotężniejsze narzędzie z bardzo wysokim poziomem szczegółowości czasowej. **Biblioteki typów** pozwalają na modelowanie dowolnych układów hydraulicznych, które sami projektujemy. **Cieniowanie** wymaga zewnętrznych narzędzi, dane meteo mogą pochodzić z różnych źródeł. **Ekonomia** opiera się na własnych modułach. **Stroma krzywa nauki** ale pełna swoboda modelowania.
+**[TRNSYS – Transient System Simulation Tool](https://www.trnsys.com) ([alternatywnie](https://trnsys.org)) (University of Wisconsin–Madison, [TESS Libraries](https://www.trnsys.com/tess-libraries/))** to najpotężniejsze narzędzie z bardzo wysokim poziomem szczegółowości czasowej. **Biblioteki typów** pozwalają na modelowanie dowolnych układów hydraulicznych, które sami projektujemy. **Cieniowanie** wymaga zewnętrznych narzędzi, dane meteo mogą pochodzić z różnych źródeł. **Ekonomia** opiera się na własnych modułach. **Stroma krzywa nauki** ale pełna swoboda modelowania.
 
-**RETScreen Expert** to narzędzie feasibility z niskim do średniego poziomu szczegółowości. **Ma ogólne biblioteki** i brak szczegółowej hydrauliki, ale **silne narzędzia ekonomiczne**. **Globalne bazy meteo** i niska krzywa nauki czynią go idealnym do wstępnych analiz opłacalności.
+**[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen) (Natural Resources Canada)** to narzędzie feasibility (analizę wykonalności lub analizę opłacalności projektu) z niskim do średniego poziomu szczegółowości. **Ma ogólne biblioteki** i brak szczegółowej hydrauliki, ale **silne narzędzia ekonomiczne**. **Globalne bazy meteo** i niska krzywa nauki czynią go idealnym do wstępnych analiz opłacalności.
 
-**W praktyce biurowej** wybieramy T*SOL dla szybkości i raportów, Polysun dla elastyczności, TRNSYS dla badań naukowych, RETScreen i SAM dla feasibility, a HOMER dla analiz mikrosieci.
+**[SAM (System Advisor Model)](https://sam.nrel.gov) (NREL)** i **[HOMER Pro](https://www.homerenergy.com/products/pro/index.html) (UL Solutions)** to narzędzia do analiz techniczno-ekonomicznych i optymalizacji mikro-sieci odpowiednio.
+
+**W praktyce biurowej** wybieramy T*SOL dla szybkości i raportów, Polysun dla elastyczności, TRNSYS dla badań naukowych, RETScreen i SAM dla feasibility (analizę wykonalności lub analizę opłacalności projektu), a HOMER dla analiz mikrosieci.
 </InstructorNotes>
 
 </Slide>
@@ -65,7 +67,7 @@ import {
 - 🎯 **T*SOL**: + szybka iteracja, czytelne raporty; − mniej elastyczny dla nietypowych sterowań
 - 🔧 **Polysun**: + elastyczne schematy; − większa złożoność i czas konfiguracji
 - 🔬 **TRNSYS**: + dowolność; − stromy próg wejścia, konieczna walidacja
-- 🚀 **RETScreen/SAM**: + szybkie feasibility; − brak detali hydrauliki
+- 🚀 **RETScreen/SAM**: + szybkie feasibility (analizę wykonalności lub analizę opłacalności projektu); − brak detali hydrauliki
 - 🌐 **HOMER**: + optymalizacja systemowa; − uproszczenia części cieplnej
 
 </KeyPoints>
@@ -86,7 +88,7 @@ import {
 
 **TRNSYS** daje pełną dowolność modelowania i jest standardem w badaniach naukowych. **Minusem** jest stromy próg wejścia i konieczność walidacji wyników. **Zastosowanie** to głównie badania naukowe i niestandardowe rozwiązania techniczne.
 
-**RETScreen i SAM** są znakomite do wstępnych analiz opłacalności i szybkich feasibility studies. **Ograniczeniem** jest brak szczegółów hydraulicznych. **Sprawdzają się** w projektach koncepcyjnych i wstępnych ocenach inwestycyjnych.
+**RETScreen i SAM** są znakomite do wstępnych analiz opłacalności i szybkich feasibility studies (analiz wykonalności). **Ograniczeniem** jest brak szczegółów hydraulicznych. **Sprawdzają się** w projektach koncepcyjnych i wstępnych ocenach inwestycyjnych.
 
 **HOMER** to lider w optymalizacji systemowej mikrosieci, ale **mimo zalet** ma znaczące uproszczenia w modelowaniu ST. **Zastosowanie** to głównie mikrosieci i systemy hybrydowe z wieloma źródłami energii.
 
@@ -117,13 +119,13 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Integracja z systemami CAD/BIM** to coraz ważniejszy aspekt w nowoczesnym projektowaniu. **Eksport i raportowanie** to podstawa - raporty eksportujemy do PDF i Word, tabele do CSV i Excel, a wykresy i zdjęcia do PNG i SVG. **Standaryzowane formaty** umożliwiają efektywną komunikację z różnymi odbiorcami projektu.
+**Integracja z systemami CAD/BIM (Building Information Modeling - modelowanie informacji o budynku)** to coraz ważniejszy aspekt w nowoczesnym projektowaniu. **Format IFC (Industry Foundation Classes - klasy fundamentowe przemysłowe)** to międzynarodowy standard wymiany danych między różnymi systemami CAD i BIM. **Eksport i raportowanie** to podstawa - raporty eksportujemy do PDF i Word, tabele do CSV i Excel, a wykresy i zdjęcia do PNG i SVG. **Standaryzowane formaty** umożliwiają efektywną komunikację z różnymi odbiorcami projektu.
 
-**W projektach BIM** mamy możliwość importu geometrii i ekspozycji bezpośrednio z plików IFC. **Najczęściej** realizujemy to przez narzędzia pośrednie jak Polysun czy TRNSYS. **Kluczowe** jest zachowanie spójności metadanych i jednostek między systemami.
+**W projektach BIM (Building Information Modeling - modelowanie informacji o budynku)** mamy możliwość importu geometrii i ekspozycji bezpośrednio z plików IFC (Industry Foundation Classes - klasy fundamentowe przemysłowe). **Najczęściej** realizujemy to przez narzędzia pośrednie jak Polysun czy TRNSYS. **Kluczowe** jest zachowanie spójności metadanych i jednostek między systemami.
 
 **Import danych** obejmuje profile zapotrzebowania w formacie CSV z rozdzielczością godzinową lub dzienną, dane meteorologiczne z TMY i Meteonorm, oraz parametry komponentów z bibliotek producentów. **Spójność formatów** ma ogromne znaczenie dla efektywności pracy.
 
-**W praktyce** integracja z BIM bywa pośrednia, ale **najważniejsze** to zachowanie spójności metadanych i jednostek między wszystkimi systemami projektowymi.
+**W praktyce** integracja z BIM (Building Information Modeling - modelowanie informacji o budynku) bywa pośrednia, ale **najważniejsze** to zachowanie spójności metadanych i jednostek między wszystkimi systemami projektowymi.
 </InstructorNotes>
 
 </Slide>
@@ -155,7 +157,7 @@ import {
 
 **Następne pytanie** dotyczy układów hybrydowych i nietypowych rozwiązań. **Jeśli projekt** wymaga elastyczności i modułowości, wybieramy Polysun lub TRNSYS w zależności od stopnia złożoności.
 
-**Jeśli celem** jest tylko ocena opłacalności, RETScreen i SAM oferują szybkie narzędzia feasibility. **Idealne** do wstępnych analiz inwestycyjnych.
+**Jeśli celem** jest tylko ocena opłacalności, RETScreen i SAM oferują szybkie narzędzia feasibility (analizę wykonalności lub analizę opłacalności projektu). **Idealne** do wstępnych analiz inwestycyjnych.
 
 **Dla mikrosieci** z fotowoltaiką, generatorami, magazynami i systemami ST, HOMER jest najlepszym rozwiązaniem, choć z zastrzeżeniami do modelowania części cieplnej.
 

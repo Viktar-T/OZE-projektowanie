@@ -203,69 +203,37 @@ import {
 
 <KeyPoints title="🔧 Dobór narzędzia i zgodność">
 
-- 🚀 **Uproszczone feasibility**: RETScreen/SAM (mało hydrauliki)
-- 🎯 **Dedykowane ST**: T*SOL/Polysun (szablony, biblioteki)
-- 🔬 **Symulacje ogólne**: TRNSYS (pełna swoboda, walidacja!)
-- 📋 **Standardy**: ISO 9806 / EN 12975, Solar Keymark
+- 🚀 **Uproszczone feasibility**: [RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen) / [SAM – System Advisor Model](https://sam.nrel.gov) (mało hydrauliki)
+- 🎯 **Dedykowane ST**: [T*SOL](https://valentin-software.com/en/products/tsol) / [Polysun](https://www.velasolaris.com/en/) (szablony, biblioteki)
+- 🔬 **Symulacje ogólne**: [TRNSYS – Transient System Simulation Tool](https://www.trnsys.com) (pełna swoboda, walidacja!)
+- 📋 **Standardy**: [ISO 9806:2017](https://www.iso.org/standard/67978.html) / [EN 12975:2022](https://www.en-standard.eu/bs-en-12975-2022-solar-collectors-general-requirements/), [Solar Keymark](https://solarkeymark.eu)
 - 🧼 **Higiena**: antylegionella — 60–70 °C w interwałach
 
 </KeyPoints>
 
 <SupportingDetails title="🎓 Wybór narzędzia">
 
-- 🚀 **RETScreen/SAM** - szybkie analizy opłacalności
-- 🎯 **T*SOL/Polysun** - produktywność biurowa, wiarygodne raporty
-- 🔬 **TRNSYS** - badania naukowe, pełna kontrola
+- 🚀 **[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen) / [SAM](https://sam.nrel.gov)** - szybkie analizy opłacalności
+- 🎯 **[T*SOL](https://valentin-software.com/en/products/tsol) ([online](https://online.tsol.de/en/)) / [Polysun](https://www.velasolaris.com/en/)** - produktywność biurowa, wiarygodne raporty
+- 🔬 **[TRNSYS](https://www.trnsys.com) ([alternatywnie](https://trnsys.org))** - badania naukowe, pełna kontrola
 - 📊 **Walidacja** - konieczna dla niestandardowych rozwiązań
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Wybór narzędzia** zależy od poziomu szczegółowości wymaganego modelu. **RETScreen i SAM** to uproszczone narzędzia feasibility - pozwalają na szybkie porównania opłacalności z ograniczoną hydrauliką i podstawowymi modelami. **Zalety to** globalne bazy danych meteorologicznych i silne narzędzia ekonomiczne.
+**Wybór narzędzia** zależy od poziomu szczegółowości wymaganego modelu. **[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen) (opracowane przez Natural Resources Canada) i [SAM – System Advisor Model](https://sam.nrel.gov) (opracowany przez NREL, U.S. Department of Energy)** to uproszczone narzędzia feasibility - pozwalają na szybkie porównania opłacalności z ograniczoną hydrauliką i podstawowymi modelami. **Zalety to** globalne bazy danych meteorologicznych i silne narzędzia ekonomiczne.
 
-**T*SOL i Polysun** to dedykowane narzędzia ST z szablonami schematów hydraulicznych i dokładnymi profilami zapotrzebowania. **Mają rozbudowane biblioteki komponentów** i zapewniają produktywność biurową oraz wiarygodne raporty dla klienta.
+**[T*SOL](https://valentin-software.com/en/products/tsol) ([wersja online](https://online.tsol.de/en/)) i [Polysun](https://www.velasolaris.com/en/)** to dedykowane narzędzia ST z szablonami schematów hydraulicznych i dokładnymi profilami zapotrzebowania. **Mają rozbudowane biblioteki komponentów** i zapewniają produktywność biurową oraz wiarygodne raporty dla klienta.
 
-**TRNSYS** to symulacja ogólna z pełną swobodą modelowania, ale wymaga większego nakładu pracy i walidacji wyników. **Stosuje się głównie** w badaniach naukowych gdzie potrzebujemy pełnej kontroli nad modelem.
+**[TRNSYS – Transient System Simulation Tool](https://www.trnsys.com) ([alternatywnie](https://trnsys.org))** to symulacja ogólna z pełną swobodą modelowania, ale wymaga większego nakładu pracy i walidacji wyników. **Stosuje się głównie** w badaniach naukowych gdzie potrzebujemy pełnej kontroli nad modelem.
 
-**Standardy i certyfikacja** opierają się na ISO 9806 i EN 12975 dla metod badań kolektorów oraz Solar Keymark dla certyfikacji. **Parametry η₀, a₁, a₂** pochodzą z certyfikacji, a **wymogi higieniczne** dotyczą antylegionella.
+**Standardy i certyfikacja** opierają się na [ISO 9806:2017](https://www.iso.org/standard/67978.html) i [EN 12975:2022](https://www.en-standard.eu/bs-en-12975-2022-solar-collectors-general-requirements/) dla metod badań kolektorów oraz [Solar Keymark](https://solarkeymark.eu) dla certyfikacji. **Parametry η₀, a₁, a₂** pochodzą z certyfikacji, a **wymogi higieniczne** dotyczą antylegionella.
 
 **W praktyce** TRNSYS daje największą kontrolę, ale wymaga wysokich kompetencji i walidacji. **T*SOL i Polysun** zapewniają optymalny kompromis między szczegółowością a produktywnością biurową.
 </InstructorNotes>
 
 </Slide>
 
-<VisualSeparator type="warning" />
-
-<Slide title="⚠️ Typowe ryzyka i jak je kontrolować" type="warning">
-
-<KeyPoints title="🔍 Checklisty redukcji ryzyk">
-
-- 🔥 **Przewymiarowanie** → stagnacja, degradacja glikolu (analiza letnia, heat‑dump)
-- 📉 **Zaniżone straty cyrkulacji** → przeszacowanie efektu (realne długości/izolacje)
-- 📊 **Nieadekwatny profil** → błędny dobór objętości (dane licznikowe)
-
-</KeyPoints>
-
-<WarningBox title="🧪 Testy skrajnych warunków">
-
-- 🌞 **Lato/zima** - różne warunki eksploatacji
-- 📊 **P95/P99** - szczyty profilu odbioru
-- 🔍 **Sanity‑check** - uzysk specyficzny i straty postojowe
-- 📈 **Benchmarki** - porównanie z literaturą
-
-</WarningBox>
-
-<InstructorNotes>
-**Ryzyka projektowe** trzeba identyfikować i kontrolować już na etapie modelowania. **Przewymiarowanie systemu** to największe ryzyko - prowadzi do stagnacji latem, degradacji glikolu i przegrzewów. **Kontrolujemy to** analizą letnią, strategią "heat dump" i większymi magazynami. **Testujmy różne konfiguracje** i harmonogramy odbioru.
-
-**Zaniżone straty cyrkulacji** to druga pułapka - prowadzi do przeszacowania efektu i błędnych prognoz. **Musimy wpisywać realne** długości rurociągów i parametry izolacji, wykorzystywać harmonogramy pracy pomp. **Modelujmy cyrkulację** jako osobny obieg.
-
-**Nieadekwatny profil zapotrzebowania** skutkuje błędnym doborem objętości magazynu. **Korzystajmy z danych licznikowych** lub wiarygodnych bibliotek, weryfikujmy sumy roczne i testujmy szczyty.
-
-**Testy skrajnych warunków** to obowiązek - sprawdzamy lato i zimę, szczyty P95 (95 percentyl) i P99 (99 percentyl) profilu odbioru, sanity-check uzysku specyficznego i strat postojowych. **Tylko taka weryfikacja** gwarantuje wiarygodność wyników.
-</InstructorNotes>
-
-</Slide>
 
 <VisualSeparator type="success" />
 

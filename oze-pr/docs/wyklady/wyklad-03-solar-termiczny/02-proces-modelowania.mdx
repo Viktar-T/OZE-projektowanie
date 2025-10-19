@@ -19,14 +19,27 @@ import {
 
 <Slide title="🗺️ Mapa procesu – przegląd" type="info">
 
-<KeyPoints title="🔄 Wejścia → Symulacja → Wyniki → Raport">
+<KeyPoints title="🔄 Kompletny workflow 12 kroków">
 
-- 🎯 **Zdefiniuj cel** i metryki (f_sol, LCOH, SPBT)
-- 🌤️ **Dane meteo** i lokalizacja (TMY/Meteonorm)
-- 📊 **Profil zapotrzebowania** (CSV)
-- 🔧 **Konfiguracja**: kolektory, schemat hydrauliczny, zasobnik
-- ⚙️ **Straty, sterowanie, zacienienie**
-- 🚀 **Symulacja, sanity‑check, warianty, ekonomia**
+**🧩 KROKI 1-4: PODSTAWY PROJEKTU**
+1. 🎯 **Cel projektu** i kryteria sukcesu (f_sol, LCOH, SPBT)
+2. 🌤️ **Dane klimatyczne** i lokalizacja (TMY/Meteonorm)
+3. 📊 **Profil zapotrzebowania** (CSV: timestamp; demand_lph)
+4. ☀️ **Wstępny dobór kolektorów** (płaskie/próżniowe/CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony))
+
+**🛠️ KROKI 5-8: KONFIGURACJA SYSTEMU**
+
+5. 🔄 **Schemat hydrauliczny** (glikol, drain-back, kombinowane)
+6. 🏺 **Magazyn energii** (40-70 l/m² dla c.w.u.)
+7. ⚙️ **Źródło szczytowe** i sterowanie (ΔT, antylegionella)
+8. 📉 **Straty instalacyjne** (długości, izolacje, strefy)
+
+**🌤️ KROKI 9-12: FINALIZACJA I ANALIZA**
+
+9. 🌳 **Zacienienie** i ograniczenia montażowe
+10. 🧪 **Symulacja** i sanity-check (uzysk specyficzny)
+11. 🔄 **Wariantowanie** i optymalizacja (A/B testy)
+12. 💰 **Ekonomia** i ryzyko (LCOH, SPBT/NPV, wrażliwość ±20%)
 
 </KeyPoints>
 
@@ -40,15 +53,14 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Proces modelowania systemów ST (Solar Thermal - systemy solarne termiczne)** to **systematyczne podejście** od definicji celu aż po finalny raport. **Zaczynamy od celu** - określamy metryki sukcesu jak pokrycie solarne f_sol, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu). **Identyfikujemy ograniczenia** projektowe i wybieramy odpowiednie narzędzie symulacyjne.
+**Proces modelowania systemów ST (Solar Thermal - systemy solarne termiczne)** to **systematyczne podejście** składające się z 12 kroków podzielonych na trzy główne fazy projektowe.
 
-**Dane wejściowe** to klucz - **lokalizacja i dane meteorologiczne**, profil zapotrzebowania najlepiej importowany z CSV (Comma Separated Values - wartości oddzielone przecinkami), oraz parametry komponentów z bibliotek producentów. **Bez dobrych danych wejściowych** nie ma mowy o wiarygodnych wynikach.
+**🧩 KROKI 1-4: PODSTAWY PROJEKTU** - **Krok 1** to definicja celu projektu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu). **Krok 2** - **dane klimatyczne** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm z uwzględnieniem korekt lokalnych. **Krok 3** - **profil zapotrzebowania** w formacie CSV z weryfikacją sum rocznych i szczytów P95 (95 percentyl)/P99 (99 percentyl). **Krok 4** - **wstępny dobór kolektorów** płaskich, próżniowych lub CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony) z uwzględnieniem dostępnej powierzchni i kątów nachylenia.
 
-**Konfiguracja systemu** obejmuje dobór kolektorów i ich rozmieszczenie, wybór schematu hydraulicznego z dostępnych szablonów oraz konfigurację zasobnika i logiki sterowania. **To etap** gdzie projekt nabiera konkretnego kształtu.
+**🛠️ KROKI 5-8: KONFIGURACJA SYSTEMU** - **Krok 5** to wybór **schematu hydraulicznego** - glikol z wymiennikiem, drain-back lub schematy kombinowane z kontrolą bilansu objętości. 
+**Krok 6** - **magazyn energii** z regułą 40-70 l/m² dla c.w.u. (ciepłej wody użytkowej), korygowanej po analizie profili. **Krok 7** - **źródło szczytowe i sterowanie** z definicją priorytetu solaru, harmonogramów antylegionella i progów ΔT. **Krok 8** - **straty instalacyjne** - realne długości, średnice, parametry izolacji i uwzględnienie stref nieogrzewanych.
 
-**Parametryzacja** wymaga uwzględnienia strat instalacyjnych w rurociągach i izolacjach, odpowiedniej logiki sterowania z progami ΔT i priorytetami, oraz modelowania zacienienia. **Szczegóły mają znaczenie** na tym etapie.
-
-**Symulacja i analiza** to uruchomienie rocznej symulacji, sanity-check wyników, wariantowanie i optymalizacja, oraz analiza ekonomiczna. **Każdy krok traktujemy** jako punkt kontrolny jakości i dokumentujemy założenia - to podstawa profesjonalnego raportu.
+**🌤️ KROKI 9-12: FINALIZACJA I ANALIZA** - **Krok 9** to **modelowanie zacienienia** kominów, attyk i odstępów między rzędami. **Krok 10** - **symulacja** z sanity-check że wyniki mają sens fizyczny i inżynierski, porównanie uzysku specyficznego z benchmarkami. **Krok 11** - **wariantowanie** pojedynczych parametrów z narzędziami do porównań. **Krok 12** - **analiza ekonomiczna** CAPEX (Capital Expenditure - nakłady inwestycyjne), OPEX (Operational Expenditure - koszty eksploatacyjne), LCOH, SPBT, NPV (Net Present Value - wartość bieżąca netto) z analizą wrażliwości ±20%. **Każdy krok** to punkt kontrolny jakości z dokumentacją założeń i decyzjami.
 </InstructorNotes>
 
 </Slide>
@@ -62,7 +74,7 @@ import {
 1. 🎯 **Cel projektu** i kryteria sukcesu (mierzalne)
 2. 🌤️ **Dane klimatyczne** i lokalizacja (plik meteo)
 3. 📊 **Profil zapotrzebowania** (CSV: timestamp; demand_lph)
-4. ☀️ **Wstępny dobór kolektorów** (A/B/C: płaskie/próżniowe/CPC)
+4. ☀️ **Wstępny dobór kolektorów** (A/B/C: płaskie/próżniowe/CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony))
 
 </KeyPoints>
 
@@ -78,11 +90,11 @@ import {
 <InstructorNotes>
 **Rozpoczynamy projekt** od solidnych fundamentów. **Krok pierwszy** to definicja celu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol powyżej 50% czy koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) poniżej określonej kwoty. **Identyfikujemy ograniczenia** budżetowe i techniczne, a następnie wybieramy narzędzie symulacyjne. **Kluczowe pytanie** - czy nasze metryki są mierzalne i policzalne w wybranym programie?
 
-**Dane klimatyczne** to podstawa wszystkich obliczeń. **Wybieramy punkt meteorologiczny** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm, uwzględniamy wysokość n.p.m. i stosujemy korekty lokalne. **W przypadku specyficznych mikroklimatów** używamy korekty globalnej irradiancji od ±5% do ±10% i sprawdzamy wrażliwość wyników.
+**Dane klimatyczne** to podstawa wszystkich obliczeń. **Wybieramy punkt meteorologiczny** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm, uwzględniamy wysokość n.p.m. (nad poziomem morza) i stosujemy korekty lokalne. **W przypadku specyficznych mikroklimatów** używamy korekty globalnej irradiancji od ±5% do ±10% i sprawdzamy wrażliwość wyników.
 
 **Profil zapotrzebowania** musi być rzetelny - uwzględniamy rozkład dobowo-godzinowy, sezonowość, rozróżnienie dni roboczych i weekendów oraz temperatury zadane. **Zalecany format CSV (Comma Separated Values - wartości oddzielone przecinkami)** to `timestamp; demand_lph; T_set_C; is_weekend`. **Weryfikujemy** zgodność sum rocznych z audytem i testujemy szczyty P95 (95 percentyl)/P99 (99 percentyl).
 
-**Wstępny dobór kolektorów** uwzględnia typ, dostępną powierzchnię, azymut i kąt nachylenia, oraz istniejące przeszkody. **Uwaga na pułapkę** - zbyt strome kąty na dachach płaskich prowadzą do samocieniowania. **Przygotowujemy warianty**: płaskie, próżniowe i CPC.
+**Wstępny dobór kolektorów** uwzględnia typ, dostępną powierzchnię, azymut i kąt nachylenia, oraz istniejące przeszkody. **Uwaga na pułapkę** - zbyt strome kąty na dachach płaskich prowadzą do samocieniowania. **Przygotowujemy warianty**: płaskie, próżniowe i CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony).
 </InstructorNotes>
 
 </Slide>
@@ -146,7 +158,7 @@ import {
 <InstructorNotes>
 **Finalizacja modeli** to etap sprawdzania i optymalizacji. **Zacienienie** modelujemy uwzględniając kominy, attyki i odstępy między rzędami kolektorów, oceniamy cień sezonowo. **Kluczowe pytanie** - czy nie ma cienia własnego przy niskim słońcu zimą?
 
-**Symulacja** wymaga odpowiednich ustawień - krok godzinowy, pełny rok, ostrzeżenia o stagnacji, przekroczeniach temperatur i kawitacji. **Sanity-check** to porównanie uzysku specyficznego w kWh na metr kwadratowy rocznie z literaturą i benchmarkami dla Polski - orientacyjnie od 250 do 450 dla c.w.u. (ciepłej wody użytkowej).
+**Symulacja** wymaga odpowiednich ustawień - krok godzinowy, pełny rok, ostrzeżenia o stagnacji, przekroczeniach temperatur i kawitacji. **Sanity-check wyników** to szybka kontrola zdrowego rozsądku, czyli sprawdzenie, czy wyniki symulacji mają sens fizyczny i inżynierski. **Obejmuje** porównanie uzysku specyficznego w kWh na metr kwadratowy rocznie z literaturą i benchmarkami dla Polski - orientacyjnie od 250 do 450 dla c.w.u. (ciepłej wody użytkowej).
 
 **Wariantowanie** to zmiany po jednym parametrze - powierzchnia, pojemność, progi ΔT, izolacje, typ kolektora. **Używamy narzędzi** do kopiowania wariantów, porównań tabelarycznych i wykresów radarowych.
 
@@ -157,39 +169,6 @@ import {
 
 </Slide>
 
-<VisualSeparator type="success" />
-
-<Slide title="✅ QC checklist i harmonogram warsztatowy" type="success">
-
-<KeyPoints title="🎯 Kontrola jakości i organizacja">
-
-- ✅ **QC**: meteo zgodne, profil zweryfikowany, straty policzone, brak stagnacji
-- ⏰ **Harmonogram 2h**: setup → konfiguracja → straty/cienie → symulacja → warianty → raport
-- 📊 **Rubryka oceny**: wejścia (20), hydraulika/sterowanie (20), wyniki/AB (25), ekonomia (20), raport (15)
-
-</KeyPoints>
-
-<SuccessBox title="📋 Checklista QC">
-
-- [ ] Dane meteo zgodne z lokalizacją
-- [ ] Profil zapotrzebowania – suma roczna i szczyty zweryfikowane
-- [ ] Straty cyrkulacji policzone i realistyczne
-- [ ] Brak ostrzeżeń o stagnacji w wariancie finalnym
-- [ ] Raport zawiera założenia i warianty
-
-</SuccessBox>
-
-<InstructorNotes>
-**Kontrola jakości** wymaga systematycznego podejścia. **Lista QC (Quality Control - kontrola jakości)** to nasz bezpiecznik - sprawdzamy czy dane meteo są zgodne z lokalizacją, profil zapotrzebowania ma zweryfikowaną sumę roczną i szczyty, straty cyrkulacji są policzone i realistyczne, brak ostrzeżeń o stagnacji w wariancie finalnym oraz czy raport zawiera założenia i warianty.
-
-**Harmonogram warsztatowy** na dwie godziny wymaga dyscypliny czasowej. **Pierwsze piętnaście minut** to ustawienie projektu, meteo i profilu. **Następne dwadzieścia pięć minut** to dobór kolektorów, schematu i zasobnika. **Pół godziny** poświęcamy na straty, sterowanie i cienie. **Dwadzieścia minut** na symulację i sanity-check. **Ostatnie pół godziny** to przygotowanie trzech wariantów i skróconego raportu.
-
-**Rubryka oceny** mini-projektu to 100 punktów rozdysponowanych tak: poprawność danych wejściowych 20 punktów, konfiguracja hydrauliczna i sterowanie 20, analiza wyników i wariantowanie 25, ekonomia i ryzyko 20, oraz jakość raportu i wniosków 15 punktów. **To gwarantuje** zbalansowaną ocenę wszystkich aspektów projektu.
-
-**Checklisty zapewniają** powtarzalność jakości, a harmonogram uczy dyscypliny projektowej. **To podstawa** profesjonalnego podejścia do projektowania systemów ST.
-</InstructorNotes>
-
-</Slide>
 
 </SlideContainer>
 
