@@ -1,4 +1,9 @@
-# Pierwsze zajęcia - Oprogramowanie do projektowania
+---
+sidebar_position: 1
+title: Pierwsze zajęcia - Oprogramowanie do projektowania (2 godziny)
+---
+
+# Pierwsze zajęcia - Oprogramowanie do projektowania (2 godziny)
 
 Podczas naszego pierwszego zajęcia chciałbym, abyście samodzielnie zapoznali się z wybranymi programami do projektowania, które będą potrzebne w dalszej pracy nad projektami.
 

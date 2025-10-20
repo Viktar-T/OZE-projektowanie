@@ -20,6 +20,7 @@ title: "Podsumowanie"
 - Szczegółowe symulacje termiczne
 - Bogata baza danych komponentów
 - Możliwość analizy ekonomicznej
+- [Dostępna dokumentacja techniczna](https://help.valentin-software.com/tsol/en/)
 
 #### Ograniczenia:
 - Wysokie koszty licencji

@@ -1,11 +1,11 @@
 ---
 sidebar_position: 2
-title: Projekty - Systemy fotowoltaiczne
+title: Projekty - Systemy fotowoltaiczne (6 godzin)
 ---
 
-# Projekty - Systemy fotowoltaiczne
+# Projekty - Systemy fotowoltaiczne (6 godzin)
 
-Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdziesz kompleksowe materiały do nauki projektowania instalacji PV z wykorzystaniem profesjonalnego oprogramowania **PV*SOL premium**.
+Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdziesz kompleksowe materiały do nauki projektowania instalacji PV z wykorzystaniem **PV*SOL premium** oraz **Sunny Design Web**.
 
 ---
 
@@ -13,14 +13,14 @@ Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdzi
 
 ### 1. [Zadanie 1 - Wprowadzenie do PV*SOL premium](./pr-1-task-for-students.md)
 
-**Zadanie przygotowawcze** dla studentów rozpoczynających pracę z oprogramowaniem PV*SOL.
+**Zadanie wprowadzające** do oprogramowania PV*SOL premium dla studentów rozpoczynających pracę z projektowaniem instalacji PV.
 
 **Co znajdziesz:**
 - Krok po kroku instrukcję obsługi PV*SOL premium
-- Prosty projekt instalacji 5-6 kWp dla domu jednorodzinnego
-- Wymagania dotyczące przeszkód (komin, okno dachowe, drzewa)
+- Projekt instalacji **5-6 kWp** dla domu jednorodzinnego w **Szczecinie**
+- Modułowanie przeszkód (komin, okno dachowe, drzewa)
 - Analizę zacienienia i dobór komponentów
-- Kryteria oceny i wymagane pliki do oddania
+- Analizę ekonomiczną z kryteriami oceny
 - FAQ z najczęstszymi problemami
 
 **Czas realizacji:** 4 godziny (2 zajęcia)
@@ -35,13 +35,13 @@ Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdzi
 
 **Co znajdziesz:**
 - Przewodnik po platformie Sunny Design Web (darmowe narzędzie online)
-- Projekt instalacji 40-50 kWp dla budynku użyteczności publicznej
-- Konfiguracja dachu płaskiego z systemami montażowymi
+- Projekt instalacji **40-50 kWp** dla **dowolnego budynku** w **Szczecinie**
+- Konfiguracja dachu płaskiego z systemami montażowymi balastowymi
 - Automatyczny dobór stringów i falowników SMA
-- Analizę ekonomiczną i porównanie z PV*SOL premium
+- Analizę ekonomiczną (SPBT, koszty, taryfy)
 - Wskazówki dotyczące DC/AC ratio i optymalizacji
 
-**Czas realizacji:** 3 godziny (1.5 zajęcia)
+**Czas realizacji:** 2 godziny (1 zajęcie)
 
 **Wymagania:** Darmowe konto na platformie Sunny Design Web
 
@@ -80,7 +80,7 @@ graph LR
     style C fill:#fff4e1
 ```
 
-1. **Rozpocznij od Zadania 1** - naucz się obsługi PV*SOL premium (dach skośny, szczegółowa analiza)
+1. **Rozpocznij od Zadania 1** - naucz się obsługi PV*SOL premium (dach dwuspadowy, szczegółowa analiza zacienienia)
 2. **Wykonaj Zadanie 2** - poznaj Sunny Design Web (dach płaski, szybkie projektowanie)
 3. **Przeczytaj Perspektywę zawodową** - zrozum pracę projektanta PV w praktyce
 
@@ -90,7 +90,7 @@ graph LR
 
 ### Oprogramowanie do projektowania PV
 - **PV*SOL Help:** [https://help.valentin-software.com/pvsol/en/](https://help.valentin-software.com/pvsol/en/)
-- **Sunny Design Web (SMA):** [https://www.sunnydesignweb.com](https://www.sunnydesignweb.com)
+- **Sunny Design Web (SMA):** [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 - **Valentin Software YouTube:** [https://www.youtube.com/@valentinsoftware](https://www.youtube.com/@valentinsoftware)
 
 ### Dane klimatyczne i narzędzia online
