@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
-title: Projekt - Energetyka wiatrowa
+sidebar_position: 5
+title: Projekt - Energetyka wiatrowa (4 godziny)
 ---
 
-# Projekt - Energetyka wiatrowa
+# Projekt - Energetyka wiatrowa (4 godziny)
 
 ## Cel projektu
 

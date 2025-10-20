@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-title: Projekt - Systemy solarne termiczne
+title: Projekt - Systemy solarne termiczne (4 godziny)
 ---
 
-# Projekt - Systemy solarne termiczne
+# Projekt - Systemy solarne termiczne (4 godziny)
 
 ## Cel projektu
 

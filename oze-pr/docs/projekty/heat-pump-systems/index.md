@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
-title: Projekt - Systemy pomp ciepła
+sidebar_position: 4
+title: Projekt - Systemy pomp ciepła (4 godziny)
 ---
 
-# Projekt - Systemy pomp ciepła
+# Projekt - Systemy pomp ciepła (4 godziny)
 
 ## Cel projektu
 
