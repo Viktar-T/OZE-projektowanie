@@ -2,8 +2,7 @@
 sidebar_position: 5
 title: Projekt - Energetyka wiatrowa (4 godziny)
 ---
-
-# Projekt - Energetyka wiatrowa (4 godziny)
+# Projekt - Energetyka wiatrowa (8 godziny)
 
 ## Cel projektu
 
