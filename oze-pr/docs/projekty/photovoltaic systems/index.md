@@ -90,7 +90,7 @@ graph LR
 
 ### Oprogramowanie do projektowania PV
 - **PV*SOL Help:** [https://help.valentin-software.com/pvsol/en/](https://help.valentin-software.com/pvsol/en/)
-- **Sunny Design Web (SMA):** [https://www.sunnydesignweb.com](https://www.sunnydesignweb.com)
+- **Sunny Design Web (SMA):** [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 - **Valentin Software YouTube:** [https://www.youtube.com/@valentinsoftware](https://www.youtube.com/@valentinsoftware)
 
 ### Dane klimatyczne i narzędzia online

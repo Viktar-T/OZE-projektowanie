@@ -37,14 +37,15 @@ Zapoznanie się z platformą webową **Sunny Design** firmy SMA i opanowanie szy
 
 ## 📺 Materiały wprowadzające
 
-Przed rozpoczęciem zadania obejrzyj tutorial wideo:
+**Aby zapoznać się z platformą, proszę zacząć od:** [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 
-**🔗 SMA Sunny Design - Tutorial**
-[https://www.youtube.com/watch?v=example](https://www.youtube.com/watch?v=example)
+**Dalej przejść do wideo "Wprowadzenie do Sunny Design":** [https://www.youtube.com/watch?v=VrMOGxwBKvA](https://www.youtube.com/watch?v=VrMOGxwBKvA)
+
+**Następnie proszę obejrzeć "Projektowanie systemów wyspowych":** [https://www.youtube.com/watch?v=xuDXwNXPVWE](https://www.youtube.com/watch?v=xuDXwNXPVWE)
 
 :::tip Rejestracja
 
-1. Przejdź na stronę: [https://www.sunnydesignweb.com](https://www.sunnydesignweb.com)
+1. Przejdź na stronę: [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 2. Kliknij "Register" i utwórz darmowe konto
 3. Potwierdź email i zaloguj się
 4. Możesz rozpocząć projektowanie!
@@ -54,13 +55,13 @@ Przed rozpoczęciem zadania obejrzyj tutorial wideo:
 
 ### Dane projektowe
 
-Zaprojektuj system fotowoltaiczny on-grid dla budynku użyteczności publicznej (mała szkoła lub biuro) o następujących parametrach:
+Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następujących parametrach:
 
 #### Lokalizacja
 
 - **Kraj:** Polska
-- **Miasto:** Poznań (lub najbliższa dostępna lokalizacja)
-- **Współrzędne:** 52.4°N, 16.9°E (Sunny Design znajdzie automatycznie)
+- **Miasto:** Szczecin (lub najbliższa dostępna lokalizacja)
+- **Współrzędne:** 53.43°N, 14.55°E (Sunny Design znajdzie automatycznie)
 
 #### Budynek i powierzchnie
 
@@ -80,7 +81,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla budynku użyteczności publicznej 
 #### Profil energetyczny
 
 - **Roczne zużycie:** 35 000 kWh/rok
-- **Typ odbiorcy:** Budynek użyteczności publicznej (szkoła podstawowa)
+- **Typ odbiorcy:** Dowolny budynek (dom, biuro, szkoła itp.)
 - **Profil zużycia:** Dni robocze 7:00-17:00, weekendy minimalne
 - **Moc szczytowa zapotrzebowania:** ~25 kW
 
@@ -90,13 +91,13 @@ Zaprojektuj system fotowoltaiczny on-grid dla budynku użyteczności publicznej 
 - **Typ systemu:** On-grid (połączony z siecią)
 - **Moduł PV:** Wybierz moduły monokrystaliczne 400-450 Wp
 - **Falownik:** **SMA** (Sunny Tripower lub Sunny Highpower) - dobierz odpowiednio do mocy
-- **DC/AC ratio:** 1.15-1.25 (optymalne dla Polski)
+- **DC/AC ratio:** 1.0-1.3 (optymalne dla Polski)
 
 ## 📐 Kroki do wykonania
 
 ### Krok 1: Rejestracja i logowanie
 
-- [ ] Przejdź na [https://www.sunnydesignweb.com](https://www.sunnydesignweb.com)
+- [ ] Przejdź na [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 - [ ] Utwórz konto (jeśli jeszcze nie masz)
 - [ ] Zaloguj się do platformy
 - [ ] Zapoznaj się z interfejsem (Dashboard, My Projects, Component Database)
@@ -104,21 +105,21 @@ Zaprojektuj system fotowoltaiczny on-grid dla budynku użyteczności publicznej 
 ### Krok 2: Utworzenie nowego projektu
 
 - [ ] Kliknij **"New Project"**
-- [ ] **Nazwa projektu:** `Nazwisko_SMA_Poznan_Zadanie2`
+- [ ] **Nazwa projektu:** `Nazwisko_SMA_Szczecin_Zadanie2`
 - [ ] **Typ projektu:** Grid-connected system
 - [ ] **Project details:**
-  - Nazwa klienta: Szkoła Podstawowa nr X w Poznaniu
-  - Adres: Poznań, ul. Szkolna 10
+  - Nazwa klienta: [Nazwa dowolnego budynku] w Szczecinie
+  - Adres: Szczecin, ul. Szkolna 10
   - Kontakt: (fikcyjne dane)
 
 ### Krok 3: Konfiguracja lokalizacji i danych klimatycznych
 
 - [ ] **Location Settings:**
-  - Wybierz **Poland → Poznań** (lub wpisz współrzędne: 52.4°N, 16.9°E)
+  - Wybierz **Poland → Szczecin** (lub wpisz współrzędne: 53.43°N, 14.55°E)
   - Sunny Design automatycznie pobierze dane meteorologiczne
 - [ ] **Climate data:**
-  - Weryfikuj roczne nasłonecznienie: ~1050-1150 kWh/m²/rok
-  - Sprawdź temperatury: T_min ≈ -15°C, T_max ≈ +35°C
+- Weryfikuj roczne nasłonecznienie: ~1050-1150 kWh/m²/rok (dla Szczecina)
+- Sprawdź temperatury: T_min ≈ -20°C, T_max ≈ +35°C (dla północnej Polski)
 - [ ] **Grid connection:**
   - Napięcie sieci: 400V AC (trójfazowe)
   - Częstotliwość: 50 Hz
@@ -164,10 +165,13 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Trina Vertex S TSM-DE09.08 (415 Wp)
 - [ ] Wybierz moduł i sprawdź parametry:
 
-  - Voc (open circuit voltage): ~49-50 V
-  - Vmpp (voltage at MPP): ~41-42 V
-  - Impp (current at MPP): ~10-11 A
+  - Voc (open circuit voltage): ~49-50 V (STC)
+  - Vmpp (voltage at MPP): ~41-42 V (STC)
+  - Impp (current at MPP): ~10-11 A (STC)
+  - Isc (short circuit current): ~11-12 A (STC)
   - Wymiary: ~2100 mm × 1050 mm
+  - Temperature coefficient Voc: ~-0.30%/°C
+  - Temperature coefficient Vmpp: ~-0.35%/°C
 - [ ] **Liczba modułów:** Sunny Design automatycznie obliczy, ile modułów zmieści się na dachu
 
   - Cel: 100-120 modułów × 400-450 Wp = 40-50 kWp
@@ -177,9 +181,9 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
 - [ ] Przejdź do sekcji **"Inverters"**
 - [ ] **Oblicz wymaganą moc AC:**
 
-  - Moc DC: ~45 kWp (szacowana)
-  - DC/AC ratio: 1.2 (docelowe)
-  - Moc AC: 45 / 1.2 ≈ 37-40 kW
+  - Moc DC: ~50 kWp (szacowana dla 112 modułów × 450 Wp)
+  - DC/AC ratio: 1.0-1.2 (docelowe dla Polski)
+  - Moc AC: 50 kWp (wybieramy 2× 25 kW = 50 kW AC)
 - [ ] **Warianty do rozważenia:**
 
 **Wariant A: Jeden duży falownik**
@@ -205,10 +209,12 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Dobry kompromis między niezawodnością a prostotą
 - [ ] Sprawdź parametry wybranego falownika:
 
-  - Max DC voltage: ~1000 V
-  - MPPT voltage range: 270-800 V (typowo dla SMA)
+  - Max DC voltage: ~1000-1100 V (zgodnie z normą IEC 61853)
+  - MPPT voltage range: 200-800 V (zakres pracy MPPT)
+  - Vmpp range: 320-800 V (optimalny zakres pracy)
   - Number of MPPT trackers: 2 per inverter (łącznie 4 MPPT)
-  - Max DC current per MPPT: ~33 A
+  - Max DC current per MPPT: ~25-30 A
+  - Max total DC current: ~50-60 A
 
 ### Krok 7: Automatyczna konfiguracja stringów
 
@@ -221,25 +227,26 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Zaproponuje konfigurację końcową
 - [ ] **Weryfikacja automatycznej konfiguracji:**
 
-  - [ ] Sprawdź liczbę modułów w stringu: powinna być ~12-16 modułów (dla modułów 450 Wp)
-  - [ ] Voc max (zimą, -15°C): \<1000 V ✅
-  - [ ] Vmpp (latem, +35°C): 270-800 V (zakres MPPT) ✅
-  - [ ] Prąd stringów: \<33 A (limit MPPT) ✅
-  - [ ] DC/AC ratio: 1.15-1.25 ✅
+  - [ ] Sprawdź liczbę modułów w stringu: 14-15 modułów optymalne (dla modułów 450 Wp)
+  - [ ] Voc max (zimą, -20°C): &lt;1000 V ✅ (zalecane &lt;950 V dla marginesu bezpieczeństwa)
+  - [ ] Vmpp (latem, +35°C): 320-800 V (zakres MPPT) ✅
+  - [ ] Prąd stringów: &lt;30 A (limit MPPT) ✅
+  - [ ] DC/AC ratio: 1.0-1.2 ✅
 
 :::warning Kontrola napięć
 **Wzory do weryfikacji ręcznej:**
 
-**Voc zimą (worst case, -15°C):**
+**Voc zimą (worst case, -20°C dla Szczecina):**
 
 ```
 Voc_min = Voc_STC × (1 + temp_coeff_Voc × ΔT)
-Gdzie: ΔT = -15 - 25 = -40°C
-Temp_coeff_Voc ≈ -0.0028 /°C (typowo)
+Gdzie: ΔT = -20 - 25 = -45°C
+Temp_coeff_Voc ≈ -0.0030 /°C (dla modułów monokrystalicznych)
 
-Voc_min = 49.5 × (1 + (-0.0028) × (-40)) = 49.5 × 1.112 ≈ 55 V (jeden moduł)
+Voc_min = 49.5 × (1 + (-0.0030) × (-45)) = 49.5 × 1.135 ≈ 56.2 V (jeden moduł)
 
-Dla 16 modułów: 16 × 55 V = 880 V < 1000 V ✅
+Dla 16 modułów: 16 × 56.2 V = 899 V < 1000 V ✅
+Dla 14 modułów: 14 × 56.2 V = 787 V < 1000 V ✅ (bezpieczniejszy wariant)
 ```
 
 **Vmpp latem (+35°C):**
@@ -247,10 +254,12 @@ Dla 16 modułów: 16 × 55 V = 880 V < 1000 V ✅
 ```
 Vmpp_max = Vmpp_STC × (1 + temp_coeff_Vmpp × ΔT)
 Gdzie: ΔT = 35 - 25 = +10°C
+Temp_coeff_Vmpp ≈ -0.0035 /°C
 
 Vmpp_max = 41.5 × (1 + (-0.0035) × 10) = 41.5 × 0.965 ≈ 40 V (jeden moduł)
 
-Dla 16 modułów: 16 × 40 V = 640 V (w zakresie MPPT 270-800V) ✅
+Dla 15 modułów: 15 × 40 V = 600 V (w zakresie MPPT 320-800V) ✅
+Dla 14 modułów: 14 × 40 V = 560 V (w zakresie MPPT 320-800V) ✅
 ```
 
 :::
@@ -265,17 +274,17 @@ Jeśli automatyczna konfiguracja nie jest optymalna, możesz ręcznie dostosowa�
   - Przykład: 4 MPPT × 11-12 kWp każdy = 44-48 kWp łącznie
 - [ ] **Konfiguracja stringów:**
 
-  - MPPT 1 (Falownik 1): 3 stringi × 14 modułów = 42 moduły × 450 Wp = 18.9 kWp
-  - MPPT 2 (Falownik 1): 3 stringi × 14 modułów = 42 moduły × 450 Wp = 18.9 kWp
+  - MPPT 1 (Falownik 1): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
+  - MPPT 2 (Falownik 1): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
   - MPPT 1 (Falownik 2): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
   - MPPT 2 (Falownik 2): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
-  - **Łącznie:** 140 modułów × 450 Wp = **63 kWp DC**
+  - **Łącznie:** 112 modułów × 450 Wp = **50.4 kWp DC**
 - [ ] **Przelicz DC/AC ratio:**
 
-  - DC/AC = 63 kWp / 50 kW = **1.26** ✅ (w zakresie 1.15-1.30)
+  - DC/AC = 50.4 kWp / 50 kW = **1.008** ✅ (w zakresie 1.0-1.3)
 
 :::tip Optymalizacja
-DC/AC ratio 1.2-1.3 jest optymalne dla Polski. Niewielki clipping (straty powyżej mocy znamionowej falownika) występuje tylko przez kilka procent czasu rocznie, ale system wykorzystuje pełną moc falownika przez większość sezonu.
+DC/AC ratio 1.0-1.3 jest optymalne dla Polski. Niewielki clipping (straty powyżej mocy znamionowej falownika) występuje tylko przez kilka procent czasu rocznie, ale system wykorzystuje pełną moc falownika przez większość sezonu.
 :::
 
 ### Krok 9: Konfiguracja strat systemowych
@@ -289,6 +298,7 @@ DC/AC ratio 1.2-1.3 jest optymalne dla Polski. Niewielki clipping (straty powyż
 | DC cable losses       | 1.5%      | Przewody DC ~20-30 m                   |
 | AC cable losses       | 0.5%      | Krótkieokablowanie AC (biurowiec)     |
 | Mismatch losses       | 1%        | Różnice między modułami            |
+| Shading losses        | 1-2%      | Minimalne zacienienie (dach płaski)   |
 | Temperature losses    | Auto      | Sunny Design obliczy automatycznie     |
 | Inverter efficiency   | 98%       | Typowo dla SMA Tripower                |
 
@@ -308,36 +318,36 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 - [ ] **Annual energy yield (AC):** _____ kWh/rok
 
-  - Oczekiwana wartość: 60 000-65 000 kWh/rok (dla 63 kWp w Poznaniu)
+  - Oczekiwana wartość: 47 000-52 000 kWh/rok (dla 50.4 kWp w Szczecinie)
   - Specific yield: ~950-1030 kWh/kWp/rok
 - [ ] **Monthly distribution:**
 
-  - Czerwiec-Lipiec: najwyższa produkcja (~8000-9000 kWh/mc)
-  - Grudzień-Styczeń: najniższa produkcja (~1500-2500 kWh/mc)
+  - Czerwiec-Lipiec: najwyższa produkcja (~6000-7000 kWh/mc dla 50.4 kWp)
+  - Grudzień-Styczeń: najniższa produkcja (~1000-1800 kWh/mc dla 50.4 kWp)
 
 #### Autokonsumpcja
 
 - [ ] **Self-consumption rate:** _____ %
 
   - Jaki procent wyprodukowanej energii jest użyty lokalnie
-  - Dla szkoły (dni robocze): oczekiwane 40-50%
+  - Dla budynku komercyjnego (dni robocze): oczekiwane 40-50%
 - [ ] **Self-sufficiency rate:** _____ %
 
   - Jaki procent zapotrzebowania pokrywa PV
-  - Dla tego projektu: ~50-60% (35 000 kWh zapotrzebowania / 62 000 kWh produkcji)
+  - Dla tego projektu: ~70-75% (35 000 kWh zapotrzebowania / 50 000 kWh produkcji)
 
 #### Wskaźniki techniczne
 
 - [ ] **Performance Ratio (PR):** _____ %
 
   - Cel: > 85%
-- [ ] **DC/AC ratio:** _____ (powinno być 1.15-1.30)
+- [ ] **DC/AC ratio:** _____ (powinno być 1.0-1.3)
 - [ ] **Inverter loading:** _____ %
 
   - Maksymalne obciążenie falownika (powinno osiągnąć 100% w słoneczne dni)
 - [ ] **Clipping losses:** _____ kWh/rok (_____ %)
 
-  - Przy DC/AC = 1.26 oczekuj 1-3% strat clippingowych
+  - Przy DC/AC = 1.008 oczekuj &lt;1% strat clippingowych (minimalne)
   - To akceptowalne (ekonomiczny trade-off)
 
 ### Krok 11: Analiza ekonomiczna (uproszczona)
@@ -347,13 +357,13 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 **Investment costs (koszty inwestycyjne):**
 
-- Moduły: 140 × 700 zł = 98 000 zł
+- Moduły: 112 × 700 zł = 78 400 zł
 - Falowniki: 2 × 15 000 zł = 30 000 zł
 - System montażowy (balast): 25 000 zł
 - Okablowanie DC/AC + zabezpieczenia: 20 000 zł
 - Instalacja i uruchomienie: 30 000 zł
-- **Koszt całkowity:** ~200 000 zł (netto)
-- **Koszt jednostkowy:** ~3175 zł/kWp
+- **Koszt całkowity:** ~183 400 zł (netto)
+- **Koszt jednostkowy:** ~3640 zł/kWp
 
 **Operational costs (koszty eksploatacji):**
 
@@ -364,27 +374,27 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 **Energy tariffs (taryfy energii):**
 
-- Koszt zakupu energii z sieci: 0.75 zł/kWh (szkoła, taryfa C11)
+- Koszt zakupu energii z sieci: 0.75 zł/kWh (budynek komercyjny, taryfa C11)
 - Cena sprzedaży energii (feed-in): 0.50 zł/kWh (szacunkowa)
 - Wzrost cen energii: 7% rocznie (konserwatywnie)
 
 **Obliczenia oszczędności:**
 
-- Autokonsumpcja: 50% × 62 000 kWh = 31 000 kWh/rok
-- Oszczędność na autokonsumpcji: 31 000 kWh × 0.75 zł = 23 250 zł/rok
-- Sprzedaż nadwyżek: 50% × 62 000 kWh = 31 000 kWh × 0.50 zł = 15 500 zł/rok
-- **Roczne przychody:** ~38 750 zł/rok (brutto, przed kosztami eksploatacji)
-- **Roczny zysk netto:** ~35 750 zł/rok
+- Autokonsumpcja: 50% × 50 000 kWh = 25 000 kWh/rok
+- Oszczędność na autokonsumpcji: 25 000 kWh × 0.75 zł = 18 750 zł/rok
+- Sprzedaż nadwyżek: 50% × 50 000 kWh = 25 000 kWh × 0.50 zł = 12 500 zł/rok
+- **Roczne przychody:** ~31 250 zł/rok (brutto, przed kosztami eksploatacji)
+- **Roczny zysk netto:** ~28 250 zł/rok
 
 **Prosty okres zwrotu (SPBT):**
 
-- SPBT = 200 000 zł / 35 750 zł/rok ≈ **5.6 lat**
+- SPBT = 183 400 zł / 28 250 zł/rok ≈ **6.5 lat**
 
 :::tip Dotacje i ulgi
 W Polsce dostępne są programy wsparcia dla instalacji PV (np. Mój Prąd, dotacje gminne, ulgi podatkowe). Rzeczywisty okres zwrotu może być krótszy o 1-2 lata.
 :::
 
-### Krok 12: Generowanie raportu PDF
+### Krok 12: Generowanie raportu PDF. Raport proszę wysłać przez MS Teams.
 
 - [ ] Kliknij przycisk **"Generate Report"** lub **"Create PDF"**
 - [ ] **Wybierz elementy raportu:**
@@ -399,182 +409,36 @@ W Polsce dostępne są programy wsparcia dla instalacji PV (np. Mój Prąd, dota
 - [ ] **Opcje personalizacji:**
 
   - Język: English (PL może nie być dostępny)
-  - Logo: opcjonalnie dodaj logo szkoły
+  - Logo: opcjonalnie dodaj logo budynku/firmy
   - Projekt wykonał: Twoje imię i nazwisko
 - [ ] **Eksportuj raport:**
 
-  - **Nazwa:** `Nazwisko_SMA_Poznan_Zadanie2_Report.pdf`
+  - **Nazwa:** `Nazwisko_SMA_Szczecin_Zadanie2_Report.pdf`
   - Pobierz i zapisz w folderze roboczym
-
-### Krok 13: Warianty projektu (opcjonalnie, +1 pkt dodatkowy)
-
-Stwórz alternatywny wariant projektu i porównaj wyniki:
-
-**Wariant alternatywny - zmiana DC/AC ratio:**
-
-- [ ] Skopiuj projekt (funkcja "Duplicate" w Sunny Design)
-- [ ] Zmień konfigurację stringów:
-
-  - Opcja A: Zwiększ liczbę modułów (DC/AC = 1.35)
-  - Opcja B: Zmniejsz liczbę modułów (DC/AC = 1.10)
-- [ ] Ponownie uruchom symulację
-- [ ] Porównaj wyniki:
-
-| Parametr                           | Wariant bazowy (DC/AC 1.26) | Wariant A (DC/AC 1.35) | Wariant B (DC/AC 1.10) |
-| ---------------------------------- | --------------------------- | ---------------------- | ---------------------- |
-| Moc DC                             |                             |                        |                        |
-| Roczna produkcja                   |                             |                        |                        |
-| Clipping losses                    |                             |                        |                        |
-| Performance Ratio                  |                             |                        |                        |
-| Koszt systemu                      |                             |                        |                        |
-| SPBT                               |                             |                        |                        |
-| **Wniosek - który lepszy?** |                             |                        |                        |
-
-:::info Analiza trade-off
-DC/AC ratio to kompromis:
-
-- **Wyższe (1.3-1.4):** więcej energii rocznie, ale większe clipping i wyższe koszty
-- **Niższe (1.0-1.1):** brak clippingu, tańsze, ale falownik niedoładowany
-- **Optymalne (1.15-1.25):** najlepszy stosunek kosztów do zysków
-  :::
 
 ## 📦 Wymagane pliki do oddania
 
 ### 1. Projekt Sunny Design
 
-- **Nazwa:** `Nazwisko_SMA_Poznan_Zadanie2`
+- **Nazwa:** `Nazwisko_SMA_Szczecin_Zadanie2`
 - Projekt zapisany na platformie Sunny Design (udostępnij link lub eksportuj, jeśli dostępne)
-
-### 2. Raport PDF
-
-- **Nazwa:** `Nazwisko_SMA_Poznan_Zadanie2_Report.pdf`
-- Wygenerowany z Sunny Design Web
-
-### 3. Sprawozdanie (2-3 strony, format PDF)
-
-**Nazwa:** `Nazwisko_SMA_Poznan_Zadanie2_Sprawozdanie.pdf`
-
-#### Struktura sprawozdania:
-
-**Nagłówek:**
-
-- Imię i nazwisko, nr albumu
-- Data wykonania
-- Tytuł: "Zadanie 2 - Sunny Design Web"
-
-**1. Dane wejściowe (0.5 strony)**
-
-Tabela:
-
-| Parametr                  | Wartość |
-| ------------------------- | --------- |
-| Lokalizacja               |           |
-| Typ dachu                 |           |
-| Powierzchnia użytkowa    |           |
-| Producent/model modułu   |           |
-| Moc modułu               |           |
-| Liczba modułów          |           |
-| Moc DC całkowita         |           |
-| Producent/model falownika |           |
-| Liczba falowników        |           |
-| Moc AC całkowita         |           |
-| DC/AC ratio               |           |
-
-**2. Wyniki symulacji (0.5 strony)**
-
-| Parametr                   | Wartość | Jednostka   |
-| -------------------------- | --------- | ----------- |
-| Roczna produkcja AC        | ___       | kWh/rok     |
-| Specific yield             | ___       | kWh/kWp/rok |
-| Performance Ratio (PR)     | ___       | %           |
-| Self-consumption rate      | ___       | %           |
-| Self-sufficiency rate      | ___       | %           |
-| Clipping losses            | ___       | kWh/rok (%) |
-| Koszt systemu              | ___       | zł         |
-| Roczny zysk netto          | ___       | zł/rok     |
-| Prosty okres zwrotu (SPBT) | ___       | lata        |
-
-**3. Porównanie Sunny Design vs PV*SOL premium (1 strona)**
-
-Jeśli wykonałeś Zadanie 1, porównaj oba narzędzia:
-
-| Kryterium               | Sunny Design Web       | PV*SOL premium       | Uwagi |
-| ----------------------- | ---------------------- | -------------------- | ----- |
-| Sposób dostępu        | Przeglądarka (online) | Aplikacja desktopowa |       |
-| Koszt                   | Darmowe                | Płatne (~3000 EUR)  |       |
-| Łatwość obsługi     | ⭐⭐⭐⭐⭐             | ⭐⭐⭐               |       |
-| Analiza zacienienia 3D  | Uproszczona            | Zaawansowana         |       |
-| Biblioteka komponentów | Skupienie na SMA       | Bardzo szeroka       |       |
-| Generowanie raportów   | Szybkie, profesjonalne | Bardzo szczegółowe |       |
-| Czas projektowania      | 1-2 h                  | 3-4 h                |       |
-| Zastosowanie idealne    | Presales, quick quotes | Projekty wykonawcze  |       |
-| Ogólna ocena (1-10)    | ___/10                 | ___/10               |       |
-
-**4. Wnioski (0.5-1 strona)**
-
-Odpowiedz na pytania (3-5 zdań na temat):
-
-1. **Dla jakich projektów Sunny Design jest najlepszym wyborem?**
-2. **Jakie są główne zalety automatycznego doboru stringów w Sunny Design?**
-3. **Czy DC/AC ratio 1.26 było optymalne w Twoim projekcie? Dlaczego?**
-4. **Jakie było największe wyzwanie podczas pracy z Sunny Design?**
-5. **Czy polecisz Sunny Design projektantom instalacji PV? Dlaczego?**
-
-### Forma oddania
-
-- Wszystkie pliki w jednym archiwum ZIP
-- **Nazwa archiwum:** `Nazwisko_Nr_albumu_Zadanie2_SunnyDesign.zip`
-- Upload na platformę e-learningową
 
 ## ✅ Kryteria oceny
 
-Zadanie oceniane jest w skali 0-10 punktów (zaliczenie: minimum 6 punktów)
+Zadanie oceniane jest w skali 0-7 punktów (zaliczenie: minimum 4 punkty)
 
 | Kryterium                         | Punkty  | Opis                                                                                     |
 | --------------------------------- | ------- | ---------------------------------------------------------------------------------------- |
 | **Kompletność projektu**  | 0-3 pkt | Czy projekt zawiera poprawną konfigurację (moduły, falowniki, stringi, powierzchnie)? |
 | **Poprawność techniczna** | 0-3 pkt | Czy napięcia/prądy są w zakresach? Czy DC/AC ratio optymalne? Czy PR > 85%?           |
-| **Jakość dokumentacji**   | 0-2 pkt | Czy raport i sprawozdanie są kompletne i profesjonalne?                                 |
 | **Analiza ekonomiczna**     | 0-1 pkt | Czy obliczono SPBT i przeanalizowano opłacalność?                                     |
-| **Wariant dodatkowy**       | +1 pkt  | Bonus za stworzenie wariantu alternatywnego i porównanie                                |
-
-### Szczegóły punktacji
-
-**Kompletność projektu (0-3 pkt):**
-
-- 3 pkt: Wszystkie elementy wykonane - lokalizacja, dach płaski, moduły, falowniki SMA, stringi, strefy bezpieczeństwa, symulacja
-- 2 pkt: Większość elementów wykonana, drobne braki
-- 1 pkt: Podstawowe elementy wykonane, znaczące braki
-- 0 pkt: Projekt niekompletny lub nie oddany
-
-**Poprawność techniczna (0-3 pkt):**
-
-- 3 pkt: Konfiguracja elektryczna poprawna, PR > 85%, DC/AC ratio optymalne (1.15-1.30), brak błędów
-- 2 pkt: Konfiguracja w większości poprawna, PR 80-85%, DC/AC ratio akceptowalne
-- 1 pkt: Konfiguracja z błędami, PR < 80%
-- 0 pkt: Poważne błędy techniczne (napięcia poza zakresami, brak falowników, etc.)
-
-**Jakość dokumentacji (0-2 pkt):**
-
-- 2 pkt: Raport PDF + sprawozdanie kompletne, czytelne, profesjonalne
-- 1 pkt: Dokumentacja niepełna lub niskiej jakości
-- 0 pkt: Brak dokumentacji
-
-**Analiza ekonomiczna (0-1 pkt):**
-
-- 1 pkt: Obliczono SPBT, przeanalizowano koszty i oszczędności, wnioski sensowne
-- 0 pkt: Brak analizy ekonomicznej lub błędy w obliczeniach
-
-**Wariant dodatkowy (+1 pkt bonusowy):**
-
-- +1 pkt: Stworzono wariant alternatywny, porównano wyniki, wyciągnięto wnioski
 
 ## ❓ FAQ - Najczęściej zadawane pytania
 
 ### Problemy techniczne
 
-**Q: Nie mogę znaleźć Poznania w bazie Sunny Design. Co robić?**
-A: Wpisz współrzędne GPS ręcznie: 52.4°N, 16.9°E. Sunny Design automatycznie pobierze dane meteorologiczne dla tej lokalizacji.
+**Q: Nie mogę znaleźć Szczecina w bazie Sunny Design. Co robić?**
+A: Wpisz współrzędne GPS ręcznie: 53.43°N, 14.55°E. Sunny Design automatycznie pobierze dane meteorologiczne dla tej lokalizacji.
 
 **Q: Sunny Design pokazuje ostrzeżenie "Voltage out of range". Co to znaczy?**
 A: Napięcia stringów są poza zakresem falownika. Najczęstsze rozwiązania:
@@ -604,7 +468,7 @@ A: Dla dachu płaskiego bez zacienienia PR > 80% jest dobry, a > 85% bardzo dobr
 A: Sunny Design dobrze obsługuje dachy płaskie z systemami montażowymi balastowymi. To typowy scenariusz dla budynków użyteczności publicznej. W Zadaniu 1 (PV*SOL) pracowałeś z dachem skośnym.
 
 **Q: Jaki DC/AC ratio jest najlepszy?**
-A: Dla Polski optymalny DC/AC ratio to **1.15-1.25**. Przy tym zakresie:
+A: Dla Polski optymalny DC/AC ratio to **1.0-1.3**. Przy tym zakresie:
 
 - Minimalne straty clippingowe (1-3%)
 - Falownik dobrze wykorzystany przez większość sezonu
@@ -620,15 +484,15 @@ A: Sunny Design jest narzędziem SMA, więc:
 - Baza danych SMA jest zawsze aktualna
 - Możesz dodawać inne marki, ale workflow jest wolniejszy
 
-**Q: Co jeśli nie zmieszczę 140 modułów na 200 m² dachu?**
+**Q: Co jeśli nie zmieszczę 112 modułów na 200 m² dachu?**
 A: Sprawdź:
 
 - Rozstaw rzędów - przy dachu płaskim i nachyleniu 15° potrzeba ~3.5-4 m między rzędami (aby uniknąć zacienienia)
 - Strefy bezpieczeństwa - 1.0 m od krawędzi + korytarze serwisowe 1.2 m
 - Efektywna powierzchnia: ~60-70% z 200 m² = 120-140 m² użytecznej powierzchni
-- To powinno wystarczyć na 100-120 modułów (45-54 kWp)
+- To powinno wystarczyć na 100-112 modułów (45-50 kWp)
 
-Jeśli nie zmieścisz 140 modułów - zmniejsz do 100-120 modułów i dostosuj falowniki (np. 2× 20 kW zamiast 2× 25 kW).
+Jeśli nie zmieścisz 112 modułów - zmniejsz do 96-100 modułów i dostosuj falowniki (np. 2× 20 kW zamiast 2× 25 kW).
 
 **Q: Jak dodać korytarze serwisowe (service corridors)?**
 A: W Sunny Design:
@@ -649,7 +513,7 @@ A: Tak, to część zadania (1 punkt). Nie musisz być bardzo dokładny - wystar
 
 ### Przed rozpoczęciem
 
-1. ✅ Załóż konto na [SunnyDesignWeb.com](https://www.sunnydesignweb.com)
+1. ✅ Załóż konto na [SunnyDesignWeb.com](https://www.sunnydesignweb.com/sdweb#/)
 2. ✅ Zapoznaj się z interfejsem (obejrzyj tutorial)
 3. ✅ Przygotuj notatnik do zapisywania parametrów projektu
 
