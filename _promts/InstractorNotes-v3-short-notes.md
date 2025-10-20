@@ -1,6 +1,6 @@
 **Task**
 
-after each slide add second section `InstructorNotes`. this secton should contain shorten version of the main `InstructorNotes`. dont delete main long section of `InstructorNotes`.
+after each slide add second section `InstructorNotes`. this section should contain shorten version of the main `InstructorNotes`. dont delete main long section of `InstructorNotes`.
 
 **Language & Voice**
 

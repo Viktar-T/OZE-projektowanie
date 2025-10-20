@@ -46,7 +46,8 @@ Zaprojektuj prosty system fotowoltaiczny on-grid dla domu jednorodzinnego o nast
 ![1760347800288](image/pr-1-task-for-students/1760347800288.png)
 
 - **Typ dachu:** Dach dwuspadowy. Proszę znalieżć na mapie podobny w Szczenienie lub okolicę.
-- **Wymiary dachu:** 10 m × 8 m (jedna połać).
+- **Konstrukcja budynku:** Dom składa się z dwóch części, każda o wymiarach fundamentu 10 m × 8 m.
+- **Wymiary każdej części:** 10 m × 8 m (fundament)
 - **Nachylenie:** 35°
 - **Azymut:** 180° (orientacja południowa)
 - **Wysokość okapu:** 3.0 m
@@ -112,17 +113,16 @@ W filmie instruktażowym pokazano różne metody dodawania profilu zużycia (min
 ### Krok 4: Geometria 3D (3D Design - Building)
 
 - [ ] Otwórz moduł "3D Design"
-- [ ] Utwórz budynek z dachem dwuspadowym (Gable Roof):
-  - Szerokość: 10 m
-  - Długość: 8 m
-  - Wysokość okapu: 3.0 m
-  - Kąt nachylenia: 35°
+- [ ] Utwórz budynek składający się z dwóch części z dachem dwuspadowym (Gable Roof):
+  - **Część 1:** Fundament 10 m × 8 m, wysokość okapu 3.0 m, kąt nachylenia 35°
+  - **Część 2:** Fundament 10 m × 8 m, wysokość okapu 3.0 m, kąt nachylenia 35°
+  - Części mogą być ustawione w linii lub pod kątem (zgodnie ze zdjęciem przykładowym)
 - [ ] Zorientuj budynek:
-  - Dach powinien być skierowany na południe (180°)
+  - Dachy powinny być skierowane na południe (180°)
   - Użyj kompasu w lewym górnym rogu do weryfikacji orientacji
 
 :::tip Wskazówka
-Film pokazuje tworzenie budynku w czasie 6:30-10:00. Możesz wielokrotnie edytować budynek, klikając prawym przyciskiem myszy i wybierając "Edit".
+Film pokazuje tworzenie budynku w czasie 6:30-10:00. Możesz wielokrotnie edytować budynek, klikając prawym przyciskiem myszy i wybierając "Edit". Dla dwuczęściowego budynku możesz utworzyć dwa osobne budynki lub użyć złożonej geometrii.
 :::
 
 ### Krok 5: Przeszkody i zacienienie (3D Design - Obstacles)
