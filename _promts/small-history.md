@@ -29,8 +29,15 @@
 * [X] I see in browser: "**P `<sub>`max `</sub>`**". Fix oze-pr\docs\wyklady\wyklad-01-wprowadzenie\08-przykład-z-ATUM-p.-7.1.md
 * [X] implemen **@InstractorNotes-v2.md** for **@03-pvsol-info-kroki.mdx**
 * [X] implemen **@InstractorNotes-v2.md** for **@03-pvsol-info-kroki.mdx**
-* [X] for **@01-wprowadzenie-do-solar-termiczny.mdx** implement **@InstractorNotes-v2.md**
-* [X] for **@02-proces-modelowania.mdx**  implement **@InstractorNotes-v2.md**
+* [X] for **@01-wprowadzenie-do-solar-termiczny.mdx** implement **@InstractorNotes-v2.md
+* [X] for **@02-proces-modelowania.mdx** implement @InstractorNotes-v2.md
+* [ ] implement **@InstractorNotes-v2.md for the next file in the folder oze-pr\docs\wyklady\wyklad-04-pompy-ciepła
+* [ ]
+* [X] continue the same task for the next file in the folder oze-pr\docs\wyklady\wyklad-04-pompy-ciepła
+* [X] check all numbers releted to statistic in internet. To InstractureNotes add to each stat number "zgodnie z (żródło)"
 * [X] for **@oze-pr\docs\wyklady\wyklad-03-solar-termiczny\03-porownanie-programow.mdx**  implement **@InstractorNotes-v2.md**
 * [X] for **@oze-pr\docs\wyklady\wyklad-03-solar-termiczny\05-proces-tsol.mdx**  implement **@InstractorNotes-v2.md**
-* [ ]
+* [X] @oze-pr\docs\wyklady\wyklad-04-pompy-ciepła\01-wprowadzenie-pompy-ciepla.mdx.
+  * [X] update slide content and InstructorNotes to better relate to each other. You could update either slide content or InstructorNotes or both.
+  * [X] also use bold for key points in Instructor notes.
+  * [X] add Emojis & Icons to Slides

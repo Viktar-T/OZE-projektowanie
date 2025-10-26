@@ -19,19 +19,35 @@ import {
 
 <Slide title="🗺️ Zasada ogólna procesu" type="info">
 
-<KeyPoints title="Od celu do raportu">
+<KeyPoints title="🎯 Od celu do raportu">
 
-- Zdefiniuj cel i KPI (SPF/SCOP, koszty, emisje, hałas)
-- Dane wejściowe: klimat, profil, parametry PC i hydrauliki
-- Konfiguracja systemu i źródeł
-- Symulacja, sanity‑check, warianty i ekonomia
-- Raport i kontrola jakości
+- 📋 Zdefiniuj **cel i KPI** (SPF/SCOP, koszty, emisje, hałas)
+- 📥 Dane wejściowe: klimat, profil, parametry PC i hydrauliki
+- ⚙️ Konfiguracja systemu i źródeł
+- 🔄 Symulacja, sanity‑check, warianty i ekonomia
+- 📄 Raport i kontrola jakości
 
 </KeyPoints>
 
+<InfoBox title="💡 Kluczowa zasada">
+
+- **To nie jest liniowy schemat** - to iteracyjny workflow z weryfikacją na każdym etapie
+- Standardowy projekt: koncepcja **1-2 dni**, wykonawczy **1-2 tygodnie**, złożony **1-2 miesiące**
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Proces: cel → dane → konfiguracja → symulacja → wyniki → raport. Każdy krok jest checkpointem jakości i decyzji.
+Ok, słuchajcie, dziś zajmujemy się procesem projektowym systemów z pompami ciepła. **To nie jest liniowy schemat**, gdzie krok za krokiem przechodzicie od A do Z. **To iteracyjny workflow**, gdzie na każdym etapie musicie weryfikować, czy to, co zrobiliście, ma sens przed przejściem dalej. **To klucz do sukcesu w projektowaniu**.
+
+Zacznijmy od początku – musimy zdefiniować cel i **KPI**, to są **Key Performance Indicators, czyli mierzalne wskaźniki sukcesu**. Bez tego nie ma sensu projektować, bo nie będziecie wiedzieć, czy projekt jest dobry czy zły. To może być **SPF** – sezonowy współczynnik efektywności, **SCOP** – ten sam wskaźnik ale dla systemu ogrzewania i ciepłej wody razem, koszty inwestycyjne, eksploatacyjne, emisje CO2, hałas.
+
+Potem przechodzicie do danych wejściowych: klimat, profil odbioru – czyli jak budynek zużywa ciepło w czasie, parametry pompy ciepła i układu hydraulicznego. **Tutaj trzeba być bardzo dokładnym, bo błąd w danych klimatycznych o 2 stopnie to błąd w SPF o 10-15 procent**. Używamy standardowych źródeł: **EPW** – to Energy Plus Weather, międzynarodowy standard z danymi godzinowymi, **TRY** – Test Reference Year, znormalizowane dane dla Polski, lub **Meteonorm**, komercyjna baza z wyższą rozdzielczością.
+
+**Konfiguracja systemu** to wybór topologii: **AW** to powietrze woda, **BHE** to sondy pionowe, borehole heat exchanger, woda to układ woda-woda. Musicie zdecydować, czy system będzie **monowalentny** – tylko pompa ciepła, czy **biwalentny** – pompa plus wspomaganie. Dalej symulacja, **sanity check** – czyli szybka weryfikacja czy wyniki mają sens, testowanie wariantów, analiza ekonomiczna.
+
+Na końcu raport i kontrola jakości. **Raport musi być kompletny**: techniczny i skrócony, schemat hydrauliczny, wyniki godzinowe w CSV. Załączacie założenia, warianty, niepewności, checklisty odbiorowe.
+
+**Standardowy projekt trwa**: koncepcja 1-2 dni, wykonawczy 1-2 tygodnie, złożony 1-2 miesiące. **Współczesne narzędzia pozwalają pracować równolegle nad różnymi wariantami**, a **BIM** – Building Information Modeling – integruje wszystkie etapy w jednym modelu.
 </InstructorNotes>
 
 </Slide>
@@ -40,16 +56,16 @@ Proces: cel → dane → konfiguracja → symulacja → wyniki → raport. Każd
 
 <Slide title="🧩 Kroki 1–4: cel, meteo, straty, topologia" type="tip">
 
-<KeyPoints title="Start projektu">
+<KeyPoints title="🏁 Start projektu">
 
-1. Cel i kryteria akceptacji (SPF/SCOP, koszty, emisje, hałas)
-2. Dane klimatyczne: EPW/TRY/Meteonorm; wilgotność dla AW
-3. Straty ciepła i profil obciążeń (EN 12831 + profil godzinowy + CWU)
-4. Wybór topologii (AW/BHE/woda; mono/bivalentny)
+1. 🎯 Cel i kryteria akceptacji (SPF/SCOP, koszty, emisje, hałas)
+2. 🌡️ Dane klimatyczne: EPW/TRY/Meteonorm; wilgotność dla AW
+3. 📊 Straty ciepła i profil obciążeń (EN 12831 + profil godzinowy + CWU)
+4. 🔧 Wybór topologii (AW/BHE/woda; mono/bivalentny)
 
 </KeyPoints>
 
-<SupportingDetails title="Narzędzia">
+<SupportingDetails title="🛠️ Narzędzia">
 
 - RETScreen (KPI), Meteonorm/EPW, Audytor OZC, IDA ICE/EnergyPlus/TRNSYS
 - GeoTSOL (scenariusze), Polysun (schematy), kalkulatory producentów
@@ -57,8 +73,15 @@ Proces: cel → dane → konfiguracja → symulacja → wyniki → raport. Każd
 </SupportingDetails>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Wybór topologii i definiowanie danych wejściowych determinuje resztę procesu. Dbaj o kompatybilność danych (jednostki, rozdzielczości).
+**Pierwsze cztery kroki to fundament całego projektu**. To tutaj popełniane są najgorsze błędy, które później są bardzo drogie do naprawy.
+
+**Krok pierwszy: cel i kryteria akceptacji**. To nie jest "chcę pompę ciepła", tylko **konkretne wymagania**: SPF minimum 3.5, koszt nie więcej niż X złotych, hałas nie więcej niż Y decybeli. Te **KPI muszą być mierzalne i zweryfikowalne**, inaczej będziecie mieli problemy na etapie odbioru.
+
+**Krok drugi: dane klimatyczne**. To podstawa całej symulacji. **EPW, czyli Energy Plus Weather**, to międzynarodowy standard z danymi godzinowymi, bardzo powszechny w narzędziach profesjonalnych. **TRY, Test Reference Year**, to znormalizowane dane dla Polski, zgodne z normami krajowymi. **Meteonorm** to komercyjna baza z wyższą rozdzielczością przestrzenną. Jeśli projektujecie pompę powietrzną, musicie też sprawdzić wilgotność – to wpływa na defrost, rozmarzanie wymiennika. **Błąd w temperaturach o 2 stopnie to różnica w SPF o 10-15 procent**.
+
+**Krok trzeci: straty ciepła i profil obciążeń**. Musicie obliczyć straty zgodnie z **EN 12831**, to europejska norma do obliczania mocy grzewczej. Ale to nie wszystko – musicie wiedzieć, jak budynek zużywa ciepło w czasie, **profil godzinowy**. I nie zapomnijcie o **CWU** – ciepła woda użytkowa, to może być **30-40 procent całkowitego zużycia energii**. **Audytor OZC** to polskie narzędzie zgodne z normami krajowymi, **IDA ICE, EnergyPlus, TRNSYS** to międzynarodowe standardy dla symulacji budynków.
+
+**Krok czwarty: wybór topologii**. **AW** – powietrze woda – to pompa pobierająca ciepło z powietrza. Tańsza, łatwiejsza w montażu, ale ma gorszy COP w niskich temperaturach. **BHE** – borehole heat exchanger, sondy pionowe – to system gruntowy, droższy, ale stabilniejszy i bardziej efektywny. Woda – woda to układ pobierający ciepło ze zbiornika wodnego. Wybór między **monowalentnym a biwalentnym** to decyzja czy pompa wystarczy czy potrzebne wspomaganie, najczęściej grzałką elektryczną.
 </InstructorNotes>
 
 </Slide>
@@ -67,16 +90,16 @@ Wybór topologii i definiowanie danych wejściowych determinuje resztę procesu.
 
 <Slide title="🛠️ Kroki 5–8: model PC, źródło, hydraulika, sterowanie" type="info">
 
-<KeyPoints title="Konfiguracja układu">
+<KeyPoints title="⚙️ Konfiguracja układu">
 
-5. Model PC: dobór z biblioteki (mapy P/COP), modulacja, defrost
-6. Dolne źródło: AW – krzywa wentylatora, akustyka; BHE – g‑functions; woda – wydajność/temperatura
-7. Hydraulika i magazyny: bufor, zasobnik, zawory, straty postojowe
-8. Sterowanie: krzywa grzewcza, priorytet CWU, T_biv, histerezy, antylegionella
+5. ⚡ Model PC: dobór z biblioteki (mapy P/COP), modulacja, defrost
+6. 🌍 Dolne źródło: AW – krzywa wentylatora, akustyka; BHE – g‑functions; woda – wydajność/temperatura
+7. 🔄 Hydraulika i magazyny: bufor, zasobnik, zawory, straty postojowe
+8. 🎛️ Sterowanie: krzywa grzewcza, priorytet CWU, T_biv, histerezy, antylegionella
 
 </KeyPoints>
 
-<SupportingDetails title="QC – kontrola jakości">
+<SupportingDetails title="✅ QC – kontrola jakości">
 
 - Bilans objętości i stabilność przepływów
 - Zakres modulacji i granice pracy PC
@@ -85,8 +108,15 @@ Wybór topologii i definiowanie danych wejściowych determinuje resztę procesu.
 </SupportingDetails>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Unikaj taktowania pomp/sprężarki, pilnuj realistycznych przepływów i ΔT. W modelach AW uwzględniaj defrost i akustykę.
+Teraz przechodzimy do konfiguracji systemu. **To etap, gdzie wszystkie wcześniejsze decyzje muszą być precyzyjnie zaimplementowane w modelu**.
+
+**Krok piąty: model pompy ciepła**. To nie jest tylko moc i COP – średni współczynnik efektywności. Współczesne pompy mają **mapy pracy 3D**: moc, czyli P, to funkcja temperatury źródła, temperatury odbioru i **PLR** – part load ratio, czyli stopnia obciążenia. Te mapy są kluczowe, bo pozwalają dokładnie przewidzieć jak pompa będzie pracować w różnych warunkach. **Modulacja** to zdolność pompy do zmiany mocy, **defrost** to rozmarzanie wymiennika w pompach powietrznych – może obniżyć SPF o 10-15 procent. **Bez dokładnych map pracy model będzie błędny**.
+
+**Krok szósty: dolne źródło**. To zależy od wybranej topologii. **AW** – powietrze woda – musicie uwzględnić **krzywą wentylatora**, czyli jak wentylator zużywa energię w zależności od przepływu powietrza. **Akustyka** to kolejny punkt – normy są rygorystyczne, hałas może być powodem odrzucenia projektu. **BHE** – sondy pionowe – musicie użyć **g-functions**, to funkcje matematyczne opisujące wymianę ciepła z gruntem w czasie. Woda to kwestia wydajności źródła i temperatury wody w różnych porach roku.
+
+**Krok siódmy: hydraulika i magazyny**. **Bufory ciepła mogą zwiększyć SPF o 5-10 procent** przez redukcję cyklingu – włączania i wyłączania pompy. Zasobnik CWU, zawory, straty postojowe – to wszystko wpływa na efektywność. Musicie sprawdzić **bilans objętości** – jak się to ma do stabilności przepływów. **Badania pokazują, że zły bilans hydrauliczny może powodować, że pompa będzie się włączać 300 razy dziennie, co drastycznie obniża żywotność**.
+
+**Krok ósmy: sterowanie**. To algorytm decyzyjny systemu. **Krzywa grzewcza** to zależność temperatury zasilania od temperatury zewnętrznej. **Priorytet CWU** to co się dzieje, gdy jest zapotrzebowanie na ciepłą wodę – czy jest przerwa w ogrzewaniu. **T_biv** to temperatura biwalencji, czyli kiedy włącza się wspomaganie. **Histerezy** to zakresy włączania i wyłączania, **antylegionella** to system zapobiegający rozwojowi bakterii w wodzie.
 </InstructorNotes>
 
 </Slide>
@@ -95,18 +125,32 @@ Unikaj taktowania pomp/sprężarki, pilnuj realistycznych przepływów i ΔT. W 
 
 <Slide title="📈 Kroki 9–12: warianty, symulacja, wyniki, ekonomia" type="info">
 
-<KeyPoints title="Finalizacja modeli">
+<KeyPoints title="🎯 Finalizacja modeli">
 
-9. Warianty A/B (mono vs bivalentny; T_zasil 35/45/55°C; długość sond)
-10. Symulacja sezonowa (krok godzinowy); rejestr: moc, COP, energia, cykling
-11. Wyniki: SPF_sys, pokrycie, zużycie, minimalne temperatury, udział grzałki
-12. Ekonomia: LCC, LCOH, taryfy, analiza wrażliwości (±20%)
+9. 🔄 Warianty A/B (mono vs bivalentny; T_zasil 35/45/55°C; długość sond)
+10. ⏱️ Symulacja sezonowa (krok godzinowy); rejestr: moc, COP, energia, cykling
+11. 📊 Wyniki: SPF_sys, pokrycie, zużycie, minimalne temperatury, udział grzałki
+12. 💰 Ekonomia: LCC, LCOH, taryfy, analiza wrażliwości (±20%)
 
 </KeyPoints>
 
+<InfoBox title="💡 Kluczowe zasady">
+
+- Symulacja **MUSI być z krokiem godzinowym** - nie dziennym czy miesięcznym
+- Analiza wrażliwości **±20%** to standardowa praktyka dla wszystkich parametrów
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Wariantuj po jednym parametrze; porównuj tabelarycznie i graficznie. Dokumentuj decyzje i uzasadnienia.
+**Kroki dziewięć do dwanaście to finalizacja modeli i analiza wyników**.
+
+**Krok dziewiąty: warianty**. To nie są przypadkowe kombinacje, tylko **systematyczne testowanie kluczowych parametrów**. Porównujecie mono vs biwalentny – czy pompa sama wystarczy czy potrzebne wspomaganie. Testujecie różne temperatury zasilania: 35, 45, 55 stopni – **każdy stopień to różnica w SPF**. Długość sond w systemach gruntowych też wymaga optymalizacji. Dłuższe sondy to wyższe koszty, ale lepsza wydajność.
+
+**Krok dziesiąty: symulacja sezonowa**. **To musi być z krokiem godzinowym, nie dziennym czy miesięcznym**. Uśrednianie prowadzi do błędów – pompa nie pracuje równomiernie przez cały dzień. Musicie rejestrować: moc, COP w danej chwili, energię zużytą, **cykling** – ile razy pompa się włącza i wyłącza. **To kluczowe dla żywotności i efektywności**.
+
+**Krok jedenasty: wyniki**. **SPF_sys** to sezonowy współczynnik efektywności całego systemu, nie samej pompy. Pokrycie zapotrzebowania to jaki procent ciepła pochodzi z pompy, a jaki ze wspomagania. Zużycie energii roczne to kluczowa metryka dla ekonomii. Minimalne temperatury to sprawdzenie czy system nie zamarznie. Udział grzałki to ile kosztownej energii elektrycznej idzie na bezpośrednie ogrzewanie zamiast przez pompę.
+
+**Krok dwunasty: ekonomia**. **LCC** to Life Cycle Cost, koszt cyklu życia – inwestycja plus eksploatacja przez 15-20 lat. **LCOH** to Levelized Cost of Heat, jednostkowy koszt ciepła – dzielicie całkowity koszt przez ilość energii cieplnej. **Analiza wrażliwości plus minus 20 procent** to standardowa praktyka – sprawdzacie co się stanie, gdy ceny energii wzrosną, koszty inwestycyjne będą wyższe, efektywność niższa. **Monte Carlo** to metoda symulacji probabilistycznej, gdzie sprawdzacie tysiące scenariuszy.
 </InstructorNotes>
 
 </Slide>
@@ -115,11 +159,11 @@ Wariantuj po jednym parametrze; porównuj tabelarycznie i graficznie. Dokumentuj
 
 <Slide title="✅ QC i raportowanie" type="success">
 
-<KeyPoints title="Kontrola jakości i dokumenty">
+<KeyPoints title="📋 Kontrola jakości i dokumenty">
 
-- QC: spójność danych, brak ostrzeżeń krytycznych, sanity uzysku specyficznego
-- Raport: techniczny + skrócony; schemat hydrauliczny; wyniki godzinowe (CSV)
-- Załącz: założenia, warianty, niepewności, checklisty odbiorowe
+- ✅ QC: spójność danych, brak ostrzeżeń krytycznych, sanity uzysku specyficznego
+- 📄 Raport: techniczny + skrócony; schemat hydrauliczny; wyniki godzinowe (CSV)
+- 📎 Załącz: założenia, warianty, niepewności, checklisty odbiorowe
 
 </KeyPoints>
 
@@ -134,37 +178,52 @@ Wariantuj po jednym parametrze; porównuj tabelarycznie i graficznie. Dokumentuj
 </SuccessBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Standaryzacja raportów i checklist przyspiesza peer‑review i akceptację klienta.
+**Kontrola jakości i raportowanie to etap, gdzie wszystkie wyniki muszą być zweryfikowane i udokumentowane**.
+
+**Kontrola jakości** to nie tylko sprawdzenie czy wyniki się zgadzają. To weryfikacja całego procesu projektowego. **Spójność danych** – czy wszystkie wartości się zgadzają, czy nie ma sprzeczności. **Brak ostrzeżeń krytycznych** – narzędzia często sygnalizują problemy, to trzeba sprawdzić. **Sanity check uzysku specyficznego** – to sprawdzenie czy uzyskany współczynnik efektywności mieści się w realistycznym zakresie. **Jeśli projektujecie pompę gruntową z SPF 2.0, to coś jest nie tak – powinno być 4.0-5.0**. Jeśli powietrzną z SPF 5.0, to też podejrzane – 3.0-4.0 jest realistyczne.
+
+**Raport techniczny** to dokumentacja całego procesu, nie tylko wyniki. Klient musi rozumieć decyzje projektowe. **Raport skrócony** to wersja dla inwestora, bez szczegółów technicznych, ale z kluczowymi informacjami do podjęcia decyzji. **Schemat hydrauliczny** musi być czytelny dla instalatorów – to nie tylko rysunek techniczny, to instrukcja montażu. **Wyniki godzinowe w CSV** umożliwiają weryfikację i dalszą optymalizację.
+
+Załączniki: założenia projektowe, testowane warianty, niepewności pomiarów i obliczeń, checklisty odbiorowe – to wszystko jest częścią dokumentacji. **Standardy raportowania w Polsce to PN-EN 14825 i rozporządzenie o charakterystyce energetycznej**. **Dokumentacja podlega kontroli urzędowej** – błędy mogą prowadzić do odrzucenia projektu. Raporty muszą być zrozumiałe dla inwestorów, instalatorów i użytkowników końcowych.
+
+**Typowy raport dla domu 150 metrów kwadratowych to 25 stron, 15 wykresów, 5 tabel**. To dużo, ale każdy element ma swoje uzasadnienie.
 </InstructorNotes>
 
 </Slide>
-
-</SlideContainer>
 
 <VisualSeparator type="energy" />
 
 <Slide title="🧪 Mini‑studium przypadku (skrót)" type="tip">
 
-<KeyPoints title="Założenia i wnioski">
+<KeyPoints title="📐 Założenia i wnioski">
 
-- Budynek 12 kW @ −20°C, T_zasil 35/30°C, CWU 4 osoby
-- Wariant A: PC powietrzna 12 kW, mono + grzałka → SCOP ≈ 3.0; ~4.5 MWh/rok
-- Wariant B: PC gruntowa 10 kW, BHE 3×100 m → SCOP ≈ 4.2; ~3.2 MWh/rok
-- Ekonomia (15 lat): A tańsza przy niskiej cenie energii; B lepsza przy wyższych cenach/priorytecie akustyki
+- 🏠 Budynek 12 kW @ −20°C, T_zasil 35/30°C, CWU 4 osoby
+- 🌬️ Wariant A: PC powietrzna 12 kW, mono + grzałka → SCOP ≈ 3.0; ~4.5 MWh/rok
+- 🌍 Wariant B: PC gruntowa 10 kW, BHE 3×100 m → SCOP ≈ 4.2; ~3.2 MWh/rok
+- 💰 Ekonomia (15 lat): A tańsza przy niskiej cenie energii; B lepsza przy wyższych cenach/priorytecie akustyki
 
 </KeyPoints>
 
-<InfoBox title="Wniosek dydaktyczny">
+<InfoBox title="🎓 Wniosek dydaktyczny">
 
-- Decyzja zależy od kosztów energii, warunków lokalnych i priorytetów (hałas, stabilność zimą)
+- Decyzja zależy od **kosztów energii**, **warunków lokalnych** i **priorytetów** (hałas, stabilność zimą)
 
 </InfoBox>
 
 <InstructorNotes>
-Użyj tego mini‑case do omówienia kompromisów: CAPEX vs OPEX, SCOP vs koszty, wpływ T_zasilania i wyboru źródła. Zachęć do policzenia LCC/LCOH i analizy wrażliwości (±10% obciążenia, taryfy).
+Teraz praktyczny przykład całego procesu. To dom o zapotrzebowaniu **12 kilowatów przy minus 20 stopniach** – to jest projektowa temperatura zewnętrzna, używana w obliczeniach w Polsce. Temperatura zasilania 35/30 stopni, to jest niskotemperaturowa instalacja, prawdopodobnie ogrzewanie podłogowe – 35 stopni zasilanie, 30 stopni powrót. **CWU dla 4 osób** – to około 150-200 litrów dziennie.
+
+**Wariant A** to pompa powietrzna, powietrze woda, 12 kilowatów mocy, system monowalentny z grzałką elektryczną jako wspomaganie. **SCOP to około 3.0** – sezonowy współczynnik efektywności systemu ogrzewania i CWU razem. Zużycie energii około 4.5 megawatogodzin rocznie. **To tańsze rozwiązanie, koszt inwestycyjny 15-25 tysięcy złotych**, ale gorsza efektywność.
+
+**Wariant B** to pompa gruntowa, BHE z 3 sondami po 100 metrów każde. Moc 10 kilowatów, system monowalentny. **SCOP około 4.2** – wyższy, bo grunt ma stabilną temperaturę przez cały rok, nie ma defrostu jak w powietrznej. Zużycie energii około 3.2 megawatogodzin rocznie – **30 procent mniej**. Ale koszt inwestycyjny 25-40 tysięcy złotych.
+
+Ekonomia: przy obecnych cenach energii, wariant A jest tańszy w perspektywie 15 lat. **Ale jeśli ceny energii wzrosną o 20 procent, to wariant B staje się bardziej opłacalny**. Jeśli priorytetem jest **akustyka** – pompa powietrzna może hałasować 50-60 decybeli, gruntowa jest praktycznie bezgłośna wewnątrz budynku. Jeśli priorytetem jest **stabilność zimą** – gruntowa jest niezawodna, powietrzna przy minus 25 stopniach może mieć problemy.
+
+Wniosek dydaktyczny: **decyzja zależy od wielu czynników, nie tylko ceny**. Koszty energii, warunki lokalne, priorytety inwestora – wszystko ma znaczenie. **Prawdziwy projektant potrafi to przeanalizować i doradzić klientowi najlepsze rozwiązanie dla jego sytuacji**.
 </InstructorNotes>
 
 </Slide>
+
+</SlideContainer>
 
 

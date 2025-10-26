@@ -21,27 +21,30 @@ import {
 
 <KeyPoints title="📋 Parametry projektu">
 
-- Budynek jednorodzinny 150 m², ogrzewanie podłogowe + zasobnik 300 l
-- Źródło dolne: sondy pionowe 2 × 100 m, grunt gliniasty 2,1 W/(m·K)
-- Pompa ciepła: 10 kW, sprężarka inwerterowa
+- 🏡 Budynek jednorodzinny **150 m²**, ogrzewanie podłogowe + zasobnik **300 l**
+- 🌍 Źródło dolne: sondy pionowe **2 × 100 m**, grunt gliniasty **2,1 W/(m·K)**
+- ⚡ Pompa ciepła: **10 kW**, sprężarka inwerterowa
 
 </KeyPoints>
 
-<SupportingDetails title="🎯 Cel demonstracji">
+<InfoBox title="📊 Typowe wartości">
 
-- Pokazanie pełnego procesu projektowego w GeoTSOL
-- Analiza wskaźników energetycznych i ekonomicznych
-- Praktyczne zastosowanie teorii w rzeczywistym projekcie
+- Obciążenie przy -20°C: **8-12 kW**
+- Temperatury: **35/30°C** (zasilanie/powrót)
+- Zasobnik **300 l** wystarczy dla 4-osobowej rodziny
 
-</SupportingDetails>
+</InfoBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Przygotowanie do demonstracji:**
-- Upewnij się, że GeoTSOL jest zainstalowany i gotowy do użycia
-- Przygotuj dane klimatyczne dla lokalizacji projektu
-- Sprawdź dostępność biblioteki komponentów
-- Przygotuj przykładowe wyniki testu TRT
+Ok, teraz praktyczna demonstracja - zobaczymy jak to wygląda w realnym projekcie.
+
+**Scenariusz laboratoryjny** - dom jednorodzinny 150 metrów kwadratowych, **to najczęstszy przypadek w praktyce**. **Ogrzewanie podłogowe plus zasobnik 300 litrów** - to optymalna konfiguracja. **Niskie temperatury zasilania, wysoki SPF**.
+
+**Źródło dolne** - sondy pionowe, **BHE**, borehole heat exchanger, dwie sondy po **100 metrów każda**. To pozwala na stabilną pracę przez cały sezon. Grunt gliniasty o przewodności **2.1 watów na metr kelwin** - to typowy parametr dla Polski. Wpływa na długość odwiertów i efektywność systemu.
+
+**Pompa ciepła 10 kilowatów** z sprężarką inwerterową - nowoczesne rozwiązanie. **Modulacja mocy**, czyli zmiana mocy płynnie w zależności od potrzeb, wysoka efektywność. To pozwala uniknąć **taktowania** - zbyt częstego włączania i wyłączania.
+
+Typowe obciążenie dla domu 150 metrów kwadratowych to **8-12 kilowatów przy minus 20 stopniach**, temperatura projektowa w Polsce. **Ogrzewanie podłogowe 35/30 stopni** - to jest zasilanie 35, powrót 30 - niskie temperatury, wysoki komfort, niskie koszty. **Zasobnik 300 litrów wystarczy dla czteroosobowej rodziny**.
 </InstructorNotes>
 
 </Slide>
@@ -52,12 +55,12 @@ import {
 
 <KeyPoints title="🔧 Konfiguracja projektu">
 
-1. **Parametryzacja w kreatorze GeoTSOL**
+1. 📝 **Parametryzacja w kreatorze GeoTSOL**
    - Profil zapotrzebowania na ciepło
    - Dane klimatyczne lokalizacji
    - Parametry budynku i odbiorników
 
-2. **Konfiguracja układu**
+2. ⚙️ **Konfiguracja układu**
    - Wprowadzenie wyników testu TRT
    - Konfiguracja układu bufora
    - Ustawienia sterowania
@@ -66,18 +69,20 @@ import {
 
 <InfoBox title="💡 Kluczowe elementy">
 
-- Weryfikacja danych wejściowych
-- Sprawdzenie kompatybilności komponentów
-- Ustawienie parametrów symulacji
+- **Weryfikacja danych wejściowych** - fundament projektu
+- **Sprawdzenie kompatybilności** komponentów
+- **Ustawienie parametrów** symulacji
 
 </InfoBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Wskazówki dydaktyczne:**
-- Podkreśl znaczenie dokładnych danych wejściowych
-- Pokaż jak weryfikować poprawność konfiguracji
-- Wyjaśnij wpływ poszczególnych parametrów na wyniki
+Kroki demonstracji - jak krok po kroku konfigurujemy projekt w GeoTSOL.
+
+**Krok pierwszy** - parametryzacja w kreatorze GeoTSOL. **Profil zapotrzebowania na ciepło** - to znaczy jak budynek zużywa ciepło w czasie. **Musi uwzględniać rzeczywiste zachowania użytkowników**. Dane klimatyczne lokalizacji - GeoTSOL automatycznie dobiera na podstawie miasta, ale można to zmienić. Parametry budynku i odbiorników - izolacja, okna, wentylacja wpływają na obciążenia.
+
+**Krok drugi** - konfiguracja układu. **Wprowadzenie wyników testu TRT** - to Thermal Response Test, test odpowiedzi termicznej gruntu. Trwa **48-72 godziny**, pokazuje rzeczywiste parametry gruntu - przewodność cieplną i pojemność. Konfiguracja układu bufora - zasobnik ciepła, pompy cyrkulacyjne, zawory. **Ustawienia sterowania** - jak system ma reagować na zmiany obciążenia.
+
+**To fundament** - błędne dane wejściowe wpływają na cały projekt. **Weryfikacja danych**, sprawdzenie kompatybilności komponentów, ustawienie parametrów symulacji.
 </InstructorNotes>
 
 </Slide>
@@ -88,33 +93,35 @@ import {
 
 <KeyPoints title="🧪 Analiza i ocena">
 
-3. **Symulacja i analiza**
+3. 🔄 **Symulacja i analiza**
    - Uruchomienie symulacji rocznej
    - Analiza wykresów energii i temperatur
    - Sprawdzenie ostrzeżeń i błędów
 
-4. **Ocena wskaźników**
+4. 📊 **Ocena wskaźników**
    - SCOP, SPF, zużycie energii
    - NPV, LCC, LCOH
    - Redukcja emisji CO₂
 
 </KeyPoints>
 
-<SupportingDetails title="📊 Kluczowe wykresy">
+<SuccessBox title="📈 Kluczowe wykresy">
 
-- Profil temperatur źródła i odbioru
-- Rozkład energii w czasie
-- Cykling i efektywność systemu
-- Analiza ekonomiczna
+- **Profil temperatur** źródła i odbioru
+- **Rozkład energii** w czasie
+- **Cykling i efektywność** systemu
+- **Analiza ekonomiczna**
 
-</SupportingDetails>
+</SuccessBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Interpretacja wyników:**
-- Wyjaśnij znaczenie poszczególnych wskaźników
-- Pokaż jak identyfikować problemy w systemie
-- Przedstaw metody optymalizacji
+Kroki trzy i cztery - symulacja i analiza, ocena wyników.
+
+**Krok trzeci** - symulacja i analiza. **Uruchomienie symulacji rocznej** - GeoTSOL oblicza godzinowo przez cały rok, nie uśrednia. **Analiza wykresów energii i temperatur** - to pokazuje jak system pracuje. **Sprawdzenie ostrzeżeń i błędów** - jeśli coś jest nie tak, program to sygnalizuje.
+
+**Krok czwarty** - ocena wskaźników. **SCOP, SPF, zużycie energii** - to kluczowe metryki. **SCOP** to znormalizowana efektywność, **SPF** to rzeczywista w danych warunkach klimatycznych. **NPV, LCC, LCOH** - to analiza ekonomiczna. **NPV** to Net Present Value, wartość bieżąca netto, **LCC** to Life Cycle Cost, koszt cyklu życia, **LCOH** to Levelized Cost of Heat, jednostkowy koszt ciepła. **Redukcja emisji CO2** - to ważne dla ekologii.
+
+Kluczowe wykresy - **profil temperatur** źródła i odbioru, **rozkład energii** w czasie, **cykling i efektywność**, **analiza ekonomiczna**. Te wykresy pokazują jakość systemu.
 </InstructorNotes>
 
 </Slide>
@@ -125,9 +132,9 @@ import {
 
 <KeyPoints title="📝 Ćwiczenia praktyczne">
 
-- **Wariant 1**: Porównaj z krótszymi sondami (2 × 80 m)
-- **Wariant 2**: Ocen wpływ na SCOP i koszty
-- **Wariant 3**: Przygotuj notatkę projektową z rekomendacjami
+- 🧪 **Wariant 1**: Porównaj z krótszymi sondami (2 × 80 m)
+- 📊 **Wariant 2**: Oceń wpływ na SCOP i koszty
+- 📄 **Wariant 3**: Przygotuj notatkę projektową z rekomendacjami
 
 </KeyPoints>
 
@@ -141,12 +148,17 @@ import {
 </SuccessBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Ocena studentów:**
-- Sprawdź poprawność analizy porównawczej
-- Oceń jakość rekomendacji
-- Zweryfikuj zrozumienie procesu projektowego
-- Sprawdź umiejętność interpretacji wyników
+Zadania dla studentów - ćwiczenia praktyczne.
+
+**Wariant pierwszy** - porównaj z krótszymi sondami. Dwie sondy po 80 metrów zamiast 100. **Zobaczycie jak długość wpływa na efektywność i koszty**.
+
+**Wariant drugi** - oceń wpływ na SCOP i koszty. **Różnica 20 metrów w sondach** to różnica w SPF o 0.1-0.2, w kosztach o **10-15 procent**.
+
+**Wariant trzeci** - przygotuj notatkę projektową z rekomendacjami. To profesjonalizm - **klient musi rozumieć podstawy decyzji**. **Rekomendacje eksploatacyjne** - to wartość dodana, pomagają w optymalnej eksploatacji.
+
+Oczekiwane rezultaty - analiza porównawcza wariantów, rekomendacje eksploatacyjne, dokumentacja projektowa, zrozumienie procesu decyzyjnego.
+
+**To pozwala zobaczyć cały proces projektowy od początku do końca**.
 </InstructorNotes>
 
 </Slide>
@@ -157,10 +169,10 @@ import {
 
 <KeyPoints title="⚠️ Co sprawdzić">
 
-- Poprawność danych wejściowych
-- Brak ostrzeżeń krytycznych w symulacji
-- Realistyczne wartości wskaźników
-- Spójność wyników ekonomicznych
+- ✅ Poprawność danych wejściowych
+- 🚨 Brak ostrzeżeń krytycznych w symulacji
+- 📊 Realistyczne wartości wskaźników
+- 💰 Spójność wyników ekonomicznych
 
 </KeyPoints>
 
@@ -174,12 +186,19 @@ import {
 </WarningBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Kontrola jakości:**
-- Weryfikuj każdy krok konfiguracji
-- Sprawdzaj ostrzeżenia systemu
-- Porównuj wyniki z wartościami referencyjnymi
-- Dokumentuj wszystkie założenia
+Punkty kontrolne - to co musicie sprawdzić zanim uznać projekt za gotowy.
+
+**Poprawność danych wejściowych** - fundament całego projektu. Błędne dane prowadzą do błędnych wyników. **Weryfikacja z kilku źródeł**, zgodność z normami.
+
+**Brak ostrzeżeń krytycznych** - jeśli program ostrzega, to znaczy że coś jest nie tak. Temperatura minimalna, liczba cykli pracy pompy, udział grzałki elektrycznej. **To sygnały ostrzegawcze**.
+
+**Realistyczne wartości wskaźników** - sanity-check, sprawdzenie czy wyniki mają sens. **SCOP 3.0-4.5, SPF 2.5-4.0**, cykling mniej niż 100 razy dziennie. **Jeśli coś wychodzi poza te zakresy, to może być błąd**.
+
+**Spójność wyników ekonomicznych** - LCC, LCOH, NPV muszą się zgadzać. Jeśli się nie zgadzają, to błąd w obliczeniach.
+
+Częste błędy - nieprawidłowe dane klimatyczne, błędna konfiguracja sterowania, nieodpowiednie parametry źródła dolnego, pominięcie analizy wrażliwości.
+
+**Bez sprawdzenia tych punktów, projekt może być błędny. To standardowa praktyka w profesjonalnych projektach**.
 </InstructorNotes>
 
 </Slide>

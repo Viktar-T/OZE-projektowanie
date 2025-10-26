@@ -36,12 +36,15 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**W tym wykładzie** skupiamy się na perspektywie oprogramowania do projektowania systemów solarnych termicznych. **Głównym celem** jest ułożenie mentalnego modelu tego, jak programy komputerowe postrzegają i analizują instalacje ST (Solar Thermal - systemy solarne termiczne). Zwracamy szczególną uwagę na dane wejściowe, metryki raportowane i ograniczenia modeli obliczeniowych.
+**W tym wykładzie** skupiamy się na perspektywie oprogramowania do projektowania systemów solarnych termicznych. **Głównym celem** jest ułożenie mentalnego modelu tego, jak programy komputerowe postrzegają i analizują instalacje ST - Solar Thermal, czyli systemy solarne termiczne. Zwracamy szczególną uwagę na dane wejściowe, metryki raportowane i ograniczenia modeli obliczeniowych.
 
-**Jesteśmy w erze cyfryzacji energetyki**, gdzie tradycyjne metody projektowania są systematycznie zastępowane przez zaawansowane narzędzia komputerowe. **Dzisiejszy projektant OZE (odnawialnych źródeł energii)** musi być nie tylko dobrym inżynierem, ale także specjalistą od narzędzi IT. **Współczesne projekty** wymagają integracji wielu systemów, od modelowania geometrycznego po zaawansowane analizy ekonomiczne.
+**Jesteśmy w erze cyfryzacji energetyki**, gdzie tradycyjne metody projektowania są systematycznie zastępowane przez zaawansowane narzędzia komputerowe. **Dzisiejszy projektant OZE** - odnawialnych źródeł energii - musi być nie tylko dobrym inżynierem, ale także specjalistą od narzędzi IT. **Współczesne projekty** wymagają integracji wielu systemów, od modelowania geometrycznego po zaawansowane analizy ekonomiczne.
 
 **Kluczowe wyzwania** to oczywiście złożoność techniczna - nowoczesne instalacje ST to systemy wielodyscyplinarne, wymagające znajomości termodynamiki, hydrauliki, meteorologii i ekonomii. **Dynamika rynku** technologicznego wymaga ciągłego aktualizowania wiedzy o nowych narzędziach projektowych. **Wymagania prawne** stają się coraz bardziej restrykcyjne, przez co potrzebujemy precyzyjnych analiz i dokumentacji.
 
+**Mentalny model systemów ST** widzianych oczami oprogramowania to podstawa efektywnego projektowania. **Nacisk na dane wejściowe** oznacza, że musimy dokładnie wiedzieć, jakie parametry wprowadzamy do programu i skąd pochodzą. **Metryki raportowane** to wskaźniki, które program oblicza i które musimy umieć interpretować. **Ograniczenia modeli** to granice, w których programy działają wiarygodnie.
+
+**Praktyczne podejście** oznacza, że uczymy się nie tylko teorii, ale przede wszystkim umiejętności posługiwania się narzędziami IT w rzeczywistych projektach. **To jest przyszłość** projektowania systemów OZE - integracja wiedzy technicznej z kompetencjami cyfrowymi.
 </InstructorNotes>
 
 </Slide>
@@ -69,15 +72,15 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Zastosowania systemów ST** determinują wymagania modelu obliczeniowego. **Zacznę od c.w.u. (ciepłej wody użytkowej) w budynkach** - tutaj kluczowy jest profil dobowy, modelowanie cyrkulacji i wymogi higieniczne, szczególnie antylegionella (zapobieganie rozwojowi bakterii Legionella). **Woda w zasobniku lub instalacji musi okresowo osiągać temperaturę powyżej 60°C** lub system musi mieć cykl dezynfekcji termicznej, który zapobiega namnażaniu bakterii. **W modelowaniu systemów solarnych** to bardzo istotne, ponieważ energia słoneczna często nie zapewnia codziennie tak wysokich temperatur, dlatego system musi być uzupełniany przez dodatkowe źródło ciepła - np. kocioł gazowy czy grzałka elektryczna. **Projektujemy z marginesami mocy szczytowej** i wymagamy szczegółowych profili czasowych.
+**Zastosowania systemów ST** determinują wymagania modelu obliczeniowego. **Zacznę od c.w.u. - ciepłej wody użytkowej w budynkach** - tutaj kluczowy jest profil dobowy, modelowanie cyrkulacji i wymogi higieniczne, szczególnie antylegionella - zapobieganie rozwojowi bakterii Legionella. **Woda w zasobniku lub instalacji musi okresowo osiągać temperaturę powyżej 60°C** lub system musi mieć cykl dezynfekcji termicznej, który zapobiega namnażaniu bakterii. **W modelowaniu systemów solarnych** to bardzo istotne, ponieważ energia słoneczna często nie zapewnia codziennie tak wysokich temperatur, dlatego system musi być uzupełniany przez dodatkowe źródło ciepła - np. kocioł gazowy czy grzałka elektryczna. **Projektujemy z marginesami mocy szczytowej** i wymagamy szczegółowych profili czasowych.
 
 **Baseny to całkiem inna kategoria** - mamy tu duże wahania sezonowe i niskie temperatury zasilania. **Istotna jest moc chwilowa** i straty parowania, więc potrzebujemy modelowania sezonowości i dokładnych obliczeń strat ciepła.
 
-**Wspomaganie c.o. (centralnego ogrzewania)** pracuje w niższych temperaturach zasilania, szczególnie przy podłogówce. **Wymaga większych magazynów** i zaawansowanego sterowania priorytetami, więc modelujemy magazyny i sterowanie hybrydowe.
+**Wspomaganie c.o. - centralnego ogrzewania** pracuje w niższych temperaturach zasilania, szczególnie przy podłogówce. **Wymaga większych magazynów** i zaawansowanego sterowania priorytetami, więc modelujemy magazyny i sterowanie hybrydowe.
 
 **Procesy przemysłowe** charakteryzują się specyficznymi harmonogramami i stałomocowymi odbiorami. **Często mają własne wymienniki** i nietypowe reżimy temperaturowe, co wymaga zaawansowanych modeli i niestandardowych komponentów.
 
-**W praktyce** każde zastosowanie stawia inne wymagania na rozdzielczość profili (jak często w czasie zapisujemy lub obliczamy wartości zmiennych w symulacji. Czyli rórznę czasowe odstępy między wartościami - godzinowe, dzienne, podgodzinowe), poziom detalu hydrauliki i strategię sterowania. **To zastosowanie determinuje** wybór narzędzia i metodykę symulacji.
+**W praktyce** każde zastosowanie stawia inne wymagania na rozdzielczość profili - jak często w czasie zapisujemy lub obliczamy wartości zmiennych w symulacji, czyli różne czasowe odstępy między wartościami - godzinowe, dzienne, podgodzinowe. **Poziom detalu hydrauliki** i strategię sterowania. **To zastosowanie determinuje** wybór narzędzia i metodykę symulacji.
 </InstructorNotes>
 
 </Slide>
@@ -109,15 +112,15 @@ import {
 <InstructorNotes>
 **Program komputerowy postrzega system ST** jako zbiór elementów powiązanych obliczeniowo. **Źródło, czyli kolektory**, definiujemy parametrami z certyfikacji: η₀ to sprawność optyczna, a₁ i a₂ to współczynniki strat cieplnych. **Musimy uwzględnić ograniczenia temperatur** - stagnację latem i zamarzanie zimą. **Najważniejsze parametry** pochodzą z ISO 9806 czy Solar Keymark.
 
-**Magazyn, czyli zasobnik**, modelujemy uwzględniając warstwowość - stratyfikację temperaturową wody wewnątrz zbiornika (rozdzielenie się wody na warstwy o różnych temperaturach - gorąca na górze, chłodniejsza na dole). **Straty postojowe** wynikają z izolacji i wymiany ciepła z otoczeniem. **Wężownice** to wymienniki ciepła wewnętrzne, które wpływają na dystrybucję temperatury.
+**Magazyn, czyli zasobnik**, modelujemy uwzględniając warstwowość - stratyfikację temperaturową wody wewnątrz zbiornika - rozdział wody na warstwy o różnych temperaturach, gorąca na górze, chłodniejsza na dole. **Straty postojowe** wynikają z izolacji i wymiany ciepła z otoczeniem. **Wężownice** to wymienniki ciepła wewnętrzne, które wpływają na dystrybucję temperatury.
 
-**Hydraulika obejmuje** obiegi solarne z glikolem lub drain-back (system odwadniający - woda samoczynnie spływa z kolektorów przy braku przepływu), pompy, zawory i wymienniki. **Modelujemy także cyrkulację c.w.u. (ciepłej wody użytkowej)** i straty liniowe w rurociągach.
+**Hydraulika obejmuje** obiegi solarne z glikolem lub drain-back - system odwadniający, gdzie woda samoczynnie spływa z kolektorów przy braku przepływu, pompy, zawory i wymienniki. **Modelujemy także cyrkulację c.w.u.** i straty liniowe w rurociągach.
 
-**Sterowanie bazuje na histerezach ΔT (różnica temperatur)** - progach start i stop dla pomp. **Histereza to różnica między temperaturą włączenia i wyłączenia** - zapobiega częstemu przełączaniu urządzeń.  **Jak działa histereza ΔT? Przykład z termostatem pokojowym**: Jeśli termostat jest ustawiony na 22°C z histerezą 2°C, to urządzenie grzewcze włączy się, gdy temperatura spadnie do 21°C, a wyłączy, gdy osiągnie 23°C. Bez histerezy, kocioł włączałby się i wyłączał wielokrotnie za każdym razem, gdy temperatura osiągnęłaby dokładnie 22°C. **Logika sterowania** uwzględnia priorytety źródeł i harmonogramy antylegionella dla wymogów higienicznych.
+**Sterowanie bazuje na histerezach ΔT** - różnica temperatur, progach start i stop dla pomp. **Histereza to różnica między temperaturą włączenia i wyłączenia** - zapobiega częstemu przełączaniu urządzeń. **Jak działa histereza ΔT? Przykład z termostatem pokojowym**: Jeśli termostat jest ustawiony na 22°C z histerezą 2°C, to urządzenie grzewcze włączy się, gdy temperatura spadnie do 21°C, a wyłączy, gdy osiągnie 23°C. **Bez histerezy**, kocioł włączałby się i wyłączał wielokrotnie za każdym razem, gdy temperatura osiągnęłaby dokładnie 22°C. **Logika sterowania** uwzględnia priorytety źródeł i harmonogramy antylegionella dla wymogów higienicznych.
 
-**Dane klimatyczne** to typowe lata meteorologiczne TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm z rozdzielczością godzinową lub podgodzinową. **Stosujemy korekty lokalne** dla specyficznych mikroklimatów.
+**Dane klimatyczne** to typowe lata meteorologiczne TMY - Typical Meteorological Year, typowy rok meteorologiczny, lub Meteonorm z rozdzielczością godzinową lub podgodzinową. **Stosujemy korekty lokalne** dla specyficznych mikroklimatów.
 
-**Ekonomia obejmuje CAPEX (Capital Expenditure - nakłady inwestycyjne) i OPEX (Operational Expenditure - koszty eksploatacyjne)** - koszty inwestycyjne i eksploatacyjne, LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) czyli koszt jednostkowy ciepła, SPBT (Simple Payback Time - prosty okres zwrotu) to prosty okres zwrotu, a NPV (Net Present Value - wartość bieżąca netto) to wartość bieżąca netto.
+**Ekonomia obejmuje CAPEX** - Capital Expenditure, nakłady inwestycyjne, i **OPEX** - Operational Expenditure, koszty eksploatacyjne, **LCOH** - Levelized Cost of Heat, koszt jednostkowy ciepła, **SPBT** - Simple Payback Time, prosty okres zwrotu, a **NPV** - Net Present Value, wartość bieżąca netto.
 
 **Kluczowe jest korzystanie** z parametrów kolektorów z ISO 9806 i Solar Keymark, ponieważ to gwarantuje wiarygodność obliczeń - parametry η₀, a₁, a₂ pochodzą z niezależnej certyfikacji w jednakowych warunkach testowych, co umożliwia porównywalność wyników między różnymi modelami kolektorów. **Modele zbiorników** uwzględniają straty postojowe, a w sterowaniu najważniejsze są progi start/stop i harmonogramy higieniczne.
 </InstructorNotes>
@@ -147,9 +150,9 @@ import {
 </WarningBox>
 
 <InstructorNotes>
-**Jakość danych wejściowych** determinuje wiarygodność całej symulacji. **Lokalizacja i dane meteo** to podstawa - musimy wybierać między najbliższą stacją meteorologiczną a korektami lokalnymi, uwzględniając miejskie wyspy ciepła czy mgły. **Ważne są wysokość n.p.m. (nad poziomem morza), ekspozycja i mikroklimat** - stosujemy korekty od ±5% do ±10% dla specyficznych lokalizacji.
+**Jakość danych wejściowych** determinuje wiarygodność całej symulacji. **Lokalizacja i dane meteo** to podstawa - musimy wybierać między najbliższą stacją meteorologiczną a korektami lokalnymi, uwzględniając miejskie wyspy ciepła czy mgły. **Ważne są wysokość n.p.m.** - nad poziomem morza, **ekspozycja i mikroklimat** - stosujemy korekty od ±5% do ±10% dla specyficznych lokalizacji.
 
-**Profil zapotrzebowania** powinien być dobowy i sezonowy, najlepiej importowany z pliku CSV. **Zalecany format** to kolumny `datetime; demand_lph` lub `kWh` z metadanymi jak temperatura zadana i rozróżnienie dni roboczych od weekendów. **Weryfikujemy** sumę roczną i szczyty P95 (95 percentyl)/P99 (99 percentyl).
+**Profil zapotrzebowania** powinien być dobowy i sezonowy, najlepiej importowany z pliku CSV. **Zalecany format** to kolumny `datetime; demand_lph` lub `kWh` z metadanymi jak temperatura zadana i rozróżnienie dni roboczych od weekendów. **Weryfikujemy** sumę roczną i szczyty P95 - 95 percentyl, P99 - 99 percentyl.
 
 **Parametry komponentów** nie mogą być "z głowy" - **musimy korzystać** z bibliotek producentów i certyfikacji Solar Keymark czy ISO 9806. **Wprowadzamy realne długości rurociągów** i parametry izolacji, nie szacunki.
 
@@ -186,11 +189,11 @@ import {
 <InstructorNotes>
 **Metryki raportowe** muszą być czytelne i porównywalne. **Uzysk roczny** w kWh na rok pokazuje całkowitą produkcję ciepła, **sprawność sezonowa kolektora** w procentach określa efektywność konwersji energii słonecznej, a **pokrycie solarne f_sol** pokazuje jaki udział ma energia solarna w całkowitym zapotrzebowaniu.
 
-**Metryki środowiskowe** obejmują oszczędność energii końcowej i pierwotnej w kWh na rok oraz redukcję emisji CO₂ w tonach rocznie - to emisje uniknięte dzięki systemowi. **Wskaźniki LCA (Life Cycle Assessment - ocena cyklu życia)** pozwalają ocenić wpływ na środowisko w całym cyklu życia.
+**Metryki środowiskowe** obejmują oszczędność energii końcowej i pierwotnej w kWh na rok oraz redukcję emisji CO₂ w tonach rocznie - to emisje uniknięte dzięki systemowi. **Wskaźniki LCA** - Life Cycle Assessment, ocena cyklu życia - pozwalają ocenić wpływ na środowisko w całym cyklu życia.
 
 **Straty systemowe** należy analizować szczegółowo - **straty zasobnika** wynikają z izolacji i wymiany z otoczeniem, **straty rurociągów** zależą od izolacji, długości i średnic, **straty cyrkulacji** od harmonogramów pracy pomp, a **straty postojowe** od czasu bez odbioru ciepła.
 
-**LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła)** to koszt jednostkowy ciepła, **SPBT (Simple Payback Time - prosty okres zwrotu) i DPBT (Discounted Payback Time - dyskontowany okres zwrotu)** to prosty i dyskontowany okres zwrotu, **NPV (Net Present Value - wartość bieżąca netto)** to wartość bieżąca netto, a **IRR (Internal Rate of Return - wewnętrzna stopa zwrotu)** to wewnętrzna stopa zwrotu inwestycji.
+**LCOH** - Levelized Cost of Heat, koszt jednostkowy ciepła, **SPBT** - Simple Payback Time, prosty okres zwrotu, i **DPBT** - Discounted Payback Time, dyskontowany okres zwrotu, **NPV** - Net Present Value, wartość bieżąca netto, a **IRR** - Internal Rate of Return, wewnętrzna stopa zwrotu inwestycji.
 
 **Interpretacja wyników** wymaga porównania uzysku specyficznego w kWh na metr kwadratowy rocznie z lokalnymi benchmarkami. **Ekonomię zawsze analizujmy** z analizą wrażliwości na zmiany cen energii i uzysku o ±10-20%, ponieważ ceny energii są bardzo zmienne w czasie i mogą znacząco wpłynąć na opłacalność inwestycji, a przewidywany uzysk zależy od rzeczywistych warunków eksploatacji i może odbiegać od modelowanego.
 </InstructorNotes>
@@ -221,13 +224,13 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-**Wybór narzędzia** zależy od poziomu szczegółowości wymaganego modelu. **[RETScreen](https://natural-resources.canada.ca/maps-tools-publications/tools-applications/retscreen) (opracowane przez Natural Resources Canada) i [SAM – System Advisor Model](https://sam.nrel.gov) (opracowany przez NREL, U.S. Department of Energy)** to uproszczone narzędzia feasibility - pozwalają na szybkie porównania opłacalności z ograniczoną hydrauliką i podstawowymi modelami. **Zalety to** globalne bazy danych meteorologicznych i silne narzędzia ekonomiczne.
+**Wybór narzędzia** zależy od poziomu szczegółowości wymaganego modelu. **RETScreen** - opracowane przez Natural Resources Canada - i **SAM - System Advisor Model** - opracowany przez NREL, U.S. Department of Energy - to uproszczone narzędzia feasibility - pozwalają na szybkie porównania opłacalności z ograniczoną hydrauliką i podstawowymi modelami. **Zalety to** globalne bazy danych meteorologicznych i silne narzędzia ekonomiczne.
 
-**[T*SOL](https://valentin-software.com/en/products/tsol) ([wersja online](https://online.tsol.de/en/)) i [Polysun](https://www.velasolaris.com/en/)** to dedykowane narzędzia ST z szablonami schematów hydraulicznych i dokładnymi profilami zapotrzebowania. **Mają rozbudowane biblioteki komponentów** i zapewniają produktywność biurową oraz wiarygodne raporty dla klienta.
+**T*SOL** - wersja online dostępna - i **Polysun** to dedykowane narzędzia ST z szablonami schematów hydraulicznych i dokładnymi profilami zapotrzebowania. **Mają rozbudowane biblioteki komponentów** i zapewniają produktywność biurową oraz wiarygodne raporty dla klienta.
 
-**[TRNSYS – Transient System Simulation Tool](https://www.trnsys.com) ([alternatywnie](https://trnsys.org))** to symulacja ogólna z pełną swobodą modelowania, ale wymaga większego nakładu pracy i walidacji wyników. **Stosuje się głównie** w badaniach naukowych gdzie potrzebujemy pełnej kontroli nad modelem.
+**TRNSYS - Transient System Simulation Tool** - alternatywnie dostępne na trnsys.org - to symulacja ogólna z pełną swobodą modelowania, ale wymaga większego nakładu pracy i walidacji wyników. **Stosuje się głównie** w badaniach naukowych gdzie potrzebujemy pełnej kontroli nad modelem.
 
-**Standardy i certyfikacja** opierają się na [ISO 9806:2017](https://www.iso.org/standard/67978.html) i [EN 12975:2022](https://www.en-standard.eu/bs-en-12975-2022-solar-collectors-general-requirements/) dla metod badań kolektorów oraz [Solar Keymark](https://solarkeymark.eu) dla certyfikacji. **Parametry η₀, a₁, a₂** pochodzą z certyfikacji, a **wymogi higieniczne** dotyczą antylegionella.
+**Standardy i certyfikacja** opierają się na ISO 9806:2017 i EN 12975:2022 dla metod badań kolektorów oraz Solar Keymark dla certyfikacji. **Parametry η₀, a₁, a₂** pochodzą z certyfikacji, a **wymogi higieniczne** dotyczą antylegionella.
 
 **W praktyce** TRNSYS daje największą kontrolę, ale wymaga wysokich kompetencji i walidacji. **T*SOL i Polysun** zapewniają optymalny kompromis między szczegółowością a produktywnością biurową.
 </InstructorNotes>
@@ -259,9 +262,9 @@ import {
 <InstructorNotes>
 **Artefakty projektowe** to kompletny pakiet dokumentacji dla klienta. **Raport techniczny** zawiera założenia projektowe - dane wejściowe, parametry i ograniczenia, wyniki symulacji z metrykami energetycznymi i ekonomicznymi, warianty rozwiązań z porównaniem konfiguracji oraz analizę ryzyk z identyfikacją zagrożeń.
 
-**Dokumentacja techniczna** obejmuje listy komponentów BOM (Bill of Materials - specyfikacja materiałowa), rysunki i schematy jako dokumentację wykonawczą oraz specyfikacje techniczne z parametrami komponentów. **To podstawa** do realizacji fizycznej systemu.
+**Dokumentacja techniczna** obejmuje listy komponentów BOM - Bill of Materials, specyfikacja materiałowa, rysunki i schematy jako dokumentację wykonawczą oraz specyfikacje techniczne z parametrami komponentów. **To podstawa** do realizacji fizycznej systemu.
 
-**Analiza ekonomiczna** zawiera kalkulację kosztów CAPEX (Capital Expenditure - nakłady inwestycyjne) i OPEX (Operational Expenditure - koszty eksploatacyjne), metryki finansowe LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), SPBT (Simple Payback Time - prosty okres zwrotu) i NPV (Net Present Value - wartość bieżąca netto), analizę wrażliwości na zmiany parametrów oraz aneks danych wejściowych z założeniami i źródłami.
+**Analiza ekonomiczna** zawiera kalkulację kosztów CAPEX - Capital Expenditure, nakłady inwestycyjne, i OPEX - Operational Expenditure, koszty eksploatacyjne, metryki finansowe LCOH - Levelized Cost of Heat, koszt jednostkowy ciepła, SPBT - Simple Payback Time, prosty okres zwrotu, i NPV - Net Present Value, wartość bieżąca netto, analizę wrażliwości na zmiany parametrów oraz aneks danych wejściowych z założeniami i źródłami.
 
 **Kompletny pakiet** musi zawierać uzysk roczny, pokrycie solarne f_sol, straty składowe, LCOH i SPBT oraz krótkie wnioski z rekomendacjami optymalnego wariantu. **To klucz do** profesjonalnej realizacji projektu.
 </InstructorNotes>

@@ -19,17 +19,31 @@ import {
 
 <Slide title="🛫 0. Pre‑flight: dane wejściowe" type="info">
 
-<KeyPoints title="Co przygotować">
+<KeyPoints title="📋 Co przygotować">
 
-- Obciążenie cieplne (EN 12831), profile godzinowe, CWU
-- Dane klimatyczne lokalne (stacja, T_design, wilgotność)
-- Ograniczenia lokalne (odwierty/hałas), założenia ekonomiczne
+- 📊 Obciążenie cieplne (EN 12831), profile godzinowe, CWU
+- 🌡️ Dane klimatyczne lokalne (stacja, T_design, wilgotność)
+- ⚠️ Ograniczenia lokalne (odwierty/hałas), założenia ekonomiczne
 
 </KeyPoints>
 
+<InfoBox title="💡 Kluczowa zasada">
+
+- **Bez dobrych danych wejściowych cały projekt będzie błędny**
+- Błąd w danych klimatycznych o **2 stopnie** to błąd w SPF o **10-15 procent**
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Uporządkowane wejścia skracają iteracje i upraszczają weryfikację wyników.
+Ok, teraz zajmiemy się praktycznym procesem projektowym w GeoTSOL. Zaczynamy od przygotowania - **pre-flight, czyli co musicie mieć zanim zaczniecie projektować**.
+
+**Obciążenie cieplne** - to podstawa. Musi być obliczone według **normy EN 12831**, to europejska norma do obliczania zapotrzebowania na ciepło w budynkach. Nie można szacować, nie można używać uśrednionych wartości. **Profile godzinowe** - czyli jak budynek zużywa ciepło w różnych godzinach dnia. **To jest kluczowe - uśrednianie prowadzi do błędów**. **CWU**, ciepła woda użytkowa - to może być **30-40 procent całkowitego zużycia energii**.
+
+**Dane klimatyczne lokalne** - to znaczy dane z konkretnej stacji meteorologicznej, nie uśrednione dla całego regionu. **T_design, temperatura projektowa** - w Polsce standardowo minus 20 stopni. **Wilgotność** - ważna dla pomp powietrznych, wpływa na defrost, rozmrażanie wymiennika.
+
+**Ograniczenia lokalne** - odwierty - czy można wiercić, ile, gdzie. Hałas - normy są rygorystyczne, to może być powodem odrzucenia projektu. **Założenia ekonomiczne** - taryfy prądowe, inflacja, koszty utrzymania przez 15-20 lat.
+
+**Bez dobrych danych wejściowych cały projekt będzie błędny**. To jest kluczowe.
 </InstructorNotes>
 
 </Slide>
@@ -38,17 +52,31 @@ Uporządkowane wejścia skracają iteracje i upraszczają weryfikację wyników.
 
 <Slide title="🧭 1–3. Start projektu i definicje" type="tip">
 
-<KeyPoints title="Kroki początkowe">
+<KeyPoints title="📝 Kroki początkowe">
 
-1. Nowy projekt → nazwa, lokalizacja, klimat
-2. Budynek i odbiorniki → obciążenia, T_zasil, udział CWU
-3. Typ PC i tryb pracy → AW/Grunt/Woda; mono/bivalentny; T_biv
+1. 🆕 Nowy projekt → nazwa, lokalizacja, klimat
+2. 🏠 Budynek i odbiorniki → obciążenia, T_zasil, udział CWU
+3. ⚙️ Typ PC i tryb pracy → AW/Grunt/Woda; mono/bivalentny; T_biv
 
 </KeyPoints>
 
+<InfoBox title="💡 Decyzje strategiczne">
+
+- **Różnica w temperaturach zasilania o 10 stopni** to różnica w SPF o **0.3-0.5**
+- **T_zasil zależy od typu instalacji**: podłogówka 35°C, grzejniki 55°C, klimakonwektory 45°C
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Ustal od razu zakres temperatur, zasady priorytetów CWU i ewentualny bufor.
+Kroki początkowe - **to fundament projektu**.
+
+**Krok pierwszy** - nowy projekt. **Nazwa** - żebyście wiedzieli co to za projekt. **Lokalizacja** - GeoTSOL automatycznie dobiera dane klimatyczne na podstawie miasta. **Klimat** - dane pogodowe dla konkretnego miejsca.
+
+**Krok drugi** - budynek i odbiorniki. **Obciążenia** - zapotrzebowanie na ciepło w kilowatach przy temperaturze projektowej. **T_zasil, temperatura zasilania** - to zależy od typu instalacji. **Podłogówka** - 35 stopni, **grzejniki** - 55 stopni, **klimakonwektory** - 45 stopni. **Udział CWU** - ile procent energii idzie na ciepłą wodę.
+
+**Krok trzeci** - typ pompy ciepła i tryb pracy. **AW** - powietrze woda, **Grunt** - sondy pionowe BHE, **Woda** - układ woda-woda. **Monowalentny** - tylko pompa, **biwalentny** - pompa plus wspomaganie grzałką. **T_biv**, temperatura biwalentna - punkt, poniżej którego włącza się wspomaganie, zwykle minus 5 do minus 10 stopni w Polsce.
+
+**To decyzja strategiczna** - wpływa na wszystkie kolejne kroki. **Różnica w temperaturach zasilania o 10 stopni to różnica w SPF o 0.3-0.5**.
 </InstructorNotes>
 
 </Slide>
@@ -57,17 +85,33 @@ Ustal od razu zakres temperatur, zasady priorytetów CWU i ewentualny bufor.
 
 <Slide title="🔧 4–6. Dobór jednostki, źródło i hydraulika" type="info">
 
-<KeyPoints title="Konfiguracja układu">
+<KeyPoints title="⚙️ Konfiguracja układu">
 
-4. Dobór jednostki (biblioteka) → moc, mapy pracy, COP/SCOP, modulacja
-5. Dolne źródło: AW – defrost/akustyka; BHE – długość/liczba/spacing, min. temperatury; kolektor poziomy – powierzchnia, głębokość, układ (meander/spirala), parametry gruntu
-6. Hydraulika i zasobniki → bufor, przepływy, zawory, sterowanie
+4. ⚡ Dobór jednostki (biblioteka) → moc, mapy pracy, COP/SCOP, modulacja
+5. 🌍 Dolne źródło: AW – defrost/akustyka; BHE – długość/liczba/spacing, min. temperatury; kolektor poziomy – powierzchnia, głębokość, układ (meander/spirala), parametry gruntu
+6. 🔄 Hydraulika i zasobniki → bufor, przepływy, zawory, sterowanie
 
 </KeyPoints>
 
+<InfoBox title="📊 Wymiary typowe">
+
+- **BHE spacing**: 5-10 metrów między odwiertami
+- **Głębokość**: 50-200 metrów dla BHE
+- **Kolektor poziomy**: powierzchnia **1.5-2 razy** powierzchnia ogrzewana, głębokość 1-2 metry
+- **Błędy w tych parametrach** mogą kosztować **20-30 procent** w kosztach
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Jeśli brak modelu w bibliotece – zdefiniuj urządzenie użytkownika z kart katalogowych.
+Teraz konfiguracja układu - to szczegóły techniczne.
+
+**Dobór jednostki** - wybór pompy z biblioteki GeoTSOL. **Moc** - musi być dopasowana do obciążeń, nie za duża bo będzie się taktowała, nie za mała bo nie wystarczy. **Mapy pracy** - jak pompa pracuje w różnych warunkach. **COP, SCOP** - współczynniki efektywności. **Modulacja** - czy pompa może zmieniać moc płynnie czy tylko włącza się i wyłącza.
+
+**Dolne źródło** - to zależy od wybranej technologii. **AW**, powietrze woda - musicie uwzględnić **defrost**, rozmarzanie przy niskich temperaturach, może obniżyć SPF o 10-15 procent. **Akustyka** - hałas wentylatora, normy są rygorystyczne. **BHE**, sondy pionowe - długość, liczba sond, **spacing** czyli odległość między nimi, minimalne temperatury gruntu. **Kolektor poziomy** - powierzchnia, głębokość, układ - meander czyli serpentyna, czy spirala, parametry gruntu.
+
+**Hydraulika i zasobniki** - bufor ciepła, przepływy w instalacji, zawory regulacyjne, sterowanie systemem.
+
+Dla BHE **spacing to zwykle 5-10 metrów** między odwiertami, głębokość **50-200 metrów**. Dla kolektora poziomego powierzchnia to **1.5-2 razy powierzchnia ogrzewanej**, głębokość 1-2 metry. **Błędy w tych parametrach mogą kosztować 20-30 procent w kosztach**.
 </InstructorNotes>
 
 </Slide>
@@ -76,17 +120,17 @@ Jeśli brak modelu w bibliotece – zdefiniuj urządzenie użytkownika z kart ka
 
 <Slide title="🧪 7–9. Symulacja, warianty i raport" type="info">
 
-<KeyPoints title="Analiza i komunikacja">
+<KeyPoints title="📊 Analiza i komunikacja">
 
-7. Ustawienia symulacji (≥ 1 rok; dla BHE – wieloletnio), rejestry i ostrzeżenia
-8. Warianty: 3–5 (moc, T_zasil, długości BHE); porównania tabelaryczne i wykresy
-9. Raporty: techniczny + skrócony; eksport CSV/PNG; ekonomia (LCC, LCOH)
+7. ⏱️ Ustawienia symulacji (≥ 1 rok; dla BHE – wieloletnio), rejestry i ostrzeżenia
+8. 🔄 Warianty: 3–5 (moc, T_zasil, długości BHE); porównania tabelaryczne i wykresy
+9. 📄 Raporty: techniczny + skrócony; eksport CSV/PNG; ekonomia (LCC, LCOH)
 
 </KeyPoints>
 
 <SuccessBox title="📋 Checklisty">
 
-- [ ] Wariant docelowy oznaczony i opisany „dlaczego”
+- [ ] Wariant docelowy oznaczony i opisany "dlaczego"
 - [ ] Dane meteo zgodne, profile zweryfikowane
 - [ ] Min. temperatury i liczba cykli akceptowalne
 - [ ] Ekonomia i wrażliwość policzone
@@ -94,8 +138,17 @@ Jeśli brak modelu w bibliotece – zdefiniuj urządzenie użytkownika z kart ka
 </SuccessBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Standaryzuj raporty i checklisty – ułatwia to akceptację i archiwizację.
+Teraz symulacja, warianty i raporty - to jest analiza i komunikacja z klientem.
+
+**Ustawienia symulacji** - minimum jeden rok dla standardowych projektów, dla BHE wieloletnio bo temperatura gruntu zmienia się z czasem. **GeoTSOL oblicza godzinowo przez cały rok, nie uśrednia**. Rejestry i ostrzeżenia - jeśli coś jest nie tak, program to sygnalizuje.
+
+**Warianty** - standardowo 3-5, ale można więcej. Każdy wariant testuje jeden parametr - moc pompy, temperatura zasilania, długość sond. **Porównania tabelaryczne i wykresy** - to podstawa decyzji. Klient musi zrozumieć różnice między wariantami.
+
+**Raporty** - techniczny z wszystkimi szczegółami, skrócony dla klienta. **Eksport do CSV** - dane liczbowe, **PNG** - wykresy. **Ekonomia** - LCC, Life Cycle Cost, **LCOH**, Levelized Cost of Heat, jednostkowy koszt ciepła.
+
+Checklista: **wariant docelowy oznaczony i opisany dlaczego** - klient musi wiedzieć, co wybraliście i dlaczego. **Dane meteo zgodne, profile zweryfikowane** - sprawdzone z kilku źródeł. **Minimalne temperatury i liczba cykli akceptowalne** - system nie może się taktować, nie może zamarzać. **Ekonomia i wrażliwość policzone** - co się stanie jeśli założenia się zmienią.
+
+**To standardowa praktyka w profesjonalnych projektach**.
 </InstructorNotes>
 
 </Slide>

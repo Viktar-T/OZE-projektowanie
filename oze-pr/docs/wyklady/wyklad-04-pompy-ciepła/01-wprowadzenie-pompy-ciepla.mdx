@@ -21,23 +21,28 @@ import {
 
 <KeyPoints title="🎯 Czego się uczymy">
 
-- Jak odwzorować warunki pracy źródła i odbioru ciepła
-- Jak realistycznie policzyć SCOP/SPF, zużycie energii i koszty
-- Jak przygotować komplet dokumentów projektowych i warianty
+- ⚙️ Jak odwzorować warunki pracy źródła i odbioru ciepła
+- 📊 Jak realistycznie policzyć SCOP/SPF, zużycie energii i koszty
+- 📄 Jak przygotować komplet dokumentów projektowych i warianty
 
 </KeyPoints>
 
 <SupportingDetails title="💡 Perspektywa software-first">
 
-- Skupiamy się na narzędziach projektowych (GeoTSOL, Polysun, TRNSYS, kalkulatory producentów)
-- Łączymy modele energetyczne, hydrauliczne i ekonomiczne
-- Utrzymujemy dyscyplinę: dane → konfiguracja → symulacja → raport
+- 🛠️ Skupiamy się na narzędziach projektowych (**GeoTSOL**, Polysun, TRNSYS, kalkulatory producentów)
+- 🔗 Łączymy modele energetyczne, hydrauliczne i ekonomiczne
+- 📋 Utrzymujemy dyscyplinę: dane → konfiguracja → symulacja → raport
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Wykład koncentruje się na roli oprogramowania w doborze i analizie systemów z PC: od danych wejściowych, przez konfigurację, po interpretację wyników i dokumentację.
+Ok, słuchajcie, dziś zaczynamy nowy moduł o systemach z pompami ciepła, ale **z perspektywy narzędzi projektowych**. To ważne, żeby od razu zrozumieć - **my nie tylko obliczamy, my modelujemy**. To jest kluczowa różnica.
+
+W tym wykładzie zajmiemy się trzema głównymi rzeczami. **Po pierwsze, jak odwzorować warunki pracy źródła i odbioru ciepła** - to znaczy jak PC, pompa ciepła, pobiera ciepło z gruntu, powietrza czy wody, i jak oddaje je do instalacji grzewczej. **Po drugie, jak realistycznie policzyć SCOP i SPF** - to są wskaźniki efektywności, dokładnie o tym będę mówił za chwilę - zużycie energii i koszty. **Po trzecie, jak przygotować komplet dokumentów projektowych i warianty**, bo prawdziwy projektant zawsze testuje kilka rozwiązań.
+
+**Podejście software-first** to znaczy, że **jakość narzędzi determinuje jakość projektu**. Używamy **GeoTSOL, Polysun, TRNSYS**, kalkulatorów producentów. Łączymy **modele energetyczne** - czyli jak działa cały system, **hydrauliczne** - czyli jak krąży woda, i **ekonomiczne** - czyli ile to wszystko kosztuje. Zachowujemy dyscyplinę: dane wejściowe, konfiguracja systemu, symulacja, raport.
+
+**Systemy z PC już stanowią 40-60 procent nowych instalacji grzewczych w Polsce**. Wymagania prawne, szczególnie rozporządzenie o charakterystyce energetycznej, wymuszają precyzyjne obliczenia. I pamiętajcie - **błąd w doborze PC o 20 procent za dużej to kilka tysięcy złotych niepotrzebnej inwestycji**.
 </InstructorNotes>
 
 </Slide>
@@ -46,26 +51,33 @@ Wykład koncentruje się na roli oprogramowania w doborze i analizie systemów z
 
 <Slide title="🏗️ Architektura typowego układu z PC" type="tip">
 
-<KeyPoints title="Co musimy zamodelować">
+<KeyPoints title="🔧 Co musimy zamodelować">
 
-- Jednostka PC: sprężarka (on/off, inwerter), mapy P–Q–T, COP(T_src,T_sink,PLR)
-- Dolne źródło: powietrze, grunt (BHE/poziomy), woda (studnie/powierzchniowa)
-- Odbiorniki: podłogówka, klimakonwektory, CWU (profil dobowy)
-- Hydraulika i magazynowanie: bufor, zasobnik, pompy, zawory
-- Sterowanie: krzywa grzewcza, T_biv, histerezy, antylegionella
+- ⚡ Jednostka PC: sprężarka (on/off, inwerter), mapy P–Q–T, COP(T_src,T_sink,PLR)
+- 🌍 Dolne źródło: powietrze, grunt (BHE/poziomy), woda (studnie/powierzchniowa)
+- 🏠 Odbiorniki: podłogówka, klimakonwektory, CWU (profil dobowy)
+- 🔄 Hydraulika i magazynowanie: bufor, zasobnik, pompy, zawory
+- 🎛️ Sterowanie: krzywa grzewcza, T_biv, histerezy, antylegionella
 
 </KeyPoints>
 
 <SupportingDetails title="🔎 Wniosek narzędziowy">
 
-- Narzędzie musi umożliwiać parametryzację elementów i symulację w kroku ≤ godzinowym
-- Konieczna obsługa częściowego obciążenia, odszraniania (defrost) i cyklingu
+- ⏱️ Narzędzie musi umożliwiać parametryzację elementów i symulację w kroku ≤ godzinowym
+- 🔀 Konieczna obsługa częściowego obciążenia, odszraniania (defrost) i cyklingu
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Kluczowe jest wierne odzwierciedlenie zależności COP od temperatur źródła i odbioru oraz obciążenia częściowego. Modele hydrauliczne wpływają na cykling i SPF.
+Każdy element systemu z pompą ciepła ma swoje charakterystyki, które musimy dokładnie zamodelować. Zacznijmy od **jednostki PC**. Sprężarka może pracować w trybie **on/off** - włącza się i wyłącza, albo z **inwerterem** - zmienia moc płynnie. **Mapy P-Q-T** to wykresy pokazujące moc P, wydajność Q i temperatury T w zależności od siebie. **COP zależy od temperatury źródła, temperatury odbioru i PLR** - to jest **stopień obciążenia, part load ratio**. Jeśli pompa pracuje na 70 procent mocy, to PLR wynosi 0.7.
+
+**Dolne źródło** to miejsce, z którego pobieramy ciepło. **Powietrze** - to pompy AW, powietrze woda. **Grunt** - to **BHE, borehole heat exchanger**, sondy pionowe, albo poziome kolektory. **Woda** - to studnie albo zbiorniki powierzchniowe.
+
+**Odbiorniki** to nasza instalacja grzewcza. **Podłogówka** - ogrzewanie podłogowe, **klimakonwektory** - to grzejniki wentylatorowe, **CWU** - ciepła woda użytkowa. To ostatnie ma **profil dobowy** - rano i wieczorem jest szczyt zapotrzebowania.
+
+**Hydraulika i magazynowanie**: bufory ciepła - zbiorniki wody grzewczej, zasobniki CWU, pompy, zawory. **Sterowanie** to krzywa grzewcza - jak temperatura zasilania zależy od temperatury zewnętrznej, **T_biv** - temperatura biwalencji, kiedy włącza się wspomaganie, **histerezy** - zakresy włączania i wyłączania, **antylegionella** - system zapobiegający rozwojowi bakterii.
+
+**Defrost**, rozmarzanie, to proces w pompach powietrznych - przy niskich temperaturach wymiennik się pokrywa szronem i musi być rozmrożony. To może **obniżyć SPF o 10-15 procent**. **Bufory mogą zwiększyć SPF o 5-10 procent** przez redukcję cyklingu - mniej włączeń i wyłączeń.
 </InstructorNotes>
 
 </Slide>
@@ -74,18 +86,35 @@ Kluczowe jest wierne odzwierciedlenie zależności COP od temperatur źródła i
 
 <Slide title="📐 Wskaźniki i definicje (dla modeli)" type="info">
 
-<KeyPoints title="Metryki, które raportujemy">
+<KeyPoints title="📊 Metryki, które raportujemy">
 
-- COP(T_src,T_sink,PLR), SCOP/SPF (H2/H3, DHW)
-- P_design, T_design – dla pokrycia mocy
-- T_biv – punkt biwalentny; logika wsparcia szczytowego
-- Bin-hour vs. EPW/TRY – rozdzielczość danych klimatycznych
+- ⚙️ COP(T_src,T_sink,PLR), **SCOP/SPF** (H2/H3, DHW)
+- 🔋 P_design, T_design – dla pokrycia mocy
+- 🌡️ T_biv – punkt biwalentny; logika wsparcia szczytowego
+- 📈 Bin-hour vs. EPW/TRY – rozdzielczość danych klimatycznych
 
 </KeyPoints>
 
+<InfoBox title="💡 Kluczowe definicje">
+
+- **COP** = efektywność chwilowa przy konkretnych warunkach (T_src, T_sink, PLR)
+- **SPF** = średnia efektywność w całym sezonie grzewczym
+- **SCOP** = znormalizowany współczynnik według normy EN 14825
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Rozróżniaj SPF systemu i samej PC. W projektach edukacyjnych stosuj porównywalne metryki i te same źródła meteo.
+Musimy precyzyjnie zdefiniować wskaźniki, których używamy. **COP to chwilowy współczynnik efektywności** w konkretnych warunkach. Jeśli temperatura źródła to 5 stopni, temperatura odbioru 35 stopni, a pompa pracuje na 80 procent mocy, to COP wynosi na przykład 3.5 - dostajemy 3.5 kilowata ciepła za każdy kilowat prądu.
+
+**SPF to sezonowy współczynnik efektywności** - średnia efektywność w całym sezonie grzewczym. Jeśli przez całą zimę pompa zużyła 1000 kilowatogodzin prądu i wyprodukowała 3200 kilowatogodzin ciepła, to SPF wynosi 3.2.
+
+**SCOP to znormalizowany współczynnik według normy EN 14825**, warunki **H2 i H3** to temperatury plus 2 i plus 7 stopni, **DHW** to domestic hot water, ciepła woda użytkowa.
+
+**P_design i T_design** to moc i temperatura projektowe. **W Polsce standardem jest projektowanie na minus 20 stopni**. Jeśli budynek ma zapotrzebowanie 12 kilowatów przy minus 20 stopniach, to wybieramy PC o takiej mocy.
+
+**T_biv to temperatura biwalentna** - poniżej tej temperatury potrzebne jest wspomaganie. W Polsce to zazwyczaj minus 5 do minus 10 stopni.
+
+**Bin-hour** to metoda analizy z grupowaniem według temperatur. **EPW to Energy Plus Weather**, standard międzynarodowy z danymi godzinowymi. **TRY to Test Reference Year**, znormalizowane dane dla Polski.
 </InstructorNotes>
 
 </Slide>
@@ -94,25 +123,32 @@ Rozróżniaj SPF systemu i samej PC. W projektach edukacyjnych stosuj porównywa
 
 <Slide title="🧰 Kategorie oprogramowania (do czego służą)" type="tip">
 
-<KeyPoints title="Dobór narzędzia do celu">
+<KeyPoints title="🎯 Dobór narzędzia do celu">
 
-- Specjalistyczne HP: GeoTSOL, Polysun, RETScreen (feasibility)
-- Symulatory ogólne: TRNSYS, EnergyPlus/DesignBuilder, IDA ICE
-- Dolne źródło: EED/GLD/LoopLink (g-functions, odwierty)
-- Kalkulatory producentów: NIBE Dim, Aquarea Designer, Ecodan, Altherma
+- ⚙️ Specjalistyczne HP: GeoTSOL, Polysun, RETScreen (feasibility)
+- 🔬 Symulatory ogólne: TRNSYS, EnergyPlus/DesignBuilder, IDA ICE
+- 🌍 Dolne źródło: EED/GLD/LoopLink (g-functions, odwierty)
+- 🏭 Kalkulatory producentów: NIBE Dim, Aquarea Designer, Ecodan, Altherma
 
 </KeyPoints>
 
 <InfoBox title="📌 Dobór narzędzia">
 
-- Koncepcja: GeoTSOL, kalkulatory producentów
-- Wykonawczy/złożony: Polysun/TRNSYS/EnergyPlus + EED dla gruntowych
+- 💡 Koncepcja: **GeoTSOL**, kalkulatory producentów
+- 🔨 Wykonawczy/złożony: **Polysun/TRNSYS/EnergyPlus** + EED dla gruntowych
 
 </InfoBox>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Dobieraj narzędzie do etapu i poziomu szczegółowości. Integruj wyniki: GeoTSOL (koncepcja) → EED (grunt) → Polysun/TRNSYS (dynamika).
+Różne narzędzia służą do różnych celów. **Specjalistyczne narzędzia dla pomp ciepła** - **GeoTSOL** to szwajcarskie narzędzie, bardzo popularne, szybkie, idealne do koncepcji. **Polysun** to też szwajcarskie, bardziej zaawansowane, do projektów wykonawczych. **RETScreen** to kanadyjskie narzędzie do analiz wstępnych, feasibility studies.
+
+**Symulatory ogólne** - **TRNSYS** to bardzo zaawansowany program, najdokładniejszy, ale też najtrudniejszy w użyciu. **EnergyPlus i DesignBuilder** to amerykańskie narzędzie, bardzo popularne w USA. **IDA ICE** to szwedzkie narzędzie, popularne w Skandynawii.
+
+**Dla dolnego źródła** są specjalne narzędzia - **EED to Earth Energy Designer**, szwedzkie, do projektowania sond gruntowych, używa **g-functions** - to funkcje matematyczne opisujące wymianę ciepła z gruntem. **GLD to Ground Loop Design**, amerykańskie. **LoopLink** to również amerykańskie.
+
+**Kalkulatory producentów** - każdy duży producent ma swój kalkulator. NIBE Dim, Aquarea Designer - to Panasonic, Ecodan - Mitsubishi, Altherma - Daikin. Te narzędzia mają bardzo dokładne dane, ale **tylko dla produktów konkretnego producenta**.
+
+**Ogólna zasada**: do koncepcji używamy **GeoTSOL i kalkulatorów producentów** - szybko i prosto. Do projektów wykonawczych i złożonych używamy **Polysun, TRNSYS lub EnergyPlus** plus EED dla sond gruntowych.
 </InstructorNotes>
 
 </Slide>
@@ -121,20 +157,33 @@ Dobieraj narzędzie do etapu i poziomu szczegółowości. Integruj wyniki: GeoTS
 
 <Slide title="🧾 Dane wejściowe – minimalny zestaw" type="warning">
 
-<KeyPoints title="Bez tego model będzie błędny">
+<KeyPoints title="⚠️ Bez tego model będzie błędny">
 
-- Klimat: EPW/TRY/Meteonorm; wilgotność (defrost dla AW)
-- Zapotrzebowanie: EN 12831 + profil godzinowy; CWU profil dobowy
-- Parametry PC: mapy P/COP vs T_zasil/T_powrot i T_źródła; modulacja, defrost
-- Dolne źródło: geologia (λ, c_p, wilgotność), ograniczenia lokalne
-- Hydraulika i magazyny: pojemności, straty, zawory; krzywa grzewcza
-- Ekonomia: taryfy, CAPEX/OPEX, horyzont LCC
+- 🌡️ Klimat: EPW/TRY/Meteonorm; wilgotność (defrost dla AW)
+- 📊 Zapotrzebowanie: EN 12831 + profil godzinowy; CWU profil dobowy
+- ⚙️ Parametry PC: mapy P/COP vs T_zasil/T_powrot i T_źródła; modulacja, defrost
+- 🌍 Dolne źródło: geologia (λ, c_p, wilgotność), ograniczenia lokalne
+- 🔄 Hydraulika i magazyny: pojemności, straty, zawory; krzywa grzewcza
+- 💰 Ekonomia: taryfy, CAPEX/OPEX, horyzont LCC
 
 </KeyPoints>
 
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Preferuj profile godzinowe lub co najmniej bin-hour. Dane producentów weryfikuj z niezależnymi źródłami.
+Bez dobrych danych wejściowych model będzie błędny. **To kluczowe, żebyście to zrozumieli od początku**.
+
+**Klimat** - potrzebujemy danych **EPW, TRY lub Meteonorm**. EPW to Energy Plus Weather, międzynarodowy standard. TRY to Test Reference Year, dane dla Polski. Meteonorm to komercyjna baza z lepszą rozdzielczością. **Dla pomp powietrznych musimy też znać wilgotność** - to wpływa na defrost, rozmrażanie wymiennika.
+
+**Zapotrzebowanie** - liczymy według **EN 12831**, to europejska norma do obliczania obciążeń grzewczych, plus **profil godzinowy** - jak budynek zużywa ciepło w czasie. **CWU** - ciepła woda użytkowa - też ma **profil dobowy**, szczyt rano i wieczorem.
+
+**Parametry PC** - potrzebujemy **map pokazujących moc P i COP** w zależności od temperatury zasilania, powrotu i źródła. **Modulacja** to zdolność do zmiany mocy, **defrost** to rozmrażanie.
+
+**Dolne źródło** - dla gruntu potrzebujemy **geologię**: **lambda to przewodność cieplna gruntu**, **c_p to pojemność cieplna**, wilgotność też jest ważna. Są też **ograniczenia lokalne** - odległości, sąsiedztwo, dostępność wody.
+
+**Hydraulika i magazyny** - pojemności buforów i zasobników, straty cieplne, zawory regulacyjne, krzywa grzewcza.
+
+**Ekonomia** - taryfy prądowe, **CAPEX** to koszty inwestycyjne, **OPEX** to koszty eksploatacyjne, **LCC** to Life Cycle Cost, koszt cyklu życia - zwykle 15-20 lat.
+
+**Błąd w danych klimatycznych o 2 stopnie daje błąd w SPF o 10-15 procent**.
 </InstructorNotes>
 
 </Slide>
@@ -143,20 +192,40 @@ Preferuj profile godzinowe lub co najmniej bin-hour. Dane producentów weryfikuj
 
 <Slide title="⚠️ Typowe błędy modelowe i kontrola" type="warning">
 
-<KeyPoints title="Diagnoza → Remedium">
+<KeyPoints title="🔍 Diagnoza → Remedium">
 
-- Uśrednianie COP bez PLR/defrost → użyj profili godzinowych
-- Brak g-functions dla BHE → użyj EED/GLD
-- Brak sprzężenia hydrauliki → użyj Polysun/TRNSYS
-- Zła krzywa grzewcza/prior. CWU → cykling, spadek SPF
-- Pomijanie akustyki AW → ryzyko niespełnienia wymagań
-- Brak profilowania cen → błędny LCOH/NPV
+- ❌ Uśrednianie COP bez PLR/defrost → użyj profili godzinowych
+- ❌ Brak g-functions dla BHE → użyj EED/GLD
+- ❌ Brak sprzężenia hydrauliki → użyj Polysun/TRNSYS
+- ❌ Zła krzywa grzewcza/prior. CWU → cykling, spadek SPF
+- ❌ Pomijanie akustyki AW → ryzyko niespełnienia wymagań
+- ❌ Brak profilowania cen → błędny LCOH/NPV
 
 </KeyPoints>
 
+<WarningBox title="💡 Kluczowa lekcja">
+
+- Wszystkie te błędy mogą prowadzić do błędów w SPF o **20-50 procent**
+- Kontrola jakości wymaga sanity-check i porównania z wartościami referencyjnymi
+
+</WarningBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Dodaj sanity-check: liczba cykli, udział grzałki, temperatury minimalne, uzysk specyficzny i zgodność z mapami pracy.
+Typowe błędy, których musicie unikać.
+
+**Najczęstszy błąd to uśrednianie COP** bez uwzględnienia stopnia obciążenia i defrostu. COP się zmienia - w lecie może być 5.0, w zimie 2.5. Jeśli użyjecie średniej 3.5, to wynik będzie błędny o **20-30 procent**. Używajcie profili godzinowych.
+
+Dla **BHE, sond gruntowych, musicie używać g-functions**. To funkcje matematyczne opisujące jak temperatura gruntu zmienia się w czasie. **Bez tego błąd w temperaturze źródła może wynosić 2-5 stopni**. Używajcie narzędzi **EED, GLD lub LoopLink**.
+
+**Sprzężenie hydrauliki z energetyką** jest kluczowe. **Pompy zużywają 10-20 procent energii systemu**. Jeśli tego nie uwzględnicie, SPF będzie zawyżony. Używajcie **Polysun lub TRNSYS**.
+
+**Zła krzywa grzewcza lub priorytet CWU** może powodować zbyt częste włączanie i wyłączanie pompy - **cykling**. To drastycznie obniża żywotność i **SPF nawet o 0.8**. 300 cykli dziennie to za dużo, powinno być **50-100**.
+
+Dla pomp powietrznych musicie sprawdzić **akustykę**, natężenie hałasu. Normy są rygorystyczne, hałas może być powodem odrzucenia projektu przez urząd.
+
+**Profilowanie cen energii** - jeśli nie uwzględnicie, że energia kosztuje więcej w dzień niż w nocy, albo że ceny się zmieniają, to błędy w kalkulacji ekonomicznej mogą wynosić **20-30 procent**. **LCOH** to Levelized Cost of Heat, jednostkowy koszt ciepła, **NPV** to Net Present Value, wartość bieżąca netto.
+
+**Błędy modelowe mogą prowadzić do błędów w SPF o 20-50 procent**. To dlatego kontrola jakości wymaga sanity-check - szybkiej weryfikacji czy wyniki mają sens - i porównania z wartościami referencyjnymi.
 </InstructorNotes>
 
 </Slide>
@@ -165,17 +234,37 @@ Dodaj sanity-check: liczba cykli, udział grzałki, temperatury minimalne, uzysk
 
 <Slide title="📦 Artefakty projektowe (deliverables)" type="success">
 
-<KeyPoints title="Co oddajemy klientowi">
+<KeyPoints title="✅ Co oddajemy klientowi">
 
-- Raport techniczny (założenia, wyniki, warianty, ryzyka)
-- Schematy/szkice hydrauliczne, listy komponentów
-- Wyniki godzinowe (CSV), wykresy; analiza ekonomiczna
+- 📄 Raport techniczny (założenia, wyniki, warianty, ryzyka)
+- 🔧 Schematy/szkice hydrauliczne, listy komponentów
+- 📊 Wyniki godzinowe (CSV), wykresy; analiza ekonomiczna
 
 </KeyPoints>
 
+<SuccessBox title="🎯 Standardy">
+
+- Dokumentacja musi być zgodna z **PN-EN 14825** i rozporządzeniem o charakterystyce energetycznej
+- Typowy raport: **25 stron, 15 wykresów, 5 tabel** dla domu 150 m²
+
+</SuccessBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Standaryzuj raport: metryki energetyczne i ekonomiczne, założenia, warianty i rekomendacje.
+Co oddajemy klientowi na końcu projektu.
+
+**Raport techniczny** - to dokumentacja całego procesu projektowego. **Założenia** - jakie dane użyliśmy, dlaczego. **Wyniki** - SPF, zużycie energii, koszty. **Warianty** - jakie rozwiązania testowaliśmy i dlaczego wybraliśmy to konkretne. **Ryzyka** - co może pójść nie tak i jak to minimalizujemy.
+
+**Schematy i szkice hydrauliczne** - to rysunki pokazujące jak układ jest zbudowany. Muszą być **czytelne dla instalatorów**. To nie tylko rysunek techniczny, to instrukcja montażu.
+
+**Listy komponentów** - co konkretnie trzeba zamówić. To podstawa do kosztorysowania. **Błąd w specyfikacji to problem na budowie**.
+
+**Wyniki godzinowe w pliku CSV** - to wszystkie dane z symulacji: co godzinę temperatura, moc, COP, zużycie energii. To umożliwia weryfikację i dalszą optymalizację. **Wykresy** - wizualizacja wyników, łatwiejsza do zrozumienia.
+
+**Analiza ekonomiczna** - LCOH, NPV, **IRR - Internal Rate of Return**, stopa zwrotu, **payback** - okres zwrotu. To pokazuje czy inwestycja ma sens ekonomiczny.
+
+**Standardy raportowania** to **PN-EN 14825** i rozporządzenie o charakterystyce energetycznej. **Dokumentacja podlega kontroli urzędowej** - błędy mogą prowadzić do odrzucenia projektu.
+
+**Typowy raport dla domu 150 metrów kwadratowych to 25 stron, 15 wykresów, 5 tabel**. To dużo, ale każdy element ma swoje uzasadnienie.
 </InstructorNotes>
 
 </Slide>

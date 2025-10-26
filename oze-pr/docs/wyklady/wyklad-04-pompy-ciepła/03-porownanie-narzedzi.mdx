@@ -17,20 +17,36 @@ import {
 
 <Slide title="📊 Krajobraz narzędzi do projektowania PC" type="info">
 
-<SupportingDetails title="Grupy narzędzi (skrót)">
+<SupportingDetails title="🔧 Grupy narzędzi (skrót)">
 
 | Grupa narzędzi | Przykłady | Typ modelu | Zastosowanie | Szczegółowość |
 |---|---|---|---|---|
-| Specjalistyczne – niezależne | GeoTSOL, Polysun, EED | Godzinowe/roczne | Koncepcja, dobór źródła, LCOH | Średni–wysoki |
-| Narzędzia producentów | Aquarea Designer, NIBE DIM, Ecodan, Vaillant, Daikin | Sezonowe/godzinowe | Preselekcja jednostki, BOM | Średni |
-| CAE/BIM & symulatory | TRNSYS, EnergyPlus/DesignBuilder, IDA ICE | Dynamiczne | Analizy zaawansowane | Wysoki |
-| Towarzyszące | RETScreen, HOMER, QGIS | Uproszczone | Opłacalność, scenariusze, geodata | Niski–średni |
+| 🎯 Specjalistyczne – niezależne | GeoTSOL, Polysun, EED | Godzinowe/roczne | Koncepcja, dobór źródła, LCOH | Średni–wysoki |
+| 🏭 Narzędzia producentów | Aquarea Designer, NIBE DIM, Ecodan, Vaillant, Daikin | Sezonowe/godzinowe | Preselekcja jednostki, BOM | Średni |
+| 🔬 CAE/BIM & symulatory | TRNSYS, EnergyPlus/DesignBuilder, IDA ICE | Dynamiczne | Analizy zaawansowane | Wysoki |
+| 📊 Towarzyszące | RETScreen, HOMER, QGIS | Uproszczone | Opłacalność, scenariusze, geodata | Niski–średni |
 
 </SupportingDetails>
 
+<InfoBox title="💡 Kluczowa zasada">
+
+- **Nie ma uniwersalnego rozwiązania** - każde narzędzie ma swoje mocne strony i ograniczenia
+- **Rynek oprogramowania projektowego OZE** to około **50 milionów euro rocznie** w Europie
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Dobór narzędzia zależy od etapu i celu. GeoTSOL/producent – szybki koncept; TRNSYS/EnergyPlus – badania i dynamika; EED – geologia.
+Ok, słuchajcie, mamy różne narzędzia do projektowania systemów z pompami ciepła. **To ważne, żebyście rozumieli kiedy użyć którego**. **Nie ma uniwersalnego rozwiązania** - każde narzędzie ma swoje mocne strony i ograniczenia.
+
+Zacznijmy od **specjalistycznych narzędzi niezależnych** - to znaczy niezależnych od producentów. **GeoTSOL to bardzo popularne narzędzie, używane przez większość projektantów w Europie**. Polysun to też dobre narzędzie, szwajcarskie. **EED to Earth Energy Designer** - specjalne narzędzie do projektowania sond gruntowych, borehole heat exchanger. Te narzędzia używają **modeli godzinowych lub rocznych**.
+
+**Narzędzia producentów** - to kalkulatory od konkretnych firm. Aquarea Designer to Panasonic, NIBE DIM, Ecodan to Mitsubishi, Vaillant, Daikin Altherma. Te narzędzia mają dokładne dane, ale **tylko dla swoich produktów**. Używają modeli sezonowych lub częściowo godzinowych.
+
+**Symulatory CAE** - Computer Aided Engineering - **i BIM** - Building Information Modeling. TRNSYS, EnergyPlus i DesignBuilder - amerykańskie narzędzia, bardzo zaawansowane, IDA ICE - szwedzkie. **Te są najdokładniejsze, ale też najtrudniejsze**. Używają **modeli dynamicznych** - to znaczy bardzo szczegółowych symulacji.
+
+**Towarzyszące narzędzia** - RETScreen do analiz opłacalności, HOMER do analiz hybrydowych systemów energetycznych, QGIS do danych geodezyjnych. Te są uproszczone, ale przydatne do wstępnych analiz.
+
+**Rynek oprogramowania projektowego OZE to około 50 milionów euro rocznie w Europie**. Nowe narzędzia pojawiają się co 2-3 lata.
 </InstructorNotes>
 
 </Slide>
@@ -39,18 +55,34 @@ Dobór narzędzia zależy od etapu i celu. GeoTSOL/producent – szybki koncept;
 
 <Slide title="⚖️ GeoTSOL kontra narzędzia producentów" type="tip">
 
-<KeyPoints title="Spojrzenie procesowe">
+<KeyPoints title="🔍 Spojrzenie procesowe">
 
-- GeoTSOL: biblioteki klimatu, multi‑vendor, modele źródeł (powietrze/grunt/woda), warianty, raporty, LCC
-- Ograniczenia: brak pełnego BIM, uproszczenia dynamiki vs TRNSYS
-- Producenci: dokładne mapy konkretnych modeli, obowiązkowe akcesoria, BOM
-- Ograniczenia: brak neutralności, ograniczona ekonomia/profil godzinowy
+- ✅ GeoTSOL: biblioteki klimatu, multi‑vendor, modele źródeł (powietrze/grunt/woda), warianty, raporty, LCC
+- ⚠️ Ograniczenia: brak pełnego BIM, uproszczenia dynamiki vs TRNSYS
+- ✅ Producenci: dokładne mapy konkretnych modeli, obowiązkowe akcesoria, BOM
+- ⚠️ Ograniczenia: brak neutralności, ograniczona ekonomia/profil godzinowy
 
 </KeyPoints>
 
+<InfoBox title="💰 Koszty">
+
+- **GeoTSOL**: około **2000 euro rocznie**
+- **Narzędzia producentów**: często **darmowe**
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-GeoTSOL używamy do neutralnych porównań i wariantów; narzędzia producentów do zgodności BOM i dokumentacji systemowej.
+Porównajmy teraz GeoTSOL z narzędziami producentów - to pokaże kluczowe różnice.
+
+**GeoTSOL to narzędzie neutralne** - to znaczy, że możecie porównać różnych producentów i różne technologie. Ma **biblioteki klimatu** - dane pogodowe dla całego świata. **Multi-vendor** to znaczy, że obsługuje wiele producentów pomp ciepła. **Modele źródeł** - powietrze, grunt, woda - wszystkie opcje. Można testować **warianty** - różne konfiguracje systemu. **Raporty są neutralne** - nie faworyzują żadnego producenta. Ma też **analizę LCC** - Life Cycle Cost, koszt cyklu życia.
+
+Ale GeoTSOL ma też ograniczenia. **Nie ma pełnej integracji z BIM**, Building Information Modeling. Ma **uproszczenia w dynamice** - nie jest tak dokładny jak TRNSYS.
+
+**Narzędzia producentów mają dokładne mapy konkretnych modeli** - to znaczy bardzo precyzyjne dane jak pompa pracuje w różnych warunkach. Zawierają **obowiązkowe akcesoria** - to znaczy podpowiadają co jeszcze trzeba kupić. **BOM to Bill of Materials**, lista komponentów - podają dokładnie co trzeba zamówić.
+
+Ale narzędzia producentów mają ograniczenia. **Nie są neutralne** - faworyzują swoją markę. Mają **ograniczoną ekonomię** - nie zawsze są pełne analizy kosztów. Mają **ograniczony profil godzinowy** - nie zawsze pokazują jak system pracuje z godziny na godzinę.
+
+**GeoTSOL kosztuje około 2000 euro rocznie**, narzędzia producentów często są darmowe.
 </InstructorNotes>
 
 </Slide>
@@ -59,22 +91,41 @@ GeoTSOL używamy do neutralnych porównań i wariantów; narzędzia producentów
 
 <Slide title="📋 Porównanie funkcjonalne (wybrane kryteria)" type="info">
 
-<SupportingDetails title="Tabela (rozszerzona)">
+<SupportingDetails title="📊 Tabela (rozszerzona)">
 
 | Kryterium | GeoTSOL | Aquarea/NIBE DIM | Polysun | EED |
 |---|---|---|---|---|
-| Model obliczeń | Godzinowy/roczny | Sezonowy/częściowo godzinowy | Godzinowy/roczny | Wielosezonowa analiza BHE |
-| Zakres źródeł | AW/Grunt/Woda | Zależny od producenta | Szeroki (hybrydy) | Tylko grunt (BHE) |
-| Wariantowanie | Tak | Ograniczone | Tak | Warianty pola odwiertów |
-| Raporty | Neutralne | Producent‑specyficzne | Neutralne | Techniczne BHE |
-| Ekonomia | LCC, LCOH | Rzadziej | LCC, taryfy | Brak |
-| Złożoność | Średnia | Niska–średnia | Średnia | Średnia–wysoka |
+| ⏱️ Model obliczeń | Godzinowy/roczny | Sezonowy/częściowo godzinowy | Godzinowy/roczny | Wielosezonowa analiza BHE |
+| 🌍 Zakres źródeł | AW/Grunt/Woda | Zależny od producenta | Szeroki (hybrydy) | Tylko grunt (BHE) |
+| 🔄 Wariantowanie | ✅ Tak | ⚠️ Ograniczone | ✅ Tak | Warianty pola odwiertów |
+| 📄 Raporty | Neutralne | Producent‑specyficzne | Neutralne | Techniczne BHE |
+| 💰 Ekonomia | LCC, LCOH | Rzadziej | LCC, taryfy | Brak |
+| ⚡ Złożoność | Średnia | Niska–średnia | Średnia | Średnia–wysoka |
 
 </SupportingDetails>
 
+<InfoBox title="💡 Kluczowa różnica">
+
+- **Model godzinowy vs. sezonowy** to różnica **10-20 procent w SPF**
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Tabela skrócona; w notatkach pełne rozwinięcie kryteriów i konsekwencji wyboru narzędzia.
+Porównajmy funkcjonalnie - co potrafi każde narzędzie.
+
+**Model obliczeń** - GeoTSOL ma model godzinowy i roczny - to znaczy pokazuje jak system pracuje z godziny na godzinę i co się dzieje w całym roku. Narzędzia producentów mają model sezonowy lub częściowo godzinowy - mniej szczegółowy. Polysun ma też model godzinowy i roczny. **EED ma wielosezonową analizę BHE** - borehole heat exchanger - pokazuje jak temperatura gruntu zmienia się przez lata.
+
+**Zakres źródeł** - GeoTSOL obsługuje wszystkie: **AW** - powietrze woda, grunt, woda. Narzędzia producentów zależą od producenta - różne mają różne opcje. Polysun ma szeroki zakres, nawet **hybrydy** - mieszane systemy. EED tylko grunt - BHE.
+
+**Wariantowanie** - GeoTSOL tak, można testować różne konfiguracje. Narzędzia producentów mają ograniczone opcje wariantów. Polysun też tak. EED ma warianty pola odwiertów - różne konfiguracje sond gruntowych.
+
+**Raporty** - GeoTSOL neutralne, nie faworyzują producentów. Narzędzia producentów są producent-specific - dostosowane do ich produktów. Polysun też neutralne. EED ma techniczne raporty o BHE.
+
+**Ekonomia** - GeoTSOL ma **LCC i LCOH** - Levelized Cost of Heat, jednostkowy koszt ciepła. Narzędzia producentów rzadziej mają pełną analizę ekonomiczną. Polysun ma LCC i taryfy energetyczne. EED nie ma analizy ekonomicznej.
+
+**Złożoność** - GeoTSOL średnia, narzędzia producentów niska do średniej, Polysun średnia, EED średnia do wysoka.
+
+**Model godzinowy vs. sezonowy to różnica 10-20 procent w SPF**.
 </InstructorNotes>
 
 </Slide>
@@ -83,18 +134,36 @@ Tabela skrócona; w notatkach pełne rozwinięcie kryteriów i konsekwencji wybo
 
 <Slide title="🧭 Matryca decyzyjna (dla ćwiczeń)" type="tip">
 
-<KeyPoints title="Szybkie reguły">
+<KeyPoints title="⚡ Szybkie reguły">
 
-1. Szybki dobór urządzenia i schematu → narzędzie producenta
-2. Porównanie wariantów źródła/strategii → GeoTSOL / Polysun
-3. Wymiarowanie pola odwiertów → EED (po wstępnym GeoTSOL)
-4. Dynamika/zaawansowane sterowanie → TRNSYS/EnergyPlus
+1. ⚡ Szybki dobór urządzenia i schematu → **narzędzie producenta**
+2. 🔄 Porównanie wariantów źródła/strategii → **GeoTSOL / Polysun**
+3. 🌍 Wymiarowanie pola odwiertów → **EED** (po wstępnym GeoTSOL)
+4. 🔬 Dynamika/zaawansowane sterowanie → **TRNSYS/EnergyPlus**
 
 </KeyPoints>
 
+<InfoBox title="📈 Statystyki praktyczne">
+
+- **80% projektów** = szybki dobór
+- **15% projektów** = porównanie wariantów
+- **5% projektów** = zaawansowane analizy
+- Większość inżynierów używa **kombinacji narzędzi**
+
+</InfoBox>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-Dobieraj ścieżkę narzędziową do celu: dokument dla inwestora vs badanie/eksperyment.
+Ok, teraz praktyczna matryca decyzyjna - jak wybrać narzędzie do konkretnego zadania.
+
+Po pierwsze, **szybki dobór urządzenia i schematu** - to typowe zadanie w projektach komercyjnych, gdzie czas to pieniądz. Użyjcie narzędzia producenta - szybkie, dokładne dane, gotowe rozwiązanie. **To zajmuje około 30 minut**.
+
+Po drugie, **porównanie wariantów źródła i strategii** - to gdy musicie wybrać między powietrzem, gruntem czy wodą, albo testować różne konfiguracje systemu. Użyjcie **GeoTSOL lub Polysun** - neutralne, umożliwiają testowanie różnych rozwiązań, pełna ekonomia. **To zajmuje 2-4 godziny**.
+
+Po trzecie, **wymiarowanie pola odwiertów** - to gdy projektujecie sondy gruntowe i musicie sprawdzić ile odwiertów i jak głębokich. Użyjcie **EED, Earth Energy Designer** - najdokładniejsze dla gruntu, pokazuje jak temperatura się zmienia przez lata. To specjalistyczne narzędzie, po wstępnym GeoTSOL.
+
+Po czwarte, **dynamika i zaawansowane sterowanie** - to gdy potrzebujecie bardzo szczegółowej symulacji, albo testujecie skomplikowane algorytmy sterowania. Użyjcie **TRNSYS lub EnergyPlus** - najdokładniejsze, ale też najtrudniejsze.
+
+Z doświadczenia - **80 procent projektów to szybki dobór, 15 procent to porównanie wariantów, 5 procent to zaawansowane analizy**. **Większość inżynierów używa kombinacji narzędzi** - każde do tego co robi najlepiej.
 </InstructorNotes>
 
 </Slide>
