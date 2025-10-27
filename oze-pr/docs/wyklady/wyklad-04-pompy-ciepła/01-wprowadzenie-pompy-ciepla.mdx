@@ -42,7 +42,7 @@ W tym wykładzie zajmiemy się trzema głównymi rzeczami. **Po pierwsze, jak od
 
 **Podejście software-first** to znaczy, że **jakość narzędzi determinuje jakość projektu**. Używamy **GeoTSOL, Polysun, TRNSYS**, kalkulatorów producentów. Łączymy **modele energetyczne** - czyli jak działa cały system, **hydrauliczne** - czyli jak krąży woda, i **ekonomiczne** - czyli ile to wszystko kosztuje. Zachowujemy dyscyplinę: dane wejściowe, konfiguracja systemu, symulacja, raport.
 
-**Systemy z PC już stanowią 40-60 procent nowych instalacji grzewczych w Polsce**. Wymagania prawne, szczególnie rozporządzenie o charakterystyce energetycznej, wymuszają precyzyjne obliczenia. I pamiętajcie - **błąd w doborze PC o 20 procent za dużej to kilka tysięcy złotych niepotrzebnej inwestycji**.
+**Obecnie (2024–2025) pompa grzewcza jest ograniczona procentowo nowych urządzeń – około 25–30% całego rynku urządzeń grzewczych, przy wykluczeniu ze strony kotłów na biomasę i kotłów gazowych**. Wymagania prawne, szczególnie rozporządzenie o charakterystyce energetycznej, wymuszają precyzyjne obliczenia. I pamiętajcie - **błąd w doborze PC o 20 procent za dużej to kilka tysięcy złotych niepotrzebnej inwestycji**.
 </InstructorNotes>
 
 </Slide>
@@ -71,9 +71,9 @@ W tym wykładzie zajmiemy się trzema głównymi rzeczami. **Po pierwsze, jak od
 <InstructorNotes>
 Każdy element systemu z pompą ciepła ma swoje charakterystyki, które musimy dokładnie zamodelować. Zacznijmy od **jednostki PC**. Sprężarka może pracować w trybie **on/off** - włącza się i wyłącza, albo z **inwerterem** - zmienia moc płynnie. **Mapy P-Q-T** to wykresy pokazujące moc P, wydajność Q i temperatury T w zależności od siebie. **COP zależy od temperatury źródła, temperatury odbioru i PLR** - to jest **stopień obciążenia, part load ratio**. Jeśli pompa pracuje na 70 procent mocy, to PLR wynosi 0.7.
 
-**Dolne źródło** to miejsce, z którego pobieramy ciepło. **Powietrze** - to pompy AW, powietrze woda. **Grunt** - to **BHE, borehole heat exchanger**, sondy pionowe, albo poziome kolektory. **Woda** - to studnie albo zbiorniki powierzchniowe.
+**Dolne źródło** to miejsce, z którego pobieramy ciepło. **Powietrze** - to pompy AW (powietrze-woda), powietrze woda. **Grunt** - to **BHE (borehole heat exchanger)**, sondy pionowe, albo poziome kolektory. **Woda** - to studnie albo zbiorniki powierzchniowe.
 
-**Odbiorniki** to nasza instalacja grzewcza. **Podłogówka** - ogrzewanie podłogowe, **klimakonwektory** - to grzejniki wentylatorowe, **CWU** - ciepła woda użytkowa. To ostatnie ma **profil dobowy** - rano i wieczorem jest szczyt zapotrzebowania.
+**Odbiorniki** to nasza instalacja grzewcza. **Podłogówka** - ogrzewanie podłogowe, **klimakonwektory** - to grzejniki wentylatorowe, **CWU (ciepła woda użytkowa)** - ciepła woda użytkowa. To ostatnie ma **profil dobowy** - rano i wieczorem jest szczyt zapotrzebowania.
 
 **Hydraulika i magazynowanie**: bufory ciepła - zbiorniki wody grzewczej, zasobniki CWU, pompy, zawory. **Sterowanie** to krzywa grzewcza - jak temperatura zasilania zależy od temperatury zewnętrznej, **T_biv** - temperatura biwalencji, kiedy włącza się wspomaganie, **histerezy** - zakresy włączania i wyłączania, **antylegionella** - system zapobiegający rozwojowi bakterii.
 
@@ -108,13 +108,19 @@ Musimy precyzyjnie zdefiniować wskaźniki, których używamy. **COP to chwilowy
 
 **SPF to sezonowy współczynnik efektywności** - średnia efektywność w całym sezonie grzewczym. Jeśli przez całą zimę pompa zużyła 1000 kilowatogodzin prądu i wyprodukowała 3200 kilowatogodzin ciepła, to SPF wynosi 3.2.
 
-**SCOP to znormalizowany współczynnik według normy EN 14825**, warunki **H2 i H3** to temperatury plus 2 i plus 7 stopni, **DHW** to domestic hot water, ciepła woda użytkowa.
+**SCOP to znormalizowany współczynnik według normy EN 14825**, warunki **H2 i H3** to temperatury plus 2 i plus 7 stopni, **DHW (domestic hot water)** to domestic hot water, ciepła woda użytkowa.
 
 **P_design i T_design** to moc i temperatura projektowe. **W Polsce standardem jest projektowanie na minus 20 stopni**. Jeśli budynek ma zapotrzebowanie 12 kilowatów przy minus 20 stopniach, to wybieramy PC o takiej mocy.
 
 **T_biv to temperatura biwalentna** - poniżej tej temperatury potrzebne jest wspomaganie. W Polsce to zazwyczaj minus 5 do minus 10 stopni.
 
 **Bin-hour** to metoda analizy z grupowaniem według temperatur. **EPW to Energy Plus Weather**, standard międzynarodowy z danymi godzinowymi. **TRY to Test Reference Year**, znormalizowane dane dla Polski.
+
+**Bin-hour** to technika analizy klimatycznej, gdzie godziny roku grupuje się według przedziałów temperatur (np. -20°C do -15°C, -15°C do -10°C itd.). Dla każdego przedziału liczy się liczbę godzin w roku i średnie zapotrzebowanie na ciepło. To pozwala szybko ocenić jak często pompa będzie pracować w różnych warunkach i jakie będą średnie COP.
+
+**EPW (Energy Plus Weather)** to międzynarodowy standard danych klimatycznych używany przez większość profesjonalnych narzędzi symulacyjnych. Zawiera dane godzinowe przez cały rok: temperaturę, wilgotność, nasłonecznienie, prędkość wiatru. Dostępne dla tysięcy lokalizacji na świecie, w tym głównych miast Polski.
+
+**TRY (Test Reference Year)** to znormalizowane dane klimatyczne dla Polski, opracowane przez Instytut Meteorologii i Gospodarki Wodnej. Reprezentuje "typowy" rok klimatyczny dla danego regionu Polski, uśredniony z wieloletnich obserwacji. Używane w polskich normach i certyfikacji energetycznej budynków.
 </InstructorNotes>
 
 </Slide>
@@ -140,7 +146,7 @@ Musimy precyzyjnie zdefiniować wskaźniki, których używamy. **COP to chwilowy
 </InfoBox>
 
 <InstructorNotes>
-Różne narzędzia służą do różnych celów. **Specjalistyczne narzędzia dla pomp ciepła** - **GeoTSOL** to szwajcarskie narzędzie, bardzo popularne, szybkie, idealne do koncepcji. **Polysun** to też szwajcarskie, bardziej zaawansowane, do projektów wykonawczych. **RETScreen** to kanadyjskie narzędzie do analiz wstępnych, feasibility studies.
+Różne narzędzia służą do różnych celów. **Specjalistyczne narzędzia dla pomp ciepła** - **GeoTSOL** to niemieckie narzędzie (Valentin Software GmbH, Berlin), bardzo popularne, szybkie, idealne do koncepcji. **Polysun** to szwajcarskie, bardziej zaawansowane, do projektów wykonawczych. **RETScreen** to kanadyjskie narzędzie do analiz wstępnych, feasibility studies.
 
 **Symulatory ogólne** - **TRNSYS** to bardzo zaawansowany program, najdokładniejszy, ale też najtrudniejszy w użyciu. **EnergyPlus i DesignBuilder** to amerykańskie narzędzie, bardzo popularne w USA. **IDA ICE** to szwedzkie narzędzie, popularne w Skandynawii.
 
@@ -173,15 +179,15 @@ Bez dobrych danych wejściowych model będzie błędny. **To kluczowe, żebyści
 
 **Klimat** - potrzebujemy danych **EPW, TRY lub Meteonorm**. EPW to Energy Plus Weather, międzynarodowy standard. TRY to Test Reference Year, dane dla Polski. Meteonorm to komercyjna baza z lepszą rozdzielczością. **Dla pomp powietrznych musimy też znać wilgotność** - to wpływa na defrost, rozmrażanie wymiennika.
 
-**Zapotrzebowanie** - liczymy według **EN 12831**, to europejska norma do obliczania obciążeń grzewczych, plus **profil godzinowy** - jak budynek zużywa ciepło w czasie. **CWU** - ciepła woda użytkowa - też ma **profil dobowy**, szczyt rano i wieczorem.
+**Zapotrzebowanie** - liczymy według **EN 12831**, to europejska norma do obliczania obciążeń grzewczych, plus **profil godzinowy** - jak budynek zużywa ciepło w czasie. **CWU (ciepła woda użytkowa)** - ciepła woda użytkowa - też ma **profil dobowy**, szczyt rano i wieczorem.
 
-**Parametry PC** - potrzebujemy **map pokazujących moc P i COP** w zależności od temperatury zasilania, powrotu i źródła. **Modulacja** to zdolność do zmiany mocy, **defrost** to rozmrażanie.
+**Parametry PC** - potrzebujemy **map pokazujących moc P i COP** w zależności od temperatury zasilania, powrotu i źródła. **Modulacja** to zdolność pompy ciepła do płynnej zmiany mocy wyjściowej w zależności od aktualnego zapotrzebowania na ciepło, **defrost** to rozmrażanie.
 
 **Dolne źródło** - dla gruntu potrzebujemy **geologię**: **lambda to przewodność cieplna gruntu**, **c_p to pojemność cieplna**, wilgotność też jest ważna. Są też **ograniczenia lokalne** - odległości, sąsiedztwo, dostępność wody.
 
 **Hydraulika i magazyny** - pojemności buforów i zasobników, straty cieplne, zawory regulacyjne, krzywa grzewcza.
 
-**Ekonomia** - taryfy prądowe, **CAPEX** to koszty inwestycyjne, **OPEX** to koszty eksploatacyjne, **LCC** to Life Cycle Cost, koszt cyklu życia - zwykle 15-20 lat.
+**Ekonomia** - taryfy prądowe, **CAPEX (koszty inwestycyjne)** to koszty inwestycyjne, **OPEX (koszty eksploatacyjne)** to koszty eksploatacyjne, **LCC (Life Cycle Cost)** to Life Cycle Cost, koszt cyklu życia - zwykle 15-20 lat.
 
 **Błąd w danych klimatycznych o 2 stopnie daje błąd w SPF o 10-15 procent**.
 </InstructorNotes>
@@ -223,7 +229,7 @@ Dla **BHE, sond gruntowych, musicie używać g-functions**. To funkcje matematyc
 
 Dla pomp powietrznych musicie sprawdzić **akustykę**, natężenie hałasu. Normy są rygorystyczne, hałas może być powodem odrzucenia projektu przez urząd.
 
-**Profilowanie cen energii** - jeśli nie uwzględnicie, że energia kosztuje więcej w dzień niż w nocy, albo że ceny się zmieniają, to błędy w kalkulacji ekonomicznej mogą wynosić **20-30 procent**. **LCOH** to Levelized Cost of Heat, jednostkowy koszt ciepła, **NPV** to Net Present Value, wartość bieżąca netto.
+**Profilowanie cen energii** - jeśli nie uwzględnicie, że energia kosztuje więcej w dzień niż w nocy, albo że ceny się zmieniają, to błędy w kalkulacji ekonomicznej mogą wynosić **20-30 procent**. **LCOH (Levelized Cost of Heat)** to Levelized Cost of Heat, jednostkowy koszt ciepła, **NPV (Net Present Value)** to Net Present Value, wartość bieżąca netto.
 
 **Błędy modelowe mogą prowadzić do błędów w SPF o 20-50 procent**. To dlatego kontrola jakości wymaga sanity-check - szybkiej weryfikacji czy wyniki mają sens - i porównania z wartościami referencyjnymi.
 </InstructorNotes>
@@ -260,7 +266,7 @@ Co oddajemy klientowi na końcu projektu.
 
 **Wyniki godzinowe w pliku CSV** - to wszystkie dane z symulacji: co godzinę temperatura, moc, COP, zużycie energii. To umożliwia weryfikację i dalszą optymalizację. **Wykresy** - wizualizacja wyników, łatwiejsza do zrozumienia.
 
-**Analiza ekonomiczna** - LCOH, NPV, **IRR - Internal Rate of Return**, stopa zwrotu, **payback** - okres zwrotu. To pokazuje czy inwestycja ma sens ekonomiczny.
+**Analiza ekonomiczna** - LCOH, NPV, **IRR (Internal Rate of Return)** - Internal Rate of Return, stopa zwrotu, **payback** - okres zwrotu. To pokazuje czy inwestycja ma sens ekonomiczny.
 
 **Standardy raportowania** to **PN-EN 14825** i rozporządzenie o charakterystyce energetycznej. **Dokumentacja podlega kontroli urzędowej** - błędy mogą prowadzić do odrzucenia projektu.
 
