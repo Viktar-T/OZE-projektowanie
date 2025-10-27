@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-title: Projekty - Systemy fotowoltaiczne (6 godzin)
+title: Projekty - Systemy fotowoltaiczne (8 godzin)
 ---
 
-# Projekty - Systemy fotowoltaiczne (6 godzin)
+# Projekty - Systemy fotowoltaiczne (8 godzin)
 
 Witaj w sekcji projektów dotyczących systemów fotowoltaicznych! Tutaj znajdziesz kompleksowe materiały do nauki projektowania instalacji PV z wykorzystaniem **PV*SOL premium** oraz **Sunny Design Web**.
 

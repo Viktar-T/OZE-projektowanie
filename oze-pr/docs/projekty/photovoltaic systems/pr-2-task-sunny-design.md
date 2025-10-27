@@ -8,7 +8,7 @@ title: Zadanie 2 - Sunny Design Web
 
 Zapoznanie się z platformą webową **Sunny Design** firmy SMA i opanowanie szybkiego procesu projektowania instalacji fotowoltaicznych z wykorzystaniem narzędzi online.
 
-**Czas realizacji:** 2 godziny (1 zajęcie)
+**Czas realizacji:** 4 godziny (2 zajęcia)
 
 **Wymagania wstępne:**
 
@@ -89,9 +89,13 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 - **Docelowa moc instalacji:** 40-50 kWp
 - **Typ systemu:** On-grid (połączony z siecią)
-- **Moduł PV:** Wybierz moduły monokrystaliczne 400-450 Wp
-- **Falownik:** **SMA** (Sunny Tripower lub Sunny Highpower) - dobierz odpowiednio do mocy
-- **DC/AC ratio:** 1.0-1.3 (optymalne dla Polski)
+- **Moduł PV:** 
+  - Wybierz moduły monokrystaliczne z przedziału 400-500 Wp
+  - Uzasadnij wybór (np. stosunek mocy do ceny, dostępność, parametry)
+- **Falownik:** 
+  - Wybierz model SMA z rodziny Sunny Tripower lub Sunny Highpower
+  - Dobierz moc AC tak, aby DC/AC ratio było w zakresie 1.0-1.3
+  - Uzasadnij wybór konfiguracji (jeden duży vs. wiele mniejszych)
 
 ## 📐 Kroki do wykonania
 
