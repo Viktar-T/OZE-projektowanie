@@ -87,7 +87,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 #### Wymagania systemowe
 
-- **Docelowa moc instalacji:** 20-40 kWp
+- **Docelowa moc instalacji:** 15-25 kWp
 - **Typ systemu:** On-grid (połączony z siecią)
 - **Moduł PV:** 
   - Wybierz moduły monokrystaliczne z przedziału 400-500 Wp
@@ -178,45 +178,39 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Temperature coefficient Vmpp: ~-0.35%/°C
 - [ ] **Liczba modułów:** Sunny Design automatycznie obliczy, ile modułów zmieści się na dachu
 
-  - Cel: 100-120 modułów × 400-450 Wp = 20-40 kWp
+  - Cel: 40 modułów × 400-450 Wp = 16-18 kWp
 
 ### Krok 6: Dobór falownika SMA
 
 - [ ] Przejdź do sekcji **"Inverters"**
 - [ ] **Oblicz wymaganą moc AC:**
 
-  - Moc DC: ~50 kWp (szacowana dla 112 modułów × 450 Wp)
+  - Moc DC: ~18 kWp (szacowana dla 40 modułów × 450 Wp)
   - DC/AC ratio: 1.0-1.2 (docelowe dla Polski)
-  - Moc AC: 50 kWp (wybieramy 2× 25 kW = 50 kW AC)
+  - Moc AC: 18 kWp (wybieramy 1× 20 kW = 20 kW AC)
 - [ ] **Warianty do rozważenia:**
 
-**Wariant A: Jeden duży falownik**
+**Wariant A: Jeden falownik (zalecany)**
 
-- SMA Sunny Tripower **CORE1-50** (50 kW)
-- Zalety: prostota, mniej połączeń AC
+- SMA Sunny Tripower **20000TL-30** (20 kW)
+- Zalety: prostota, niższy koszt, łatwiejsza instalacja
 - Wady: single point of failure
 
-**Wariant B: Dwa średnie falowniki**
+**Wariant B: Dwa mniejsze falowniki**
 
-- 2× SMA Sunny Tripower **25000TL-30** (2× 25 kW = 50 kW AC)
+- 2× SMA Sunny Tripower **10000TL** (2× 10 kW = 20 kW AC)
 - Zalety: redundancja, elastyczność serwisowa
 - Wady: więcej okablowania AC
 
-**Wariant C: Trzy mniejsze falowniki**
+- [ ] **Dla tego zadania wybierz Wariant A** (1× 20 kW)
 
-- 3× SMA Sunny Tripower **15000TL** (3× 15 kW = 45 kW AC)
-- Zalety: maksymalna redundancja, rozłożenie ryzyka
-- Wady: wyższa złożoność instalacji
-
-- [ ] **Dla tego zadania wybierz Wariant B** (2× 25 kW)
-
-  - Dobry kompromis między niezawodnością a prostotą
+  - Najlepszy stosunek kosztów do funkcjonalności dla małej instalacji
 - [ ] Sprawdź parametry wybranego falownika:
 
   - Max DC voltage: ~1000-1100 V (zgodnie z normą IEC 61853)
   - MPPT voltage range: 200-800 V (zakres pracy MPPT)
   - Vmpp range: 320-800 V (optimalny zakres pracy)
-  - Number of MPPT trackers: 2 per inverter (łącznie 4 MPPT)
+  - Number of MPPT trackers: 2 per inverter (łącznie 2 MPPT)
   - Max DC current per MPPT: ~25-30 A
   - Max total DC current: ~50-60 A
 
@@ -231,7 +225,7 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Zaproponuje konfigurację końcową
 - [ ] **Weryfikacja automatycznej konfiguracji:**
 
-  - [ ] Sprawdź liczbę modułów w stringu: 14-15 modułów optymalne (dla modułów 450 Wp)
+  - [ ] Sprawdź liczbę modułów w stringu: 10-12 modułów optymalne (dla modułów 450 Wp)
   - [ ] Voc max (zimą, -20°C): &lt;1000 V ✅ (zalecane &lt;950 V dla marginesu bezpieczeństwa)
   - [ ] Vmpp (latem, +35°C): 320-800 V (zakres MPPT) ✅
   - [ ] Prąd stringów: &lt;30 A (limit MPPT) ✅
@@ -249,8 +243,8 @@ Temp_coeff_Voc ≈ -0.0030 /°C (dla modułów monokrystalicznych)
 
 Voc_min = 49.5 × (1 + (-0.0030) × (-45)) = 49.5 × 1.135 ≈ 56.2 V (jeden moduł)
 
-Dla 16 modułów: 16 × 56.2 V = 899 V < 1000 V ✅
-Dla 14 modułów: 14 × 56.2 V = 787 V < 1000 V ✅ (bezpieczniejszy wariant)
+Dla 12 modułów: 12 × 56.2 V = 674 V < 1000 V ✅
+Dla 10 modułów: 10 × 56.2 V = 562 V < 1000 V ✅ (bezpieczniejszy wariant)
 ```
 
 **Vmpp latem (+35°C):**
@@ -262,8 +256,8 @@ Temp_coeff_Vmpp ≈ -0.0035 /°C
 
 Vmpp_max = 41.5 × (1 + (-0.0035) × 10) = 41.5 × 0.965 ≈ 40 V (jeden moduł)
 
-Dla 15 modułów: 15 × 40 V = 600 V (w zakresie MPPT 320-800V) ✅
-Dla 14 modułów: 14 × 40 V = 560 V (w zakresie MPPT 320-800V) ✅
+Dla 12 modułów: 12 × 40 V = 480 V (w zakresie MPPT 320-800V) ✅
+Dla 10 modułów: 10 × 40 V = 400 V (w zakresie MPPT 320-800V) ✅
 ```
 
 :::
@@ -272,23 +266,21 @@ Dla 14 modułów: 14 × 40 V = 560 V (w zakresie MPPT 320-800V) ✅
 
 Jeśli automatyczna konfiguracja nie jest optymalna, możesz ręcznie dostosować:
 
-- [ ] **Wyrównanie obciążenia MPPT:**
+  - [ ] **Wyrównanie obciążenia MPPT:**
 
   - Każdy MPPT tracker powinien mieć podobną moc
-  - Przykład: 4 MPPT × 11-12 kWp każdy = 44-48 kWp łącznie
+  - Przykład: 2 MPPT × 9 kWp każdy = 18 kWp łącznie
 - [ ] **Konfiguracja stringów:**
 
-  - MPPT 1 (Falownik 1): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
-  - MPPT 2 (Falownik 1): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
-  - MPPT 1 (Falownik 2): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
-  - MPPT 2 (Falownik 2): 2 stringi × 14 modułów = 28 modułów × 450 Wp = 12.6 kWp
-  - **Łącznie:** 112 modułów × 450 Wp = **50.4 kWp DC**
+  - MPPT 1: 2 stringi × 10 modułów = 20 modułów × 450 Wp = 9.0 kWp
+  - MPPT 2: 2 stringi × 10 modułów = 20 modułów × 450 Wp = 9.0 kWp
+  - **Łącznie:** 4 stringi × 10 modułów = 40 modułów × 450 Wp = **18.0 kWp DC**
 - [ ] **Przelicz DC/AC ratio:**
 
-  - DC/AC = 50.4 kWp / 50 kW = **1.008** ✅ (w zakresie 1.0-1.3)
+  - DC/AC = 18.0 kWp / 20 kW = **0.9** ✅ (poniżej zakresu 1.0-1.3, ale bezpieczne)
 
 :::tip Optymalizacja
-DC/AC ratio 1.0-1.3 jest optymalne dla Polski. Niewielki clipping (straty powyżej mocy znamionowej falownika) występuje tylko przez kilka procent czasu rocznie, ale system wykorzystuje pełną moc falownika przez większość sezonu.
+DC/AC ratio 1.0-1.3 jest optymalne dla Polski. Przy DC/AC = 0.9 nie ma strat clippingowych, ale falownik może być niedowykorzystany w słoneczne dni. To akceptowalny kompromis dla małych instalacji.
 :::
 
 ### Krok 9: Konfiguracja strat systemowych
@@ -322,36 +314,36 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 - [ ] **Annual energy yield (AC):** _____ kWh/rok
 
-  - Oczekiwana wartość: 47 000-52 000 kWh/rok (dla 50.4 kWp w Szczecinie)
+  - Oczekiwana wartość: 17 000-19 000 kWh/rok (dla 18.0 kWp w Szczecinie)
   - Specific yield: ~950-1030 kWh/kWp/rok
 - [ ] **Monthly distribution:**
 
-  - Czerwiec-Lipiec: najwyższa produkcja (~6000-7000 kWh/mc dla 50.4 kWp)
-  - Grudzień-Styczeń: najniższa produkcja (~1000-1800 kWh/mc dla 50.4 kWp)
+  - Czerwiec-Lipiec: najwyższa produkcja (~2200-2500 kWh/mc dla 18.0 kWp)
+  - Grudzień-Styczeń: najniższa produkcja (~400-650 kWh/mc dla 18.0 kWp)
 
 #### Autokonsumpcja
 
 - [ ] **Self-consumption rate:** _____ %
 
   - Jaki procent wyprodukowanej energii jest użyty lokalnie
-  - Dla budynku komercyjnego (dni robocze): oczekiwane 40-50%
+  - Dla budynku komercyjnego (dni robocze): oczekiwane 30-40%
 - [ ] **Self-sufficiency rate:** _____ %
 
   - Jaki procent zapotrzebowania pokrywa PV
-  - Dla tego projektu: ~70-75% (35 000 kWh zapotrzebowania / 50 000 kWh produkcji)
+  - Dla tego projektu: ~50-55% (35 000 kWh zapotrzebowania / 18 000 kWh produkcji)
 
 #### Wskaźniki techniczne
 
 - [ ] **Performance Ratio (PR):** _____ %
 
   - Cel: > 85%
-- [ ] **DC/AC ratio:** _____ (powinno być 1.0-1.3)
+- [ ] **DC/AC ratio:** _____ (poniżej 1.0-1.3, ale bezpieczne)
 - [ ] **Inverter loading:** _____ %
 
-  - Maksymalne obciążenie falownika (powinno osiągnąć 100% w słoneczne dni)
+  - Maksymalne obciążenie falownika (przy DC/AC = 0.9 osiągnie ~90% w słoneczne dni)
 - [ ] **Clipping losses:** _____ kWh/rok (_____ %)
 
-  - Przy DC/AC = 1.008 oczekuj &lt;1% strat clippingowych (minimalne)
+  - Przy DC/AC = 0.9 oczekuj 0% strat clippingowych (brak clipping)
   - To akceptowalne (ekonomiczny trade-off)
 
 ### Krok 11: Analiza ekonomiczna (uproszczona)
@@ -361,20 +353,20 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 **Investment costs (koszty inwestycyjne):**
 
-- Moduły: 112 × 700 zł = 78 400 zł
-- Falowniki: 2 × 15 000 zł = 30 000 zł
-- System montażowy (balast): 25 000 zł
-- Okablowanie DC/AC + zabezpieczenia: 20 000 zł
-- Instalacja i uruchomienie: 30 000 zł
-- **Koszt całkowity:** ~183 400 zł (netto)
-- **Koszt jednostkowy:** ~3640 zł/kWp
+- Moduły: 40 × 700 zł = 28 000 zł
+- Falownik: 1 × 12 000 zł = 12 000 zł
+- System montażowy (balast): 12 000 zł
+- Okablowanie DC/AC + zabezpieczenia: 8 000 zł
+- Instalacja i uruchomienie: 15 000 zł
+- **Koszt całkowity:** ~75 000 zł (netto)
+- **Koszt jednostkowy:** ~4170 zł/kWp
 
 **Operational costs (koszty eksploatacji):**
 
-- Roczne koszty serwisu: 2000 zł/rok
-- Ubezpieczenie: 800 zł/rok
-- Mycie paneli (co 2 lata): 1000 zł
-- **Łącznie:** ~3000 zł/rok (wzrost 3% rocznie)
+- Roczne koszty serwisu: 1000 zł/rok
+- Ubezpieczenie: 400 zł/rok
+- Mycie paneli (co 2 lata): 500 zł
+- **Łącznie:** ~1500 zł/rok (wzrost 3% rocznie)
 
 **Energy tariffs (taryfy energii):**
 
@@ -384,15 +376,15 @@ Dla instalacji na dachu płaskim bez znaczącego zacienienia, PR powyżej 85% je
 
 **Obliczenia oszczędności:**
 
-- Autokonsumpcja: 50% × 50 000 kWh = 25 000 kWh/rok
-- Oszczędność na autokonsumpcji: 25 000 kWh × 0.75 zł = 18 750 zł/rok
-- Sprzedaż nadwyżek: 50% × 50 000 kWh = 25 000 kWh × 0.50 zł = 12 500 zł/rok
-- **Roczne przychody:** ~31 250 zł/rok (brutto, przed kosztami eksploatacji)
-- **Roczny zysk netto:** ~28 250 zł/rok
+- Autokonsumpcja: 35% × 18 000 kWh = 6 300 kWh/rok
+- Oszczędność na autokonsumpcji: 6 300 kWh × 0.75 zł = 4 725 zł/rok
+- Sprzedaż nadwyżek: 65% × 18 000 kWh = 11 700 kWh × 0.50 zł = 5 850 zł/rok
+- **Roczne przychody:** ~10 575 zł/rok (brutto, przed kosztami eksploatacji)
+- **Roczny zysk netto:** ~9 075 zł/rok
 
 **Prosty okres zwrotu (SPBT):**
 
-- SPBT = 183 400 zł / 28 250 zł/rok ≈ **6.5 lat**
+- SPBT = 75 000 zł / 9 075 zł/rok ≈ **8.3 lata**
 
 :::tip Dotacje i ulgi
 W Polsce dostępne są programy wsparcia dla instalacji PV (np. Mój Prąd, dotacje gminne, ulgi podatkowe). Rzeczywisty okres zwrotu może być krótszy o 1-2 lata.
@@ -447,7 +439,7 @@ A: Wpisz współrzędne GPS ręcznie: 53.43°N, 14.55°E. Sunny Design automatyc
 **Q: Sunny Design pokazuje ostrzeżenie "Voltage out of range". Co to znaczy?**
 A: Napięcia stringów są poza zakresem falownika. Najczęstsze rozwiązania:
 
-- **Voc > Vmax DC:** Zmniejsz liczbę modułów w stringu (np. z 16 do 14)
+- **Voc > Vmax DC:** Zmniejsz liczbę modułów w stringu (np. z 12 do 10)
 - **Vmpp < Vmin MPPT:** Zwiększ liczbę modułów w stringu
 - **Możesz też zmienić falownik** na model o innych zakresach napięć
 
@@ -478,6 +470,8 @@ A: Dla Polski optymalny DC/AC ratio to **1.0-1.3**. Przy tym zakresie:
 - Falownik dobrze wykorzystany przez większość sezonu
 - Najlepszy stosunek kosztów do produkcji energii
 
+DC/AC = 0.9 (jak w naszym projekcie) jest bezpieczniejsze - brak strat clippingowych, ale falownik może być niedowykorzystany w słoneczne dni. To akceptowalne dla małych instalacji.
+
 DC/AC > 1.3 może być sensowne w regionach z niższym nasłonecznieniem lub gdy chcesz maksymalizować energię zimą.
 
 **Q: Dlaczego wybieramy falowniki SMA w Sunny Design?**
@@ -488,15 +482,15 @@ A: Sunny Design jest narzędziem SMA, więc:
 - Baza danych SMA jest zawsze aktualna
 - Możesz dodawać inne marki, ale workflow jest wolniejszy
 
-**Q: Co jeśli nie zmieszczę 112 modułów na 200 m² dachu?**
+**Q: Co jeśli nie zmieszczę 40 modułów na 200 m² dachu?**
 A: Sprawdź:
 
 - Rozstaw rzędów - przy dachu płaskim i nachyleniu 15° potrzeba ~3.5-4 m między rzędami (aby uniknąć zacienienia)
 - Strefy bezpieczeństwa - 1.0 m od krawędzi + korytarze serwisowe 1.2 m
 - Efektywna powierzchnia: ~60-70% z 200 m² = 120-140 m² użytecznej powierzchni
-- To powinno wystarczyć na 100-112 modułów (45-50 kWp)
+- To powinno wystarczyć na 40-50 modułów (18-22 kWp)
 
-Jeśli nie zmieścisz 112 modułów - zmniejsz do 96-100 modułów i dostosuj falowniki (np. 2× 20 kW zamiast 2× 25 kW).
+Jeśli nie zmieścisz 40 modułów - zmniejsz do 32-36 modułów i dostosuj falownik (np. 1× 15 kW zamiast 1× 20 kW).
 
 **Q: Jak dodać korytarze serwisowe (service corridors)?**
 A: W Sunny Design:
@@ -509,7 +503,7 @@ A: W Sunny Design:
 **Q: Czy muszę robić analizę ekonomiczną?**
 A: Tak, to część zadania (1 punkt). Nie musisz być bardzo dokładny - wystarczą szacunkowe koszty i taryfy. Najważniejsze to:
 
-- Oszacować koszt systemu (~3000-4000 zł/kWp dla instalacji komercyjnych)
+- Oszacować koszt systemu (~4000-4500 zł/kWp dla instalacji komercyjnych)
 - Obliczyć roczne oszczędności (autokonsumpcja + sprzedaż energii)
 - Wyliczyć prosty okres zwrotu (SPBT)
 
