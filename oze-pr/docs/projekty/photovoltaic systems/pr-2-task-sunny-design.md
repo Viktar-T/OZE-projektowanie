@@ -87,7 +87,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 #### Wymagania systemowe
 
-- **Docelowa moc instalacji:** 40-50 kWp
+- **Docelowa moc instalacji:** 20-40 kWp
 - **Typ systemu:** On-grid (połączony z siecią)
 - **Moduł PV:** 
   - Wybierz moduły monokrystaliczne z przedziału 400-500 Wp
@@ -178,7 +178,7 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
   - Temperature coefficient Vmpp: ~-0.35%/°C
 - [ ] **Liczba modułów:** Sunny Design automatycznie obliczy, ile modułów zmieści się na dachu
 
-  - Cel: 100-120 modułów × 400-450 Wp = 40-50 kWp
+  - Cel: 100-120 modułów × 400-450 Wp = 20-40 kWp
 
 ### Krok 6: Dobór falownika SMA
 
