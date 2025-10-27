@@ -67,7 +67,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 **Typ dachu:** Dach płaski (flat roof)
 
-**Powierzchnia użytkowa na dachu:** 150-300 m²
+**Powierzchnia użytkowa na dachu:** 200 m²
 
 **Parametry montażu:**
 
