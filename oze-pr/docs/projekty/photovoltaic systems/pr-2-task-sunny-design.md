@@ -61,7 +61,6 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 - **Kraj:** Polska
 - **Miasto:** Szczecin (lub najbliższa dostępna lokalizacja)
-- **Współrzędne:** 53.43°N, 14.55°E (Sunny Design znajdzie automatycznie)
 
 #### Budynek i powierzchnie
 
@@ -119,7 +118,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 ### Krok 3: Konfiguracja lokalizacji i danych klimatycznych
 
 - [ ] **Location Settings:**
-  - Wybierz **Poland → Szczecin** (lub wpisz współrzędne: 53.43°N, 14.55°E)
+  - Wybierz **Poland → Szczecin** 
   - Sunny Design automatycznie pobierze dane meteorologiczne
 - [ ] **Climate data:**
 - Weryfikuj roczne nasłonecznienie: ~1050-1150 kWh/m²/rok (dla Szczecina)
@@ -433,8 +432,6 @@ Zadanie oceniane jest w skali 0-7 punktów (zaliczenie: minimum 4 punkty)
 
 ### Problemy techniczne
 
-**Q: Nie mogę znaleźć Szczecina w bazie Sunny Design. Co robić?**
-A: Wpisz współrzędne GPS ręcznie: 53.43°N, 14.55°E. Sunny Design automatycznie pobierze dane meteorologiczne dla tej lokalizacji.
 
 **Q: Sunny Design pokazuje ostrzeżenie "Voltage out of range". Co to znaczy?**
 A: Napięcia stringów są poza zakresem falownika. Najczęstsze rozwiązania:
