@@ -66,7 +66,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 **Typ dachu:** Dach płaski (flat roof)
 
-**Powierzchnia użytkowa na dachu:** 200 m²
+**Powierzchnia użytkowa na dachu:** ~200 m²
 
 **Parametry montażu:**
 
@@ -144,6 +144,10 @@ Sunny Design korzysta z własnej bazy meteorologicznej. Dla Polski dane są wiar
 
   - Jeśli Sunny Design pozwala, narysuj prostokąt ~200 m²
   - Lub ustaw: Length 20 m × Width 10 m = 200 m²
+- [ ] **Visual roof planning:**
+
+  - Użyj funkcji **"Visual roof planning"** (wizualne planowanie dachu) do rozmieszczenia modułów na dachu komercyjnej instalacji PV
+  - Funkcja pozwala na precyzyjne pozycjonowanie modułów i wizualizację układu
 - [ ] **Keep-out zones (strefy bezpieczeństwa):**
 
   - Border distance: 1.0 m (od wszystkich krawędzi)
@@ -178,6 +182,7 @@ W Sunny Design można zaznaczyć obszary niedostępne (obstacles), ale nie jest 
 - [ ] **Liczba modułów:** Sunny Design automatycznie obliczy, ile modułów zmieści się na dachu
 
   - Cel: 40 modułów × 400-450 Wp = 16-18 kWp
+  - Uwaga: Jeśli nie zmieści się 40, można zmniejszyć liczbę modułów (np. do 32–36) i odpowiednio dobrać falownik
 
 ### Krok 6: Dobór falownika SMA
 
