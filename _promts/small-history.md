@@ -41,3 +41,9 @@
   * [X] update slide content and InstructorNotes to better relate to each other. You could update either slide content or InstructorNotes or both.
   * [X] also use bold for key points in Instructor notes.
   * [X] add Emojis & Icons to Slides
+
+1. implement @InstractorNotes-v2.1.md for @oze-pr\docs\wyklady\wyklad-05-wiatr\02-proces-modelowania.mdx 
+2. implement @InstractorNotes-v2.2.md for @oze-pr\docs\wyklady\wyklad-05-wiatr\02-proces-modelowania.mdx 
+
+1. implement @InstractorNotes-v2.1.md for @oze-pr\docs\wyklady\wyklad-05-wiatr\03-porownanie-narzedzi.mdx 
+2. implement @InstractorNotes-v2.2.md for @oze-pr\docs\wyklady\wyklad-05-wiatr\03-porownanie-narzedzi.mdx 

@@ -1,0 +1,119 @@
+---
+sidebar_position: 4
+title: "Porównanie narzędzi: QBlade, TOPFARM, WindPRO, OpenWind"
+---
+
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
+
+<SlideContainer>
+
+<Slide title="🛠️ Pozycjonowanie narzędzi w łańcuchu projektowym" type="info">
+
+<KeyPoints title="📊 Porównanie narzędzi">
+- 🔧 **[QBlade](https://qblade.org/qblade-quick-start-guide/)**: profil → łopata → wirnik, BEM, polary, sterowanie
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**: optymalizacja farmy, układ, wysokości, modele wake
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**: planowanie, due‑diligence, AEP, hałas, środowisko
+- 🌐 **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**: layout i energia, modele wake, analizy strat
+</KeyPoints>
+
+<SupportingDetails title="🔄 Przepływ danych">
+- 📤 **[QBlade](https://qblade.org/qblade-quick-start-guide/) → CSV** - krzywe mocy i ciągu jako wejście
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** - optymalizacja rozmieszczenia z modelami wake
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software) - analizy bankowalne i raporty
+- 🔗 **Integracja** - [QBlade](https://qblade.org/qblade-quick-start-guide/) dostarcza wejść do narzędzi farmowych
+</SupportingDetails>
+
+<InstructorNotes>
+Zaczynam od pozycjonowania narzędzi w łańcuchu projektowym. **[QBlade](https://qblade.org/qblade-quick-start-guide/)** to narzędzie do analizy aerodynamicznej – zaczynamy od profilu skrzydła, potem budujemy łopatę, potem cały wirnik. Używa metody **BEM** (Blade Element Momentum – elementy łopaty i pęd), która dzieli łopatę na segmenty i oblicza siły aerodynamiczne. Generuje polary – charakterystyki aerodynamiczne profili pokazujące współczynniki siły nośnej i oporu. QBlade daje nam krzywe mocy P(v) i ciągu Ct(v), które eksportujemy jako pliki CSV.
+
+**[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** to narzędzie do optymalizacji farmy. Projektujemy układ turbin – gdzie postawić, jakie wysokości hubów, jakie średnice wirników. TOPFARM używa modeli wake – cieni wiatrowych – z silników jak PyWake czy FLORIS. Optymalizuje układ pod kątem **AEP** (Annual Energy Production) lub **LCOE** (Levelized Cost of Energy) – szuka najlepszego kompromisu między produkcją a kosztami.
+
+**[WindPRO](https://www.emd-international.com/software/windpro)** i **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)** to narzędzia do planowania i analizy bankowalnej. WindPRO ma moduły: zasoby wiatrowe, hałas, cień, AEP. OpenWind projektuje layout i analizuje energię z modelami wake. Oba wspierają due‑diligence – szczegółową analizę przed inwestycją, wymaganą przez banki i inwestorów.
+
+Przepływ danych jest kluczowy dla całego procesu. **[QBlade](https://qblade.org/qblade-quick-start-guide/)** generuje `power_curve.csv` i `thrust_curve.csv` z krzywymi mocy i ciągu. Te pliki są wejściem do **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**, **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)** czy **[WindPRO](https://www.emd-international.com/software/windpro)**. Ważne są metadane – gęstość powietrza, promień wirnika R, liczba łopat B, współczynnik prędkości końcówki λ_design (lambda design). Bez metadanych nie możemy później zweryfikować założeń.
+
+Spójność między narzędziami to podstawa. Te same jednostki, te same wysokości referencyjne, ta sama intensywność turbulencji **TI** (Turbulence Intensity), ten sam profil shear – pionowy gradient prędkości wiatru. Bez tego łatwo o błędy przy przenoszeniu danych między narzędziami.
+
+Kryteria wyboru narzędzi zależą od etapu projektu. Kształtowanie łopaty – **[QBlade](https://qblade.org/qblade-quick-start-guide/)**. Układ farmy na etapie koncepcyjnym – **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**. Analiza bankowalna i raporty – **[WindPRO](https://www.emd-international.com/software/windpro)** lub **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**. Ważna jest też dostępność danych, licencji i kosztów. Czasem hybryda ma sens – TOPFARM do szybkiej optymalizacji układu, WindPRO do szczegółowych raportów bankowalnych.
+
+Mini‑case: farma 20 turbin po 6 MW, teren płaski, wiatr z SE–NW (południowy wschód – północny zachód). Na etap koncepcyjny: **[QBlade](https://qblade.org/qblade-quick-start-guide/)** do krzywych turbiny, **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** do układu. Na etap bankowalny: **[WindPRO](https://www.emd-international.com/software/windpro)** lub **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)** do pełnej analizy z raportami środowiskowymi, hałasu i cień – wszystko, czego potrzebują banki do finansowania.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="technical" />
+
+<Slide title="🔬 Główne domeny fizyczne i modele" type="tip">
+
+<KeyPoints title="🧪 Modele fizyczne">
+- 🌪️ **[QBlade](https://qblade.org/qblade-quick-start-guide/)**: BEM, przeciągnięcie dynamiczne, yaw/skewed wake, polary
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**: meta‑framework optymalizacji z silnikami wake
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**: moduły zasobów/hałasu/cienia/AEP, raporty due‑diligence
+- 🌐 **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**: projekt layoutu, modele wake, kontrola ograniczeń
+</KeyPoints>
+
+<SupportingDetails title="⚙️ Specjalizacje narzędzi">
+- 🔧 **[QBlade](https://qblade.org/qblade-quick-start-guide/)**: generacja polars, BEM, wstępna aeroelastyka
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**: PyWake/FLORIS, optymalizacja układu i wysokości
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**: integracje z danymi pomiarowymi, modele mezoskalowe
+- 🌐 **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**: strefy wyłączeń, odległości, hałas, modele wake
+</SupportingDetails>
+
+<InstructorNotes>
+Każde narzędzie ma swoje modele fizyczne i specjalizacje. **[QBlade](https://qblade.org/qblade-quick-start-guide/)** używa **BEM** (Blade Element Momentum – elementy łopaty i pęd) do obliczeń aerodynamicznych. To metoda, która dzieli łopatę na małe segmenty i oblicza siły na każdym. Uwzględnia przeciągnięcie dynamiczne – zmiany siły przy szybkich zmianach kąta natarcia, co jest ważne przy silnych porywach wiatru. Ma modele yaw – obrót gondoli w kierunku wiatru i skewed wake – pochylony ślad wiatrowy, gdy wiatr nie jest prostopadły do płaszczyzny wirnika. Generuje polary – charakterystyki aerodynamiczne profili pokazujące, jak profil się zachowuje pod różnymi kątami.
+
+**[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** to meta‑framework – nie ma własnego silnika wake, ale używa zewnętrznych. Może współpracować z PyWake czy FLORIS – to są biblioteki Python do modelowania wake. To pozwala wybrać model wake – Gaussian, Jensen, Larsen. Każdy model ma inne założenia i dokładność. Wybór modelu wpływa na wyniki AEP i optimum layout – inny model da inne straty wake, więc inny układ turbin będzie optymalny.
+
+**[WindPRO](https://www.emd-international.com/software/windpro)** ma moduły: zasoby wiatrowe, hałas, cień, AEP. Każdy moduł ma swoje modele fizyczne. Integruje się z danymi pomiarowymi z masztów czy LiDAR oraz modelami mezoskalowymi – danymi z większych obszarów, które pokazują klimatyczne tło wiatrowe.
+
+**[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)** projektuje layout farmy. Ma modele wake do obliczania strat na cieniu wiatrowym. Kontroluje ograniczenia – strefy wyłączeń (gdzie nie można stawiać turbin), odległości od budynków, hałas zgodnie z normami.
+
+Trzeba wybierać między szybkością a dokładnością. Modele szybkie jak Jensen są szybkie – sekundy na analizę, ale mniej dokładne. Modele dokładniejsze jak CFD (Computational Fluid Dynamics) są wolne – godziny na obliczenia, ale dają lepsze wyniki. Strategia "coarse→fine" – najpierw szybkie modele do wstępnej analizy i porównania wariantów, potem dokładniejsze do finalizacji i weryfikacji najlepszego rozwiązania.
+
+Pytanie: jak wybór modelu wpływa na optimum layoutu i LCOE? Inny model wake daje inne straty – model Jensen może dać większe straty niż Gaussian, więc układ turbin będzie bardziej rozproszony. To wpływa na AEP – mniej energii, i koszty – więcej kabli i dróg. Więc wpływa na **LCOE** – końcowy koszt energii.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="data" />
+
+<Slide title="🎯 Kryteria doboru narzędzia" type="warning">
+
+<KeyPoints title="📋 Kryteria wyboru">
+- 🎯 **Etap projektu**: koncepcja łopaty → [QBlade](https://qblade.org/qblade-quick-start-guide/); farma → [OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)/[WindPRO](https://www.emd-international.com/software/windpro)
+- 🏦 **Poziom zaufania**: edukacyjny vs. due‑diligence
+- 📊 **Dane wejściowe**: polary, pomiary meteo, mapy terenu, klasy IEC
+- 💰 **Czas i licencje**: koszt vs. open‑source, krzywa uczenia
+</KeyPoints>
+
+<SupportingDetails title="🔄 Mini‑ćwiczenie (5 min)">
+- 🏗️ **Scenariusz**: farma 20 × 6 MW, teren płaski, róża wiatru SE–NW
+- 🎯 **Zadanie**: wskaż zestaw narzędzi na etap koncepcyjny i bankowalny
+- 📝 **Uzasadnienie**: w 3 zdaniach wyjaśnij wybór narzędzi
+</SupportingDetails>
+
+<InstructorNotes>
+Decyzje praktyczne zależą od etapu projektu i wymagań. Koncepcja łopaty czy wirnika – używamy **[QBlade](https://qblade.org/qblade-quick-start-guide/)**. Projekt układu farmy – mikrositing, czyli szczegółowe rozmieszczenie turbin – używamy **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**. Analiza bankowalna i raporty – **[WindPRO](https://www.emd-international.com/software/windpro)** lub **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**.
+
+Ważna jest wymagana wiarygodność wyniku. Na etapie edukacyjnym czy R&D (Research and Development – badania i rozwój) wystarczą narzędzia otwarte. Na etapie due‑diligence – szczegółowej analizy przed inwestycją – potrzebne są narzędzia komercyjne z pełną dokumentacją, wsparciem technicznym i możliwością audytu wyników przez niezależnych ekspertów.
+
+Trzeba też patrzeć na koszt i czas. Narzędzia open‑source są darmowe, ale wymagają czasu na naukę – trzeba czytać dokumentację, uczyć się Python. Narzędzia komercyjne kosztują, ale mają wsparcie, szkolenia i są gotowe do użycia od razu. Czasem ścieżki mieszane – eksport i import między narzędziami – mają sens. Na przykład: szybka optymalizacja w **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**, potem import do **[WindPRO](https://www.emd-international.com/software/windpro)** do raportów.
+
+Unikajmy typowych błędów. Nie używajmy wyników **[QBlade](https://qblade.org/qblade-quick-start-guide/)** jako "bankowalnych" bez dodatkowej weryfikacji – QBlade to narzędzie do R&D, nie do analizy bankowalnej. Zawsze zapisujmy metadane – bez tego nie da się później zweryfikować założeń, a banki wymagają pełnej dokumentacji. Sprawdzajmy spójność założeń – **TI** (Turbulence Intensity), gęstość powietrza muszą być takie same między narzędziami, inaczej wyniki będą błędne.
+
+Ćwiczenie: farma 20 turbin po 6 MW, teren płaski, róża wiatru z SE–NW (południowy wschód – północny zachód). Etap koncepcyjny: **[QBlade](https://qblade.org/qblade-quick-start-guide/)** do krzywych turbiny, **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** do układu. Etap bankowalny: **[WindPRO](https://www.emd-international.com/software/windpro)** lub **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)** do pełnej analizy z raportami środowiskowymi, hałasu i cień. Uzasadnienie: na etapie koncepcyjnym potrzebujemy szybkości i elastyczności – możemy szybko porównać warianty. Na bankowalnym potrzebujemy pełnej dokumentacji, wsparcia i możliwości audytu – banki wymagają narzędzi komercyjnych z certyfikacją.
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="default" />
+
+</SlideContainer>
+

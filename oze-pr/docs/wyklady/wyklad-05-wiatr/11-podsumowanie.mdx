@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 title: "Podsumowanie: dobór narzędzia"
 ---
 
@@ -17,25 +17,25 @@ import {
 <Slide title="🎯 Wnioski z wykładu" type="info">
 
 <KeyPoints title="🔄 Projektowanie farm wiatrowych">
-- 🔧 **Narzędzia aerodynamiczne** - QBlade dla aerodynamiki wirnika
-- 🎯 **Optymalizacyjne** - TOPFARM dla layoutu i parametrów
-- 🌱 **Środowiskowe** - WindPRO/OpenWind dla raportów bankowalnych
+- 🔧 **Narzędzia aerodynamiczne** - [QBlade](https://qblade.org/qblade-quick-start-guide/) dla aerodynamiki wirnika
+- 🎯 **Optymalizacyjne** - [TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html) dla layoutu i parametrów
+- 🌱 **Środowiskowe** - [WindPRO](https://www.emd-international.com/software/windpro)/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software) dla raportów bankowalnych
 - 🔗 **Integracja** - łączenie narzędzi w spójny łańcuch projektowy
 </KeyPoints>
 
 <SupportingDetails title="🛠️ Rola każdego narzędzia">
-- 🔧 **QBlade** - krzywe mocy/ciągu, wgląd w aerodynamikę wirnika
-- 🎯 **TOPFARM** - optymalizacja layoutu, modele wake/kosztów
-- 📊 **WindPRO/OpenWind** - dane meteo/GIS, raporty bankowalne
+- 🔧 **[QBlade](https://qblade.org/qblade-quick-start-guide/)** - krzywe mocy/ciągu, wgląd w aerodynamikę wirnika
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** - optymalizacja layoutu, modele wake/kosztów
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software) - dane meteo/GIS, raporty bankowalne
 - 🌊 **Ct(v)** - wykorzystanie w analizach wake
 </SupportingDetails>
 
 <InstructorNotes>
 **Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
 **Szczegółowa zawartość wykładu (prowadzący):**
-- Rola narzędzi: QBlade (aero/krzywe), TOPFARM (układ/LCOE), WindPRO/OpenWind (raporty/EIA).
+- Rola narzędzi: [QBlade](https://qblade.org/qblade-quick-start-guide/) (aero/krzywe), [TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html) (układ/LCOE), [WindPRO](https://www.emd-international.com/software/windpro)/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software) (raporty/EIA).
 - Integracje: przepływ CSV, metadane (gęstość, R, B, λ_design), spójność jednostek i wysokości.
-- Błędy decyzyjne: używanie wyników QBlade jako bankowalnych, brak niepewności i strat w raportach.
+- Błędy decyzyjne: używanie wyników [QBlade](https://qblade.org/qblade-quick-start-guide/) jako bankowalnych, brak niepewności i strat w raportach.
 - Pytania: gdzie jest największe ryzyko błędu w łańcuchu? Jak je mitigować?
 </InstructorNotes>
 
@@ -48,7 +48,7 @@ import {
 <KeyPoints title="🎯 Temat zadania">
 - 🏗️ **Raport porównawczy** - dwa warianty farmy (12 × 5 MW vs 10 × 6 MW)
 - 📊 **Analiza** - AEP_gross/net, LCOE, oddziaływanie środowiskowe
-- 🔗 **Ścieżka danych** - QBlade → CSV → TOPFARM/WindPRO/OpenWind
+- 🔗 **Ścieżka danych** - [QBlade](https://qblade.org/qblade-quick-start-guide/) → CSV → [TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)/[WindPRO](https://www.emd-international.com/software/windpro)/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)
 </KeyPoints>
 
 <SupportingDetails title="📋 Wymagania szczegółowe">
@@ -69,7 +69,7 @@ import {
 **Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
 **Szczegółowa zawartość wykładu (prowadzący):**
 - Wymagania raportu: AEP_gross/net, macierz strat, LCOE, niepewność P50/P90, mapy AEP/wake, kable.
-- Ścieżka danych: QBlade → CSV → TOPFARM/WindPRO/OpenWind; kontrola spójności między etapami.
+- Ścieżka danych: [QBlade](https://qblade.org/qblade-quick-start-guide/) → CSV → [TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)/[WindPRO](https://www.emd-international.com/software/windpro)/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software); kontrola spójności między etapami.
 - Kryteria oceny: spójność założeń (gęstość, wysokości, TI), kompletność i jakość wniosków.
 </InstructorNotes>
 
@@ -80,9 +80,9 @@ import {
 <Slide title="🎓 Podsumowanie wykładu" type="warning">
 
 <KeyPoints title="✅ Kluczowe osiągnięcia">
-- 🔧 **QBlade** - aerodynamika wirnika, krzywe mocy/ciągu
-- 🎯 **TOPFARM** - optymalizacja farmy, modele wake/kosztów
-- 📊 **WindPRO/OpenWind** - raporty bankowalne, dane meteo/GIS
+- 🔧 **[QBlade](https://qblade.org/qblade-quick-start-guide/)** - aerodynamika wirnika, krzywe mocy/ciągu
+- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** - optymalizacja farmy, modele wake/kosztów
+- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software) - raporty bankowalne, dane meteo/GIS
 - 🔗 **Integracja** - spójny łańcuch projektowy
 </KeyPoints>
 

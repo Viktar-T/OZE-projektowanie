@@ -8,19 +8,44 @@ import {
   Slide, 
   KeyPoints, 
   SupportingDetails, 
-  InstructorNotes,
-  VisualSeparator 
+  InstructorNotes
 } from '@site/src/components/SlideComponents';
 
 <SlideContainer>
 
-<Slide title="🌬️ Wprowadzenie do projektowania farm wiatrowych" type="info">
+<Slide title="🌬️ Wprowadzenie i kontekst energetyki wiatrowej" type="info">
 
-<KeyPoints title="📋 Kontekst energetyczny">
-- 🌍 **Energetyka wiatrowa** - kluczowa dla celów klimatycznych UE
-- 🇵🇱 **Wzrost inwestycji** po liberalizacji ustawy odległościowej w Polsce
-- ⚖️ **Projekt wymaga** uwzględnienia aspektów technicznych, środowiskowych i społecznych
+<KeyPoints title="📋 Kluczowe osiągnięcia energetyki wiatrowej">
+- 🌍 **Globalnie**: 1 174 GW mocy zainstalowanej, 11% globalnego zapotrzebowania na energię elektryczną
+- 🇪🇺 **Unia Europejska**: 231 GW mocy (210 GW lądowa, 21 GW morska), 17% udziału w produkcji energii
+- 🇵🇱 **Polska**: 10,8 GW mocy zainstalowanej, 14% udziału w miksie energetycznym, 2. miejsce w PPA w Europie
+- 🎯 **Wiatr w OZE**: 39,1% energii z OZE w UE, 29-30% udział OZE w Polsce
 </KeyPoints>
+
+<SupportingDetails title="📊 Inwestycje i cele rozwoju">
+- 💰 **Inwestycje w Polsce**: Bałtyk 2 i 3 (€7,2 mld), potencjał offshore do 2040 (PLN 300 mld)
+- 📈 **Przyrost**: 121 GW globalnie i 12,9 GW w UE w 2024 roku
+- 🎯 **Cele Polski**: 5,9 GW offshore do 2030, 18 GW offshore i 20 GW onshore do 2040
+- 🌊 **Potencjał offshore**: 33 GW mocy i 130 TWh rocznej produkcji
+</SupportingDetails>
+
+<InstructorNotes>
+Zaczynam od skali globalnej. **1 174 GW mocy wiatrowej zainstalowanej** i **11% globalnego zapotrzebowania na energię elektryczną** – to pokazuje, że wiatr jest już **filarowym źródłem energii**. W 2024 roku przyrost wyniósł **121 GW**, co ilustruje dynamikę rozwoju branży.
+
+W Unii Europejskiej energetyka wiatrowa ma jeszcze większy udział – **17% produkcji energii elektrycznej** i aż **39,1% energii z OZE**. To znaczy, że wiatr odpowiada za prawie **2/5 całej energii odnawialnej** w UE. Podkreślam rozkład: **210 GW lądowa** i **21 GW morska**, co pokazuje, że offshore jeszcze się rozwija.
+
+Polska wpisuje się w ten trend. **10,8 GW mocy zainstalowanej** i **14% udziału w miksie** to już znaczący udział. Warto zwrócić uwagę, że Polska jest **drugim największym rynkiem PPA** (Power Purchase Agreement – umowy zakupu energii) w Europie, co pokazuje zaawansowanie rynku.
+
+**OZE w Polsce to 29-30% produkcji energii**, a wiatr jest w tym znaczącym komponentem. To pokazuje zarówno potencjał, jak i wyzwania transformacji.
+
+**Skala inwestycji** jest imponująca: projekt Bałtyk 2 i 3 to **€7,2 mld**, a potencjał offshore do 2040 roku sięga **PLN 300 mld**. Cele są ambitne: **5,9 GW offshore do 2030** i **18 GW offshore oraz 20 GW onshore do 2040**. Potencjał techniczny jest jeszcze większy – **33 GW mocy** i **130 TWh rocznej produkcji** z offshore.
+
+W tym slajdzie buduję **ramę makroekonomiczną i strategiczną** dla dalszych zajęć: będziemy schodzić od liczb systemowych i celów politycznych do konkretnych decyzji projektowych na poziomie farmy i turbiny.
+</InstructorNotes>
+
+</Slide>
+
+<Slide title="🔧 Komponenty farmy i wideo" type="info">
 
 <SupportingDetails title="🔧 Komponenty farmy">
 - 🌀 **Turbiny**: wirnik, gondola, wieża z układami sterowania pitch/yaw
@@ -28,68 +53,43 @@ import {
 - 🏗️ **Fundamenty**: drogi serwisowe, systemy monitoringu stanu (CMS)
 </SupportingDetails>
 
+<div style={{ 
+  position: 'relative', 
+  paddingBottom: '56.25%', 
+  height: 0, 
+  overflow: 'hidden',
+  maxWidth: '100%',
+  margin: '1rem 0'
+}}>
+  <iframe
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%'
+    }}
+    src="https://www.youtube.com/embed/LNXTm7aHvWc"
+    title="Wprowadzenie do projektowania farm wiatrowych"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  />
+</div>
+
 <InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Szczegółowa zawartość wykładu (prowadzący):**
-- Kontekst i polityka:
-  - Rola OZE w miksie UE; znaczenie wiatru dla celów klimatycznych i bezpieczeństwa energetycznego.
-  - Polska: skutki liberalizacji zasady odległościowej (wpływ na pipeline projektów, akceptacja społeczna, procedury OOŚ).
-  - Bankowalność: na wczesnym etapie nie „obiecujemy” AEP — mówimy o potencjale i niepewności (ramy P50/P90 przedstawimy później).
-- Merytoryka lokalizacji (pre‑feasibility):
-  - Dane wiatrowe: mast/LiDAR, okres pomiaru, korekcja do 10–20 lat; kiedy dane mesoskalowe/atlasowe są akceptowalne.
-  - Uwarunkowania: hałas, migotanie, Natura 2000, korytarze przelotowe; sieć (przyłącza, GPZ), dostęp logistyczny.
-  - Teren i własność: poligony, bufory, zgodność z planami zagospodarowania, ryzyka społeczne.
-- Komponenty i interfejsy techniczne:
-  - Turbina (wirnik, gondola, wieża), sterowanie pitch/yaw, ograniczenia V_tip i akustyka.
-  - Infrastruktura: kable, drogi, place montażowe, stacja GPZ, SCADA; wpływ na CAPEX/OPEX i LCOE.
-- Most do narzędzi:
-  - QBlade jako „silnik aerodynamiczny” do krzywych P(v)/Ct(v) — pokażemy w W5.1.
-  - TOPFARM i narzędzia planistyczne do layoutu i LCOE — w W5.2; jak artefakty z QBlade stają się wejściem.
-- Dyskusja i pytania:
-  - Jakie kompromisy dominują w onshore vs offshore? Co decyduje o „go/no‑go” lokalizacji?
-  - Jak ograniczenia hałasu i odległości kształtują rozstaw D i wysokości hubów?
+Zaczynam od przypomnienia podstaw. **Turbina** składa się z trzech głównych części: **wirnik**, **gondola** i **wieża**. Turbina ma dwa systemy sterowania. **Pitch** to zmiana kąta łopat – obracamy łopaty, żeby kontrolować moc. **Yaw** to obrót całej gondoli w kierunku wiatru.
+
+Teraz infrastruktura. Potrzebujemy **kabli** do przesyłu energii. **Drogi serwisowe** i **place montażowe** to podstawa. **GPZ** to główny punkt zasilania – tam łączymy farmę z siecią. **SCADA** to system nadzoru – kontrolujemy całą farmę z jednego miejsca. Często dodajemy też **CMS** – system monitoringu stanu dla predykcyjnego utrzymania.
+
+Wszystko to kosztuje. **CAPEX** to koszty budowy, **OPEX** to koszty eksploatacji. Razem wpływają na **LCOE** – ile kosztuje energia.
+
+Podczas wideo zwróćcie uwagę na połączenia między turbiną a resztą. To często największe problemy i koszty przy projektowaniu.
+
+Po wideo pokażę narzędzia. **[QBlade](https://qblade.org/qblade-quick-start-guide/)** służy do analizy aerodynamicznej – krzywe mocy i siły. **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** pomaga ułożyć turbiny i policzyć koszty. Wyniki z QBlade wstawiamy do TOPFARM i optymalizujemy układ.
 </InstructorNotes>
 
 </Slide>
-
-<VisualSeparator type="energy" />
-
-<Slide title="🎯 Kryteria lokalizacyjne farm wiatrowych" type="tip">
-
-<KeyPoints title="📊 Zasoby wiatrowe">
-- 📏 **Pomiar masztowy** - podstawowe źródło danych
-- 🛰️ **LiDAR** - zaawansowane pomiary 3D
-- 🌐 **Dane mesoskalowe** - modele numeryczne
-</KeyPoints>
-
-<SupportingDetails title="🌱 Ograniczenia środowiskowe">
-- 🔊 **Hałas** - normy akustyczne dla mieszkańców
-- 🌑 **Migotanie cienia** - wpływ na okoliczne budynki
-- 🦅 **Obszary Natura 2000** - ochrona przyrody
-- ⚡ **Warunki sieciowe** - możliwość przyłączenia (NC RfG)
-</SupportingDetails>
-
-<InstructorNotes>
-**Wykładowca: Szczegółowe notatki (Kliknij aby rozwinąć)**
-**Szczegółowa zawartość wykładu (prowadzący):**
-- Zasoby i pomiary:
-  - Mast vs LiDAR/SoDAR: zalety/ograniczenia, wysokości referencyjne, niepewność pomiarowa; korekta do wysokości hubu (shear, TI).
-  - Dane mesoskalowe: kiedy używać, jak łączyć z pomiarami (merging, MCP) na etapie pre‑FEED.
-- Ograniczenia i compliance:
-  - Hałas: progi, modelowanie, wpływ V_tip i sterowania pitch.
-  - Migotanie cienia: geometryczne oszacowania vs narzędzia dedykowane.
-  - Natura 2000 i trasy migracji: znaczenie danych sezonowych i konsultacji.
-- Sieć i ekonomia:
-  - Przyłączenie: wymagania operatorów, zgodność z NC RfG, moce zwarciowe.
-  - Wpływ ograniczeń na LCOE; jak wczesne decyzje terenowe determinują koszty kabli i dróg.
-- Pytania naprowadzające:
-  - Które ryzyka lokalizacyjne są najtrudniejsze do złagodzenia i dlaczego?
-  - Jak dobrać wstępny rozstaw (4–8D) w zależności od róży wiatru i TI?
-</InstructorNotes>
-
-</Slide>
-
-<VisualSeparator type="default" />
 
 </SlideContainer>
 

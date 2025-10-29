@@ -5,19 +5,18 @@ Write the `InstructorNotes` for each slide for the file.
 **Language & Voice**
 
 * Output in **Polish** (natural academic, B2–C1).
-* Spoken, lecturer-ready, clear, engaging.
-* Ready to read by the lecturer in class.
+* Spoken, easy to understande, lecturer-ready, clear, engaging.
+* Ready to oral communication by the lecturer in class.
 
 **Output Rules**
 
 * Keep MDX structure, order, IDs, imports, code, math  **unchanged** .
-* `InstructorNotes` content (create if missing).
 * Use **bold** for key points.
 * Prefer short paragraphs; no lists unless the slide is a list.
 
 **Derive From Slide**
 
-* Use visible slide content/context and existing `InstructorNotes`.
+* Use visible slide content/context `InstructorNotes`.
 * Add short descriptions for abbreviations.
 * Add short descriptions for new concepts.
 

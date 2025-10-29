@@ -5,8 +5,8 @@ Rewrite only the `InstructorNotes` for each slide for the file or directory.
 **Language & Voice**
 
 * Output in **Polish** (natural academic, B2–C1).
-* Spoken, lecturer-ready, clear, engaging.
-* Ready to read by the lecturer in class.
+* Spoken, easy to understande, lecturer-ready, clear, engaging.
+* Ready to oral communication by the lecturer in class.
 
 **Output Rules**
 
