@@ -23,7 +23,12 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/category/wyk%C5%82ady-20-godzin">
-            Rozpocznij naukę
+            Wykłady
+          </Link>
+          <Link
+            className="button button--secondary button--lg"
+            to="/docs/projekty">
+            Projekty
           </Link>
         </div>
       </div>

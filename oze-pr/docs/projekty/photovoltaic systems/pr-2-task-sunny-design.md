@@ -39,9 +39,7 @@ Zapoznanie się z platformą webową **Sunny Design** firmy SMA i opanowanie szy
 
 **Aby zapoznać się z platformą, proszę zacząć od:** [https://www.sunnydesignweb.com/sdweb#/](https://www.sunnydesignweb.com/sdweb#/)
 
-**Dalej przejść do wideo "Wprowadzenie do Sunny Design":** [https://www.youtube.com/watch?v=VrMOGxwBKvA](https://www.youtube.com/watch?v=VrMOGxwBKvA)
-
-**Następnie proszę obejrzeć "Projektowanie systemów wyspowych":** [https://www.youtube.com/watch?v=xuDXwNXPVWE](https://www.youtube.com/watch?v=xuDXwNXPVWE)
+**Dalej przejść do wideo:** ["Wprowadzenie do Sunny Design"](https://www.youtube.com/watch?v=VrMOGxwBKvA), ["Visual roof planning of a commercial PV plant"](https://youtu.be/9crKrWfw6l0).
 
 :::tip Rejestracja
 
@@ -70,7 +68,7 @@ Zaprojektuj system fotowoltaiczny on-grid dla dowolnego budynku o następującyc
 
 **Parametry montażu:**
 
-- **Orientacja systemów:** Azymut 180° (południe)
+- **Orientacja systemów:** Azymut 0° (południe)
 - **Nachylenie modułów:** 15° (optymalne dla dachu płaskiego)
 - **System montażowy:** Balast (bez wiercenia w dach)
 - **Strefy bezpieczeństwa:**
