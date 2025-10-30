@@ -17,148 +17,220 @@ import {
 
 <SlideContainer>
 
-<Slide title="🎓 Wprowadzenie (perspektywa software-first)" type="info">
+<Slide title="🎓 Wprowadzenie do projektowania systemów solarnych termicznych" type="info">
 
-<KeyPoints title="🎯 Cel wykładu/sekcji">
+<KeyPoints title="🎯 Co nauczymy się na tym wykładzie">
 
-- 🧠 **Zrozumienie** jak programy modelują układy ST (Solar Thermal)
-- 🔍 **Identyfikacja** danych krytycznych dla wiarygodnych wyników
-- 📊 **Umiejętność** czytania raportów: energetyka i ekonomia
+- 🧠 **Podstawy**: Jak programy komputerowe pomagają projektować instalacje solarne termiczne (ST)
+- 🔍 **Dane wejściowe**: Jakie informacje są potrzebne do stworzenia dobrego projektu
+- 📊 **Czytanie wyników**: Jak interpretować raporty z programów projektowych
 
 </KeyPoints>
 
-<SupportingDetails title="💡 Kontekst wykładu">
+<SupportingDetails title="💡 Dlaczego to ważne?">
 
-- 🎯 Mentalny model systemów ST widzianych oczami oprogramowania
-- 📈 Nacisk na dane wejściowe, metryki raportowane i ograniczenia modeli
-- 🔧 Praktyczne podejście do projektowania z wykorzystaniem narzędzi IT
+- 🏗️ **Nowoczesne projektowanie** - dziś praktycznie wszystkie instalacje projektuje się z użyciem oprogramowania
+- 📐 **Precyzja obliczeń** - programy pozwalają dokładnie przewidzieć wydajność systemu
+- 💰 **Analiza opłacalności** - możemy obliczyć koszty i okres zwrotu inwestycji
+- ⚡ **Szybkość pracy** - zamiast ręcznych obliczeń trwających dni, symulacja zajmuje minuty
 
 </SupportingDetails>
 
 <InstructorNotes>
-**W tym wykładzie** skupiamy się na perspektywie oprogramowania do projektowania systemów solarnych termicznych. **Głównym celem** jest ułożenie mentalnego modelu tego, jak programy komputerowe postrzegają i analizują instalacje ST - Solar Thermal, czyli systemy solarne termiczne. Zwracamy szczególną uwagę na dane wejściowe, metryki raportowane i ograniczenia modeli obliczeniowych.
+**Witamy na wykładzie** o projektowaniu systemów solarnych termicznych! Ten wykład jest **punktem startowym** dla zrozumienia, jak współczesne narzędzia komputerowe rewolucjonizują sposób, w jaki projektujemy instalacje odnawialne.
 
-**Jesteśmy w erze cyfryzacji energetyki**, gdzie tradycyjne metody projektowania są systematycznie zastępowane przez zaawansowane narzędzia komputerowe. **Dzisiejszy projektant OZE** - odnawialnych źródeł energii - musi być nie tylko dobrym inżynierem, ale także specjalistą od narzędzi IT. **Współczesne projekty** wymagają integracji wielu systemów, od modelowania geometrycznego po zaawansowane analizy ekonomiczne.
+**Zacznijmy od podstaw**: System solarny termiczny (ST) to instalacja, która wykorzystuje energię słoneczną do podgrzewania wody. Składa się z kolektorów słonecznych (zazwyczaj na dachu), zasobnika (zbiornika na ciepłą wodę) i układu rurociągów z pompami. To jak ogrzewanie słoneczne dla wody.
 
-**Kluczowe wyzwania** to oczywiście złożoność techniczna - nowoczesne instalacje ST to systemy wielodyscyplinarne, wymagające znajomości termodynamiki, hydrauliki, meteorologii i ekonomii. **Dynamika rynku** technologicznego wymaga ciągłego aktualizowania wiedzy o nowych narzędziach projektowych. **Wymagania prawne** stają się coraz bardziej restrykcyjne, przez co potrzebujemy precyzyjnych analiz i dokumentacji.
+**Dlaczego używamy programów komputerowych?** Wyobraźcie sobie, że projektujecie instalację dla hotelu. Musicie odpowiedzieć na pytania: Ile kolektorów potrzeba? Jaki duży zasobnik? Czy inwestycja się opłaci? Dawniej projektanci musieli przeprowadzać czasochłonne obliczenia ręczne. **Dzisiaj** programy jak T*SOL czy Polysun robią to w kilka minut, dając precyzyjne wyniki oparte na rzeczywistych danych meteorologicznych i parametrach urządzeń.
 
-**Mentalny model systemów ST** widzianych oczami oprogramowania to podstawa efektywnego projektowania. **Nacisk na dane wejściowe** oznacza, że musimy dokładnie wiedzieć, jakie parametry wprowadzamy do programu i skąd pochodzą. **Metryki raportowane** to wskaźniki, które program oblicza i które musimy umieć interpretować. **Ograniczenia modeli** to granice, w których programy działają wiarygodnie.
+**Co program musi wiedzieć?** Wyobraźcie sobie, że program to wirtualny inżynier zadający pytania:
+- **Gdzie** będzie instalacja? (Warszawa ma inne nasłonecznienie niż Zakopane)
+- **Ile** ciepłej wody potrzebujemy? (hotel vs dom jednorodzinny)
+- **Jakie** kolektory wybieramy? (płaskie czy próżniowe - każdy ma inne parametry)
+- **Jak duży** zasobnik? (pojemność magazynu energii)
 
-**Praktyczne podejście** oznacza, że uczymy się nie tylko teorii, ale przede wszystkim umiejętności posługiwania się narzędziami IT w rzeczywistych projektach. **To jest przyszłość** projektowania systemów OZE - integracja wiedzy technicznej z kompetencjami cyfrowymi.
+**Naszym celem dziś** jest nauczyć się, jak odpowiedzieć na te pytania i jak interpretować to, co program nam powie. **Po tym wykładzie** będziecie rozumieli logikę stojącą za projektowaniem systemów ST, dlaczego każdy parametr jest ważny i jak małe zmiany mogą wpłynąć na efektywność całego systemu.
+
+**To wiedza praktyczna** - nawet jeśli nie będziecie projektantami instalacji, zrozumiecie raporty, oferty i będziecie mogli świadomie rozmawiać z wykonawcami i inwestorami o systemach solarnych.
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="energy" />
 
-<Slide title="🏗️ Krajobraz zastosowań a wymagania modelu" type="tip">
+<Slide title="🏗️ Gdzie stosujemy systemy solarne termiczne?" type="tip">
 
-<KeyPoints title="🌱 Główne klasy zastosowań">
+<KeyPoints title="🌱 Cztery główne zastosowania">
 
-- 🏠 **c.w.u. w budynkach** — profil dobowy, cyrkulacja, antylegionella
-- 🏊 **Baseny** — sezonowość, niskie temperatury, straty parowania
-- 🔥 **Wspomaganie c.o.** — niższe temp. zasilania, większe magazyny
-- 🏭 **Procesy przemysłowe** — stałomocowe odbiory, własne wymienniki
+**1. 🏠 Ciepła woda w budynkach (c.w.u.) — NAJPOPULARNIEJSZE**
+   - Przykłady: dom jednorodzinny, hotel, akademik, szkoła
+   - Szczyt zużycia: rano (prysznice) i wieczorem (kąpiele)
+   - Uwaga: woda musi być bezpieczna higienicznie (> 60°C)
+
+**2. 🏊 Podgrzewanie basenów — WYKORZYSTANIE LETNIE**
+   - Przykłady: basen otwarty, aquapark, basen hotelowy
+   - Szczyt zużycia: maj - wrzesień (sezon basenowy)
+   - Uwaga: duże straty przez parowanie i konwekcję
+
+**3. 🔥 Wspomaganie ogrzewania (c.o.) — PRACA ZIMOWA**
+   - Przykłady: budynek z podłogówką, ogrzewanie niskotemperaturowe
+   - Szczyt zużycia: październik - kwiecień (sezon grzewczy)
+   - Uwaga: wymaga dużych zasobników energii
+
+**4. 🏭 Zastosowania przemysłowe — SPECJALISTYCZNE**
+   - Przykłady: myjnia, pralnia, zakład spożywczy, ferma
+   - Zużycie: według harmonogramu produkcji
+   - Uwaga: często niestandardowe temperatury i harmonogramy
 
 </KeyPoints>
 
-<SupportingDetails title="🔧 Wymagania modelu">
+<SupportingDetails title="🔧 Co to oznacza dla projektowania?">
 
-- 📊 **Rozdzielczość profili** - różna dla różnych zastosowań
-- 🛠️ **Poziom detalu hydrauliki** - od prostych do złożonych układów
-- ⚙️ **Strategia sterowania** - od podstawowej do zaawansowanej
-- 🎯 **Wybór narzędzia** - determinowany przez zastosowanie
+- **Każde zastosowanie to inny projekt** - hotel potrzebuje innego systemu niż basen
+- **Program musi wiedzieć CO projektujemy** - to wpływa na dobór komponentów
+- **Różne priorytety** - w domu ważna jest higiena, w basenie niska temperatura, w przemyśle zgodność z harmonogramem
+- **Różne harmonogramy** - baseny latem, ogrzewanie zimą, c.w.u. cały rok
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Zastosowania systemów ST** determinują wymagania modelu obliczeniowego. **Zacznę od c.w.u. - ciepłej wody użytkowej w budynkach** - tutaj kluczowy jest profil dobowy, modelowanie cyrkulacji i wymogi higieniczne, szczególnie antylegionella - zapobieganie rozwojowi bakterii Legionella. **Woda w zasobniku lub instalacji musi okresowo osiągać temperaturę powyżej 60°C** lub system musi mieć cykl dezynfekcji termicznej, który zapobiega namnażaniu bakterii. **W modelowaniu systemów solarnych** to bardzo istotne, ponieważ energia słoneczna często nie zapewnia codziennie tak wysokich temperatur, dlatego system musi być uzupełniany przez dodatkowe źródło ciepła - np. kocioł gazowy czy grzałka elektryczna. **Projektujemy z marginesami mocy szczytowej** i wymagamy szczegółowych profili czasowych.
+**Zastosowania systemów ST** determinują sposób projektowania. Zobaczmy **cztery główne kategorie** zastosowań:
 
-**Baseny to całkiem inna kategoria** - mamy tu duże wahania sezonowe i niskie temperatury zasilania. **Istotna jest moc chwilowa** i straty parowania, więc potrzebujemy modelowania sezonowości i dokładnych obliczeń strat ciepła.
+**1. Ciepła woda użytkowa (c.w.u.) w budynkach** - to najpopularniejsze zastosowanie. **W domu jednorodzinnym** zużycie wody jest największe rano (prysznice przed pracą) i wieczorem (kąpiele). **W hotelu** mamy dodatkowy problem - goście biorą prysznic o różnych porach, więc system musi zapewnić ciągłą dostępność ciepłej wody. **Kluczowa uwaga**: woda musi być bezpieczna higienicznie - temperatura > 60°C zabija bakterie Legionella, które mogą powodować groźne zachorowania. Program musi uwzględnić cykle dezynfekcji termicznej.
 
-**Wspomaganie c.o. - centralnego ogrzewania** pracuje w niższych temperaturach zasilania, szczególnie przy podłogówce. **Wymaga większych magazynów** i zaawansowanego sterowania priorytetami, więc modelujemy magazyny i sterowanie hybrydowe.
+**2. Podgrzewanie basenów** - to specyficzne zastosowanie **sezonowe**. Baseny pracują głównie maj-wrzesień, więc instalacja musi być dostosowana do pracy w  lato. **Duże straty przez parowanie** - z powierzchni basenu ucieka mnóstwo energii, więc system musi być odpowiednio wydajny. **Niskie temperatury** (25-28°C) to plus - kolektory pracują wydajniej przy niskich temperaturach. Program musi uwzględnić straty przez parowanie i konwekcję.
 
-**Procesy przemysłowe** charakteryzują się specyficznymi harmonogramami i stałomocowymi odbiorami. **Często mają własne wymienniki** i nietypowe reżimy temperaturowe, co wymaga zaawansowanych modeli i niestandardowych komponentów.
+**3. Wspomaganie ogrzewania (c.o.)** - systemy solarne **pomagają kotłu** w sezonie grzewczym (październik-kwiecień). **Podłogówka to idealne połączenie** - pracuje przy niskich temperaturach (30-40°C), więc kolektory są bardziej wydajne. **Wymaga dużych zasobników** - musimy magazynować energię z słonecznych dni na pochmurne okresy. Program musi modelować współpracę z kotłem i strategię priorytetów.
 
-**W praktyce** każde zastosowanie stawia inne wymagania na rozdzielczość profili - jak często w czasie zapisujemy lub obliczamy wartości zmiennych w symulacji, czyli różne czasowe odstępy między wartościami - godzinowe, dzienne, podgodzinowe. **Poziom detalu hydrauliki** i strategię sterowania. **To zastosowanie determinuje** wybór narzędzia i metodykę symulacji.
+**4. Zastosowania przemysłowe** - **najbardziej zróżnicowane**. Myjnia potrzebuje ciepłej wody przez cały dzień robóczy, pralnia ma szczyty rano, zakład spożywczy według harmonogramu produkcji. **Często niestandardowe parametry** - specyficzne temperatury, ciśnienia, harmonogramy. Program musi być elastyczny i pozwalać na dopasowanie do indywidualnych potrzeb.
+
+**Kluczowy wniosek**: Zanim uruchomimy program, musimy dokładnie wiedzieć, DO CZEGO służy instalacja. To determinuje wszystkie dalsze decyzje projektowe!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="technical" />
 
-<Slide title="🧠 Jak program widzi system ST (Solar Thermal)" type="info">
+<Slide title="🧠 Jak program widzi system ST?" type="info">
 
-<KeyPoints title="🔧 Model obliczeniowy (skrócona mapa)">
+<KeyPoints title="🔧 Sześć głównych elementów systemu">
 
-- ☀️ **Źródło**: kolektor (η₀, a₁, a₂), ograniczenia temperatur
-- 🏺 **Magazyn**: zasobnik (warstwowość, straty, wężownice)
-- 🔄 **Hydraulika**: obiegi, pompy, zawory, wymienniki, cyrkulacja
-- ⚙️ **Sterowanie**: histerezy ΔT, priorytety, antylegionella
-- 🌤️ **Klimat**: TMY/Meteonorm, krok godzinowy/podgodzinowy
-- 💰 **Ekonomia**: CAPEX/OPEX, LCOH, SPBT, NPV
+**☀️ ŹRÓDŁO ENERGII - Kolektory słoneczne**
+   - Jak dobrze zbierają słońce? (sprawność η₀)
+   - Jak szybko tracą ciepło? (współczynniki strat a₁, a₂)
+   - Przykład: kolektor próżniowy vs płaski
+
+**🏺 MAGAZYN - Zasobnik ciepłej wody**
+   - Jak duży zbiornik? (pojemność w litrach)
+   - Czy woda się miesza czy układa warstwami? (stratyfikacja)
+   - Ile ciepła ucieka przez ściany? (straty postojowe)
+
+**🔄 HYDRAULIKA - Rurociągi i pompy**
+   - Jak woda krąży w systemie? (obiegi, pompy)
+   - Ile ciepła gubi się po drodze? (straty w rurach)
+   - Czy są wymienniki ciepła? (między glikolem a wodą)
+
+**⚙️ STEROWANIE - Automatyka**
+   - Kiedy włączyć pompę? (różnica temperatur ΔT)
+   - Który zasobnik ma priorytet? (logika sterowania)
+   - Jak chronić przed bakteriami? (cykle antylegionella)
+
+**🌤️ KLIMAT - Dane pogodowe**
+   - Ile słońca mamy w lokalizacji? (dane meteorologiczne)
+   - Co godzinę czy co dzień? (rozdzielczość czasowa)
+   - Skąd dane? (TMY - typowy rok, Meteonorm - baza danych)
+
+**💰 EKONOMIA - Opłacalność**
+   - Ile kosztuje budowa? (CAPEX - nakłady inwestycyjne)
+   - Ile kosztuje eksploatacja? (OPEX - koszty roczne)
+   - Kiedy się zwróci? (SPBT - okres zwrotu)
 
 </KeyPoints>
 
-<SupportingDetails title="📊 Parametry kluczowe">
+<SupportingDetails title="📊 Dlaczego to ważne?">
 
-- 📋 **ISO 9806 / Solar Keymark** - parametry kolektorów
-- 🏺 **Modele zbiorników** - straty postojowe i warstwowość
-- ⚙️ **Progi start/stop** - kluczowe w sterowaniu
-- 📅 **Harmonogramy higieniczne** - antylegionella
+- **Wszystkie elementy są powiązane** - mały zasobnik wymaga większej powierzchni kolektorów
+- **Program symuluje ROK pracy** - godzina po godzinie, dzień po dniu
+- **Każdy element ma swoje straty** - ciepło ucieka przez rurociągi, ściany zasobnika, etc.
+- **Optymalizacja to balans** - najlepszy system to kompromis między wydajnością a kosztem
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Program komputerowy postrzega system ST** jako zbiór elementów powiązanych obliczeniowo. **Źródło, czyli kolektory**, definiujemy parametrami z certyfikacji: η₀ to sprawność optyczna, a₁ i a₂ to współczynniki strat cieplnych. **Musimy uwzględnić ograniczenia temperatur** - stagnację latem i zamarzanie zimą. **Najważniejsze parametry** pochodzą z ISO 9806 czy Solar Keymark.
+**Program postrzega system ST** jako zestaw połączonych elementów, które razem tworzą działający system. Zobaczmy **szczegółowo każdy element**:
 
-**Magazyn, czyli zasobnik**, modelujemy uwzględniając warstwowość - stratyfikację temperaturową wody wewnątrz zbiornika - rozdział wody na warstwy o różnych temperaturach, gorąca na górze, chłodniejsza na dole. **Straty postojowe** wynikają z izolacji i wymiany ciepła z otoczeniem. **Wężownice** to wymienniki ciepła wewnętrzne, które wpływają na dystrybucję temperatury.
+**☀️ KOLEKTORY** - to serce systemu. Program potrzebuje wiedzy o trzech kluczowych parametrach z certyfikacji:
+- **η₀ (sprawność optyczna)** - jak dużo słońca kolektor zamienia na ciepło przy idealnych warunkach (np. 0.8 = 80%)
+- **a₁ (straty liniowe)** - jak szybko traci ciepło wraz ze wzrostem temperatury (W/m²K)
+- **a₂ (straty kwadratowe)** - dodatkowe straty przy wysokich temperaturach (W/m²K²)
+**Przykład**: Kolektor próżniowy ma η₀=0.75 ale małe a₁, więc świetnie pracuje zimą. Kolektor płaski ma η₀=0.85 ale duże a₁, więc lepszy latem.
 
-**Hydraulika obejmuje** obiegi solarne z glikolem lub drain-back - system odwadniający, gdzie woda samoczynnie spływa z kolektorów przy braku przepływu, pompy, zawory i wymienniki. **Modelujemy także cyrkulację c.w.u.** i straty liniowe w rurociągach.
+**🏺 ZASOBNIK** - magazyn energii. **Stratyfikacja (warstwowość)** to zjawisko, gdzie gorąca woda unosi się do góry, a chłodna opada. **To dobrze!** Gorąca woda u góry jest gotowa do użycia, a chłodna na dole wraca do kolektorów. **Straty postojowe** - ciepło uciekające przez izolację - są kluczowe dla obliczeń.
 
-**Sterowanie bazuje na histerezach ΔT** - różnica temperatur, progach start i stop dla pomp. **Histereza to różnica między temperaturą włączenia i wyłączenia** - zapobiega częstemu przełączaniu urządzeń. **Jak działa histereza ΔT? Przykład z termostatem pokojowym**: Jeśli termostat jest ustawiony na 22°C z histerezą 2°C, to urządzenie grzewcze włączy się, gdy temperatura spadnie do 21°C, a wyłączy, gdy osiągnie 23°C. **Bez histerezy**, kocioł włączałby się i wyłączał wielokrotnie za każdym razem, gdy temperatura osiągnęłaby dokładnie 22°C. **Logika sterowania** uwzględnia priorytety źródeł i harmonogramy antylegionella dla wymogów higienicznych.
+**🔄 HYDRAULIKA** - to drogi przepływu. **Glikol vs drain-back**: Glikol to płyn niezamarzający krążący między kolektorami a zasobnikiem przez wymiennik. Drain-back to system, gdzie woda spływa z kolektorów gdy pompa nie pracuje. **Straty w rurach** mogą być ogromne - 10 metrów nieizolowanego rurociągu traci 30% energii!
 
-**Dane klimatyczne** to typowe lata meteorologiczne TMY - Typical Meteorological Year, typowy rok meteorologiczny, lub Meteonorm z rozdzielczością godzinową lub podgodzinową. **Stosujemy korekty lokalne** dla specyficznych mikroklimatów.
+**⚙️ STEROWANIE** - mózg systemu. **Histereza ΔT**: Pompa włącza się gdy kolektor jest 5°C cieplejszy od zasobnika, wyłącza gdy różnica spadnie do 2°C. **Bez histerezy** pompa taktowałaby (włącz-wyłącz-włącz), niszcząc się szybko.
 
-**Ekonomia obejmuje CAPEX** - Capital Expenditure, nakłady inwestycyjne, i **OPEX** - Operational Expenditure, koszty eksploatacyjne, **LCOH** - Levelized Cost of Heat, koszt jednostkowy ciepła, **SPBT** - Simple Payback Time, prosty okres zwrotu, a **NPV** - Net Present Value, wartość bieżąca netto.
+**🌤️ KLIMAT** - dane pogodowe. **TMY (Typical Meteorological Year)** to statystyczny "typowy rok" zbudowany z 30 lat pomiarów. **Meteonorm** to globalna baza danych meteorologicznych. Program przelicza ile energii słonecznej pada każdej godziny roku.
 
-**Kluczowe jest korzystanie** z parametrów kolektorów z ISO 9806 i Solar Keymark, ponieważ to gwarantuje wiarygodność obliczeń - parametry η₀, a₁, a₂ pochodzą z niezależnej certyfikacji w jednakowych warunkach testowych, co umożliwia porównywalność wyników między różnymi modelami kolektorów. **Modele zbiorników** uwzględniają straty postojowe, a w sterowaniu najważniejsze są progi start/stop i harmonogramy higieniczne.
+**💰 EKONOMIA** - **CAPEX** to koszt zakupu i montażu (np. 20,000 zł). **OPEX** to koszty roczne - serwis, wymiana glikolu (np. 500 zł/rok). **SPBT** to prosty okres zwrotu - po ilu latach oszczędności pokryją koszty.
+
+**Wszystkie elementy współgrają** - zmiana jednego wpływa na resztę. To jak orkiestra - każdy instrument musi grać właściwie, żeby utwór brzmiał dobrze!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="data" />
 
-<Slide title="🧾 Dane wejściowe – jakość ponad wszystko" type="warning">
+<Slide title="🧾 Dane wejściowe - podstawa dobrego projektu" type="warning">
 
-<KeyPoints title="📋 Co wprowadzić i skąd">
+<KeyPoints title="📋 Co musi wiedzieć program? (4 grupy danych)">
 
-- 📍 **Lokalizacja i meteo**: najbliższa stacja vs. korekta lokalna
-- 📊 **Profil zużycia**: dobowy/sezonowy, preferowany import CSV
-- 🔧 **Parametry komponentów**: biblioteki producentów (Solar Keymark)
-- 🏗️ **Ograniczenia budowalne**: kąt, azymut, strefy zakazu, przeszkody
+**📍 1. LOKALIZACJA**
+   - Miasto i współrzędne GPS (np. Warszawa: 52.2°N, 21.0°E)
+   - Dane słoneczne: ile energii słonecznej pada na metr kwadratowy?
+   - Skąd: bazy TMY (Typical Meteorological Year) lub Meteonorm
+
+**📊 2. ZAPOTRZEBOWANIE NA CIEPŁO**
+   - Ile litrów ciepłej wody dziennie? (dom: 150 l/dzień, hotel: 80 l/osoba)
+   - Kiedy największe zużycie? (rano 7-9, wieczorem 18-21)
+   - Format: najlepiej plik CSV z godzinowymi odczytami
+
+**🔧 3. KOMPONENTY SYSTEMU**
+   - Jaki kolektor? (certyfikat Solar Keymark z parametrami)
+   - Jaki zasobnik? (pojemność, izolacja, typ)
+   - Jakie pompy i rurociągi? (średnice, długości, izolacja)
+
+**🏗️ 4. OGRANICZENIA BUDOWLANE**
+   - Gdzie można montować? (dostępny dach, grunt)
+   - Pod jakim kątem? (nachylenie 30-45° dla Polski)
+   - Cienie? (kominy, drzewa, sąsiednie budynki)
 
 </KeyPoints>
 
-<WarningBox title="⚠️ Najczęstsze błędy">
+<WarningBox title="⚠️ Najczęstsze błędy początkujących">
 
-- 📊 **Błędy w profilach** - najczęstsze źródło przeszacowań
-- 🔄 **Straty liniowe** - często niedoszacowane
-- 📋 **Zalecany CSV**: `timestamp; demand_lph` lub `kWh`
-- 📝 **Metadane**: T_set_C, weekend/weekday
+- 📊 **Błędny profil zużycia** - najczęstsza przyczyna przeszacowania efektywności!
+  - Przykład: przyjęto równomierne zużycie 24h, a w rzeczywistości szczyty rano/wieczorem
+- 🔄 **Zapomniane straty** - rurociągi tracą ciepło, zwłaszcza nieizolowane
+  - Przykład: 10m rurociągu bez izolacji może stracić 30% energii
+- 📋 **Dane "z głowy"** - używaj certyfikowanych parametrów, nie zgaduj!
+- 📝 **Brak uwzględnienia weekendów** - szkoły/biura mają inne zużycie w weekend
 
 </WarningBox>
 
 <InstructorNotes>
-**Jakość danych wejściowych** determinuje wiarygodność całej symulacji. **Lokalizacja i dane meteo** to podstawa - musimy wybierać między najbliższą stacją meteorologiczną a korektami lokalnymi, uwzględniając miejskie wyspy ciepła czy mgły. **Ważne są wysokość n.p.m.** - nad poziomem morza, **ekspozycja i mikroklimat** - stosujemy korekty od ±5% do ±10% dla specyficznych lokalizacji.
+**Jakość danych wejściowych = jakość projektu**. To jak przepis na ciasto - jeśli składniki są złe, ciasto będzie złe, nawet przy najlepszym przepisie. Zobaczmy **szczegółowo każdą grupę danych**:
 
-**Profil zapotrzebowania** powinien być dobowy i sezonowy, najlepiej importowany z pliku CSV. **Zalecany format** to kolumny `datetime; demand_lph` lub `kWh` z metadanymi jak temperatura zadana i rozróżnienie dni roboczych od weekendów. **Weryfikujemy** sumę roczną i szczyty P95 - 95 percentyl, P99 - 99 percentyl.
+**1. LOKALIZACJA** - **Dlaczego to ważne?** Warszawa ma około 1050 kWh/m²/rok energii słonecznej, Zakopane około 1150 kWh/m²/rok (więcej przez wysokość n.p.m. i czystsze powietrze). **To 10% różnicy!** Program musi wiedzieć dokładnie gdzie jest instalacja, żeby pobrać właściwe dane meteorologiczne. **TMY vs rzeczywistość**: TMY to statystyczny rok - rzeczywistość może być ±20% inna, dlatego robimy analizę wrażliwości.
 
-**Parametry komponentów** nie mogą być "z głowy" - **musimy korzystać** z bibliotek producentów i certyfikacji Solar Keymark czy ISO 9806. **Wprowadzamy realne długości rurociągów** i parametry izolacji, nie szacunki.
+**2. ZAPOTRZEBOWANIE** - **To najważniejszy parametr!** Częsty błęd: projektant zakłada równomierne zużycie 24h/dzień. **Rzeczywistość**: W domu jednorodzinnym 60% wody zużywa się 7-9 rano i 18-21 wieczorem. W hotelu rozkład jest bardziej równomierny, ale nadal są szczyty. **Format CSV**: timestamp; demand_lph (litrów na godzinę); T_set_C (temperatura zadana). **Weryfikacja**: Czy suma roczna się zgadza? Czy szczyty są realistyczne?
 
-**Ograniczenia budowlane** obejmują kąty, azymuty, strefy zakazu i przeszkody zacieniające. **Uwzględniamy dostępność montażową**, korytarze serwisowe i wymagania estetyczne zgodne z normami budowlanymi.
+**3. KOMPONENTY** - **Nie zgaduj parametrów!** Każdy kolektor ma certyfikat Solar Keymark z dokładnymi parametrami η₀, a₁, a₂. **Przykład błędu**: Student założył η₀=0.9 "bo kolektor wygląda na dobry". Rzeczywistość: η₀=0.75. **Rezultat**: Przeszacowanie produkcji o 20%! **Rurociągi**: Rzeczywiste długości, nie "około 10m". Izolacja: grubość i współczynnik lambda z karty technicznej.
 
-**Najczęstsze błędy** to błędy w profilach zapotrzebowania i niedoszacowanie strat liniowych - **to główne źródła przeszacowań** w symulacjach. **Zawsze używajmy** struktury CSV z timestampami i metadanymi.
+**4. OGRANICZENIA BUDOWLANE** - **Kąt nachylenia**: Dla Polski optymalny to 35-45° (szerokość geograficzna). **Zbyt płasko** (< 25°) - śnieg nie zsunie się, kurz się zbiera. **Zbyt stromo** (> 50°) - słaba produkcja latem. **Cienie**: Komin rzuca cień zmienny w ciągu roku - trzeba sprawdzić dla grudnia (najdłuższe cienie). Program często ma narzędzia do modelowania 3D cieni.
+
+**Praktyczna wskazówka**: **Zawsze weryfikuj dane z wieluźródeł**. Profil zużycia z licznika vs założenia projektowe. Parametry kolektora z karty technicznej vs certyfikat. Dane meteorologiczne z TMY vs lokalna stacja pogodowa.
 </InstructorNotes>
 
 </Slide>

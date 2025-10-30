@@ -16,12 +16,12 @@ import {
 
 <Slide title="🔄 Etapy analizy farm wiatrowych" type="info">
 
-<KeyPoints title="📊 Etapy analizy">
-- 🌬️ **Dane wiatrowe** - kampania pomiarowa, korekcja do 10-20-letniego okresu
-- 🗺️ **Model zasobów** - WAsP/WindPRO, CFD (OpenFOAM, WindSim)
-- 🎯 **Layout turbin** - optymalizacja rozstawu, wysokości, spadków terenu
-- ⚡ **Analiza produkcji** - AEP, straty wake, wskaźniki wydajności
-- 💰 **Ocena ekonomiczna** - CAPEX/OPEX, LCOE, NPV, IRR
+<KeyPoints title="📚 Podstawowe kroki analizy">
+- 🌬️ **Dane wiatrowe** - pomiary lub wiarygodne źródła, kontrola jakości
+- 🗺️ **Mapa wiatru/zasoby** - oszacowanie prędkości na wysokości gondoli
+- 🎯 **Rozmieszczenie turbin** - odstępy, wysokość, ukształtowanie terenu
+- ⚡ **Szacowanie produkcji** - AEP, wpływ cienia (wake) i dostępności
+- 💰 **Wstępna ekonomia** - CAPEX/OPEX i opłacalność projektu
 </KeyPoints>
 
 <SupportingDetails title="🛠️ Kluczowe narzędzia">
@@ -31,21 +31,17 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-Zaczynam od **danych wiatrowych**. To pierwszy etap analizy – potrzebujemy kampanii pomiarowej, czyli masztu lub LiDAR. Zebrane dane korygujemy do długiego okresu, 10–20 lat, używając metody **MCP** (Measure–Correlate–Predict – mierzenie, korelacja i prognoza). Sprawdzamy jakość danych – czy nie ma luk, wartości odstających i czy współrzędne map są poprawne.
+Zaczynamy od prostego kroku: zbieramy **dane wiatrowe**. Mogą pochodzić z własnych pomiarów (maszt, LiDAR) lub z wiarygodnych baz danych. Sprawdzamy, czy dane są kompletne i bez anomalii, a jeśli mamy krótki okres pomiaru – porównujemy go z dłuższą serią z najbliższej stacji, aby uzyskać obraz „typowego” roku.
 
-Następnie budujemy **model zasobów**. Mamy dwa podejścia. Szybkie modele jak **WAsP** (Wind Atlas Analysis and Application Program) i **[WindPRO](https://www.emd-international.com/software/windpro)** – działają szybko, ale dla prostego terenu. Drugie podejście to pełne obliczenia **CFD** (Computational Fluid Dynamics – obliczeniowa dynamika płynów) w **OpenFOAM** czy **WindSim**. CFD wybieramy, gdy teren jest złożony – wysokie wzgórza, doliny, duże różnice wysokości.
+Potem tworzymy **mapę zasobów wiatru**. Chcemy wiedzieć, jaką prędkość wiatru mamy na wysokości gondoli (hub height). W prostym terenie wystarczy spokojna ekstrapolacja z niższej wysokości; w złożonym terenie (wzgórza, doliny) dokładność spada i niepewność rośnie.
 
-**Layout turbin** to kluczowa decyzja projektowa. Rozstaw to 4–8 średnic wirnika, oznaczamy to jako D. Wybór zależy od dominującego kierunku wiatru. Wybieramy też wysokości hubów – wyższe gondole dają więcej energii, ale droższe wieże i fundamenty. **TI** (Turbulence Intensity – intensywność turbulencji) wpływa na straty wake – im większa turbulencja, tym szybsze mieszanie się przepływu i mniejsze straty na cieniu wiatrowym.
+Następnie projektujemy **rozmieszczenie turbin**. Przyjmujemy odstępy rzędu 4–8 średnic wirnika (D), dostosowując je do dominujących kierunków wiatru i ukształtowania terenu. Wyższa wieża zwykle zwiększa produkcję, ale podnosi koszty – to kompromis projektowy.
 
-**Analiza produkcji** daje nam **AEP** (Annual Energy Production – roczna produkcja energii). Mamy **AEP_gross** – produkcja brutto bez strat, i **AEP_net** – po odjęciu wszystkich strat. Sprawdzamy też **CF** (Capacity Factor – współczynnik wykorzystania mocy) i efektywność całej farmy.
+Kolejny krok to **szacowanie produkcji**. Liczymy roczną energię **AEP** (Annual Energy Production) oraz rozróżniamy produkcję brutto i po stratach (np. cień wiatrowy – wake, przerwy serwisowe, straty elektryczne). Dzięki temu wiemy, czego realnie można się spodziewać.
 
-Na końcu **ocena ekonomiczna**. **CAPEX** to koszty inwestycyjne – budowa farmy. **OPEX** to koszty operacyjne – utrzymanie i serwis. Razem dają **LCOE** (Levelized Cost of Energy – uśredniony koszt energii). Sprawdzamy też **NPV** (Net Present Value – wartość bieżąca netto) i **IRR** (Internal Rate of Return – wewnętrzna stopa zwrotu). Te wskaźniki zależą od AEP i strat – im więcej energii, tym lepsza ekonomia.
+Na końcu sprawdzamy **opłacalność**. **CAPEX** (koszty budowy) i **OPEX** (koszty utrzymania) łączymy z przewidywaną produkcją, aby ocenić, czy projekt ma sens ekonomiczny. Im lepiej oszacowana AEP i mniejsze straty, tym lepsza ekonomia.
 
-Często stajemy przed decyzją: jeden typ turbiny czy mieszany? Jeden typ jest prostszy logistycznie – ta sama część zamienna, jeden serwis. Mieszany może lepiej dopasować się do rozkładu wiatru na terenie – różne wysokości czy moce w różnych miejscach.
-
-Na każdym etapie sprawdzamy spójność – jednakowe jednostki, gęstość powietrza, wysokości referencyjne. Dokumentujemy metadane – bez tego łatwo o błąd przy współpracy między zespołami.
-
-Na koniec pytanie: **jakie źródła niepewności dominują dla AEP na danym etapie?** Jak komunikować niepewność używając **P50/P90** – gdzie **P50** to mediana (50% prawdopodobieństwa przekroczenia), a **P90** to wartość bezpieczna (tylko 10% prawdopodobieństwa przekroczenia), ważna dla banków i inwestorów?
+Przez cały proces pilnujemy spójności jednostek i założeń (np. gęstości powietrza) oraz dokumentujemy źródła danych. Jeśli coś budzi wątpliwości – oznaczamy to jako niepewność i komunikujemy wyniki w wariantach (np. P50/P90) w prosty, zrozumiały sposób.
 </InstructorNotes>
 
 </Slide>
@@ -55,34 +51,28 @@ Na koniec pytanie: **jakie źródła niepewności dominują dla AEP na danym eta
 <Slide title="🌉 Most: od turbiny do farmy (AEP i niepewność)" type="tip">
 
 <KeyPoints title="📈 Przepływ danych">
-- 📤 **Wejścia z [QBlade](https://qblade.org/qblade-quick-start-guide/)**: `power_curve.csv` (P-V) i `thrust_curve.csv` (Ct-V)
-- 📊 **Binning wiatru**: podział na klasy prędkości (co 0,5 m/s)
-- ⚡ **AEP_gross**: `E = Σ P(v_i) · t_i` z korektą gęstości i wysokości
-- 📉 **Macierz strat**: dostępność, elektryczne, wake, icing, curtailment
-- 🎯 **Niepewność**: P50/P90 z kwadraturowym łączeniem źródeł
+- 📤 **Wejścia z analizy turbiny**: krzywa mocy P(v) i krzywa ciągu Ct(v)
+- 📊 **Binning wiatru**: podział na klasy prędkości (np. co 0,5 m/s)
+- ⚡ **AEP_gross**: E = suma P(v_i) × czasu w danej klasie
+- 📉 **Macierz strat**: dostępność, elektryczne, wake, oblodzenie, ograniczenia pracy
+- 🎯 **Niepewność**: P50/P90 przez łączenie niepewności głównych źródeł
 </KeyPoints>
 
-<SupportingDetails title="🔗 Integracja narzędzi">
-- 🔄 **[QBlade](https://qblade.org/qblade-quick-start-guide/) → CSV** - eksport krzywych mocy i ciągu
-- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**/[WindPRO](https://www.emd-international.com/software/windpro) - import danych i optymalizacja
-- 📊 **Dokumentacja** - metadane (gęstość, R, B, λ_design)
-- 🌊 **Modele wake** - wykorzystanie Ct(v) do parametryzacji
+<SupportingDetails title="🔗 Spójność danych między etapami">
+- 🔄 **Wymiana danych**: krzywe P(v) i Ct(v) przekazywane do modelu farmy
+- 📊 **Metadane**: gęstość powietrza, promień wirnika, liczba łopat, założenia projektowe
+- 🌊 **Modele wake**: korzystają z Ct(v) do szacowania strat cienia wiatrowego
+- 🧪 **Walidacja**: proste testy sanity-check (jednostki, zakresy, zgodność wysokości)
 </SupportingDetails>
 
 <InstructorNotes>
-Budujemy most między analizą turbiny a projektem farmy. Z **[QBlade](https://qblade.org/qblade-quick-start-guide/)** eksportujemy dwa pliki CSV. **power_curve.csv** zawiera krzywą mocy P(v) – jak moc zależy od prędkości wiatru. **thrust_curve.csv** zawiera krzywą ciągu Ct(v) – jak siła ciągu zależy od prędkości. Ważne, żeby pliki zawierały metadane: gęstość powietrza, promień wirnika R, liczbę łopat B i współczynnik prędkości końcówki λ_design (lambda design).
+Łączymy dwa światy: wyniki z poziomu pojedynczej turbiny z analizą całej farmy. Z analizy turbiny otrzymujemy dwie kluczowe krzywe: **P(v)** (moc w funkcji prędkości) i **Ct(v)** (ciąg w funkcji prędkości). Dołączamy podstawowe metadane (gęstość powietrza, promień wirnika, liczba łopat, główne założenia), aby wszystko było spójne.
 
-Teraz **binning wiatru** – to podział serii pomiarowej na klasy prędkości, zwykle co 0,5 m/s. To pozwala policzyć, ile czasu wiatr wieje z daną prędkością. Na przykład: ile godzin w roku wiatr ma prędkość między 5 a 5,5 m/s.
+Następnie wykonujemy **binning wiatru** – dzielimy dane na klasy prędkości (np. co 0,5 m/s) i liczymy, ile czasu przypadło na każdą klasę. Dzięki temu prosto obliczamy **AEP_gross** jako sumę mocy w klasach pomnożoną przez czas w tych klasach. Pamiętamy o spójności założeń (gęstość powietrza, wysokość odniesienia).
 
-**AEP_gross** liczymy ze wzoru: energia to suma mocy w każdej klasie prędkości pomnożona przez czas. Ważna jest korekta gęstości powietrza i wysokości – moc zależy od tych parametrów. Ta sama prędkość wiatru daje więcej energii na większej wysokości, bo powietrze jest rzadsze i moc jest proporcjonalna do gęstości.
+Potem stosujemy **macierz strat**: dostępność (przestoje), straty elektryczne, **wake** (cień wiatrowy od innych turbin), oblodzenie i ewentualne ograniczenia pracy. Wynikiem jest **AEP_net**, czyli bardziej realistyczna produkcja.
 
-**Macierz strat** to lista wszystkiego, co zmniejsza produkcję. **Dostępność** – czas, gdy turbina nie działa z powodu awarii czy serwisu. **Straty elektryczne** – opory w kablach i transformatorach, zwykle kilka procent. **Wake** – cienie wiatrowe od innych turbin, mogą być znaczne przy złym layout. **Icing** – oblodzenie łopat, szczególnie w zimie. **Curtailment** – ograniczenia z sieci lub środowiskowe, np. hałas nocą.
-
-**Niepewność** to kluczowe zagadnienie dla bankowalności projektu. Łączymy różne źródła niepewności kwadraturowo – sumujemy kwadraty niepewności i wyciągamy pierwiastek. To daje nam **P50** – mediana, 50% prawdopodobieństwa przekroczenia tej wartości. I **P90** – wartość bezpieczna, tylko 10% prawdopodobieństwa przekroczenia. **P90** jest ważna dla banków – pokazuje, że w 90% przypadków produkcja będzie wyższa, co daje bezpieczeństwo finansowania.
-
-**Ct(v)** – krzywa ciągu – jest krytyczna dla modeli wake. Określa, jak silny i daleki jest ślad wiatrowy za turbiną. Im większy ciąg, tym silniejszy ślad. To wpływa na layout – gdzie postawić turbiny, żeby uniknąć dużych strat na cieniu wiatrowym.
-
-Unikajmy typowych błędów: niespójna gęstość powietrza między krzywą mocy a analizą wiatru, brak metadanych w plikach CSV, mylenie AEP_gross z AEP_net – to prowadzi do błędnych decyzji ekonomicznych.
+Na końcu przedstawiamy **niepewność** w zrozumiały sposób: **P50** (wartość „typowa”) i **P90** (wariant ostrożny). To ułatwia rozmowę z interesariuszami i podejmowanie decyzji. Unikamy częstych błędów: mieszania jednostek, niespójnej gęstości powietrza, braku metadanych do krzywych.
 </InstructorNotes>
 
 </Slide>
@@ -92,33 +82,27 @@ Unikajmy typowych błędów: niespójna gęstość powietrza między krzywą moc
 <Slide title="🎯 Wnioski i wymagania projektowe" type="success">
 
 <KeyPoints title="✅ Kluczowe wnioski">
-- 🔄 **Iteracyjne podejście** - projekt wymaga wieloetapowej analizy
+- 🔄 **Iteracyjne podejście** - wracamy do wcześniejszych kroków i poprawiamy założenia
 - 🤝 **Współpraca interdyscyplinarna** - technika, środowisko, ekonomia
-- 🔗 **Artefakty z QBlade** - krytyczne wejście do etapów farmowych
-- 📊 **Ocena ekonomiczna** - LCOE, NPV jako metryki decyzyjne
+- 🔗 **Wyniki z analizy turbiny** - krzywe P(v) i Ct(v) z metadanymi
+- 📊 **Ocena ekonomiczna** - LCOE i NPV jako proste kryteria decyzji
 </KeyPoints>
 
 <SupportingDetails title="⚠️ Uwaga dydaktyczna">
-- 🔄 **Przepływ danych**: [QBlade](https://qblade.org/qblade-quick-start-guide/) → CSV → [TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)/[WindPRO](https://www.emd-international.com/software/windpro)/[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)
-- 📝 **Dokumentacja**: pola muszą być jawnie udokumentowane
-- 🌊 **Ct(v)**: znaczenie dla modeli wake w narzędziach farmowych
-- 📊 **Weryfikacja**: sprawdzenie spójności danych między etapami
+- 🔄 **Przepływ danych**: analiza turbiny → dane wejściowe do modelu farmy → wyniki AEP
+- 📝 **Dokumentacja**: jasne metadane i założenia na każdym etapie
+- 🌊 **Ct(v)**: kluczowe dla strat wake i decyzji o rozmieszczeniu turbin
+- 📊 **Weryfikacja**: kontrola spójności jednostek, gęstości, wysokości i zakresów
 </SupportingDetails>
 
 <InstructorNotes>
-Projekt farmy wiatrowej to **proces iteracyjny**. Nie da się zrobić wszystkiego na raz – poprawiamy założenia, analizujemy różne warianty, szukamy kompromisów. Za każdym razem wracamy do wcześniejszych etapów i dopracowujemy szczegóły.
+Projekt farmy wiatrowej to **proces iteracyjny** – wracamy do wcześniejszych kroków, porównujemy warianty i poprawiamy założenia. Ważna jest **współpraca**: inżynierowie wiatrowi, specjaliści środowiskowi i ekonomiści muszą działać wspólnie, bo decyzje techniczne wpływają na środowisko i na koszty.
 
-To wymaga **współpracy interdyscyplinarnej**. Inżynierowie od wiatru projektują layout i szacują produkcję. Specjaliści od środowiska weryfikują ograniczenia – hałas, migotanie, Natura 2000. Ekonomiści liczą koszty i opłacalność. Wszyscy muszą współpracować, bo decyzje techniczne wpływają na środowisko, a wymagania środowiskowe zmieniają ekonomię.
+Wyniki z analizy turbiny (krzywe **P(v)** i **Ct(v)** wraz z metadanymi) są niezbędne do modelowania farmy i oceny strat wake. Bez spójnych danych trudno rzetelnie oszacować **AEP_net** i podjąć decyzje o rozmieszczeniu turbin.
 
-**Artefakty z [QBlade](https://qblade.org/qblade-quick-start-guide/)** – krzywe mocy i ciągu – są krytycznym wejściem do dalszych etapów. Bez nich nie możemy policzyć produkcji farmy ani zoptymalizować layoutu. To są pliki CSV, które eksportujemy z QBlade i importujemy do narzędzi farmowych jak **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** czy **[WindPRO](https://www.emd-international.com/software/windpro)**.
+Na końcu robimy prostą **ocenę ekonomiczną**: **LCOE** pomaga porównać koszt energii z różnych wariantów, a **NPV** pokazuje, czy projekt jest opłacalny w czasie. Wyniki warto podawać z informacją o **niepewności** (P50/P90), żeby decyzje były świadome.
 
-**Ocena ekonomiczna** kończy analizę. **LCOE** (Levelized Cost of Energy – uśredniony koszt energii) pokazuje, ile kosztuje energia przez cały okres życia projektu. **NPV** (Net Present Value – wartość bieżąca netto) mówi, czy projekt jest opłacalny w długim okresie po uwzględnieniu wartości pieniądza w czasie. To są główne metryki decyzyjne dla inwestorów – banki i fundusze patrzą na te liczby.
-
-Ważne jest **weryfikowanie wyników**. Sprawdzamy spójność danych między etapami – czy gęstość powietrza jest taka sama w **[QBlade](https://qblade.org/qblade-quick-start-guide/)** i w analizie wiatru, czy jednostki się zgadzają, czy metadane są kompletne. Dokumentujemy wszystko – bez metadanych łatwo o błąd przy współpracy między zespołami lub po czasie.
-
-**Ct(v)** – krzywa ciągu – jest kluczowe dla modeli wake. Określa, jak turbina wpływa na przepływ wiatru i decyduje o zasięgu śladu wiatrowego. Modele wake w **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)** czy **[WindPRO](https://www.emd-international.com/software/windpro)** używają tej krzywej do obliczania strat na cieniu wiatrowym. Bez poprawnej Ct(v) nie możemy dokładnie oszacować strat wake, co prowadzi do błędnych decyzji o layout.
-
-Na koniec pytanie: **jakie są krytyczne ryzyka pozostające po etapie analizy?** Czy niepewność AEP jest za duża? Czy layout jest optymalny? Jak możemy zmniejszyć ryzyko – dodatkowe pomiary, bardziej konserwatywne założenia, lepsze modele CFD, walidacja wyników alternatywnym narzędziem?
+Zawsze weryfikujemy spójność: jednostki, gęstość powietrza, wysokości odniesienia, zakresy wartości. To ogranicza ryzyko błędów i ułatwia współpracę zespołów.
 </InstructorNotes>
 
 </Slide>

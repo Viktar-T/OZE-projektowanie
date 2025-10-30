@@ -17,158 +17,261 @@ import {
 
 <SlideContainer>
 
-<Slide title="🗺️ Mapa procesu – przegląd" type="info">
+<Slide title="🗺️ Proces projektowania - Mapa drogi od pomysłu do gotowego projektu" type="info">
 
-<KeyPoints title="🔄 Kompletny workflow 12 kroków">
+<InfoBox title="💡 Przed rozpoczęciem">
 
-**🧩 KROKI 1-4: PODSTAWY PROJEKTU**
-1. 🎯 **Cel projektu** i kryteria sukcesu (f_sol, LCOH, SPBT)
-2. 🌤️ **Dane klimatyczne** i lokalizacja (TMY/Meteonorm)
-3. 📊 **Profil zapotrzebowania** (CSV: timestamp; demand_lph)
-4. ☀️ **Wstępny dobór kolektorów** (płaskie/próżniowe/CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony))
+**Wyobraźcie sobie, że dostaliście zadanie**: Zaprojektować instalację solarną dla hotelu na 80 pokoi w Gdańsku. Od czego zacząć? Jak dojść do gotowego projektu?
 
-**🛠️ KROKI 5-8: KONFIGURACJA SYSTEMU**
+**Odpowiedź**: Potrzebujemy systematycznego procesu - **12 kroków**, które przeprowadzą nas od pomysłu do gotowego projektu z raportem i kosztorysem.
 
-5. 🔄 **Schemat hydrauliczny** (glikol, drain-back, kombinowane)
-6. 🏺 **Magazyn energii** (40-70 l/m² dla c.w.u.)
-7. ⚙️ **Źródło szczytowe** i sterowanie (ΔT, antylegionella)
-8. 📉 **Straty instalacyjne** (długości, izolacje, strefy)
+</InfoBox>
 
-**🌤️ KROKI 9-12: FINALIZACJA I ANALIZA**
+<KeyPoints title="🔄 Proces projektowania w trzech fazach">
 
-9. 🌳 **Zacienienie** i ograniczenia montażowe
-10. 🧪 **Symulacja** i sanity-check (uzysk specyficzny)
-11. 🔄 **Wariantowanie** i optymalizacja (A/B testy)
-12. 💰 **Ekonomia** i ryzyko (LCOH, SPBT/NPV, wrażliwość ±20%)
+**🧩 FAZA 1: PODSTAWY PROJEKTU (Kroki 1-4)**
+1. 🎯 Cel projektu - CO chcemy osiągnąć?
+2. 🌤️ Dane klimatyczne - ILE słońca mamy?
+3. 📊 Profil zapotrzebowania - ILE ciepła potrzebujemy?
+4. ☀️ Dobór kolektorów - JAKIE kolektory wybrać?
+
+**🛠️ FAZA 2: KONFIGURACJA SYSTEMU (Kroki 5-8)**
+5. 🔄 Schemat hydrauliczny - JAK połączyć elementy?
+6. 🏺 Magazyn energii - JAK DUŻY zasobnik?
+7. ⚙️ Źródło szczytowe - CO  dodać jako wsparcie?
+8. 📉 Straty instalacyjne - ILE energii ucieka?
+
+**🌤️ FAZA 3: FINALIZACJA I ANALIZA (Kroki 9-12)**
+9. 🌳 Zacienienie - CZY coś rzuca cień?
+10. 🧪 Symulacja - CZY projekt ma sens?
+11. 🔄 Wariantowanie - CZY można lepiej?
+12. 💰 Ekonomia - CZY się opłaca?
 
 </KeyPoints>
 
-<SupportingDetails title="💡 Kluczowe zasady">
+<SupportingDetails title="💡 Dlaczego ten porządek?">
 
-- 📋 **Punkty kontrolne** - każdy krok jako checkpoint jakości
-- 📝 **Dokumentacja** - założenia i decyzje w raporcie
-- 🔄 **Iteracyjność** - powrót do poprzednich kroków
-- ✅ **Walidacja** - sprawdzenie wyników na każdym etapie
+- **Logiczny przepływ** - każdy krok buduje na poprzednim
+- **Punkty kontrolne** - po każdym kroku możemy sprawdzić czy idziemy dobrze
+- **Możliwość powrotu** - jeśli coś nie gra, wracamy o krok wstecz
+- **Dokumentacja decyzji** - zapisujemy "dlaczego" wybraliśmy dane rozwiązanie
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Proces modelowania systemów ST (Solar Thermal - systemy solarne termiczne)** to **systematyczne podejście** składające się z 12 kroków podzielonych na trzy główne fazy projektowe.
+**Proces projektowania** to systematyczne podejście do tworzenia instalacji solarnych. **Analogia**: To jak budowanie domu - najpierw fundamenty, potem ściany, na końcu dach. Nie zaczynamy od dachu!
 
-**🧩 KROKI 1-4: PODSTAWY PROJEKTU** - **Krok 1** to definicja celu projektu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) i prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu). **Krok 2** - **dane klimatyczne** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm z uwzględnieniem korekt lokalnych. **Krok 3** - **profil zapotrzebowania** w formacie CSV z weryfikacją sum rocznych i szczytów P95 (95 percentyl)/P99 (99 percentyl). **Krok 4** - **wstępny dobór kolektorów** płaskich, próżniowych lub CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony) z uwzględnieniem dostępnej powierzchni i kątów nachylenia.
+**FAZA 1 to fundament projektu**. **Krok 1 - Cel projektu**: Musimy wiedzieć CO chcemy osiągnąć. Czy to maksymalne pokrycie solarne? Najkrótszy okres zwrotu? Czy może minimum kosztów inwestycyjnych? **Konkretne cele**: f_sol > 50%, SPBT < 8 lat, LCOH < 0.20 zł/kWh. **Krok 2 - Klimat**: Gdańsk ma około 1000 kWh/m²/rok energii słonecznej. To determinuje ile kolektorów potrzebujemy. **Krok 3 - Zapotrzebowanie**: Hotel 80 pokoi x 80 l/osoba/dzień = 6400 l/dzień. Ale kiedy? Szczyty rano (7-10) i wieczorem (19-22). **Krok 4 - Kolektory**: Wstępna ocena - może 50-70 m² kolektorów płaskich? To tylko pierwsze przybliżenie, dopracujemy później.
 
-**🛠️ KROKI 5-8: KONFIGURACJA SYSTEMU** - **Krok 5** to wybór **schematu hydraulicznego** - glikol z wymiennikiem, drain-back lub schematy kombinowane z kontrolą bilansu objętości. 
-**Krok 6** - **magazyn energii** z regułą 40-70 l/m² dla c.w.u. (ciepłej wody użytkowej), korygowanej po analizie profili. **Krok 7** - **źródło szczytowe i sterowanie** z definicją priorytetu solaru, harmonogramów antylegionella i progów ΔT. **Krok 8** - **straty instalacyjne** - realne długości, średnice, parametry izolacji i uwzględnienie stref nieogrzewanych.
+**FAZA 2 to szczegóły techniczne**. **Krok 5 - Hydraulika**: Czy glikol czy drain-back? Dla hotelu lepiej glikol - bardziej niezawodny, mniej ryzyka. **Krok 6 - Zasobnik**: Reguła kciuka: 50 l/m² kolektora. Dla 60 m² to 3000 l. Ale sprawdzimy w symulacji czy to wystarczy. **Krok 7 - Źródło szczytowe**: Hotel ma pewnie już kocioł gazowy. Integr ujemy solary jako wspomagające - priorytet ma słońce, kocioł tylko jak trzeba. **Krok 8 - Straty**: Rurociągi z kotłowni na dach - może 30 m? Z izolacją czy bez? TO MA OGROMNE ZNACZENIE.
 
-**🌤️ KROKI 9-12: FINALIZACJA I ANALIZA** - **Krok 9** to **modelowanie zacienienia** kominów, attyk i odstępów między rzędami. **Krok 10** - **symulacja** z sanity-check że wyniki mają sens fizyczny i inżynierski, porównanie uzysku specyficznego z benchmarkami. **Krok 11** - **wariantowanie** pojedynczych parametrów z narzędziami do porównań. **Krok 12** - **analiza ekonomiczna** CAPEX (Capital Expenditure - nakłady inwestycyjne), OPEX (Operational Expenditure - koszty eksploatacyjne), LCOH, SPBT, NPV (Net Present Value - wartość bieżąca netto) z analizą wrażliwości ±20%. **Każdy krok** to punkt kontrolny jakości z dokumentacją założeń i decyzjami.
+**FAZA 3 to optymalizacja i weryfikacja**. **Krok 9 - Cienie**: Czy są kominy? Wentylatory na dachu? Sąsiednie budynki? Musimy sprawdzić dla grudnia - wtedy słońce najniżej. **Krok 10 - Symulacja**: Uruchamiamy program, obliczamy rok pracy. Sanity-check: Czy wyniki mają sens? Uzysk 300-450 kWh/m²/rok to OK dla Polski. Jeśli wychodzi 100 lub 800, coś jest źle. **Krok 11 - Warianty**: A co jeśli 50 m² kolektorów? A co jeśli 70 m²? A co jeśli próżniowe zamiast płaskich? Testujemy opcje. **Krok 12 - Ekonomia**: Ile to kosztuje? Ile zaoszczędzimy? Po ilu latach zwróci się inwestycja?
+
+**Kluczowa zasada**: **Nie przeskakuj kroków!** Każdy jest ważny. Częsty błąd początkujących: Od razu skaczą do symulacji, bez dokładnej analizy zapotrzebowania. Rezultat: Projekt nie pasuje do rzeczywistości.
+
+**Po tym slajdzie** studenci powinni rozumieć, że projektowanie to **proces, nie pojedyncze obliczenia**. To jak rozwiązywanie zagadki - każdy element musi pasować do reszty.
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="energy" />
 
-<Slide title="🧩 Kroki 1–4: Cel, meteo, profil, kolektory" type="tip">
+<Slide title="🧩 FAZA 1: Podstawy projektu (Kroki 1-4)" type="tip">
 
-<KeyPoints title="🚀 Start projektu">
+<KeyPoints title="🚀 Budujemy fundamenty">
 
-1. 🎯 **Cel projektu** i kryteria sukcesu (mierzalne)
-2. 🌤️ **Dane klimatyczne** i lokalizacja (plik meteo)
-3. 📊 **Profil zapotrzebowania** (CSV: timestamp; demand_lph)
-4. ☀️ **Wstępny dobór kolektorów** (A/B/C: płaskie/próżniowe/CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony))
+**KROK 1: 🎯 Cel projektu - Określamy mierzalne cele**
+- **Przykład celów:**
+  - Pokrycie solarne f_sol > 50% (słońce pokrywa połowę potrzeb)
+  - Koszt ciepła LCOH < 0.25 zł/kWh (taniej niż gaz)
+  - Okres zwrotu SPBT < 10 lat (inwestycja zwróci się w dekadę)
+- **Pytanie kluczowe**: Co jest najważniejsze - oszczędność, ekologia, czy image firmy?
+
+**KROK 2: 🌤️ Dane klimatyczne - Ile słońca mamy?**
+- **Lokalizacja**: Gdańsk (54.4°N, 18.6°E)
+- **Nasłonecznienie roczne**: ~1000 kWh/m²/rok
+- **Źródło danych**: TMY (Typical Meteorological Year) lub Meteonorm
+- **Uwaga**: Dane z TMY to średnia wieloletnia - rzeczywistość może być ±15% inna
+
+**KROK 3: 📊 Profil zapotrzebowania - Kiedy i ile?**
+- **Hotel 80 pokoi**:
+  - Zużycie: 80 l ciepłej wody/pokój/dzień = 6400 l/dzień
+  - Szczyty: 7-10 rano (50%), 19-22 wieczorem (30%), reszta dnia (20%)
+  - Weekendy: Często więcej gości = większe zużycie
+- **Format danych**: Najlepiej plik CSV z godzinowymi odczytami (365 dni x 24 h = 8760 wartości)
+
+**KROK 4: ☀️ Wstępny dobór kolektorów - Pierwszy szacunek**
+- **Pytanie**: Ile m² kolektorów?
+- **Reguła kciuka**: 60-80 l ciepłej wody dziennie wymaga ~1 m² kolektora
+  - Hotel: 6400 l / 70 l = ~90 m² kolektorów
+- **Typ**: Płaskie (tańsze, dobre latem) vs Próżniowe (droższe, lepsze zimą)
+- **Orientacja**: Południe (azymut 0°), kąt 35-40° (optymalnie dla Polski)
 
 </KeyPoints>
 
-<SupportingDetails title="🔍 Kontrola jakości">
+<WarningBox title="⚠️ Częste błędy na tym etapie">
 
-- 📊 **Metryki policzalne** w narzędziu
-- 📈 **Sanity profilu** (suma roczna, szczyty P95/P99)
-- 🧭 **Kąty/azymuty** i samocieniowanie wstępnie ocenione
-- 📋 **Weryfikacja danych** wejściowych
+- **Błąd 1**: Brak konkretnych, mierzalnych celów → projekt bez kierunku
+- **Błąd 2**: Użycie danych dla niewłaściwej lokalizacji → błędne wyliczenia
+- **Błąd 3**: Profil zużycia "zgadnięty" zamiast zmierzony → przeszacowanie efektywności  
+- **Błąd 4**: Zbyt małe/duże kolektory od razu → trzeba będzie zaczynać od nowa
 
-</SupportingDetails>
+</WarningBox>
 
 <InstructorNotes>
-**Rozpoczynamy projekt** od solidnych fundamentów. **Krok pierwszy** to definicja celu i kryteriów sukcesu - określamy konkretne metryki jak pokrycie solarne f_sol powyżej 50% czy koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) poniżej określonej kwoty. **Identyfikujemy ograniczenia** budżetowe i techniczne, a następnie wybieramy narzędzie symulacyjne. **Kluczowe pytanie** - czy nasze metryki są mierzalne i policzalne w wybranym programie?
+**FAZA 1 to absolutne podstawy**. Bez solidnych fundamentów cały projekt runie. Zobaczmy **szczegółowo każdy krok**:
 
-**Dane klimatyczne** to podstawa wszystkich obliczeń. **Wybieramy punkt meteorologiczny** TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm, uwzględniamy wysokość n.p.m. (nad poziomem morza) i stosujemy korekty lokalne. **W przypadku specyficznych mikroklimatów** używamy korekty globalnej irradiancji od ±5% do ±10% i sprawdzamy wrażliwość wyników.
+**KROK 1 - Cel projektu**: **To jest punkt odniesienia** dla wszystkich dalszych decyzji. Przykład: Inwestor mówi "chcę system solarny". To za mało! **Pytamy dokładnie**: Czy priorytet to maksymalne pokrycie solarne (ekologia), minimum kosztów (ekonomia), czy może krótki okres zwrotu (finanse)? **Konkretny cel**: "Hotel chce pokrycie solarne f_sol minimum 45%, okres zwrotu SPBT maksimum 12 lat przy obecnych cenach energii". TERAZ wiemy czego szukać!
 
-**Profil zapotrzebowania** musi być rzetelny - uwzględniamy rozkład dobowo-godzinowy, sezonowość, rozróżnienie dni roboczych i weekendów oraz temperatury zadane. **Zalecany format CSV (Comma Separated Values - wartości oddzielone przecinkami)** to `timestamp; demand_lph; T_set_C; is_weekend`. **Weryfikujemy** zgodność sum rocznych z audytem i testujemy szczyty P95 (95 percentyl)/P99 (99 percentyl).
+**KROK 2 - Dane klimatyczne**: **Lokalizacja to wszystko**. Gdańsk vs Zakopane vs Terespol - każde miejsce ma inne nasłonecznienie. **TMY** to "Typical Meteorological Year" - statystyczny rok zbudowany z 30 lat pomiarów. Każdy miesiąc reprezentuje średnie warunki dla tego miesiąca. **Meteonorm** to komercyjna baza z danymi dla całego świata. **Praktyczna uwaga**: Program pobierze te dane automatycznie, ale MY musimy wiedzieć co oznaczają. 1000 kWh/m²/rok to energia słoneczna padająca na 1 m² poziomej powierzchni przez rok. **Ale**: Kolektor nie jest poziomy i nie ma 100% sprawności!
 
-**Wstępny dobór kolektorów** uwzględnia typ, dostępną powierzchnię, azymut i kąt nachylenia, oraz istniejące przeszkody. **Uwaga na pułapkę** - zbyt strome kąty na dachach płaskich prowadzą do samocieniowania. **Przygotowujemy warianty**: płaskie, próżniowe i CPC (Compound Parabolic Concentrator - koncentrator paraboliczny złożony).
+**KROK 3 - Profil zapotrzebowania**: **TO NAJWAŻNIEJSZY KROK!** 90% błędów w projektach studentów wynika z błędnego profilu. **Hotel 80 pokoi**: Załóżmy obłożenie 70% = 56 zajętych pokoi. Każdy gość 80 l/dzień (prysznic + umywalka). Total: 56 x 80 = 4480 l/dzień. **ALE KIEDY?** Większość gości bierze prysznic rano 7-10. To znaczy, że W TYM CZASIE potrzebujemy dużo mocy. System musi to zapewnić. **Format CSV**: timestamp, demand_lph, T_set_C, weekend. Przykład: "2024-07-15 08:00, 800, 45, 0" (15 lipca o 8 rano potrzebujemy 800 l/h o temperaturze 45°C, to nie weekend).
+
+**KROK 4 - Wstępny dobór kolektorów**: **To pierwszy szacunek**, dopracujemy go później. **Reguła kciuka**: 1 m² kolektora daje 60-80 l ciepłej wody dziennie (średnio przez rok). Dla 4480 l to około 60-75 m² kolektorów. **Płaskie vs próżniowe**: Płaskie są tańsze (300-500 zł/m²), mają wysoką sprawność latem ale tracą dużo ciepła zimą. Próżniowe droższe (600-900 zł/m²), zachowują sprawność zimą. Dla hotelu (całoroczna praca) może opcja pośrednia - płaskie ale z dobrą izolacją? **Orientacja**: Południe to idealnie, ale ±30° jest OK. Dach hotelu często jest płaski - możemy ustawić kolektory na stelażach pod optymalnym kątem.
+
+**Kontrola jakości na końcu Fazy 1**: Czy mamy wszystkie dane? Czy są wiarygodne? Czy cele są realistyczne? Jeśli TAK - przechodzimy do Fazy 2. Jeśli NIE - dokładamy pracy teraz, nie później!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="technical" />
 
-<Slide title="🛠️ Kroki 5–8: Schemat, magazyn, źródło, straty" type="info">
+<Slide title="🛠️ FAZA 2: Konfiguracja systemu (Kroki 5-8)" type="info">
 
-<KeyPoints title="🔧 Konfiguracja układu">
+<KeyPoints title="🔧 Budujemy system szczegół po szczególe">
 
-5. 🔄 **Schemat hydrauliczny** (szablony: glikol, drain‑back, kombinowane)
-6. 🏺 **Magazyn energii** (40–70 l/m² dla c.w.u. – korekty po profilach)
-7. ⚙️ **Źródło szczytowe** i sterowanie (ΔT, antylegionella)
-8. 📉 **Straty instalacyjne** (długości, średnice, izolacje, strefy)
+**KROK 5: 🔄 Schemat hydrauliczny - Jak wszystko połączyć?**
+- **Opcje układu**:
+  - **Glikol + wymiennik**: Najbardziej popularny, glikol nie zamarza zimą
+  - **Drain-back**: Woda spływa z kolektorów gdy pompa stoi, brak glikolu
+  - **Direct**: Woda z sieci wprost przez kolektory (tylko w ciepłym klimacie)
+- **Dla hotelu**: Glikol + wymiennik - niezawodny, bezpieczny
+- **Elementy**: Pompy,wymienniki, zawory, czujniki temperatury
+
+**KROK 6: 🏺 Magazyn energii - Jak duży zasobnik?**
+- **Reguła kciuka**: 40-70 l na 1 m² kolektora
+  - Dla 60 m² kolektorów: 2400-4200 l zasobnika
+- **Dla hotelu**: Często 2-3 zasobniki (np. 2 x 2000 l)
+- **Dlaczego duży?**: Magazynujemy energię ze słonecznych dni na pochmurne
+- **Warstwowość**: Gorąca woda u góry, chłodna na dole - to DOBRE!
+
+**KROK 7: ⚙️ Źródło szczytowe i sterowanie - Kto ma priorytet?**
+- **Źródło szczytowe**: Kocioł gazowy jako wsparcie (hotel pewnie ma)
+- **Logika sterowania**:
+  1. Najpierw SPRAWDŹ czy słońce grzeje wystarczająco
+  2. Jeśli TAK → uruchom pompę solarną, grzej z kolektorów
+  3. Jeśli NIE → włącz kocioł gazowy
+- **Antylegionella**: Raz w tygodniu podgrzej do 65°C (zabija bakterie)
+- **Histereza ΔT**: Pompa włącza się gdy kolektor 5°C cieplejszy od zasobnika
+
+**KROK 8: 📉 Straty instalacyjne - Ile energii ucieka?**
+- **Rurociągi**: Od kolektorów do zasobnika - może 30 m?
+  - **Z izolacją** 30mm: Straty ~5-8%
+  - **Bez izolacji**: Straty ~25-35% (OGROMNA różnica!)
+- **Cyrkulacja c.w.u.**: Pompa goni ciepłą wodę po rurach 24/7?
+  - Lepiej: Harmonogram (włączona 7-10 i 19-22)
+- **Zasobnik**: Straty postojowe ~1-2% temperatury dziennie
 
 </KeyPoints>
 
-<SupportingDetails title="✅ Kontrola jakości">
+<WarningBox title="⚠️ Pułapki techniczne">
 
-- 🔄 **Bilans objętości** - zamknięcie obiegu
-- 📍 **Lokalizacja czujników** - prawidłowe umiejscowienie
-- ⚙️ **Brak taktowania pomp** - stabilne sterowanie
-- 📊 **Realistyczne straty** cyrkulacji
+- **Taktowanie pomp**: Jeśli histereza za mała, pompa włącza/wyłącza co chwilę → niszczenie
+- **Brak cyrkulacji w projekcie**: Częsty błąd - cyrkulacja może zjeść 20% uzysku!
+- **Niedoszacowane długości rur**: "Około 10m" vs rzeczywiste 30m → duże straty
+- **Zły dobór pomp**: Za słaba pompa → za mały przepływ → niska efektywność
 
-</SupportingDetails>
+</WarningBox>
 
 <InstructorNotes>
-**Teraz przechodzimy** do konfiguracji układu hydraulicznego. **Krok piąty** to wybór schematu hydraulicznego z dostępnych szablonów - glikol z wymiennikiem, drain-back, dwie wężownice lub schematy kombinowane. **Kontrolujemy** zamknięcie bilansu objętości, prawidłowe umiejscowienie czujników i zaworów bezpieczeństwa.
+**FAZA 2 to techniczne serce projektu**. Tu budujemy działający system. **Każdy szczegół ma znaczenie**.
 
-**Magazyn energii** to kluczowy element systemu. **Reguła startowa** to od 40 do 70 litrów na metr kwadratowy kolektora dla c.w.u. (ciepłej wody użytkowej), ale korygujemy to po analizie profili zapotrzebowania. **Modelujemy zasobnik** z odpowiednią objętością, stratami i warstwowością. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
+**KROK 5 - Schemat hydrauliczny**: **To plan połączeń** - jak woda/glikol krąży w systemie. **Glikol** to mieszanka wody z glikolem propylenowym (ekologiczny, nietoksyczny) lub etylenowym (tańszy ale toksyczny). **Dlaczego glikol?** Nie zamarza do -25°C, chroni system zimą. **Wymiennik** to "rura w rurze" - glikol grzeje wodę bez kontaktu. **Drain-back** to system gdzie woda spływa z kolektorów do zbiornika gdy pompa stoi - zero ryzyka zamarzania, zero glikolu, ale trudniejszy montaż (potrzebne spadki minimum 2%). **Dla hotelu**: Glikol jest standardem - niezawodny, serwisanci znają, części dostępne.
 
-**Żródło szczytowe i sterowanie** wymagają definicji priorytetu solaru, harmonogramów antylegionella i progów ΔT dla startu i stopu pomp. **Kontrolujemy** brak taktowania przez zbyt małe różnice temperatury i sprawdzamy liczbę cykli pracy na dobę.
+**KROK 6 - Magazyn**: **Dlaczego duży zasobnik?** Wyobraźcie sobie słoneczną sobotę - hotel w 50%, goście na wycieczce, kolektory produkują pełną parą. Dokąd trafi ta energia? DO ZASOBNIKA. Wieczorem goście wracają, biorą prysznice - czerpią z zasobnika. **Za mały zasobnik** = stagnacja latem (kolektory przegrzane, glikol paruje, systém wyłącza się). **Za duży** = nigdy się nie nagrzeje do końca. **Optymalizacja**: 50-60 l/m² to złoty środek dla c.w.u. **Warstwowość** to zjawisko naturalne - gorąca woda jest lżejsza, unosi się. **Projektujemy ładowanie** od góry (gorąca) i pobór z góry. Zimna woda wraca dołem do kolektorów.
 
-**Straty instalacyjne** to często pomijany element. **Wprowadzamy realne** długości i średnice rur, parametry izolacji oraz uwzględniamy strefy nieogrzewane. **Wynik to** straty liniowe w W/K i straty cyrkulacji w kWh na rok. **Pułapka** - nieuwzględniona cyrkulacja potrafi znacząco obniżyć uzysk systemu.
+**KROK 7 - Sterowanie**: **To mózg systemu**. **Logika proste**: Jeśli (T_kolektor > T_zasobnik + 5°C) → włącz pompę. Jeśli (T_kolektor < T_zasobnik + 2°C) → wyłącz pompę. **Histereza 5°C → 2°C** zapobiega taktowaniu. **Bez histerezy**: Pompa włącza się przy 45.0°C, wyłącza przy 44.9°C, włącza przy 45.0°C... Koniec pompy w miesiąc! **Antylegionella**: Bakterie Legionella powodują groźne zapalenie płuc. Umierają w 65°C po 2 minutach. Dlatego RAZ W TYGODNIU system podgrzewa cały zasobnik do 65°C. **Źródło szczytowe** (kocioł) włącza się tylko gdy słońce nie wystarcza. **Priorytet**: Zawsze najpierw słońce (darmowe), potem kocioł (płatne).
+
+**KROK 8 - Straty**: **Tu często studenci tracą 20% efektywności w projekcie**. **Rurociągi**: 30 m rurociągu DN20 (średnica 20mm) z glikolem w temp. 60°C, otoczenie 20°C. **Bez izolacji**: Straty ~35 W/m = 1050 W total = 9200 kWh/rok (!)). **Z izolacją 30mm**: Straty ~5 W/m = 150 W = 1300 kWh/rok. **Różnica 7900 kWh to koszt 2400 zł/rok** (przy 0.30 zł/kWh). **Cyrkulacja**: Pompa goni ciepłą wodę po rurach żeby w kranie od razu była ciepła. **Problem**: Pompa + straty cieplne = duże zużycie energii. **Rozwiązanie**: Harmonogram - cyrkulacja tylko w szczyty (7-10, 19-22), reszta czasu stoi.
+
+**Kontrola jakości Fazy 2**: Czy schemat jest kompletny? Czy wszystkie pompy mają czujniki? Czy izolacja wszędzie? Czy sterowanie ma sens? Dopiero po weryfikacji przechodzimy dalej!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="data" />
 
-<Slide title="🌤️ Kroki 9–12: Zacienienie, symulacja, warianty, ekonomia" type="info">
+<Slide title="🌤️ FAZA 3: Finalizacja i analiza (Kroki 9-12)" type="info">
 
-<KeyPoints title="🚀 Finalizacja modeli">
+<KeyPoints title="🚀 Optymalizujemy i weryfikujemy">
 
-9. 🌳 **Zacienienie** i ograniczenia montażowe (sezonowość)
-10. 🧪 **Symulacja** i sanity‑check (ostrzeżenia, uzysk specyficzny)
-11. 🔄 **Wariantowanie** i optymalizacja (A/B testy)
-12. 💰 **Ekonomia** i ryzyko (LCOH, SPBT/NPV, wrażliwość ±20%)
+**KROK 9: 🌳 Modelowanie zacienienia - Co rzuca cień?**
+- **Przeszkody**:
+  - Kominy na dachu (cień zmienny w ciągu roku)
+  - Wentylatory i wywiewki
+  - Sąsiednie budynki (jeśli są wyższe)
+  - Drzewa (jeśli rosną)
+- **Krytyczny czas**: Grudzień (słońce najniżej, cienie najdłuższe)
+- **Sprawdzanie**: Program często ma narzędzie 3D do modelowania cieni
+
+**KROK 10: 🧪 Symulacja i sanity-check - Czy ma sens?**
+- **Uruchamiamy symulację**: Program liczy godzina po godzinie, cały rok (8760 h)
+- **Wyniki typowe dla Polski** (c.w.u.):
+  - Uzysk specyficzny: 300-450 kWh/m²/rok
+  - Pokrycie solarne f_sol: 40-60%
+  - Sprawność systemu: 25-35%
+- **Sanity-check**: Jeśli wyniki bardzo inne → szukamy błędu!
+  - Uzysk 100 kWh/m²/rok → coś źle (może zacienienie? błędne dane?)
+  - Uzysk 800 kWh/m²/rok → niemożliwe (sprawdź powierzchnię kolektorów)
+
+**KROK 11: 🔄 Wariantowanie - Czy można lepiej?**
+- **Test różnych opcji** (każda zmiana = nowy wariant):
+  - Wariant A: 50 m² kolektorów płaskich, zasobnik 2500 l
+  - Wariant B: 70 m² kolektorów płaskich, zasobnik 3500 l  
+  - Wariant C: 55 m² kolektorów próżniowych, zasobnik 2800 l
+- **Porównanie metryk**: uzysk, f_sol, CAPEX, SPBT
+- **Zasada**: Zmieniaj PO JEDNYM parametrze (łatwiej zrozumieć co wpływa jak)
+
+**KROK 12: 💰 Ekonomia i ryzyko - Czy się opłaca?**
+- **Koszty inwestycyjne (CAPEX)**:
+  - Kolektory: 60 m² x 450 zł/m² = 27,000 zł
+  - Zasobniki: 3000 l = ~12,000 zł
+  - Montaż, rury, automatyka: ~20,000 zł
+  - **TOTAL: ~59,000 zł**
+- **Oszczędności roczne**:
+  - Produkcja: 20,000 kWh/rok
+  - Wartość ciepła: 20,000 x 0.30 zł/kWh = 6,000 zł/rok
+- **Okres zwrotu SPBT**: 59,000 / 6,000 = **9.8 lat**
+- **Analiza wrażliwości**: Co jeśli cena gazu wzrośnie +30%? (SPBT = 7.5 lat)
 
 </KeyPoints>
 
-<SupportingDetails title="📊 Analiza wyników">
+<SuccessBox title="✅ Po Fazie 3 mamy">
 
-- 📈 **Porównanie wariantów** - różnice w metrykach
-- 🎯 **Rekomendacje** - wybór optymalnego rozwiązania
-- 📋 **Dokumentacja** - zapisanie decyzji i uzasadnień
-- 🔍 **Weryfikacja** - sanity-check wyników
+- 📊 **Kompletną symulację** z wynikami dla pełnego roku
+- 🔄 **3-5 wariantów** z porównaniem metryk
+- 💰 **Analizę ekonomiczną** z okresem zwrotu i wrażliwością
+- 📋 **Rekomendację** - który wariant wybrać i dlaczego
+- 📝 **Dokumentację** - wszystkie założenia i źródła danych
 
-</SupportingDetails>
+</SuccessBox>
 
 <InstructorNotes>
-**Finalizacja modeli** to etap sprawdzania i optymalizacji. **Zacienienie** modelujemy uwzględniając kominy, attyki i odstępy między rzędami kolektorów, oceniamy cień sezonowo. **Kluczowe pytanie** - czy nie ma cienia własnego przy niskim słońcu zimą?
+**FAZA 3 to weryfikacja, optymalizacja i finalizacja**. Tu upewniamy się, że projekt jest dobry i ma sens ekonomiczny.
 
-**Symulacja** wymaga odpowiednich ustawień - krok godzinowy, pełny rok, ostrzeżenia o stagnacji, przekroczeniach temperatur i kawitacji. **Sanity-check wyników** to szybka kontrola zdrowego rozsądku, czyli sprawdzenie, czy wyniki symulacji mają sens fizyczny i inżynierski. **Obejmuje** porównanie uzysku specyficznego w kWh na metr kwadratowy rocznie z literaturą i benchmarkami dla Polski - orientacyjnie od 250 do 450 dla c.w.u. (ciepłej wody użytkowej).
+**KROK 9 - Zacienienie**: **To często pomijane, a kluczowe!** Przykład z życia: Student zaprojektował instalację na dachu szkoły. Wszystko wyglądało świetnie w symulacji - f_sol 55%, SPBT 8 lat. **Problem**: Na dachu był duży komin wentylacyjny, który zimą (słońce nisko) rzucał cień na 30% powierzchni kolektorów. **Rzeczywisty f_sol**: 38%, SPBT 12 lat. Inwestor niezadowolony. **Lekcja**: ZAWSZE modeluj cienie, szczególnie dla grudnia. Program często ma narzędzie "Sun path" - pokazuje gdzie słońce będzie o każdej porze roku. Możemy dodać przeszkody 3D i program przeliczy straty.
 
-**Wariantowanie** to zmiany po jednym parametrze - powierzchnia, pojemność, progi ΔT, izolacje, typ kolektora. **Używamy narzędzi** do kopiowania wariantów, porównań tabelarycznych i wykresów radarowych.
+**KROK 10 - Symulacja i sanity-check**: **Program liczy 8760 godzin** (365 dni x 24 h). Dla każdej godziny: Ile słońca pada? Jaka temperatura otoczenia? Ile wody zużywają? Ile energii produkują kolektory? Ile tracimy w rurach? Ile daje słońce, ile dokłada kocioł? **Wynik to tysiące liczb**. My patrzymy na **podsumowanie**: Uzysk roczny, f_sol, straty składowe. **Sanity-check**: Czy to ma sens? **Benchmarki dla Polski** (c.w.u., kolektory płaskie): Uzysk specyficzny 350-400 kWh/m²/rok, f_sol 45-55%. **Jeśli Twój projekt daje 200 lub 700** - coś jest nie tak. Może błąd w danych? Może zapomniałeś izolacji? Może profil zapotrzebowania źle? **Szukamy błędu TERAZ**, nie po montażu!
 
-**Analiza ekonomiczna** obejmuje koszty CAPEX (Capital Expenditure - nakłady inwestycyjne) - kolektory, montaż, orurowanie i automatykę oraz OPEX (Operational Expenditure - koszty eksploatacyjne) - serwis glikolu, pompy i przeglądy. **Wyniki** to koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu), wartość bieżąca netto NPV (Net Present Value - wartość bieżąca netto) i analiza wrażliwości na zmiany cen energii i uzysku o ±20%. **Analizujemy ryzyka** związane z cenami energii, degradacją sprawności i przerwami w pracy.
+**KROK 11 - Wariantowanie**: **Nigdy nie pokazuj klientowi jednego rozwiązania!** Zawsze minimum 2-3 warianty. **Wariant A - TANI**: Minimum powierzchni kolektorów, pokrycie f_sol 35%, SPBT 7 lat. **Wariant B - ZBALANSOWANY**: Średnia powierzchnia, f_sol 50%, SPBT 9 lat. **Wariant C - MAKSYMALNY**: Dużo kolektorów, f_sol 65%, SPBT 12 lat. **Klient wybiera** według priorytetów - ekonomia? ekologia? prestiż? **Zasada**: Zmieniaj PO JEDNYM parametrze. Wariant A vs B - tylko powierzchnia kolektorów inna, reszta tak samo. Dzięki temu widzimy WPŁYW tego parametru. Jeśli zmienimy jednocześnie powierzchnię, typ kolektorów, pojemność zasobnika - nie wiemy co wpłynęło jak.
 
-**Praktyczna wskazówka** - zapisuj wariant bazowy i zmieniaj pojedyncze parametry, raportuj różnice i rekomendacje dla każdego wariantu.
+**KROK 12 - Ekonomia**: **Czy projekt ma sens finansowy?** **CAPEX** to Capital Expenditure - nakłady inwestycyjne. Wszystko co płacimy na starcie: kolektory, zasobniki, pompy, rury, montaż, automatyka, dokumentacja. **Przykład**: Kolektory 27k, zasobniki 12k, montaż 20k = TOTAL 59k zł. **OPEX** to Operational Expenditure - koszty roczne: wymiana glikolu co 5 lat (500 zł/5 = 100 zł/rok), serwis (300 zł/rok), energia dla pomp (200 zł/rok) = TOTAL 600 zł/rok. **Oszczędności**: Produkcja 20,000 kWh/rok zastępuje gaz po 0.30 zł/kWh = 6,000 zł/rok oszczędności. **SPBT** (Simple Payback Time): 59,000 / (6,000 - 600) = 10.9 lat. **Analiza wrażliwości**: Co jeśli gaz podrożeje? +30% → SPBT = 8 lat. Co jeśli produkcja będzie niższa? -15% → SPBT = 13 lat. **Pokazujemy klientowi te scenariusze** - niech wie jakie ryzyka.
+
+**Kontrola jakości Fazy 3**: Czy wszystkie warianty przeliczone? Czy ekonomia ma sens? Czy uwzględniliśmy ryzyka? Czy dokumentacja kompletna? **Jeśli TAK - PROJEKT GOTOWY!**
+
+**Podsumowanie całego procesu 12 kroków**: To jak przepis na ciasto. Jeśli pominiesz składnik lub zmienisz kolejność - ciasto się nie uda. **Projektowanie systemów ST** wymaga systematycznego podejścia. **Po tym wykładzie** studenci wiedzą DOKŁADNIE co robić krok po kroku. Teraz czas na praktykę!
 </InstructorNotes>
 
 </Slide>
 
-
 </SlideContainer>
-
