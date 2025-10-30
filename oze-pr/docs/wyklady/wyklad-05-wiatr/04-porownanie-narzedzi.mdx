@@ -14,98 +14,109 @@ import {
 
 <SlideContainer>
 
-<Slide title="🛠️ Pozycjonowanie narzędzi w łańcuchu projektowym" type="info">
+<Slide title="🧭 Zakres porównania i główne wnioski" type="info">
 
-<KeyPoints title="📊 Porównanie narzędzi">
-- 🔧 **[QBlade](https://qblade.org/qblade-quick-start-guide/)**: tworzenie krzywych turbiny (moc P(v), ciąg Ct(v))
-- 🎯 **[TOPFARM](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html)**: szybka optymalizacja układu turbin (layout, wysokości)
-- 📊 **[WindPRO](https://www.emd-international.com/software/windpro)**: planowanie i analizy projektowe (AEP, hałas, cień)
-- 🌐 **[OpenWind](https://www.ul.com/software/openwind-wind-farm-modeling-and-layout-design-software)**: projekt layoutu i straty „wake” na farmie
+<KeyPoints title="🎯 Co porównujemy i po co">
+- **QBlade** – projekt turbiny i aerodynamika (open‑source)
+- **TOPFARM** – optymalizacja układu farmy (open‑source, PyWake)
+- **WindPRO** – pełny cykl planowania, analizy i raporty (komercyjny)
+- **OpenWind** – layout kosztowy i ograniczenia (komercyjny)
+
+Najważniejsze: narzędzia są komplementarne; wybór zależy od etapu, danych i wymaganej „bankowalności” wyników.
 </KeyPoints>
 
-<SupportingDetails title="🔄 Przepływ danych">
-- 📤 **QBlade → CSV**: krzywe P(v)/Ct(v) jako proste pliki wejściowe
-- 🎯 **TOPFARM**: wykorzystuje krzywe do optymalizacji układu (z modelami wake)
-- 📊 **WindPRO/OpenWind**: analizy produkcji i raporty dla projektu
-- 🔗 **Integracja**: spójne metadane (gęstość, promień, wysokość) na każdym etapie
+<SupportingDetails title="🔗 Mapa etapów (skrót)">
+- ETAP 0: QBlade → krzywe P(v)/Ct(v)
+- ETAP 1–2: WindPRO/OpenWind → zasoby i mapa wiatru
+- ETAP 3: TOPFARM → layout/sterowanie
+- ETAP 4–5: WindPRO/OpenWind → AEP, środowisko, ekonomia
 </SupportingDetails>
 
 <InstructorNotes>
-Zacznijmy od prostego „kto do czego służy” w całym procesie:
+Zwróćmy uwagę na dwie kwestie. Po pierwsze, te narzędzia są **komplementarne** – rzadko kiedy „zastępują się”, częściej **łączą** w jednym przepływie pracy. Po drugie, wybór konkretnego narzędzia jest funkcją **etapu**, **jakości i dostępności danych** (czy mamy pomiary? czy mamy mapę terenu?) oraz oczekiwań co do **„bankowalności”** (czyli akceptowalności wyników w procesie due‑diligence przez inwestora/finansującego).
 
-- **QBlade**: daje krzywe turbiny – moc P(v) i ciąg Ct(v) – w formie plików CSV.
-- **TOPFARM**: na tej podstawie szybko szuka dobrego układu turbin (layout, wysokości), biorąc pod uwagę straty „wake”.
-- **WindPRO/OpenWind**: wykonują szersze analizy projektu (AEP, hałas, cień) i przygotowują raporty.
-
-Kluczem jest prosty przepływ danych: QBlade → krzywe P(v)/Ct(v) → TOPFARM/WindowFarm (model farmy) → wyniki AEP i raporty. Pamiętajmy o metadanych (gęstość, promień wirnika, wysokość odniesienia) i spójności jednostek.
-
-Jak wybierać w praktyce? Wstępna koncepcja – QBlade + TOPFARM (szybko przetestujesz warianty). Etap raportowy – WindPRO/OpenWind (pełniejsze moduły i raporty). Często łączymy narzędzia, aby mieć i szybkość, i szczegółowość.
-
-Mini‑przykład: farma 20 × 6 MW na terenie płaskim. Najpierw w QBlade tworzysz krzywe turbiny, w TOPFARM sprawdzasz kilka układów, a na koniec w WindPRO/OpenWind robisz podsumowanie AEP oraz hałas/cień do raportu.
+Praktycznie: myślimy w kategoriach „**od turbiny do farmy**”. Najpierw potrzebujemy **krzywych P(v) i Ct(v)** (QBlade), potem **rozmieszczamy turbiny** w terenie z uwzględnieniem cienia wiatrowego (TOPFARM), a na koniec **sprawdzamy wpływ terenu, środowiska i ekonomii** (WindPRO/OpenWind). To tworzy spójny łańcuch, który wykorzystujemy przez resztę wykładu.
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="technical" />
 
-<Slide title="🔬 Główne domeny fizyczne i modele" type="tip">
+<Slide title="🔬 Zdolności modelowania – kluczowe różnice" type="tip">
 
-<KeyPoints title="🧪 Modele fizyczne (w skrócie)">
-- 🌪️ **QBlade**: proste modele aerodynamiki łopaty/wirnika (np. BEM)
-- 🎯 **TOPFARM**: optymalizacja z użyciem modeli „wake” (różna dokładność/szybkość)
-- 📊 **WindPRO**: moduły AEP/hałas/cień, integracja danych pomiarowych
-- 🌐 **OpenWind**: layout farmy i straty „wake” z ograniczeniami terenu
+<KeyPoints title="🧪 Fizyka i modele">
+- **QBlade**: BEM (szybkie), LLFVW (wysoka wierność w nieustalonych/wirach); sprzężenia aero‑strukturalne (QFEM)
+- **TOPFARM**: optymalizacja farmy; wake przez PyWake (Gaussian/NOJ/Bastankhah) i CFD (PyWakeEllipSys/RANS)
+- **WindPRO**: WAsP (przepływ), wielomodelowy wake (Jensen/TurbOPark/eddy‑viscosity), hałas NORD2000, cień, ZVI
+- **OpenWind**: wake + **blockage**, GIS, curtailment/availability; analiza niepewności (Monte Carlo)
 </KeyPoints>
 
-<SupportingDetails title="⚙️ Na co zwrócić uwagę">
-- 🔧 **QBlade**: jakość krzywych P(v)/Ct(v) zależy od założeń (np. polary)
-- 🎯 **TOPFARM**: wybór modelu wake = kompromis szybkość ↔ dokładność
-- 📊 **WindPRO**: kompletność danych (pomiary, teren) wpływa na jakość AEP
-- 🌐 **OpenWind**: łatwe uwzględnianie ograniczeń (strefy, odległości, hałas)
+<SupportingDetails title="⚙️ Konsekwencje dla projektu">
+- Dobór modelu wake = kompromis szybkość ↔ dokładność
+- Dokładniejsze modele → większe odstępy → dłuższe kable → wpływ na **LCOE**
+- Wiarygodność: wyniki komercyjne częściej akceptowane w due‑diligence
 </SupportingDetails>
 
 <InstructorNotes>
-Każde narzędzie skupia się na innej „warstwie” fizyki:
+**Jak czytać ten slajd**: **QBlade** dostarcza krzywe **P(v)** (moc w funkcji prędkości) i **Ct(v)** (ciąg, który determinuje siłę „hamowania” przepływu). To są dane wejściowe do modeli farmy. **TOPFARM** układa turbiny w terenie i dobiera sterowanie, korzystając z modeli **wake** (cień wiatrowy – strefa spowolnienia i turbulencji za turbiną), aby maksymalizować **AEP** (Annual Energy Production) lub minimalizować **LCOE** (Levelized Cost of Energy – koszt jednostkowy energii). **WindPRO/OpenWind** łączą wyniki z **terenem** (orografia, szorstkość), **środowiskiem** (hałas, cień) i **ekonomią** (CAPEX/OPEX, NPV).
 
-- **QBlade** – aerodynamika łopaty/wirnika: na tej podstawie powstają krzywe P(v)/Ct(v).
-- **TOPFARM** – oddziaływanie turbin między sobą: straty „wake” a układ farmy.
-- **WindPRO/OpenWind** – łączenie wyników z danymi terenu i środowiska.
+Szybkie definicje dla studentów: **BEM** (Blade Element Momentum) – szybki model aerodynamiki, dobry na etapie projektowania krzywych; **LLFVW** (Lifting Line Free Vortex Wake) – wysoka wierność zjawisk wirów i nieustalonych; **CFD/RANS** – symulacje numeryczne przepływu, gdy potrzebna jest większa dokładność; **NORD2000** – standard obliczeń hałasu; **blockage** – lokalne spowolnienie napływu przed farmą; **Monte Carlo** – symulacyjne ujęcie **niepewności** (np. rozrzut wiatru, dostępność).
 
-W praktyce zawsze szukamy równowagi między szybkością a dokładnością. Prostsze modele wake liczą się szybko, ale są mniej precyzyjne; dokładniejsze są wolniejsze. Dobra strategia to „od ogółu do szczegółu”: najpierw szybkie porównanie wariantów, potem dopracowanie najlepszego.
-
-Proste pytanie kontrolne do grupy: jak zmiana modelu wake może przesunąć optimum układu i wpłynąć na LCOE? Większe straty = większe odstępy = dłuższe kable i potencjalnie wyższy koszt energii.
+Wniosek dydaktyczny: **lepsza fizyka = niższe ryzyko decyzji**, ale cena to **czas obliczeń** i złożoność. Wybieramy model adekwatny do **pytania** (screening vs. due‑diligence) i do **danych**, które posiadamy.
 </InstructorNotes>
 
 </Slide>
 
-<VisualSeparator type="data" />
+<VisualSeparator type="energy" />
 
-<Slide title="🎯 Kryteria doboru narzędzia" type="warning">
+<Slide title="🧰 Funkcje wg kategorii (co, gdzie robić?)" type="info">
 
-<KeyPoints title="📋 Kryteria wyboru (prosty schemat)">
-- 🎯 **Etap**: turbina → QBlade; układ → TOPFARM; analizy/raporty → WindPRO/OpenWind
-- 🏦 **Zaufanie**: edukacja/prototyp vs. analiza do raportów (due‑diligence)
-- 📊 **Dane**: czy masz pomiary/metadane/teren? (wpływ na jakość wyniku)
-- 💰 **Czas/koszt**: szybko i elastycznie vs. gotowe moduły i wsparcie
+<KeyPoints title="📚 Podział funkcjonalny">
+- **Zasoby wiatru**: WindPRO (ERA5/MERRA2, MCP), OpenWind (maszty, niepewność)
+- **Optymalizacja layoutu**: TOPFARM (AEP/LCOE/NPV, układ+sterowanie)
+- **Środowisko/regulacje**: WindPRO (hałas, cień, raporty formalne)
+- **Obciążenia/struktury**: QBlade (QFEM), weryfikacje powykonawcze – WindPRO
+- **Wizualizacje**: WindPRO (fotowiz, SketchUp, 3D), OpenWind (GIS/warstwy)
+- **Integracje/Scripting**: QBlade (Python/MATLAB/CLI), TOPFARM (Python), WindPRO/OpenWind (API ograniczone)
 </KeyPoints>
 
-<SupportingDetails title="🔄 Mini‑ćwiczenie (5 min)">
-- 🏗️ **Scenariusz**: farma 20 × 6 MW, teren płaski, wiatr SE–NW
-- 🎯 **Zadanie**: wybierz zestaw na koncepcję i na raporty końcowe
-- 📝 **Uzasadnienie**: 3 zdania – dlaczego taki wybór i co z danymi?
+<SupportingDetails title="🏗️ Architektura i licencje">
+- **QBlade**: GUI + API, MIT/open‑source, edycja Community bezpłatna
+- **TOPFARM**: Python package, MIT/open‑source, notatniki Jupyter
+- **WindPRO**: komercyjny, modułowy licencing (PARK/MCP/LOSS/OPTIMIZE/...)
+- **OpenWind**: komercyjny (Enterprise); wykorzystywany przez ~70% czołowych developerów
 </SupportingDetails>
 
 <InstructorNotes>
-Wybór narzędzi podporządkuj etapowi i wymaganej wiarygodności:
+**Co zabrać z tego slajdu**: narzędzia **open‑source** (QBlade, TOPFARM) przyspieszają R&D i dydaktykę – łatwo je automatyzować (Python/CLI) i testować wiele wariantów. Narzędzia **komercyjne** (WindPRO, OpenWind) dają przewagę w **raportowaniu, zgodności formalnej i komunikacji** z interesariuszami.
 
-- Koncepcja: QBlade (krzywe turbiny) + TOPFARM (szybkie warianty layoutu).
-- Raporty/finansowanie: WindPRO lub OpenWind (pełniejsze moduły i dokumentacja).
+Dobór narzędzia uzależniamy od **etapu**, jakości **danych** (czy posiadamy pomiary, czy opieramy się na reanalizie i **MCP** – Measure‑Correlate‑Predict) oraz **odbiorcy** (zespół badawczy vs. inwestor/urząd). Taki dobór skraca czas, zmniejsza liczbę iteracji i **redukuje ryzyka**.
+</InstructorNotes>
 
-Zwracamy uwagę na dostępne dane: bez rzetelnych pomiarów i metadanych nawet najlepsze narzędzie da niepewne wyniki. Narzędzia open‑source są elastyczne, ale wymagają czasu; komercyjne przyspieszają pracę i mają wsparcie.
+</Slide>
 
-Typowe pułapki: traktowanie wyników QBlade jako „bankowalnych” bez weryfikacji; niespójne jednostki i gęstość powietrza; brak metadanych do krzywych P(v)/Ct(v).
+<VisualSeparator type="technical" />
 
-Ćwiczenie: dla farmy 20 × 6 MW (teren płaski, wiatr SE–NW) – wskaż zestaw na koncepcję i na raporty oraz uzasadnij, jak użyjesz danych i jak ograniczysz niepewność.
+<Slide title="🧩 Zastosowania idealne (dobór narzędzia)" type="success">
+
+<KeyPoints title="✅ Najlepsze dopasowania">
+- **QBlade**: projekt łopaty/rotora, badania aero, dydaktyka, certyfikacja mocy
+- **TOPFARM**: optymalizacja układu i sterowania, wielokryterialność, prace akademickie
+- **WindPRO**: pełny cykl projektu, oceny środowiskowe, due‑diligence, wielokrajowe projekty
+- **OpenWind**: mikrolokalizacja i koszt, złożone ograniczenia, projekty komercyjne
+</KeyPoints>
+
+<SupportingDetails title="💸 Koszty i licencje (orientacyjnie)">
+- **QBlade**: darmowy (Community); EE komercyjny (CLI/batch)
+- **TOPFARM/PyWake**: darmowe (MIT)
+- **WindPRO**: licencja modułowa (public cennik modułów)
+- **OpenWind Enterprise**: rząd wielkości 9 000 USD/rok (wg list pricing)
+</SupportingDetails>
+
+<InstructorNotes>
+**Rekomendacje prowadzącego**: jeśli pracujemy w **R&D / Pythonie**, zestaw **TOPFARM+PyWake** z **QBlade** zapewnia wysoką elastyczność i kontrolę nad procesem. Jeśli potrzebujemy **EYA** (Energy Yield Assessment – ocena uzysku) i **permittingu**, stawiamy na **WindPRO**. Gdy priorytetem jest **koszt i ograniczenia** (LCOE, GIS, blockage), naturalnym wyborem jest **OpenWind**. W dydaktyce najlepiej zacząć od ścieżki **QBlade → TOPFARM**.
+
+Most technika–finanse: **LCOE** (Levelized Cost of Energy – koszt jednostkowy energii) łączy decyzje techniczne z wynikiem ekonomicznym. **Zmiana modelu wake** może wymusić większe odstępy między turbinami, co wydłuża **kable**, podnosi **CAPEX** i finalnie zwiększa **LCOE**. To praktyczny przykład, jak modele fizyczne wpływają na biznes.
 </InstructorNotes>
 
 </Slide>

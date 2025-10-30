@@ -14,14 +14,47 @@ import {
 
 <SlideContainer>
 
-<Slide title="🔄 Etapy analizy farm wiatrowych" type="info">
+<Slide title="🌀 Pełny proces projektowania farmy wiatrowej" type="info">
 
-<KeyPoints title="📚 Podstawowe kroki analizy">
-- 🌬️ **Dane wiatrowe** - pomiary lub wiarygodne źródła, kontrola jakości
-- 🗺️ **Mapa wiatru/zasoby** - oszacowanie prędkości na wysokości gondoli
-- 🎯 **Rozmieszczenie turbin** - odstępy, wysokość, ukształtowanie terenu
-- ⚡ **Szacowanie produkcji** - AEP, wpływ cienia (wake) i dostępności
-- 💰 **Wstępna ekonomia** - CAPEX/OPEX i opłacalność projektu
+<KeyPoints title="🔄 Przepływ procesu projektowania">
+
+```mermaid
+flowchart TD
+    A["🔧 KROK 0: Projektowanie turbiny<br/><b>QBlade</b><br/>→ Krzywe P(v) i Ct(v)"] --> B["🌬️ KROK 1: Dane wiatrowe<br/><b>WindPRO/OpenWind</b><br/>→ Typowy rok meteorologiczny"]
+    
+    B --> C["🗺️ KROK 2: Mapa wiatru<br/><b>WindPRO/OpenWind + WAsP</b><br/>→ Mapa na wysokości 80-150m"]
+    
+    C --> D["🎯 KROK 3: Rozmieszczenie turbin<br/><b>TOPFARM</b><br/>→ Optymalny layout (4-8D)"]
+    
+    D --> E["⚡ KROK 4: Produkcja AEP<br/><b>WindPRO/OpenWind + PARK</b><br/>→ AEP_net (po stratach)"]
+    
+    E --> F["💰 KROK 5: Ekonomia<br/><b>WindPRO/OpenWind + ECON</b><br/>→ LCOE, NPV, SPBT"]
+    
+    A -.->|"Krzywe P(v) i Ct(v)<br/>potrzebne do wake"| E
+    
+    F --> G{Czy opłacalne?}
+    G -->|TAK| H[✅ Budujemy farmę]
+    G -->|NIE| I[❌ Modyfikujemy projekt]
+    I -.->|Iteracja| C
+    I -.->|Iteracja| A
+    
+    style A fill:#e1f5ff
+    style B fill:#e1f5ff
+    style C fill:#fff4e1
+    style D fill:#fff4e1
+    style E fill:#ffe1f5
+    style F fill:#ffe1f5
+    style G fill:#f0f0f0
+    style H fill:#d4edda
+    style I fill:#f8d7da
+```
+
+**Legenda:**
+- 🟦 Niebieski - przygotowanie danych wejściowych
+- 🟨 Żółty - projektowanie layoutu
+- 🟪 Różowy - analiza wyników
+- ➖ Linia przerywana - wykorzystanie danych z wcześniejszego kroku
+
 </KeyPoints>
 
 <SupportingDetails title="🛠️ Kluczowe narzędzia">
@@ -31,83 +64,53 @@ import {
 </SupportingDetails>
 
 <InstructorNotes>
-Zaczynamy od prostego kroku: zbieramy **dane wiatrowe**. Mogą pochodzić z własnych pomiarów (maszt, LiDAR) lub z wiarygodnych baz danych. Sprawdzamy, czy dane są kompletne i bez anomalii, a jeśli mamy krótki okres pomiaru – porównujemy go z dłuższą serią z najbliższej stacji, aby uzyskać obraz „typowego” roku.
+Dzisiaj przechodzimy przez **pełny proces projektowania farmy wiatrowej** - od pojedynczej turbiny aż po finalne obliczenie opłacalności. To sześć etapów, które się na siebie nakładają, i każdy wymaga innego narzędzia.
 
-Potem tworzymy **mapę zasobów wiatru**. Chcemy wiedzieć, jaką prędkość wiatru mamy na wysokości gondoli (hub height). W prostym terenie wystarczy spokojna ekstrapolacja z niższej wysokości; w złożonym terenie (wzgórza, doliny) dokładność spada i niepewność rośnie.
+**Zacznijmy od początku - od samej turbiny.** To Etap zero, bo bez turbiny nie ma farmy. Tu używamy programu **QBlade**, żeby zaprojektować wirnik - czyli te wielkie łopaty, które widzimy na wietraku. Najważniejsze to znaleźć dobry profil aerodynamiczny łopaty, określić jej długość i skręcenie. Program robi za nas analizę BEM - to taka metoda, która łączy teorię łopaty z teorią pędu. Brzmi skomplikowanie, ale chodzi o to, żeby obliczyć, ile mocy da nam taka turbina przy różnych prędkościach wiatru.
 
-Następnie projektujemy **rozmieszczenie turbin**. Przyjmujemy odstępy rzędu 4–8 średnic wirnika (D), dostosowując je do dominujących kierunków wiatru i ukształtowania terenu. Wyższa wieża zwykle zwiększa produkcję, ale podnosi koszty – to kompromis projektowy.
+**Na wyjściu z QBlade dostajemy znacznie więcej niż tylko dwie krzywe.** Oprócz krzywych P(v) - moc w funkcji prędkości wiatru, i Ct(v) - współczynnik ciągu, które są fundamentem dla kolejnych etapów, otrzymujemy także:
 
-Kolejny krok to **szacowanie produkcji**. Liczymy roczną energię **AEP** (Annual Energy Production) oraz rozróżniamy produkcję brutto i po stratach (np. cień wiatrowy – wake, przerwy serwisowe, straty elektryczne). Dzięki temu wiemy, czego realnie można się spodziewać.
+**Plik projektu** w formacie .qpr - to kompletne środowisko symulacyjne, które możemy później otworzyć i modyfikować.
 
-Na końcu sprawdzamy **opłacalność**. **CAPEX** (koszty budowy) i **OPEX** (koszty utrzymania) łączymy z przewidywaną produkcją, aby ocenić, czy projekt ma sens ekonomiczny. Im lepiej oszacowana AEP i mniejsze straty, tym lepsza ekonomia.
+**Dane szeregów czasowych** - szczegółowe metryki wydajności w różnych formatach eksportowych, gotowe do dalszej analizy.
 
-Przez cały proces pilnujemy spójności jednostek i założeń (np. gęstości powietrza) oraz dokumentujemy źródła danych. Jeśli coś budzi wątpliwości – oznaczamy to jako niepewność i komunikujemy wyniki w wariantach (np. P50/P90) w prosty, zrozumiały sposób.
+**Geometria trójwymiarowa łopat** - pliki STL lub współrzędne punktów, które można bezpośrednio przekazać do produkcji.
+
+**Wykresy charakterystyk** - współczynnik mocy Cp, współczynnik ciągu Ct, krzywe mocy - wszystko gotowe do umieszczenia w raportach.
+
+Weźmy przykład - projektujemy turbinę trzech megawatową. Przy słabym wietrze, powiedzmy trzy metry na sekundę, turbina jeszcze nie startuje. Przy dwunastu metrach daje pełną moc, czyli te trzy megawaty. A przy bardzo silnym wietrze, dwadzieścia pięć metrów na sekundę, system się wyłącza ze względów bezpieczeństwa. Te informacje zapisujemy w krzywej P(v).
+
+**Teraz Etap pierwszy - zbieramy dane o wietrze.** Mamy dwa źródła: albo stawiamy swój maszt pomiarowy albo korzystamy z baz danych. Coraz częściej używamy też LiDAR-u - to taki laser, który mierzy wiatr bez masztu. Wszystkie te dane wrzucamy do **WindPRO** lub **OpenWind**. Program sprawdza, czy dane są w porządku - czy nie ma dziur, błędów, czy wszystko się zgadza. Jeśli mierzymy tylko rok czy dwa, musimy to skorelować z długoterminowymi danymi z najbliższej stacji meteorologicznej. Stosujemy metodę MCP - czyli porównujemy nasze krótkie pomiary z długą serią z stacji, żeby uzyskać obraz typowego roku. **Bo rok do roku różni się**, jeden może być wietrzniejszy, drugi spokojniejszy.
+
+**Etap drugi - tworzymy mapę wiatru dla całego terenu.** Problem w tym, że mierzymy wiatr na jednej wysokości, a gondola turbiny jest dużo wyżej - zazwyczaj osiemdziesiąt do sto pięćdziesiąt metrów nad ziemią. Więc musimy ekstrapolować - przeliczyć te dane w górę. Tu znowu pomagają **WindPRO** i **OpenWind**, które mają wbudowany model WAsP. Ten model uwzględnia ukształtowanie terenu - czy jest płasko, czy są wzgórza - i szorstkość powierzchni, czyli czy to las, łąka czy zabudowa. **Na wyjściu dostajemy mapę**, która pokazuje, gdzie na terenie wieje mocniej, a gdzie słabiej.
+
+W prostym terenie to proste - dobre przybliżenie. Ale jak mamy doliny i wzgórza, to niepewność rośnie. Wtedy czasem używamy bardziej zaawansowanych modeli CFD w OpenWind, żeby lepiej to policzyć.
+
+**Etap trzeci - rozmieszczamy turbiny.** To nie jest tak, że stawiamy je gdzie chcemy. Muszą być odpowiednie odstępy, żeby turbiny nie przeszkadzały sobie nawzajem. Zwykle to od czterech do ośmiu średnic wirnika. Tu głównie używamy programu **TOPFARM** - to narzędzie do optymalizacji. Mówimy mu: masz taką działkę, tyle turbin, maksymalizuj produkcję energii albo maksymalizuj zysk. Program sam szuka najlepszego układu, stosując różne algorytmy - gradientowe, genetyczne. Oczywiście musimy podać ograniczenia: są strefy zakazu, są wymagania hałasowe, cienie nie mogą padać na domy.
+
+Często robimy to w dwóch krokach. Najpierw w **WindPRO** czy **OpenWind** robimy wstępny układ ręcznie, w jakiejś siatce. Potem **TOPFARM** to optymalizuje. Na końcu wracamy do WindPRO, żeby sprawdzić, czy wszystkie wymogi środowiskowe są spełnione.
+
+**Etap czwarty - szacujemy produkcję energii.** To kluczowy moment. Używamy modułów PARK w **WindPRO** czy **OpenWind**. Tu właśnie potrzebujemy tych krzywych P(v) i Ct(v) z Etapu zerowego. Program bierze nasze rozmieszczenie turbin, dane o wietrze i liczy, ile energii wyprodukujemy w ciągu roku - to nazywamy AEP, roczna produkcja energii.
+
+Ale uwaga - liczymy dwa rodzaje produkcji. **AEP gross**, czyli brutto - jakby wszystko działało idealnie. I **AEP net**, czyli netto - po uwzględnieniu strat. A strat jest sporo. **Wake**, czyli cień wiatrowy - gdy jedna turbina spowalnia wiatr dla następnej - to od pięciu do piętnastu procent strat. Potem mamy straty elektryczne w kablach - dwa, trzy procent. Są przestoje - turbina czasem stoi w serwisie, to kolejne dwa, pięć procent. Na północy mamy oblodzenie - jeszcze kilka procent. Sumując to wszystko, **AEP net** jest zwykle o dziesięć do dwadzieścia pięć procent niższe niż brutto.
+
+Tu widać, dlaczego ta krzywa Ct(v) z Etapu zero jest taka ważna. Ona mówi, jak bardzo turbina spowalnia wiatr - czyli jak duży będzie ten wake, ten cień wiatrowy.
+
+**I wreszcie Etap piąty - ekonomia.** Wiemy już, ile energii wyprodukujemy. Teraz pytanie brzmi: czy to się opłaca? Znowu **WindPRO** i **OpenWind** mają do tego moduły. Liczymy **CAPEX** - czyli koszty budowy: turbiny, fundamenty, drogi, kable, przyłącze do sieci. To wszystko daje jakąś kwotę, powiedzmy dwadzieścia milionów złotych dla małej farmy. Potem **OPEX** - koszty eksploatacji: serwis, ubezpieczenia, dzierżawa gruntów, zarządzanie. To rocznie może być pół miliona.
+
+Teraz porównujemy koszty z przychodami. Ile dostaniemy za wyprodukowaną energię? To zależy od taryfikacji, od aukcji, czasem są umowy długoterminowe PPA. Na podstawie tego liczymy **LCOE** - koszt jednostkowy energii, ile nas kosztuje wyprodukowanie jednej kilowatogodziny. Liczymy **NPV** - wartość bieżącą netto, czyli czy po dwudziestu, trzydziestu latach zarobi się więcej niż się włożyło. I **IRR** - wewnętrzną stopę zwrotu, żeby wiedzieć, czy to lepsza inwestycja niż inne opcje.
+
+Ciekawostka - **TOPFARM** potrafi też optymalizować pod kątem maksymalnego zysku, nie tylko maksymalnej energii. Bo czasem warto postawić turbinę trochę bliżej, nawet jeśli da mniej energii, bo zaoszczędzimy na kablu.
+
+**Żeby to wszystko podsumować** - mamy taki przepływ danych. QBlade projektuje turbinę, daje nam krzywe. WindPRO zbiera dane o wietrze, tworzy mapę. TOPFARM układa turbiny optymalnie. WindPRO liczy produkcję, uwzględniając wake. I na końcu liczymy ekonomię, żeby zdecydować, czy budować.
+
+**Jedna bardzo ważna rzecz** - przez cały proces musimy pilnować spójności. Gęstość powietrza w QBlade musi być taka sama jak w WindPRO. Jednostki muszą się zgadzać. Wysokości odniesienia muszą być spójne. Jeśli coś budzi wątpliwości, oznaczamy niepewność i pokazujemy wyniki w wariantach - P50 to scenariusz typowy, P90 to scenariusz ostrożny.
+
+**I ostatnia rzecz - to wszystko jest iteracyjne.** Czasem dojdziemy do Etapu czwartego i okaże się, że produkcja jest za niska. Wtedy wracamy do Etapu trzeciego, zmieniamy rozmieszczenie. A może nawet do Etapu zerowego - może potrzebujemy inny model turbiny. To normalny proces projektowy - idziemy do przodu, sprawdzamy, czasem cofamy się i poprawiamy. **Każde narzędzie jest najlepsze w swojej dziedzinie**, dlatego używamy ich razem, uzupełniają się nawzajem.
 </InstructorNotes>
 
 </Slide>
 
-<VisualSeparator type="technical" />
-
-<Slide title="🌉 Most: od turbiny do farmy (AEP i niepewność)" type="tip">
-
-<KeyPoints title="📈 Przepływ danych">
-- 📤 **Wejścia z analizy turbiny**: krzywa mocy P(v) i krzywa ciągu Ct(v)
-- 📊 **Binning wiatru**: podział na klasy prędkości (np. co 0,5 m/s)
-- ⚡ **AEP_gross**: E = suma P(v_i) × czasu w danej klasie
-- 📉 **Macierz strat**: dostępność, elektryczne, wake, oblodzenie, ograniczenia pracy
-- 🎯 **Niepewność**: P50/P90 przez łączenie niepewności głównych źródeł
-</KeyPoints>
-
-<SupportingDetails title="🔗 Spójność danych między etapami">
-- 🔄 **Wymiana danych**: krzywe P(v) i Ct(v) przekazywane do modelu farmy
-- 📊 **Metadane**: gęstość powietrza, promień wirnika, liczba łopat, założenia projektowe
-- 🌊 **Modele wake**: korzystają z Ct(v) do szacowania strat cienia wiatrowego
-- 🧪 **Walidacja**: proste testy sanity-check (jednostki, zakresy, zgodność wysokości)
-</SupportingDetails>
-
-<InstructorNotes>
-Łączymy dwa światy: wyniki z poziomu pojedynczej turbiny z analizą całej farmy. Z analizy turbiny otrzymujemy dwie kluczowe krzywe: **P(v)** (moc w funkcji prędkości) i **Ct(v)** (ciąg w funkcji prędkości). Dołączamy podstawowe metadane (gęstość powietrza, promień wirnika, liczba łopat, główne założenia), aby wszystko było spójne.
-
-Następnie wykonujemy **binning wiatru** – dzielimy dane na klasy prędkości (np. co 0,5 m/s) i liczymy, ile czasu przypadło na każdą klasę. Dzięki temu prosto obliczamy **AEP_gross** jako sumę mocy w klasach pomnożoną przez czas w tych klasach. Pamiętamy o spójności założeń (gęstość powietrza, wysokość odniesienia).
-
-Potem stosujemy **macierz strat**: dostępność (przestoje), straty elektryczne, **wake** (cień wiatrowy od innych turbin), oblodzenie i ewentualne ograniczenia pracy. Wynikiem jest **AEP_net**, czyli bardziej realistyczna produkcja.
-
-Na końcu przedstawiamy **niepewność** w zrozumiały sposób: **P50** (wartość „typowa”) i **P90** (wariant ostrożny). To ułatwia rozmowę z interesariuszami i podejmowanie decyzji. Unikamy częstych błędów: mieszania jednostek, niespójnej gęstości powietrza, braku metadanych do krzywych.
-</InstructorNotes>
-
-</Slide>
-
-<VisualSeparator type="data" />
-
-<Slide title="🎯 Wnioski i wymagania projektowe" type="success">
-
-<KeyPoints title="✅ Kluczowe wnioski">
-- 🔄 **Iteracyjne podejście** - wracamy do wcześniejszych kroków i poprawiamy założenia
-- 🤝 **Współpraca interdyscyplinarna** - technika, środowisko, ekonomia
-- 🔗 **Wyniki z analizy turbiny** - krzywe P(v) i Ct(v) z metadanymi
-- 📊 **Ocena ekonomiczna** - LCOE i NPV jako proste kryteria decyzji
-</KeyPoints>
-
-<SupportingDetails title="⚠️ Uwaga dydaktyczna">
-- 🔄 **Przepływ danych**: analiza turbiny → dane wejściowe do modelu farmy → wyniki AEP
-- 📝 **Dokumentacja**: jasne metadane i założenia na każdym etapie
-- 🌊 **Ct(v)**: kluczowe dla strat wake i decyzji o rozmieszczeniu turbin
-- 📊 **Weryfikacja**: kontrola spójności jednostek, gęstości, wysokości i zakresów
-</SupportingDetails>
-
-<InstructorNotes>
-Projekt farmy wiatrowej to **proces iteracyjny** – wracamy do wcześniejszych kroków, porównujemy warianty i poprawiamy założenia. Ważna jest **współpraca**: inżynierowie wiatrowi, specjaliści środowiskowi i ekonomiści muszą działać wspólnie, bo decyzje techniczne wpływają na środowisko i na koszty.
-
-Wyniki z analizy turbiny (krzywe **P(v)** i **Ct(v)** wraz z metadanymi) są niezbędne do modelowania farmy i oceny strat wake. Bez spójnych danych trudno rzetelnie oszacować **AEP_net** i podjąć decyzje o rozmieszczeniu turbin.
-
-Na końcu robimy prostą **ocenę ekonomiczną**: **LCOE** pomaga porównać koszt energii z różnych wariantów, a **NPV** pokazuje, czy projekt jest opłacalny w czasie. Wyniki warto podawać z informacją o **niepewności** (P50/P90), żeby decyzje były świadome.
-
-Zawsze weryfikujemy spójność: jednostki, gęstość powietrza, wysokości odniesienia, zakresy wartości. To ogranicza ryzyko błędów i ułatwia współpracę zespołów.
-</InstructorNotes>
-
-</Slide>
-
-<VisualSeparator type="default" />
 
 </SlideContainer>
 

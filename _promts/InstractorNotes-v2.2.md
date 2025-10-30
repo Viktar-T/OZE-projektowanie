@@ -5,7 +5,7 @@ Rewrite only the `InstructorNotes` for each slide for the file or directory.
 **Language & Voice**
 
 * Output in **Polish** (natural academic, B2–C1).
-* Spoken, easy to understande, lecturer-ready, clear, engaging.
+* Spoken, easy to understande, beginer friendly, lecturer-ready, clear, engaging.
 * Ready to oral communication by the lecturer in class.
 
 **Output Rules**
@@ -20,6 +20,7 @@ Rewrite only the `InstructorNotes` for each slide for the file or directory.
 * Use visible slide content/context and existing `InstructorNotes`.
 * Add short descriptions for abbreviations.
 * Add short descriptions for new concepts.
+* Make shuare that all slides are logicaly connected.
 
 **Checks**
 
