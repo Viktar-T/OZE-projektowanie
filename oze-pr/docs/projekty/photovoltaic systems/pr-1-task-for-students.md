@@ -17,13 +17,12 @@ Zapoznanie się z interfejsem i podstawowymi funkcjami oprogramowania **PV*SOL p
 - Podstawowa wiedza z wykładu o systemach fotowoltaicznych
 
 ## 📺 Materiał wprowadzający
+Proszę zapoznać się z [Dokumentacja PV*SOL.](https://help.valentin-software.com/pvsol/en/pages/welcome/)
 
 Przed rozpoczęciem zadania obejrzyj szczegółowy tutorial wideo:
-
-**🔗 PV*SOL Premium - Complete Walkthrough**
-[https://www.youtube.com/watch?v=ps7kqx3JhBA&amp;list=PL6BROuPUfyxKD10vazL3utRzROU4mRBfR&amp;index=3](https://www.youtube.com/watch?v=ps7kqx3JhBA&list=PL6BROuPUfyxKD10vazL3utRzROU4mRBfR&index=3)
-
+[PV*SOL Premium - Complete Walkthrough - YouTube](https://www.youtube.com/watch?v=ps7kqx3JhBA&list=PL6BROuPUfyxKD10vazL3utRzROU4mRBfR&index=3). 
 Film prezentuje krok po kroku cały proces projektowania instalacji PV w oprogramowaniu PV*SOL premium, od utworzenia projektu po wygenerowanie raportu końcowego.
+
 
 :::tip Wskazówka
 Zalecamy obejrzenie filmu przynajmniej raz w całości przed rozpoczęciem pracy, a następnie korzystanie z niego jako referencji podczas wykonywania zadania.
