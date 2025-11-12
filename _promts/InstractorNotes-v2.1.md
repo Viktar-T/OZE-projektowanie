@@ -1,6 +1,6 @@
 **Task**
 
-Write the `InstructorNotes` for each slide for the file. 
+Write or rewrite the `InstructorNotes` for each slide for the file. 
 
 **Language & Voice**
 

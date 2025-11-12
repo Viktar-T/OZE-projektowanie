@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Projekty - Systemy fotowoltaiczne (8 godzin)
+title: Projekty - Systemy fotowoltaiczne (8 godzin) - PV*SOL premium, Sunny Design Web
 ---
 
 # Projekty - Systemy fotowoltaiczne (8 godzin)
