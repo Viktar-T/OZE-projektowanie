@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: "Proces modelowania w T*SOL (krok po kroku + checklisty)"
+title: "Praktyczny przewodnik: Krok po kroku w T*SOL"
 ---
 
 import { 
@@ -17,185 +17,314 @@ import {
 
 <SlideContainer>
 
-<Slide title="🧭 0. Przygotowanie projektu" type="info">
+<Slide title="🗺️ Praktyczny projekt w T*SOL - Od zera do raportu" type="info">
 
-<KeyPoints title="📁 Konwencje i struktura">
+<InfoBox title="🎯 Przykład projektowy - Ucz się na konkretnym przypadku">
 
-- 📝 **Nazwy**: `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`
-- 📂 **Foldery**: `input/` (meteo, profile), `output/` (raporty), `variants/`
+**ZADANIE**: Zaprojektuj instalację solarną dla **Akademika na 200 studentów w Gdańsku**
+
+**Dane wyjściowe**:
+- Lokalizacja: Gdańsk (54.4°N, 18.6°E)
+- Zapotrzebowanie: 200 osób × 50 l/dzień = 10,000 l/dzień ciepłej wody
+- Szczyt zużycia: Rano 7-9 (60%), wieczorem 19-22 (30%), reszta (10%)
+- Dostępny dach: Płaski, ~200 m², orientacja południe
+
+**Cel**: f_sol > 45%, SPBT < 12 lat
+
+</InfoBox>
+
+<KeyPoints title="📋 Proces w 5 głównych etapach">
+
+**ETAP 0: PRZYGOTOWANIE (15 min)**
+- 📁 Stwórz folder projektu, konwencja nazewnictwa
+- 📝 Zbierz wszystkie dane (lokalizacja, zużycie, budżet)
+- 🎯 Zdefiniuj kryteria sukcesu
+
+**ETAP 1: PODSTAWY PROJEKTU (30-45 min)**
+- Kroki 1-4 z workflow: Cel, meteo, profil, kolektory
+- Wstępny dobór powierzchni kolektorów
+- Wybór typu: płaskie vs próżniowe
+
+**ETAP 2: KONFIGURACJA SYSTEMU (45-60 min)**
+- Kroki 5-8: Schemat, zasobnik, sterowanie, straty
+- Dobór wszystkich komponentów z bibliotek
+- Definicja parametrów hydraulicznych
+
+**ETAP 3: OPTYMALIZACJA (30-45 min)**
+- Kroki 9-12: Zacienienie, symulacja, warianty, ekonomia
+- Test 3-5 wariantów
+- Analiza wrażliwości
+
+**ETAP 4: RAPORTOWANIE (20-30 min)**
+- Generacja raportu PDF
+- Przegląd i kontrola jakości
+- Wnioski i rekomendacje
+
+**⏱️ TOTAL CZAS: 2.5 - 3.5 godziny** (doświadczony projektant: 1.5-2h)
 
 </KeyPoints>
 
-<SupportingDetails title="💡 Korzyści organizacji">
-
-- ⏰ **Skrócony czas** porównania wariantów
-- 📋 **Łatwiejsza akceptacja** przez klienta
-- 🔍 **Szybsza identyfikacja** plików
-- 📊 **Lepsza dokumentacja** projektowa
-
-**📖 Reference**: Szczegółowe instrukcje pracy z T*SOL dostępne w [oficjalnej dokumentacji](https://help.valentin-software.com/tsol/en/)
-
-</SupportingDetails>
-
 <InstructorNotes>
-**Przygotowanie projektu** to fundament efektywnej pracy z T*SOL. **Konwencje nazewnictwa** są kluczowe - używamy formatu `ST_[Obiekt]_[Cel]_[YYYYMM]_[Vx]`, na przykład `ST_Hotel_DHW_202412_V1A`. **To pozwala** na łatwą identyfikację projektów i utrzymanie porządku w plikach.
+**Praktyczny przewodnik** - przechodzimy przez KONKRETNY projekt krok po kroku. **To najlepszy sposób nauki** - nie abstrakcja, ale realne zadanie.
 
-**Struktura folderów** powinna być zawsze spójna. **Folder `input/`** zawiera wszystkie dane wejściowe - meteo, profile zapotrzebowania i parametry komponentów. **Folder `output/`** to miejsce na raporty, wykresy i dokumentację projektową. **Folder `variants/`** służy do przechowywania kopii projektów i różnych wariantów rozwiązań.
+**DLACZEGO AKADEMIK?** To **typowy projekt studencki**,  ma wszystkie kluczowe elementy: duże zużycie, wyraźne szczyty, ograniczenia budżetowe, dostępna powierzchnia. **Plus**: Studenci mogą się utożsamić - to ich środowisko.
 
-**Porządek** w nazewnictwie i strukturze plików **znacznie skraca** czas porównania wariantów i ułatwia akceptację projektów przez klientów. **To inwestycja** w efektywność długoterminową.
+**DANE WYJŚCIOWE - SKĄD?** W rzeczywistym projekcie: **Zapotrzebowanie** z audytu energetycznego lub danych z licznika. **Tu zakładamy** 50 l/osobę/dzień (standard dla akademików według VDI 6002). **Szczyty** - logika: Studenci biorą prysznice rano przed zajęciami (7-9) i wieczorem po powrocie (19-22). **Dostępny dach** - z dokumentacji budynku lub wizji lokalnej.
+
+**CEL f_sol > 45%** - realistyczny dla Polski i c.w.u. **SPBT < 12 lat** - typowy wymóg dla inwestycji publicznych (uczelnie, szkoły).
+
+**CZAS PROJEKTU**: **Dla początkującego** - first time użycie T*SOL - spokojnie 3-4 godziny. **Po 2-3 projektach** spada do 2-2.5h. **Doświadczony** (>20 projektów) robi w 1.5h. **To NORMALNE** - każdy musi przejść krzywą nauki.
+
+**5 ETAPÓW**: Wzorujemy się na **12-krokowym workflow** z wykładu 02, ale grupujemy dla praktyczności. **Etap 0** to przygotowanie - CZĘSTO POMIJANE przez studentów, a kluczowe! **Etapy 1-3** to właściwe projektowanie. **Etap 4** to dokumentacja.
+
+**W kolejnych slajdach** przechodzimy SZCZEGÓŁOWO przez każdy etap - screen by screen, klik po kliku. **Po tym module** student będzie umiał SAMODZIELNIE stworzyć projekt w T*SOL!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="energy" />
 
-<Slide title="🔧 Kroki 1–4: typ, lokalizacja, profil, kolektory" type="tip">
+<Slide title="📁 ETAP 0: Przygotowanie - Zanim otworzysz T*SOL" type="tip">
 
-<KeyPoints title="🚀 Start w T*SOL">
+<KeyPoints title="🎯 Checklist przygotowawcza">
 
-- 🎯 **Nowy projekt** → typ zastosowania (c.w.u./basen/c.o./kombinowane)
-- 🌤️ **Lokalizacja i meteo** (TMY/Meteonorm, korekty ±5% dla mikroklimatów)
-- 📊 **Profil zapotrzebowania**: CSV timestamp; demand_lph; T_set_C
-- ☀️ **Wstępny dobór kolektorów**: kąt/azymut/odstępy, przeszkody
+**1. 📂 STRUKTURA FOLDERÓW - Zorganizuj się!**
+
+```
+AkademikGdansk_202412/
+├── input/
+│   ├── meteo_Gdansk_TMY.csv
+│   ├── profil_zuzycia_akademik.csv
+│   └── dane_kolektorow.pdf (katalogi producentów)
+├── projekty_tsol/
+│   ├── Akademik_Gdansk_V1_base.t3d
+│   ├── Akademik_Gdansk_V2_plaska50m.t3d
+│   └── Akademik_Gdansk_V3_prozniowe40m.t3d
+├── output/
+│   ├── raporty/
+│   └── wykresy/
+└── README.txt (notatki, decyzje, źródła danych)
+```
+
+**2. 📝 ZBIERZ DANE - Co potrzebujesz PRZED startem**
+
+**✅ Lokalizacja:**
+- Miasto, współrzędne GPS: Gdańsk (54.4°N, 18.6°E)
+- Wysokość n.p.m.: 10 m (nad morzem)
+- Mikroklimat: Nadmorski (mgły, wyższa wilgotność)
+
+**✅ Zapotrzebowanie:**
+- Ilość: 10,000 l/dzień (200 osób × 50 l/dzień)
+- Temperatura: 45°C (standard dla akademików)
+- Profile: Rano 7-9 (60%), wieczór 19-22 (30%), reszta (10%)
+- Weekendy: Mniejsze zużycie (-30%, studenci w domach)
+- Wakacje: Zerowe (lipiec-sierpień akademik zamknięty!)
+
+**✅ Ograniczenia:**
+- Dach: Płaski, 200 m² dostępne, konstrukcja wytrzyma 50 kg/m²
+- Orientacja: Południe ±15°
+- Przeszkody: Wentylatory dachowe (3 szt., wysokość 2m)
+- Budżet: Max 150,000 zł
+
+**✅ Cele:**
+- f_sol > 45% (pokrycie solarne minimum)
+- SPBT < 12 lat (okres zwrotu)
+- Priorytet: Minimalizacja kosztów CAPEX
+
+**3. 📋 DOKUMENTUJ OD STARTU**
+
+Plik `README.txt` zawiera:
+- Data rozpoczęcia projektu
+- Źródła wszystkich danych (audyt, pomiary, założenia)
+- Kontakt do klienta/inwestora
+- Historia decyzji ("Dlaczego wybraliśmy płaskie, nie próżniowe?")
+- Lista pytań do klienta
 
 </KeyPoints>
 
-<SupportingDetails title="🔍 Kontrola jakości">
+<WarningBox title="⚠️ Częste błędy na etapie przygotowania">
 
-- 📊 **Weryfikacja sum** rocznych i szczytów godzinowych
-- 🌞 **Sprawdź samocieniowanie** zimą
-- 📋 **Test profili** - sanity-check danych wejściowych
-- 🧭 **Orientacja** - optymalizacja kątów i azymutów
+- **Brak struktury folderów** → Chaos, gubione pliki, trudno wrócić po miesiącu
+- **Niezebranie wszystkich danych** → W połowie projektu brakuje profilu → Przerwa → Strata czasu
+- **Brak dokumentacji założeń** → Za rok klient pyta "Dlaczego tak?" → Nie pamiętasz
+- **Pomijanie wakacji** → Akademik PUSTY lipiec-sierpień → Stagnacja → Błąd!
 
-</SupportingDetails>
+</WarningBox>
 
 <InstructorNotes>
-**Pierwsze kroki** w T*SOL to podstawa całego projektu. **Tworzenie nowego projektu** zaczynamy od wyboru typu zastosowania - czy to c.w.u. (ciepłej wody użytkowej), basen, centralne ogrzewanie czy kombinowany system. **Ważne** jest uzupełnienie metryk celu już na początku, takich jak pokrycie solarne f_sol czy koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła) - to trzyma nas w dyscyplinie i pomaga w ocenie postępów.
+**Przygotowanie to 30% sukcesu projektu**. **Dobry start = gładki projekt**. Zobaczmy szczegółowo:
 
-**Lokalizacja i dane meteorologiczne** są fundamentem obliczeń. **Wybieramy miejscowość** i sprawdzamy dostępność danych TMY (Typical Meteorological Year - typowy rok meteorologiczny) lub Meteonorm. **Dla projektów** w dolinach czy na wzgórzach rozważamy korekty irradiancji o ±5% i testujemy wrażliwość dla specyficznych mikroklimatów.
+**1. STRUKTURA FOLDERÓW**: **Case**: Student robi projekt. Pliki rozrzucone po Pulpicie, Dokumentach, Pobrane. Miesiąc później wraca do projektu - "Gdzie był ten profil CSV?". **10 minut szukania**. **Rozwiązanie**: JEDNA główna folder `AkademikGdansk_202412`. Wewnątrz **3 podfoldery**: `input/` (wszystko CO WCHODZI do projektu - dane, pliki), `projekty_tsol/` (pliki T*SOL - .t3d), `output/` (wszystko CO WYCHODZI - raporty PDF, wykresy). **Plus README.txt** - notatnik projektu. **Rezultat**: Porządek, łatwo znaleźć wszystko, łatwo archiwizować.
 
-**Profil zapotrzebowania** to kluczowy element - przygotowujemy plik CSV (Comma Separated Values - wartości oddzielone przecinkami) w formacie timestamp; demand_lph; T_set_C. **Weryfikujemy** sumy roczne i szczyty godzinowe, najlepiej poprzez podgląd wykresu w narzędziu. **Dla obiektów** z cyrkulacją uwzględniamy harmonogram pracy pompy cyrkulacyjnej.
+**2. ZBIERZ DANE**: **To KLUCZOWE**. **Lokalizacja**: Gdańsk to 54.4°N - dość północna szerokość. **Nasłonecznienie**: ~1000 kWh/m²/rok (nieco mniej niż południe Polski ~1100). **Mikroklimat nadmorski**: Więcej mgieł jesienią/zimą → może obniżyć produkcję o 5-8%. **Czy uwzględniać?** Zależy - dla wstępnego projektu: NIE (TMY już to uwzględnia średnio). Dla finalnego: TAK (korekta -5%).
 
-**Wstępny dobór kolektorów** obejmuje wybór modelu z biblioteki, ustawienie azymutu, kąta nachylenia i odstępów między rzędami. **Dodajemy przeszkody** jak kominy i attyki, sprawdzamy cień sezonowy. **Pro tip** dla dachów płaskich - kąt nachylenia 25-35°, odległość między rzędami co najmniej 1,5-2 razy wysokość modułu.
+**Zapotrzebowanie**: **200 osób × 50 l/dzień = 10,000 l**. **Skąd 50 l?** Standard VDI 6002 dla akademików. **Ale** to ŚREDNIA. Rzeczywistość: Studenci różnie - jedni krótki prysznic (30 l), inni długa kąpiel (80 l). **Profil**: **Rano 7-9 = 60%** - większość przed zajęciami (8:00 start). **Wieczór 19-22 = 30%** - po powrocie. **Reszta 10%** - południe, noc (kilka osób). **Weekendy**: Wielu studentów wraca do domów → zużycie **-30%**. **WAKACJE**: To **KLUCZOWE** - lipiec-sierpień akademik ZAMKNIĘTY, zużycie ZERO! **Program MUSI to wiedzieć**, inaczej obliczy że latem system produkuje pełną parą przy zerowym zużyciu → stagnacja. **Rozwiązanie**: Profil CSV z wartościami zerowymi dla lipca-sierpnia.
 
-**Kluczowe** to weryfikacja sum rocznych i szczytów godzinowych oraz sprawdzenie samocieniowania zimą.
+**Ograniczenia**: **Dach płaski 200 m²** - to DUŻO, wystarczy. **Konstrukcja 50 kg/m²** - standard dla dachów. Kolektory ~20-25 kg/m², stelaże ~15 kg/m², śnieg ~10 kg/m² = TOTAL ~50 kg/m². **Pasuje**. **Gdyby konstrukcja wytrzymywała tylko 30 kg/m²** → musielibyśmy wzmacniać LUB montować mniej kolektorów. **Przeszkody**: 3 wentylatory - **muszą być w modelu 3D** do analizy cieni.
+
+**Budżet 150k zł**: **Ile kolektorów?** Orientacyjnie: Kolektory płaskie ~400 zł/m² + montaż ~200 zł/m² + zasobnik ~15 zł/l + rury/automatyka ~20k zł. **Dla 60 m²**: (60×600) + (3000×15) + 20k = 36k + 45k + 20k = 101k zł. **Mieści się!** Dla 80 m²: ~125k zł. Dla 100 m²: ~150k zł. **Wstępnie**: Możemy testować warianty 60-100 m².
+
+**Cele f_sol > 45% i SPBT < 12 lat**: **Realistyczne** dla Polski, c.w.u., akademik. **Priorytet minimalizacja CAPEX** → wybieramy płaskie (tańsze) zamiast próżniowych (droższe), chyba że próżniowe dadzą znacząco lepszy SPBT.
+
+**3. DOKUMENTUJ**: **README.txt** to dziennik projektu. **Przykład wpisu**: "2024-12-15: Wybór kolektorów płaskich zamiast próżniowych. Powód: Różnica w CAPEX 30k zł, różnica w f_sol tylko 3 punkty procentowe (48% vs 51%), SPBT płaskie 10 lat, próżniowe 11 lat. Decyzja: Płaskie. Źródło: Symulacja T*SOL warianty V2 vs V3."
+
+**Często błędy**: **Student pomija przygotowanie** → Od razu otwiera T*SOL → Zaczyna klikać → Brakuje danych → Wychodzi z programu → Szuka danych → Wraca → Zapomniał co robił → Zaczyna od nowa. **Strata 30 minut**. **Z przygotowaniem**: 15 minut organizacji → Gładki projekt → Oszczędność czasu.
+
+**WAKACJE!** To **najczęstszy błąd** studentów w projektach akademików/szkół. **Zapominają**, że latem zużycie ZERO. **Rezultat**: Program pokazuje świetny f_sol (60%!), bo latem kolektory produkują i "pokrywają zapotrzebowanie". **ALE zapotrzebowania NIE MA**! Rzeczywisty f_sol: 40%. **Klient niezadowolony**. **ZAWSZE sprawdzaj profil zużycia** - czy uwzględnia wakacje, święta, przerwy?
+
+**Po tym slajdzie**: Student ma **wszystko przygotowane**. Czas otworzyć T*SOL i zacząć projektowanie!
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="technical" />
 
-<Slide title="🛠️ Kroki 5–8: schemat, zasobnik, sterowanie, instalacja" type="info">
+<Slide title="🚀 ETAP 1: Podstawy projektu (Kroki 1-4)" type="info">
 
-<KeyPoints title="🔧 Konfiguracja układu">
+<KeyPoints title="📍 W T*SOL: Nowy projekt → Konfiguracja podstawowa">
 
-- 🔄 **Schemat**: pompy, wymienniki, zawory, czujniki; drain‑back – spadki/odpowietrzenie
-- 🏺 **Zasobnik**: pojemność startowa (np. 50 l/m²), warstwowość, czujniki
-- ⚙️ **Źródło szczytowe**: priorytety, antylegionella (1×/tydz. do 60–70 °C)
-- 📉 **Instalacja rurowa**: długości/średnice/izolacje; oddzielnie cyrkulacja (harmonogram)
+**KROK 1: 🎯 Nowy projekt i cel**
+1. **Uruchom T*SOL** → File → New Project
+2. **Wybierz typ**: "Domestic Hot Water" (c.w.u. w budynkach)
+3. **Nazwa projektu**: `Akademik_Gdansk_V1_base`
+4. **Kryteria sukcesu** (notuj w Description):
+   - f_sol target: > 45%
+   - SPBT target: < 12 lat
+   - Budget: Max 150,000 PLN
+
+**KROK 2: 🌤️ Lokalizacja i dane klimatyczne**
+1. **Location** → Search: "Gdansk, Poland"
+2. **Meteo data**: Wybierz "Meteonorm 8.0" lub "TMY"
+3. **Sprawdź**: Irradiation ~1000 kWh/m²/rok (horizontal)
+4. **Opcjonalnie**: Import własnego pliku CSV z lokalnymi pomiarami
+
+**KROK 3: 📊 Profil zapotrzebowania**
+1. **Hot Water Consumption** → Profile type: "Custom (CSV import)"
+2. **Import**: `profil_zuzycia_akademik.csv`
+3. **Format CSV**: `timestamp; demand_lph; T_hot; T_cold`
+   ```
+   2024-01-01 07:00; 2500; 45; 10
+   2024-01-01 08:00; 3500; 45; 10
+   2024-01-01 09:00; 2000; 45; 10
+   ...
+   2024-07-15 12:00; 0; 45; 10    ← WAKACJE: demand = 0!
+   ```
+4. **Weryfikacja**: Sum annual = 3,650,000 l/rok (10,000 l/dzień × 365)
+5. **Korekta wakacyjna**: Lipiec-sierpień demand = 0 → Sum ~3,100,000 l/rok ✓
+
+**KROK 4: ☀️ Wstępny dobór kolektorów**
+1. **Solar Collectors** → Database → Filter: "Flat plate, certified"
+2. **Przykładowe modele**:
+   - Viessmann Vitosol 200-F (η₀=0.806, a₁=3.69)
+   - Hewalex KS2000 (η₀=0.789, a₁=3.89)
+   - Soletrol (η₀=0.820, a₁=4.12)
+3. **Wstępna powierzchnia**: 60-80 m² (reguła: ~150 l/dzień na 1 m²)
+4. **Orientacja**: Azimuth = 0° (południe), Tilt = 40° (optymalne dla Gdańska)
+5. **Dodaj** do projektu → Next
 
 </KeyPoints>
 
-<SupportingDetails title="✅ Kontrola jakości">
+<SupportingDetails title="💡 Tips for etapu 1">
 
-- 🔄 **Bilans objętości** - zamknięcie obiegu
-- ⚙️ **Brak taktowania pomp** - stabilne sterowanie
-- 📊 **Parametry realistyczne** dla profilu
-- 📍 **Lokalizacja czujników** - prawidłowe umiejscowienie
+- **Typ projektu** wpływa na dostępne schematy - wybierz prawidłowo na starcie
+- **Meteonorm** to rekomendowane źródło (validowane, globalne)
+- **CSV profile** ZAWSZE lepszy niż standardowy (jeśli masz dane)
+- **Weryfikuj sumy** - czy demand rocznie ma sens? (10k l/dzień × 300 dni ≈ 3M l/rok)
 
 </SupportingDetails>
 
 <InstructorNotes>
-**Konfiguracja układu** to etap precyzyjnego definiowania elementów systemu. **Schemat hydrauliczny** zaczynamy od wyboru szablonu, a następnie doprecyzowujemy wszystkie elementy - pompy, wymienniki, zawory i czujniki. **Dla systemów drain-back** szczególnie ważne jest sprawdzenie spadków i odpowietrzenia zgodnie z praktyką montażową. **Kontrolujemy** zamknięcie bilansu objętości, prawidłowe umiejscowienie czujników i zaworów bezpieczeństwa.
+**ETAP 1 w T*SOL** - przechodzimy przez interfejs programu. **To praktyczny tutorial** - student może otworzyć T*SOL i robić równolegle.
 
-**Zasobnik i magazynowanie** wymaga odpowiedniego doboru pojemności startowej, na przykład 50 litrów na metr kwadratowy dla c.w.u. (ciepłej wody użytkowej), i sprawdzenia wpływu wahań ±20%. **Definiujemy warstwowość** wody w zbiorniku i położenie czujników - czy ładowanie odbywa się w górnej czy środkowej strefie. **W przypadku basenów** często wystarcza wymiennik bez dużego magazynu.
+**KROK 1 - Nowy projekt**: **File → New Project** otwiera kreatora (wizard). **Typ projektu** to ważne - determinuje jakie schematy będą dostępne. **Dla akademika** = Domestic Hot Water. **Inne opcje**: Swimming pool, Space heating, Combined, Industrial process. **Nazwa** zgodna z konwencją: `Akademik_Gdansk_V1_base`. **V1** oznacza pierwszą wersję, **base** że to wariant bazowy (będą V2, V3 z modyfikacjami). **Description**: Miejsce na notowanie celów, założeń. Przykład: "Target f_sol > 45%, SPBT < 12y. Budget 150k PLN. Priority: minimize CAPEX. Client: AGH Gdansk. Contact: Jan Kowalski, j.kowalski@agh.pl."
 
-**Źródło szczytowe i sterowanie** to definicja systemu wspomagającego - kocioł, pompa ciepła czy elektryka, priorytetów i harmonogramów. **Antylegionella** wymaga raz w tygodniu podgrzania do 60-70°C, ale obserwujemy wpływ tego na pokrycie solarne f_sol i koszty eksploatacyjne OPEX (Operational Expenditure - koszty eksploatacyjne). **Kontrolujemy** brak taktowania przez zbyt małe różnice ΔT i sprawdzamy liczbę cykli pracy na dobę.
+**KROK 2 - Lokalizacja**: **Location → Search: "Gdansk"**. T*SOL znajduje Gdańsk z bazy Meteonorm. **Pokazuje**: Współrzędne (54.4°N, 18.6°E), wysokość (10 m n.p.m.), nasłonecznienie roczne (~1000 kWh/m²/rok horizontal). **Meteonorm 8.0** vs **TMY**: Meteonorm to komercyjna baza (licencja wliczona w T*SOL), TMY to darmowe typowe lata meteorologiczne (często z instytutor badawczych). **Która lepsza?** Dla Gdańska - różnice minimalne (±2%). **Meteonorm zalecane** - aktualizowane, szerszy zakres parametrów. **Import własnego CSV**: Jeśli mamy dane z lokalnej stacji pogodowej - można użyć. Format: 8760 linii (rok godzinowy), kolumny: timestamp, T_ambient, G_horizontal, G_direct, G_diffuse, wind_speed. **Dla większości projektów** - Meteonorm wystarczy.
 
-**Instalacja rurowa** wymaga wprowadzenia realnych długości i średnic, parametrów izolacji zgodnych z projektem oraz uwzględnienia odcinków w strefach nieogrzewanych. **Osobno definiujemy cyrkulację** c.w.u. (ciepłej wody użytkowej) z odpowiednim harmonogramem. **Pułapka** - nieuwzględniona cyrkulacja może znacząco obniżyć uzysk systemu.
+**KROK 3 - Profil zapotrzebowania**: **To NAJWAŻNIEJSZY KROK!** **Hot Water Consumption → Profile type**. Opcje: **Standard** (wbudowane profile VDI, DIN, ASHRAE - dla typowych budynków), **Custom** (import CSV - dla nietypowych lub rzeczywistych danych). **Dla akademika** - Custom, bo mamy specyficzny profil (wakacje!). **Format CSV**: 4 kolumny minimum: `timestamp` (YYYY-MM-DD HH:MM), `demand_lph` (zapotrzebowanie w litrach na godzinę), `T_hot` (temperatura ciepłej wody, °C), `T_cold` (temperatura zimnej wody z sieci, °C). **Przykład linii**: `2024-01-15 08:00; 3500; 45; 10` oznacza "15 stycznia o 8 rano potrzebujemy 3500 l/h, temperatura docelowa 45°C, woda z sieci 10°C". **Weryfikacja**: Po imporcie T*SOL pokazuje **sum annual** (suma roczna). **Sprawdzamy**: 10,000 l/dzień × 365 dni = 3,650,000 l/rok. **Ale wakacje!** Lipiec-sierpień (60 dni) demand = 0. Więc: 10,000 × (365-60) = 3,050,000 l/rok. **Jeśli T*SOL pokazuje 3,650,000** → BŁĄD, profil nie uwzględnia wakacji → POPRAW CSV!
+
+**KROK 4 - Kolektory**: **Solar Collectors → Database**. T*SOL ma >1000 kolektorów w bazie. **Filter**: Type = "Flat plate", Certification = "Solar Keymark". **Dlaczego płaskie?** Tańsze (~400 zł/m² vs ~700 zł/m² próżniowe), wystarczająca efektywność dla c.w.u. w Polsce. **Dlaczego Solar Keymark?** Certyfikacja gwarantuje że parametry (η₀, a₁, a₂) są potwierdzone testami laboratoryjnymi ISO 9806. **Bez certyfikacji** - parametry z karty technicznej producenta (czasem zawyżone!). **Przykłady**: **Viessmann Vitosol 200-F**: η₀=0.806 (sprawność optyczna 80.6%), a₁=3.69 W/m²K (straty liniowe), a₂=0.015 W/m²K² (straty kwadratowe). **To DOBRY kolektor** - wysoka sprawność, umiarkowane straty. **Hewalex KS2000** (polski producent): η₀=0.789, a₁=3.89. Trochę niższa sprawność, trochę wyższe straty → nieco gorszy, ale **często tańszy** (lokalny producent, brak importu). **Soletrol**: η₀=0.820, a₁=4.12. Najwyższa sprawność z tych trzech, ale też najwyższe straty → dobry dla niskich temperatur (baseny), mniej dla wysokich (c.w.u. zimą).
+
+**Wstępna powierzchnia 60-80 m²**: **Reguła kciuka**: 1 m² kolektora → 100-150 l ciepłej wody dziennie (średnia roczna, Polska). Dla 10,000 l/dzień → 10,000 / 125 = 80 m². **Ale to GRUBO** - nie uwzględnia wakacji i weekendów. **Realistycznie**: 60-70 m² wystarczy. **Testujemy w symulacji**.
+
+**Orientacja**: **Azimuth = 0°** (południe), **Tilt = 40°** (kąt nachylenia). Dla Gdańska (54°N) optymalny kąt to ~35-45° (blisko szerokości geograficznej). **Azimuth ±30°** to OK (niewielki wpływ). **Tilt < 25°** - śnieg się zbiera, produkcja spada. **Tilt > 55°** - słaba produkcja latem. **40° = złoty środek**.
+
+**Dodaj do projektu**: Po wyborze kolektora → **Add to project** → Określ ilość sztuk lub powierzchnię. **Na razie wstępnie**: 30 szt. × 2 m² = 60 m². **Zmienimy później w wariantach**.
+
+**Po kroku 4**: Mamy **szkielet projektu** - lokalizacja, meteo, profil, kolektory. **Next** → Przechodzimy do Etapu 2: Konfiguracja systemu (hydraulika, zasobnik, sterowanie).
 </InstructorNotes>
 
 </Slide>
 
-<VisualSeparator type="default" />
+<VisualSeparator type="success" />
 
-<Slide title="📈 Kroki 9–12: parametry, symulacja, warianty, raport" type="info">
+<Slide title="✅ Podsumowanie praktycznego przewodnika" type="success">
 
-<KeyPoints title="Finalizacja i dokumenty">
+<SuccessBox title="🎓 Co osiągnęliśmy">
 
-- Parametry: ΔT, zabezpieczenia, zamarzanie/przegrzew
-- Symulacja pełnoroczna; ostrzeżenia: stagnacja, temperatury maks., taktowanie
-- Warianty (3–5): powierzchnia, magazyn, typ kolektora, ΔT/izolacje
-- Raporty: techniczny + skrócony; aneks wejść i wariantów
+**✅ ETAP 0 - Przygotowanie**: Struktura folderów, zebrane wszystkie dane, cele zdefiniowane
 
-</KeyPoints>
+**✅ ETAP 1 - Podstawy**: Projekt w T*SOL utworzony, lokalizacja/meteo/profil/kolektory skonfigurowane
 
-<InstructorNotes>
-**Finalizacja projektu** to etap doprecyzowania parametrów systemu. **Definiujemy** progi ΔT, zabezpieczenia przeciw zamarzaniu i przegrzewom. **Symulacja pełnoroczna** wymaga sprawdzenia ostrzeżeń o stagnacji, maksymalnych temperaturach i taktowaniu pomp. **Wariantowanie** to przygotowanie 3-5 wariantów różniących się pojemnością magazynu, typem kolektora, parametrami ΔT i izolacjami. **Raporty** to dokumentacja techniczna i skrócona wraz z aneksem danych wejściowych i wariantów.
+**🔄 NASTĘPNE KROKI** (kontynuacja na zajęciach praktycznych):
+- **ETAP 2**: Konfiguracja hydrauliki, zasobnika, sterowania (Kroki 5-8)
+- **ETAP 3**: Optymalizacja - zacienienie, symulacja, warianty (Kroki 9-12)
+- **ETAP 4**: Raportowanie i dokumentacja
 
-**Kluczowa zasada** - wariantuj po jednym parametrze, wyniki porównuj tabelarycznie i wykresami.
-</InstructorNotes>
+</SuccessBox>
 
-</Slide>
+<KeyPoints title="📚 Kluczowe wnioski do zapamiętania">
 
-<VisualSeparator type="default" />
-
-<Slide title="🔍 Checklisty operacyjne" type="tip">
-
-<KeyPoints title="Po wejściach i po symulacji">
-
-- Po konfiguracji wejść: profil CSV zgodny; brak samocieniowania; sensowna pojemność; brak skrajnych temp.
-- Po symulacji: brak ostrzeżeń krytycznych; uzysk specyficzny i f_sol w spodziewanym zakresie; ekonomia i wrażliwość ±20%
+1. **Przygotowanie = 30% sukcesu** - Nie zacznij projektowania bez zebrania wszystkich danych
+2. **Dokumentuj od startu** - README.txt to twój dziennik projektu, przyda się za miesiąc/rok
+3. **Weryfikuj dane wejściowe** - Sprawdź sumy roczne, szczyty, czy profil ma sens
+4. **Uwzględnij specyfikę obiektu** - Akademik ma WAKACJE, szkoła też, hotel może być sezonowy
+5. **Jedna zmiana = jeden wariant** - Tak łatwiej zrozumieć co wpływa jak na wyniki
+6. **Sanity-check zawsze** - Porównaj wyniki z benchmarkami (300-450 kWh/m²/rok dla Polski)
 
 </KeyPoints>
 
-<InstructorNotes>
-**Checklisty operacyjne** to systematyczna kontrola jakości projektu. **Po konfiguracji wejść** sprawdzamy czy profil CSV (Comma Separated Values - wartości oddzielone przecinkami) jest zgodny z rzeczywistością, nie ma samocieniowania, pojemność magazynu jest sensowna i nie występują skrajne temperatury. **Po symulacji** kontrolujemy brak ostrzeżeń krytycznych, czy uzysk specyficzny i pokrycie solarne f_sol mieszczą się w spodziewanym zakresie, oraz czy ekonomia i analiza wrażliwości ±20% są poprawne.
+<InfoBox title="📖 Materiały do samodzielnej nauki">
 
-**Checklisty ułatwiają** peer-review projektów i akceptację przez klientów, zapewniając profesjonalną jakość dokumentacji.
-</InstructorNotes>
+**Dokumentacja T*SOL**: [help.valentin-software.com/tsol](https://help.valentin-software.com/tsol/en/)
+- Tutoriale video (angielski/niemiecki)
+- Przykładowe projekty do pobrania
+- FAQ i troubleshooting
 
-</Slide>
+**Forum użytkowników**: [forum.valentin-software.com](https://forum.valentin-software.com)
+- Pytania techniczne
+- Best practices od doświadczonych użytkowników
+- Aktualizacje i nowości
 
-<VisualSeparator type="default" />
-
-<Slide title="🧯 Typowe problemy i szybkie naprawy" type="warning">
-
-<KeyPoints title="Diagnoza → Remedium">
-
-- Za wysokie temperatury latem → większy magazyn/heat‑dump, korekta ΔT
-- Niski f_sol → straty cyrkulacji, izolacje, harmonogram odbioru
-- Taktowanie pomp → zwiększ histerezę, popraw czujniki
-
-</KeyPoints>
+</InfoBox>
 
 <InstructorNotes>
-**Typowe problemy** w projektach ST mają standardowe rozwiązania. **Za wysokie temperatury latem** rozwiązujemy zwiększając magazyn, wprowadzając strategię "heat-dump" lub korygując progi ΔT. **Niski pokrycie solarne f_sol** często wynika ze strat cyrkulacji, nieodpowiednich izolacji lub błędnego harmonogramu odbioru. **Taktowanie pomp** eliminujemy zwiększając histerezę i poprawiając lokalizację czujników.
+**Podsumowanie praktycznego modułu** - co studenci powinni wynieść:
 
-**Kluczowa zasada** - zawsze zapisuj decyzje i ich wpływ na kluczowe metryki jak uzysk, pokrycie solarne f_sol i koszt jednostkowy ciepła LCOH.
-</InstructorNotes>
+**Osiągnięcia**: Przeszliśmy przez **początek projektu** - od pustego folderu do skonfigurowanego projektu w T*SOL z podstawami (lokalizacja, profil, kolektory). **To solidny start** - 40% projektu gotowe.
 
-</Slide>
+**Kontynuacja**: **Etapy 2-4** będą na **zajęciach praktycznych laboratoryjnych**. Studenci będą pracować w T*SOL, prowadzeni przez prowadzącego. **Dlaczego nie wszystko na wykładzie?** Bo wykład to TEORIA i DEMONSTRACJA. **Praktyka wymaga ROBIENIA** - klikania, testowania, popełniania błędów i naprawiania. To możliwe tylko w laby z dostępem do komputerów z T*SOL.
 
-<VisualSeparator type="default" />
+**Kluczowe wnioski** to **esencja doświadczenia** z setek projektów:
 
-<Slide title="📘 Zadanie dla studentów + Speedrun" type="info">
+**1. Przygotowanie**: Student często chce "szybko zacząć" → Otwiera program → Brakuje danych → Traci czas. **Dobry projektant** poświęca 30 minut na przygotowanie → oszczędza 2 godziny w projekcie.
 
-<KeyPoints title="Praktyka">
+**2. Dokumentacja**: Za rok klient wraca: "Dlaczego wybraliście 60 m² kolektorów, a nie 80 m²?" **Bez dokumentacji**: "Ee... nie pamiętam". **Z README.txt**: "Wariant 60 m² dawał f_sol 48%, CAPEX 95k zł, SPBT 9.5 lat. Wariant 80 m² dawał f_sol 52%, CAPEX 125k zł, SPBT 11 lat. Wybraliśmy 60 m² bo lepszy SPBT i mieścił się w budżecie 100k zł. Decyzja 2024-12-15, źródło: T*SOL symulacja V2 vs V3." **Profesjonalizm!**
 
-- Zadanie: akademik 200 osób (Gdańsk) – 3 warianty; raport: uzysk, f_sol, straty, LCOH, SPBT, wrażliwość ±20%, wnioski ≤200 słów
-- Speedrun 20 min: Szablon c.w.u. → Meteo → Profil → Kolektory → Zasobnik → Straty → ΔT → Symulacja → porównanie 2 wariantów → mini‑raport
+**3. Weryfikacja**: Suma roczna demand pokazuje 5,000,000 l. **Szybka kalkulacja**: 10,000 l/dzień × 365 = 3,650,000 l. **Różnica!** Sprawdzamy CSV - aha, **zdublowane wiersze** (copy-paste error). Gdyby nie sprawdzić - symulacja pokazałaby zupełnie błędne wyniki.
 
-</KeyPoints>
+**4. Specyfika**: **Każdy obiekt jest inny**. Akademik ≠ hotel ≠ szkoła ≠ szpital. **Akademik** ma wakacje. **Hotel sezonowy** (morze) ma szczyty maj-wrzesień. **Szkoła** ma wakacje + weekendy. **Szpital** pracuje 24/7/365. **Program musi to wiedzieć!**
 
-<InstructorNotes>
-**Zadanie praktyczne** dla studentów to projekt akademika na 200 osób w Gdańsku z trzema wariantami rozwiązania. **Raport** musi zawierać uzysk roczny, pokrycie solarne f_sol, straty składowe, koszt jednostkowy ciepła LCOH (Levelized Cost of Heat - koszt jednostkowy ciepła), prosty okres zwrotu SPBT (Simple Payback Time - prosty okres zwrotu), analizę wrażliwości ±20% i wnioski ograniczone do 200 słów. **To uczy** równowagi między jakością analizy a dostępnym czasem.
+**5. Wariantowanie**: Wariant A: 60 m² płaskie, 3000 l, glikol. Wariant B: 80 m² płaskie (JEDYNA zmiana). Teraz **WIDZIMY**: +20 m² daje +5% f_sol, +25k zł CAPEX, +1.5 lat SPBT. **Wnioskujemy**: Nie opłaca się. Gdyby zmienić WSZYSTKO naraz - nie wiedzielibyśmy CO spowodowało różnice.
 
-**Speedrun w 20 minut** to ćwiczenie biegłości narzędziowej - szablon c.w.u. (ciepłej wody użytkowej), wybór meteo, profil, kolektory, zasobnik, straty, parametry ΔT, symulacja, porównanie dwóch wariantów i przygotowanie mini-raportu. **Speedrun buduje** automatyzację i biegłość w posługiwaniu się narzędziami T*SOL.
+**6. Sanity-check**: Student pokazuje wyniki: Uzysk 800 kWh/m²/rok. **ALARM!** To niemożliwe w Polsce (max realistycznie ~500). **Sprawdzamy** - aha, błąd w jednostkach (pomylił Wh z kWh) lub błąd w powierzchni (wpisał 600 m² zamiast 60 m²). **Bez sanity-check** - pokazał klientowi błędne wyniki → utrata wiarygodności.
+
+**Materiały do nauki**: **Dokumentacja T*SOL** to SKARBNICA. Tutoriale video (30-60 min każdy) pokazują screen-by-screen jak robić różne typy projektów. **Przykładowe projekty** (.t3d files) do pobrania - otwierasz, analizujesz, uczysz się. **Forum** - zadajesz pytanie, doświadczeni użytkownicy odpowiadają (zwykle w 24h).
+
+**Następne kroki**: **Na zajęciach laboratoryjnych** studenci będą kontynuować ten projekt - dodadzą hydraulikę (ETAP 2), uruchomią symulację i zrobią warianty (ETAP 3), wygenerują raport (ETAP 4). **Cel**: Każdy student wychodzi z LAB z **gotowym projektem** akademika + **raportem PDF** + **umiejętnościami** do samodzielnej pracy z T*SOL.
+
+**Zachęta**: "Po tym module znacie TEORIĘ. Na labach - PRAKTYKA. Po labach - SAMODZIELNOŚĆ. Po 3-5 własnych projektach - BIEGŁOŚĆ. To jak nauka jazdy - wykład to teoria, laby to nauka z instruktorem, projekty to praktyka. Po czasie - jeździsz automatycznie, nie myśląc o pedałach. Tak samo będzie z T*SOL!"
 </InstructorNotes>
 
 </Slide>
 
 </SlideContainer>
-
-
