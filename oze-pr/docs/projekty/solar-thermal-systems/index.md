@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Projekt - Systemy solarne termiczne (4 godziny)
+title: Projekt - Systemy solarne termiczne (4 godziny) - T*SOL
 ---
 
 # Projekt - Systemy solarne termiczne (4 godziny)

@@ -1,0 +1,271 @@
+(Ztranskrybowane przez TurboScribe.ai. Przejdź na Nielimitowany, aby usunąć tę wiadomość.)
+
+Hello and welcome to the Valentine Software webinar. Today we will show you the planning and design of heat pump systems with our GEO-TESOL program. My name is Sigsten Fiedkauer, I am one of the hosts of today's webinar.
+
+And on my side is my colleague Thomas Nedeker. Hello Thomas. Yes, hello dear guests, hello Sigsten.
+
+Nice that you are joining us for our webinar today. Sigsten has already mentioned it. Today it is about the planning and design of heat pump systems, mainly for the 1 and 2 family home area.
+
+We will start with a small introduction, i.e. we will give you a small overview of what the content of the webinar will be today. After that, we will switch to the program live and introduce our system planning. Thank you very much.
+
+Yes, that's exactly how it is. So what can you expect in the next 40-45 minutes? We want to introduce the GEO-TESOL program. At the beginning, we go into the general settings.
+
+Then we will plan a geothermal system, clean water treatment and heating support. During the planning, we go into the different heat sources that can be selected and also into the different systems that can be selected. Yes, then there are different operating methods and at the very end, of course, a presentation and an overview of the results.
+
+During the webinar, you also have the opportunity to ask us a few questions. Please use the chat function on the right side of your screen. As always, we try to answer as many questions as possible.
+
+Unfortunately, due to the limited time and the number of participants, it will not be possible to answer everything. We apologize in advance for that. So what else do we have? We plan a geothermal system for heating support and drinking water.
+
+That means, of course, we also need a few specifications that we have to make. We have to define a requirement for drinking water and also a requirement for heating. We have now looked for a bill for a construction application.
+
+Let's see what kind of specifications are in there. What can you use with us and what do you need at all? That is also clear. On the one hand, we need the area of ​​the object.
+
+In our case, we have around 390 square meters. What do we have for drinking water heating? 4,867 kWh per year. We have to enter that.
+
+Then we have the heating. We have to define the heating requirement. Here we have a small table with a monthly encryption, which we can then enter in the program when defining our requirements.
+
+Okay. Then we would now switch to the program. This is GeoTesol, the welcome screen when you start the program.
+
+Don't be surprised, it's a little smaller. Unfortunately, you can't make it bigger at the moment. Scaling to the full screen width.
+
+But I hope you can still see everything quite well. Before we start with the actual planning, Thomas, a few words about the general settings. Exactly, that's what I wanted to do.
+
+I wanted to start. It's mainly about the menu bar that we see here on the upper edge of the window. Here, for example, under the menu item file, the usual suspicions.
+
+I can start new projects. I can open existing projects. I can save them at another location.
+
+Here I also have the option of exporting to PVSOL the power requirement of the heat pump or possibly the source pump in a load profile. There is an interface in our photovoltaic program PVSOL Premium, which I can export as a photovoltaic system. Then, for example, I can import this load profile of the heat pump.
+
+And of course we can also end the program here. Then there is the next item, databases. Among other things, there are of course the heat pumps, namely the affordable heat pumps based on the WAFA list.
+
+They are also updated regularly. We also have a collector database that we take from the TESOL and a database for Kessel. If we now switch to the options, it is divided into four areas.
+
+User data, project report, Internet update and signature. We open the whole thing and then we see the user data here. That means you enter your company data, the address, contact data and you also have the option of loading a company logo.
+
+The whole thing then appears on the cover of the presentation or in the header of the following pages. Then we come to the project report. Here we have the possibility to define the contents via the different checkboxes that should be contained in this report.
+
+Click into the box, it means it's in there. If you remove the checkbox, it will be removed. Exactly, then Internet update.
+
+Here we can check that it should be checked once a day at the first start of the program, whether a new release or even a new version of the program is available. But as you can see, you can also check the whole thing manually here via Now. And the signatures.
+
+This is about the projects and the project reports. And you can then use this folder icon to determine where the whole thing should be stored and secured. Yes, those were the options.
+
+Then we have two languages, through which we can navigate through the menu. German and English. And in the help, we see that we have access to online help.
+
+So if you press the F1 key in the corresponding dialog window, then the corresponding help will be displayed for it. And here I can also check manually for updates again and look into the registration. If I don't want to or don't want to know which program version I don't have, then I can also check the information again under Info.
+
+So that's it now with the pre-settings and information. We are now starting the actual system planning. And to do this, we switch to this menu bar here.
+
+This also represents the workflow here in the program. That means we start here on the far left on the Welcome page and then have to work our way to the right until we get to the result graphics or the simulation results. And the whole thing happens either by a direct click on one of these icons or we can also use the two arrow keys, which you can see up here on the left, for forward and backward.
+
+And we'll start with the project data now. Yes, these are more of these general data for the project. So we can give it a title, an offer number, where is the system location, information about the customer.
+
+You can make a customer address. What is the name of the customer? You can also write in a project description. If you have a project image available, then you can also load it here.
+
+JPEG, bitmap, whatever. And all of these data will ultimately appear on the deck side of the presentation. And then you have a nice handout.
+
+In the lower area we see the climate data. This is the first big planning step, so to speak. We have to select our climate data to the location where we are planning.
+
+Let's click on select. Yes, and then I can open the whole window. Exactly, the climate data selection tool with the sim that is implemented here.
+
+And here I have various possibilities to select my climate data again. On the one hand, there is a list view here. In the upper area, there is a drop-down menu where I can select the different countries.
+
+And in the lower area, the individual climate data locations are tabular and alphabetically listed for the respective country that is included here. For Germany, these are around 450 climate data locations. The source of the data, i.e. the data of the German Weather Service.
+
+And I find further information about the postal number here in the table, about the radiation to the horizontal. Then we have a medium external temperature. And of course, the area of measurement over which this data was raised is very important.
+
+If I have an Internet connection, I can also select the whole thing via the map view. And here I have the advantage that I have a postal number search. So I don't have to scroll through the whole table to see if the climate data set I want is available.
+
+How do you go about it? Of course, simply enter the postal number. In our case, this is 14 542. And then we click on the Start button.
+
+And then we see in red all the climate data locations that are also stored in the database. And in yellow, this is the location I am looking for. And if we look at it, then this is Werder Havel.
+
+And the next location would be Potsdam. And now I have to think about whether I want to use this next location or whether I want to use another functionality here in Meteosyn. And that means that I can also create my own or new climate locations.
+
+And I start this option here at the bottom left via the button Create new location. Yes, then a new window opens. It doesn't look like what we just saw.
+
+We have the selection of countries again at the top. We have a search function. You can also search for a local name, geographical width and length, or just the postal number.
+
+Now we go in here, 14 542, click on Start. Then the corresponding search result is zoomed in again. In our case, a red marker.
+
+Click on it, mark it, so to speak. Then the location of the system is taken over. You can now add a postal number.
+
+And now we have to decide whether we want to interpolate or do I have my own measured data? Interpolation means that the existing data sets are taken into the database and the new data is interpolated from it for the desired location. If I have my own data, I go to Measured data. The picture changes a bit.
+
+I can access the data source at the top. Of course, you have to enter the measurement period. That would be very advantageous.
+
+Then you know which year the data comes from. And in the small table here, I have to enter the radiation values accordingly. I click on it.
+
+You can select different units. If you still have the temperatures, then I can also enter them. If not, then it is automatically interpolated from the existing data sets.
+
+I'm going to do a quick interpolation now. Click on Meteor norm. Is everything okay? Then the new data set is generated and stored in the database.
+
+Later, when I have other projects at the same location, I can continue to plan with it. There it is, Werder Havel. Here is the note that each measurement period deviates slightly from that of the German Weather Service, from the original data.
+
+All newly created ones are based on Meteor norm, just like those outside Germany. They have a measurement period from 1991 to 2010. That's how it works.
+
+The data set has been taken over. We can now move on to the next icon. This is the actual system selection in this area.
+
+It is divided a bit. First, we have to define the heat sources. This can be ground heat, ground heat probe or ground heat collector.
+
+Then there is external air and groundwater. We decided to plan a system with external air today. In a second area, I have to select the heat pump system I want.
+
+Now there is an option on the top right. Which view do I want? Do I want an icon view, i.e. system icons, or do I want a list selection of the available systems? On the right, there is a kind of filter function. Let's put all of them on idle.
+
+Then we have displayed the full range of all available system systems. The heating support is always selected. Then I can choose between drinking hot water, a hyperlamp system, which has a second energy carrier, e.g. a boiler, which also provides heat and heating support, or maybe another solar system.
+
+We decided to add a drinking hot water heating system and a boiler, which supports the heat pump. We want to do without the solar system. Then we now have four available system systems.
+
+Among them, we have chosen the system for the heat pump system number 8. This is a heat pump system with a hydraulic switch. It has separate buffer storage for heating and drinking hot water. We click on it and select it.
+
+Then the whole thing is taken over, also here in the overview, on the right-hand side of the window. Now it's all about defining the requirements. Sixten mentioned this at the beginning, that there is heating and drinking hot water.
+
+Let's switch to the next window. First, it's about heating. We remember the table at the beginning, where we now need the values.
+
+But first we have to determine what the percentages of the low and high temperature heating circuit are. In our case, we have a modern house. We only have a low temperature heating circuit.
+
+So we can leave it at 100%. Then the preheat and backflow temperatures have to be defined, that the respective heating circuits, 35 degrees Celsius and 28 degrees Celsius, are already high-temperature heating circuits. But we don't have that.
+
+So the whole thing is sorted out accordingly. I can't make any changes there. Then it's about the actual requirement.
+
+There are different possibilities. You can enter the heating load, then the annual sum, if I have that. Or, as in our case, we have monthly values.
+
+Click on monthly, click on the little link, monthly values. And now we have to enter our values for the individual months. And yes, that's January 1515, followed by 1241.
+
+Then we have 583 in March. In April we only have very little, three. And in the months of May to September, we have no heating requirement at all.
+
+From October it starts again, slowly, 22 kWh. Then we have a total of 1001 kWh in November. In December it was 1674 again.
+
+So, now we have transferred our small table here. This is filled here. Everything is okay here.
+
+What else do we need here on this page? We have to enter the heated use area. Our 389.4 square meters, which we also chose from the construction work. We want room temperature of 21 degrees.
+
+Then the heat limit temperature plays a role. Of course, there is not a standard, I want to have K40, or do I have standard buildings and so on? Let's take 12 here, golden middle, NF2009 or higher. Outside temperature, minus 14 degrees, fits.
+
+Let's leave it that way. And with that we have finally defined our heating requirement. Next point.
+
+We go one window further. Now it comes to drinking warm water. We remember that we had a need for 4865 kWh.
+
+So we already know the consumption. We have to enter 291 liters to get to our corresponding kWh number. Because we want a temperature of 50 degrees Celsius.
+
+Let's see, 4865 fits. Let's calculate cold water temperatures from the climate data. There are temperatures in there.
+
+If I want to, I can of course also define circulation here. We don't do that in this case. With that, we have finally completed the basics.
+
+We have defined our water consumer, we have defined our heating, our heating requirement. Now it comes to parameterizing the system. We have to choose which heat pump we want to use, which boiler and so on.
+
+Exactly. Then we have to select the heat pump and the boiler, as I just mentioned. And here on the right edge of the window, there is the possibility to open the database or to access the database.
+
+So click on select. And then in the next step select the desired manufacturer here on the left. Select on both sides.
+
+Click once and then enter the initial letters if possible. We want to have an air-water heat pump. And here we have another search window.
+
+Here you can enter parts of the designation to limit it a bit. In our case, this is an 8 IAR. And then we need a variable and a B. And then we hope that it will limit it accordingly.
+
+And here we are already. Here we have our heat pump. Here we have the coefficient of performance.
+
+And we also have a naming power of 8 kW. So we want to use that in the future. If heat pumps are not available, then send an email to database.valentin-software.com. And then we would add more heat pumps from the buffer list.
+
+Another option would be to copy one of the existing heat pumps. This is done by selecting one. Then right-click on copy.
+
+And in the copy we have the option to overwrite the name or to select another manufacturer. And then we also have access to the checkpoints, which we can then change. Or we can also add information to the area of use.
+
+The standard data sets cannot be edited. But if you create a copy of it beforehand, then you have the corresponding access. Okay, the heat pump is selected.
+
+We copy it and it is then copied. The same is now true for the boiler. Select it once.
+
+Then we also want to use a product type gas burner boiler. We enter that here accordingly. And here we also have the possibility, due to the large number of boilers, to enter a small search term.
+
+And that would be GB172 in this case. And then let's see that we limit the selection a bit here. Exactly.
+
+Already happened. We now select this smallest boiler, the one with the 14.2 kW. It is clicked.
+
+Select. And then the whole thing is taken over here. And we can continue with our planning and now come to the definition of the heat source.
+
+In our case, this is relatively simple. We can't make any further entries here. This is all taken from the data set.
+
+The name of the fan and the volume current. That's just in the data set. If we had taken a different heat source, for example a heat source probe or a collector, then there would be a few more information to make, to the area and so on and so forth.
+
+Maybe we'll go back to that at the very end, so that we can see a slightly different picture, so that we can get an impression of what could possibly be required. Then we come to the next step. This is about the definition of the operating methods.
+
+Exactly. Then we have to determine whether the whole thing is monovalent, mono-energetic. And you can already see in systems with boilers, that only bivalent operating methods are possible.
+
+Monovalent basically means that the heat pump delivers the entire heating heat up to the lowest outside temperature. A second heat generator like the boiler would not be necessary. Mono-energetic means that in addition to the heating system, the heat pump could perhaps use a second type of energy, like an electric heating.
+
+That would be mono-energetic. But as I said, that is not possible in our case, because we have a boiler. For the boiler, we now have to define how the whole thing works.
+
+For the boiler, they both run in parallel. Bivalent parallel would mean that the boiler and the heat pump are constantly operating in parallel at the same time. Then I can specify bivalent alternative, so either or.
+
+Either the heat pump or the boiler are operating. If we click on that, then we have to specify a temperature on the right, up to which the heat pump and up to which the heat pump are operating. And above the temperature or below the temperature, only the boiler would be operating.
+
+And then there is bivalent parallel again. That means that in a certain temperature range, both the heat pump and the boiler are operating. Above the temperature, only the heat pump.
+
+And below the lower temperature, only the boiler would be operating. In our case, that's 7 degrees. Above 7, only the heat pump is operating.
+
+Up to minus 10 degrees. Below this temperature, only the boiler would be operating. And in the range between 7 and minus 10, both are operating in parallel.
+
+And in the lower range, there is the possibility to define tariffs and deadlines. That's how it is. We click on this once.
+
+Then a small window opens. I don't know if we want to go into the tariffs, because we don't want to look at the economy that closely. But here you could enter the basic price and then work with high and low tariffs, if you want to.
+
+And then define the corresponding tariff times. It's quite interesting here. Sometimes energy providers also prescribe deadlines.
+
+You can define them accordingly down here. Then you have to click on it. And then, depending on what you get provided, you have to enter the times accordingly.
+
+For example, 7 to 8. The second deadline should be between 12.30 and 2.00 p.m. You can see it down here. Messages pop up now. Sometimes deadlines have to be shorter than two hours, And so on.
+
+Then you also get hints. If something happens again, you enter a number incorrectly, and so on. Then you get a warning.
+
+Okay. The third deadline is from 6 to 7.00 p.m. And that's it. It says okay here.
+
+Define the deadlines. And the window would be finished here now. Let's go to the next planning step.
+
+It's about which memory is used, or you can't choose a memory type, but you have to define the size of the memory. Exactly. We have to define the volume and the strength of the damping for our drinking water storage and also for our heating storage.
+
+The volume of the drinking water storage should stay at 300 liters. And we make the heating buffer storage a little smaller, 120 liters. And for the damping, we stay at 100 millimeters.
+
+Now we are here in the symbol bar. The next would be the solar collectors. We have chosen a system without solar thermal support.
+
+That's why this collector is grayed out now. If, of course, another system is chosen, then that would also be to be edited. And then we would also, as already mentioned at the beginning, access our collector database.
+
+Yes, then we can simulate nicely and take a look at the simulation results. What is now taking place is a dynamic minute simulation for the entire year. With this, we will ultimately determine all relevant characteristics, both the heat pump, the heat pump system, as well as the entire generator system.
+
+So if I had a solar thermal system with me, for example, then that would also be seen. And yes, we will see in a moment. Then we get various annual work figures, the energy that is delivered, and so on.
+
+Simulation is finished. This is the result page. We have different tabs up there, as we can see.
+
+Annual work figures, energy, and then there are two more of these thermal laws. One is valid nationwide for new buildings, and there is also one for existing buildings, which is only in Baden-Württemberg, in the end, is additional again. But let's start with the annual work figures.
+
+We can already see that there are also very different ones. The annual work figure is basically the ratio of use to effort. And it is spent once for the actual heat pump, 3.75 in our case, for the entire heat pump system.
+
+And if we had a system with additional collectors, then we would also get a value for the annual work figure for this generator system. 3.75 looks quite okay. And on the right-hand side here, it is a bit different.
+
+This is the calculation of annual work figures according to VDI 4650. This is actually what is mainly used for promotion or is required. And there we can already see that we have a difference of 4.05. If you are not sure what is what now, then you can also click on this little question mark here.
+
+Then you will be helped. And here you will also find an explanation for the corresponding annual work figures. There is also a whole lot.
+
+It can be confusing. But here we have, for example, according to VDI 4650, there is a small description. In the upper area, we ultimately have these annual work figures for the different systems, i.e. advertising pump systems or generator systems.
+
+You can read that again. Okay. We can close the help again.
+
+What else do we have here? We have the energy here. So what the corresponding heat pump or boiler delivers. In our case, the heat pump delivers around 70 percent.
+
+So around 7,650 kilowatt hours. About a third of the boiler is delivered. So contributed to our needs.
+
+And then we can see here with the energy what is delivered where. For heating, around 6,000 kilowatt hours. For drinking water, around 4,880 kilowatt hours.
+
+Everything chic. What do we have down there? There is the electrical energy that is needed there. These 2,043 kilowatt hours.
+
+That's ultimately what I could export, for example. What we had at the very beginning, Thomas said, that this is an export to PVSOL. This can then be exported to such a load profile.
+
+This load profile can then be imported into PVSOL. And then you can see if there is a PV system on the roof, whether that can ultimately meet the needs of our heat pump. On the right side we only see storage losses in our case.
+
+Around 750 kilowatt hours. If we now had a system with circulation and also with a collector, then we would still have storage losses and so on. In our case, that's not there.
+
+That's why we don't get any values. Then we would jump here to the result graphs. You can look at the whole thing again for individual months.
+
+I think there are even weekly values or 10-day values shown here, these individual points. The annual workload here over the entire year. You can take a look at that.
+
+And also which energies are generated.
+
+(Ten plik jest dłuższy niż 30 minut. Przejdź na Nielimitowany na TurboScribe.ai, aby transkrybować pliki do 10 godzin.)
