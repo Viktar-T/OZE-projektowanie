@@ -1,25 +1,290 @@
 ---
 sidebar_position: 6
-title: "Demonstracja na żywo: T*SOL"
+title: "Demonstracja na żywo: T*SOL w akcji"
 ---
 
-## Scenariusz ćwiczenia
+import { 
+  SlideContainer, 
+  Slide, 
+  KeyPoints, 
+  SupportingDetails, 
+  InfoBox,
+  WarningBox,
+  SuccessBox,
+  InstructorNotes,
+  VisualSeparator 
+} from '@site/src/components/SlideComponents';
 
-- Obiekt: budynek akademicki z zapotrzebowaniem 12 000 kWh/rok na c.w.u.
-- Konfiguracja: 30 kolektorów próżniowych, zbiornik warstwowy 2 000 l.
-- Lokalizacja: Warszawa (baza danych Meteonorm).
+<SlideContainer>
 
-**📖 Dokumentacja**: Pełne instrukcje i przykłady dostępne w [oficjalnej dokumentacji T*SOL](https://help.valentin-software.com/tsol/en/)
+<Slide title="🎬 Demonstracja na żywo - T*SOL w praktyce" type="info">
 
-## Kroki demonstracyjne
+<InfoBox title="🎯 Co zobaczymy na demonstracji">
 
-1. Import profilu zapotrzebowania (CSV) i konfiguracja układu.
-2. Dobór kolektorów oraz parametrów sterowania (temperatury progowe).
-3. Uruchomienie symulacji rocznej, analiza wyników (solar fraction, energy savings).
-4. Wygenerowanie raportu i omówienie wskaźników ekonomicznych.
+**SCENARIUSZ DEMONSTRACYJNY**: Akademik dla 200 studentów w Gdańsku
 
-## Zadania dla studentów
+**FORMAT DEMONSTRACJI**:
+1. **Live coding** - Prowadzący pracuje w T*SOL na żywo, studenci obserwują
+2. **Screen sharing** - Rzutnik/ekran pokazuje każdy krok
+3. **Interaktywne pytania** - Studenci mogą pytać w trakcie
+4. **Typowe błędy** - Pokazujemy też co MOŻE pójść źle
 
-- Przeanalizować wariant z kolektorami płaskimi i porównać wyniki.
-- Ocenić wpływ zwiększenia objętości bufora na pokrycie zapotrzebowania.
+**CZAS TRWANIA**: 45-60 minut (z pytaniami)
 
+</InfoBox>
+
+<KeyPoints title="📋 Plan demonstracji (Timeline)">
+
+**CZĘŚĆ 1: SETUP I PODSTAWY (15 min)**
+- 0:00-0:05: Uruchomienie T*SOL, nowy projekt
+- 0:05-0:10: Lokalizacja (Gdańsk) + dane meteorologiczne
+- 0:10-0:15: Import profilu CSV + weryfikacja sum
+
+**CZĘŚĆ 2: KONFIGURACJA SYSTEMU (20 min)**
+- 0:15-0:20: Wybór kolektorów z bazy, dobór powierzchni
+- 0:20-0:25: Schemat hydrauliczny (glikol + wymiennik)
+- 0:25-0:30: Zasobnik - pojemność, warstwowość, parametry
+- 0:30-0:35: Sterowanie - histerezy ΔT, antylegionella
+
+**CZĘŚĆ 3: SYMULACJA I ANALIZA (15 min)**
+- 0:35-0:40: Uruchomienie symulacji (8760 h obliczenia)
+- 0:40-0:45: Przegląd wyników - uzysk, f_sol, straty
+- 0:45-0:50: Analiza ekonomiczna - CAPEX, OPEX, SPBT
+
+**CZĘŚĆ 4: WARIANTY I RAPORT (10 min)**
+- 0:50-0:55: Test wariantu alternatywnego (inna powierzchnia)
+- 0:55-1:00: Generacja raportu PDF, przegląd zawartości
+
+**Q&A** (5-10 min): Pytania studentów
+
+</KeyPoints>
+
+<SupportingDetails title="💡 Co studenci powinni notować">
+
+- **Kolejność kroków** - workflow jest ważny
+- **Nazwy funkcji/modułów** - gdzie co znaleźć w menu
+- **Typowe wartości** - benchmarki, reguły kciuka
+- **Ostrzeżenia programu** - na co T*SOL zwraca uwagę
+- **Interpretacja wyników** - czy wartości mają sens
+
+</SupportingDetails>
+
+<InstructorNotes>
+**Demonstracja na żywo** to **kluczowy element** wykładu. **Dlaczego?** Bo pokazujemy PRAWDZIWY program, nie tylko slajdy. Studenci **widzą interfejs**, **słyszą komentarz** prowadzącego ("Tu klikam, bo...", "Teraz program oblicza...", "Ten wynik oznacza...").
+
+**FORMAT**: **Live coding** - prowadzący pracuje w T*SOL w czasie rzeczywistym. **Zalety**: Realny workflow, widać jak doświadczony użytkownik pracuje, można pokazać też błędy i jak je naprawić. **Wady**: Ryzyko techniczne (program crashuje, laptop się zawiesza), trzeba być biegłym w obsłudze. **Alternatywa**: Nagranie wideo - bezpieczne, ale mniej elastyczne (nie można reagować na pytania na bieżąco).
+
+**SCENARIUSZ**: Akademik to dobry przykład - wszystkie kluczowe elementy (duże zużycie, szczyty, wakacje), nie za prosty, nie za złożony. **Czas 45-60 min** to realny na demonstrację - krócej = za szybko, dłużej = nudzi się.
+
+**CZĘŚĆ 1 - SETUP**: **Pierwsze wrażenie** jest ważne. Pokazujemy że **T*SOL jest intuicyjny** - kreator (wizard) prowadzi krok po kroku. **Lokalizacja**: Wpisujemy "Gdansk" → Program znajdzie → Pokazuje mapę, współrzędne, dane meteo. **Import CSV**: Pokazujemy format pliku (otwieramy w Notepad), importujemy, program pokazuje wykres - "Widzicie szczyty rano i wieczorem? A tu wakacje - zero zużycia."
+
+**CZĘŚĆ 2 - KONFIGURACJA**: **Tu jest serce projektu**. **Kolektory**: Otwieramy bazę (Database), filtrujemy (Flat plate, Solar Keymark), wybieramy np. Viessmann. **Pokazujemy certyfikat** - klik → Otwiera się karta z parametrami η₀, a₁, a₂. "Te wartości pochodzą z laboratorium, są pewne." **Schemat hydrauliczny**: Pokazujemy gotowe schematy - "To glikol, to drain-back, to basen...". Wybieramy glikol. "Dlaczego? Bo najpopularniejszy, niezawodny, serwisanci znają." **Zasobnik**: Ustawiamy 3000 l. "Dlaczego? Reguła: 50 l/m² kolektora. 60 m² × 50 = 3000 l." **Sterowanie**: Histerezy - "Włącz pompę gdy ΔT > 5°C, wyłącz gdy < 2°C. Bez tego pompa taktowałaby."
+
+**CZĘŚĆ 3 - SYMULACJA**: **Moment prawdy**. Klik "Simulate" → Program liczy (progress bar). **Czasami trwa 30 sekund, czasami 2 minuty** - zależy od złożoności. **Wyniki**: Uzysk roczny 21,500 kWh, f_sol 47%, straty zasobnika 1850 kWh, straty rurociągów 950 kWh. **Komentarz**: "Uzysk 21,500 / 60 m² = 358 kWh/m²/rok. Benchmark dla Polski 300-450. **PASUJE!** f_sol 47% > 45% target. **OK!**" **Ekonomia**: CAPEX 95,000 zł, oszczędność 6,500 zł/rok, SPBT 14.6 lat. "Hmm, > 12 lat target. **Musimy poprawić**."
+
+**CZĘŚĆ 4 - WARIANTY**: "Zróbmy wariant z mniejszymi kolektorami - może będzie tańszy, lepszy SPBT?" Save as... → `Akademik_V2_plaskie50m`. Zmiana: 50 m² zamiast 60 m². Symulacja... Wyniki: f_sol 43% (< 45% target - **ZŁE**), CAPEX 85,000 zł, SPBT 13.1 lat (wciąż > 12 - **ZŁE**). "Wariant V2 nie spełnia kryteriów. **Wracamy do V1.**" **Raport PDF**: Generate report → Wybieramy zawartość (Results, Economics, Charts, yes/yes/yes) → PDF gotowy. Otwieramy → Pokazujemy: "To dostaje klient - schemat, wyniki, wykresy, wszystko."
+
+**Q&A**: "Pytania?" Typowe: "Co jeśli dane meteorologiczne się zmienią?" (analiza wrażliwości ±15%). "Czy można modelować hybrydy ST+PV?" (Tak, ale lepiej Polysun). "Ile kosztuje licencja?" (~3000 EUR komercyjna, ~200 EUR studencka).
+
+**TYPOWE BŁĘDY do pokazania** (celowo!): Import CSV z błędnym formatem → Program error → "Widzicie? Musi być średnik, nie przecinek." Symulacja daje nierealne wyniki (uzysk 900 kWh/m²/rok) → "Coś źle... sprawdzamy... aha, pomyliłem m² z szt., wpisałem 600 m² zamiast 60." **To uczy** jak diagnozować problemy.
+
+**INTERAKTYWNOŚĆ**: Co 5-10 min: "Pytania do tej pory?" Pozwala na bieżąco wyjaśnić niejasności. "Kto wie dlaczego histereza jest ważna?" → Student odpowiada → Pochwała lub korekta.
+
+**TECHNICZNE PRZYGOTOWANIE** (prowadzący):
+- Sprawdź T*SOL działa (dzień przed wykładem)
+- Przygotuj pliki CSV (profil, meteo) na pulpicie - łatwy dostęp
+- Test rzutnika/screen sharing - czy widać czytelnie
+- Plan B: Nagranie wideo backup gdyby program crashnął
+
+**PO DEMONSTRACJI**: Studenci dostają **link do nagrania** (jeśli było) + **pliki projektu** (.t3d) + **profile CSV**. Mogą sami odtworzyć w domu (jeśli mają T*SOL) lub zobaczyć ponownie.
+
+**CEL demonstracji**: Student po obejrzeniu **rozumie workflow**, **wie gdzie klikać**, **jest zmotywowany** ("To wygląda na łatwiejsze niż myślałem!"), **gotowy na laby** (gdzie sam spróbuje).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="energy" />
+
+<Slide title="🧪 Scenariusz szczegółowy - Krok po kroku" type="tip">
+
+<KeyPoints title="📝 Detale do odtworzenia (dla instruktorów)">
+
+**DANE WEJŚCIOWE**:
+- **Lokalizacja**: Gdańsk (54.37°N, 18.62°E), 10 m n.p.m.
+- **Meteo**: Meteonorm 8.0, roczne nasłonecznienie ~1000 kWh/m²/rok
+- **Zapotrzebowanie**: 10,000 l/dzień (200 osób × 50 l/dzień)
+- **Profil**: Rano 7-9 (60%), wieczór 19-22 (30%), reszta (10%)
+- **Wakacje**: Lipiec-sierpień demand = 0
+- **Temperatura**: T_hot = 45°C, T_cold = 10°C (zima), 15°C (lato)
+
+**KOMPONENTY**:
+- **Kolektory**: Viessmann Vitosol 200-F, 30 szt. × 2 m² = 60 m²
+  - η₀ = 0.806, a₁ = 3.69 W/m²K, a₂ = 0.015 W/m²K²
+  - Orientacja: Azimuth 0° (południe), Tilt 40°
+- **Zasobnik**: 3000 l, ciśnieniowy, stratyfikacja 4 warstwy
+  - Straty postojowe: 3.5 kWh/dzień (dobrze zaizolowany)
+- **Schemat**: Glikol (40% propylen) + płytowy wymiennik 20 m²
+- **Pompy**: Solarna 60 W (αA regulacja), cyrkulacja 45 W
+- **Sterowanie**: ΔT_on = 5°C, ΔT_off = 2°C
+- **Antylegionella**: Niedziela 2:00, target 65°C, czas 30 min
+
+**WYNIKI OCZEKIWANE** (orientacyjne, zależą od wersji T*SOL):
+- **Uzysk**: 20,000-22,000 kWh/rok
+- **f_sol**: 45-50%
+- **Straty**: Zasobnik ~1800 kWh, rurociągi ~900 kWh, cyrkulacja ~600 kWh
+- **Sprawność systemu**: 28-32%
+
+**EKONOMIA** (ceny 2024, Polska):
+- **CAPEX**: Kolektory 27,000 zł + zasobnik 15,000 zł + montaż 30,000 zł + rury/automatyka 20,000 zł = **92,000 zł**
+- **OPEX**: Serwis 500 zł/rok + glikol (wymiana co 5 lat) 200 zł/rok + energia pomp 150 zł/rok = **850 zł/rok**
+- **Oszczędność**: 21,000 kWh × 0.30 zł/kWh = **6,300 zł/rok**
+- **SPBT**: 92,000 / (6,300 - 850) = **16.9 lat** (> 12 target, trzeba optymalizować!)
+
+</KeyPoints>
+
+<WarningBox title="⚠️ Problemy do pokazania i rozwiązania">
+
+**PROBLEM 1: SPBT za długi (16.9 > 12 lat)**
+- **Diagnoza**: CAPEX za wysoki lub oszczędności za małe
+- **Rozwiązanie opcje**:
+  - A) Zmniejsz kolektory do 50 m² → CAPEX -10k zł, ale f_sol spada do 42% < 45%
+  - B) Zwiększ powierzchnię do 70 m² → f_sol 52%, ale CAPEX +12k zł, SPBT 18 lat
+  - C) Zmień na próżniowe → f_sol 53%, ale CAPEX +20k zł, SPBT 20 lat
+  - **Werdykt**: Żadna opcja nie spełnia OBIE kryteria (f_sol > 45% I SPBT < 12)
+  - **Prawdziwe rozwiązanie**: Negocjuj z dostawcami (CAPEX -15%), szukaj dotacji (+30k zł grant)
+
+**PROBLEM 2: Ostrzeżenie stagnacji lipiec-sierpień**
+- **Przyczyna**: Wakacje, zero zużycia, kolektory produkują pełną parą
+- **Rozwiązanie**: Heat-dump (odprowadź nadwyżki do basenu/technologii) LUB zmniejsz kolektory (ale wtedy f_sol spada)
+
+**PROBLEM 3: Import CSV kończy się błędem**
+- **Przyczyna**: Format - separator przecinek zamiast średnika
+- **Rozwiązanie**: Otwórz CSV w Notepad, Find&Replace "," → ";", Save, reimport
+
+</WarningBox>
+
+<InstructorNotes>
+**Scenariusz szczegółowy** to **skrypt dla prowadzącego**. Każdy parametr jest ZDEFINIOWANY - można odtworzyć identyczny projekt.
+
+**DLACZEGO TAK SZCZEGÓŁOWO?** Bo demonstracja powinna być **ODTWARZALNA**. Inny prowadzący, inna uczelnia, inna data - **wyniki powinny być podobne**. Dzięki temu studenci mogą porównywać swoje projekty z demonstracją.
+
+**DANE WEJŚCIOWE**: **Wszystko precyzyjnie**. Współrzędne Gdańska, meteo source, profil godzina po godzinie. **Dlaczego T_cold zmienne?** Bo zimą woda z sieci jest ~10°C (zimna ziemia), latem ~15°C (cieplejsza). **Wpływ na obliczenia**: Większa różnica ΔT zimą = więcej energii potrzebnej do podgrzania.
+
+**KOMPONENTY**: **Viessmann Vitosol 200-F** to realny kolektor, populacy w Polsce, łatwo znaleźć w bazie T*SOL. **30 szt. × 2 m² = 60 m²** to ładna okrągła liczba, łatwa do zmiany w wariantach (±10 szt. = ±20 m²). **Zasobnik 3000 l** według reguły 50 l/m². **Stratyfikacja 4 warstwy** to standard w T*SOL dla zasobników >1000 l. **Straty postojowe 3.5 kWh/dzień** to dobra izolacja (zbiornik klasy B wg EN 12897).
+
+**GLIKOL 40% propylen**: Mieszanka wody z glikolem propylenowym w stosunku 60:40. **Dlaczego nie 50:50?** Bo 40% wystarcza do ochrony do -25°C, a mniejsza zawartość glikolu = lepsza przewodność cieplna = wyższa efektywność. **Wymiennik płytowy 20 m²**: Powierzchnia wymiany determinuje sprawność przenosu ciepła glikol → woda. Za mały = wąskie gardło, za duży = niepotrzebny koszt.
+
+**POMPY**: **Solarna 60 W** z regulacją αA (proporcjonalna do ΔT) - jak większa różnica temperatur, tym szybsza pompa. **Cyrkulacja 45 W** - mniejsza, bo krótszy dystans (obieg wewnątrz budynku).
+
+**STEROWANIE**: **ΔT_on = 5°C** - włącz pompę solarną gdy kolektor jest 5°C cieplejszy od zasobnika. **ΔT_off = 2°C** - wyłącz gdy różnica spadnie do 2°C. **Histereza 3°C** (5-2) zapobiega taktowaniu.
+
+**ANTYLEGIONELLA**: **Niedziela 2:00** - noc, małe zużycie, czas na podgrzanie. **65°C przez 30 min** - zabija bakterie Legionella (wymaganie sanitarne). **Co jeśli solary nie dają 65°C?** Kocioł wspomagający włącza się automatycznie.
+
+**WYNIKI OCZEKIWANE**: **20-22 MWh/rok** uzysku to realistyczne dla 60 m² w Gdańsku. **f_sol 45-50%** oznacza że słońce pokrywa połowę zapotrzebowania, reszta z kotła. **Straty ~3300 kWh total** to ~15% uzysku - OK (benchmark 12-18%). **Sprawność systemu 28-32%** = uzysk / (irradiancja × powierzchnia). Niższa niż sprawność kolektora (80%) bo: straty rurociągów, wymiennika, zasobnika, niewykorzystanie pełnej mocy (latem nadprodukcja).
+
+**EKONOMIA**: **CAPEX 92k zł** to realny koszt dla takiej instalacji (60 m², 3000 l, full automatyka). **OPEX 850 zł/rok** to niewiele - solary są tanie w eksploatacji. **Oszczędność 6,300 zł/rok** zakłada cenę gazu 0.30 zł/kWh (ceny 2024, wzrosły od 2022). **SPBT 16.9 lat** to ZA DUŻO - typowo instalacje ST powinny zwracać się w 8-12 lat żeby były atrakcyjne.
+
+**PROBLEMY - RZECZYWISTOŚĆ PROJEKTOWANIA**: **Problem 1** pokazuje **typowy dylemat**: Cele są SPRZECZNE. Chcemy f_sol > 45% (dużo kolektorów) I SPBT < 12 lat (mało kosztów). **Nie da się osiągnąć OBIE przy obecnych cenach**. **Rozwiązania realne**: Negocjacje z dostawcami (zniżki hurtowe), dotacje państwowe/unijne (WFOŚiGW daje do 30% kosztu), kredyty preferencyjne (niskie oprocentowanie).
+
+**Problem 2 - stagnacja**: To **plaga systemów ST w obiektach sezonowych**. **Rozwiązanie heat-dump**: Dodaj odbiornik ciepła latem - basen (podgrzej do 26°C), grunt (magazyn sezonowy), technologia (chłodzenie absorpcyjne). **Lub mniejsze kolektory** - ale wtedy f_sol spada i możemy nie spełnić celu.
+
+**Problem 3 - CSV**: **Bardzo częsty błąd początkujących**. Excel domyślnie eksportuje z przecinkiem (,) separator. T*SOL wymaga średnika (;). **Pokazanie tego na żywo** uczy studentów DEBUGOWANIA - jak znaleźć i naprawić problem.
+
+**INTERAKCJA W TRAKCIE**: Po pokazaniu Problemu 1: "Co byście zrobili? Zmniejszyć kolektory? Zmienić typ? Szukać dotacji?" → Studenci dyskutują → Prowadzący podsumowuje "Nie ma jednego rozwiązania. To kompromis. Świadomy projektant POKAZUJE opcje klientowi, klient DECYDUJE według priorytetów."
+
+**CEL SCENARIUSZA**: Student po obejrzeniu demonstracji **WIE JAK** stworzyć projekt od A do Z, **ROZUMIE DLACZEGO** każdy krok, **POTRAFI** zdiagnozować typowe problemy. **Na labach** będzie replikować ten proces na własnym projekcie (inny obiekt, inna lokalizacja).
+</InstructorNotes>
+
+</Slide>
+
+<VisualSeparator type="success" />
+
+<Slide title="📚 Materiały dodatkowe i zadania dla studentów" type="success">
+
+<SuccessBox title="🎓 Zadanie praktyczne - Do wykonania samodzielnie">
+
+**PROJEKT**: Zaprojektuj instalację solarną termiczną dla **akademika na 200 studentów w Gdańsku**
+
+**WARIANTY DO PRZETESTOWANIA**:
+1. **Wariant A (Base)**: 60 m² kolektory płaskie, zasobnik 3000 l
+2. **Wariant B**: 50 m² kolektory płaskie, zasobnik 2500 l
+3. **Wariant C**: 55 m² kolektory próżniowe, zasobnik 2800 l
+
+**RAPORT MUSI ZAWIERAĆ**:
+- Uzysk roczny [kWh/rok] i specyficzny [kWh/m²/rok]
+- Pokrycie solarne f_sol [%]
+- Straty składowe (zasobnik, rurociągi, cyrkulacja)
+- CAPEX, OPEX, LCOH, SPBT
+- Analiza wrażliwości: ceny energii ±20%
+- Wnioski: Który wariant rekomendowany i dlaczego? (max 200 słów)
+
+**TERMIN**: 2 tygodnie od zajęć laboratoryjnych
+
+**PUNKTACJA**: 20 punktów (10 za poprawność techniczną, 5 za ekonomię, 5 za wnioski)
+
+</SuccessBox>
+
+<KeyPoints title="📖 Materiały do samodzielnej nauki">
+
+**📹 Tutoriale video (YouTube)**:
+- "T*SOL Tutorial - Domestic Hot Water System" (Valentin Software, 45 min)
+- "Solar Thermal Design with T*SOL" (Energy Academy, 30 min)
+- "Common Mistakes in T*SOL" (Solar  Design Tips, 20 min)
+
+**📄 Dokumentacja i przykłady**:
+- [Oficjalna dokumentacja T*SOL](https://help.valentin-software.com/tsol/en/) - kompletny podręcznik użytkownika
+- [Forum użytkowników](https://forum.valentin-software.com) - Q&A, best practices
+- [Przykładowe projekty .t3d](https://valentin-software.com/en/downloads/examples) - gotowe projekty do analizy
+
+**📚 Literatura uzupełniająca**:
+- "Solar Engineering of Thermal Processes" - Duffie & Beckman (biblia ST)
+- "Solar Thermal Systems" - Stieglitz & Heinzel (praktyczne projektowanie)
+- Normy: ISO 9806:2017, EN 12975:2022, EN 12976:2017
+
+**🎯 Ćwiczenia dodatkowe** (dla ambitnych):
+1. Porównaj wyniki T*SOL z ręcznymi obliczeniami (metoda f-chart)
+2. Zrób analizę wrażliwości dla 5 parametrów (kolektory, zasobnik, ceny, profil, meteo)
+3. Zaprojektuj system hybrydowy ST + pompa ciepła (wymaga Polysun lub TRNSYS)
+
+</KeyPoints>
+
+<InfoBox title="💡 Wskazówki do zadania">
+
+- **Zacznij od wariantu A** (base) - upewnij się że działa poprawnie
+- **Zmieniaj PO JEDNYM parametrze** - tak łatwiej zrozumieć wpływ
+- **Dokumentuj decyzje** - dlaczego wybrałeś te parametry?
+- **Sanity-check wyników** - porównaj z benchmarkami (300-450 kWh/m²/rok dla Polski)
+- **Analiza wrażliwości**: Ceny energii BĘDĄ się zmieniać - pokaż scenariusze
+- **Wnioski konkretne**: "Rekomendujmy wariant B bo..." (nie "Wariant B jest OK")
+
+</InfoBox>
+
+<InstructorNotes>
+**Materiały dodatkowe i zadanie** to **konsolidacja wiedzy**. Student ma teraz **komplet narzędzi** - teorię (wykłady), demonstrację (na żywo), materiały (dokumentacja, tutoriale) i **zadanie praktyczne** (zastosuj wiedzę).
+
+**ZADANIE PRAKTYCZNE**: **Celowo ten sam obiekt** co demonstracja (akademik Gdańsk). **Dlaczego?** Bo student widział jak to zrobić, teraz sam replikuje. **To builds confidence** - "Widziałem jak prowadzący to robił, teraz ja robię to samo". **Warianty A/B/C** uczą WARIANTOWANIA - kluczowej umiejętności projektanta. Klient ZAWSZE pyta "A co jeśli...?" - projektant musi umieć szybko przetestować opcje.
+
+**RAPORT - WYMAGANIA**: **Uzysk i f_sol** to podstawa - czy system działa. **Straty składowe** pokazują gdzie energia ucieka - to diagnostyka. **Ekonomia** to decyzja inwestycyjna - czy się opłaca. **Analiza wrażliwości** to zarządzanie ryzykiem - co jeśli ceny wzrosną/spadną. **Wnioski 200 słów** to trening SYNTEZY - umiejętność zwięzłego komunikowania kluczowych informacji. **W rzeczywistym projekcie** klient często czyta TYLKO wnioski - reszta to szczegóły dla inżynierów.
+
+**TERMIN 2 TYGODNIE**: Realistyczny. **Tydzień 1**: Laby + próby samodzielne + pytania na konsultacjach. **Tydzień 2**: Finalizacja, raport, weryfikacja. **Gdyby tydzień** - za mało czasu na przemyślenie, nauki. **Gdyby miesiąc** - studenci odkładają na później, robią w ostatniej chwili.
+
+**PUNKTACJA 20 pkt**: **10 za poprawność techniczną** - czy symulacja działa, czy wyniki mają sens, czy wszystkie parametry wprowadzone. **5 za ekonomię** - czy CAPEX/OPEX realistyczne, czy analiza wrażliwości wykonana. **5 za wnioski** - czy student rozumie wyniki, czy potrafi rekomendować wariant z uzasadnieniem.
+
+**TUTORIALE VIDEO**: **YouTube to kopalnia wiedzy**. "T*SOL Tutorial" od Valentin Software (oficjalny kanał) - 45 min krok po kroku projekt c.w.u. **Energy Academy** to niezależny kanał edukacyjny - 30 min tutorial z emphasis na praktyczne wskazówki. **Solar Design Tips** - krótkie (10-20 min) filmy o KONKRETNYCH problemach ("Jak modelować zacienienie?", "Dlaczego moja symulacja daje błędne wyniki?").
+
+**DOKUMENTACJA**: **help.valentin-software.com** to KOMPLETNY manual - 300+ stron PDF. **Dla początkującego** - przytłaczające. **Wskazówka**: Czytaj SEKCYJNIE - teraz uczysz się profili → Przeczytaj rozdział 5 "Load Profiles", nie cały manual. **Forum** to społeczność praktyczna - zadajesz pytanie, ktoś odpowiada zwykle w 24h. **Przykładowe projekty .t3d** - OTWÓRZ, ANALIZUJ, UCZ SIĘ jak doświadczeni użytkownicy budują projekty.
+
+**LITERATURA**: **Duffie & Beckman** to BIBLIA solar thermal - 900 stron teorii, równań, metod. **Dla dociek liwych** studentów i doktorantów. **Stieglitz & Heinzel** bardziej praktyczny - 400 stron, dużo przykładów, schematów. **Normy** (ISO 9806, EN 12975, EN 12976) to standardy branżowe - MUSISZ znać jeśli chcesz pracować w branży.
+
+**ĆWICZENIA DODATKOWE**: **Dla tych którzy chcą więcej**. **f-chart** to ręczna metoda obliczeń ST (przed erą komputerów). **Porównanie T*SOL vs f-chart** uczy ZROZUMIENIA co program robi "pod maską". **Analiza wrażliwości 5 parametrów** to zaawansowane - testowanie jak każdy parametr wpływa na wyniki. **System hybrydowy ST+HP** to frontiera technologii - przyszłość energetyki budynkowej. Wymaga Polysun (lepszy do hybrydy) lub TRNSYS (pełna kontrola).
+
+**WSKAZÓWKI DO ZADANIA**: To **mini-konsultacja** wbudowana w slajd. **"Zacznij od A"** - nie skacz od razu do trzech wariantów, najpierw JEDEN działający. **"Dokumentuj"** - w pracy zawodowej ZAWSZE pytanie "Dlaczego tak zaprojektowałeś?" **"Sanity-check"** - ochroń się przed głupimi błędami. **"Wnioski konkretne"** - nie "System jest dobry" ale "Rekomendujemy wariant B (55 m² próżniowe) ponieważ: f_sol 51% (> 45% target), SPBT 11.2 lat (< 12 target), różnica w CAPEX vs wariant A tylko +5%, ale +6% wyższa produkcja roczna co daje lepszy long-term ROI."
+
+**CEL MODUŁU ZADANIA**: Student **PRAKTYKUJE** to co uczył się na wykładzie i labach. **Popełnia błędy** (bezpiecznie, w zadaniu), **uczy się na nich**, **buduje kompetencję**. **Po wykonaniu zadania** student jest **samodzielny** - potrafi zaprojektować prosty system ST od A do Z.
+
+**MOTYWACJA NA KONIEC**: "To zadanie to wasz pierwszy PRAWDZIWY projekt. W portfolio możecie napisać 'Zaprojektowałem instalację solarną termiczną dla akademika, uzysk 21 MWh/rok, f_sol 48%, SPBT 11 lat'. To KONKRET, nie 'znam teorię ST'. Na rozmowie rekrutacyjnej to WYRÓŻNIA. Powodzenia!"
+</InstructorNotes>
+
+</Slide>
+
+</SlideContainer>
