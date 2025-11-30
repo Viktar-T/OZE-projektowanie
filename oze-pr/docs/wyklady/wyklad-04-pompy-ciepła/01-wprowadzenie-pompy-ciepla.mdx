@@ -17,47 +17,69 @@ import {
 
 <SlideContainer>
 
-<Slide title="🎓 Cel wykładu i perspektywa narzędziowa" type="info">
+<Slide title="🎓 Witamy w świecie projektowania pomp ciepła!" type="info">
 
-<KeyPoints title="🎯 Czego się uczymy">
+<KeyPoints title="🎯 Czego się dzisiaj nauczymy">
 
-- ⚙️ Jak odwzorować warunki pracy źródła i odbioru ciepła
-- 📊 Jak realistycznie policzyć SCOP/SPF, zużycie energii i koszty
-- 📄 Jak przygotować komplet dokumentów projektowych i warianty
+- 💡 **Podstawy**: Jak działa pompa ciepła z perspektywy projektanta
+- 🔧 **Narzędzia**: Jakich programów używają profesjonaliści
+- 📊 **Praktyka**: Jak stworzyć projekt od początku do końca
 
 </KeyPoints>
 
-<SupportingDetails title="💡 Perspektywa software-first">
+<SupportingDetails title="💡 Nasze podejście: od narzędzi do wiedzy">
 
-- 🛠️ Skupiamy się na narzędziach projektowych (**GeoTSOL**, Polysun, TRNSYS, kalkulatory producentów)
-- 🔗 Łączymy modele energetyczne, hydrauliczne i ekonomiczne
-- 📋 Utrzymujemy dyscyplinę: dane → konfiguracja → symulacja → raport
+- 🎓 **Myślimy jak praktyk**: Najpierw poznajemy narzędzia (GeoTSOL, Polysun), potem zagłębiamy się w teorię
+- 🔍 **Kompleksowe spojrzenie**: System to nie tylko pompa - to źródło ciepła + instalacja + sterowanie + ekonomia
+- 📈 **Krok po kroku**: Dane wejściowe → Konfiguracja → Symulacja → Wyniki → Raport dla klienta
 
 </SupportingDetails>
 
 <InstructorNotes>
-Ok, słuchajcie, dziś zaczynamy nowy moduł o systemach z pompami ciepła, ale **z perspektywy narzędzi projektowych**. To ważne, żeby od razu zrozumieć - **my nie tylko obliczamy, my modelujemy**. To jest kluczowa różnica.
+Witajcie! Dziś zaczynamy fascynującą podróż przez świat projektowania systemów z pompami ciepła. **Czym różni się nasz wykład od tradycyjnego?** Zaczynamy od praktyki - od narzędzi, których używają profesjonaliści każdego dnia.
 
-W tym wykładzie zajmiemy się trzema głównymi rzeczami. **Po pierwsze, jak odwzorować warunki pracy źródła i odbioru ciepła** - to znaczy jak PC, pompa ciepła, pobiera ciepło z gruntu, powietrza czy wody, i jak oddaje je do instalacji grzewczej. **Po drugie, jak realistycznie policzyć SCOP i SPF** - to są wskaźniki efektywności, dokładnie o tym będę mówił za chwilę - zużycie energii i koszty. **Po trzecie, jak przygotować komplet dokumentów projektowych i warianty**, bo prawdziwy projektant zawsze testuje kilka rozwiązań.
+**Wyobraźcie sobie**: Przychodzi do was klient z pytaniem „Ile będzie kosztować pompa ciepła w moim domu?" Nie możecie odpowiedzieć „około 30 tysięcy" i „około 2000 złotych rocznie za prąd". Musicie to **precyzyjnie obliczyć** - i do tego potrzebujecie narzędzi komputerowych.
 
-**Podejście software-first** to znaczy, że **jakość narzędzi determinuje jakość projektu**. Używamy **GeoTSOL, Polysun, TRNSYS**, kalkulatorów producentów. Łączymy **modele energetyczne** - czyli jak działa cały system, **hydrauliczne** - czyli jak krąży woda, i **ekonomiczne** - czyli ile to wszystko kosztuje. Zachowujemy dyscyplinę: dane wejściowe, konfiguracja systemu, symulacja, raport.
+**Trzy główne pytania, na które odpowiemy dzisiaj:**
 
-**Obecnie (2024–2025) pompa grzewcza jest ograniczona procentowo nowych urządzeń – około 25–30% całego rynku urządzeń grzewczych, przy wykluczeniu ze strony kotłów na biomasę i kotłów gazowych**. Wymagania prawne, szczególnie rozporządzenie o charakterystyce energetycznej, wymuszają precyzyjne obliczenia. I pamiętajcie - **błąd w doborze PC o 20 procent za dużej to kilka tysięcy złotych niepotrzebnej inwestycji**.
+1. **Skąd i dokąd płynie ciepło?** Pompa ciepła pobiera ciepło ze źródła (powietrze, grunt, woda) i przekazuje do domu (podłogówka, grzejniki, ciepła woda). Musimy zamodelować oba końce tego układu.
+
+2. **Jak efektywny jest system?** SCOP i SPF to wskaźniki mówiące „ile ciepła dostaniemy za 1 złotówkę wydaną na prąd". Im wyższe, tym lepiej. Musimy to dokładnie policzyć.
+
+3. **Jak to przedstawić klientowi?** Profesjonalny raport z wariantami, wykresami, kosztami. Klient musi zrozumieć co kupuje.
+
+**Dlaczego to takie ważne?** Pompy ciepła to już **25-30% nowych instalacji grzewczych w Polsce** (2024-2025). Rynek szybko rośnie. **Błąd w projekcie to realne pieniądze** - pompa za duża o 20% to kilka tysięcy złotych straconych. Dlatego precyzyjne narzędzia są kluczowe.
+
+**Nasze podejście**: Najpierw poznajecie narzędzia (GeoTSOL - lider w Europie), potem rozumiecie teorię. To jak nauka jazdy - najpierw siadacie za kierownicą, potem rozumiecie jak działa silnik.
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="energy" />
 
-<Slide title="🏗️ Architektura typowego układu z PC" type="tip">
+<Slide title="🏗️ Co składa się na system z pompą ciepła?" type="tip">
 
-<KeyPoints title="🔧 Co musimy zamodelować">
+<KeyPoints title="🧩 Elementy systemu - od prostych do złożonych">
 
-- ⚡ Jednostka PC: sprężarka (on/off, inwerter), mapy P–Q–T, COP(T_src,T_sink,PLR)
-- 🌍 Dolne źródło: powietrze, grunt (BHE/poziomy), woda (studnie/powierzchniowa)
-- 🏠 Odbiorniki: podłogówka, klimakonwektory, CWU (profil dobowy)
-- 🔄 Hydraulika i magazynowanie: bufor, zasobnik, pompy, zawory
-- 🎛️ Sterowanie: krzywa grzewcza, T_biv, histerezy, antylegionella
+- ⚡ **1. Pompa ciepła** („serce systemu")
+  - Sprężarka: włącz/wyłącz lub płynna regulacja mocy (inwerter)
+  - Efektywność (COP): zależy od temperatur źródła i odbioru
+  
+- 🌍 **2. Źródło ciepła** („skąd bierzemy energię")
+  - Z powietrza (najczęstsze, najtańsze)
+  - Z gruntu (sondy pionowe lub kolektory poziome - droższe, stabilniejsze)
+  - Z wody (studnie, jeziora - rzadkie)
+
+- 🏠 **3. Odbiorniki** („gdzie oddajemy ciepło")
+  - Ogrzewanie podłogowe (35°C - najlepsze dla pompy)
+  - Grzejniki (55°C - wymagają większej mocy)
+  - Ciepła woda użytkowa (50-60°C)
+
+- 🔄 **4. Magazyny i hydraulika** („jak zarządzamy przepływem")
+  - Bufory ciepła, zasobniki wody, pompy, zawory
+
+- 🎛️ **5. Sterowanie** („mózg systemu")
+  - Automatyka dostosowująca moc do potrzeb
 
 </KeyPoints>
 
@@ -69,58 +91,90 @@ W tym wykładzie zajmiemy się trzema głównymi rzeczami. **Po pierwsze, jak od
 </SupportingDetails>
 
 <InstructorNotes>
-Każdy element systemu z pompą ciepła ma swoje charakterystyki, które musimy dokładnie zamodelować. Zacznijmy od **jednostki PC**. Sprężarka może pracować w trybie **on/off** - włącza się i wyłącza, albo z **inwerterem** - zmienia moc płynnie. **Mapy P-Q-T** to wykresy pokazujące moc P, wydajność Q i temperatury T w zależności od siebie. **COP zależy od temperatury źródła, temperatury odbioru i PLR** - to jest **stopień obciążenia, part load ratio**. Jeśli pompa pracuje na 70 procent mocy, to PLR wynosi 0.7.
+**Pomyślcie o systemie z pompą ciepła jak o łańcuchu** - każde ogniwo jest ważne, a słabe ogniwo osłabia cały system.
 
-**Dolne źródło** to miejsce, z którego pobieramy ciepło. **Powietrze** - to pompy AW (powietrze-woda), powietrze woda. **Grunt** - to **BHE (borehole heat exchanger)**, sondy pionowe, albo poziome kolektory. **Woda** - to studnie albo zbiorniki powierzchniowe.
+**Element 1: Pompa ciepła - „silnik"**
+Pompa ma sprężarkę, która może pracować na dwa sposoby:
+- **On/Off** (stary typ): Albo pracuje na 100%, albo wcale. Jak stary włącznik światła.
+- **Inwerter** (nowoczesny): Może pracować na 30%, 50%, 80% - dostosowuje się do potrzeb. Jak ściemniacz światła.
 
-**Odbiorniki** to nasza instalacja grzewcza. **Podłogówka** - ogrzewanie podłogowe, **klimakonwektory** - to grzejniki wentylatorowe, **CWU (ciepła woda użytkowa)** - ciepła woda użytkowa. To ostatnie ma **profil dobowy** - rano i wieczorem jest szczyt zapotrzebowania.
+Efektywność (COP) zmienia się w zależności od warunków. **Analogia**: Samochód zużywa różnie paliwa w mieście i na autostradzie. Pompa też - w mroźny dzień musi „ciężej pracować" niż w lekki mróz.
 
-**Hydraulika i magazynowanie**: bufory ciepła - zbiorniki wody grzewczej, zasobniki CWU, pompy, zawory. **Sterowanie** to krzywa grzewcza - jak temperatura zasilania zależy od temperatury zewnętrznej, **T_biv** - temperatura biwalencji, kiedy włącza się wspomaganie, **histerezy** - zakresy włączania i wyłączania, **antylegionella** - system zapobiegający rozwojowi bakterii.
+**Element 2: Źródło ciepła - „skąd bierzemy energię"**
+- **Powietrze** (najpopularniejsze): Tanie, łatwy montaż, ale w zimie efektywność spada. Jak jedzenie śniegu - da się, ale trzeba dużo energii żeby go roztopić.
+- **Grunt** (sondy pionowe): Drogie wiercenie, ale temperatura gruntu stabilna przez cały rok (~10°C). Najwyższa efektywność.
+- **Woda** (rzadkie): Jeśli macie studnię lub jezioro - świetna opcja. Podobnie stabilne jak grunt.
 
-**Defrost**, rozmarzanie, to proces w pompach powietrznych - przy niskich temperaturach wymiennik się pokrywa szronem i musi być rozmrożony. To może **obniżyć SPF o 10-15 procent**. **Bufory mogą zwiększyć SPF o 5-10 procent** przez redukcję cyklingu - mniej włączeń i wyłączeń.
+**Element 3: Odbiorniki - „dokąd oddajemy ciepło"**
+Kluczowa zasada: **Im niższa temperatura, tym wyższa efektywność pompy**
+- Ogrzewanie podłogowe (35°C): Idealne! SPF ~4.0
+- Grzejniki (55°C): Działa, ale SPF ~3.0
+- Ciepła woda (55°C): Rano i wieczorem szczyt - profil dobowy.
+
+**Element 4: Magazyny**
+Bufor ciepła to jak akumulator - pozwala pompie pracować stabilnie, bez ciągłego włączania/wyłączania. **Zmniejsza „taktowanie" - zwiększa żywotność i SPF o 5-10%**.
+
+**Element 5: Sterowanie**
+Automatyka to „mózg" - dostosowuje pracę pompy do pogody i potrzeb. Dobrze ustawione sterowanie to różnica między SPF 3.0 a 3.8.
+
+**Praktyczny wniosek**: W programie musimy zamodelować WSZYSTKIE te elementy razem, bo one wzajemnie na siebie wpływają.
 </InstructorNotes>
 
 </Slide>
 
 <VisualSeparator type="technical" />
 
-<Slide title="📐 Wskaźniki i definicje (dla modeli)" type="info">
+<Slide title="📐 Jak mierzymy efektywność? (COP, SPF, SCOP)" type="info">
 
-<KeyPoints title="📊 Metryki, które raportujemy">
+<KeyPoints title="📊 Trzy najważniejsze wskaźniki - od prostego do złożonego">
 
-- ⚙️ COP(T_src,T_sink,PLR), **SCOP/SPF** (H2/H3, DHW)
-- 🔋 P_design, T_design – dla pokrycia mocy
-- 🌡️ T_biv – punkt biwalentny; logika wsparcia szczytowego
-- 📈 Bin-hour vs. EPW/TRY – rozdzielczość danych klimatycznych
+- ⚙️ **COP** = „Ile ciepła dostanę TERAZ za 1 kW prądu?"
+  - Zmienia się co godzinę w zależności od pogody i temperatury w domu
+  - Przykład: COP = 3.5 → za 1 kW prądu dostajesz 3.5 kW ciepła
+  
+- 🔋 **SPF** = „Ile ciepła dostanę ŚREDNIO przez cały rok?"
+  - To średnia z całego sezonu grzewczego
+  - Przykład: SPF = 3.2 → rocznie za 1000 kWh prądu dostajesz 3200 kWh ciepła
+  
+- 📊 **SCOP** = „Jaka jest efektywność według normy europejskiej?"
+  - Znormalizowany wskaźnik - pozwala porównać różne pompy
+  - Producenci podają w katalogach
 
 </KeyPoints>
 
-<InfoBox title="💡 Kluczowe definicje">
+<InfoBox title="💡 Proste zapamiętanie">
 
-- **COP** = efektywność chwilowa przy konkretnych warunkach (T_src, T_sink, PLR)
-- **SPF** = średnia efektywność w całym sezonie grzewczym
-- **SCOP** = znormalizowany współczynnik według normy EN 14825
+- **COP** = chwilowy (teraz, w tej chwili)
+- **SPF** = sezonowy (średnia przez rok)
+- **SCOP** = standardowy (według normy - do porównania produktów)
 
 </InfoBox>
 
 <InstructorNotes>
-Musimy precyzyjnie zdefiniować wskaźniki, których używamy. **COP to chwilowy współczynnik efektywności** w konkretnych warunkach. Jeśli temperatura źródła to 5 stopni, temperatura odbioru 35 stopni, a pompa pracuje na 80 procent mocy, to COP wynosi na przykład 3.5 - dostajemy 3.5 kilowata ciepła za każdy kilowat prądu.
+Teraz kluczowe pojęcia - te wskaźniki będziecie używać cały czas.
 
-**SPF to sezonowy współczynnik efektywności** - średnia efektywność w całym sezonie grzewczym. Jeśli przez całą zimę pompa zużyła 1000 kilowatogodzin prądu i wyprodukowała 3200 kilowatogodzin ciepła, to SPF wynosi 3.2.
+**COP - Coefficient of Performance - efektywność chwilowa**
+**Wyobraźcie sobie**: Jest -5°C na zewnątrz, w domu chcecie 21°C. Pompa w tym momencie ma COP = 3.0. Co to znaczy? **Za każdą złotówkę wydaną na prąd dostajecie 3 złote wartości ciepła**. Magia? Nie - pompa „pożycza" ciepło z powietrza/gruntu.
 
-**SCOP to znormalizowany współczynnik według normy EN 14825**, warunki **H2 i H3** to temperatury plus 2 i plus 7 stopni, **DHW (domestic hot water)** to domestic hot water, ciepła woda użytkowa.
+**Ważne**: COP zmienia się non-stop! Rano może być 2.8, w południe 3.5, wieczorem 2.5. Dlaczego? Bo zmienia się temperatura na zewnątrz i potrzeby domu.
 
-**P_design i T_design** to moc i temperatura projektowe. **W Polsce standardem jest projektowanie na minus 20 stopni**. Jeśli budynek ma zapotrzebowanie 12 kilowatów przy minus 20 stopniach, to wybieramy PC o takiej mocy.
+**SPF - Seasonal Performance Factor - efektywność sezonowa**
+To średnia z całego roku. **Przykład**: Przez zimę zużyliście 1000 kWh prądu, pompa dała wam 3200 kWh ciepła. SPF = 3.2. **To najważniejszy wskaźnik dla klienta** - mówi ile zapłaci za ogrzewanie.
 
-**T_biv to temperatura biwalentna** - poniżej tej temperatury potrzebne jest wspomaganie. W Polsce to zazwyczaj minus 5 do minus 10 stopni.
+**Typowe wartości SPF** (żebyście wiedzieli co jest realne):
+- Pompa powietrzna: SPF 2.5-3.5 (w zależności od klimatu i instalacji)
+- Pompa gruntowa: SPF 3.5-4.5 (stabilniejsza, lepsza)
+- Jeśli ktoś obiecuje SPF > 5.0 - sprawdźcie dwa razy, to podejrzane!
 
-**Bin-hour** to metoda analizy z grupowaniem według temperatur. **EPW to Energy Plus Weather**, standard międzynarodowy z danymi godzinowymi. **TRY to Test Reference Year**, znormalizowane dane dla Polski.
+**SCOP - Standardized COP - znormalizowany wg normy**
+Producenci mierzą według europejskiej normy EN 14825, żebyście mogli porównać różne pompy. **To jak etykiety energetyczne na lodówkach** - pozwalają porównać produkty. Ale uwaga - SCOP z katalogu może być inny niż wasz rzeczywisty SPF (bo warunki w domu są inne niż w laboratorium).
 
-**Bin-hour** to technika analizy klimatycznej, gdzie godziny roku grupuje się według przedziałów temperatur (np. -20°C do -15°C, -15°C do -10°C itd.). Dla każdego przedziału liczy się liczbę godzin w roku i średnie zapotrzebowanie na ciepło. To pozwala szybko ocenić jak często pompa będzie pracować w różnych warunkach i jakie będą średnie COP.
+**Dla zaawansowanych** (możecie pominąć teraz, wrócicie do tego później):
+- H2/H3 to strefy klimatyczne w normie (H2 = chłodniejszy klimat)
+- Bin-hour to metoda analizy - grupowanie godzin według temperatury
+- EPW/TRY to formaty danych pogodowych (EPW = międzynarodowy, TRY = polski)
 
-**EPW (Energy Plus Weather)** to międzynarodowy standard danych klimatycznych używany przez większość profesjonalnych narzędzi symulacyjnych. Zawiera dane godzinowe przez cały rok: temperaturę, wilgotność, nasłonecznienie, prędkość wiatru. Dostępne dla tysięcy lokalizacji na świecie, w tym głównych miast Polski.
-
-**TRY (Test Reference Year)** to znormalizowane dane klimatyczne dla Polski, opracowane przez Instytut Meteorologii i Gospodarki Wodnej. Reprezentuje "typowy" rok klimatyczny dla danego regionu Polski, uśredniony z wieloletnich obserwacji. Używane w polskich normach i certyfikacji energetycznej budynków.
+**Podsumowanie dla początkujących**: Skupcie się na SPF - to najważniejsze. COP to szczegóły techniczne, SCOP to do porównań w katalogach.
 </InstructorNotes>
 
 </Slide>

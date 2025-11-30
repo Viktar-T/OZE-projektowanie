@@ -17,20 +17,30 @@ import {
 
 <SlideContainer>
 
-<Slide title="🛫 0. Pre‑flight: dane wejściowe" type="info">
+<Slide title="🛫 Krok 0: Co musicie przygotować PRZED otwarciem GeoTSOL?" type="info">
 
-<KeyPoints title="📋 Co przygotować">
+<KeyPoints title="📋 Lista kontrolna - 3 grupy danych">
 
-- 📊 Obciążenie cieplne (EN 12831), profile godzinowe, CWU
-- 🌡️ Dane klimatyczne lokalne (stacja, T_design, wilgotność)
-- ⚠️ Ograniczenia lokalne (odwierty/hałas), założenia ekonomiczne
+- 📊 **Dane o domu**
+  - Ile ciepła potrzebuje? (obliczone wg normy EN 12831)
+  - Jaka instalacja? (podłogówka 35°C czy grzejniki 55°C?)
+  - Ile osób mieszka? (dla ciepłej wody)
+
+- 🌡️ **Dane o klimacie**
+  - Gdzie dokładnie? (miasto, kod pocztowy - GeoTSOL ma bazę)
+  - Jaka najniższa temperatura? (zwykle -20°C w Polsce)
+
+- ⚠️ **Ograniczenia i budżet**
+  - Czy można wiercić sondy? (pozwolenia, sąsiedzi)
+  - Hałas - czy jest problem? (blisko sąsiadów)
+  - Ile klient ma budżetu?
 
 </KeyPoints>
 
-<InfoBox title="💡 Kluczowa zasada">
+<InfoBox title="⚠️ Ważne!">
 
-- **Bez dobrych danych wejściowych cały projekt będzie błędny**
-- Błąd w danych klimatycznych o **2 stopnie** to błąd w SPF o **10-15 procent**
+- **BEZ tych danych NIE zaczynajcie projektu** - to jak budowanie domu bez fundamentów
+- **Przykład błędu**: Pomyłka w temperaturze o 2°C = błąd w kosztach o 10-15%!
 
 </InfoBox>
 
@@ -50,20 +60,30 @@ Ok, teraz zajmiemy się praktycznym procesem projektowym w GeoTSOL. Zaczynamy od
 
 <VisualSeparator type="energy" />
 
-<Slide title="🧭 1–3. Start projektu i definicje" type="tip">
+<Slide title="🧭 Kroki 1-3: Pierwsze kliknięcia w GeoTSOL" type="tip">
 
-<KeyPoints title="📝 Kroki początkowe">
+<KeyPoints title="📝 Od nowego projektu do głównych decyzji">
 
-1. 🆕 Nowy projekt → nazwa, lokalizacja, klimat
-2. 🏠 Budynek i odbiorniki → obciążenia, T_zasil, udział CWU
-3. ⚙️ Typ PC i tryb pracy → AW/Grunt/Woda; mono/bivalentny; T_biv
+**Krok 1: Nowy projekt** („File → New Project")
+- Wpisujecie nazwę: np. „Dom Kowalskich - Warszawa 2025"
+- Wybieracie lokalizację: GeoTSOL automatycznie ładuje dane pogodowe
+
+**Krok 2: Parametry domu**
+- Zapotrzebowanie na ciepło: np. 12 kW przy -20°C
+- Temperatura instalacji: **35/30°C** (podłogówka) LUB **55/45°C** (grzejniki)
+- Ciepła woda: 4 osoby = ~200 l/dzień
+
+**Krok 3: Wybór typu pompy** (NAJWAŻNIEJSZA decyzja!)
+- **Powietrze** (AW): Tańsze, łatwiejszy montaż, SPF ~3.0
+- **Grunt** (BHE): Droższe wiercenie, ale SPF ~4.0
+- **Woda**: Rzadkie (potrzebna studnia)
 
 </KeyPoints>
 
-<InfoBox title="💡 Decyzje strategiczne">
+<InfoBox title="💡 Złota zasada temperatury">
 
-- **Różnica w temperaturach zasilania o 10 stopni** to różnica w SPF o **0.3-0.5**
-- **T_zasil zależy od typu instalacji**: podłogówka 35°C, grzejniki 55°C, klimakonwektory 45°C
+- **Każde 10°C niżej w instalacji** = SPF wyższe o ~0.3-0.5
+- Dlatego podłogówka (35°C) > grzejniki (55°C) dla efektywności pompy!
 
 </InfoBox>
 
