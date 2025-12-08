@@ -97,7 +97,7 @@ Realizując zadanie, przejdź przez wszystkie etapy procesu projektowego w QBlad
   - Moduły: Airfoil, Blade Design, Turbine, Simulation
   - Widok 3D (GL View)
   - Widok wykresów (Graph View)
-- [ ] Otwórz przykładowy projekt: `OC3_Simulation.qpr` z folderu `/SampleProjects`
+- [ ] Otwórz przykładowy projekt: **OC3_Simulation.qpr** z folderu **SampleProjects**
 - [ ] Przeanalizuj strukturę przykładowego projektu
 
 :::tip Wskazówka
@@ -423,9 +423,9 @@ A: Tak, Cp powinno być w zakresie 0.4-0.5 dla nowoczesnych turbin. Przyczyny ni
 
 **Q: Jakie profile NACA wybrać dla mojej turbiny?**
 A: Zalecane profile dla turbin wiatrowych:
-- **Root:** NACA 44xx lub NACA 63xx (grubsze, większy kąt natarcia)
+- **Root:** NACA 44xx lub NACA 63xx (grubsze, większy kąt skręcenia)
 - **Mid:** NACA 24xx lub NACA 35xx (średnie)
-- **Tip:** NACA 00xx lub NACA 12xx (cieńsze, mniejszy kąt natarcia)
+- **Tip:** NACA 00xx lub NACA 12xx (cieńsze, mniejszy kąt skręcenia)
 - Wybierz profile z bazy Airfoil Tools i sprawdź ich charakterystyki
 
 **Q: Jak dobrać chord (cięciwę) wzdłuż łopaty?**
@@ -437,9 +437,9 @@ A: Typowy rozkład chord:
 
 **Q: Jak dobrać twist (skręcenie) łopaty?**
 A: Typowy rozkład twist:
-- **Root:** 15-25° (większy kąt natarcia)
+- **Root:** 15-25° (większy kąt skręcenia)
 - **Mid:** 5-10°
-- **Tip:** 0-5° (mniejszy kąt natarcia)
+- **Tip:** 0-5° (mniejszy kąt skręcenia)
 - Twist powinien być dopasowany do prędkości obrotowej i prędkości wiatru
 
 **Q: Jaka prędkość obrotowa jest optymalna?**
