@@ -12,6 +12,8 @@ slug: "/projekty/wind/topfarm-1"
 **Pracujemy w:** GitHub + Codespaces (VS Code w przeglądarce) + Jupyter Notebook + GitHub Copilot  
 **Twój cel na koniec zajęć:** masz **link do swojego repo**, w repo działa notebook i jest **wykres layoutu turbin** + krótki raport.
 
+**Środowisko TopFarm2:** [Instrukcja instalacji TopFarm2](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/installation.html) — przydatne, jeśli chcesz zainstalować lokalnie (nie wymagane dla zajęć).
+
 Pracujemy w **specjalistycznym środowisku programistycznym**. Ze względu na rozwój możliwości sztucznej inteligencji będziemy programować metodą **VibeCoding**.
 
 **VibeCoding** to praca „na efekt”: zamiast pisać kod od zera i pamiętać składnię, opisujesz w prostych słowach **co chcesz osiągnąć**, a AI pomaga:
