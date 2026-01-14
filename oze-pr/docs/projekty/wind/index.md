@@ -27,21 +27,16 @@ Witaj w sekcji projektów dotyczących energetyki wiatrowej! Tutaj znajdziesz ko
 
 ---
 
-### 2. [Zadanie 2 - Optymalizacja farmy wiatrowej w TopFarm2](./pr-2-task-topfarm.md)
+### 2. Zadanie 2 - Optymalizacja farmy wiatrowej w TopFarm2
 
 **Zadanie z narzędziem webowym** do projektowania i optymalizacji farm wiatrowych z wykorzystaniem platformy TopFarm2 DTU.
 
-**Co znajdziesz:**
-- Przewodnik po platformie TopFarm2 (darmowe narzędzie online)
-- Projekt farmy wiatrowej z optymalizacją rozmieszczenia turbin
-- Analiza wpływu wzajemnego oddziaływania turbin (wake effects)
-- Optymalizacja produkcji energii i kosztów
-- Analiza ekonomiczna (LCOE, koszty, przychody)
-- Wizualizacja wyników i dokumentacja
-
-**Czas realizacji:** 4 godziny (2 zajęcia)
-
-**Wymagania:** Dostęp do internetu, darmowe konto na platformie TopFarm2
+1. [Start: GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 1)](./topfarm-1.md)
+2. [Podstawowe przykłady (poziom podstawowy): uruchom i zmodyfikuj notebook (Zadanie 2)](./topfarm-2.md)
+3. [Ograniczenia (Constraints): granice + minimalny rozstaw + wizualizacja](./topfarm-3.md)
+4. [Sterowniki (Drivers): DOE vs gradient-based vs gradient-free + porównanie](./topfarm-4.md)
+5. [Analiza wrażliwości: co się dzieje, gdy zmienisz parametry wiatru/układu](./topfarm-5.md)
+6. [Mini-projekt: własny case (layout + constraints + driver) + raport i prezentacja](./topfarm-6.md)
 
 ---
 
