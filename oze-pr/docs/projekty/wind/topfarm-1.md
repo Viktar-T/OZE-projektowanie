@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
-title: 'Start: GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 1)'
+title: 'Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy'
 slug: "projekty/wind/topfarm-1"
 ---
-# Start: GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 1)
+# TopFarm2: Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 2.1)
 
 **Kierunek:** Inżynieria Odnawialnych Źródeł Energii (OZE)
 **Poziom:** 0 (bez doświadczenia w programowaniu)
 **Pracujemy w:** GitHub + Codespaces (VS Code w przeglądarce) + Jupyter Notebook + GitHub Copilot
-**Nasz cel na koniec zajęć:** mamy **link do naszego repo**, w repo działa notebook i jest **wykres layoutu turbin** + krótki raport.
+**Nasz cel na koniec zajęć:** mamy **link do naszego repo**, w repo działa notebook i jest **wykres layoutu turbin** + krótki raport w notebooku (komórki Markdown).
 
 **Środowisko TopFarm2:** [TopFarm2](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html).
 
@@ -21,19 +21,31 @@ Pracujemy w **specjalistycznym środowisku programistycznym**. Ze względu na ro
 - poprawić błędy,
 - zaproponować modyfikacje.
 
-Na początku zajęć miejmy otwarty czat ze sztuczną inteligencją (np. **ChatGPT**, **Grok**, **Gemini**). Gdy pojawią się pytania lub błędy, **najpierw zapytajmy czat** (wklejmy komunikat błędu i opiszmy, na którym kroku jesteśmy).
+**Środowisko TopFarm2:** [TopFarm2](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html).
 
----
+Pracujemy w **specjalistycznym środowisku programistycznym**. Ze względu na rozwój możliwości sztucznej inteligencji będziemy programować metodą **VibeCoding**.
 
-### GitHub Copilot: Free vs Pro (dla studentów)
+**VibeCoding** to praca „na efekt”: zamiast pisać kod od zera i pamiętać składnię, opisujemy w prostych słowach **co chcemy osiągnąć**, a AI pomaga:
 
-W trakcie zajęć będziemy używać GitHub Copilot w VS Code (Codespaces). Są dwa typowe scenariusze:
+- zaproponować kod,
+- wytłumaczyć, co robi,
+- poprawić błędy,
+- zaproponować modyfikacje.
 
-- **Copilot Free** — dostępny dla każdego konta GitHub, ale ma **limity miesięczne** (np. ograniczona liczba podpowiedzi/Chat).
-- **Copilot Pro za darmo** — jeśli jesteśmy **zweryfikowanymi studentami** w **GitHub Education** (GitHub Student Developer Pack), możemy mieć **Copilot Pro bez opłat**.
+Pracujemy w GitHub Codespaces (VS Code w przeglądarce) i chcemy OD ZERA przygotować minimalne środowisko do pracy z TopFarm2.
 
-**Rekomendacja:** jeśli nie mamy jeszcze GitHub Education, złóżmy wniosek jak najszybciej (weryfikacja czasem trwa).
-Jeśli w danym dniu Copilot nie działa lub limit się skończy — nadal możemy wykonać zadanie, korzystając z czatu LLM (np. ChatGPT) i uruchamiając komórki notebooka.
+Link do dokumentacji TopFarm2:
+https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html
+
+Poprowadź nas OGÓLNIE krok po kroku (dla początkujących), żebyśmy:
+1) utworzyli konto, repo na GitHub i uruchomili Codespace,
+2) przygotowali podstawową strukturę projektu (notebooks/),
+3) stworzyli requirements.txt i zainstalowali zależności (pip install -r requirements.txt),
+4) przetestowali importy w Pythonie,
+5) zrobili prosty notebook z pierwszym wykresem (scatter layoutu turbin),
+6) zapisali krótki raport w notebooku (komórki Markdown) i wykonali commit/push.
+
+Jeśli wkleimy błąd z terminala albo z notebooka, powiedz krótko co sprawdzić i podaj dokładne komendy/kroki do naprawy.
 
 ---
 
@@ -41,10 +53,10 @@ Jeśli w danym dniu Copilot nie działa lub limit się skończy — nadal możem
 
 W swoim repo na GitHub musimy mieć:
 
-- ✅ uruchomiony notebook z widocznymi wynikami (outputy: tekst/wykres)
-- ✅ min. 1 zmiana wykonana z pomocą Copilota (np. ulepszony wykres)
-- ✅ min. 1 commit (historia commitów widoczna na GitHub)
-- ✅ oddany **link do repo** (przez MS Teams)
+- uruchomiony notebook z widocznymi wynikami (outputy: tekst/wykres)
+- min. 1 zmiana wykonana z pomocą Copilota (np. ulepszony wykres)
+- min. 1 commit (historia commitów widoczna na GitHub)
+- oddany **link do repo** (przez MS Teams)
 
 ---
 
@@ -77,7 +89,7 @@ Poprowadź nas OGÓLNIE krok po kroku (dla początkujących), żebyśmy:
 3) stworzyli requirements.txt i zainstalowali zależności (pip install -r requirements.txt),
 4) przetestowali importy w Pythonie,
 5) zrobili prosty notebook z pierwszym wykresem (scatter layoutu turbin),
-6) zapisali krótki raport i wykonali commit/push.
+6) zapisali krótki raport w notebooku (komórki Markdown) i wykonali commit/push.
 
 Jeśli wkleimy błąd z terminala albo z notebooka, powiedz krótko co sprawdzić i podaj dokładne komendy/kroki do naprawy.
 ```
@@ -230,9 +242,9 @@ plt.show()
 ## Krok 8 — Commit i push na GitHub (5–10 min)
 
 1. W VS Code kliknijmy ikonę **Source Control** (gałązka/commit).
-2. Zobaczmy listę zmienionych plików (powinny być m.in. notebook i raport, ewentualnie obrazki).
+2. Zobaczmy listę zmienionych plików (powinien być m.in. notebook, ewentualnie obrazki).
 3. Wpiszmy wiadomość commit, np.:
-   `Zajęcia 1: uruchomiony notebook + raport`
+   `Zajęcia 1: uruchomiony notebook + raport w notebooku`
 4. Kliknijmy **Commit**.
 5. Kliknijmy **Sync / Push** (jeśli VS Code poprosi).
 

@@ -31,9 +31,9 @@ Witaj w sekcji projektów dotyczących energetyki wiatrowej! Tutaj znajdziesz ko
 
 **Zadanie z narzędziem webowym** do projektowania i optymalizacji farm wiatrowych z wykorzystaniem platformy TopFarm2 DTU.
 
-1. [Start: GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 1)](./topfarm-1.md)
-2. [Podstawowe przykłady (poziom podstawowy): uruchom i zmodyfikuj notebook (Zadanie 2)](./topfarm-2.md)
-3. [Ograniczenia (Constraints): granice + minimalny rozstaw + wizualizacja](./topfarm-3.md)
+1. [Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy](./topfarm-1.md)
+2. [Basic Examples – zmienne, ograniczenia i driver](./topfarm-2.md)
+3. [Projekt – optymalizacja layoutu](./topfarm-3.md)
 
 ---
 
