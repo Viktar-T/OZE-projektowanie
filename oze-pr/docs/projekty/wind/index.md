@@ -34,9 +34,6 @@ Witaj w sekcji projektów dotyczących energetyki wiatrowej! Tutaj znajdziesz ko
 1. [Start: GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 1)](./topfarm-1.md)
 2. [Podstawowe przykłady (poziom podstawowy): uruchom i zmodyfikuj notebook (Zadanie 2)](./topfarm-2.md)
 3. [Ograniczenia (Constraints): granice + minimalny rozstaw + wizualizacja](./topfarm-3.md)
-4. [Sterowniki (Drivers): DOE vs gradient-based vs gradient-free + porównanie](./topfarm-4.md)
-5. [Analiza wrażliwości: co się dzieje, gdy zmienisz parametry wiatru/układu](./topfarm-5.md)
-6. [Mini-projekt: własny case (layout + constraints + driver) + raport i prezentacja](./topfarm-6.md)
 
 ---
 
