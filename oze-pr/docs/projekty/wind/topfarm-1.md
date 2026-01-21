@@ -20,22 +20,6 @@ Pracujemy w **specjalistycznym środowisku programistycznym**. Ze względu na ro
 - wytłumaczyć, co robi,
 - poprawić błędy,
 - zaproponować modyfikacje.
-
-Pracujemy w GitHub Codespaces (VS Code w przeglądarce) i chcemy OD ZERA przygotować minimalne środowisko do pracy z TopFarm2.
-
-Link do dokumentacji TopFarm2:
-https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html
-
-Poprowadź nas OGÓLNIE krok po kroku (dla początkujących), żebyśmy:
-1) utworzyli konto, repo na GitHub i uruchomili Codespace,
-2) przygotowali podstawową strukturę projektu (notebooks/),
-3) stworzyli requirements.txt i zainstalowali zależności (pip install -r requirements.txt),
-4) przetestowali importy w Pythonie,
-5) zrobili prosty notebook z pierwszym wykresem (scatter layoutu turbin),
-6) zapisali krótki raport w notebooku (komórki Markdown) i wykonali commit/push.
-
-Jeśli wkleimy błąd z terminala albo z notebooka, powiedz krótko co sprawdzić i podaj dokładne komendy/kroki do naprawy.
-
 ---
 
 ## Co musimy oddać (na ocenę)
