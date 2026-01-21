@@ -143,20 +143,40 @@ ipykernel
 
 ## Krok 5 — Zainstalujmy zależności i sprawdźmy importy (10–15 min)
 
-1. Otwórzmy **Terminal** w Codespaces.
-2. Uruchommy:
+W tym wariancie **nie tworzymy** środowiska wirtualnego `.venv`. Instalujemy biblioteki **do domyślnego Pythona w GitHub Codespaces**.  W kolejnym kroku (notebook) wybierzemy **ten sam interpreter**, którego używa terminal.
+
+### 5.1 Sprawdźmy, jakiego Pythona używa terminal
+
+Te dwie komendy pomogą nam upewnić się, że instalujemy biblioteki do tego samego Pythona, którego później użyje notebook.
+- `python --version` pokazuje wersję Pythona w terminalu.
+- `which python` pokazuje ścieżkę do interpretera (to po tym najłatwiej rozpoznać, który Python jest aktywny).
 
 ```bash
 python --version
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+which python
 ```
-**Check:**
-Sprawdźmy, że nie ma błędów w instalacji.
+
+### 5.2 Zainstalujmy zależności projektu
+
+Upewnijmy się, że jesteśmy w katalogu repo (tam, gdzie jest `requirements.txt`), a następnie uruchommy:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 5.3 Check — szybki test importów
+
 ```bash
 python -c "import numpy, pandas, matplotlib; print('base imports ok')"
 python -c "import topfarm; print('topfarm ok')"
 ```
+
+✅ Jeśli widzimy komunikaty `... ok`, przechodzimy do Kroku 6.
+
+> **Uwaga:** VS Code może później zaproponować „Create python environment”. W tym wariancie zwykle **nie tworzymy** `.venv` — w notebooku wybieramy kernel zgodny z `which python` z terminala.
+
+
 ---
 
 ## Krok 6 — Utwórzmy notebook i zróbmy pierwszy wykres layoutu (15–20 min)
@@ -183,9 +203,9 @@ plt.axis("equal")
 plt.show()
 ```
 
-3. VS Code zapyta:
-   - "install/enable ..." - kliknijmy
-   - "Create python environment" - wybierzmy **Python 3.x**.
+3. VS Code zapyta o **Kernel** / instalację dodatków:
+   - jeśli pyta o instalację Jupyter / ipykernel → kliknijmy **Install**
+   - jeśli widzimy „Create python environment” → w tym wariancie **nie musimy tworzyć** `.venv`; wybierzmy istniejący **Python 3.x** (zgodny z `python --version` i `which python`)
 4. Jeszcze raz uruchommy komórkę z kodem.
 
 
