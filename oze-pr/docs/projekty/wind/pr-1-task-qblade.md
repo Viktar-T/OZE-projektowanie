@@ -73,6 +73,7 @@ Poniżej znajdują się przykładowe parametry, które możesz wykorzystać przy
 
 - **Typ profili:** NACA 4-digit series
 - **Źródło profili:** [Airfoil Tools Database](http://www.airfoiltools.com/search/index?MAirfoilSearchForm%5BtextSearch%5D=&MAirfoilSearchForm%5BmaxThickness%5D=&MAirfoilSearchForm%5BminThickness%5D=&MAirfoilSearchForm%5BmaxCamber%5D=&MAirfoilSearchForm%5BminCamber%5D=&MAirfoilSearchForm%5Bgrp%5D=naca4d&MAirfoilSearchForm%5Bsort%5D=1&yt0=Search)
+- **Generator profili:** [NACA 4 digit airfoil generator](http://www.airfoiltools.com/airfoil/naca4digit)
 - **Wymagania:**
   - Minimum 3 różne profile wzdłuż łopaty
   - Profile powinny być odpowiednio dobrane (root, mid, tip)
