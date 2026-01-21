@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: 'Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy'
+title: 'TopFarm2: Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 2.1)'
 slug: "projekty/wind/topfarm-1"
 ---
 # TopFarm2: Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 2.1)
@@ -9,17 +9,6 @@ slug: "projekty/wind/topfarm-1"
 **Poziom:** 0 (bez doświadczenia w programowaniu)
 **Pracujemy w:** GitHub + Codespaces (VS Code w przeglądarce) + Jupyter Notebook + GitHub Copilot
 **Nasz cel na koniec zajęć:** mamy **link do naszego repo**, w repo działa notebook i jest **wykres layoutu turbin** + krótki raport w notebooku (komórki Markdown).
-
-**Środowisko TopFarm2:** [TopFarm2](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html).
-
-Pracujemy w **specjalistycznym środowisku programistycznym**. Ze względu na rozwój możliwości sztucznej inteligencji będziemy programować metodą **VibeCoding**.
-
-**VibeCoding** to praca „na efekt”: zamiast pisać kod od zera i pamiętać składnię, opisujemy w prostych słowach **co chcemy osiągnąć**, a AI pomaga:
-
-- zaproponować kod,
-- wytłumaczyć, co robi,
-- poprawić błędy,
-- zaproponować modyfikacje.
 
 **Środowisko TopFarm2:** [TopFarm2](https://topfarm.pages.windenergy.dtu.dk/TopFarm2/index.html).
 
@@ -70,9 +59,13 @@ W swoim repo na GitHub musimy mieć:
 
 # Krok po kroku
 
+Ten fragment jest przewodnikiem dla studentów: przechodzimy spokojnie krok po kroku.
+Po każdym kroku sprawdźmy sekcję **Check**, żeby upewnić się, że wszystko działa.
+Jeśli pojawi się błąd, proszę się nie zniechęcać — wklejmy komunikat błędu do czatu i wróćmy do tego kroku.
+
 ## Krok 0 — Otwórzmy ChatGPT / inną LLM (2 min)
 
-Zacznijmy od otwarcia czatu ze sztuczną inteligencją (np. **ChatGPT**, **Grok**, **Gemini**) i zostawmy go otwartego przez całe zajęcia. Gdy coś nie działa, **najpierw wklejmy błąd do czatu** i poprośmy o rozwiązanie.
+Zacznijmy od otwarcia czatu ze sztuczną inteligencją (np. **ChatGPT**, **Grok**, **Gemini**) i zostawmy go otwartego przez całe zajęcia. Gdy coś nie działa, **najpierw wklejmy błąd do czatu** i poprośmy o pomoc w rozwiązaniu.
 
 Pierwszy prompt do wklejenia:
 
@@ -104,7 +97,7 @@ Jeśli wkleimy błąd z terminala albo z notebooka, powiedz krótko co sprawdzi�
 4. Utwórzmy plik `requirements.txt` i wpiszmy minimalne zależności potrzebne do uruchomienia TopFarm2 (zgodnie z dokumentacją).
 5. W terminalu uruchommy `pip install -r requirements.txt` i sprawdźmy importy w Pythonie.
 6. Utwórzmy notebook w `notebooks/`, dodajmy prostą komórkę z `matplotlib` i zróbmy wykres punktów (layout turbin).
-8. Zróbmy commit i push na GitHub. Jeśli pojawi się błąd — wklejmy go do czatu, a podpowiem co zrobić.
+7. Zróbmy commit i push na GitHub. Jeśli pojawi się błąd — wklejmy go do czatu, a podpowiem co zrobić.
 
 ---
 
@@ -198,7 +191,7 @@ y = np.array([0, 0, 500, 500])
 
 plt.figure(figsize=(6, 4))
 plt.scatter(x, y)
-plt.title("Layout turbin – Zajęcia 1")
+plt.title("Layout turbin – Zadanie 2.1")
 plt.xlabel("x [m]")
 plt.ylabel("y [m]")
 plt.grid(True)
@@ -230,7 +223,7 @@ plt.show()
 
 **Prompt 2 — dodaj/ulepsz wykres layoutu**
 
-> Dodaj nową komórkę. Dodaj wykres pozycji turbin w tym notebooku: użyj matplotlib scatter z różnymi kolorami dla punktów (np. niebieski, czerwony, zielony, żółty), dodaj etykiety dla każdej turbiny (np. 'T1', 'T2', 'T3', 'T4'), podpisz osie X i Y, dodaj tytuł "Layout turbin – Zajęcia 1 z kolorami i etykietami", włącz siatkę (grid) i ustaw axis('equal').
+> Dodaj nową komórkę. Dodaj wykres pozycji turbin w tym notebooku: użyj matplotlib scatter z różnymi kolorami dla punktów (np. niebieski, czerwony, zielony, żółty), dodaj etykiety dla każdej turbiny (np. 'T1', 'T2', 'T3', 'T4'), podpisz osie X i Y, dodaj tytuł "Layout turbin – Zadanie 2.1 z kolorami i etykietami", włącz siatkę (grid) i ustaw axis('equal').
 
 5. Wklejmy kod od Copilota do odpowiedniej komórki w notebooku.
 6. Uruchommy komórkę ponownie (**Run**) i zobaczmy, czy wykres się poprawił.
@@ -244,7 +237,7 @@ plt.show()
 1. W VS Code kliknijmy ikonę **Source Control** (gałązka/commit).
 2. Zobaczmy listę zmienionych plików (powinien być m.in. notebook, ewentualnie obrazki).
 3. Wpiszmy wiadomość commit, np.:
-   `Zajęcia 1: uruchomiony notebook + raport w notebooku`
+   `Zadanie 2.1: uruchomiony notebook + raport w notebooku`
 4. Kliknijmy **Commit**.
 5. Kliknijmy **Sync / Push** (jeśli VS Code poprosi).
 

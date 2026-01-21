@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: 'Basic Examples – zmienne, ograniczenia i driver'
+title: 'TopFarm2: Basic Examples – zmienne, ograniczenia i driver (Zadanie 2.2)'
 slug: "projekty/wind/topfarm-2"
 ---
 
@@ -43,18 +43,22 @@ python -c "import topfarm; print('topfarm ok')"
 ```
 
 Jeśli `import topfarm` nie działa, to:
-1) zróbcie `pip install -r requirements.txt`  
-2) jeśli nadal błąd – zapytajcie Copilota/LLM i wklejcie błąd.
+1) zróbmy `pip install -r requirements.txt`  
+2) jeśli nadal jest błąd – zapytajmy Copilota/LLM i wklejmy komunikat błędu.
 
 ---
-
+ 
 # Krok po kroku
 
-## Krok 0 — Otwórzmy Copilot Chat i dokumentację (2 min)
+Ten fragment jest przewodnikiem dla studentów: idziemy spokojnie krok po kroku.
+Po każdym kroku zerknijmy na **Check**, żeby upewnić się, że jesteśmy w dobrym miejscu.
+Jeśli pojawi się błąd, proszę się nie zniechęcać — wklejmy go do Copilota/LLM i wróćmy do tego kroku.
+
+## Krok 0 – Otwórzmy Copilot Chat i dokumentację (2 min)
 
 W Codespaces:
-1. Otwórz **Copilot Chat** w trybie 'Ask'.
-2. W drugiej karcie otwórzcie stronę “Basic Examples” TopFarm2 (sekcje: Constraints, Drivers, Problems).
+1. Otwórzmy **Copilot Chat** w trybie 'Ask'.
+2. W drugiej karcie otwórzmy stronę “Basic Examples” TopFarm2 (sekcje: Constraints, Drivers, Problems).
 
 **Prompt do Copilota (ustawienie trybu “dla początkujących”):**
 
@@ -72,13 +76,13 @@ Prowadź krok po kroku, krótko. Gdy wkleję błąd, powiedz co sprawdzić i pod
 
 ---
 
-## Krok 1 — Utwórz notebook “Lesson 2” (3 min)
+## Krok 1 — Utwórzmy notebook “Lesson 2” (3 min)
 
-W folderze `notebooks/` utwórzcie plik:
+W folderze `notebooks/` utwórzmy plik:
 
 - `lesson2_basic_examples.ipynb`
 
-Dodajcie pierwszą komórkę:
+Dodajmy pierwszą komórkę:
 
 ```python
 import numpy as np
@@ -100,11 +104,11 @@ print("Imports OK ")
 
 ---
 
-## Krok 2 — Boundary constraints: narysuj 5 typów granicy (20 min)
+## Krok 2 — Boundary constraints: narysujmy 5 typów granicy (20 min)
 
 To jest najłatwiejsza część “Basic Examples”, bo daje dużo wizualizacji i szybko widać efekt.
 
-Wklejcie kolejną komórkę (wariant “z dokumentacji”, ale w jednej komórce):
+Wklejmy kolejną komórkę (wariant “z dokumentacji”, ale w jednej komórce):
 
 ```python
 # 1) Punkty granicy (współrzędne w "umownych" jednostkach)
@@ -150,11 +154,11 @@ plot_boundary('circle',      CircleBoundaryConstraint((1.5, 1), 1))
 
 ---
 
-## Krok 3 — Ćwiczenie: zaprojektuj własną granicę (10 min)
+## Krok 3 — Ćwiczenie: zaprojektujmy własną granicę (10 min)
 
-Zróbcie **własny** zestaw punktów `boundary` (minimum 6 punktów) i narysujcie 4 typy perymetru (`convex_hull`, `square`, `rectangle`, `polygon`) w pętli.
+Zróbmy **własny** zestaw punktów `boundary` (minimum 6 punktów) i narysujmy 4 typy perymetru (`convex_hull`, `square`, `rectangle`, `polygon`) w pętli.
 
-Uwaga: to ma być “projektowanie obszaru farmy” – możecie np. zrobić kształt przypominający “L” albo “zygzak”.
+Uwaga: to ma być “projektowanie obszaru farmy” – możemy np. zrobić kształt przypominający “L” albo “zygzak”.
 
 Startowa komórka:
 
@@ -180,9 +184,9 @@ for boundary_type in ['convex_hull', 'square', 'rectangle', 'polygon']:
 
 ## Krok 4 — Spacing constraint: minimalna odległość między turbinami (15 min)
 
-Teraz dodajemy **SpacingConstraint** (minimalny dystans).
+Teraz dodajmy **SpacingConstraint** (minimalny dystans).
 
-Wklejcie komórkę:
+Wklejmy komórkę:
 
 ```python
 # Układ 5 turbin (na start celowo dość blisko)
@@ -194,7 +198,7 @@ boundary_big = np.array([(0, 0), (3.5, 0), (3.5, 2), (0, 2)])
 
 dummy_cost5 = CostModelComponent(input_keys=[], n_wt=5, cost_function=lambda: 1)
 
-spacing = 0.7  # <- spróbujcie 0.4 / 0.7 / 1.0 i zobaczcie różnicę
+spacing = 0.7  # <- spróbujmy 0.4 / 0.7 / 1.0 i zobaczmy różnicę
 tf = TopFarmProblem(
     design_vars={'x': x5, 'y': y5},
     cost_comp=dummy_cost5,
@@ -226,9 +230,9 @@ plt.legend()
 
 ---
 
-## Krok 5 — VibeCoding: zrób 1 ulepszenie wizualizacji (10 min)
+## Krok 5 — VibeCoding: zróbmy 1 ulepszenie wizualizacji (10 min)
 
-Wybierzcie **jedno** ulepszenie i zróbcie je **z pomocą Copilota**:
+Wybierzmy **jedno** ulepszenie i zróbmy je **z pomocą Copilota**:
 
 **Opcja A (łatwa):** jedna figura z 2 subplotami: “spacing=0.4” vs “spacing=1.0”  
 **Opcja B (łatwa):** kolor punktów zależny od numeru turbiny + większe etykiety  
@@ -238,7 +242,7 @@ Prompt do Copilota:
 
 ```text
 W tym notebooku mamy kod rysujący Boundary + SpacingConstraint.
-Zrób wariant z DWOMA subplotami w jednej figurze:
+Zróbmy wariant z DWOMA subplotami w jednej figurze:
 - po lewej spacing=0.4
 - po prawej spacing=1.0
 W każdym subplot:
@@ -254,10 +258,12 @@ Podaj gotowy kod do wklejenia jako nowa komórka.
 
 ---
 
-3. Commit i push w VS Code.
+## Krok 6 — Commit i push w VS Code (10 min)
+
+1. Commit i push w VS Code.
 
 **Proponowany commit message:**  
-`Zajęcia 2: constraints + spacing + wizualizacje`
+`Zadanie 2.2: constraints + spacing + wizualizacje`
 
 **Notatka do notebooka (komórka Markdown):** proszę napisać krótkie wyjaśnienie w komórce Markdown po tym kroku (również z punktu widzenia praktyki projektowania/budowy farmy wiatrowej): podsumowanie – co było najważniejszym wynikiem lekcji.
 
@@ -270,5 +276,4 @@ Podaj gotowy kod do wklejenia jako nowa komórka.
 - [ ] Jest min. 1 commit na GitHub
 - [ ] Wysłaliśmy link do repo prowadzącemu
 
-Powodzenia! 
 Powodzenia! ✅

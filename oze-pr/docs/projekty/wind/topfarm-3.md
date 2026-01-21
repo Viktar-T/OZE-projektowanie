@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: 'Projekt – optymalizacja layoutu'
+title: 'TopFarm2: Projekt – optymalizacja layoutu (Zadanie 2.3)'
 slug: "projekty/wind/topfarm-3"
 ---
 
@@ -33,17 +33,20 @@ W projekcie używamy elementów z “Basic Examples” (Problems / Drivers / Con
 
 ---
 
-## Minimalna struktura repo (zrób od razu)
+## Minimalna struktura repo (zróbmy od razu)
 
-W repo utwórzcie:
+W repo utwórzmy:
 
 - `notebooks/`
 - `results/figures/`
-- `src/` (opcjonalnie – jeśli chcecie wynieść funkcje z notebooka)
+- `src/` (opcjonalnie – jeśli chcemy wynieść funkcje z notebooka)
 
 ---
 
 # Plan pracy (6 godzin) – sprinty
+
+Poniżej mamy plan pracy w sprintach.
+Proszę trzymać się kolejności: każdy sprint ma cel, listę zadań i sekcję **Check**, która mówi, czy jesteśmy „na dobrej ścieżce”.
 
 ## Sprint 0 (20–30 min) — Setup i “sanity check”
 
@@ -72,7 +75,7 @@ from topfarm.plotting import XYPlotComp, NoPlot
 
 **Notatka do notebooka (komórka Markdown):** proszę napisać krótkie wyjaśnienie w komórce Markdown po tym kroku (również z punktu widzenia praktyki projektowania/budowy farmy wiatrowej): czy importy zadziałały i co było potrzebne, żeby przejść dalej.
 
-> Jeśli importy z `py_wake` / `openmdao` nie działają – wróć do VibeCoding: wklej błąd do Copilota i poproś o minimalne komendy naprawy (czasem trzeba doinstalować `openmdao[doe]`, `pyDOE2`, `py_wake` – zob. “Drivers” i “Design variables” w Basic Examples).
+> Jeśli importy z `py_wake` / `openmdao` nie działają – wróćmy do VibeCoding: wklejmy błąd do Copilota i poprośmy o minimalne komendy naprawy (czasem trzeba doinstalować `openmdao[doe]`, `pyDOE2`, `py_wake` – zob. “Drivers” i “Design variables” w Basic Examples).
 
 ---
 
@@ -83,9 +86,9 @@ from topfarm.plotting import XYPlotComp, NoPlot
 Wniosek z sekcji “Problems”: `TopFarmProblem` jest “kontenerem” na: design vars + cost + constraints + driver + plotting/recording.
 
 **Zadania:**
-1) Wybierz `n_wt = 9` (na start).  
-2) Pobierz układ startowy: `x, y = get_iea37_initial(n_wt).T`  
-3) Ustaw:
+1) Wybierzmy `n_wt = 9` (na start).  
+2) Pobierzmy układ startowy: `x, y = get_iea37_initial(n_wt).T`  
+3) Ustawmy:
    - cost: `get_iea37_cost(n_wt)`
    - constraints: `get_iea37_constraints(n_wt)`
    - driver: `EasyScipyOptimizeDriver()`
@@ -109,13 +112,13 @@ Wniosek z sekcji “Problems”: `TopFarmProblem` jest “kontenerem” na: desi
 Bazujemy na idei boundary i spacing z Zadania 2.2 oraz z notebooka “Constraints”.
 
 **Zadania:**
-1) Zdefiniuj własną granicę (polygon) jako listę wierzchołków w metrach, np. prostokąt 2000×1500 m z “wcięciem”.  
-2) Dodaj `XYBoundaryConstraint(..., 'polygon')`.  
-3) Dodaj `SpacingConstraint(min_dist)` i zrób 3 warianty:
+1) Zdefiniujmy własną granicę (polygon) jako listę wierzchołków w metrach, np. prostokąt 2000×1500 m z “wcięciem”.  
+2) Dodajmy `XYBoundaryConstraint(..., 'polygon')`.  
+3) Dodajmy `SpacingConstraint(min_dist)` i zróbmy 3 warianty:
    - `min_dist = 2D` (łagodny),
    - `min_dist = 3D` (typowy),
    - `min_dist = 4D` (twardy),
-   gdzie `D` to średnica wirnika (jeśli jej nie znasz – przyjmij np. 130 m i wpisz w raporcie, że to założenie).
+   gdzie `D` to średnica wirnika (jeśli jej nie znamy – przyjmijmy np. 130 m i wpiszmy w raporcie, że to założenie).
 
 **Wizualizacja (wymagana):**
 - 3 wykresy layoutu (po jednym dla każdej wartości `min_dist`) + na każdym granica,
@@ -133,10 +136,10 @@ Bazujemy na idei boundary i spacing z Zadania 2.2 oraz z notebooka “Constraint
 
 Z sekcji “Drivers”: driver to procedura, która wykonuje workflow (np. optymalizacja, DOE).  
 
-**Zadania (wybierz 2):**
+**Zadania (wybierzmy 2):**
 - **A:** ten sam problem, ale inne ustawienia `EasyScipyOptimizeDriver` (np. limit iteracji / tolerancja).  
 - **B:** ten sam problem, ale inny start (układ startowy: IEA37 vs losowy w granicy).  
-- **C (bonus):** mini-DOE: przetestuj 10 losowych layoutów i wybierz najlepszy jako start do optymalizacji.
+- **C (bonus):** mini-DOE: przetestujmy 10 losowych layoutów i wybierzmy najlepszy jako start do optymalizacji.
 
 **Wizualizacja (wymagana):**
 - wykres słupkowy “wynik po optymalizacji” dla 2 przypadków,
@@ -150,7 +153,7 @@ Z sekcji “Drivers”: driver to procedura, która wykonuje workflow (np. optym
 
 **Cel:** zbudować mini-badanie (jak w pracy inżynierskiej): pytanie → metoda → wyniki → wnioski.
 
-Zrób minimum **3 eksperymenty** (przykłady):
+Zróbmy minimum **3 eksperymenty** (przykłady):
 1) wpływ `min_dist` (zrobione w Sprincie 2),
 2) wpływ liczby kierunków wiatru `n_wd` (np. 8 vs 16),
 3) wpływ liczby turbin `n_wt` (9 vs 16) **albo** zmiany granicy (większa vs mniejsza).
@@ -166,27 +169,27 @@ Zrób minimum **3 eksperymenty** (przykłady):
 ---
 
 ## Sprint 5 (45–60 min) — Raport w notebooku + porządek w repo
- 
- Raport ma być prosty i czytelny, jak mini-sprawozdanie z laboratorium. Zróbcie go na końcu notebooka jako komórki Markdown (np. tytuł: `# Raport — Zadanie 2.3`).
- 
- 1. **Cel projektu** (2–4 zdania)  
- 2. **Założenia** (np. D=130 m, n_wt, boundary)  
- 3. **Metodyka** (co optymalizowaliśmy, jakie constraints, jaki driver)  
-4. **Wyniki** (tabelka + 3–6 obrazków)  
-5. **Wnioski** (5–8 punktów: “co ma największy wpływ i dlaczego”)  
-6. **Jak użyliśmy AI (VibeCoding)**: wklej 2–3 prompty + co poprawiły
 
-**Notatka do notebooka (komórka Markdown):** proszę napisać krótkie wyjaśnienie w komórce Markdown po tym kroku (również z punktu widzenia praktyki projektowania/budowy farmy wiatrowej): co trafi do raportu i jakie są główne wnioski.
+Raport ma być prosty i czytelny, jak mini-sprawozdanie z laboratorium. Zróbmy go na końcu notebooka jako komórki Markdown (np. tytuł: `# Raport — Zadanie 2.3`).
+ 
+1. **Cel projektu** (2–4 zdania)
+2. **Założenia** (np. D=130 m, n_wt, boundary)
+3. **Metodyka** (co optymalizowaliśmy, jakie constraints, jaki driver)
+4. **Wyniki** (tabelka + 3–6 obrazków)
+5. **Wnioski** (5–8 punktów: “co ma największy wpływ i dlaczego”)
+6. **Jak użyliśmy AI (VibeCoding)**: wklejmy 2–3 prompty + co poprawiły
+ 
+ **Notatka do notebooka (komórka Markdown):** proszę napisać krótkie wyjaśnienie w komórce Markdown po tym kroku (również z punktu widzenia praktyki projektowania/budowy farmy wiatrowej): co trafi do raportu i jakie są główne wnioski.
 
 ---
 
- # Checklist przed wysłaniem linku (60 sekund)
- 
- - [ ] `notebooks/project_topfarm3.ipynb` ma outputy i da się go “czytać” jak raport (nagłówki + wykresy)
- - [ ] `results/results.csv` istnieje
- - [ ] `results/figures/` ma min. 6 obrazków
- - [ ] Notebook ma sekcję raportową (komórki Markdown)
- - [ ] Jest min. 5 commitów na GitHub
- - [ ] Link wysłany w MS Teams
- 
+# Checklist przed wysłaniem linku (60 sekund)
+
+- [ ] `notebooks/project_topfarm3.ipynb` ma outputy i da się go “czytać” jak raport (nagłówki + wykresy)
+- [ ] `results/results.csv` istnieje
+- [ ] `results/figures/` ma min. 6 obrazków
+- [ ] Notebook ma sekcję raportową (komórki Markdown)
+- [ ] Jest min. 5 commitów na GitHub
+- [ ] Link wysłany w MS Teams
+
  Powodzenia! ✅
