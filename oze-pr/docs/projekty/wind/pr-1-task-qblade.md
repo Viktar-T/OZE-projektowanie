@@ -109,7 +109,8 @@ Tutorial YouTube może pomóc w zapoznaniu się z interfejsem QBlade. Obejrzyj p
 
 - [ ] Przejdź do modułu **Airfoil**
 - [ ] **Wyszukaj profile NACA w bazie Airfoil Tools:**
-  - Przejdź na: [Airfoil Tools Database](https://www.airfoiltools.com/search/index?MAirfoilSearchForm%5BtextSearch%5D=&MAirfoilSearchForm%5BmaxThickness%5D=&MAirfoilSearchForm%5BminThickness%5D=&MAirfoilSearchForm%5BmaxCamber%5D=&MAirfoilSearchForm%5BminCamber%5D=&MAirfoilSearchForm%5Bgrp%5D=naca4d&MAirfoilSearchForm%5Bsort%5D=1&yt0=Search)
+  -**Źródło profili:** [Airfoil Tools Database](http://www.airfoiltools.com/search/index?MAirfoilSearchForm%5BtextSearch%5D=&MAirfoilSearchForm%5BmaxThickness%5D=&MAirfoilSearchForm%5BminThickness%5D=&MAirfoilSearchForm%5BmaxCamber%5D=&MAirfoilSearchForm%5BminCamber%5D=&MAirfoilSearchForm%5Bgrp%5D=naca4d&MAirfoilSearchForm%5Bsort%5D=1&yt0=Search)
+- **Generator profili:** [NACA 4 digit airfoil generator](http://www.airfoiltools.com/airfoil/naca4digit)
   - Wybierz minimum 3 profile NACA 4-digit (np. NACA 4412, NACA 2415, NACA 0012)
   - Pobierz pliki współrzędnych profili (format .dat lub .txt)
 - [ ] **Importuj profile do QBlade:**
