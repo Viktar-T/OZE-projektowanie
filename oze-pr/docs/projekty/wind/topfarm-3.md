@@ -1,7 +1,6 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: 'TopFarm2: Projekt – optymalizacja layoutu (Zadanie 2.3)'
-slug: "projekty/wind/topfarm-3"
 ---
 
 # TopFarm2: Projekt – optymalizacja layoutu (Zadanie 2.3)

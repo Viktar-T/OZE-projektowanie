@@ -1,7 +1,6 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: 'TopFarm2: Basic Examples – zmienne, ograniczenia i driver (Zadanie 2.2)'
-slug: "projekty/wind/topfarm-2"
 ---
 
 # TopFarm2: Basic Examples – zmienne, ograniczenia i driver (Zadanie 2.2)

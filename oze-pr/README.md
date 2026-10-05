@@ -1,41 +1,47 @@
-# Website
+# Programy komputerowe w projektowaniu instalacji OZE
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Course website built with [Docusaurus](https://docusaurus.io/), deployed at <https://oze-projektowanie.vercel.app>.
+
+## Requirements
+
+- [Node.js](https://nodejs.org/) 20 or newer (an LTS release such as 22 or 24 is recommended)
 
 ## Installation
 
 ```bash
-yarn
+npm install
 ```
 
-## Local Development
+## Local development
 
 ```bash
-yarn start
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Starts a local development server at <http://localhost:3000> and opens a browser window. Most changes are reflected live without having to restart the server.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Generates static content into the `build` directory. Preview it locally with:
+
+```bash
+npm run serve
+```
+
+If the dev server or build behaves strangely, clear the cache with `npm run clear`.
+
+## Project structure
+
+- `docs/wyklady/` – lectures (slides use the components from `src/components/SlideComponents.jsx`)
+- `docs/projekty/` – project and lab assignments
+- `docs/<topic>/` – topic overview pages (PV, solar thermal, heat pumps, wind)
+- `src/data/literature.json` – literature list rendered by `<LiteratureList topic="software" />`
+- `static/` – files served as-is (images, favicon)
 
 ## Deployment
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+The site is deployed on Vercel from the GitHub repository <https://github.com/Viktar-T/OZE-projektowanie>.

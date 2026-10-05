@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 title: Systemy fotowoltaiczne
 ---
 
@@ -39,4 +39,4 @@ import LiteratureList from '@site/src/components/LiteratureList';
 
 ## Laboratoria i projekty
 
-- [Laboratorium/Projekt — Systemy fotowoltaiczne](/docs/projekty/photovoltaic%20systems)
+- [Laboratorium/Projekt — Systemy fotowoltaiczne](/docs/projekty/photovoltaic-systems)

@@ -1,47 +1,26 @@
 ---
 sidebar_position: 1
+title: Wprowadzenie
 ---
 
 # Wprowadzenie
 
-Poznaj **Docusaurus w mniej niż 5 minut**.
+Witamy na stronie przedmiotu **Programy komputerowe w projektowaniu instalacji OZE** (kierunek: Odnawialne źródła energii). Znajdziesz tu materiały do wykładów, instrukcje do projektów oraz literaturę przedmiotu.
 
-## Pierwsze kroki
+## Struktura materiałów
 
-Zacznij od **utworzenia nowej strony**.
+- [Wykłady](/docs/category/wykłady-20-godzin) — przegląd narzędzi programowych stosowanych w projektowaniu instalacji OZE.
+- [Projekty](/docs/category/projekty) — zadania praktyczne realizowane w specjalistycznym oprogramowaniu (m.in. PV\*SOL premium, Sunny Design, T\*SOL, GeoT\*SOL, QBlade, TopFarm2).
+- [Literatura i materiały](./literatura/index.md) — podręczniki i dokumentacja oprogramowania.
 
-Albo **wypróbuj Docusaurusa od razu** poprzez **[docusaurus.new](https://docusaurus.new)**.
+## Obszary tematyczne
 
-### Wymagania
+- [Systemy fotowoltaiczne](./photovoltaic-systems/index.md)
+- [Systemy solarne termiczne](./solar-thermal-systems/index.md)
+- [Systemy pomp ciepła](./heat-pump-systems/index.md)
+- [Energetyka wiatrowa](./wind/index.md)
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Od czego zacząć?
 
-## Wygeneruj nową stronę
-
-Wygeneruj nową stronę Docusaurus, korzystając z **szablonu classic**.
-
-Szablon classic zostanie automatycznie dodany do projektu po uruchomieniu polecenia:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-Możesz wpisać to polecenie w Command Prompt, Powershell, Terminalu lub innym zintegrowanym terminalu edytora.
-
-Polecenie zainstaluje także wszystkie niezbędne zależności wymagane do uruchomienia Docusaurusa.
-
-## Uruchom swoją stronę
-
-Uruchom serwer deweloperski:
-
-```bash
-cd my-website
-npm run start
-```
-
-Polecenie `cd` zmienia katalog roboczy. Aby pracować z nowo utworzoną stroną Docusaurus, przejdź do jej katalogu w terminalu.
-
-Polecenie `npm run start` buduje stronę lokalnie i uruchamia serwer deweloperski pod adresem http://localhost:3000/.
-
-Otwórz `docs/intro.md` (tę stronę) i edytuj kilka linii: strona **przeładuje się automatycznie** i wyświetli zmiany.
+1. Zapoznaj się z instrukcją [pierwszych zajęć](./projekty/1-zajecie.md) i przygotuj wymagane oprogramowanie (wersje próbne lub edukacyjne).
+2. Przejdź do [Wykładu 1](./wyklady/wyklad-01-wprowadzenie/index.md).

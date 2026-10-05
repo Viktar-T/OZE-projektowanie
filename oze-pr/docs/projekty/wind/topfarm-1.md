@@ -1,7 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: 'TopFarm2: Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 2.1)'
-slug: "projekty/wind/topfarm-1"
 ---
 # TopFarm2: Start — GitHub, Codespaces, Copilot + pierwszy wykres farmy (Zadanie 2.1)
 

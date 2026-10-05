@@ -21,7 +21,7 @@ Zapoznanie się z oprogramowaniem **GeoT\*SOL** poprzez wykonanie projektu syste
 ### Dokumentacja (30 min)
 
 - **[GeoT\*SOL Help / Manual](https://help.valentin-software.com/geotsol/en/geotsol/)** – wbudowana pomoc kontekstowa (F1 w programie)
-- **[GeoTSOL Basic Manual.pdf](/docs/heat-pump-systems/GeoTSOL%20Basic%20Manual.pdf)** – Podstawowy podręcznik użytkownika GeoT\*SOL
+- **[GeoTSOL Basic Manual.pdf](./docs/GeoTSOL%20Basic%20Manual.pdf)** – Podstawowy podręcznik użytkownika GeoT\*SOL
 
 ### Materiały multimedialne
 

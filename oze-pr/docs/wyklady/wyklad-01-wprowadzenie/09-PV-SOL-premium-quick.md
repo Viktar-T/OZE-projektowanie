@@ -1,10 +1,10 @@
-## PV*SOL premium. Sybki start
+# PV*SOL premium. Szybki start
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qg7CDJuqcdc" title="PV*SOL premium tutorial" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
 <details>
 
-<summary>Transcrypcja do video. Kroki</summary>
+<summary>Transkrypcja do video. Kroki</summary>
 
 ### **Krok 1: Wprowadzenie i strona powitalna**
 

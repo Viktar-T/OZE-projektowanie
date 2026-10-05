@@ -29,6 +29,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Keep embedded videos (fixed-width iframes) inside the content column */
+.markdown iframe {
+  max-width: 100%;
+}
+
 /* Fix for card title truncation - allow full titles to display */
 .markdown h2 {
   white-space: normal;
@@ -556,6 +561,12 @@
     width: 100%;
     text-align: center;
   }
+
+  /* !important also overrides inline grid styles set in the MDX files */
+  .two-column-layout,
+  .feature-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Dark Mode Support */
@@ -607,4 +618,59 @@
 [data-theme='dark'] .instructor-notes-content {
   background: #1a202c;
   color: #e2e8f0;
+}
+
+/* Box titles: the light-mode colors are unreadable on the dark backgrounds */
+[data-theme='dark'] .key-points-title {
+  color: #fbd38d;
+}
+
+[data-theme='dark'] .supporting-details-title {
+  color: #bee3f8;
+}
+
+[data-theme='dark'] .warning-title {
+  color: #fed7d7;
+}
+
+[data-theme='dark'] .success-title {
+  color: #c6f6d5;
+}
+
+[data-theme='dark'] .info-title {
+  color: #e9d8fd;
+}
+
+[data-theme='dark'] .slide-separator,
+[data-theme='dark'] .slide-progress-text {
+  color: #a0aec0;
+}
+
+[data-theme='dark'] .visual-separator,
+[data-theme='dark'] .slide-progress,
+[data-theme='dark'] .slide-navigation {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+[data-theme='dark'] .slide-progress-bar,
+[data-theme='dark'] .progress-bar {
+  background: #4a5568;
+}
+
+[data-theme='dark'] .slide-nav-button {
+  background: #1a202c;
+}
+
+/* Visualization cards and columns */
+[data-theme='dark'] .column,
+[data-theme='dark'] .feature-card,
+[data-theme='dark'] .tool-card {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme='dark'] .tool-card h3 {
+  color: #90cdf4;
 }

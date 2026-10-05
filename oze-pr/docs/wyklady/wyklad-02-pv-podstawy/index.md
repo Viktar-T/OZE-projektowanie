@@ -18,4 +18,4 @@ import LiteratureList from '@site/src/components/LiteratureList';
 - Szczegółowy fokus na PV*SOL/PV*SOL premium i Sunny Design
 - Demonstracja na żywo: uruchomienie PV*SOL i Sunny Design, budowa przykładowych projektów
 
-<LiteratureList section="wyklad-02" />
+<LiteratureList topic="software" />

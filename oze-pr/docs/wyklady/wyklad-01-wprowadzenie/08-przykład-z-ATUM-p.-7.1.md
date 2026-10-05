@@ -60,7 +60,7 @@ Po określeniu wartości zużycia można przejść do wyliczenia mocy instalacji
 
 ### Wpływ kąta nachylenia i azymutu
 
-![Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego](../../../static/img/w-1/w-1-5.1.png)
+![Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego](/img/w-1/w-1-5.1.png)
 
 *Rys. 1. Wpływ kąta nachylenia dachu i azymutu na wydajność systemu fotowoltaicznego (na podstawie materiałów Viessmann)*
 

@@ -8,6 +8,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const repoUrl = 'https://github.com/Viktar-T/OZE-projektowanie';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Programy komputerowe w projektowaniu instalacji OZE',
@@ -15,27 +17,30 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  // Since Docusaurus 3.10, `v4: true` also enables `fasterByDefault` (requires
+  // the @docusaurus/faster package) and `mdx1CompatDisabledByDefault` (breaks
+  // the `:::tip Title` admonition syntax used in the docs), so the flags are
+  // listed explicitly.
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+      useCssCascadeLayers: true,
+    },
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  // Production URL of the site (Vercel deployment)
+  url: 'https://oze-projektowanie.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'oze', // Usually your GitHub org/user name.
-  projectName: 'projektowanie', // Usually your repo name.
+  // GitHub repository (used by `docusaurus deploy` and the links below)
+  organizationName: 'Viktar-T',
+  projectName: 'OZE-projektowanie',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // useful metadata like html lang.
   i18n: {
     defaultLocale: 'pl',
     locales: ['pl'],
@@ -48,10 +53,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // "Edytuj tę stronę" links. Remove this to hide them.
+          editUrl: `${repoUrl}/tree/main/oze-pr/`,
         },
         blog: false,
         theme: {
@@ -61,8 +64,50 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // Old URLs that were already published, kept working after renames
+        redirects: [
+          {
+            to: '/docs/projekty/photovoltaic-systems',
+            from: '/docs/projekty/photovoltaic systems',
+          },
+          {
+            to: '/docs/projekty/photovoltaic-systems/pr-1-task-for-students',
+            from: '/docs/projekty/photovoltaic systems/pr-1-task-for-students',
+          },
+          {
+            to: '/docs/projekty/photovoltaic-systems/pr-2-task-sunny-design',
+            from: '/docs/projekty/photovoltaic systems/pr-2-task-sunny-design',
+          },
+          {
+            to: '/docs/projekty/photovoltaic-systems/pv-professional-perspective',
+            from: '/docs/projekty/photovoltaic systems/pv-professional-perspective',
+          },
+          {
+            to: '/docs/projekty/wind/topfarm-1',
+            from: '/docs/projekty/wind/projekty/wind/topfarm-1',
+          },
+          {
+            to: '/docs/projekty/wind/topfarm-2',
+            from: '/docs/projekty/wind/projekty/wind/topfarm-2',
+          },
+          {
+            to: '/docs/projekty/wind/topfarm-3',
+            from: '/docs/projekty/wind/projekty/wind/topfarm-3',
+          },
+        ],
+      },
+    ],
+  ],
+
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
   themes: ['@docusaurus/theme-mermaid'],
@@ -70,8 +115,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'OZE – Programy komputerowe',
         logo: {
@@ -86,7 +129,7 @@ const config = {
             label: 'Dokumentacja',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: repoUrl,
             label: 'GitHub',
             position: 'right',
           },
@@ -96,28 +139,28 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Dokumenty',
+            title: 'Przedmiot',
             items: [
               {
                 label: 'Wprowadzenie',
                 to: '/docs/intro',
               },
+              {
+                label: 'Wykłady',
+                to: '/docs/category/wykłady-20-godzin',
+              },
+              {
+                label: 'Projekty',
+                to: '/docs/category/projekty',
+              },
             ],
           },
           {
-            title: 'Społeczność',
+            title: 'Materiały',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: 'Literatura i materiały',
+                to: '/docs/literatura',
               },
             ],
           },
@@ -126,7 +169,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: repoUrl,
               },
             ],
           },
@@ -136,6 +179,8 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        // Languages used in the docs that Prism does not load by default
+        additionalLanguages: ['bash'],
       },
     }),
 };

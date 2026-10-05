@@ -2,7 +2,7 @@
 sidebar_position: 2
 title: Zadanie 2 - Sunny Design Web
 ---
-# Zadanie 2: Projektowanie PV z Sunny Design Web -- !!!Under constraction!!!
+# Zadanie 2: Projektowanie PV z Sunny Design Web -- !!!Under construction!!!
 
 ## 🎯 Cel zadania
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: "Wykład:1 Klasyfikacja narzędzi programowych OZE (2h)"
+title: "Wykład 1: Klasyfikacja narzędzi programowych OZE (2h)"
 ---
 ## Spis treści
 

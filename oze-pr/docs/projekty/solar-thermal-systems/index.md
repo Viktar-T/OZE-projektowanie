@@ -22,12 +22,12 @@ Zapoznanie się z oprogramowaniem **T*SOL** poprzez wykonanie projektu instalacj
 - **T*SOL Quick Start Guide:** [https://help.valentin-software.com/tsol/en/kurzanleitung/](https://help.valentin-software.com/tsol/en/kurzanleitung/)
 - **T*SOL Help Center:** [https://help.valentin-software.com/tsol/en/](https://help.valentin-software.com/tsol/en/)
 
-- **[TSOL Basic Manual.pdf](/docs/solar-thermal/TSOL%20Basic%20Manual.pdf)** - Podstawowy podręcznik użytkownika
-- **[TSOL Pro 5.5 User Manual.pdf](/docs/solar-thermal/TSOL%20Pro%205.5%20User%20Manual.pdf)** - Zaawansowany podręcznik użytkownika
+- **[TSOL Basic Manual.pdf](./docs/TSOL%20Basic%20Manual.pdf)** - Podstawowy podręcznik użytkownika
+- **[TSOL Pro 5.5 User Manual.pdf](./docs/TSOL%20Pro%205.5%20User%20Manual.pdf)** - Zaawansowany podręcznik użytkownika
 
 ## Projekt przykładowy
 
-- **[SDC Example TSOL Report 3.pdf](/docs/solar-thermal/SDC%20Example%20TSOL%20Report%203.pdf)** - **Przykładowy raport projektowy (wzór do analizy)**
+- **[SDC Example TSOL Report 3.pdf](./docs/SDC%20Example%20TSOL%20Report%203.pdf)** - **Przykładowy raport projektowy (wzór do analizy)**
 
 :::tip Wskazówka
 Zalecamy rozpoczęcie od przeczytania Quick Start Guide oraz przeanalizowania przykładowego raportu przed rozpoczęciem pracy w programie.
@@ -38,7 +38,7 @@ Zalecamy rozpoczęcie od przeczytania Quick Start Guide oraz przeanalizowania pr
 ### Krok 1: Analiza przykładowego projektu (30 min)
 
 1. **Zapoznaj się z przykładowym raportem:**
-   - Otwórz plik [SDC Example TSOL Report 3.pdf](/docs/solar-thermal/SDC%20Example%20TSOL%20Report%203.pdf)
+   - Otwórz plik [SDC Example TSOL Report 3.pdf](./docs/SDC%20Example%20TSOL%20Report%203.pdf)
    - Przeanalizuj strukturę raportu i zawarte w nim informacje
    - Zwróć uwagę na:
      - Parametry techniczne systemu (kolektory, zasobnik, pompy)
